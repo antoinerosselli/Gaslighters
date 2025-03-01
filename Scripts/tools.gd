@@ -115,9 +115,18 @@ func sound_now(here: Node3D, what_sound: AudioStream):
 func start_transition(text):
 	var cl = get_tree().get_first_node_in_group("transi")
 	cl.transition(text)
-	
+
+#demo	
 func eotd():
 	var alarm =  get_tree().get_first_node_in_group("alarmepills")
 	var pills = get_tree().get_first_node_in_group("pills")
 	alarm.go_bip()
 	pills.spawn()
+
+func notespawn(note):
+	var player = Tools.get_player()
+	player.paused = true
+	player.get_node("CanvasLayer/Control/").visible = false
+	var inst = note.instantiate()
+	player.add_child(inst)
+	player.move_child(inst,0)

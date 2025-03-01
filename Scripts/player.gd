@@ -24,6 +24,10 @@ var use_radio:bool= false
 var paused:bool = false
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+@export var affect_by_gravity:bool = true
+@export var can_move:bool = true
+
 var speed = 5
 var jump_speed = 5
 var mouse_sensitivity = 0.002
@@ -53,7 +57,8 @@ func _physics_process(delta):
 		else :
 			dialogues = []
 			dialogues_id = 0
-		velocity.y += -gravity * delta
+		if affect_by_gravity == true :
+			velocity.y += -gravity * delta
 		var input = Input.get_vector("left", "right", "up", "down")
 		var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
 		velocity.x = movement_dir.x * speed
@@ -76,8 +81,10 @@ func _physics_process(delta):
 			logo_inter.visible = true
 		elif can_interact == false:
 			logo_inter.visible = false
-
-		move_and_slide()
+		
+		if can_move == true:
+			move_and_slide()
+		
 		if Input.is_action_just_pressed("interact") and can_interact == true:
 			item.interact()
 			item = null
@@ -98,7 +105,7 @@ func _input(event):
 	if Input.is_action_just_pressed("pause"):
 		Tools.call_pause()
 		paused = !paused
-	if Input.is_action_just_pressed("crouch"):
+	if Input.is_action_just_pressed("crouch") && can_move == true:
 		if crouch == false:
 			camera_3d.position.y -= 1.3
 			speed -= 4

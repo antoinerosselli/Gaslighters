@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc8ihhlscs4db"]
+
+[ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://Sprite/icon.svg" id="1_kb6gq"]
+[ext_resource type="Script" path="res://Characters/govguy/govface.gd" id="1_x6tra"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxt7h"]
+albedo_texture = ExtResource("1_kb6gq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_73wj5"]
+
+[node name="govface" type="StaticBody3D"]
+script = ExtResource("1_x6tra")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.32238, 0, 0, 0, 0.56781, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_kxt7h")
+mesh = SubResource("SphereMesh_73wj5")
+
+[node name="SpotLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.377154, -0.0379506, -0.202694)
+light_color = Color(1, 0.235294, 0, 1)
+omni_range = 1.0
+omni_attenuation = 0.39
+
+[node name="SpotLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.392302, -0.0379506, -0.202694)
+light_color = Color(1, 0.235294, 0, 1)
+omni_range = 1.0
+omni_attenuation = 0.39
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

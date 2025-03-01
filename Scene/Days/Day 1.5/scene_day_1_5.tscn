@@ -1,0 +1,120 @@
+[gd_scene load_steps=18 format=4 uid="uid://7cqbfhd81slb"]
+
+[ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="1_152uh"]
+[ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="2_r6x0h"]
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="3_0ejrs"]
+[ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/govguy/govface.tscn" id="4_offwv"]
+[ext_resource type="PackedScene" uid="uid://bwb2a7jakivfd" path="res://Prefab/pills_spawner.tscn" id="5_skkch"]
+[ext_resource type="PackedScene" uid="uid://4n1p68ofm3bv" path="res://Prefab/pen.tscn" id="6_oh546"]
+[ext_resource type="PackedScene" uid="uid://bfwip75uecxa8" path="res://Scene/Days/Day 1.5/em_day_1_5.tscn" id="7_wxr26"]
+
+[sub_resource type="Environment" id="Environment_q84mf"]
+background_energy_multiplier = 0.0
+ambient_light_source = 2
+ambient_light_energy = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5em30"]
+albedo_texture = ExtResource("2_r6x0h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6aorj"]
+resource_name = "Wooden"
+metallic = 0.4
+roughness = 0.140028
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b1nkn"]
+_surfaces = [{
+"aabb": AABB(-1, -1.20417, -0.672283, 2, 1.25418, 1.34458),
+"format": 34896613377,
+"index_count": 252,
+"index_data": PackedByteArray("AAACAAEAAAABAAMAAwABAAQAAwAEAAUABQAEAAYABQAGAAcABwAGAAIABwACAAAACAAKAAkACAAJAAsAAwAFAAcAAwAHAAAADAANAAEADAABAAIADQAIAAQADQAEAAEACAALAAYACAAGAAQACwAMAAIACwACAAYADgAQAA8ADgAPABEADQAMABIADQASABMADAALAAkADAAJABIACAANABMACAATAAoAFAAWABUAFAAVABcADgARABgADgAYABkAGgAbAA8AGgAPABAAGgAZABgAGgAYABsAGAARAA8AGAAPABsADgAZABMADgATABIAGQAaAAoAGQAKABMAGgAQAAkAGgAJAAoAEAAOABIAEAASAAkAFwAVABwAFwAcABEAEQAcAB0AEQAdAB4AHgAdABYAHgAWABQAHAAVABYAHAAWAB0AHwAhACAAHwAgAA8ADwAgACIADwAiACMAIwAiACQAIwAkACUAJQAkACEAJQAhAB8AIgAgACEAIgAhACQAGwAnACYAGwAmACgAKAAmACkAKAApACoAKgApACsAKgArACwALAArACcALAAnABsAKQAmACcAKQAnACsALQAvAC4ALQAuADAAMAAuADEAMAAxADIAMQAzABgAMQAYADIAGAAzAC8AGAAvAC0AMQAuAC8AMQAvADMA"),
+"name": "Wooden",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("AAD+//7/AAAAAJXrAAAAAAAAlev+/wAAAAD+/wAAAAD//5XrAAAAAP///v8AAAAA//+V6/7/AAD///7//v8AAD/xleu/DgAAP/F14D/xAAA/8XXgvw4AAD/xles/8QAAvw6V6z/xAAC/DpXrvw4AACQcdeDa4wAA2uOj69rjAADa43Xg2uMAACQco+va4wAAvw514D/xAAC/DnXgvw4AAE0no+sp0wAATScAANrjAABNJwAAKdMAAE0no+va4wAAJByj6yQcAAAkHHXgJBwAANrjdeAkHAAA2uOj6yQcAAAkHAAA2uMAACQcAAAp0wAAJByj6ynTAADa46PrKdMAANrjAADa4wAA2uMAACnTAACx2AAA2uMAALHYo+va4wAAsdgAACnTAACx2KPrKdMAANrjAADVLAAA2uMAACQcAADa46Pr1SwAALHYAADVLAAAsdij69UsAACx2AAAJBwAALHYo+skHAAATSej6yQcAABNJwAA1SwAAE0nAAAkHAAATSej69UsAAAkHAAA1SwAACQco+vVLAAAJBwAACQcAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2csxg"]
+resource_name = "Root Scene_Wooden Table"
+_surfaces = [{
+"aabb": AABB(-1, -1.20417, -0.672283, 2, 1.25418, 1.34458),
+"attribute_data": PackedByteArray("MFQMmokznsowVJ7KiTMMmokznsr3Ai/7iTMv+/cCnsowVJ7KiTMv+zBUL/uJM57KiTMMmvcCnsqJM57K9wIMmtd0hJtQj2e4UI+Em9d0Z7jXdJ7KMFQv+9d0L/swVJ7KEVbRx9d0nsr1ctHHMFSeytd0DJr1cticMFQMmhFW2JwBiih0Z28MmgGKDJpnbyh013RL1VCPZ7jXdGe4UI9L1VQ6E2/bHwyaVDoMmtsfE2/NVBNvVDoMms1UDJpUOhNv1aXgrN6favvVpWr73p/grAGKDJp6o3J/AYpyf3qjDJoBinJ/eqPYZAGK2GR6o3J/Z28odM1UDJpnbwyazVQodFCOL/vXdEvV13Qv+1COS9UmHp1x9wITb60EnXHbHxNv9wIMmq0EgZfbHwyaJh6Bl3Lb4KyD1Wr7cttq+4PV4KzCseCsy6tq+8KxavvLq+CsG/ngrCzzavsb+Wr7LPPgrMur6aa6seCsurHppsur4Kynw+CssL1q+6fDavuwveCsLPPgrD7tavss82r7Pu3grJXP4KyeyWr7lc9q+57J4KyD1eCslc9q+4PVavuVz+Cs3p/ppsyl4KzMpemm3p/grJ7J4Kynw2r7nslq+6fD4Kw+7eCsT+dq+z7tavtP5+CssL3grLm3avuwvWr7ubfgrE/n4Kxh4Wr7T+dq+2Hh4KzMpemmu6vgrLur6abMpeCsubfgrMKxavu5t2r7wrHgrGHh4Kxy22r7YeFq+3Lb4KzLq2r71aXgrNWlavvLq+CsCv/grBv5avsK/2r7G/ngrLqx6aapt+Csqbfpprqx4Kw="),
+"format": 34896613399,
+"index_count": 252,
+"index_data": PackedByteArray("AAACAAEAAAABAAMABAAGAAUABAAFAAcACAAKAAkACAAJAAsADAAOAA0ADAANAA8AEAASABEAEAARABMAFAAWABUAFAAVABcAGAAaABkAGAAZABsAGgAdABwAGgAcABkAHQAfAB4AHQAeABwAHwAYABsAHwAbAB4AIAAiACEAIAAhACMAJAAmACUAJAAlACcAKAAqACkAKAApACsALAAuAC0ALAAtAC8AMAAyADEAMAAxADMANAA2ADUANAA1ADcAOAA6ADkAOAA5ADsAPAA+AD0APAA9AD8AQABCAEEAQABBAEMARABGAEUARABFAEcARgBJAEgARgBIAEUASQBLAEoASQBKAEgASwBEAEcASwBHAEoATABOAE0ATABNAE8AUABSAFEAUABRAFMAVABWAFUAVABVAFcAWABaAFkAWABZAFsAXABeAF0AXABdAF8AYABiAGEAYABhAGMAZABmAGUAZABlAGcAaABqAGkAaABpAGsAbABuAG0AbABtAG8AcAByAHEAcABxAHMAdAB2AHUAdAB1AHcAeAB6AHkAeAB5AHsAfAB+AH0AfAB9AH8AgACCAIEAgACBAIMAhACGAIUAhACFAIcAiACKAIkAiACJAIsAjACOAI0AjACNAI8AkACSAJEAkACRAJMAlACWAJUAlACVAJcA"),
+"material": SubResource("StandardMaterial3D_6aorj"),
+"name": "Wooden",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 152,
+"vertex_data": PackedByteArray("AAD+//7//78AAJXrAAD/vwAAlev+//+/AAD+/wAA/78AAP7/AAD/////lesAAP//AACV6wAA//////7/AAD//////v8AAP+///+V6/7//7///5XrAAD/v////v/+//+////+//7/AIAAAJXr/v8AgP//lev+/wCAAAD+//7/AIA/8ZXrvw5U1T/xdeA/8VTVP/F14L8OVNU/8ZXrP/FU1QAA/v8AAFTV///+//7/VNX///7/AABU1QAA/v/+/1TVvw6V6z/xVNUAAJXrAABU1b8Oleu/DlTVAACV6/7/VNX//5XrAABU1T/xleu/DlTV//+V6/7/VNU/8ZXrP/FU1SQcdeDa4///2uOj69rj///a43Xg2uP//yQco+va4///vw6V678OVNW/DnXgP/FU1b8Oles/8VTVvw514L8OVNW/DpXrP/H/vz/xdeA/8f+/P/GV6z/x/7+/DnXgP/H/vz/xleu/Dv//vw514L8O//+/DpXrvw7//z/xdeC/Dv//TSej6ynT/79NJwAA2uP/v00nAAAp0/+/TSej69rj/78kHHXg2uP/vyQco+skHP+/JByj69rj/78kHHXgJBz/v9rjdeAkHP+/2uOj69rj/7/a46PrJBz/v9rjdeDa4/+/2uN14CQc/78kHKPrJBz/vyQcdeAkHP+/2uOj6yQc/78kHKPrJBxU1drjo+va41TVJByj69rjVNXa46PrJBxU1SQcdeDa41TVvw514L8OVNUkHHXgJBxU1b8OdeA/8VTVP/F14L8OVNXa43XgJBxU1T/xdeA/8VTV2uN14NrjVNVNJ6Pr2uMAgCQcAADa4wCATScAANrjAIAkHKPr2uMAgCQco+va4/+/JBwAACnT/78kHAAA2uP/vyQco+sp0/+/JByj6ynT//9NJwAAKdP//yQcAAAp0///TSej6ynT//8kHAAA2uP/v00nAAAp0/+/TScAANrj/78kHAAAKdP/v9rjo+sp0/+/2uMAANrj/7/a4wAAKdP/v9rjo+va4/+/2uOj69rjAICx2AAA2uMAgNrjAADa4wCAsdij69rjAICx2KPr2uP/v7HYAAAp0/+/sdgAANrj/7+x2KPrKdP/v7HYo+sp0///2uMAACnT//+x2AAAKdP//9rjo+sp0///sdgAANrj/7/a4wAAKdP/v9rjAADa4/+/sdgAACnT/7/a46PrJBz/v9rjAADVLP+/2uMAACQc/7/a46Pr1Sz/v9rjo+vVLACAsdgAANUsAIDa4wAA1SwAgLHYo+vVLACAsdij69Us/7+x2AAAJBz/v7HYAADVLP+/sdij6yQc/7+x2KPrJBz//9rjAAAkHP//sdgAACQc///a46PrJBz//7HYAADVLP+/2uMAACQc/7/a4wAA1Sz/v7HYAAAkHP+/TSej6yQc/79NJwAA1Sz/v00nAAAkHP+/TSej69Us/79NJ6Pr1SwAgCQcAADVLACATScAANUsAIAkHKPr1SwAgCQcAADVLP+/JByj6yQc/78kHAAAJBz/vyQco+vVLP+/JByj6yQc//9NJwAAJBz//yQcAAAkHP//TSej6yQc//8kHAAA1Sz/v00nAAAkHP+/TScAANUs/78kHAAAJBz/v/9/////f////3////9/////f////3////9/////f////38AAP9/AAD/fwAA/38AAP9/////f////3////9///+qqlRVqqpUVaqqVFWqqlRVVNWqKlTVqipU1aoqVNWqKlRVVVVVVVRVVVVUVVRVVVVVVVRVVVVUVVRVVVVUVVVV/z//v/8//7//P/+//z//v1RVqqpUVaqqVFWqqlRVqqr//////////////////////7//v/+//7//v/+//7//v/9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9//3//f/9//3//f/9//39VVVVVVVVVVVVVVVVUVVRVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNX/f////3////9/////f////3////9/////f////3////9/////f////3////9///8AAP9/AAD/fwAA/38AAP9//38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f////3////9/////f////3////9/////f////3///wAA/38AAP9/AAD/fwAA/3//fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f////3////9/////f////3////9/////f///AAD/fwAA/38AAP9/AAD/f/9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////3////9//v//f////3/+//9//v//f/7//3/+//9//v8AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b1nkn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_btkx6"]
+size = Vector3(1.9986, 0.783845, 1.33269)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w61do"]
+albedo_texture = ExtResource("1_152uh")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vv1kw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n1q6q"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g8pbm"]
+
+[node name="scene_day_1_5" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_q84mf")
+
+[node name="Wooden Table" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.659235, 0, 0, 0, 1.25496, 3.62456e-08, 0, -3.34106e-07, 1.69294, 0.00726748, 0.926477, -0.248223)
+material_override = SubResource("StandardMaterial3D_5em30")
+mesh = SubResource("ArrayMesh_2csxg")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wooden Table"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wooden Table/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.00002, -1.75859e-12, 0, -4.26326e-14, 1.00002, -0.00607937, -0.338707, 0.0070031)
+shape = SubResource("BoxShape3D_btkx6")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_0ejrs")]
+transform = Transform3D(-0.0144683, 0, 0.999895, 0, 1.02124, 0, -0.999895, 0, -0.0144683, 1.29872, 1.19812, -0.252722)
+affect_by_gravity = false
+can_move = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(3.37253, 0, 0, 0, 1, 0, 0, 0, 3.52631, -0.000146866, 0, 0.0239534)
+material_override = SubResource("StandardMaterial3D_w61do")
+mesh = SubResource("PlaneMesh_vv1kw")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.86265e-09)
+shape = SubResource("BoxShape3D_n1q6q")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0135434, 0.999908, 0, -0.999908, 0.0135434, 0.328129, 3.86694, -0.18324)
+light_energy = 16.0
+spot_range = 5.167
+spot_attenuation = 0.8
+spot_angle = 30.689
+
+[node name="govface" parent="." instance=ExtResource("4_offwv")]
+transform = Transform3D(-0.871167, 0.134042, -0.472335, 0.0126237, 0.967809, 0.251368, 0.490824, 0.213021, -0.844816, -1.21165, 2.63079, -4.52771)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.244199, 0, 0, 0, 1, 0, 0, 0, 0.176118, 0.113661, 1.00582, -0.145789)
+mesh = SubResource("PlaneMesh_g8pbm")
+
+[node name="pills_spawner" parent="." instance=ExtResource("5_skkch")]
+transform = Transform3D(-0.779185, 0, 0.626794, 0, 1, 0, -0.626794, 0, -0.779185, -0.161081, 1.47615, -0.569025)
+pills = ExtResource("6_oh546")
+
+[node name="EmDay15" parent="." instance=ExtResource("7_wxr26")]

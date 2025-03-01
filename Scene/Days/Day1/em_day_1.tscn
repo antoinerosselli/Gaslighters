@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Scripts/em_day_1.gd" id="1_1ttpx"]
 
-
 [node name="em_day_1" type="Node" groups=["event_manager"]]
 script = ExtResource("1_1ttpx")
 

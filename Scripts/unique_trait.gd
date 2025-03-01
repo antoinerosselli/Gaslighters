@@ -57,3 +57,5 @@ func unique(object_name):
 			print("TAKE FOOD")
 		"pills":
 			Tools.start_transition("1 MONTH LATER")
+		"pen":
+			Tools.start_transition("1 MONTH LATER")

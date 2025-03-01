@@ -19,6 +19,10 @@ extends Node3D
 @export var lamp:Node3D
 @export var custom_range:float
 
+@export_category("is a note ?")
+@export var is_note : bool
+@export var note : PackedScene
+
 @export_category("have an unique trait ?")
 @export var script_trait:bool
 
@@ -45,5 +49,7 @@ func interact():
 			elif  is_on == false:
 				var ligth = lamp.get_node("OmniLight3D")
 				ligth.omni_range = 0.0
+	if is_note == true:
+		Tools.notespawn(note)
 	if script_trait == true:
 		UniqueTrait.unique(item_name)

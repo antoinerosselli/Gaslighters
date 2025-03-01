@@ -541,7 +541,16 @@ shape = SubResource("BoxShape3D_e47n2")
 [node name="StaticBody3D" parent="Node3D/Node3D" instance=ExtResource("21_mxky7")]
 transform = Transform3D(3.21874, 0, 0, 0, 2.76397, 0, 0, 0, 1, -1.96581, -1.92428, 2.18893)
 item_name = "doorchamber"
+pickable = null
+is_text = null
+texts = null
 door = true
+rotation_amount = null
+is_on = null
+is_an_interruptor = null
+custom_range = null
+is_note = null
+script_trait = null
 
 [node name="MeshInstance3D37" type="MeshInstance3D" parent="Node3D/Node3D"]
 transform = Transform3D(11.0814, 0, 0, 0, 1.643, 0, 0, 0, 11.5154, 9.61763, -1.97426, 3.29678)
@@ -558,10 +567,27 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4idiv")
 [node name="StaticBody3D2" parent="Node3D/Node3D" instance=ExtResource("21_mxky7")]
 transform = Transform3D(3.21874, 0, 0, 0, 2.76397, 0, 0, 0, 1, 2.8217, -1.92428, -2.26132)
 item_name = "doorchamber"
+pickable = null
+is_text = null
+texts = null
 door = true
+rotation_amount = null
+is_on = null
+is_an_interruptor = null
+custom_range = null
+is_note = null
+script_trait = null
 
 [node name="Codesr" parent="Node3D/Node3D" instance=ExtResource("26_pxy44")]
 transform = Transform3D(0.429087, 0, 0, 0, 0.183948, 0, 0, 0, 0.507071, -5.54093, -1.41056, 0.416497)
+pickable = null
+texts = null
+door = null
+rotation_amount = null
+is_on = null
+is_an_interruptor = null
+custom_range = null
+is_note = null
 
 [node name="MeshInstance3D79" type="MeshInstance3D" parent="Node3D/Node3D"]
 transform = Transform3D(1.59649, 0, 0, 0, 1, 0, 0, 0, 1, -7.91416, -0.0134274, -8.24736)
@@ -633,8 +659,16 @@ shape = SubResource("BoxShape3D_tytjf")
 
 [node name="Interrupteur" parent="Node3D/Node3D" instance=ExtResource("30_o0o56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40884, 0.377748, 2.34532)
+pickable = null
+is_text = null
+texts = null
+door = null
+rotation_amount = null
+is_on = null
 is_an_interruptor = true
-script_trait = false
+custom_range = null
+is_note = null
+script_trait = null
 
 [node name="Lamp1" parent="Node3D/Node3D" instance=ExtResource("31_fo7st")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984962, 1.94241, 6.71348)
