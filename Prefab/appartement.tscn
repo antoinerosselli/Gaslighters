@@ -2059,10 +2059,10 @@ shape = SubResource("BoxShape3D_tytjf")
 
 [node name="Interrupteur" parent="." node_paths=PackedStringArray("lamp") instance=ExtResource("31_22q3o")]
 transform = Transform3D(-0.0147126, 0, -0.999892, 0, 1, 0, 0.999892, 0, -0.0147126, -2.40884, -0.147762, 2.34727)
-script_trait = false
 is_an_interruptor = true
-custom_range = 10.0
 lamp = NodePath("../Lamp1")
+custom_range = 10.0
+script_trait = false
 
 [node name="Lamp1" parent="." instance=ExtResource("32_5p1tq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984962, 1.94241, 6.71348)
@@ -2083,15 +2083,15 @@ script = ExtResource("33_3fu2f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.79549, 0.16344, -5.55802)
 item_name = "interrupteur2"
 is_an_interruptor = true
-custom_range = 10.0
 lamp = NodePath("../Lamp2")
+custom_range = 10.0
 
 [node name="Interrupteur3" parent="." node_paths=PackedStringArray("lamp") instance=ExtResource("31_22q3o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81927, -0.203003, -2.75722)
 item_name = "interrupteur3"
 is_an_interruptor = true
-custom_range = 10.0
 lamp = NodePath("../Lamp3")
+custom_range = 10.0
 
 [node name="Lamp3" parent="." instance=ExtResource("32_5p1tq")]
 transform = Transform3D(0.992745, 0, 0.120241, 0, 1, 0, -0.120241, 0, 0.992745, 15.6983, 1.62313, -2.31484)
@@ -2215,8 +2215,8 @@ transform = Transform3D(0.992745, 0, 0.120241, 0, 1, 0, -0.120241, 0, 0.992745, 
 transform = Transform3D(-0.999532, 0, -0.0305909, 0, 1, 0, 0.0305909, 0, -0.999532, 4.79975, 0.138499, -4.34853)
 item_name = "interrupteur3"
 is_an_interruptor = true
-custom_range = 10.0
 lamp = NodePath("../Lamp4")
+custom_range = 10.0
 
 [node name="lavabo" parent="." instance=ExtResource("49_3k1h1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0162197, -1.01386, -6.41086)

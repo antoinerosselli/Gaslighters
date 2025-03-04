@@ -5,7 +5,6 @@
 [node name="rm_day1" type="Node"]
 script = ExtResource("1_6srwr")
 
-[node name="timer" type="Timer" parent="."]
-autostart = true
+[node name="timer" type="Timer" parent="." groups=["timerradio"]]
 
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

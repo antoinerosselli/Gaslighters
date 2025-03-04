@@ -7,6 +7,7 @@ func _physics_process(_delta):
 		current = false
 		var player_icon = player.get_node("CanvasLayer/Control/Icon")
 		var player_use = player.get_node("CanvasLayer/Control/Label")
+		Tools.change_lesinputs("player")
 		player_icon.visible = true
 		player_use.visible = true
 		camera_player.current = true

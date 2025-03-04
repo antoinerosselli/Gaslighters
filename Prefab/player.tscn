@@ -71,7 +71,7 @@ outline_color = Color(0.870588, 0.623529, 0.145098, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fy4og"]
 font = ExtResource("6_v1iah")
-font_size = 25
+font_size = 27
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xe2cg"]
 resource_local_to_scene = true
@@ -128,7 +128,7 @@ layout_mode = 0
 offset_left = 128.0
 offset_top = 528.0
 offset_right = 1024.0
-offset_bottom = 616.0
+offset_bottom = 566.0
 label_settings = SubResource("LabelSettings_mb3ur")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -139,9 +139,11 @@ wait_time = 4.0
 
 [node name="show_text_radio" type="RichTextLabel" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_top = 62.0
-offset_right = 1152.0
-offset_bottom = 126.0
+offset_left = 180.0
+offset_top = 578.0
+offset_right = 991.0
+offset_bottom = 632.0
+scale = Vector2(1.16, 1)
 theme = ExtResource("10_3h1t1")
 theme_override_styles/background = SubResource("StyleBoxFlat_65idd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3ja16")
@@ -262,11 +264,12 @@ position = Vector2(583, 334)
 scale = Vector2(0.596875, 0.531875)
 texture = ExtResource("7_252vv")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Icon"]
-offset_left = -948.272
-offset_top = 454.994
-offset_right = -732.272
-offset_bottom = 562.994
+[node name="input" type="Label" parent="CanvasLayer/Control" groups=["lesinputs"]]
+offset_left = 11.0
+offset_top = 573.0
+offset_right = 343.0
+offset_bottom = 714.0
+scale = Vector2(0.567531, 0.464598)
 text = "[ E ] Interact
 [ Tab ] Journal
 [ Ctrl ] Crouch"

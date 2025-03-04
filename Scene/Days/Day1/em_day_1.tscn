@@ -5,7 +5,6 @@
 [node name="em_day_1" type="Node" groups=["event_manager"]]
 script = ExtResource("1_1ttpx")
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
+[node name="Timer" type="Timer" parent="." groups=["timerevent"]]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

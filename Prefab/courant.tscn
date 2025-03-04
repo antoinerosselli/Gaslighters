@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://do4vqec45hk5"]
+[gd_scene load_steps=9 format=3 uid="uid://do4vqec45hk5"]
 
 [ext_resource type="Script" path="res://Scripts/object.gd" id="1_pu7aw"]
 [ext_resource type="Texture2D" uid="uid://dcwuxy4f6p0di" path="res://Extern/textures/WallLong.png" id="2_4rbpc"]
@@ -11,6 +11,18 @@ albedo_texture = ExtResource("2_4rbpc")
 material = SubResource("StandardMaterial3D_w8edu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bfr5x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywjgw"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+depth_draw_mode = 2
+albedo_color = Color(1, 1, 0.596078, 1)
+metallic = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_2tdss"]
+lightmap_size_hint = Vector2i(17, 9)
+material = SubResource("StandardMaterial3D_ywjgw")
 
 [node name="Courant" type="StaticBody3D"]
 script = ExtResource("1_pu7aw")
@@ -25,3 +37,12 @@ shape = SubResource("BoxShape3D_bfr5x")
 
 [node name="StatShower" parent="." instance=ExtResource("2_4vjn1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.516535)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." groups=["courantup"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019483, 0.555471, 0.374991)
+light_color = Color(0, 0.815686, 0.207843, 1)
+omni_range = 3.0
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0159994, 0.53619, 0.376123)
+mesh = SubResource("SphereMesh_2tdss")

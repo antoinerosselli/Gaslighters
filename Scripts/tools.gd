@@ -51,7 +51,7 @@ func set_radio_sound(channel,sound):
 func radio_text(simple_text, time, color):
 	var player = Tools.get_player()
 	var text_radio = player.get_node("CanvasLayer/Control/show_text_radio")
-	var mod_text = '[wave amp=10.0 freq=3.0][center]' + simple_text + '[/center][/wave]'
+	var mod_text = '[wave amp=10.0 freq=3.0][font_size=21][center]' + simple_text + '[/center][/font_size][/wave]'
 	text_radio.text = mod_text
 	text_radio.modulate = color
 	var timer = Timer.new()
@@ -130,3 +130,22 @@ func notespawn(note):
 	var inst = note.instantiate()
 	player.add_child(inst)
 	player.move_child(inst,0)
+
+func change_lesinputs(what_lesinputs):
+	var text_input = get_tree().get_first_node_in_group("lesinputs")
+	if what_lesinputs == "player":
+		text_input.text = "[ E ] Interact
+[ Tab ] Journal
+[ Ctrl ] Crouch"
+	if what_lesinputs == "frontdoor":
+		text_input.text = "[ C ] Close"
+	if what_lesinputs == "radio":
+		text_input.text = "[ C ] Close
+		[ A  D ] Change FM"
+
+		
+func start_the_day():
+	var timerradio = get_tree().get_first_node_in_group("timerradio")
+	var timerevent = get_tree().get_first_node_in_group("timerevent")
+	timerradio.start()
+	timerevent.start()
