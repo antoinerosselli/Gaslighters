@@ -112,9 +112,9 @@ func sound_now(here: Node3D, what_sound: AudioStream):
 	here.get_parent().add_child(audio_player)
 
 
-func start_transition(text):
+func start_transition(text,nscene):
 	var cl = get_tree().get_first_node_in_group("transi")
-	cl.transition(text)
+	cl.transition(text, nscene)
 
 #demo	
 func eotd():
@@ -141,7 +141,7 @@ func change_lesinputs(what_lesinputs):
 		text_input.text = "[ C ] Close"
 	if what_lesinputs == "radio":
 		text_input.text = "[ C ] Close
-		[ A  D ] Change FM"
+		[ Move ] Change FM"
 
 		
 func start_the_day():

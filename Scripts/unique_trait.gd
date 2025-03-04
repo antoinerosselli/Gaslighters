@@ -64,6 +64,6 @@ func unique(object_name):
 			get_tree().get_first_node_in_group("foods").add_conserve()
 			print("TAKE FOOD")
 		"pills":
-			Tools.start_transition("1 MONTH LATER")
+			Tools.start_transition("2 YEARS AGO", load("res://Scene/Days/Day 1.5/scene_day_1_5.tscn") as PackedScene)
 		"pen":
-			Tools.start_transition("1 MONTH LATER")
+			Tools.start_transition("END", load("res://Scene/menu3D.tscn") as PackedScene)
