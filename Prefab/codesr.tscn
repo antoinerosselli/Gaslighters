@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d1wd0y8agtr47"]
 
-[ext_resource type="Script" path="res://Scripts/object.gd" id="1_aqy6k"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_aqy6k"]
 [ext_resource type="Texture2D" uid="uid://s1qxmtq0q7as" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Drawers.png" id="2_0e4ld"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6vr3"]

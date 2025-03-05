@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=3 uid="uid://kqj8fx624wri"]
 
-[ext_resource type="Script" path="res://Scripts/object.gd" id="1_ngx6a"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_ngx6a"]
 [ext_resource type="Texture2D" uid="uid://cilrj037xoh5h" path="res://Extern/Abandoned_House/Abandoned_House_Metal1.jpg" id="2_60fxv"]
 [ext_resource type="Texture2D" uid="uid://yu2f1pr7sqy0" path="res://Sprite/sancheck_nothing.png" id="2_i0dwy"]
 [ext_resource type="Texture2D" uid="uid://d3032663aaeae" path="res://Extern/Abandoned_House/Abandoned_House_Tela2.jpg" id="3_ptw6x"]
 [ext_resource type="Texture2D" uid="uid://c2eoqtv07yx1q" path="res://Extern/Abandoned_House/Textures/Cables.jpg" id="4_fpe5s"]
-[ext_resource type="Script" path="res://Scripts/sancheck_img.gd" id="6_hvrci"]
+[ext_resource type="Script" uid="uid://cn7om3pwc7ed8" path="res://Scripts/sancheck_img.gd" id="6_hvrci"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_424yb"]
 albedo_texture = ExtResource("2_60fxv")

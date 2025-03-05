@@ -1,13 +1,13 @@
 [gd_scene load_steps=69 format=4 uid="uid://dlrpb51jtykx3"]
 
-[ext_resource type="Script" path="res://Scripts/MenuCamera3D.gd" id="1_8obb3"]
+[ext_resource type="Script" uid="uid://cn0abfvf7krl" path="res://Scripts/MenuCamera3D.gd" id="1_8obb3"]
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_22hrd"]
 [ext_resource type="PackedScene" uid="uid://saktvxup8cjo" path="res://Scene/menu.tscn" id="1_jvk5s"]
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="2_t8a7a"]
 [ext_resource type="Texture2D" uid="uid://chwbx4kif6dbs" path="res://Extern/Abandoned_House/Abandoned_House_t (28).jpg" id="3_cxm2i"]
 [ext_resource type="Texture2D" uid="uid://dr7lti7324giv" path="res://Extern/Abandoned_House/Textures/Alfombra2.png" id="7_qhd22"]
 [ext_resource type="Texture2D" uid="uid://c23c0ms8d7bu0" path="res://Extern/Abandoned_House/Textures/Banqueta.jpg" id="8_u1myr"]
-[ext_resource type="Texture2D" uid="uid://dpjbvuns1grxr" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 2.png" id="12_af7gf"]
+[ext_resource type="Texture2D" uid="uid://g657d86dfo7q" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 2.png" id="12_af7gf"]
 [ext_resource type="Texture2D" uid="uid://dxis8exg7hx4w" path="res://Extern/Home kit 2/Textures/Desk Lamp 1/Desk Lamp 1_256.png" id="17_eynv6"]
 [ext_resource type="ArrayMesh" uid="uid://bhogxa7a3s1vu" path="res://Model_House/lamp.res" id="18_01uq3"]
 [ext_resource type="Texture2D" uid="uid://chncdhii6c5mg" path="res://Extern/Home kit 2/Textures/Table/Table_256.png" id="19_mirn4"]
@@ -270,7 +270,7 @@ tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jy2op"]
 _data = {
-"open": SubResource("Animation_7ri1w")
+&"open": SubResource("Animation_7ri1w")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q61us"]

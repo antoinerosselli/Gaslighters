@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ba0gk24cg7jjp"]
 
-[ext_resource type="Script" path="res://Scripts/lamp.gd" id="1_u80hh"]
+[ext_resource type="Script" uid="uid://dmsapyjl4aj2v" path="res://Scripts/lamp.gd" id="1_u80hh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywjgw"]
 transparency = 1

@@ -1,9 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dee4yq0rea45s"]
 
-[ext_resource type="Script" path="res://Scripts/transition_setup.gd" id="1_qfohy"]
+[ext_resource type="Script" uid="uid://uhhhcts2bho7" path="res://Scripts/transition_setup.gd" id="1_qfohy"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="2_3fkm3"]
-[ext_resource type="Shader" path="res://Shader/tr.gdshader" id="2_4yamf"]
-
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="2_4yamf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vhaag"]
 resource_local_to_scene = true
@@ -99,8 +98,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xd5k4"]
 _data = {
-"RESET": SubResource("Animation_8bifa"),
-"fade_to_black": SubResource("Animation_bnsyd")
+&"RESET": SubResource("Animation_8bifa"),
+&"fade_to_black": SubResource("Animation_bnsyd")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_7b1mk"]

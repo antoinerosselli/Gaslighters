@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=3 uid="uid://bc8ihhlscs4db"]
+
+[ext_resource type="Script" uid="uid://hpk0oe5w1t08" path="res://Characters/guys/guy.gd" id="1_x6tra"]
+[ext_resource type="Texture2D" uid="uid://c0vdvxs6slkiv" path="res://Sprite/face.png" id="2_jh5vx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diuss"]
+shading_mode = 2
+albedo_texture = ExtResource("2_jh5vx")
+albedo_texture_force_srgb = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_73wj5"]
+material = SubResource("StandardMaterial3D_diuss")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_jh5vx"]
+disable_ambient_light = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_jh5vx"]
+material = SubResource("ORMMaterial3D_jh5vx")
+
+[node name="guy" type="StaticBody3D"]
+script = ExtResource("1_x6tra")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="face" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="face"]
+transform = Transform3D(1.53184, 0, 0, 0, 1.32238, 0, 0, 0, 0.984389, 0, 0, 0)
+mesh = SubResource("SphereMesh_73wj5")
+skeleton = NodePath("../..")
+
+[node name="SpotLight3D" type="OmniLight3D" parent="face"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.486063, 0.0738019, -0.459827)
+light_color = Color(1, 0.235294, 0, 1)
+omni_range = 1.0
+omni_attenuation = 0.39
+
+[node name="SpotLight3D2" type="OmniLight3D" parent="face"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.557809, 0.115567, -0.40129)
+light_color = Color(1, 0.235294, 0, 1)
+omni_range = 1.0
+omni_attenuation = 0.39
+
+[node name="arms" type="Node3D" parent="."]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="arms"]
+transform = Transform3D(0.125625, 0.0024831, 0.749095, 0.0781612, -0.00399098, -1.20399, 0, 0.105626, -0.0631015, 1.42902, -1.63221, 0.442913)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="arms"]
+transform = Transform3D(0.0689587, 0.00415864, 1.25457, 0.130903, -0.00219075, -0.660899, -5.71784e-11, 0.105626, -0.0631015, 0.496798, -0.718814, 0.499028)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="arms"]
+transform = Transform3D(-0.125533, 0.0015661, -0.750963, 0.0781612, -0.00399098, -1.20399, -0.00481369, -0.105644, 0.0343514, -1.49084, -1.63221, 0.481147)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="arms"]
+transform = Transform3D(-0.0689081, -0.000108214, -1.25606, 0.130903, -0.00219075, -0.660899, -0.00264236, -0.105708, 0.0149827, -0.557154, -0.718814, 0.460794)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../..")
+
+[node name="back" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="back"]
+transform = Transform3D(0.147955, 0, 0, 0, 0.0684605, -0.406423, 0, 0.0606156, 0.459023, -0.0568106, -0.246146, 0.278411)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="back"]
+transform = Transform3D(0.147955, 0, 0, 0, 0.0393353, -1.33926, 0, 0.0707413, 0.74469, -0.0529695, -0.96539, 0.76356)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="back"]
+transform = Transform3D(0.147955, 0, 0, 0, -0.000443596, -1.53236, 0, 0.0809408, -0.00839776, -0.0529695, -2.33751, 1.10369)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../..")
+
+[node name="bottom" type="Node3D" parent="."]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="bottom"]
+transform = Transform3D(0.112392, 0.000324035, 1.31825, 0.119757, -0.000304108, -1.23718, 3.5199e-11, 0.0810851, -0.00990766, 0.499442, -3.56163, 1.10369)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="bottom"]
+transform = Transform3D(-0.141022, 0.000319745, 1.2297, 0.146206, 0.000308408, 1.1861, 1.32902e-11, 0.0810588, -0.00936311, -0.609572, -3.55291, 1.10766)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="bottom"]
+transform = Transform3D(-0.20615, -1.67445e-05, -0.0379601, -0.00779335, 0.000442924, 1.00412, 4.80685e-11, 0.0808759, -0.00550678, -1.16195, -4.59979, 1.10766)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="bottom"]
+transform = Transform3D(-0.20615, -1.67445e-05, -0.0379601, -0.00779335, 0.000442924, 1.00412, 4.80685e-11, 0.0808759, -0.00550678, 1.13972, -4.62802, 1.10766)
+mesh = SubResource("BoxMesh_jh5vx")
+skeleton = NodePath("../../..")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

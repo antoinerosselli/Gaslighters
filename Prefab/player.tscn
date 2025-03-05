@@ -1,8 +1,8 @@
 [gd_scene load_steps=26 format=3 uid="uid://nph7hef7wvt0"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_cc2ll"]
-[ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
-[ext_resource type="Shader" path="res://Shader/psxcameraeffect.gdshader" id="4_evs1m"]
+[ext_resource type="Script" uid="uid://ckooh51x0xywe" path="res://Scripts/player.gd" id="1_cc2ll"]
+[ext_resource type="Script" uid="uid://8aqmy8q7388i" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
+[ext_resource type="Shader" uid="uid://exr4uhb1s52k" path="res://Shader/psxcameraeffect.gdshader" id="4_evs1m"]
 [ext_resource type="Texture2D" uid="uid://cpxh0j8eqp0ia" path="res://Sprite/Carnet.png" id="6_htqqd"]
 [ext_resource type="Texture2D" uid="uid://bds6idchttvqj" path="res://Sprite/mainorange.png" id="6_oj1nk"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
@@ -11,7 +11,7 @@
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="10_3h1t1"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="11_7q8gp"]
 [ext_resource type="AudioStream" uid="uid://b0jngj4uq3osf" path="res://Music&Sound/hearbeat-71701.mp3" id="12_utawn"]
-[ext_resource type="Shader" path="res://Shader/tr.gdshader" id="12_x4psa"]
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="12_x4psa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
 

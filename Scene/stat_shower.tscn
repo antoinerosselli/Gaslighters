@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://di2g1g6g2kpk8"]
 
-[ext_resource type="Script" path="res://Scripts/stat_shower.gd" id="1_i5brw"]
+[ext_resource type="Script" uid="uid://dn3328niwej5n" path="res://Scripts/stat_shower.gd" id="1_i5brw"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="1_w332v"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xoahl"]

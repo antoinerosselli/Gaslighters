@@ -66,4 +66,4 @@ func unique(object_name):
 		"pills":
 			Tools.start_transition("2 YEARS AGO", load("res://Scene/Days/Day 1.5/scene_day_1_5.tscn") as PackedScene)
 		"pen":
-			Tools.start_transition("END", load("res://Scene/menu3D.tscn") as PackedScene)
+			Tools.start_transition("5 MONTHS AGO", load("res://Scene/Days/Day 2.5/scene_day_2_5.tscn") as PackedScene)

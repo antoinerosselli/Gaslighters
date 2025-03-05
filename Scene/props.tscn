@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://7g82ajbam54"]
 
-[ext_resource type="PackedScene" uid="uid://btemunmgpxqxk" path="res://PSX Assets - B alkan Interior/Props.fbx" id="1_0e0hd"]
+[sub_resource type="Resource" id="Resource_akppb"]
+metadata/__load_path__ = "res://PSX Assets - B alkan Interior/Props.fbx"
 
-[node name="Props" instance=ExtResource("1_0e0hd")]
+[node name="Props"]
 
 [node name="Door 1" parent="." index="0"]
 visible = false

@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="1_152uh"]
 [ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="2_r6x0h"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="3_0ejrs"]
-[ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/govguy/govface.tscn" id="4_offwv"]
+[ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="4_offwv"]
 [ext_resource type="PackedScene" uid="uid://bwb2a7jakivfd" path="res://Prefab/pills_spawner.tscn" id="5_skkch"]
-[ext_resource type="PackedScene" uid="uid://4n1p68ofm3bv" path="res://Prefab/pen.tscn" id="6_oh546"]
+[ext_resource type="PackedScene" uid="uid://4n1p68ofm3bv" path="res://EndObject/pen.tscn" id="6_oh546"]
 [ext_resource type="PackedScene" uid="uid://bfwip75uecxa8" path="res://Scene/Days/Day 1.5/em_day_1_5.tscn" id="7_wxr26"]
 
 [sub_resource type="Environment" id="Environment_q84mf"]
@@ -107,7 +107,7 @@ spot_attenuation = 0.8
 spot_angle = 30.689
 
 [node name="govface" parent="." instance=ExtResource("4_offwv")]
-transform = Transform3D(-0.871167, 0.134042, -0.472335, 0.0126237, 0.967809, 0.251368, 0.490824, 0.213021, -0.844816, -1.21165, 2.63079, -4.52771)
+transform = Transform3D(-0.696934, 0.107234, -0.377868, 0.010099, 0.774247, 0.201094, 0.392659, 0.170417, -0.675853, -1.21165, 2.63079, -4.52771)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.244199, 0, 0, 0, 1, 0, 0, 0, 0.176118, 0.113661, 1.00582, -0.145789)

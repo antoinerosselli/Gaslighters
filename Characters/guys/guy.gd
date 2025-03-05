@@ -1,9 +1,12 @@
 extends StaticBody3D
 
-@onready var spot_light_3d = $SpotLight3D
-@onready var spot_light_3d_2 = $SpotLight3D2
+@onready var spot_light_3d = $face/SpotLight3D
+@onready var spot_light_3d_2 = $face/SpotLight3D2
+@onready var timer = $Timer
+
 
 func _on_timer_timeout():
+	timer.wait_time = randi() % 6 + 1
 	spot_light_3d.omni_range = 0
 	spot_light_3d_2.omni_range = 0
 	var aeom = Timer.new()
