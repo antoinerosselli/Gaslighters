@@ -1,93 +1,98 @@
-[gd_scene load_steps=11 format=3 uid="uid://cybiunsbb8egx"]
+[gd_scene load_steps=11 format=3 uid="uid://dqweg357g3y3f"]
 
-[ext_resource type="Texture2D" uid="uid://bojmfvkjowrpi" path="res://Extern/Prop Textures/Seamless/Wood Floor 2.png" id="1_f2lad"]
-[ext_resource type="Texture2D" uid="uid://btlbcgdyqhw6i" path="res://Extern/Home Furniture Kit 1/Textures/ahƒap dolap-texture.png" id="2_vk00q"]
-[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="3_jcti1"]
-[ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="4_y7510"]
+[ext_resource type="Texture2D" uid="uid://cdcr1dvyfigu" path="res://Extern/Abandoned_House/Abandoned_House_road.jpg" id="1_vk00q"]
+[ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="2_jcti1"]
+[ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="3_jcti1"]
+[ext_resource type="PackedScene" uid="uid://mwbb6ijmkuo4" path="res://Extern/GermanCar.fbx" id="4_y7510"]
+[ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="5_sj1gt"]
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="6_3h2jq"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vk00q"]
-albedo_texture = ExtResource("1_f2lad")
-uv1_scale = Vector3(3, 3, 3)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_87q4o"]
-
-[sub_resource type="Environment" id="Environment_jcti1"]
-background_energy_multiplier = 0.0
-ambient_light_source = 2
+[sub_resource type="Environment" id="Environment_y7510"]
+background_energy_multiplier = 0.15
 ambient_light_energy = 0.0
+glow_intensity = 3.48
+fog_light_color = Color(0.0960931, 0.108506, 0.12802, 1)
+fog_sky_affect = 0.681
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7510"]
-albedo_texture = ExtResource("2_vk00q")
-metallic = 1.0
+albedo_texture = ExtResource("1_vk00q")
 
-[sub_resource type="BoxMesh" id="BoxMesh_sj1gt"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_sj1gt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3h2jq"]
-albedo_color = Color(0.834614, 0.834614, 0.834614, 1)
-albedo_texture = ExtResource("2_vk00q")
-metallic = 1.0
+albedo_texture = ExtResource("2_jcti1")
+uv1_scale = Vector3(3, 3, 3)
 
 [node name="scene_day_3_5" type="Node3D"]
 
-[node name="floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_vk00q")
-mesh = SubResource("PlaneMesh_87q4o")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_jcti1")
+environment = SubResource("Environment_y7510")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.319432, 0, 0, 0, 1.2766, 0, 0, 0, 9.08037, -2.48528, 0.607572, 0.00129111)
+transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 1.7799, 0, 0.148206)
 material_override = SubResource("StandardMaterial3D_y7510")
-mesh = SubResource("BoxMesh_sj1gt")
+mesh = SubResource("PlaneMesh_sj1gt")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.319432, 0, 0, 0, 1.2766, 0, 0, 0, 3.04338, -2.48045, 1.3082, -0.00265522)
+transform = Transform3D(7.27483, 0, 0, 0, 1, 0, 0, 0, 11.8098, 11.4026, 0.0115485, 0.148206)
 material_override = SubResource("StandardMaterial3D_3h2jq")
-mesh = SubResource("BoxMesh_sj1gt")
+mesh = SubResource("PlaneMesh_sj1gt")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("3_jcti1")]
-transform = Transform3D(-0.0347773, 0, 0.999395, 0, 1.02124, 0, -0.999395, 0, -0.0347773, 3.22903, 0.821441, 0.0512884)
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.35748, 0, 0, 0, 1, 0, 0, 0, 11.8098, -6.98223, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+
+[node name="trees" type="Node3D" parent="."]
+
+[node name="2 Trees6" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 0)
+
+[node name="2 Trees7" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 8.78755)
+
+[node name="2 Trees8" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, -9.46618)
+
+[node name="2 Trees9" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="2 Trees10" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, -5.72575)
+
+[node name="2 Trees11" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="GermanCar" parent="." instance=ExtResource("4_y7510")]
+transform = Transform3D(-0.99922, 0, 0.0394865, 0, 1, 0, -0.0394865, 0, -0.99922, 1.75955, 0, -2.45659)
+
+[node name="guy" parent="." instance=ExtResource("5_sj1gt")]
+transform = Transform3D(-0.375932, 0, 0.136657, 0, 0.4, 0, -0.136657, 0, -0.375932, 3.60224, 1.91745, -1.16264)
+
+[node name="guy2" parent="." instance=ExtResource("5_sj1gt")]
+transform = Transform3D(-0.373222, 0, -0.143894, 0, 0.4, 0, 0.143894, 0, -0.373222, -0.393795, 1.91745, -1.16264)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97447, 0.732797, -0.071156)
+omni_range = 0.379843
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.999955, 0.00945953, 0, -0.00945953, -0.999955, 0.998344, 0.596898, -1.00827)
+light_energy = 4.423
+spot_range = 16.5182
+spot_angle = 16.6636
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.999955, 0.00945953, 0, -0.00945953, -0.999955, 2.40548, 0.596898, -1.00827)
+light_energy = 4.423
+spot_range = 15.5058
+spot_angle = 18.7364
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("6_3h2jq")]
+transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 1.9957, 0.61745, 4.51342)
 affect_by_gravity = false
 can_move = false
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.999814, 0.011008, 0.0158292, -0.0154258, -0.0358125, 0.999239, 0.0115665, -0.999298, -0.035636, 2.53869, 4.41203, -0.0650042)
-spot_range = 5.496
-spot_attenuation = -1.3
-spot_angle = 24.8403
-
-[node name="juge" parent="." instance=ExtResource("4_y7510")]
-transform = Transform3D(0.0610473, 0, -0.496259, 0, 0.5, 0, 0.496259, 0, 0.0610473, -2.78175, 2.2321, 2.97717)
-
-[node name="SpotLight3D" parent="juge/face" index="1"]
-light_color = Color(0.236084, 0.553674, 1, 1)
-
-[node name="SpotLight3D2" parent="juge/face" index="2"]
-light_color = Color(0.236084, 0.553674, 1, 1)
-
-[node name="juge2" parent="." instance=ExtResource("4_y7510")]
-transform = Transform3D(-0.12622, 0, -0.483806, 0, 0.5, 0, 0.483806, 0, -0.12622, -2.78175, 2.2321, -2.9925)
-
-[node name="SpotLight3D" parent="juge2/face" index="1"]
-light_color = Color(3.1285e-07, 0.510858, 0.309341, 1)
-
-[node name="SpotLight3D2" parent="juge2/face" index="2"]
-light_color = Color(3.1285e-07, 0.510858, 0.309341, 1)
-
-[node name="juge3" parent="." instance=ExtResource("4_y7510")]
-transform = Transform3D(-0.0463692, 0.0535138, -0.494961, 0.00499146, 0.497128, 0.0532805, 0.49782, -1.07513e-09, -0.0466371, -2.78175, 3.22541, -0.281694)
-
-[node name="SpotLight3D" parent="juge3/face" index="1"]
-light_color = Color(0.641349, 0.566198, 0.125294, 1)
-
-[node name="SpotLight3D2" parent="juge3/face" index="2"]
-light_color = Color(0.641349, 0.566198, 0.125294, 1)
-
-[node name="govguy" parent="." instance=ExtResource("4_y7510")]
-transform = Transform3D(-0.186546, -0.0475837, 0.46145, 0.00499146, 0.497128, 0.0532805, -0.46387, 0.0244851, -0.184999, 4.89509, 1.78856, -4.43341)
-
-[editable path="juge"]
-[editable path="juge2"]
-[editable path="juge3"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28931, 0.732797, -0.071156)
+omni_range = 0.379843

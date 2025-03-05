@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cdcr1dvyfigu" path="res://Extern/Abandoned_House/Abandoned_House_road.jpg" id="3_ihtlf"]
 [ext_resource type="PackedScene" uid="uid://clylj6qgxpaqe" path="res://Prefab/lampadaire.tscn" id="4_mtbc8"]
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="5_2oyqp"]
-[ext_resource type="PackedScene" uid="uid://bnyafheuw0wrd" path="res://Extern/antowaan_3d/Blue Phone Booth.fbx" id="6_ja0bt"]
 [ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="6_orx1l"]
+[ext_resource type="PackedScene" uid="uid://dqughkfdtof0r" path="res://Prefab/phone.tscn" id="6_wr4cq"]
 
 [sub_resource type="Environment" id="Environment_asixl"]
 background_energy_multiplier = 0.0
@@ -80,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, -5.72575)
 [node name="2 Trees11" parent="trees" instance=ExtResource("6_orx1l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
 
-[node name="Blue Phone Booth" parent="." instance=ExtResource("6_ja0bt")]
-transform = Transform3D(0.118064, 0, -0.0925245, 0, 0.15, 0, 0.0925245, 0, 0.118064, -0.814559, 0, 1.21799)
+[node name="phone" parent="." instance=ExtResource("6_wr4cq")]
+transform = Transform3D(0.131314, 0, -0.091415, 0, 0.16, 0, 0.091415, 0, 0.131314, -1.23464, 0, 0.794076)
 
 [editable path="MeshInstance3D86"]

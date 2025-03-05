@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqughkfdtof0r"]
+
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_dmt1j"]
+[ext_resource type="PackedScene" uid="uid://dt1sjia7rbt7b" path="res://Prefab/blue_phone_booth.tscn" id="1_so7wp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmt1j"]
+size = Vector3(4.21625, 15.661, 5.45874)
+
+[node name="phone" type="StaticBody3D"]
+script = ExtResource("1_dmt1j")
+item_name = "phone"
+script_trait = true
+
+[node name="Blue Phone Booth" parent="." instance=ExtResource("1_so7wp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.640228, 7.33051, 0.924438)
+shape = SubResource("BoxShape3D_dmt1j")
