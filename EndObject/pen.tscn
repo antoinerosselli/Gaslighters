@@ -7,20 +7,20 @@ albedo_color = Color(0.2484, 0.2484, 0.2484, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bac11"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lu4io"]
-radius = 0.0374902
-height = 0.377692
+[sub_resource type="BoxShape3D" id="BoxShape3D_4j48l"]
+size = Vector3(0.134155, 0.415039, 0.0789795)
 
 [node name="pen" type="RigidBody3D"]
+mass = 100.0
 script = ExtResource("1_y4k0b")
 item_name = "pen"
 script_trait = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.063332, 0, 0, 0, 0.00550408, 0.0891148, 0, -0.193658, 0.00253279, 0, 0, 0)
+transform = Transform3D(0.0787381, 0, 0, 0, 0.00550408, 0.0891148, 0, -0.193658, 0.00253279, 0, 0, 0)
 material_override = SubResource("ORMMaterial3D_urjpq")
 mesh = SubResource("CapsuleMesh_bac11")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0191277, 0.999817, 0, -0.999817, 0.0191277, 0, 0, 0)
-shape = SubResource("CapsuleShape3D_lu4io")
+transform = Transform3D(1, 0, 0, 0, 0.0191277, 0.999817, 0, -0.999817, 0.0191277, -0.0172729, 0.00675561, 0.0074548)
+shape = SubResource("BoxShape3D_4j48l")

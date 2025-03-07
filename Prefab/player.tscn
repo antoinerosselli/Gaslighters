@@ -139,15 +139,16 @@ wait_time = 4.0
 
 [node name="show_text_radio" type="RichTextLabel" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 578.0
-offset_right = 991.0
+offset_left = 75.0
+offset_top = 566.0
+offset_right = 977.0
 offset_bottom = 632.0
 scale = Vector2(1.16, 1)
 theme = ExtResource("10_3h1t1")
 theme_override_styles/background = SubResource("StyleBoxFlat_65idd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3ja16")
 bbcode_enabled = true
+fit_content = true
 autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Control/show_text_radio"]
@@ -266,15 +267,16 @@ texture = ExtResource("7_252vv")
 
 [node name="input" type="Label" parent="CanvasLayer/Control" groups=["lesinputs"]]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 573.0
-offset_right = 343.0
-offset_bottom = 714.0
+offset_left = 963.0
+offset_top = 468.0
+offset_right = 1295.0
+offset_bottom = 609.0
 scale = Vector2(0.567531, 0.464598)
 text = "[ E ] Interact
 [ Tab ] Journal
 [ Ctrl ] Crouch"
 label_settings = SubResource("LabelSettings_fy4og")
+horizontal_alignment = 2
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.979202, 0, 0, 0, 1, 0, 0.731353, -1.12726)

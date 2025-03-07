@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2pfx6rrw8cfp"]
+
+[ext_resource type="Script" uid="uid://cycbsrkso5yfk" path="res://Note/note_contrat.gd" id="1_7bvyx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxs7l"]
+bg_color = Color(0.683305, 0.673851, 0.610326, 1)
+
+[node name="note_contrat" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7bvyx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_right = 880.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bxs7l")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 24.0
+offset_right = 864.0
+offset_bottom = 616.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[center][b]CONFIDENTIALITY AGREEMENT[/b][/center]
+[center][i]This document is strictly confidential.[/i][/center]
+
+[b]ARTICLE 1 – HONORARY STATUS[/b]  
+The Signee is officially recognized as a [color=yellow]Hero of Rock Valley[/color] for outstanding contributions to the city's expansion and prosperity.
+
+[b]ARTICLE 2 – COMPENSATION[/b]  
+In return for their commitment, the Signee will receive a lifelong monthly pension of [color=green]10,000 credits[/color]. 
+
+[b]ARTICLE 3 – ABSOLUTE CONFIDENTIALITY[/b]  
+The Signee agrees never to disclose any classified information regarding the [color=red]unstable materials[/color] discovered within the Rock Valley extraction site.
+
+[b]ARTICLE 4 – SANCTIONS[/b]  
+Any breach of this agreement will result in the immediate revocation of all granted privileges and may be subject to further actions as deemed necessary by the Authority.
+
+[center][i]Silence is the foundation of stability.[/i][/center]
+
+[center]-----------------------------[/center]
+
+[center][b]Signature:[/b] _______________[/center]  
+"

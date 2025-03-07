@@ -1,0 +1,116 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqweg357g3y3f"]
+
+[ext_resource type="Texture2D" uid="uid://cdcr1dvyfigu" path="res://Extern/Abandoned_House/Abandoned_House_road.jpg" id="1_vk00q"]
+[ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="2_jcti1"]
+[ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="3_jcti1"]
+[ext_resource type="PackedScene" uid="uid://mwbb6ijmkuo4" path="res://Extern/GermanCar.fbx" id="4_y7510"]
+[ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="5_sj1gt"]
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="6_3h2jq"]
+
+[sub_resource type="Environment" id="Environment_y7510"]
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+glow_intensity = 3.48
+fog_light_color = Color(0.0960931, 0.108506, 0.12802, 1)
+fog_sky_affect = 0.681
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7510"]
+albedo_texture = ExtResource("1_vk00q")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sj1gt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3h2jq"]
+albedo_texture = ExtResource("2_jcti1")
+uv1_scale = Vector3(3, 3, 3)
+
+[node name="scene_day_3_5" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y7510")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 1.7799, 0, 0.148206)
+material_override = SubResource("StandardMaterial3D_y7510")
+mesh = SubResource("PlaneMesh_sj1gt")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.27483, 0, 0, 0, 1, 0, 0, 0, 11.8098, 11.4026, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.35748, 0, 0, 0, 1, 0, 0, 0, 11.8098, -6.98223, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+
+[node name="trees" type="Node3D" parent="."]
+
+[node name="2 Trees6" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 0)
+
+[node name="2 Trees7" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 8.78755)
+
+[node name="2 Trees8" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, -9.46618)
+
+[node name="2 Trees9" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="2 Trees10" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, -5.72575)
+
+[node name="2 Trees11" parent="trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="guy" parent="." instance=ExtResource("5_sj1gt")]
+transform = Transform3D(-0.375932, 0, 0.136657, 0, 0.4, 0, -0.136657, 0, -0.375932, 3.60224, 1.91745, -1.16264)
+
+[node name="SpotLight3D" parent="guy/face" index="1"]
+light_color = Color(0.722337, 0.422203, 0.814956, 1)
+
+[node name="SpotLight3D2" parent="guy/face" index="2"]
+light_color = Color(0.722337, 0.422203, 0.814956, 1)
+
+[node name="guy2" parent="." instance=ExtResource("5_sj1gt")]
+transform = Transform3D(-0.373222, 0, -0.143894, 0, 0.4, 0, 0.143894, 0, -0.373222, -0.393795, 1.91745, -1.16264)
+
+[node name="SpotLight3D" parent="guy2/face" index="1"]
+light_color = Color(0.419684, 0.580278, 0.744069, 1)
+
+[node name="SpotLight3D2" parent="guy2/face" index="2"]
+light_color = Color(0.419684, 0.580278, 0.744069, 1)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("6_3h2jq")]
+transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 1.5985, 0.61745, 4.51342)
+affect_by_gravity = false
+can_move = false
+
+[node name="car" type="Node3D" parent="."]
+
+[node name="GermanCar" parent="car" instance=ExtResource("4_y7510")]
+transform = Transform3D(-0.99922, 0, 0.0394865, 0, 1, 0, -0.0394865, 0, -0.99922, 1.75955, 0, -2.45659)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14528, 0.732797, -0.071156)
+distance_fade_enabled = true
+omni_range = 0.207615
+
+[node name="SpotLight3D" type="SpotLight3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, -0.999955, 0.00945953, 0, -0.00945953, -0.999955, 0.998344, 0.596898, -1.00827)
+light_energy = 4.423
+spot_range = 16.5182
+spot_angle = 16.6636
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, -0.999955, 0.00945953, 0, -0.00945953, -0.999955, 2.32589, 0.596898, -1.00827)
+light_energy = 4.423
+spot_range = 15.5058
+spot_angle = 18.7364
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="car"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31439, 0.703384, -0.071156)
+omni_range = 0.191088
+
+[editable path="guy"]
+[editable path="guy2"]

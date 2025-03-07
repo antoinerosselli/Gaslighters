@@ -48,19 +48,24 @@ func set_radio_sound(channel,sound):
 	audio_channel.set_stream(sound)
 	audio_channel.play()
 
-func radio_text(simple_text, time, color):
+func radio_text(simple_text: String, time: float, color: Color) -> void:
 	var player = Tools.get_player()
 	var text_radio = player.get_node("CanvasLayer/Control/show_text_radio")
 	var mod_text = '[wave amp=10.0 freq=3.0][font_size=21][center]' + simple_text + '[/center][/font_size][/wave]'
 	text_radio.text = mod_text
 	text_radio.modulate = color
-	var timer = Timer.new()
-	timer.wait_time = time
-	timer.one_shot = true
-	timer.timeout.connect(func(): text_radio.text = "")
-	add_child(timer)
-	timer.start()
-	
+	var style = StyleBoxFlat.new()
+	style.bg_color = Color(0, 0, 0, 0.7)  
+	style.content_margin_left = 20
+	style.content_margin_right = 20
+	style.content_margin_top = 10
+	style.content_margin_bottom = 10
+	text_radio.add_theme_stylebox_override("normal", style)
+	await get_tree().create_timer(time).timeout
+	text_radio.text = ""
+	style.bg_color = Color(0, 0, 0, 0)  
+	text_radio.add_theme_stylebox_override("normal", style)
+
 func add_journal(text, ncolor):
 	var journal_inside = get_tree().get_first_node_in_group("journal_inside")
 	if journal_inside and journal_inside is RichTextLabel:
@@ -106,7 +111,7 @@ func sound_now(here: Node3D, what_sound: AudioStream):
 	var audio_player = AudioStreamPlayer3D.new()
 	audio_player.stream = what_sound
 	audio_player.global_position = here.get_global_position()
-	audio_player.autoplay = true 
+	audio_player.autoplay = true
 	audio_player.finished.connect(func(): audio_player.queue_free())
 
 	here.get_parent().add_child(audio_player)
@@ -125,24 +130,34 @@ func eotd():
 
 func notespawn(note):
 	var player = Tools.get_player()
+	change_lesinputs("note")
+	player.can_interact = false
+	player.icon.visible = false
 	player.paused = true
-	player.get_node("CanvasLayer/Control/").visible = false
 	var inst = note.instantiate()
 	player.add_child(inst)
 	player.move_child(inst,0)
 
+func note_close(note, player):
+	Tools.change_lesinputs("player")
+	player.icon.visible = true
+	player.paused = false
+	player.can_interact = true
+	note.queue_free()
+	
 func change_lesinputs(what_lesinputs):
 	var text_input = get_tree().get_first_node_in_group("lesinputs")
 	if what_lesinputs == "player":
 		text_input.text = "[ E ] Interact
 [ Tab ] Journal
 [ Ctrl ] Crouch"
-	if what_lesinputs == "frontdoor":
+	if what_lesinputs == "frontdoor" or what_lesinputs == "note":
 		text_input.text = "[ C ] Close"
 	if what_lesinputs == "radio":
 		text_input.text = "[ C ] Close
 		[ Move ] Change FM"
-
+	if what_lesinputs == "inventory":
+		text_input.text == "[ TAB ] Close"
 		
 func start_the_day():
 	var timerradio = get_tree().get_first_node_in_group("timerradio")

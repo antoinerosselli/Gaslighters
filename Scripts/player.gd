@@ -50,6 +50,11 @@ func dialogues_manager():
 	dialogues_id += 1
 
 func _physics_process(delta):
+	if can_interact == true:
+		logo_inter.visible = true
+	elif can_interact == false:
+		logo_inter.visible = false
+			
 	if paused == false:
 		if dialogues.size() > dialogues_id:
 			if dialogues[dialogues_id] != null && read_dialogue == false:
@@ -63,7 +68,7 @@ func _physics_process(delta):
 		var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
 		velocity.x = movement_dir.x * speed
 		velocity.z = movement_dir.z * speed
-
+				
 		if ray_cast_3d.is_colliding():
 			item = ray_cast_3d.get_collider()
 			if item != null:
@@ -76,11 +81,6 @@ func _physics_process(delta):
 			can_interact = false
 
 		camera_joystick()
-
-		if can_interact == true:
-			logo_inter.visible = true
-		elif can_interact == false:
-			logo_inter.visible = false
 		
 		if can_move == true:
 			move_and_slide()

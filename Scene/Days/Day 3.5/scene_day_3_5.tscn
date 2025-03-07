@@ -1,98 +1,61 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqweg357g3y3f"]
+[gd_scene load_steps=6 format=3 uid="uid://cly2vuchsw7j"]
 
-[ext_resource type="Texture2D" uid="uid://cdcr1dvyfigu" path="res://Extern/Abandoned_House/Abandoned_House_road.jpg" id="1_vk00q"]
-[ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="2_jcti1"]
-[ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="3_jcti1"]
-[ext_resource type="PackedScene" uid="uid://mwbb6ijmkuo4" path="res://Extern/GermanCar.fbx" id="4_y7510"]
-[ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="5_sj1gt"]
-[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="6_3h2jq"]
+[ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="1_vk00q"]
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_jcti1"]
 
-[sub_resource type="Environment" id="Environment_y7510"]
-background_energy_multiplier = 0.15
+[sub_resource type="Environment" id="Environment_87q4o"]
+background_energy_multiplier = 0.0
 ambient_light_energy = 0.0
 glow_intensity = 3.48
 fog_light_color = Color(0.0960931, 0.108506, 0.12802, 1)
 fog_sky_affect = 0.681
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7510"]
-albedo_texture = ExtResource("1_vk00q")
+[sub_resource type="PlaneMesh" id="PlaneMesh_f2lad"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_sj1gt"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3h2jq"]
-albedo_texture = ExtResource("2_jcti1")
-uv1_scale = Vector3(3, 3, 3)
+[sub_resource type="BoxMesh" id="BoxMesh_vk00q"]
 
 [node name="scene_day_3_5" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_y7510")
+environment = SubResource("Environment_87q4o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 1.7799, 0, 0.148206)
-material_override = SubResource("StandardMaterial3D_y7510")
-mesh = SubResource("PlaneMesh_sj1gt")
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("PlaneMesh_f2lad")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.27483, 0, 0, 0, 1, 0, 0, 0, 11.8098, 11.4026, 0.0115485, 0.148206)
-material_override = SubResource("StandardMaterial3D_3h2jq")
-mesh = SubResource("PlaneMesh_sj1gt")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.35487, -1.00973, 0, -1.35472)
+mesh = SubResource("BoxMesh_vk00q")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(6.35748, 0, 0, 0, 1, 0, 0, 0, 11.8098, -6.98223, 0.0115485, 0.148206)
-material_override = SubResource("StandardMaterial3D_3h2jq")
-mesh = SubResource("PlaneMesh_sj1gt")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.35487, 0.697736, 0, -1.35472)
+mesh = SubResource("BoxMesh_vk00q")
 
-[node name="trees" type="Node3D" parent="."]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.69659, 0, 0, 0, 0.35487, -0.222354, 0, -1.35472)
+mesh = SubResource("BoxMesh_vk00q")
 
-[node name="2 Trees6" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 0)
+[node name="guy" parent="." instance=ExtResource("1_vk00q")]
+transform = Transform3D(-0.298122, 0, 0.0335188, 0, 0.3, 0, -0.0335188, 0, -0.298122, -0.252265, 1.3432, -2.03824)
 
-[node name="2 Trees7" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 8.78755)
+[node name="guy2" parent="." instance=ExtResource("1_vk00q")]
+transform = Transform3D(-0.298122, 0, 0.0335188, 0, 0.3, 0, -0.0335188, 0, -0.298122, -1.24776, 0.906025, -2.03824)
 
-[node name="2 Trees8" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, -9.46618)
+[node name="guy3" parent="." instance=ExtResource("1_vk00q")]
+transform = Transform3D(-0.298122, 0, 0.0335188, 0, 0.3, 0, -0.0335188, 0, -0.298122, 0.752672, 0.906025, -2.03824)
 
-[node name="2 Trees9" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
-
-[node name="2 Trees10" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, -5.72575)
-
-[node name="2 Trees11" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
-
-[node name="GermanCar" parent="." instance=ExtResource("4_y7510")]
-transform = Transform3D(-0.99922, 0, 0.0394865, 0, 1, 0, -0.0394865, 0, -0.99922, 1.75955, 0, -2.45659)
-
-[node name="guy" parent="." instance=ExtResource("5_sj1gt")]
-transform = Transform3D(-0.375932, 0, 0.136657, 0, 0.4, 0, -0.136657, 0, -0.375932, 3.60224, 1.91745, -1.16264)
-
-[node name="guy2" parent="." instance=ExtResource("5_sj1gt")]
-transform = Transform3D(-0.373222, 0, -0.143894, 0, 0.4, 0, 0.143894, 0, -0.373222, -0.393795, 1.91745, -1.16264)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97447, 0.732797, -0.071156)
-omni_range = 0.379843
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.999955, 0.00945953, 0, -0.00945953, -0.999955, 0.998344, 0.596898, -1.00827)
-light_energy = 4.423
-spot_range = 16.5182
-spot_angle = 16.6636
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.999955, 0.00945953, 0, -0.00945953, -0.999955, 2.40548, 0.596898, -1.00827)
-light_energy = 4.423
-spot_range = 15.5058
-spot_angle = 18.7364
-
-[node name="CharacterBody3D" parent="." instance=ExtResource("6_3h2jq")]
-transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 1.9957, 0.61745, 4.51342)
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 0.0664697, 0.0642549, 1.48753)
 affect_by_gravity = false
 can_move = false
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28931, 0.732797, -0.071156)
-omni_range = 0.379843
+[node name="guy4" parent="." instance=ExtResource("1_vk00q")]
+transform = Transform3D(0.26132, 0, -0.147349, 0, 0.3, 0, 0.147349, 0, 0.26132, -3.14011, 0.906025, 1.83809)
+
+[node name="guy5" parent="." instance=ExtResource("1_vk00q")]
+transform = Transform3D(0.278027, 0, 0.112697, 0, 0.3, 0, -0.112697, 0, 0.278027, 3.10943, 0.906025, 3.42598)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0133863, 0.99991, 0, -0.99991, -0.0133863, 0, 2.23005, 1.27588)
+spot_range = 2.92757
+spot_angle = 29.2561

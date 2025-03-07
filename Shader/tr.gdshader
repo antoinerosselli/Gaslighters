@@ -60,7 +60,7 @@ void fragment() {
     float dissolveFactor = step(holePattern, dissolveSlider);
 
     // Détection des BORDS UNIQUEMENT (zone fine entre trou et intact)
-    float edgeZone = smoothstep(dissolveSlider - edgeThickness, dissolveSlider, holePattern) 
+    float edgeZone = smoothstep(dissolveSlider - edgeThickness, dissolveSlider, holePattern)
                    - smoothstep(dissolveSlider, dissolveSlider + edgeThickness, holePattern);
 
     // Application de la couleur des bords SEULEMENT DANS CETTE ZONE

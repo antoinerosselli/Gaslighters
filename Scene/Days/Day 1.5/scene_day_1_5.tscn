@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=4 uid="uid://7cqbfhd81slb"]
+[gd_scene load_steps=21 format=4 uid="uid://7cqbfhd81slb"]
 
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="1_152uh"]
 [ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="2_r6x0h"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="3_0ejrs"]
 [ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="4_offwv"]
+[ext_resource type="PackedScene" uid="uid://bths2mtikka83" path="res://Prefab/contract_paper.tscn" id="5_hrudi"]
 [ext_resource type="PackedScene" uid="uid://bwb2a7jakivfd" path="res://Prefab/pills_spawner.tscn" id="5_skkch"]
 [ext_resource type="PackedScene" uid="uid://4n1p68ofm3bv" path="res://EndObject/pen.tscn" id="6_oh546"]
 [ext_resource type="PackedScene" uid="uid://bfwip75uecxa8" path="res://Scene/Days/Day 1.5/em_day_1_5.tscn" id="7_wxr26"]
@@ -63,7 +64,41 @@ albedo_texture = ExtResource("1_152uh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n1q6q"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_g8pbm"]
+[sub_resource type="Animation" id="Animation_kv254"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.85282, 0.99327, -0.128485)]
+}
+
+[sub_resource type="Animation" id="Animation_hrudi"]
+resource_name = "slide_contrat"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.85282, 0.99327, -0.128485), Vector3(0.10384, 0.99327, -0.128485)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kv254"]
+_data = {
+&"RESET": SubResource("Animation_kv254"),
+&"slide_contrat": SubResource("Animation_hrudi")
+}
 
 [node name="scene_day_1_5" type="Node3D"]
 
@@ -106,15 +141,20 @@ spot_range = 5.167
 spot_attenuation = 0.8
 spot_angle = 30.689
 
-[node name="govface" parent="." instance=ExtResource("4_offwv")]
-transform = Transform3D(-0.696934, 0.107234, -0.377868, 0.010099, 0.774247, 0.201094, 0.392659, 0.170417, -0.675853, -1.21165, 2.63079, -4.52771)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.244199, 0, 0, 0, 1, 0, 0, 0, 0.176118, 0.113661, 1.00582, -0.145789)
-mesh = SubResource("PlaneMesh_g8pbm")
-
 [node name="pills_spawner" parent="." instance=ExtResource("5_skkch")]
 transform = Transform3D(-0.779185, 0, 0.626794, 0, 1, 0, -0.626794, 0, -0.779185, -0.161081, 1.47615, -0.569025)
 pills = ExtResource("6_oh546")
 
 [node name="EmDay15" parent="." instance=ExtResource("7_wxr26")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["animator"]]
+libraries = {
+&"": SubResource("AnimationLibrary_kv254")
+}
+
+[node name="MeshInstance3D" parent="." instance=ExtResource("5_hrudi")]
+transform = Transform3D(0.00019339, 0, 0.34738, 0, 0.994139, 0, -0.246224, 0, 0.000272841, -1.85282, 0.99327, -0.128485)
+
+[node name="guy" parent="." instance=ExtResource("4_offwv")]
+transform = Transform3D(-0.842687, 0, -0.538403, 0, 1, 0, 0.538403, 0, -0.842687, -3.30116, 1.51412, -4.75129)
+guy_talk = true
