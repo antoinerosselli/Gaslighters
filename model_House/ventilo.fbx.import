@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://gejy3dbpmrga"
-path="res://.godot/imported/ventilo.fbx-8d1010d471241cdeeabdac81c4d2ccec.scn"
+valid=false
 
 [deps]
 
-source_file="res://Model_House/ventilo.fbx"
-dest_files=["res://.godot/imported/ventilo.fbx-8d1010d471241cdeeabdac81c4d2ccec.scn"]
+source_file="res://model_House/ventilo.fbx"
 
 [params]
 

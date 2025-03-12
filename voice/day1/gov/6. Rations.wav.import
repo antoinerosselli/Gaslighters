@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://wx2u1ajjvncr"
-path="res://.godot/imported/6. Rations.wav-ed018bfa78bc0ee24479cabd20dba16c.sample"
+path="res://.godot/imported/6. Rations.wav-d480c950fff58d694aa9718c38c7d0e9.sample"
 
 [deps]
 
-source_file="res://Voice/day1/gov/6. Rations.wav"
-dest_files=["res://.godot/imported/6. Rations.wav-ed018bfa78bc0ee24479cabd20dba16c.sample"]
+source_file="res://voice/day1/gov/6. Rations.wav"
+dest_files=["res://.godot/imported/6. Rations.wav-d480c950fff58d694aa9718c38c7d0e9.sample"]
 
 [params]
 

@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cbok5cvslfemp"
-path="res://.godot/imported/laveassiette.fbx-8dae6f3f5a0841b466085eec1a5bacc5.scn"
+valid=false
 
 [deps]
 
-source_file="res://Model_House/laveassiette.fbx"
-dest_files=["res://.godot/imported/laveassiette.fbx-8dae6f3f5a0841b466085eec1a5bacc5.scn"]
+source_file="res://model_House/laveassiette.fbx"
 
 [params]
 
