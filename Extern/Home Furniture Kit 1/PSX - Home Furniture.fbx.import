@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bjp4iwsnmiepv"
-path="res://.godot/imported/PSX - Home Furniture.fbx-04ffc29ec45c673785ffd0e98ed46dda.scn"
+valid=false
 
 [deps]
 
 source_file="res://Extern/Home Furniture Kit 1/PSX - Home Furniture.fbx"
-dest_files=["res://.godot/imported/PSX - Home Furniture.fbx-04ffc29ec45c673785ffd0e98ed46dda.scn"]
 
 [params]
 

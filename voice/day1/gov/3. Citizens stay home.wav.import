@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://blq6r0jsb3c7b"
-path="res://.godot/imported/3. Citizens stay home.wav-00de8f40fdd3be7aa61a7a0e8b3978e5.sample"
+path="res://.godot/imported/3. Citizens stay home.wav-09b6d0b13c4a016075ed1097e3b29f24.sample"
 
 [deps]
 
-source_file="res://Voice/day1/gov/3. Citizens stay home.wav"
-dest_files=["res://.godot/imported/3. Citizens stay home.wav-00de8f40fdd3be7aa61a7a0e8b3978e5.sample"]
+source_file="res://voice/day1/gov/3. Citizens stay home.wav"
+dest_files=["res://.godot/imported/3. Citizens stay home.wav-09b6d0b13c4a016075ed1097e3b29f24.sample"]
 
 [params]
 

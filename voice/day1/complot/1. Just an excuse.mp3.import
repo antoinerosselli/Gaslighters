@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dcwb2ki8618o5"
-path="res://.godot/imported/1. Just an excuse.mp3-7dd06738cef5d49d31ba4acdac03e555.mp3str"
+path="res://.godot/imported/1. Just an excuse.mp3-9f6f605495f7f720c0abec923cac8705.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/1. Just an excuse.mp3"
-dest_files=["res://.godot/imported/1. Just an excuse.mp3-7dd06738cef5d49d31ba4acdac03e555.mp3str"]
+source_file="res://voice/day1/complot/1. Just an excuse.mp3"
+dest_files=["res://.godot/imported/1. Just an excuse.mp3-9f6f605495f7f720c0abec923cac8705.mp3str"]
 
 [params]
 

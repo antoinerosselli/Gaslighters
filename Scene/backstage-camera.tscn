@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2bxfyb82dgvu"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ud6ev"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Backstage-camera" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(192, 192)
+
+[node name="Socle" type="CSGBox3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.167451, 0)
+size = Vector3(0.638733, 0.338501, 0.683594)
+
+[node name="Écran" type="CSGBox3D" parent="SubViewport/Socle"]
+transform = Transform3D(0.899497, 0.436927, 0, -0.436927, 0.899497, 0, 0, 0, 1, 0, 0.51581, 0)
+size = Vector3(1, 0.115234, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="SubViewport/Socle/Écran"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, -0.000289947, 0.063541, -0.00353599)
+texture = SubResource("ViewportTexture_ud6ev")
+
+[node name="Pied" type="CSGCylinder3D" parent="SubViewport/Socle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.180983, 0)
+radius = 0.107757
+height = 0.654386
+
+[node name="TheCamera" type="Node3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37047, 1.82555, 0)
+
+[node name="VilainSocle" type="CSGBox3D" parent="SubViewport/TheCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0642804, 0.00253654, 0.00114727)
+size = Vector3(0.2, 0.12, 0.2)
+
+[node name="VilainConnecteur" type="CSGCylinder3D" parent="SubViewport/TheCamera/VilainSocle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.120498, 0)
+radius = 0.0282701
+height = 0.19886
+
+[node name="FausseCamera" type="CSGCylinder3D" parent="SubViewport/TheCamera"]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -0.0280577, -0.293662, 0)
+radius = 0.115396
+height = 0.417012
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport/TheCamera"]
+transform = Transform3D(-4.37114e-08, -0.5, 0.866025, 0, 0.866025, 0.5, -1, 2.18557e-08, -3.78552e-08, -0.028, -0.294, 0)
+fov = 51.0636
