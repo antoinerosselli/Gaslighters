@@ -1,0 +1,11 @@
+Model Information:
+* title:	Dofus Emeraude
+* source:	https://sketchfab.com/3d-models/dofus-emeraude-61cc07edd271423a876375c3d8f8ebe4
+* author:	lmenjoulet (https://sketchfab.com/lmenjoulet)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Dofus Emeraude" (https://sketchfab.com/3d-models/dofus-emeraude-61cc07edd271423a876375c3d8f8ebe4) by lmenjoulet (https://sketchfab.com/lmenjoulet) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

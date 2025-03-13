@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=27 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" uid="uid://ckooh51x0xywe" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Script" uid="uid://8aqmy8q7388i" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="11_7q8gp"]
 [ext_resource type="AudioStream" uid="uid://b0jngj4uq3osf" path="res://Music&Sound/hearbeat-71701.mp3" id="12_utawn"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="12_x4psa"]
+[ext_resource type="PackedScene" uid="uid://dpi8t3jrme5d" path="res://Extern/Rework Appart/spray/scene.gltf" id="13_wyp7x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
 
@@ -102,6 +103,10 @@ target_position = Vector3(0, 0, -1)
 debug_shape_custom_color = Color(0.701961, 0.639216, 0, 1)
 debug_shape_thickness = 1
 
+[node name="ptich" parent="Camera3D" instance=ExtResource("13_wyp7x")]
+transform = Transform3D(-0.0343824, 0, -0.197022, 0, 0.200163, 0, 0.197022, 0, -0.0343824, -0.607067, -0.883935, -0.822635)
+visible = false
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_17q4h")
 
@@ -119,8 +124,8 @@ mouse_filter = 2
 material = SubResource("ShaderMaterial_h2w04")
 layout_mode = 0
 offset_left = -3.0
-offset_right = 1161.0
-offset_bottom = 654.0
+offset_right = 1152.0
+offset_bottom = 648.0
 color = Color(1, 1, 1, 0.156863)
 
 [node name="show_text" type="Label" parent="CanvasLayer/Control"]

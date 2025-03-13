@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ckxtr0y5245pn"]
+
+[ext_resource type="Texture2D" uid="uid://8cva1dsp6g1t" path="res://Extern/Rework Appart/Balkan/Architecture Textures/Wall 4.png" id="1_cxc40"]
+
+[resource]
+albedo_texture = ExtResource("1_cxc40")
+uv1_scale = Vector3(2, 2, 2)

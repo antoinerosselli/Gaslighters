@@ -1,0 +1,11 @@
+Model Information:
+* title:	PS1/N64 Style Cupboard
+* source:	https://sketchfab.com/3d-models/ps1n64-style-cupboard-f983dc1487c14d65a0e58ba251d6907a
+* author:	jsandwich96 (https://sketchfab.com/jsandwich96)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "PS1/N64 Style Cupboard" (https://sketchfab.com/3d-models/ps1n64-style-cupboard-f983dc1487c14d65a0e58ba251d6907a) by jsandwich96 (https://sketchfab.com/jsandwich96) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

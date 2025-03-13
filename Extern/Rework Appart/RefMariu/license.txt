@@ -1,0 +1,11 @@
+Model Information:
+* title:	Final Fantasy 7: Buster Sword
+* source:	https://sketchfab.com/3d-models/final-fantasy-7-buster-sword-9b931e7276c54c25ba919393f23500e4
+* author:	Dharvey296 (https://sketchfab.com/dharvey296)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Final Fantasy 7: Buster Sword" (https://sketchfab.com/3d-models/final-fantasy-7-buster-sword-9b931e7276c54c25ba919393f23500e4) by Dharvey296 (https://sketchfab.com/dharvey296) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

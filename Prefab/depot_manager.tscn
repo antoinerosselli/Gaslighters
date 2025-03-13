@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chtnw0qv101ds"]
+
+[ext_resource type="Script" uid="uid://foabhr606erd" path="res://Prefab/depot_manager.gd" id="1_rr6yp"]
+
+[node name="depot_manager" type="Node"]
+script = ExtResource("1_rr6yp")

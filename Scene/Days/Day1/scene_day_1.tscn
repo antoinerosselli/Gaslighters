@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=14 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_36dop"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://wfmu7ny1m538" path="res://Scene/Days/Day1/rm_day_1.tscn" id="6_o1j03"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="7_frxae"]
 [ext_resource type="PackedScene" uid="uid://dyvkf1itavutm" path="res://Scene/Days/Day1/em_day_1.tscn" id="7_vxswh"]
+[ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_5gr6e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is71n"]
 sky_curve = 0.678472
@@ -53,8 +54,8 @@ size = Vector3(24.1484, 6.75517, 2)
 material = SubResource("FogMaterial_87u83")
 
 [node name="FogVolume2" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1887, -0.155392, 11.7923)
-size = Vector3(13.9297, 7.08786, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00224, -0.155392, 11.3124)
+size = Vector3(20.3026, 7.08786, 2.43262)
 material = SubResource("FogMaterial_87u83")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["alarm"]]
@@ -98,10 +99,6 @@ one_shot = true
 is_text = true
 texts = ["What is this place?"]
 
-[node name="rm_day1" parent="." instance=ExtResource("6_o1j03")]
-
-[node name="em_day_1" parent="." instance=ExtResource("7_vxswh")]
-
 [node name="four2" parent="." instance=ExtResource("7_frxae")]
 transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 3.57509, -0.722322, -3.96604)
 one_shot = true
@@ -109,7 +106,7 @@ is_text = true
 texts = ["I need to calm down"]
 
 [node name="tres2" parent="." instance=ExtResource("7_frxae")]
-transform = Transform3D(0.993824, 0, 0.233028, 0, 1, 0, -0.110966, 0, 2.08703, 13.2511, -0.722322, 4.38196)
+transform = Transform3D(0.993824, 0, 0.233028, 0, 1, 0, -0.110966, 0, 2.08703, 11.3347, -0.722322, 4.38196)
 one_shot = true
 is_text = true
 texts = ["I hope I'll have enough food"]
@@ -119,6 +116,15 @@ transform = Transform3D(0.0101925, 0, -2.09989, 0, 1, 0, 0.999948, 0, 0.0214043,
 one_shot = true
 is_text = true
 texts = ["Hmm"]
+
+[node name="MOTORS" type="Node" parent="."]
+
+[node name="rm_day1" parent="MOTORS" instance=ExtResource("6_o1j03")]
+
+[node name="em_day_1" parent="MOTORS" instance=ExtResource("7_vxswh")]
+
+[node name="depot_spawner" parent="." instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.662495, -1.5983, 4.06307)
 
 [editable path="one"]
 [editable path="two"]

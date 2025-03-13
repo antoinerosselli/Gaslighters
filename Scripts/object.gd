@@ -2,8 +2,8 @@ extends Node3D
 
 @export var item_name:String
 
-@export_category("pickable ?")
-@export var pickable:bool
+@export_category("depot ?")
+@export var depot:bool
 
 @export_category("text ?")
 @export var is_text:bool
@@ -31,9 +31,10 @@ func _ready():
 	
 func interact():
 	if is_text == true:
-		var player = Tools.get_player()
+		var player = Tools.get_player()	
 		player.dialogues = texts
-	if pickable == true:
+	if depot == true and Tools.get_player().ptich.visible == true:
+		Tools.sound_now(self,load("res://Music&Sound/sound/spray-36842.mp3") as AudioStream)
 		queue_free()
 	if door == true:
 		Tools.sound_now(self, load("res://Music&Sound/sound/door_sound.mp3") as AudioStream)

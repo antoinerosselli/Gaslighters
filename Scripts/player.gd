@@ -9,6 +9,8 @@ extends CharacterBody3D
 @onready var camera_3d = $Camera3D
 @onready var icon = $CanvasLayer/Control/Icon
 
+@onready var ptich = $Camera3D/ptich
+
 #inventory
 var on_inventory:bool = false
 @onready var label = $CanvasLayer/Control/Inventory/Label
@@ -107,11 +109,11 @@ func _input(event):
 		paused = !paused
 	if Input.is_action_just_pressed("crouch") && can_move == true:
 		if crouch == false:
-			camera_3d.position.y -= 1.3
+			camera_3d.position.y -= 1.1
 			speed -= 4
 			crouch = true
 		elif crouch == true:
-			camera_3d.position.y += 1.3
+			camera_3d.position.y += 1.1
 			speed += 4
 			crouch = false
 	if Input.is_action_just_pressed("select"):
@@ -126,6 +128,16 @@ func _input(event):
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
 		$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+
+func on_hand():
+	print("j'ai le ptich")
+	print(ptich)
+	if ptich.visible == true:
+		print("on voit le ptich")
+		ptich.visible = false
+	elif ptich.visible ==  false:
+		print("on voit plus le ptich")
+		ptich.visible = true
 
 func _on_timer_timeout():
 	read_dialogue = false

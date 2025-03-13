@@ -28,6 +28,10 @@ func unique(object_name):
 			Tools.sound_now(Tools.get_player(), load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
 			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
 			lamp_door.light_color = Color(1, 0, 0, 1)
+		"neutral_lamp":
+			Tools.sound_now(Tools.get_player(), load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
+			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
+			lamp_door.light_color = Color(0, 0, 0, 0)
 		"sancheck":
 			if elec == true :
 				var player = Tools.get_player()
@@ -70,3 +74,18 @@ func unique(object_name):
 		"phone":
 			print("phone")
 			Tools.start_transition("1 YEARS AGO", load("res://Scene/Days/Day 3.5/scene_day_3_5.tscn") as PackedScene)
+		"screencamera":
+			print("use screen")
+			var screencam = get_tree().get_first_node_in_group("screencam")
+			screencam.allume = !screencam.allume
+			print(screencam.allume)
+			if screencam.allume == true:
+				screencam.yescamcam()
+			elif screencam.allume == false:
+				screencam.nocamcam()
+		"ptichpitch":
+			print("i take the ptich")
+			var player = Tools.get_player()
+			player.on_hand()
+			var model = get_tree().get_first_node_in_group("ptichptich_depose")
+			model.visible = !model.visible

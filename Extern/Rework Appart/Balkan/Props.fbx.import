@@ -1,0 +1,275 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://crcygf7mac2tn"
+path="res://.godot/imported/Props.fbx-92849f10fffce82fa74c0efaef522d5b.scn"
+
+[deps]
+
+source_file="res://Extern/Rework Appart/Balkan/Props.fbx"
+dest_files=["res://.godot/imported/Props.fbx-92849f10fffce82fa74c0efaef522d5b.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Bed": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Bed.tres"
+},
+"Bible": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Bible.tres"
+},
+"Burek Tray": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Burek Tray.tres"
+},
+"Bureks": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Bureks.tres"
+},
+"Carpet 1": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Carpet 1.tres"
+},
+"Carpet 2": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Carpet 2.tres"
+},
+"Carpet 3": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Carpet 3.tres"
+},
+"Carpet 4": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Carpet 4.tres"
+},
+"Chair": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Chair.tres"
+},
+"Cooking Pot": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Cooking Pot.tres"
+},
+"Curtains": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Curtains.tres"
+},
+"Door 1": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Door 1.tres"
+},
+"Gas Lamp": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Gas Lamp.tres"
+},
+"Glass": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Glass.tres"
+},
+"Ground 1": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Ground 1.tres"
+},
+"Jug": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Jug.tres"
+},
+"Kebapche": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Kebapche.tres"
+},
+"Kitchen Cabinet": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Kitchen Cabinet.tres"
+},
+"Kitchen Cabinet Door": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Kitchen Cabinet Door.tres"
+},
+"Kitchen Sink": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Kitchen Sink.tres"
+},
+"Light Key": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Light Key.tres"
+},
+"Mug 1": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Mug 1.tres"
+},
+"Mug 2": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Mug 2.tres"
+},
+"Music Box": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Music Box.tres"
+},
+"Painting 1": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Painting 1.tres"
+},
+"Pastets": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Pastets.tres"
+},
+"Pecka": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Pecka.tres"
+},
+"Plant 1": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Plant 1.tres"
+},
+"Plant 2": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Plant 2.tres"
+},
+"Plates": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Plates.tres"
+},
+"Radiator": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Radiator.tres"
+},
+"Radio": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Radio.tres"
+},
+"Receiver": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Receiver.tres"
+},
+"Refrigerator": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Refrigerator.tres"
+},
+"Seater 1": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Seater 1.tres"
+},
+"Shopska": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Shopska.tres"
+},
+"Sink": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Sink.tres"
+},
+"Stove Oven": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Stove Oven.tres"
+},
+"TV": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/TV.tres"
+},
+"TV Table": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/TV Table.tres"
+},
+"Table": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Table.tres"
+},
+"Table 2": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Table 2.tres"
+},
+"Tablecloth 1": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Tablecloth 1.tres"
+},
+"Tablecloth 1.002": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Tablecloth 1.002.tres"
+},
+"Teapot": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Teapot.tres"
+},
+"Tin Pots": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Tin Pots.tres"
+},
+"TvSheet": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/TvSheet.tres"
+},
+"Vafla": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Vafla.tres"
+},
+"Wall Clock": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Wall Clock.tres"
+},
+"Wall Decoration - Christian": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Wall Decoration - Christian.tres"
+},
+"Wardrobe 1": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Wardrobe 1.tres"
+},
+"Wardrobes": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Wardrobes.tres"
+},
+"Window": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Window.tres"
+},
+"Window 1": {
+"use_external/enabled": true,
+"use_external/path": "res://Extern/Rework Appart/Window 1.tres"
+}
+},
+"meshes": {
+"Cube_090": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Extern/chauffage.res"
+},
+"Plane_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Extern/paint.res"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

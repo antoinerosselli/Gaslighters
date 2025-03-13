@@ -1,0 +1,11 @@
+Model Information:
+* title:	Deds Others
+* source:	https://sketchfab.com/3d-models/deds-others-7861f63f4a9647ee8391bf7f2ef6e805
+* author:	Elbolillo (https://sketchfab.com/Elbolilloduro)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Deds Others" (https://sketchfab.com/3d-models/deds-others-7861f63f4a9647ee8391bf7f2ef6e805) by Elbolillo (https://sketchfab.com/Elbolilloduro) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

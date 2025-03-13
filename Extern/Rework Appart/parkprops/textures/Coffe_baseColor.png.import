@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckuhbqawys8qq"
-path.s3tc="res://.godot/imported/Paintings.png-3376408673f199ae470bf8f442ff96fe.s3tc.ctex"
+uid="uid://fvqhu3anuchm"
+path.s3tc="res://.godot/imported/Coffe_baseColor.png-f3410600338ba0ca70e604a2e2c9fb0d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Extern/Home Furniture Kit 1/Textures/Paintings.png"
-dest_files=["res://.godot/imported/Paintings.png-3376408673f199ae470bf8f442ff96fe.s3tc.ctex"]
+source_file="res://Extern/Rework Appart/parkprops/textures/Coffe_baseColor.png"
+dest_files=["res://.godot/imported/Coffe_baseColor.png-f3410600338ba0ca70e604a2e2c9fb0d.s3tc.ctex"]
 
 [params]
 
