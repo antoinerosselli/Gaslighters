@@ -1,9 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bfihnkj3effvp"]
 
-[ext_resource type="Script" path="res://Prefab/Alarme/alarme.gd" id="1_f0nq0"]
+[ext_resource type="Script" uid="uid://jn1qkstpku2a" path="res://Prefab/Alarme/alarme.gd" id="1_f0nq0"]
 [ext_resource type="AudioStream" uid="uid://61hpi3snxrn2" path="res://Music&Sound/sound/alarmpills_sound.mp3" id="2_iap18"]
 [ext_resource type="FontFile" uid="uid://ce3an0yfkfats" path="res://Prefab/Alarme/BD Times_New_Digital_St_Bold.otf" id="2_nfwef"]
-
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_ijl1u"]
 albedo_color = Color(0, 0, 0, 1)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://mwp0ue5tqaet"]
 
 [ext_resource type="Texture2D" uid="uid://djjdw67vsucxl" path="res://Extern/Prop Textures/Door 1.png" id="1_af8fq"]
-[ext_resource type="Script" path="res://Scripts/object.gd" id="1_s8gg1"]
-[ext_resource type="Script" path="res://Scripts/front_door_camera.gd" id="3_fupyg"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_s8gg1"]
+[ext_resource type="Script" uid="uid://kp4yojuq0hqv" path="res://Scripts/front_door_camera.gd" id="3_fupyg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wrf6"]
 albedo_texture = ExtResource("1_af8fq")

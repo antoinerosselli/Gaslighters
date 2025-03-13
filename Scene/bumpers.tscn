@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7ifffa1oq6ok"]
 
-[ext_resource type="Script" path="res://Scripts/bumpers.gd" id="1_hxbka"]
+[ext_resource type="Script" uid="uid://df2xo60do04m6" path="res://Scripts/bumpers.gd" id="1_hxbka"]
 [ext_resource type="Texture2D" uid="uid://bau0dr758he5h" path="res://Sprite/logoEJ.png" id="2_i2yhk"]
 [ext_resource type="AudioStream" uid="uid://c3litgb4xotmv" path="res://Music&Sound/neighing-of-a-horse-154724.mp3" id="3_muw33"]
 

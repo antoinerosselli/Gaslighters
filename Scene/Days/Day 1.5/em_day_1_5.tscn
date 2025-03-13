@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfwip75uecxa8"]
+
+[ext_resource type="Script" uid="uid://dlrmr8eyb8gbt" path="res://Scripts/em_day_1_5.gd" id="1_un5om"]
+
+[node name="EmDay15" type="Node"]
+script = ExtResource("1_un5om")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

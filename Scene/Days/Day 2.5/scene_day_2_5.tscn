@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://doa4n110ydkxv"]
+
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_pkwid"]
+[ext_resource type="Texture2D" uid="uid://cdcr1dvyfigu" path="res://Extern/Abandoned_House/Abandoned_House_road.jpg" id="3_ihtlf"]
+[ext_resource type="PackedScene" uid="uid://clylj6qgxpaqe" path="res://Prefab/lampadaire.tscn" id="4_mtbc8"]
+[ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="5_2oyqp"]
+[ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="6_orx1l"]
+[ext_resource type="PackedScene" uid="uid://dqughkfdtof0r" path="res://Prefab/phone.tscn" id="6_wr4cq"]
+
+[sub_resource type="Environment" id="Environment_asixl"]
+background_energy_multiplier = 0.0
+ambient_light_source = 2
+ambient_light_energy = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct62w"]
+albedo_texture = ExtResource("3_ihtlf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a8q1j"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_j1lur"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pubo"]
+albedo_texture = ExtResource("5_2oyqp")
+uv1_scale = Vector3(3, 3, 3)
+
+[node name="scene_day_2_5" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_asixl")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_pkwid")]
+transform = Transform3D(-0.0144683, 0, 0.999895, 0, 1.02124, 0, -0.999895, 0, -0.0144683, 0.379147, 1.19812, 2.04878)
+affect_by_gravity = false
+can_move = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 1.7799, 0, 0.148206)
+material_override = SubResource("StandardMaterial3D_ct62w")
+mesh = SubResource("PlaneMesh_a8q1j")
+
+[node name="MeshInstance3D86" parent="." instance=ExtResource("4_mtbc8")]
+transform = Transform3D(0.237565, 0, 0, 0, 8.03263, 0, 0, 0, 0.296797, -1.32166, 1.72418, 3.38678)
+
+[node name="MeshInstance3D" parent="MeshInstance3D86" index="0"]
+transform = Transform3D(2.29289, 0, 0, 0, 0.0619481, 0, 0, 0, 1.67381, 1.2469, 0.486263, -0.00843811)
+material_override = SubResource("ORMMaterial3D_j1lur")
+
+[node name="OmniLight3D" parent="MeshInstance3D86" index="1"]
+transform = Transform3D(4.20937, 0, 0, 0, 0.124492, 0, 0, 0, 3.36931, 1.62499, 0.456967, 0)
+light_energy = 3.279
+omni_range = 10.909
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 6.70386, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_0pubo")
+mesh = SubResource("PlaneMesh_a8q1j")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.36917, 0, 0, 0, 1, 0, 0, 0, 11.8098, -4.08112, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_0pubo")
+mesh = SubResource("PlaneMesh_a8q1j")
+
+[node name="trees" type="Node3D" parent="."]
+
+[node name="2 Trees6" parent="trees" instance=ExtResource("6_orx1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 0)
+
+[node name="2 Trees7" parent="trees" instance=ExtResource("6_orx1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 8.78755)
+
+[node name="2 Trees8" parent="trees" instance=ExtResource("6_orx1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, -9.46618)
+
+[node name="2 Trees9" parent="trees" instance=ExtResource("6_orx1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="2 Trees10" parent="trees" instance=ExtResource("6_orx1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, -5.72575)
+
+[node name="2 Trees11" parent="trees" instance=ExtResource("6_orx1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="phone" parent="." instance=ExtResource("6_wr4cq")]
+transform = Transform3D(0.131314, 0, -0.091415, 0, 0.16, 0, 0.091415, 0, 0.131314, -1.23464, 0, 0.794076)
+
+[editable path="MeshInstance3D86"]

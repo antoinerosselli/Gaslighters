@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwb2a7jakivfd"]
 
-[ext_resource type="Script" path="res://Scripts/pills_spawner.gd" id="1_d5b5k"]
-[ext_resource type="PackedScene" uid="uid://cuj7daw2wsocd" path="res://Prefab/pills.tscn" id="2_3l6yo"]
-
+[ext_resource type="Script" uid="uid://6j6uqwhbntuk" path="res://Scripts/pills_spawner.gd" id="1_d5b5k"]
+[ext_resource type="PackedScene" uid="uid://cuj7daw2wsocd" path="res://EndObject/pills.tscn" id="2_3l6yo"]
 
 [node name="pills_spawner" type="Marker3D" groups=["pills"]]
 script = ExtResource("1_d5b5k")

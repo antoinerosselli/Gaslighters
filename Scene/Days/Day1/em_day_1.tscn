@@ -1,12 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyvkf1itavutm"]
 
-[ext_resource type="Script" path="res://Scripts/em_day_1.gd" id="1_1ttpx"]
-
+[ext_resource type="Script" uid="uid://c5msg4g651xi1" path="res://Scripts/em_day_1.gd" id="1_1ttpx"]
 
 [node name="em_day_1" type="Node" groups=["event_manager"]]
 script = ExtResource("1_1ttpx")
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
+[node name="Timer" type="Timer" parent="." groups=["timerevent"]]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

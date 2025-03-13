@@ -1,0 +1,8 @@
+Model Information:
+* title:	PSX Old Microwave
+* source:	https://sketchfab.com/3d-models/psx-old-microwave-9433f4b145414c839c243e66403c8261
+* author:	Charckes (https://sketchfab.com/charlesmoch)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

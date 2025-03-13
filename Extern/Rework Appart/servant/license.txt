@@ -1,0 +1,11 @@
+Model Information:
+* title:	Servant PS1
+* source:	https://sketchfab.com/3d-models/servant-ps1-456e6fe36cd34f518a34cda2e597884b
+* author:	Homie (https://sketchfab.com/nurbolnygmanov)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Servant PS1" (https://sketchfab.com/3d-models/servant-ps1-456e6fe36cd34f518a34cda2e597884b) by Homie (https://sketchfab.com/nurbolnygmanov) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -2,7 +2,7 @@ extends Camera3D
 
 # Paramètres pour le mouvement de la caméra
 var noise := FastNoiseLite.new()
-var amplitude := 0.001  # Amplitude du tremblement, réduite pour un effet subtil
+@export var amplitude := 0.001  # Amplitude du tremblement, réduite pour un effet subtil
 var time := 0.0  # Temps écoulé
 
 # Called when the node enters the scene tree for the first time.

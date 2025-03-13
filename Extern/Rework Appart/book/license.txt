@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cultist Book
+* source:	https://sketchfab.com/3d-models/cultist-book-49363bd6199c435a9313096d1b73bb96
+* author:	luckyshotlayne (https://sketchfab.com/luckyshotlayne)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cultist Book" (https://sketchfab.com/3d-models/cultist-book-49363bd6199c435a9313096d1b73bb96) by luckyshotlayne (https://sketchfab.com/luckyshotlayne) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cs6jfl3povwc"]
+
+[ext_resource type="Texture2D" uid="uid://crr2cngetxdh2" path="res://Extern/Rework Appart/parkprops/textures/Metal_baseColor.jpeg" id="1_kvlrp"]
+
+[resource]
+albedo_texture = ExtResource("1_kvlrp")
+metallic = 1.0
+roughness = 0.49
+rim_enabled = true
+anisotropy_enabled = true
+ao_enabled = true
+ao_light_affect = 0.91
+heightmap_enabled = true
+detail_enabled = true
+grow = true

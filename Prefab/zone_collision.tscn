@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6g2terg4cba1"]
 
-[ext_resource type="Script" path="res://Scripts/zone_collision.gd" id="1_c74c6"]
+[ext_resource type="Script" uid="uid://bnkltmvuer5s3" path="res://Scripts/zone_collision.gd" id="1_c74c6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wnokl"]
 margin = 0.0

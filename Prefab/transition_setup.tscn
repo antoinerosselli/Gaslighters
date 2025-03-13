@@ -1,20 +1,19 @@
 [gd_scene load_steps=9 format=3 uid="uid://dee4yq0rea45s"]
 
-[ext_resource type="Script" path="res://Scripts/transition_setup.gd" id="1_qfohy"]
+[ext_resource type="Script" uid="uid://uhhhcts2bho7" path="res://Scripts/transition_setup.gd" id="1_qfohy"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="2_3fkm3"]
-[ext_resource type="Shader" path="res://Shader/tr.gdshader" id="2_4yamf"]
-
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="2_4yamf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vhaag"]
 resource_local_to_scene = true
 shader = ExtResource("2_4yamf")
 shader_parameter/baseColor = Color(0, 0, 0, 1)
-shader_parameter/dissolveSlider = 0.385
+shader_parameter/dissolveSlider = 0.0
 shader_parameter/holeScale = 15.0
 shader_parameter/holeDensity = 1.5
 shader_parameter/edgeColor = Color(0.980392, 0.568627, 0.258824, 1)
-shader_parameter/edgeThickness = 0.252
-shader_parameter/edgeGlowIntensity = 5.0
+shader_parameter/edgeThickness = 0.039
+shader_parameter/edgeGlowIntensity = 1.0
 shader_parameter/enable_dissolve_animation = false
 shader_parameter/animation_speed = 0.6
 
@@ -23,38 +22,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/dissolveSlider")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:material:shader_parameter/dissolveSlider")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.385]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:material:shader_parameter/enable_dissolve_animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_bnsyd"]
@@ -63,44 +38,20 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/dissolveSlider")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.03333),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:material:shader_parameter/dissolveSlider")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.93333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.385, 1.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:material:shader_parameter/enable_dissolve_animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.0333333, 1.93333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"values": [0.0, 1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xd5k4"]
 _data = {
-"RESET": SubResource("Animation_8bifa"),
-"fade_to_black": SubResource("Animation_bnsyd")
+&"RESET": SubResource("Animation_8bifa"),
+&"fade_to_black": SubResource("Animation_bnsyd")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_7b1mk"]
@@ -118,11 +69,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(1, 1, 1, 0)
+color = Color(0, 0, 0, 0)
 
 [node name="AP" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xd5k4")
+&"": SubResource("AnimationLibrary_xd5k4")
 }
 
 [node name="Label" type="Label" parent="."]

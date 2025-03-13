@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=4 uid="uid://chacbj2q6jcmg"]
 
-[ext_resource type="Script" path="res://Scripts/radiooo.gd" id="1_hs2vg"]
+[ext_resource type="Script" uid="uid://5jxmubd5wyct" path="res://Scripts/radiooo.gd" id="1_hs2vg"]
 [ext_resource type="Texture2D" uid="uid://bhqewc124qxmp" path="res://Extern/Abandoned_House/Abandoned_House_Tele1.jpg" id="4_vwjea"]
 [ext_resource type="Texture2D" uid="uid://d4cvdnvicq4d7" path="res://Extern/Abandoned_House/Abandoned_House_Piso_cocina.jpg" id="6_1c028"]
-[ext_resource type="Script" path="res://Scripts/node_of_knob.gd" id="7_y5w6w"]
-[ext_resource type="Script" path="res://Scripts/label_3d.gd" id="9_8pyjm"]
+[ext_resource type="Script" uid="uid://cm7p8lskx81hx" path="res://Scripts/node_of_knob.gd" id="7_y5w6w"]
+[ext_resource type="Script" uid="uid://beeatpebd062u" path="res://Scripts/label_3d.gd" id="9_8pyjm"]
 [ext_resource type="FontFile" uid="uid://c4slo7siafa6k" path="res://Prefab/Alarme/alarm clock.ttf" id="9_m22gx"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_n8nwt"]

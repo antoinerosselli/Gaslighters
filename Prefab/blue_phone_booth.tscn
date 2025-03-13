@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt1sjia7rbt7b"]
+
+[ext_resource type="PackedScene" uid="uid://bnyafheuw0wrd" path="res://Extern/antowaan_3d/Blue Phone Booth.fbx" id="1_n3yib"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="2_wd3ry"]
+
+[node name="Blue Phone Booth" instance=ExtResource("1_n3yib")]
+script = ExtResource("2_wd3ry")
+item_name = "phone"
+script_trait = true

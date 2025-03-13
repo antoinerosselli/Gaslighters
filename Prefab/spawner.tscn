@@ -1,10 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://bqbogskuhgkc8"]
 
-[ext_resource type="Script" path="res://Scripts/spawner.gd" id="1_kjt46"]
+[ext_resource type="Script" uid="uid://cijnrduubbb8e" path="res://Scripts/spawner.gd" id="1_kjt46"]
 [ext_resource type="PackedScene" uid="uid://h81pqsudld1o" path="res://Prefab/conserve_bis.tscn" id="2_jfb82"]
 [ext_resource type="Texture2D" uid="uid://br2epvynfbgyt" path="res://Extern/Home kit 2/Textures/Ashtray/Ashtray_256.png" id="2_wl5e7"]
 [ext_resource type="AudioStream" uid="uid://dcijfl5bmmlrd" path="res://Music&Sound/bell-87506.mp3" id="4_g2063"]
-
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2o87"]
 albedo_texture = ExtResource("2_wl5e7")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://h81pqsudld1o"]
 
 [ext_resource type="Texture2D" uid="uid://c2g03j5duu75f" path="res://Extern/Home kit 2/Textures/Water Jug/Water Jug_512.png" id="1_223e4"]
-[ext_resource type="Script" path="res://Scripts/object.gd" id="1_qwj77"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_qwj77"]
 [ext_resource type="Texture2D" uid="uid://bvedftgftbwbf" path="res://Sprite/rare-material-high-resolution-logo.png" id="2_h7k5o"]
 [ext_resource type="PackedScene" uid="uid://bqt1clp8jnc1g" path="res://Extern/source/model.gltf" id="2_s5jjc"]
 

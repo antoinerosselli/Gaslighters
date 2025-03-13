@@ -1,0 +1,8 @@
+Model Information:
+* title:	PSX Armchair
+* source:	https://sketchfab.com/3d-models/psx-armchair-fc99d5cea60b433c8222fd916e010c1f
+* author:	Charckes (https://sketchfab.com/charlesmoch)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

@@ -9,6 +9,8 @@ extends CharacterBody3D
 @onready var camera_3d = $Camera3D
 @onready var icon = $CanvasLayer/Control/Icon
 
+@onready var ptich = $Camera3D/ptich
+
 #inventory
 var on_inventory:bool = false
 @onready var label = $CanvasLayer/Control/Inventory/Label
@@ -24,6 +26,10 @@ var use_radio:bool= false
 var paused:bool = false
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+@export var affect_by_gravity:bool = true
+@export var can_move:bool = true
+
 var speed = 5
 var jump_speed = 5
 var mouse_sensitivity = 0.002
@@ -46,6 +52,11 @@ func dialogues_manager():
 	dialogues_id += 1
 
 func _physics_process(delta):
+	if can_interact == true:
+		logo_inter.visible = true
+	elif can_interact == false:
+		logo_inter.visible = false
+			
 	if paused == false:
 		if dialogues.size() > dialogues_id:
 			if dialogues[dialogues_id] != null && read_dialogue == false:
@@ -53,12 +64,13 @@ func _physics_process(delta):
 		else :
 			dialogues = []
 			dialogues_id = 0
-		velocity.y += -gravity * delta
+		if affect_by_gravity == true :
+			velocity.y += -gravity * delta
 		var input = Input.get_vector("left", "right", "up", "down")
 		var movement_dir = transform.basis * Vector3(input.x, 0, input.y)
 		velocity.x = movement_dir.x * speed
 		velocity.z = movement_dir.z * speed
-
+				
 		if ray_cast_3d.is_colliding():
 			item = ray_cast_3d.get_collider()
 			if item != null:
@@ -71,13 +83,10 @@ func _physics_process(delta):
 			can_interact = false
 
 		camera_joystick()
-
-		if can_interact == true:
-			logo_inter.visible = true
-		elif can_interact == false:
-			logo_inter.visible = false
-
-		move_and_slide()
+		
+		if can_move == true:
+			move_and_slide()
+		
 		if Input.is_action_just_pressed("interact") and can_interact == true:
 			item.interact()
 			item = null
@@ -98,13 +107,13 @@ func _input(event):
 	if Input.is_action_just_pressed("pause"):
 		Tools.call_pause()
 		paused = !paused
-	if Input.is_action_just_pressed("crouch"):
+	if Input.is_action_just_pressed("crouch") && can_move == true:
 		if crouch == false:
-			camera_3d.position.y -= 1.3
+			camera_3d.position.y -= 1.1
 			speed -= 4
 			crouch = true
 		elif crouch == true:
-			camera_3d.position.y += 1.3
+			camera_3d.position.y += 1.1
 			speed += 4
 			crouch = false
 	if Input.is_action_just_pressed("select"):
@@ -119,6 +128,16 @@ func _input(event):
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)
 		$Camera3D.rotation.x = clampf($Camera3D.rotation.x, -deg_to_rad(70), deg_to_rad(70))
+
+func on_hand():
+	print("j'ai le ptich")
+	print(ptich)
+	if ptich.visible == true:
+		print("on voit le ptich")
+		ptich.visible = false
+	elif ptich.visible ==  false:
+		print("on voit plus le ptich")
+		ptich.visible = true
 
 func _on_timer_timeout():
 	read_dialogue = false

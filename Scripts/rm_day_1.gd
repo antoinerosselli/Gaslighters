@@ -3,21 +3,26 @@ extends Node
 var time_elapsed:int = 0
 
 #gouv
-var gouv_rad = 0
 var gouv_color = Color(0.117647, 0.564706, 1, 1)
 var gouv_time = 0
 
 #belle
-var belle_rad = 0
 var belle_color = Color(1, 0.0784314, 0.576471, 1)
 var belle_time = 0
 
 #Fanatic
-var Fanatic_rad = 0
 var Fanatic_color = Color(0.545098, 0, 0, 1)
 var Fanatic_time = 0
 
 var played_messages = {}  # Dictionnaire pour stocker les messages déjà joués
+
+var ones: bool = false
+
+func _process(delta):
+	if ones == false:
+		if Radio.getValue() > 54 and Radio.getValue() < 64 :
+			Tools.start_the_day()
+			ones = true
 
 func _on_timer_timeout():
 	time_elapsed += 1  # Incrémente le temps écoulé chaque seconde
@@ -37,22 +42,20 @@ func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
 	Tools.add_journal(text, color_ok)
 	Tools.unlock_fm(what_fm)
 	if what_fm == "gouv":
-		gouv_rad += 1
 		if what_cd != 0:
 			gouv_time = time_elapsed + what_cd
 	elif what_fm == "belle":
-		belle_rad += 1
 		if what_cd != 0:
 			belle_time = time_elapsed + what_cd
 	elif what_fm == "fanatic":
-		Fanatic_rad += 1
 		if what_cd != 0:
 			Fanatic_time = time_elapsed + what_cd
+
 func check_radio_conditions():
 	var radio_value = Radio.getValue()
 	#gouv radio ==>
 	#change voice ALL !!
-	if time_elapsed >= 30 and time_elapsed <= 70:
+	if time_elapsed >= 0 and time_elapsed <= 70:
 		if radio_value > 54 and radio_value < 64 :
 			play_radio_message("res://voice/day1/gov/1. Official government communication.wav", "Alert! An attack has taken place on one of our gas reserve sites.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:

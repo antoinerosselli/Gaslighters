@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvana5agg7gxp"]
+
+[ext_resource type="Texture2D" uid="uid://c56qxj4ftjxny" path="res://Sprite/spot.png" id="1_f5qfb"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_kpvhp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f5qfb"]
+size = Vector3(1.13696, 0.47168, 1.20058)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kpvhp"]
+radius = 0.895136
+
+[sub_resource type="FogMaterial" id="FogMaterial_kpvhp"]
+density = 0.498
+emission = Color(1, 1, 1, 1)
+
+[node name="depot" type="StaticBody3D"]
+script = ExtResource("1_kpvhp")
+item_name = "depot"
+depot = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+texture = ExtResource("1_f5qfb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00231934, -0.342768, -0.0120621)
+shape = SubResource("BoxShape3D_f5qfb")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_kpvhp")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0474854, 0.146782, 0.0177002)
+size = Vector3(1.22095, 0.677979, 1.52075)
+shape = 2
+material = SubResource("FogMaterial_kpvhp")

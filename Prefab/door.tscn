@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://jq2qjyp07h12"]
 
-[ext_resource type="Script" path="res://Scripts/object.gd" id="1_p2x70"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_p2x70"]
 [ext_resource type="Texture2D" uid="uid://4x1ytliea5c5" path="res://Model_House/Door.png" id="2_7grle"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hei45"]

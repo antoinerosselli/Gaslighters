@@ -2,8 +2,8 @@ extends Node3D
 
 @export var item_name:String
 
-@export_category("pickable ?")
-@export var pickable:bool
+@export_category("depot ?")
+@export var depot:bool
 
 @export_category("text ?")
 @export var is_text:bool
@@ -19,6 +19,10 @@ extends Node3D
 @export var lamp:Node3D
 @export var custom_range:float
 
+@export_category("is a note ?")
+@export var is_note : bool
+@export var note : PackedScene
+
 @export_category("have an unique trait ?")
 @export var script_trait:bool
 
@@ -27,9 +31,10 @@ func _ready():
 	
 func interact():
 	if is_text == true:
-		var player = Tools.get_player()
+		var player = Tools.get_player()	
 		player.dialogues = texts
-	if pickable == true:
+	if depot == true and Tools.get_player().ptich.visible == true:
+		Tools.sound_now(self,load("res://Music&Sound/sound/spray-36842.mp3") as AudioStream)
 		queue_free()
 	if door == true:
 		Tools.sound_now(self, load("res://Music&Sound/sound/door_sound.mp3") as AudioStream)
@@ -45,5 +50,7 @@ func interact():
 			elif  is_on == false:
 				var ligth = lamp.get_node("OmniLight3D")
 				ligth.omni_range = 0.0
+	if is_note == true:
+		Tools.notespawn(note)
 	if script_trait == true:
 		UniqueTrait.unique(item_name)

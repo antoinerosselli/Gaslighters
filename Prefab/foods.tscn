@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjw6l2m3ltbkn"]
 
-[ext_resource type="Script" path="res://Scripts/foods.gd" id="1_lj0s5"]
+[ext_resource type="Script" uid="uid://cwxfskc77khxq" path="res://Scripts/foods.gd" id="1_lj0s5"]
 [ext_resource type="PackedScene" uid="uid://b66xcf4iuliyf" path="res://Prefab/conserve.tscn" id="2_52h5e"]
-
 
 [node name="foods" type="Node3D" groups=["foods"]]
 transform = Transform3D(0.567116, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

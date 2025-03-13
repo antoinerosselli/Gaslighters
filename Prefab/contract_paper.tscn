@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://bths2mtikka83"]
+
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_iadqn"]
+[ext_resource type="Texture2D" uid="uid://ctd3o2l8pyf6h" path="res://Sprite/contract_img.png" id="1_pamd8"]
+[ext_resource type="PackedScene" uid="uid://c2pfx6rrw8cfp" path="res://Note/note_contrat.tscn" id="2_pamd8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vi0xh"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_pamd8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g8pbm"]
+material = SubResource("StandardMaterial3D_vi0xh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iadqn"]
+size = Vector3(2.19217, 0.0597229, 2.25842)
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(0.000103744, 0, 0.175148, 0, 0.994139, 0, -0.132087, 0, 0.000137566, -2, 0, 0)
+mesh = SubResource("PlaneMesh_g8pbm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+script = ExtResource("1_iadqn")
+item_name = "contract"
+is_note = true
+note = ExtResource("2_pamd8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 1, -0.114303, 0.00834656, -0.0494995)
+shape = SubResource("BoxShape3D_iadqn")

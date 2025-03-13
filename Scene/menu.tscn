@@ -1,14 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://saktvxup8cjo"]
+[gd_scene load_steps=8 format=3 uid="uid://saktvxup8cjo"]
 
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_sb1jo"]
-[ext_resource type="Script" path="res://Scripts/Menu.gd" id="3_2v8d6"]
+[ext_resource type="Script" uid="uid://dp6l7ry888ujw" path="res://Scripts/Menu.gd" id="3_2v8d6"]
+[ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="3_alu6o"]
 [ext_resource type="Texture2D" uid="uid://bau0dr758he5h" path="res://Sprite/logoEJ.png" id="3_lbxic"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_jfdc4"]
-font_size = 49
-font_color = Color(0.831373, 0.45098, 0.141176, 1)
-shadow_size = 5
-shadow_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u2k45"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1rv5"]
 bg_color = Color(0.0195939, 0.0588438, 0.0306887, 1)
@@ -26,14 +24,20 @@ grow_vertical = 2
 theme = ExtResource("1_sb1jo")
 script = ExtResource("3_2v8d6")
 
-[node name="title" type="Label" parent="."]
+[node name="title" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 64.0
-offset_right = 464.0
+offset_right = 672.0
 offset_bottom = 152.0
-text = "Gaslighters"
-label_settings = SubResource("LabelSettings_jfdc4")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/bold_font = ExtResource("3_alu6o")
+theme_override_font_sizes/bold_font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2k45")
+bbcode_enabled = true
+text = "[center][b][color=#e17a25][shake]G A S L I G H T E R S[/shake][/color][/b][/center]
+"
 vertical_alignment = 1
 
 [node name="play_button" type="Button" parent="."]
@@ -105,7 +109,18 @@ Tom Lori
 
 Marius Barthelemy
 
-Romain Garcio
+Romain Garsiot
+
+								With the participation of 
+								
+
+
+									Special thanks to 
+
+
+Guillaume Cristiani
+
+Max Guillot
 
 
 
@@ -127,7 +142,9 @@ https://sourpickle35.itch.io/psx-assets-old-oil-painting-kit
 
 https://sourpickle35.itch.io/psx-assets-home-furniture-kit-2
 
-https://sourpickle35.itch.io/psx-assets-balkan-interior-modular-props"
+https://sourpickle35.itch.io/psx-assets-balkan-interior-modular-props
+
+GermanCar (c) by Luca Anthony Schwarz"
 autowrap_mode = 2
 
 [node name="CLOSE" type="Button" parent="credits"]
