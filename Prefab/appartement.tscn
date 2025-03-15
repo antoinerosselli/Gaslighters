@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c23c0ms8d7bu0" path="res://Extern/Abandoned_House/Textures/Banqueta.jpg" id="7_2hp47"]
 [ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="8_dglfk"]
 [ext_resource type="Texture2D" uid="uid://bfm4m3lobfuf3" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 1.png" id="9_15imn"]
-[ext_resource type="Script" uid="uid://cfcsxnfs0a8lq" path="res://Scripts/pervaneler.gd" id="10_c4kbk"]
+[ext_resource type="Script" path="res://Scripts/pervaneler.gd" id="10_c4kbk"]
 [ext_resource type="Texture2D" uid="uid://g657d86dfo7q" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 2.png" id="10_oywuj"]
 [ext_resource type="Texture2D" uid="uid://sojcem2px26v" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 4.png" id="12_03387"]
 [ext_resource type="Texture2D" uid="uid://cbks0hwngu87l" path="res://Extern/Home Furniture Kit 1/Textures/Kitchen Aspirator.png" id="13_20qrr"]
@@ -25,14 +25,13 @@
 [ext_resource type="Texture2D" uid="uid://8cva1dsp6g1t" path="res://Extern/Rework Appart/Balkan/Architecture Textures/Wall 4.png" id="21_rmu5p"]
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="22_brtl6"]
 [ext_resource type="PackedScene" uid="uid://clylj6qgxpaqe" path="res://Prefab/lampadaire.tscn" id="23_anrvs"]
-[ext_resource type="Texture2D" uid="uid://crq650d7notns" path="res://model_House/WC.png" id="26_boe53"]
 [ext_resource type="PackedScene" uid="uid://d1wd0y8agtr47" path="res://Prefab/codesr.tscn" id="27_madox"]
 [ext_resource type="AudioStream" uid="uid://4pce5n81tj1d" path="res://Music&Sound/sliding-door-261122.mp3" id="29_88mqh"]
 [ext_resource type="ArrayMesh" uid="uid://0dn5ev7lw4bu" path="res://Extern/fauteil.res" id="30_u5qga"]
 [ext_resource type="PackedScene" uid="uid://1qetcicfegqf" path="res://Prefab/interrupteur.tscn" id="31_22q3o"]
 [ext_resource type="PackedScene" uid="uid://ba0gk24cg7jjp" path="res://Prefab/lamp.tscn" id="32_5p1tq"]
 [ext_resource type="PackedScene" uid="uid://mwp0ue5tqaet" path="res://Prefab/frontdoor.tscn" id="32_g21hh"]
-[ext_resource type="Script" uid="uid://f0s8w321p12q" path="res://Scripts/spot_light_3d.gd" id="33_3fu2f"]
+[ext_resource type="Script" path="res://Scripts/spot_light_3d.gd" id="33_3fu2f"]
 [ext_resource type="PackedScene" uid="uid://do4vqec45hk5" path="res://Prefab/courant.tscn" id="37_uj65h"]
 [ext_resource type="Texture2D" uid="uid://b040oorksb4i" path="res://Extern/Rework Appart/Balkan/Prop Textures/Seamless/Floor 4.png" id="38_hne8j"]
 [ext_resource type="PackedScene" uid="uid://jgo413cihxir" path="res://Scene/radio_obj.tscn" id="40_ijhvj"]
@@ -46,7 +45,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dgtlvxenno0mr" path="res://Extern/renfortfenetre.res" id="47_2vu0h"]
 [ext_resource type="PackedScene" uid="uid://bjw6l2m3ltbkn" path="res://Prefab/foods.tscn" id="47_6cyh5"]
 [ext_resource type="PackedScene" uid="uid://bfihnkj3effvp" path="res://Prefab/Alarme/alarme.tscn" id="48_gcctg"]
-[ext_resource type="Script" uid="uid://chfxycdtii2pv" path="res://Scripts/time_system.gd" id="48_osms8"]
+[ext_resource type="Script" path="res://Scripts/time_system.gd" id="48_osms8"]
 [ext_resource type="Texture2D" uid="uid://y4popkl7ub73" path="res://Extern/Abandoned_House/Textures/road.jpg" id="49_cjbug"]
 [ext_resource type="PackedScene" uid="uid://bncs6yj06htja" path="res://Extern/Rework Appart/plant/scene.gltf" id="49_eqbx7"]
 [ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="50_2ssic"]
@@ -464,7 +463,7 @@ tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jy2op"]
 _data = {
-&"open": SubResource("Animation_7ri1w")
+"open": SubResource("Animation_7ri1w")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4xhp"]
@@ -1397,7 +1396,7 @@ shape = SubResource("BoxShape3D_uls34")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="secretdoor"]
 libraries = {
-&"": SubResource("AnimationLibrary_jy2op")
+"": SubResource("AnimationLibrary_jy2op")
 }
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="secretdoor"]
