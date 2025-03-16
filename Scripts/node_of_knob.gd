@@ -9,7 +9,7 @@ func _input(_event):
 		var input = Input.get_vector("left", "right", "up", "down")
 		if input.x : 
 			var myrotate = input.x * rotation_speed
-			var knobVal :float= fposmod($".".rotation.x, TAU) / TAU*100
-			var _knobRotate :float= lerp_angle($".".rotation.x, myrotate, rotation_speed)
-			rotate_x(myrotate)
+			var knobVal :float= fposmod($".".rotation.z, TAU) / TAU*100
+			var _knobRotate :float= lerp_angle($".".rotation.z, myrotate, rotation_speed)
+			rotate_z(myrotate)
 			Radio.setValue(knobVal)
