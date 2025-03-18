@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cardboard Box Low Poly
+* source:	https://sketchfab.com/3d-models/cardboard-box-low-poly-6f66679005e24ff9a017c61c1f4f1cda
+* author:	Ellis Rogers-Byrne (https://sketchfab.com/ellisrb)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cardboard Box Low Poly" (https://sketchfab.com/3d-models/cardboard-box-low-poly-6f66679005e24ff9a017c61c1f4f1cda) by Ellis Rogers-Byrne (https://sketchfab.com/ellisrb) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

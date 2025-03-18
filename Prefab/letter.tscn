@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://dydkbrvc7it6i"]
+
+[ext_resource type="Texture2D" uid="uid://bvrkg6q7rugdh" path="res://Sprite/letter.png" id="1_40q5c"]
+[ext_resource type="Script" uid="uid://dppasyvtvj4g6" path="res://Prefab/letter.gd" id="1_n7vka"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_n7vka"]
+albedo_texture = ExtResource("1_40q5c")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hiqcw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j32o0"]
+size = Vector3(1.70282, 0.122925, 0.998108)
+
+[sub_resource type="Animation" id="Animation_n7vka"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_40q5c"]
+resource_name = "slide_letter"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-4.68102, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hiqcw"]
+_data = {
+&"RESET": SubResource("Animation_n7vka"),
+&"slide_letter": SubResource("Animation_40q5c")
+}
+
+[node name="Letter" type="StaticBody3D" groups=["letter"]]
+script = ExtResource("1_n7vka")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.76681, 0, 0, 0, 1, 0, 0, 0, 0.441186, 0, 0, 0)
+material_override = SubResource("ORMMaterial3D_n7vka")
+mesh = SubResource("PlaneMesh_hiqcw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.896602, 0, 0, 0, 0.896602, 0, 0, 0, 0.896602, 0.00514611, -0.0288397, -0.00392163)
+shape = SubResource("BoxShape3D_j32o0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hiqcw")
+}

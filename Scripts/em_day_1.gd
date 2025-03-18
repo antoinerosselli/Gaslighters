@@ -12,6 +12,8 @@ func check_event_conditions():
 	#helico event
 	if time_elapsed == 20:
 		print("helico event")
+		Tools.colis_departure()
+		Tools.door_letter()
 		Tools.start_sound("res://Music&Sound/helicopter-sound-effect-241421.mp3")
 	#remove alarm
 	if time_elapsed == 50 :
@@ -22,7 +24,6 @@ func check_event_conditions():
 	if time_elapsed == 280 :
 		print("helico drop")
 		Tools.start_sound("res://Music&Sound/helicopter-sound-effect-241421.mp3")
-		Tools.spawn_conserve(2)
 	
 	if time_elapsed == 350:
 		print("end of the day")

@@ -31,6 +31,5 @@ func radio_usage():
 		player_icon.visible = true
 		player_use.visible = true
 		player.use_radio = false
-		player.paused = false
 		player_camera.current = true
 		radio_camera.current = false

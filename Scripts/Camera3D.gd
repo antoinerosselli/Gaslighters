@@ -13,11 +13,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	time += delta
-	# Utiliser le bruit pour calculer les décalages en X et Y
-	var x_offset = noise.get_noise_2d(time, 0.0) * amplitude
-	var y_offset = noise.get_noise_2d(time, 1.0) * amplitude
-	
-	# Appliquer le déplacement à la position de la caméra
-	position.x += x_offset
-	position.y += y_offset
+	if self.current == true:
+		time += delta
+		# Utiliser le bruit pour calculer les décalages en X et Y
+		var x_offset = noise.get_noise_2d(time, 0.0) * amplitude
+		var y_offset = noise.get_noise_2d(time, 1.0) * amplitude
+		
+		# Appliquer le déplacement à la position de la caméra
+		position.x += x_offset
+		position.y += y_offset

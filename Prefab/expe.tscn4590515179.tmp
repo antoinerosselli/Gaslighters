@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://cepnt8lk8yq4o"]
+
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_4lta0"]
+[ext_resource type="Shader" uid="uid://b3lvhbwu7lsot" path="res://Shader/background_expe.gdshader" id="2_5pe61"]
+[ext_resource type="Script" uid="uid://bie44505018xy" path="res://Prefab/aventure_text.gd" id="2_kj2cy"]
+[ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="3_kj2cy"]
+[ext_resource type="AudioStream" uid="uid://4u06tpj2hmdp" path="res://Music&Sound/Echexe2.mp3" id="4_347xl"]
+[ext_resource type="Texture2D" uid="uid://diqhrw0q41ydn" path="res://Sprite/exit.png" id="6_vvwiu"]
+[ext_resource type="Texture2D" uid="uid://dd8ug7pci12hh" path="res://Sprite/exithover.png" id="7_cqvc2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kj2cy"]
+shader = ExtResource("2_5pe61")
+shader_parameter/scale = 5.0
+shader_parameter/speed = 0.3
+shader_parameter/octaves = 7
+shader_parameter/persistence = 0.909
+shader_parameter/color_1 = Color(1, 1, 1, 1)
+shader_parameter/color_2 = Color(0.650129, 0.650128, 0.650128, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_kj2cy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_kj2cy")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="aventure" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 1088.0
+offset_bottom = 384.0
+theme_override_fonts/normal_font = ExtResource("3_kj2cy")
+bbcode_enabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_347xl")
+volume_db = 1.193
+autoplay = true
+attenuation = 2.0
+
+[node name="GoHome" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 576.0
+offset_right = 1144.0
+offset_bottom = 640.0
+theme = ExtResource("1_4lta0")
+texture_normal = ExtResource("6_vvwiu")
+texture_pressed = ExtResource("7_cqvc2")
+texture_hover = ExtResource("7_cqvc2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="resultat" type="RichTextLabel" parent="."]
+offset_left = 64.0
+offset_top = 408.0
+offset_right = 1088.0
+offset_bottom = 512.0
+theme_override_fonts/normal_font = ExtResource("3_kj2cy")
+bbcode_enabled = true
+
+[connection signal="finished" from="aventure" to="." method="_on_aventure_finished"]
+[connection signal="pressed" from="GoHome" to="." method="_on_go_home_pressed"]

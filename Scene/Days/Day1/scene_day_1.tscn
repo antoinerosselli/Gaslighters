@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=18 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_36dop"]
@@ -8,25 +8,22 @@
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="7_frxae"]
 [ext_resource type="PackedScene" uid="uid://dyvkf1itavutm" path="res://Scene/Days/Day1/em_day_1.tscn" id="7_vxswh"]
 [ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_5gr6e"]
+[ext_resource type="Script" uid="uid://rnxgsqksahu1" path="res://Scene/Days/Day1/dm_day_1.gd" id="8_dfr7x"]
+[ext_resource type="PackedScene" uid="uid://dydkbrvc7it6i" path="res://Prefab/letter.tscn" id="10_rvlxt"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is71n"]
-sky_curve = 0.678472
-ground_bottom_color = Color(0.509804, 0.537255, 0.396078, 1)
-
-[sub_resource type="Sky" id="Sky_vfaw4"]
-sky_material = SubResource("ProceduralSkyMaterial_is71n")
-radiance_size = 2
+[sub_resource type="Sky" id="Sky_rvlxt"]
 
 [sub_resource type="Environment" id="Environment_paq7g"]
 background_mode = 2
-sky = SubResource("Sky_vfaw4")
-ambient_light_sky_contribution = 0.21
-ambient_light_energy = 0.15
+sky = SubResource("Sky_rvlxt")
+ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
+ambient_light_sky_contribution = 0.51
+ambient_light_energy = 0.35
 ssao_radius = 3.49
 glow_normalized = true
 glow_intensity = 7.2
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.0738
+volumetric_fog_density = 0.0157
 volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
 volumetric_fog_anisotropy = -0.51
 adjustment_enabled = true
@@ -37,7 +34,68 @@ adjustment_saturation = 1.44
 [sub_resource type="FogMaterial" id="FogMaterial_87u83"]
 emission = Color(0.281187, 0.281187, 0.281187, 1)
 
-[node name="SceneDay1" type="Node3D"]
+[sub_resource type="Animation" id="Animation_gxdup"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(16.2043, -1.72069, 0.792677)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rvlxt"]
+resource_name = "slide_letter"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(16.2043, -1.72069, 0.792677), Vector3(14.9671, -1.72069, 0.792677)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.878075, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f86ad"]
+_data = {
+&"RESET": SubResource("Animation_gxdup"),
+&"slide_letter": SubResource("Animation_rvlxt")
+}
+
+[node name="SceneDay1" type="Node3D" groups=["scene"]]
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_36dop")]
 transform = Transform3D(1, 0, 0, 0, 1.32601, 0, 0, 0, 1, -2.80715, -0.224309, 6.51119)
@@ -123,8 +181,41 @@ texts = ["Hmm"]
 
 [node name="em_day_1" parent="MOTORS" instance=ExtResource("7_vxswh")]
 
-[node name="depot_spawner" parent="." instance=ExtResource("8_5gr6e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.662495, -1.5983, 4.06307)
+[node name="dm_day_1" type="Node" parent="MOTORS"]
+script = ExtResource("8_dfr7x")
+DANGER_LEVEL = 2
+
+[node name="depot_spawner" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0860391, -1.5983, 8.4577)
+activation = false
+
+[node name="depot_spawner2" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.832851, -1.5983, -6.62545)
+activation = false
+
+[node name="depot_spawner3" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8343, -1.5983, -6.83925)
+activation = false
+
+[node name="depot_spawner4" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.272, -1.5983, 0.690172)
+activation = false
+
+[node name="depot_spawner5" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5527, -1.5983, 7.79251)
+activation = false
+
+[node name="depot_spawner6" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58043, -1.5983, 0.445554)
+activation = false
+
+[node name="Letter" parent="." instance=ExtResource("10_rvlxt")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 16.2043, -1.72069, 0.792677)
+
+[node name="AnimationPlayer" parent="Letter" index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_f86ad")
+}
 
 [editable path="one"]
 [editable path="two"]
@@ -133,3 +224,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.662495, -1.5983, 4.06307)
 [editable path="four2"]
 [editable path="tres2"]
 [editable path="two2"]
+[editable path="Letter"]

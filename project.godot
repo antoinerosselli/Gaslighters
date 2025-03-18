@@ -21,11 +21,12 @@ Tools="*res://Scripts/tools.gd"
 UniqueTrait="*res://Scripts/unique_trait.gd"
 Radio="*res://Scripts/radio.gd"
 Horloge="*res://Scripts/date_time.gd"
+Save="*res://Scripts/save.gd"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://bop3pobtyk3f"
 
 [input]
 
