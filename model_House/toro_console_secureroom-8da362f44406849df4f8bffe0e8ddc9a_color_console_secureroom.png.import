@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://croasvqy3hps6"
-path.s3tc="res://.godot/imported/toro_console_secureroom-8da362f44406849df4f8bffe0e8ddc9a_color_console_secureroom.png-6b5b82164ef020ded50a1dffdc93e852.s3tc.ctex"
+path.s3tc="res://.godot/imported/toro_console_secureroom-8da362f44406849df4f8bffe0e8ddc9a_color_console_secureroom.png-576288fc5c95d84c1c22c20c2d6bcdd9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://model_House/toro_console_secureroom-8da362f44406849df4f8bffe0e8ddc9a_color_console_secureroom.png"
-dest_files=["res://.godot/imported/toro_console_secureroom-8da362f44406849df4f8bffe0e8ddc9a_color_console_secureroom.png-6b5b82164ef020ded50a1dffdc93e852.s3tc.ctex"]
+source_file="res://Model_House/toro_console_secureroom-8da362f44406849df4f8bffe0e8ddc9a_color_console_secureroom.png"
+dest_files=["res://.godot/imported/toro_console_secureroom-8da362f44406849df4f8bffe0e8ddc9a_color_console_secureroom.png-576288fc5c95d84c1c22c20c2d6bcdd9.s3tc.ctex"]
 
 [params]
 

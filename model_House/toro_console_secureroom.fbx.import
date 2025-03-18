@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://n4d8hllkf3th"
-valid=false
+path="res://.godot/imported/toro_console_secureroom.fbx-f38d0e9acb173332a68fcd5b08c85a08.scn"
 
 [deps]
 
-source_file="res://model_House/toro_console_secureroom.fbx"
+source_file="res://Model_House/toro_console_secureroom.fbx"
+dest_files=["res://.godot/imported/toro_console_secureroom.fbx-f38d0e9acb173332a68fcd5b08c85a08.scn"]
 
 [params]
 

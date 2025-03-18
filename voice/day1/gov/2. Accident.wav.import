@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dwmhyhwkrt7o0"
-path="res://.godot/imported/2. Accident.wav-84372bf51c40e0910e4c249980a3e13e.sample"
+path="res://.godot/imported/2. Accident.wav-071fcb7796816be8f8dd26f0636dba62.sample"
 
 [deps]
 
-source_file="res://voice/day1/gov/2. Accident.wav"
-dest_files=["res://.godot/imported/2. Accident.wav-84372bf51c40e0910e4c249980a3e13e.sample"]
+source_file="res://Voice/day1/gov/2. Accident.wav"
+dest_files=["res://.godot/imported/2. Accident.wav-071fcb7796816be8f8dd26f0636dba62.sample"]
 
 [params]
 

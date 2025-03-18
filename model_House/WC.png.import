@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crq650d7notns"
-path.s3tc="res://.godot/imported/WC.png-b51210f292baea96e0f13983e746ca53.s3tc.ctex"
+path.s3tc="res://.godot/imported/WC.png-13a5d9ea6282398946c5b9400f8123f3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://model_House/WC.png"
-dest_files=["res://.godot/imported/WC.png-b51210f292baea96e0f13983e746ca53.s3tc.ctex"]
+source_file="res://Model_House/WC.png"
+dest_files=["res://.godot/imported/WC.png-13a5d9ea6282398946c5b9400f8123f3.s3tc.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://6vu817s1ese5"
-path="res://.godot/imported/You too .mp3-396b0358c3779aac80cac2d05bc6696b.mp3str"
+path="res://.godot/imported/You too .mp3-86c1fc79b7742e360a21904fadf09506.mp3str"
 
 [deps]
 
-source_file="res://voice/day1/belle/You too .mp3"
-dest_files=["res://.godot/imported/You too .mp3-396b0358c3779aac80cac2d05bc6696b.mp3str"]
+source_file="res://Voice/day1/belle/You too .mp3"
+dest_files=["res://.godot/imported/You too .mp3-86c1fc79b7742e360a21904fadf09506.mp3str"]
 
 [params]
 

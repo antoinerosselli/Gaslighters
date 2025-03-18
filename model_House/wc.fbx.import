@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dhama3b80tvk6"
-valid=false
+path="res://.godot/imported/wc.fbx-584c4d5762b0a3335b61929847933caf.scn"
 
 [deps]
 
-source_file="res://model_House/wc.fbx"
+source_file="res://Model_House/wc.fbx"
+dest_files=["res://.godot/imported/wc.fbx-584c4d5762b0a3335b61929847933caf.scn"]
 
 [params]
 

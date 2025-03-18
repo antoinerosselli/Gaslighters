@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://06nuesi2me7d"
-valid=false
+path="res://.godot/imported/Abandoned_House.fbx-e74e3e3eddc789805664400844a84ec1.scn"
 
 [deps]
 
 source_file="res://Extern/Abandoned_House/Abandoned_House.fbx"
+dest_files=["res://.godot/imported/Abandoned_House.fbx-e74e3e3eddc789805664400844a84ec1.scn"]
 
 [params]
 

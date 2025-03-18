@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://vnybec41xdgm"
-path="res://.godot/imported/3. GONE.mp3-a721a109bf19d7cd5e98262ae9f4998a.mp3str"
+path="res://.godot/imported/3. GONE.mp3-5eec13df480b11476c6b4e7954873e97.mp3str"
 
 [deps]
 
-source_file="res://voice/day1/complot/3. GONE.mp3"
-dest_files=["res://.godot/imported/3. GONE.mp3-a721a109bf19d7cd5e98262ae9f4998a.mp3str"]
+source_file="res://Voice/day1/complot/3. GONE.mp3"
+dest_files=["res://.godot/imported/3. GONE.mp3-5eec13df480b11476c6b4e7954873e97.mp3str"]
 
 [params]
 

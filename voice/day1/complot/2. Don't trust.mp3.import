@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://binj0iknvfbts"
-path="res://.godot/imported/2. Don't trust.mp3-1eec791643582045a469bb12246f13e7.mp3str"
+path="res://.godot/imported/2. Don't trust.mp3-2e11a7aa93a9c06c409296cd4cc67641.mp3str"
 
 [deps]
 
-source_file="res://voice/day1/complot/2. Don't trust.mp3"
-dest_files=["res://.godot/imported/2. Don't trust.mp3-1eec791643582045a469bb12246f13e7.mp3str"]
+source_file="res://Voice/day1/complot/2. Don't trust.mp3"
+dest_files=["res://.godot/imported/2. Don't trust.mp3-2e11a7aa93a9c06c409296cd4cc67641.mp3str"]
 
 [params]
 

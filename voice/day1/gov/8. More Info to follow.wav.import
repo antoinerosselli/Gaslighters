@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cjbngwl221lgd"
-path="res://.godot/imported/8. More Info to follow.wav-c0e5bc1461e2493ed54362fdb39088ba.sample"
+path="res://.godot/imported/8. More Info to follow.wav-3eda3f8dea3cf3a47e5e3853edaa70cb.sample"
 
 [deps]
 
-source_file="res://voice/day1/gov/8. More Info to follow.wav"
-dest_files=["res://.godot/imported/8. More Info to follow.wav-c0e5bc1461e2493ed54362fdb39088ba.sample"]
+source_file="res://Voice/day1/gov/8. More Info to follow.wav"
+dest_files=["res://.godot/imported/8. More Info to follow.wav-3eda3f8dea3cf3a47e5e3853edaa70cb.sample"]
 
 [params]
 

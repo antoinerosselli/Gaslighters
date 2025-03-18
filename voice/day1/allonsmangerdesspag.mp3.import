@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://csfgo6bhcw5tq"
-path="res://.godot/imported/allonsmangerdesspag.mp3-a85b93add7fda4ae077be33280767d9c.mp3str"
+path="res://.godot/imported/allonsmangerdesspag.mp3-b75342845b9df993f4d72c28fefdf172.mp3str"
 
 [deps]
 
-source_file="res://voice/day1/allonsmangerdesspag.mp3"
-dest_files=["res://.godot/imported/allonsmangerdesspag.mp3-a85b93add7fda4ae077be33280767d9c.mp3str"]
+source_file="res://Voice/day1/allonsmangerdesspag.mp3"
+dest_files=["res://.godot/imported/allonsmangerdesspag.mp3-b75342845b9df993f4d72c28fefdf172.mp3str"]
 
 [params]
 

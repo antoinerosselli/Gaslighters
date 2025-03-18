@@ -34,6 +34,7 @@
 [ext_resource type="Script" uid="uid://f0s8w321p12q" path="res://Scripts/spot_light_3d.gd" id="33_3fu2f"]
 [ext_resource type="PackedScene" uid="uid://do4vqec45hk5" path="res://Prefab/courant.tscn" id="37_uj65h"]
 [ext_resource type="Texture2D" uid="uid://b040oorksb4i" path="res://Extern/Rework Appart/Balkan/Prop Textures/Seamless/Floor 4.png" id="38_hne8j"]
+[ext_resource type="PackedScene" uid="uid://jgo413cihxir" path="res://Scene/radio_obj.tscn" id="40_ijhvj"]
 [ext_resource type="Texture2D" uid="uid://dcwuxy4f6p0di" path="res://Extern/textures/WallLong.png" id="42_xqcol"]
 [ext_resource type="Texture2D" uid="uid://0btk7rt5p01q" path="res://Extern/textures/ShowerFloor.png" id="43_hx06a"]
 [ext_resource type="ArrayMesh" uid="uid://d3x126e8ftyht" path="res://Extern/Rework Appart/parkprops/curtain.res" id="45_cobxl"]
@@ -1273,9 +1274,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_21bda")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ydpo6"]
-size = Vector3(0.209229, 0.373596, 0.526123)
-
 [node name="Node3D" type="Node3D"]
 
 [node name="MeshInstance3D32" type="MeshInstance3D" parent="."]
@@ -1459,6 +1457,31 @@ transform = Transform3D(0.992745, 0, 0.120241, 0, 1, 0, -0.120241, 0, 0.992745, 
 
 [node name="Courant" parent="." instance=ExtResource("37_uj65h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.420035, -8.82901, 0.545004, -7.99896)
+
+[node name="RadioObj" parent="." instance=ExtResource("40_ijhvj")]
+transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.578161, -4.58302)
+
+[node name="Camera3D" parent="RadioObj/Radiooo" index="0"]
+transform = Transform3D(0.999877, 0.0144928, -0.0060679, -0.0139091, 0.996098, 0.0871556, 0.00730735, -0.0870605, 0.996176, 11.1533, -0.275743, -3.76769)
+fov = 69.6711
+
+[node name="AudioStreamPlayer3D" parent="RadioObj/Radiooo" index="1"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, 0, 0, 1, -0.0273314, 0.165519, -0.0482235)
+
+[node name="Knob3D" parent="RadioObj/Radiooo/Radio#NodeOfKnob" index="0"]
+transform = Transform3D(-5.12227e-09, 0.0276934, 0, 0.0672663, 6.7856e-10, -0.0852963, -0.0993743, -1.04774e-09, -0.0577369, -0.0273309, 0.165519, -0.0482235)
+
+[node name="Radio_NodeOfKnob#Knob3D2" parent="RadioObj/Radiooo" index="3"]
+transform = Transform3D(-5.24537e-09, 0.0276934, -4.65661e-10, -0.12, -1.21052e-09, -7.77629e-09, -9.05975e-09, 0, 0.103, -0.0273104, 0.165258, -0.0484371)
+
+[node name="Radio_NodeOfKnob_Knob3D_StaticBody3D#CollisionShape3D" parent="RadioObj/Radiooo" index="5"]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
+
+[node name="Radio" parent="RadioObj/Radiooo" index="6"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 7.54979e-08, 7.45058e-09, -7.54979e-08, 1, -0.0518546, 0.000712454, -0.07586)
+
+[node name="CollisionShape3D" parent="RadioObj" index="1"]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
 
 [node name="New_Console_SubViewport#Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1.0205, 0, 0.0412816, 0, 0.863311, 0, -0.0293248, 0, 1.43659, -3.80287, 0.223529, -7.9891)
@@ -2871,23 +2894,13 @@ transform = Transform3D(-0.0070511, 0, 0.999975, 0, 1, 0, -0.999975, 0, -0.00705
 [node name="TruckSpawner" parent="." instance=ExtResource("103_ydpo6")]
 transform = Transform3D(-0.0194591, 0, 0.999811, 0, 1, 0, -0.999811, 0, -0.0194591, -41.9776, -7.77782, 39.6249)
 truck = ExtResource("104_rxjnh")
-[node name="Radio" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.00204198, 0, -0.999998, 0, 1, 0, 0.999998, 0, -0.00204198, 10.9142, -0.460509, -4.4184)
-script = ExtResource("102_ydpo6")
-item_name = "radio"
-script_trait = true
-
-[node name="Radiooo" parent="Radio" instance=ExtResource("103_ydpo6")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Radio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.262821, -0.0733948, -0.0372448)
-shape = SubResource("BoxShape3D_ydpo6")
 
 [editable path="Lamp1"]
+[editable path="RadioObj"]
+[editable path="RadioObj/Radiooo"]
 [editable path="Deco/Sketchfab_Scene2"]
 [editable path="Deco/Sketchfab_Scene3"]
 [editable path="Deco/Sketchfab_Scene6"]
 [editable path="Deco/Sketchfab_Scene7"]
 [editable path="New_Console"]
 [editable path="lavedepot"]
-[editable path="Radio/Radiooo"]
