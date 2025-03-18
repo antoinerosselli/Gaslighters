@@ -16,10 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://cyh0l2vpuyrh4" path="res://Extern/Home Furniture Kit 1/Textures/Kitchen Oven.png" id="14_xyiib"]
 [ext_resource type="Texture2D" uid="uid://bl4k23dxs4qfc" path="res://Extern/Home Furniture Kit 1/Textures/Dishwasher.png" id="15_ve4wt"]
 [ext_resource type="Texture2D" uid="uid://dxis8exg7hx4w" path="res://Extern/Home kit 2/Textures/Desk Lamp 1/Desk Lamp 1_256.png" id="16_xwbb6"]
-[ext_resource type="ArrayMesh" uid="uid://bhogxa7a3s1vu" path="res://model_House/lamp.res" id="17_hqtfn"]
+[ext_resource type="ArrayMesh" uid="uid://bhogxa7a3s1vu" path="res://Model_House/lamp.res" id="17_hqtfn"]
 [ext_resource type="Texture2D" uid="uid://chncdhii6c5mg" path="res://Extern/Home kit 2/Textures/Table/Table_256.png" id="18_nxgg6"]
 [ext_resource type="Script" uid="uid://b5r0ey7g14fmr" path="res://Scripts/lamp_uniq.gd" id="19_5m5wx"]
-[ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://model_House/table_corridor.res" id="19_h016w"]
+[ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://Model_House/table_corridor.res" id="19_h016w"]
 [ext_resource type="PackedScene" uid="uid://jq2qjyp07h12" path="res://Prefab/door.tscn" id="20_sptjv"]
 [ext_resource type="Texture2D" uid="uid://c6seq6ytbogb0" path="res://Extern/Abandoned_House/Abandoned_House_Madera2.jpg" id="21_d2xxn"]
 [ext_resource type="Texture2D" uid="uid://8cva1dsp6g1t" path="res://Extern/Rework Appart/Balkan/Architecture Textures/Wall 4.png" id="21_rmu5p"]
@@ -1459,26 +1459,20 @@ transform = Transform3D(0.992745, 0, 0.120241, 0, 1, 0, -0.120241, 0, 0.992745, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.420035, -8.82901, 0.545004, -7.99896)
 
 [node name="RadioObj" parent="." instance=ExtResource("40_ijhvj")]
-transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.578161, -4.58302)
+transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.445068, -4.58302)
 
 [node name="Camera3D" parent="RadioObj/Radiooo" index="0"]
-transform = Transform3D(0.999877, 0.0144928, -0.0060679, -0.0139091, 0.996098, 0.0871556, 0.00730735, -0.0870605, 0.996176, 11.1533, -0.275743, -3.76769)
+transform = Transform3D(-0.089916, -0.088057, 0.992049, -0.0139091, 0.996098, 0.0871557, -0.995852, -0.0059618, -0.0907899, 0.557325, 0.0626082, 0.00615215)
 fov = 69.6711
 
 [node name="AudioStreamPlayer3D" parent="RadioObj/Radiooo" index="1"]
 transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, 0, 0, 1, -0.0273314, 0.165519, -0.0482235)
 
-[node name="Knob3D" parent="RadioObj/Radiooo/Radio#NodeOfKnob" index="0"]
-transform = Transform3D(-5.12227e-09, 0.0276934, 0, 0.0672663, 6.7856e-10, -0.0852963, -0.0993743, -1.04774e-09, -0.0577369, -0.0273309, 0.165519, -0.0482235)
+[node name="Radio_NodeOfKnob#Knob3D2" parent="RadioObj/Radiooo" index="2"]
+transform = Transform3D(-5.24537e-09, 0.0276934, -2.79397e-09, -0.12, -1.21052e-09, -7.77629e-09, -9.05975e-09, 0, 0.103, -0.186411, 0.043699, 0.228669)
 
-[node name="Radio_NodeOfKnob#Knob3D2" parent="RadioObj/Radiooo" index="3"]
-transform = Transform3D(-5.24537e-09, 0.0276934, -4.65661e-10, -0.12, -1.21052e-09, -7.77629e-09, -9.05975e-09, 0, 0.103, -0.0273104, 0.165258, -0.0484371)
-
-[node name="Radio_NodeOfKnob_Knob3D_StaticBody3D#CollisionShape3D" parent="RadioObj/Radiooo" index="5"]
+[node name="Radio_NodeOfKnob_Knob3D_StaticBody3D#CollisionShape3D" parent="RadioObj/Radiooo" index="4"]
 transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
-
-[node name="Radio" parent="RadioObj/Radiooo" index="6"]
-transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 7.54979e-08, 7.45058e-09, -7.54979e-08, 1, -0.0518546, 0.000712454, -0.07586)
 
 [node name="CollisionShape3D" parent="RadioObj" index="1"]
 transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
