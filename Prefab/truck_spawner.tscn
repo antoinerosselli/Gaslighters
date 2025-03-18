@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://jltl853aukg1"]
+
+[ext_resource type="Script" uid="uid://csnwwdx4cpc12" path="res://Scripts/truck_spawner.gd" id="1_rvpmp"]
+
+[node name="TruckSpawner" type="Marker3D" groups=["truckspawn"]]
+script = ExtResource("1_rvpmp")

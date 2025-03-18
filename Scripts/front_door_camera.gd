@@ -11,4 +11,3 @@ func _physics_process(_delta):
 		player_icon.visible = true
 		player_use.visible = true
 		camera_player.current = true
-		player.paused = false

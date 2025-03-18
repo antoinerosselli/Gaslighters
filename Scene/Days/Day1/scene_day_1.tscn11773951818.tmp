@@ -1,0 +1,161 @@
+[gd_scene load_steps=15 format=3 uid="uid://co4aabqugmh0u"]
+
+[ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_36dop"]
+[ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="3_8js8r"]
+[ext_resource type="AudioStream" uid="uid://deb1cmth3t1nu" path="res://Music&Sound/explosion-47821.mp3" id="4_5r21v"]
+[ext_resource type="PackedScene" uid="uid://wfmu7ny1m538" path="res://Scene/Days/Day1/rm_day_1.tscn" id="6_o1j03"]
+[ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="7_frxae"]
+[ext_resource type="PackedScene" uid="uid://dyvkf1itavutm" path="res://Scene/Days/Day1/em_day_1.tscn" id="7_vxswh"]
+[ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_5gr6e"]
+[ext_resource type="Script" uid="uid://rnxgsqksahu1" path="res://Scene/Days/Day1/dm_day_1.gd" id="8_dfr7x"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is71n"]
+sky_curve = 0.678472
+ground_bottom_color = Color(0.509804, 0.537255, 0.396078, 1)
+
+[sub_resource type="Sky" id="Sky_vfaw4"]
+sky_material = SubResource("ProceduralSkyMaterial_is71n")
+radiance_size = 2
+
+[sub_resource type="Environment" id="Environment_paq7g"]
+background_mode = 2
+sky = SubResource("Sky_vfaw4")
+ambient_light_sky_contribution = 0.21
+ambient_light_energy = 0.15
+ssao_radius = 3.49
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0738
+volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
+volumetric_fog_anisotropy = -0.51
+adjustment_enabled = true
+adjustment_saturation = 1.44
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2jnq7"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_87u83"]
+emission = Color(0.281187, 0.281187, 0.281187, 1)
+
+[node name="SceneDay1" type="Node3D" groups=["scene"]]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_36dop")]
+transform = Transform3D(1, 0, 0, 0, 1.32601, 0, 0, 0, 1, -2.80715, -0.224309, 6.51119)
+
+[node name="Node3D" parent="." instance=ExtResource("1_jb5ec")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_paq7g")
+camera_attributes = SubResource("CameraAttributesPractical_2jnq7")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
+size = Vector3(24.1484, 6.75517, 2)
+material = SubResource("FogMaterial_87u83")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00224, -0.155392, 11.3124)
+size = Vector3(20.3026, 7.08786, 2.43262)
+material = SubResource("FogMaterial_87u83")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["alarm"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4352, 0, -33.1535)
+stream = ExtResource("3_8js8r")
+volume_db = -4.0
+autoplay = true
+max_distance = 100.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -36)
+stream = ExtResource("4_5r21v")
+autoplay = true
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1887, -0.155392, -2.2077)
+size = Vector3(13.9297, 7.08786, 2)
+material = SubResource("FogMaterial_87u83")
+
+[node name="one" parent="." instance=ExtResource("7_frxae")]
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, -0.955145, -0.722322, 3.3345)
+one_shot = true
+is_text = true
+texts = ["What's that noise?", "Looks like it's coming from outside"]
+
+[node name="two" parent="." instance=ExtResource("7_frxae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1, 6.32785, -0.722322, -0.281386)
+one_shot = true
+is_text = true
+texts = ["It looks like mist "]
+
+[node name="tres" parent="." instance=ExtResource("7_frxae")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 12.3279, -0.722322, 1.71861)
+one_shot = true
+is_text = true
+texts = ["I might have more information on the radio"]
+
+[node name="four" parent="." instance=ExtResource("7_frxae")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, -3.6721, -0.722322, -4.28139)
+one_shot = true
+is_text = true
+texts = ["What is this place?"]
+
+[node name="four2" parent="." instance=ExtResource("7_frxae")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 3.57509, -0.722322, -3.96604)
+one_shot = true
+is_text = true
+texts = ["I need to calm down"]
+
+[node name="tres2" parent="." instance=ExtResource("7_frxae")]
+transform = Transform3D(0.993824, 0, 0.233028, 0, 1, 0, -0.110966, 0, 2.08703, 11.3347, -0.722322, 4.38196)
+one_shot = true
+is_text = true
+texts = ["I hope I'll have enough food"]
+
+[node name="two2" parent="." instance=ExtResource("7_frxae")]
+transform = Transform3D(0.0101925, 0, -2.09989, 0, 1, 0, 0.999948, 0, 0.0214043, -3.59913, -0.722322, -1.12957)
+one_shot = true
+is_text = true
+texts = ["Hmm"]
+
+[node name="MOTORS" type="Node" parent="."]
+
+[node name="rm_day1" parent="MOTORS" instance=ExtResource("6_o1j03")]
+
+[node name="em_day_1" parent="MOTORS" instance=ExtResource("7_vxswh")]
+
+[node name="dm_day_1" type="Node" parent="MOTORS"]
+script = ExtResource("8_dfr7x")
+DANGER_LEVEL = 6
+
+[node name="depot_spawner" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0860391, -1.5983, 8.4577)
+activation = false
+
+[node name="depot_spawner2" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.832851, -1.5983, -6.62545)
+activation = false
+
+[node name="depot_spawner3" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8343, -1.5983, -6.83925)
+activation = false
+
+[node name="depot_spawner4" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8726, -1.5983, 0.690172)
+activation = false
+
+[node name="depot_spawner5" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5527, -1.5983, 7.79251)
+activation = false
+
+[node name="depot_spawner6" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58043, -1.5983, 0.445554)
+activation = false
+
+[editable path="one"]
+[editable path="two"]
+[editable path="tres"]
+[editable path="four"]
+[editable path="four2"]
+[editable path="tres2"]
+[editable path="two2"]

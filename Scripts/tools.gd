@@ -22,6 +22,29 @@ func get_player():
 	var player = get_tree().get_first_node_in_group("player")
 	return player
 
+func paused_game():
+	print("POPPOPOPOPOPOPAUSE")
+	get_tree().paused = !get_tree().paused
+	if get_tree().paused == true:
+		Tools.get_player().paused.visible = true
+		Tools.get_player().logo_inter.visible = false
+		Tools.get_player().icon.visible = false
+	elif get_tree().paused == false:
+		Tools.get_player().paused.visible = false
+		Tools.get_player().logo_inter.visible = true
+		Tools.get_player().icon.visible = true
+
+func door_letter():
+	var letter = get_tree().get_first_node_in_group("letter")
+	letter.new_letter()
+
+func go_to_expe():
+	var es:PackedScene = preload("res://Prefab/expe.tscn") as PackedScene
+	var es_tmp = es.instantiate()
+	get_tree().get_first_node_in_group("canvas").visible = false
+	add_child(es_tmp)
+	print("go to expe")
+
 func call_pause():
 	if get_tree().get_first_node_in_group("pause") == null:
 		var mp:PackedScene = preload("res://Prefab/ui/pause.tscn")
@@ -31,6 +54,16 @@ func call_pause():
 	elif get_tree().get_first_node_in_group("pause") != null :
 		var mp_tmp = get_tree().get_first_node_in_group("pause")
 		mp_tmp.queue_free()
+
+func call_options():
+	var mp:PackedScene = preload("res://Prefab/options.tscn")
+	var mp_tmp = mp.instantiate()
+	var menu2d = get_tree().get_first_node_in_group("menu2d")
+	if menu2d == null:
+		var menu_pause = get_tree().get_first_node_in_group("pause")
+		menu_pause.add_child(mp_tmp)
+	else :
+		menu2d.add_child(mp_tmp)
 
 func get_color_fd():
 	var lamp_door = get_tree().get_first_node_in_group("lamp_door")
@@ -158,9 +191,15 @@ func change_lesinputs(what_lesinputs):
 		[ Move ] Change FM"
 	if what_lesinputs == "inventory":
 		text_input.text == "[ TAB ] Close"
+	if what_lesinputs == "blank":
+		text_input.text == ""
 		
 func start_the_day():
 	var timerradio = get_tree().get_first_node_in_group("timerradio")
 	var timerevent = get_tree().get_first_node_in_group("timerevent")
 	timerradio.start()
 	timerevent.start()
+
+func colis_departure():
+	var TS = get_tree().get_first_node_in_group("truckspawn")
+	TS.truck_spawn()

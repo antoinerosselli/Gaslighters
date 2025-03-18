@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=29 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" uid="uid://ckooh51x0xywe" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Script" uid="uid://8aqmy8q7388i" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
+[ext_resource type="PackedScene" uid="uid://bhot50ba066lf" path="res://Prefab/popup_sure.tscn" id="4_0r8a8"]
 [ext_resource type="Shader" uid="uid://exr4uhb1s52k" path="res://Shader/psxcameraeffect.gdshader" id="4_evs1m"]
 [ext_resource type="Texture2D" uid="uid://cpxh0j8eqp0ia" path="res://Sprite/Carnet.png" id="6_htqqd"]
 [ext_resource type="Texture2D" uid="uid://bds6idchttvqj" path="res://Sprite/mainorange.png" id="6_oj1nk"]
@@ -15,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://dpi8t3jrme5d" path="res://Extern/Rework Appart/spray/scene.gltf" id="13_wyp7x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wyp7x"]
+font_size = 37
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2w04"]
 shader = ExtResource("4_evs1m")
@@ -110,15 +114,31 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_17q4h")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." groups=["canvas"]]
+
+[node name="popup_sure" parent="CanvasLayer" instance=ExtResource("4_0r8a8")]
+visible = false
+offset_left = -4.0
+offset_top = -1.0
+offset_right = -4.0
+offset_bottom = -1.0
 
 [node name="Control" type="Control" parent="CanvasLayer"]
-process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 640.0
 mouse_filter = 2
+
+[node name="paused" type="Label" parent="CanvasLayer/Control"]
+process_mode = 3
+visible = false
+layout_mode = 0
+offset_left = 447.0
+offset_right = 729.0
+offset_bottom = 51.0
+text = "- paused game -"
+label_settings = SubResource("LabelSettings_wyp7x")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 material = SubResource("ShaderMaterial_h2w04")
@@ -126,6 +146,7 @@ layout_mode = 0
 offset_left = -3.0
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 2
 color = Color(1, 1, 1, 0.156863)
 
 [node name="show_text" type="Label" parent="CanvasLayer/Control"]
@@ -251,12 +272,11 @@ scroll_following = true
 tab_size = 15
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 0
-offset_left = 552.0
-offset_top = 312.0
-offset_right = 618.0
-offset_bottom = 343.0
+offset_left = 553.0
+offset_top = 285.0
+offset_right = 619.0
+offset_bottom = 316.0
 text = "USE"
 label_settings = SubResource("LabelSettings_cck1k")
 
@@ -293,6 +313,14 @@ autoplay = true
 
 [node name="ColorRect" parent="transition" index="0"]
 material = SubResource("ShaderMaterial_xe2cg")
+mouse_filter = 2
+
+[node name="Label" parent="transition" index="2"]
+offset_left = 284.0
+offset_top = 222.0
+offset_right = 900.0
+offset_bottom = 407.0
+autowrap_mode = 3
 
 [connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]
 

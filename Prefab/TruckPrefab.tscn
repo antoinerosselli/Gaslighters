@@ -1,0 +1,186 @@
+[gd_scene load_steps=9 format=3 uid="uid://h5qcfbgmttt1"]
+
+[ext_resource type="PackedScene" uid="uid://c6vkd0y3j4rnm" path="res://Prefab/Truck/scene.gltf" id="1_fe748"]
+[ext_resource type="Script" uid="uid://c58th1hm3qyam" path="res://Scripts/truck_logic.gd" id="2_n33dm"]
+[ext_resource type="Script" uid="uid://coeue3v471of6" path="res://Scripts/colis_spawner.gd" id="3_y2io4"]
+[ext_resource type="PackedScene" uid="uid://bhxxg0vykvlva" path="res://Prefab/colis.tscn" id="4_elmu3"]
+
+[sub_resource type="Animation" id="Animation_y2io4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_elmu3"]
+resource_name = "go_out"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 66.9134), Vector3(0, 0, 146.069)]
+}
+
+[sub_resource type="Animation" id="Animation_n33dm"]
+resource_name = "go_to_home"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 66.9134)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_elmu3"]
+_data = {
+&"RESET": SubResource("Animation_y2io4"),
+&"go_out": SubResource("Animation_elmu3"),
+&"go_to_home": SubResource("Animation_n33dm")
+}
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_fe748")]
+script = ExtResource("2_n33dm")
+
+[node name="Object_4" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_0" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_5" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_0" index="1"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_6" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_0" index="2"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_8" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_001_4" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_9" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_001_4" index="1"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_11" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_002_5" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_12" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_002_5" index="1"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_13" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_002_5" index="2"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_15" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_003_6" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_17" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_004_7" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_19" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_005_8" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_21" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_006_9" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_23" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_008_11" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_25" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_009_12" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_27" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_010_13" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_28" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_010_13" index="1"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_30" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_011_14" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_32" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_012_15" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_34" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_013_16" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_35" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_013_16" index="1"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_37" parent="Sketchfab_model/root/GLTF_SceneRootNode/Cube_014_17" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Wheel_003_18" parent="Sketchfab_model/root/GLTF_SceneRootNode" index="14"]
+transform = Transform3D(0.311058, 0, 0.00315132, 0, 0.220158, 0, -0.00364543, 0, 0.268896, 1.09856, -0.965555, 2.20075)
+
+[node name="Object_39" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_003_18" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_40" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_003_18" index="1"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_41" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_003_18" index="2"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Wheel_001_19" parent="Sketchfab_model/root/GLTF_SceneRootNode" index="15"]
+transform = Transform3D(-0.311058, 0, -0.00315128, 0, 0.220158, 0, 0.00364538, 0, -0.268896, -1.27976, -0.973898, 2.01979)
+
+[node name="Object_43" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_001_19" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_44" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_001_19" index="1"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_45" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_001_19" index="2"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Wheel_002_20" parent="Sketchfab_model/root/GLTF_SceneRootNode" index="16"]
+transform = Transform3D(0.295991, 0, 0.00299867, 0, 0.209494, 0, -0.00346885, 0, 0.255871, 1.1901, -0.971149, -4.20531)
+
+[node name="Object_47" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_002_20" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_48" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_002_20" index="1"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_49" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_002_20" index="2"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Wheel_004_21" parent="Sketchfab_model/root/GLTF_SceneRootNode" index="17"]
+transform = Transform3D(-0.295991, 0, -0.00299863, 0, 0.209494, 0, 0.00346881, 0, -0.255871, -1.14469, -0.954688, -4.34568)
+
+[node name="Object_51" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_004_21" index="0"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_52" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_004_21" index="1"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="Object_53" parent="Sketchfab_model/root/GLTF_SceneRootNode/Wheel_004_21" index="2"]
+transform = Transform3D(2.3, 0, 0, 0, 2.3, 0, 0, 0, 2.3, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_elmu3")
+}
+
+[node name="colis_spawner" type="Marker3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.00891)
+script = ExtResource("3_y2io4")
+colis = ExtResource("4_elmu3")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

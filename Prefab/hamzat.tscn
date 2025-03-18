@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://crp6f42klvrao"]
+
+[ext_resource type="PackedScene" uid="uid://dpcgcwfxd43ty" path="res://Extern/Rework Appart/hazmat/scene.gltf" id="1_0ei3e"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_wvnyq"]
+albedo_color = Color(0.419813, 0.419813, 0.419813, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0yo2"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_0ei3e")]
+
+[node name="Cube_Hazmat_0" parent="Sketchfab_model/HazmatSuitPose_fbx/RootNode/Cube" index="0"]
+material_override = SubResource("ORMMaterial3D_wvnyq")
+
+[node name="Plane_Hazmat_0" parent="Sketchfab_model/HazmatSuitPose_fbx/RootNode/Plane" index="0"]
+material_override = SubResource("StandardMaterial3D_n0yo2")

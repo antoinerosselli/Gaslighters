@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7vou8jvk3sm6"]
+[gd_scene load_steps=7 format=3 uid="uid://c7vou8jvk3sm6"]
 
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_j12ov"]
 [ext_resource type="Script" uid="uid://c1j8yvnyy8axd" path="res://Scripts/pause.gd" id="2_0n46r"]
+[ext_resource type="Script" uid="uid://bn4btw78bmhk6" path="res://Prefab/ui/pause.gd" id="2_l7564"]
 
 [sub_resource type="Gradient" id="Gradient_y4js5"]
 colors = PackedColorArray(0.00184107, 0.00184107, 0.00184107, 1, 0, 0, 0, 0)
@@ -13,6 +14,7 @@ gradient = SubResource("Gradient_y4js5")
 texture = SubResource("GradientTexture1D_6qvfa")
 
 [node name="Control" type="Control" groups=["pause"]]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_j12ov")
+script = ExtResource("2_l7564")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -27,24 +30,31 @@ offset_right = 832.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_me8ve")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-clip_contents = true
-layout_mode = 0
-offset_left = 80.0
-offset_top = 208.0
-offset_right = 256.0
-offset_bottom = 424.0
-scale = Vector2(0.995585, 1)
-alignment = 1
-
-[node name="Continue" type="Button" parent="VBoxContainer"]
+[node name="Continue" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 104.0
+offset_top = 240.0
+offset_right = 344.0
+offset_bottom = 280.0
 text = "Continue"
 script = ExtResource("2_0n46r")
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
+[node name="Option" type="Button" parent="Panel"]
 layout_mode = 2
+offset_left = 104.0
+offset_top = 304.0
+offset_right = 336.0
+offset_bottom = 341.0
+text = "Options"
+
+[node name="Quit" type="Button" parent="Panel"]
+layout_mode = 2
+offset_left = 104.0
+offset_top = 376.0
+offset_right = 328.0
+offset_bottom = 413.0
 text = "Quit"
 
-[connection signal="pressed" from="VBoxContainer/Continue" to="VBoxContainer/Continue" method="_on_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Continue" method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/Continue" to="Panel/Continue" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Panel/Quit" to="Panel/Continue" method="_on_quit_pressed"]

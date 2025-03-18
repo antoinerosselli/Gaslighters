@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhot50ba066lf"]
+
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_m5eq7"]
+[ext_resource type="Script" uid="uid://bwi7np4htgt6o" path="res://Prefab/popup_sure.gd" id="2_gfym5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gfym5"]
+font_size = 29
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_default_cursor_shape = 3
+theme = ExtResource("1_m5eq7")
+script = ExtResource("2_gfym5")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 192.0
+offset_right = 864.0
+offset_bottom = 448.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 232.0
+offset_right = 832.0
+offset_bottom = 361.0
+text = "you're about to go out, it will cost you food and time, are you sure? "
+label_settings = SubResource("LabelSettings_gfym5")
+autowrap_mode = 3
+
+[node name="yesbutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 368.0
+offset_right = 503.0
+offset_bottom = 408.0
+text = "yes"
+
+[node name="nobutton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 664.0
+offset_top = 368.0
+offset_right = 748.0
+offset_bottom = 408.0
+text = "no"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="yesbutton" to="." method="_on_yesbutton_pressed"]
+[connection signal="pressed" from="nobutton" to="." method="_on_nobutton_pressed"]

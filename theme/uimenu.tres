@@ -1,12 +1,20 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://csapexuuln7nx"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://csapexuuln7nx"]
 
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="1_s4nag"]
+[ext_resource type="Texture2D" uid="uid://b2cp4jn72xu11" path="res://Sprite/orangeslider.png" id="2_nvduu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssuff"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi60y"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nvduu"]
+color = Color(0.380392, 0.25098, 0, 1)
+thickness = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5beo"]
+bg_color = Color(0.0718743, 0.0552195, 0.00920546, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_veyya"]
 bg_color = Color(0.215686, 0.247059, 0.266667, 1)
@@ -17,7 +25,12 @@ Button/font_sizes/font_size = 36
 Button/fonts/font = ExtResource("1_s4nag")
 Button/styles/normal = SubResource("StyleBoxFlat_ssuff")
 Button/styles/pressed = SubResource("StyleBoxFlat_xi60y")
+HSlider/icons/grabber = ExtResource("2_nvduu")
+HSlider/icons/grabber_disabled = ExtResource("2_nvduu")
+HSlider/icons/grabber_highlight = ExtResource("2_nvduu")
+HSlider/styles/slider = SubResource("StyleBoxLine_nvduu")
 Label/fonts/font = ExtResource("1_s4nag")
+Panel/styles/panel = SubResource("StyleBoxFlat_g5beo")
 RichTextLabel/fonts/normal_font = ExtResource("1_s4nag")
 RichTextLabel/styles/background = SubResource("StyleBoxFlat_veyya")
 RichTextLabel/styles/fill = SubResource("StyleBoxFlat_veyya")

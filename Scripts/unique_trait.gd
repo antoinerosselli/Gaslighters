@@ -16,7 +16,6 @@ func unique(object_name):
 			var player_use = player.get_node("CanvasLayer/Control/Label")
 			player_icon.visible = false
 			player_use.visible = false
-			player.paused = true
 			player_camera.current = false
 			Tools.change_lesinputs("frontdoor")
 			door_camera.current = true
@@ -61,7 +60,6 @@ func unique(object_name):
 			player_icon.visible = false
 			player_use.visible = false
 			player.use_radio = true
-			player.paused = true
 			player_camera.current = false
 			radio_camera.current = true
 		"conserve":
@@ -89,3 +87,5 @@ func unique(object_name):
 			player.on_hand()
 			var model = get_tree().get_first_node_in_group("ptichptich_depose")
 			model.visible = !model.visible
+		"suitexpe":
+			Tools.get_player().popup_sure.visible = true

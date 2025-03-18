@@ -1,0 +1,122 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqvs2hxpxceik"]
+
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_ri2gh"]
+[ext_resource type="Script" uid="uid://b0ss855sqb7bl" path="res://Prefab/options.gd" id="2_x37ql"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ri2gh"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_x37ql"]
+font_size = 26
+font_color = Color(0.87451, 0.443137, 0.14902, 1)
+
+[node name="options" type="Control"]
+process_mode = 3
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ri2gh")
+script = ExtResource("2_x37ql")
+
+[node name="close" type="Button" parent="."]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 536.0
+offset_right = 672.0
+offset_bottom = 576.0
+text = "Close"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 136.0
+offset_top = 40.0
+offset_right = -104.0
+offset_bottom = -120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MasterVol" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 72.0
+offset_right = 308.0
+offset_bottom = 103.0
+text = "Master Volume"
+label_settings = SubResource("LabelSettings_ri2gh")
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="Panel/MasterVol"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = -32.0
+offset_right = 844.0
+offset_bottom = 68.0
+
+[node name="MusicVol" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 136.0
+offset_right = 308.0
+offset_bottom = 167.0
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_ri2gh")
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="Panel/MusicVol"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = -32.0
+offset_right = 844.0
+offset_bottom = 68.0
+
+[node name="sfxVol" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 200.0
+offset_right = 308.0
+offset_bottom = 231.0
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_ri2gh")
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="Panel/sfxVol"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = -32.0
+offset_right = 844.0
+offset_bottom = 68.0
+
+[node name="MasterVol2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 264.0
+offset_right = 308.0
+offset_bottom = 295.0
+text = "Voice Volume"
+label_settings = SubResource("LabelSettings_ri2gh")
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="Panel/MasterVol2"]
+layout_mode = 0
+offset_left = 380.0
+offset_top = -32.0
+offset_right = 844.0
+offset_bottom = 68.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 156.0
+offset_bottom = 43.0
+text = "OPTIONS"
+label_settings = SubResource("LabelSettings_x37ql")
+
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]

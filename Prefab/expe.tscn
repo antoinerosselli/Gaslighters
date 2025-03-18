@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=3 uid="uid://cepnt8lk8yq4o"]
+
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_4lta0"]
+[ext_resource type="Shader" uid="uid://b3lvhbwu7lsot" path="res://Shader/background_expe.gdshader" id="2_5pe61"]
+[ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="3_kj2cy"]
+[ext_resource type="AudioStream" uid="uid://4u06tpj2hmdp" path="res://Music&Sound/Echexe2.mp3" id="4_347xl"]
+[ext_resource type="Texture2D" uid="uid://diqhrw0q41ydn" path="res://Sprite/exit.png" id="6_vvwiu"]
+[ext_resource type="Texture2D" uid="uid://dd8ug7pci12hh" path="res://Sprite/exithover.png" id="7_cqvc2"]
+[ext_resource type="Texture2D" uid="uid://del84k3axw4mu" path="res://Sprite/exitdisabled.png" id="8_p3mhq"]
+
+[sub_resource type="GDScript" id="GDScript_cqvc2"]
+script/source = "extends Control
+
+@onready var rich_text_label = $aventure
+@onready var path_expes = \"res://EXPE/expes.txt\"
+@onready var path_expes_result = \"res://EXPE/expes_result.txt\"
+@export var text_intro = \"[wave][color=yellow]You're ready to face the gas.[/color][/wave]\\n\\n\\n\"
+@onready var resultat = $resultat
+@onready var time = $Timer
+@onready var go_home = $GoHome
+
+var stripped_text = \"\"
+var current_index = 0
+var random_line:int
+var speed = 0.05 
+var timer = 0.0
+var lines = []
+var lines_result = []
+
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	set_process(false)
+	read_text_file(path_expes, lines)
+	read_text_file(path_expes_result, lines_result)
+	var random_index = randi() % lines.size() - 2
+	if random_index < 0: random_index = 0
+	random_line = random_index
+	var random_text: String = get_line(random_index, lines)
+	time.wait_time = (random_text.length() + text_intro.length()) / 2
+	rich_text_label.bbcode_enabled = true  
+	var all_text = text_intro + random_text
+	rich_text_label.bbcode_text = all_text
+	stripped_text = all_text.replace(\"[wave]\", \"\").replace(\"[/wave]\", \"\") \\
+							 .replace(\"[color=yellow]\", \"\").replace(\"[/color]\", \"\")
+	rich_text_label.visible_characters = 0  
+	set_process(true)
+
+func _process(delta):
+	timer += delta
+	if timer >= speed and current_index < len(stripped_text):
+		timer = 0.0 
+		current_index += 1
+		rich_text_label.visible_characters = current_index
+
+func _on_go_home_pressed():
+	get_tree().get_first_node_in_group(\"canvas\").visible = true
+	Tools.paused_game()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	self.queue_free()
+
+func read_text_file(path, kid):
+	var file = FileAccess.open(path, FileAccess.READ)
+	if file:
+		while not file.eof_reached():
+			kid.append(file.get_line())  # Stocke chaque ligne dans un tableau
+		file.close()
+	else:
+		print(\"Erreur : Impossible d'ouvrir le fichier \", path)
+
+func get_line(index: int, kid) -> String:
+	if index >= 0 and index < kid.size():
+		return kid[index]
+	return \"\"
+
+func _on_timer_timeout():
+	go_home.disabled = false
+	resultat.bbcode_enabled = true
+	resultat.text = get_line(random_line, lines_result)
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kj2cy"]
+shader = ExtResource("2_5pe61")
+shader_parameter/scale = 5.0
+shader_parameter/speed = 0.3
+shader_parameter/octaves = 7
+shader_parameter/persistence = 0.909
+shader_parameter/color_1 = Color(1, 1, 1, 1)
+shader_parameter/color_2 = Color(0.650129, 0.650128, 0.650128, 1)
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_cqvc2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_kj2cy")
+layout_mode = 0
+offset_top = -8.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="aventure" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 1088.0
+offset_bottom = 384.0
+theme_override_fonts/normal_font = ExtResource("3_kj2cy")
+bbcode_enabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_347xl")
+volume_db = 1.193
+autoplay = true
+attenuation = 2.0
+
+[node name="GoHome" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 576.0
+offset_right = 1144.0
+offset_bottom = 640.0
+theme = ExtResource("1_4lta0")
+disabled = true
+texture_normal = ExtResource("6_vvwiu")
+texture_pressed = ExtResource("7_cqvc2")
+texture_hover = ExtResource("7_cqvc2")
+texture_disabled = ExtResource("8_p3mhq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="resultat" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 408.0
+offset_right = 1088.0
+offset_bottom = 512.0
+theme_override_fonts/normal_font = ExtResource("3_kj2cy")
+bbcode_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="pressed" from="GoHome" to="." method="_on_go_home_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
