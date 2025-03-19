@@ -2,7 +2,7 @@ extends Node
 
 const ICON = preload("res://Sprite/icon.svg")
 
-var val_elec:int = 90
+var val_elec:int = 100
 
 func get_icon(item_name):
 	match item_name:
@@ -36,7 +36,7 @@ func paused_game():
 
 func door_letter():
 	var letter = get_tree().get_first_node_in_group("letter")
-	letter.new_letter()
+	letter.get_child(2).play("slide_letter")
 
 func go_to_expe():
 	var es:PackedScene = preload("res://Prefab/expe.tscn") as PackedScene
@@ -129,6 +129,13 @@ func get_elec():
 	return val_elec
 	
 func set_elec(nval):
+	if nval <= 0:
+		nval = 0
+		UniqueTrait.elec = false
+		var light_elec = get_tree().get_first_node_in_group("courantup")
+		Tools.sound_now(light_elec, load("res://Music&Sound/electric-155027.mp3") as AudioStream)
+		if UniqueTrait.elec == false:
+			light_elec.omni_range = 0
 	val_elec = nval
 
 func San_modif(santexture):
@@ -146,7 +153,6 @@ func sound_now(here: Node3D, what_sound: AudioStream):
 	audio_player.global_position = here.get_global_position()
 	audio_player.autoplay = true
 	audio_player.finished.connect(func(): audio_player.queue_free())
-
 	here.get_parent().add_child(audio_player)
 
 
@@ -166,7 +172,6 @@ func notespawn(note):
 	change_lesinputs("note")
 	player.can_interact = false
 	player.icon.visible = false
-	player.paused = true
 	var inst = note.instantiate()
 	player.add_child(inst)
 	player.move_child(inst,0)
@@ -174,7 +179,6 @@ func notespawn(note):
 func note_close(note, player):
 	Tools.change_lesinputs("player")
 	player.icon.visible = true
-	player.paused = false
 	player.can_interact = true
 	note.queue_free()
 	

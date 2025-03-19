@@ -48,6 +48,9 @@ func unique(object_name):
 			if elec == true:
 				light_elec.omni_range = 3
 			if elec == false:
+				var screencam = get_tree().get_first_node_in_group("screencam")
+				screencam.allume = false
+				screencam.nocamcam()
 				light_elec.omni_range = 0
 		"radio":
 			var radioObj = get_tree().get_first_node_in_group("radio")
@@ -76,6 +79,8 @@ func unique(object_name):
 			print("use screen")
 			var screencam = get_tree().get_first_node_in_group("screencam")
 			screencam.allume = !screencam.allume
+			if UniqueTrait.elec == false:
+				screencam.allume = false
 			print(screencam.allume)
 			if screencam.allume == true:
 				screencam.yescamcam()

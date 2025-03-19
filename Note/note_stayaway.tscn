@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bm6r7hvbwexl0"]
 
 [ext_resource type="Script" uid="uid://cycbsrkso5yfk" path="res://Note/note_contrat.gd" id="1_gkpy0"]
-[ext_resource type="Texture2D" path="res://Sprite/note_STAYAWAY.png" id="2_3gxlb"]
+[ext_resource type="Texture2D" uid="uid://cipr2ng7vvi0l" path="res://Sprite/ilsarriventdemain.png" id="2_3gxlb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkpy0"]
 bg_color = Color(0.683305, 0.673851, 0.610326, 1)

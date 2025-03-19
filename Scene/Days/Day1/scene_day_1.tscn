@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=19 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_36dop"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_5gr6e"]
 [ext_resource type="Script" uid="uid://rnxgsqksahu1" path="res://Scene/Days/Day1/dm_day_1.gd" id="8_dfr7x"]
 [ext_resource type="PackedScene" uid="uid://dydkbrvc7it6i" path="res://Prefab/letter.tscn" id="10_rvlxt"]
+[ext_resource type="PackedScene" uid="uid://bm6r7hvbwexl0" path="res://Note/note_stayaway.tscn" id="11_gxdup"]
 
 [sub_resource type="Sky" id="Sky_rvlxt"]
 
@@ -211,6 +212,9 @@ activation = false
 
 [node name="Letter" parent="." instance=ExtResource("10_rvlxt")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 16.2043, -1.72069, 0.792677)
+item_name = "letter"
+is_note = true
+note = ExtResource("11_gxdup")
 
 [node name="AnimationPlayer" parent="Letter" index="2"]
 libraries = {
