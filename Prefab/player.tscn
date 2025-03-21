@@ -24,14 +24,14 @@ font_size = 37
 shader = ExtResource("4_evs1m")
 shader_parameter/resolution = Vector2(470, 380)
 shader_parameter/scan_line_amount = 0.121
-shader_parameter/warp_amount = 0.0
-shader_parameter/noise_amount = 0.0
-shader_parameter/interference_amount = 0.148
-shader_parameter/grille_amount = 0.1
-shader_parameter/grille_size = 1.0
-shader_parameter/vignette_amount = 0.213
-shader_parameter/vignette_intensity = 0.14
-shader_parameter/aberation_amount = 0.219
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.03
+shader_parameter/interference_amount = 0.054
+shader_parameter/grille_amount = 0.082
+shader_parameter/grille_size = 1.227
+shader_parameter/vignette_amount = 0.181
+shader_parameter/vignette_intensity = 0.336
+shader_parameter/aberation_amount = 0.0
 shader_parameter/roll_line_amount = 0.0
 shader_parameter/roll_speed = -2.635
 shader_parameter/scan_line_strength = -6.662
@@ -137,7 +137,6 @@ layout_mode = 0
 offset_left = 447.0
 offset_right = 729.0
 offset_bottom = 51.0
-text = "- paused game -"
 label_settings = SubResource("LabelSettings_wyp7x")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
@@ -310,6 +309,7 @@ unit_size = 0.1
 autoplay = true
 
 [node name="transition" parent="." instance=ExtResource("11_7q8gp")]
+process_mode = 3
 
 [node name="ColorRect" parent="transition" index="0"]
 material = SubResource("ShaderMaterial_xe2cg")

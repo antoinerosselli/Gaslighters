@@ -69,9 +69,15 @@ func unique(object_name):
 			get_tree().get_first_node_in_group("foods").add_conserve()
 			print("TAKE FOOD")
 		"pills":
+			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/heavy_swallowwav-14682.mp3") as AudioStreamMP3)
 			Tools.start_transition("2 YEARS AGO", load("res://Scene/Days/Day 1.5/scene_day_1_5.tscn") as PackedScene)
+		"fakepills":
+			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/heavy_swallowwav-14682.mp3") as AudioStreamMP3)
+			var emds = get_tree().get_first_node_in_group("eventmanager")
+			emds.eat_a_pills()
 		"pen":
-			Tools.start_transition("5 MONTHS AGO", load("res://Scene/Days/Day 2.5/scene_day_2_5.tscn") as PackedScene)
+			Save.set_level(2)
+			Tools.start_transition("DAY 2", load("res://Scene/Days/Day2/scene_day_2.tscn") as PackedScene)
 		"phone":
 			print("phone")
 			Tools.start_transition("1 YEARS AGO", load("res://Scene/Days/Day 3.5/scene_day_3_5.tscn") as PackedScene)
@@ -94,3 +100,5 @@ func unique(object_name):
 			model.visible = !model.visible
 		"suitexpe":
 			Tools.get_player().popup_sure.visible = true
+		"fakedoorchamber":
+			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/door_sound.mp3") as AudioStreamMP3)

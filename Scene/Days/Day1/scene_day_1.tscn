@@ -1,22 +1,20 @@
-[gd_scene load_steps=19 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=17 format=3 uid="uid://co4aabqugmh0u"]
 
+[ext_resource type="Script" uid="uid://b4v2q4bytqy57" path="res://Scene/Days/Day1/scene_day_1.gd" id="1_f86ad"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_36dop"]
 [ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="3_8js8r"]
-[ext_resource type="AudioStream" uid="uid://deb1cmth3t1nu" path="res://Music&Sound/explosion-47821.mp3" id="4_5r21v"]
-[ext_resource type="PackedScene" uid="uid://wfmu7ny1m538" path="res://Scene/Days/Day1/rm_day_1.tscn" id="6_o1j03"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="7_frxae"]
-[ext_resource type="PackedScene" uid="uid://dyvkf1itavutm" path="res://Scene/Days/Day1/em_day_1.tscn" id="7_vxswh"]
+[ext_resource type="Script" uid="uid://c5msg4g651xi1" path="res://Scripts/em_day_1.gd" id="7_rvlxt"]
 [ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_5gr6e"]
-[ext_resource type="Script" uid="uid://rnxgsqksahu1" path="res://Scene/Days/Day1/dm_day_1.gd" id="8_dfr7x"]
 [ext_resource type="PackedScene" uid="uid://dydkbrvc7it6i" path="res://Prefab/letter.tscn" id="10_rvlxt"]
 [ext_resource type="PackedScene" uid="uid://bm6r7hvbwexl0" path="res://Note/note_stayaway.tscn" id="11_gxdup"]
 
-[sub_resource type="Sky" id="Sky_rvlxt"]
+[sub_resource type="Sky" id="Sky_f86ad"]
 
 [sub_resource type="Environment" id="Environment_paq7g"]
 background_mode = 2
-sky = SubResource("Sky_rvlxt")
+sky = SubResource("Sky_f86ad")
 ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
 ambient_light_sky_contribution = 0.51
 ambient_light_energy = 0.35
@@ -97,6 +95,7 @@ _data = {
 }
 
 [node name="SceneDay1" type="Node3D" groups=["scene"]]
+script = ExtResource("1_f86ad")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_36dop")]
 transform = Transform3D(1, 0, 0, 0, 1.32601, 0, 0, 0, 1, -2.80715, -0.224309, 6.51119)
@@ -123,11 +122,6 @@ stream = ExtResource("3_8js8r")
 volume_db = -4.0
 autoplay = true
 max_distance = 100.0
-
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -36)
-stream = ExtResource("4_5r21v")
-autoplay = true
 
 [node name="FogVolume3" type="FogVolume" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1887, -0.155392, -2.2077)
@@ -176,37 +170,32 @@ one_shot = true
 is_text = true
 texts = ["Hmm"]
 
-[node name="MOTORS" type="Node" parent="."]
+[node name="managers" type="Node" parent="." groups=["event_manager"]]
+script = ExtResource("7_rvlxt")
 
-[node name="rm_day1" parent="MOTORS" instance=ExtResource("6_o1j03")]
+[node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
 
-[node name="em_day_1" parent="MOTORS" instance=ExtResource("7_vxswh")]
-
-[node name="dm_day_1" type="Node" parent="MOTORS"]
-script = ExtResource("8_dfr7x")
-DANGER_LEVEL = 2
-
-[node name="depot_spawner" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+[node name="depot_spawner" parent="managers" instance=ExtResource("8_5gr6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0860391, -1.5983, 8.4577)
 activation = false
 
-[node name="depot_spawner2" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+[node name="depot_spawner2" parent="managers" instance=ExtResource("8_5gr6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.832851, -1.5983, -6.62545)
 activation = false
 
-[node name="depot_spawner3" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+[node name="depot_spawner3" parent="managers" instance=ExtResource("8_5gr6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8343, -1.5983, -6.83925)
 activation = false
 
-[node name="depot_spawner4" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+[node name="depot_spawner4" parent="managers" instance=ExtResource("8_5gr6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.272, -1.5983, 0.690172)
 activation = false
 
-[node name="depot_spawner5" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+[node name="depot_spawner5" parent="managers" instance=ExtResource("8_5gr6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5527, -1.5983, 7.79251)
 activation = false
 
-[node name="depot_spawner6" parent="MOTORS/dm_day_1" instance=ExtResource("8_5gr6e")]
+[node name="depot_spawner6" parent="managers" instance=ExtResource("8_5gr6e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58043, -1.5983, 0.445554)
 activation = false
 
@@ -220,6 +209,8 @@ note = ExtResource("11_gxdup")
 libraries = {
 &"": SubResource("AnimationLibrary_f86ad")
 }
+
+[connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 
 [editable path="one"]
 [editable path="two"]

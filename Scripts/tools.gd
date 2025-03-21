@@ -25,14 +25,15 @@ func get_player():
 func paused_game():
 	print("POPPOPOPOPOPOPAUSE")
 	get_tree().paused = !get_tree().paused
-	if get_tree().paused == true:
-		Tools.get_player().paused.visible = true
-		Tools.get_player().logo_inter.visible = false
-		Tools.get_player().icon.visible = false
-	elif get_tree().paused == false:
-		Tools.get_player().paused.visible = false
-		Tools.get_player().logo_inter.visible = true
-		Tools.get_player().icon.visible = true
+	if Tools.get_player() != null:
+		if get_tree().paused == true:
+			Tools.get_player().paused.visible = true
+			Tools.get_player().logo_inter.visible = false
+			Tools.get_player().icon.visible = false
+		elif get_tree().paused == false:
+			Tools.get_player().paused.visible = false
+			Tools.get_player().logo_inter.visible = true
+			Tools.get_player().icon.visible = true
 
 func door_letter():
 	var letter = get_tree().get_first_node_in_group("letter")
@@ -155,12 +156,11 @@ func sound_now(here: Node3D, what_sound: AudioStream):
 	audio_player.finished.connect(func(): audio_player.queue_free())
 	here.get_parent().add_child(audio_player)
 
-
 func start_transition(text,nscene):
+	Tools.paused_game()
 	var cl = get_tree().get_first_node_in_group("transi")
 	cl.transition(text, nscene)
 
-#demo	
 func eotd():
 	var alarm =  get_tree().get_first_node_in_group("alarmepills")
 	var pills = get_tree().get_first_node_in_group("pills")
@@ -199,9 +199,7 @@ func change_lesinputs(what_lesinputs):
 		text_input.text == ""
 		
 func start_the_day():
-	var timerradio = get_tree().get_first_node_in_group("timerradio")
 	var timerevent = get_tree().get_first_node_in_group("timerevent")
-	timerradio.start()
 	timerevent.start()
 
 func colis_departure():

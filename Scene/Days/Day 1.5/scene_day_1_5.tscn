@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://7cqbfhd81slb"]
+[gd_scene load_steps=22 format=4 uid="uid://7cqbfhd81slb"]
 
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="1_152uh"]
+[ext_resource type="Script" uid="uid://b7vioc81fxt7i" path="res://Scene/Days/Day 1.5/scene_day_1_5.gd" id="1_kv254"]
 [ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="2_r6x0h"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="3_0ejrs"]
 [ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="4_offwv"]
@@ -101,6 +102,7 @@ _data = {
 }
 
 [node name="scene_day_1_5" type="Node3D"]
+script = ExtResource("1_kv254")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_q84mf")

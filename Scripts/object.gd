@@ -2,6 +2,9 @@ extends Node3D
 
 @export var item_name:String
 
+@export_category("pickable ?")
+@export var pickable:bool
+
 @export_category("depot ?")
 @export var depot:bool
 
@@ -54,3 +57,5 @@ func interact():
 		Tools.notespawn(note)
 	if script_trait == true:
 		UniqueTrait.unique(item_name)
+	if pickable == true:
+		self.queue_free()

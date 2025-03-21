@@ -415,13 +415,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2cg2n")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3bvj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxjnh"]
 albedo_texture = ExtResource("1_ivsu5")
 uv1_scale = Vector3(25, 5, 2.5)
 uv1_triplanar_sharpness = 2.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_hi8ft"]
-material = SubResource("StandardMaterial3D_b3bvj")
+material = SubResource("StandardMaterial3D_rxjnh")
 size = Vector3(8, 4, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uls34"]
@@ -513,12 +513,12 @@ albedo_texture = ExtResource("6_3j4c2")
 [sub_resource type="PlaneMesh" id="PlaneMesh_eph16"]
 material = SubResource("StandardMaterial3D_3xyah")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qtmvb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3emh"]
 albedo_texture = ExtResource("42_xqcol")
 uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_410gc"]
-material = SubResource("StandardMaterial3D_qtmvb")
+material = SubResource("StandardMaterial3D_p3emh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tytjf"]
 
@@ -693,7 +693,7 @@ size = Vector3(0.84375, 1, 1)
 size = Vector3(0.834656, 0.639221, 0.274658)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hne8j"]
-size = Vector3(0.843628, 3.68747, 0.756409)
+size = Vector3(0.843628, 1.46484, 0.756409)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b5w2o"]
 size = Vector3(1.87427, 1.11414, 1.21912)
@@ -1177,7 +1177,7 @@ vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
 emission_enabled = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_epy07"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_muwmf"]
 _surfaces = [{
 "aabb": AABB(-0.01, -0.01, 0, 0.02, 0.02, 0.000414575),
 "format": 34359742465,
@@ -1229,7 +1229,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("NIYWPDSGFjwAAAAANIYWPDSGFrwAAAAANIYWvDSGFrwAAAAANIYWvDSGFjwAAAAA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AIA=")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_epy07")
+shadow_mesh = SubResource("ArrayMesh_muwmf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uhlsb"]
 albedo_texture = ExtResource("43_hx06a")
@@ -1240,7 +1240,7 @@ vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
 emission_enabled = true
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_21bda"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_2wkxd"]
 _surfaces = [{
 "aabb": AABB(-0.00530922, -0.00530922, 0, 0.0106184, 0.0106184, 0.00125407),
 "format": 34359742465,
@@ -1272,7 +1272,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("APmtuwD5rTu3X6Q6APmtu/1xnTu3X6Q6APmtu/1xnTsAAAAAAPmtuwD5rTsAAAAAAPmtOwD5rTu3X6Q6TZOcOwD5rTu3X6Q6TZOcOwD5rTsAAAAAAPmtOwD5rTsAAAAAAPmtOwD5rbu3X6Q6APmtO02TnLu3X6Q6APmtO02TnLsAAAAAAPmtOwD5rbsAAAAAAPmtuwD5rbu3X6Q6/XGduwD5rbu3X6Q6/XGduwD5rbsAAAAAAPmtuwD5rbsAAAAAAPmtOwD5rbsAAAAAAPmtO02TnLsAAAAATZOcO02TnLsAAAAATZOcOwD5rbsAAAAAAPmtuwD5rbu3X6Q6APmtu02TnLu3X6Q6/XGdu02TnLu3X6Q6/XGduwD5rbu3X6Q6/XGdu02TnLu3X6Q6APmtu02TnLu3X6Q6APmtu/1xnTu3X6Q6/XGdu/1xnTu3X6Q6APmtO/1xnTsAAAAATZOcO/1xnTsAAAAAAPmtu02TnLu3X6Q6APmtuwD5rbu3X6Q6APmtuwD5rbsAAAAAAPmtu02TnLsAAAAAAPmtO/1xnTu3X6Q6APmtOwD5rTu3X6Q6APmtOwD5rTsAAAAAAPmtO/1xnTsAAAAAAPmtOwD5rTsAAAAATZOcOwD5rTsAAAAAAPmtu/1xnTu3X6Q6APmtuwD5rTu3X6Q6/XGduwD5rTu3X6Q6/XGdu/1xnTu3X6Q6TZOcO/1xnTu3X6Q6TZOcOwD5rTu3X6Q6APmtOwD5rTu3X6Q6APmtO/1xnTu3X6Q6/XGdu02TnLsAAAAA/XGduwD5rbsAAAAATZOcOwD5rbu3X6Q6TZOcO02TnLu3X6Q6APmtO02TnLu3X6Q6APmtOwD5rbu3X6Q6TZOcOwD5rbu3X6Q6APmtOwD5rbu3X6Q6APmtOwD5rbsAAAAATZOcOwD5rbsAAAAA/XGduwD5rTu3X6Q6APmtuwD5rTu3X6Q6APmtuwD5rTsAAAAA/XGduwD5rTsAAAAAAPmtu02TnLsAAAAAAPmtuwD5rbsAAAAA/XGdu/1xnTsAAAAA/XGduwD5rTsAAAAAAPmtuwD5rTsAAAAAAPmtu/1xnTsAAAAA/XGdu/1xnTuDJd05/XGdu/1xnTu3X6Q6TZOcO/1xnTu3X6Q6TZOcO/1xnTuDJd05TZOcO/1xnTuDJd05TZOcO/1xnTu3X6Q6TZOcO02TnLu3X6Q6TZOcO02TnLuDJd05/XGdu02TnLuDJd05/XGdu02TnLu3X6Q6/XGdu/1xnTu3X6Q6/XGdu/1xnTuDJd05TZOcOwD5rbu3X6Q6TZOcOwD5rbsAAAAAAPmtu02TnLsAAAAA/XGdu02TnLsAAAAA/XGdu/1xnTsAAAAAAPmtu/1xnTsAAAAATZOcO02TnLsAAAAATZOcO/1xnTsAAAAATZOcOwD5rTsAAAAATZOcOwD5rTu3X6Q6/XGdu02TnLuDJd05TZOcO02TnLuDJd05TZOcO02TnLu3X6Q6/XGdu02TnLu3X6Q6TZOcO02TnLuDJd05/XGdu02TnLuDJd05/XGdu/1xnTuDJd05TZOcO/1xnTuDJd05AAD/f///AAAAAP9///8AAAAA/3///wAAAAD/f///AAD/f/////8AAP9//////wAA/3//////AAD/f/////8AAP///3//////////f/////////9//////////3///////38AAP//////fwAA//////9/AAD//////38AAP///////////3/+f///////f/5///////9//n///////3/+f/9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID//////3/+f///////f/5/AAD/f///AAAAAP9///8AAAAA/3///wAAAAD/f///AAD///9//////////3//////////f/////////9/////////////f/5///////9//n//f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA//////9//n///////3/+f/9//3//fwCA/3//f/9/AID/f/9//38AgP9//3//fwCA/38AAP//////fwAA//////9/AAD//////38AAP//////f/////8AAP9//////wAA/3//////AAD/f/////8AAP//////f/5///////9//n///////3/+f///////f/5///////9//n///////3/+f/9/AAD//////38AAP//////fwAA//////9/AAD/////AAD/f///AAAAAP9///8AAAAA/3///wAAAAD/f///AAD///9//////////3//////////f/////////9///////9/AAD//////38AAP///////////3/+f///////f/5///////9//n///////3/+f///////f/5///////9//n//f/////8AAP9//////wAA/3//////AAD/f/////8AAP9//////wAA/3//////AAD/f/9//38AgP9//3//fwCA/3//f/9/AID/f/9//38AgA==")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_21bda")
+shadow_mesh = SubResource("ArrayMesh_2wkxd")
 
 [node name="Node3D" type="Node3D"]
 
@@ -1506,6 +1506,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.41122, 11.3722, -0.0243607)
 
 [node name="Alarme" parent="." instance=ExtResource("48_gcctg")]
 transform = Transform3D(0.286047, -0.0178842, -0.668332, 0.00916071, 1.01685, -0.0029975, 0.300285, -0.0139847, 0.636735, 1.29212, -1.13447, -7.76898)
+auto_start = true
 minute = 30
 hour = 1
 
@@ -2284,11 +2285,6 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 5.82077e-11, 2.79397e-09, 1, -2.90356e-07, -1.86265e-09, -1.49259e-09, 1, 0.121827, -0.102965, 2.38419e-07)
 shape = SubResource("BoxShape3D_3436k")
 
-[node name="Curtain" type="MeshInstance3D" parent="Deco"]
-transform = Transform3D(1, 0, 0, 0, 1.37977, 0, 0, 0, 1, 9.95279, 0.332969, 9.18914)
-mesh = ExtResource("45_cobxl")
-skeleton = NodePath("../MeshInstance3D17")
-
 [node name="LowArmory" type="MeshInstance3D" parent="Deco"]
 transform = Transform3D(1.61623, -0.015167, 1.74341e-08, -2.4165e-08, 4.71544e-08, 1.12539, -0.021355, -1.1479, 4.59995e-08, 6.84324, -1.60654, -2.65992)
 mesh = ExtResource("57_yuwjh")
@@ -2888,6 +2884,11 @@ transform = Transform3D(-0.0070511, 0, 0.999975, 0, 1, 0, -0.999975, 0, -0.00705
 [node name="TruckSpawner" parent="." instance=ExtResource("103_ydpo6")]
 transform = Transform3D(-0.0194591, 0, 0.999811, 0, 1, 0, -0.999811, 0, -0.0194591, -41.9776, -7.77782, 39.6249)
 truck = ExtResource("104_rxjnh")
+
+[node name="Curtain" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.37977, 0, 0, 0, 1, 10.0607, 0.366942, 9.196)
+mesh = ExtResource("45_cobxl")
+skeleton = NodePath("")
 
 [editable path="Lamp1"]
 [editable path="RadioObj"]

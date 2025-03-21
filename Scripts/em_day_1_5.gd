@@ -21,6 +21,7 @@ func talk(text,color, time):
 
 func check_event_conditions():
 	if time_elapsed == 5:
+		print("gogo")
 		talk("You and your team have accomplished something exceptional. Rock Valley needs people like you... men of principle, capable of doing the right thing.", gouv_color, 5)
 	if time_elapsed == 11:
 		talk("This is your recognition. A pension for life. An honorary title. A name in the city's history.", gouv_color, 5)
