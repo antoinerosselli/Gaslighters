@@ -12,7 +12,7 @@ material = SubResource("StandardMaterial3D_w8edu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bfr5x"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywjgw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sc0yg"]
 transparency = 1
 blend_mode = 1
 cull_mode = 2
@@ -22,7 +22,7 @@ metallic = 0.2
 
 [sub_resource type="SphereMesh" id="SphereMesh_2tdss"]
 lightmap_size_hint = Vector2i(17, 9)
-material = SubResource("StandardMaterial3D_ywjgw")
+material = SubResource("StandardMaterial3D_sc0yg")
 
 [node name="Courant" type="StaticBody3D"]
 script = ExtResource("1_pu7aw")

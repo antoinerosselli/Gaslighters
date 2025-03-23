@@ -205,3 +205,10 @@ func start_the_day():
 func colis_departure():
 	var TS = get_tree().get_first_node_in_group("truckspawn")
 	TS.truck_spawn()
+
+func expe_status(status):
+	var expe_lum = get_tree().get_first_node_in_group("canexpe")
+	if status == true:
+		expe_lum.set_color(Color(0, 1, 0, 1))
+	elif status == false:
+		expe_lum.set_color(Color(1, 0, 0, 1))

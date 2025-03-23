@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=18 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="Script" uid="uid://b4v2q4bytqy57" path="res://Scene/Days/Day1/scene_day_1.gd" id="1_f86ad"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="7_frxae"]
 [ext_resource type="Script" uid="uid://c5msg4g651xi1" path="res://Scripts/em_day_1.gd" id="7_rvlxt"]
 [ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_5gr6e"]
+[ext_resource type="PackedScene" uid="uid://pjjbvhiflurr" path="res://Note/notefromafriend.tscn" id="9_rvlxt"]
 [ext_resource type="PackedScene" uid="uid://dydkbrvc7it6i" path="res://Prefab/letter.tscn" id="10_rvlxt"]
 [ext_resource type="PackedScene" uid="uid://bm6r7hvbwexl0" path="res://Note/note_stayaway.tscn" id="11_gxdup"]
 
@@ -98,7 +99,7 @@ _data = {
 script = ExtResource("1_f86ad")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_36dop")]
-transform = Transform3D(1, 0, 0, 0, 1.32601, 0, 0, 0, 1, -2.80715, -0.224309, 6.51119)
+transform = Transform3D(1, 0, 0, 0, 1.19877, 0, 0, 0, 1, -2.80715, -0.247539, 6.51119)
 
 [node name="Node3D" parent="." instance=ExtResource("1_jb5ec")]
 
@@ -210,6 +211,18 @@ libraries = {
 &"": SubResource("AnimationLibrary_f86ad")
 }
 
+[node name="Letter2" parent="." instance=ExtResource("10_rvlxt")]
+transform = Transform3D(0.192867, 0, 0, 0, 1, 0, 0, 0, 0.208725, 0.831636, -0.651308, 7.54161)
+item_name = "letterfromfriend"
+is_note = true
+note = ExtResource("9_rvlxt")
+
+[node name="MeshInstance3D" parent="Letter2" index="0"]
+skeleton = NodePath("../../Letter2")
+
+[node name="AnimationPlayer" parent="Letter2" index="2"]
+root_node = NodePath("../../Letter2")
+
 [connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 
 [editable path="one"]
@@ -220,3 +233,4 @@ libraries = {
 [editable path="tres2"]
 [editable path="two2"]
 [editable path="Letter"]
+[editable path="Letter2"]

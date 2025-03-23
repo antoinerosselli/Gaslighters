@@ -99,6 +99,9 @@ func unique(object_name):
 			var model = get_tree().get_first_node_in_group("ptichptich_depose")
 			model.visible = !model.visible
 		"suitexpe":
-			Tools.get_player().popup_sure.visible = true
+			var canexpe = get_tree().get_first_node_in_group("canexpe")
+			var expe_color = canexpe.get_color()
+			if expe_color == Color(0, 1, 0, 1):
+				Tools.get_player().popup_sure.visible = true
 		"fakedoorchamber":
 			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/door_sound.mp3") as AudioStreamMP3)

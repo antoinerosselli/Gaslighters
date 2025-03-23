@@ -2477,7 +2477,7 @@ transform = Transform3D(0.789941, 0, 0.0640482, 0, 1, 1.94324e-12, -0.05154, 0, 
 shape = SubResource("BoxShape3D_b36pc")
 
 [node name="Trash2" type="MeshInstance3D" parent="Deco"]
-transform = Transform3D(-0.0144942, 1.8191, 0.097698, 0, -0.0784394, 2.26584, 2.01564, 0.0130809, 0.000702542, 1.68621, -1.42688, 8.64301)
+transform = Transform3D(-0.0144942, 1.8191, 0.097698, 0, -0.0784394, 2.26584, 2.01564, 0.0130809, 0.000702542, 1.68621, -1.19425, 8.64301)
 mesh = ExtResource("55_1dlal")
 skeleton = NodePath("../../..")
 
@@ -2889,6 +2889,10 @@ truck = ExtResource("104_rxjnh")
 transform = Transform3D(1, 0, 0, 0, 1.37977, 0, 0, 0, 1, 10.0607, 0.366942, 9.196)
 mesh = ExtResource("45_cobxl")
 skeleton = NodePath("")
+
+[node name="Rbook1" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.0338028, 0.451832, 1.13051, -0.00428816, 0.966765, -0.529182, -0.937392, -0.0207158, -0.0383458, 1.97813, -1.40318, 8.71105)
+mesh = ExtResource("63_msvfd")
 
 [editable path="Lamp1"]
 [editable path="RadioObj"]

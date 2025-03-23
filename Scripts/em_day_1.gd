@@ -49,17 +49,27 @@ func check_event_conditions():
 	if time_elapsed == 20:
 		var alarm = get_tree().get_first_node_in_group("alarm")
 		alarm.stop()
+	#parler des depots
+	if time_elapsed == 120:
+		if Tools.get_color_fd() == "blue":
+			Tools.colis_departure()
+	#prevenir que de fausses informartion peuvent circuler dans les autres chans
+	if time_elapsed == 150:
+		Tools.expe_status(true)
+	if time_elapsed == 200: 
+		Tools.door_letter()
+	if time_elapsed == 230:
+		UniqueTrait.unique("courant")
 	if time_elapsed == 400:
 		Tools.eotd()
 
 #RADIO
 func play_radio_message(file_path, text, duration, color, sender, what_cd):
-	if text in played_messages:  # Vérifie si le message a déjà été joué
-		return  # Si oui, on ne le rejoue pas
+	if text in played_messages:  
+		return  
 	
-	radio_event_adv(file_path, text, duration, color, sender, what_cd)  # Joue le message
-	played_messages[text] = true  # Marque ce message comme "joué"
-
+	radio_event_adv(file_path, text, duration, color, sender, what_cd) 
+	played_messages[text] = true  
 
 func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
 	Tools.set_radio_sound(1,load(sound))

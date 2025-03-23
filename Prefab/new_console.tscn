@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://o6gxo8th13qo"]
+[gd_scene load_steps=30 format=3 uid="uid://o6gxo8th13qo"]
 
 [ext_resource type="Material" uid="uid://cs6jfl3povwc" path="res://Matos/matosmetal.tres" id="1_ous35"]
 [ext_resource type="Material" uid="uid://cc36i56vbolnb" path="res://Matos/matoscable.tres" id="2_8bjpw"]
@@ -47,6 +47,18 @@ size = Vector3(1.00989, 1, 3.47272)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yianv"]
 size = Vector3(1, 2.49207, 1.37109)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywjgw"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+depth_draw_mode = 2
+albedo_color = Color(1, 1, 0.596078, 1)
+metallic = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_18ocy"]
+lightmap_size_hint = Vector2i(17, 9)
+material = SubResource("StandardMaterial3D_ywjgw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pxwd4"]
 size = Vector3(0.113159, 0.181152, 0.146973)
@@ -187,6 +199,16 @@ script_trait = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SuitExpe"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710958, 1.2558, 0.185547)
 shape = SubResource("BoxShape3D_yianv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SuitExpe" groups=["canexpe"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05352, 2.96465, -0.362797)
+light_color = Color(0.996078, 0, 0, 1)
+light_energy = 2.313
+omni_range = 1.768
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SuitExpe"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.05701, 2.94267, -0.354384)
+mesh = SubResource("SphereMesh_18ocy")
 
 [node name="BlueButton" type="StaticBody3D" parent="."]
 script = ExtResource("5_x1km7")
