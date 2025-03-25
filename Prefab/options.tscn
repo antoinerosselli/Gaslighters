@@ -1,7 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqvs2hxpxceik"]
+[gd_scene load_steps=8 format=3 uid="uid://cqvs2hxpxceik"]
 
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_ri2gh"]
 [ext_resource type="Script" uid="uid://b0ss855sqb7bl" path="res://Prefab/options.gd" id="2_x37ql"]
+[ext_resource type="Script" uid="uid://dhgb3e7l2ugh7" path="res://Prefab/fs_button.gd" id="3_icosh"]
+[ext_resource type="Script" uid="uid://dx6rjbt6sr5u0" path="res://Prefab/master_slider.gd" id="3_qiegy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qiegy"]
+font_size = 27
 
 [sub_resource type="LabelSettings" id="LabelSettings_ri2gh"]
 font_size = 30
@@ -42,73 +47,108 @@ offset_bottom = -120.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Fullscreen" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 88.0
+offset_right = 252.0
+offset_bottom = 116.0
+text = "FULLSCREEN"
+label_settings = SubResource("LabelSettings_qiegy")
+
+[node name="CheckButton" type="CheckBox" parent="Panel/Fullscreen"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = -16.0
+offset_right = 256.0
+offset_bottom = 32.0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+script = ExtResource("3_icosh")
+
 [node name="MasterVol" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 72.0
-offset_right = 308.0
-offset_bottom = 103.0
+offset_left = 48.0
+offset_top = 216.0
+offset_right = 332.0
+offset_bottom = 247.0
 text = "Master Volume"
 label_settings = SubResource("LabelSettings_ri2gh")
 horizontal_alignment = 2
 
-[node name="HSlider" type="HSlider" parent="Panel/MasterVol"]
+[node name="MasterSlider" type="HSlider" parent="Panel/MasterVol"]
 layout_mode = 0
 offset_left = 380.0
 offset_top = -32.0
-offset_right = 844.0
+offset_right = 840.0
 offset_bottom = 68.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_qiegy")
+bus_name = "Master"
 
 [node name="MusicVol" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 136.0
-offset_right = 308.0
-offset_bottom = 167.0
+offset_left = 48.0
+offset_top = 280.0
+offset_right = 332.0
+offset_bottom = 311.0
 text = "Music Volume"
 label_settings = SubResource("LabelSettings_ri2gh")
 horizontal_alignment = 2
 
-[node name="HSlider" type="HSlider" parent="Panel/MusicVol"]
+[node name="MusicSlider" type="HSlider" parent="Panel/MusicVol"]
 layout_mode = 0
 offset_left = 380.0
 offset_top = -32.0
 offset_right = 844.0
 offset_bottom = 68.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_qiegy")
+bus_name = "Music"
 
 [node name="sfxVol" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 200.0
-offset_right = 308.0
-offset_bottom = 231.0
+offset_left = 48.0
+offset_top = 344.0
+offset_right = 332.0
+offset_bottom = 375.0
 text = "SFX Volume"
 label_settings = SubResource("LabelSettings_ri2gh")
 horizontal_alignment = 2
 
-[node name="HSlider" type="HSlider" parent="Panel/sfxVol"]
+[node name="sfxSlider" type="HSlider" parent="Panel/sfxVol"]
 layout_mode = 0
 offset_left = 380.0
 offset_top = -32.0
 offset_right = 844.0
 offset_bottom = 68.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_qiegy")
+bus_name = "Sfx"
 
-[node name="MasterVol2" type="Label" parent="Panel"]
+[node name="VoiceVol" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 264.0
-offset_right = 308.0
-offset_bottom = 295.0
+offset_left = 48.0
+offset_top = 408.0
+offset_right = 332.0
+offset_bottom = 439.0
 text = "Voice Volume"
 label_settings = SubResource("LabelSettings_ri2gh")
 horizontal_alignment = 2
 
-[node name="HSlider" type="HSlider" parent="Panel/MasterVol2"]
+[node name="VoiceSlider" type="HSlider" parent="Panel/VoiceVol"]
 layout_mode = 0
 offset_left = 380.0
 offset_top = -32.0
 offset_right = 844.0
 offset_bottom = 68.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_qiegy")
+bus_name = "Voice"
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
@@ -120,3 +160,4 @@ text = "OPTIONS"
 label_settings = SubResource("LabelSettings_x37ql")
 
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
+[connection signal="toggled" from="Panel/Fullscreen/CheckButton" to="Panel/Fullscreen/CheckButton" method="_on_toggled"]

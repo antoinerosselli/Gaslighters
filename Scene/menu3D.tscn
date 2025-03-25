@@ -148,4 +148,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.59508, 0, 1.54481)
 stream = ExtResource("35_41xcc")
 unit_size = 0.2
 autoplay = true
+bus = &"Music"
 parameters/looping = true

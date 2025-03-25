@@ -77,7 +77,7 @@ func unique(object_name):
 			emds.eat_a_pills()
 		"pen":
 			Save.set_level(2)
-			Tools.start_transition("DAY 2", load("res://Scene/Days/Day2/scene_day_2.tscn") as PackedScene)
+			Tools.start_transition("DAY 2", load("res://Scene/demo/demo_end.tscn") as PackedScene)
 		"phone":
 			print("phone")
 			Tools.start_transition("1 YEARS AGO", load("res://Scene/Days/Day 3.5/scene_day_3_5.tscn") as PackedScene)

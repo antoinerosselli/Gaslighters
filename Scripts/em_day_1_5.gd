@@ -36,6 +36,6 @@ func check_event_conditions():
 		var sp = get_tree().get_first_node_in_group("pills")
 		sp.spawn()
 	if time_elapsed == 35:
-		talk("Don't tell me you're having second thoughts. You're a pragmatic man. Your colleagues? They'll keep working, whatever happens. It's best they don't worry about... things they can't understand.", gouv_color, 5)
+		talk("Don't tell me you're having second thoughts. You're a pragmatic man. It's best they don't worry about... things they can't understand.", gouv_color, 5)
 	if time_elapsed == 48:
 		talk("A hero knows when to speak... and when to shut up.", gouv_color, 10)

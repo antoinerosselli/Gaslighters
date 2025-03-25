@@ -1413,7 +1413,7 @@ material_override = SubResource("StandardMaterial3D_t4xhp")
 mesh = SubResource("PlaneMesh_qspml")
 
 [node name="Interrupteur" parent="." node_paths=PackedStringArray("lamp") instance=ExtResource("31_22q3o")]
-transform = Transform3D(-0.0147126, 0, -0.999892, 0, 1, 0, 0.999892, 0, -0.0147126, -2.35905, 0.0177575, 2.32291)
+transform = Transform3D(-0.0147126, 0, -0.999892, 0, 1, 0, 0.999892, 0, -0.0147126, -2.35905, 0.0177575, 2.32755)
 is_an_interruptor = true
 lamp = NodePath("../Lamp1")
 custom_range = 10.0
@@ -1439,14 +1439,14 @@ spot_range = 11.681
 script = ExtResource("33_3fu2f")
 
 [node name="Interrupteur2" parent="." node_paths=PackedStringArray("lamp") instance=ExtResource("31_22q3o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7457, 0.328959, -4.41214)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74856, 0.0204909, -4.41214)
 item_name = "interrupteur2"
 is_an_interruptor = true
 lamp = NodePath("../Lamp2")
 custom_range = 10.0
 
 [node name="Interrupteur3" parent="." node_paths=PackedStringArray("lamp") instance=ExtResource("31_22q3o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88581, -0.0374835, -2.46357)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88581, -0.0374835, -2.5424)
 item_name = "interrupteur3"
 is_an_interruptor = true
 lamp = NodePath("../Lamp3")
@@ -1517,17 +1517,20 @@ script = ExtResource("48_osms8")
 transform = Transform3D(0.992745, 0, 0.120241, 0, 1, 0, -0.120241, 0, 0.992745, 1.78979, 1.80664, -5.21442)
 
 [node name="Interrupteur4" parent="." node_paths=PackedStringArray("lamp") instance=ExtResource("31_22q3o")]
-transform = Transform3D(-0.999532, 0, -0.0305909, 0, 1, 0, 0.0305909, 0, -0.999532, 4.83315, 0.304018, -4.34815)
+transform = Transform3D(-0.999532, 0, -0.0305909, 0, 1, 0, 0.0305909, 0, -0.999532, 4.82232, 0.0599539, -4.7857)
 item_name = "interrupteur3"
 is_an_interruptor = true
 lamp = NodePath("../Lamp4")
 custom_range = 10.0
 
+[node name="CollisionShape3D" parent="Interrupteur4" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0217118, 0.000823975, -0.00219631)
+
 [node name="pills_spawner" parent="." instance=ExtResource("50_rrynx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02206, -0.951368, -7.67527)
 
 [node name="foods" parent="." instance=ExtResource("47_6cyh5")]
-transform = Transform3D(2.0774, 0, 0, 0, 2.29861, 0, 0, 0, 2.18961, 9.47228, -0.782944, 4.41751)
+transform = Transform3D(2.0774, 0, 0, 0, 2.29861, 0, 0, 0, 2.18961, 9.47228, -0.72405, 4.41751)
 zone_size = Vector3(0.6, 1, 1)
 
 [node name="Lamp2" parent="." instance=ExtResource("32_5p1tq")]
@@ -2897,6 +2900,7 @@ mesh = ExtResource("63_msvfd")
 [editable path="Lamp1"]
 [editable path="RadioObj"]
 [editable path="RadioObj/Radiooo"]
+[editable path="Interrupteur4"]
 [editable path="Deco/Sketchfab_Scene2"]
 [editable path="Deco/Sketchfab_Scene3"]
 [editable path="Deco/Sketchfab_Scene6"]

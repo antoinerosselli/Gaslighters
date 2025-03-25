@@ -9,7 +9,7 @@ albedo_texture = ExtResource("1_40q5c")
 [sub_resource type="PlaneMesh" id="PlaneMesh_hiqcw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j32o0"]
-size = Vector3(1.70282, 0.122925, 0.998108)
+size = Vector3(1.70282, 0.631683, 0.998108)
 
 [sub_resource type="Animation" id="Animation_n7vka"]
 length = 0.001

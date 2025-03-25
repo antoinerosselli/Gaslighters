@@ -25,6 +25,7 @@ Save="*res://Scripts/save.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://bop3pobtyk3f"
 

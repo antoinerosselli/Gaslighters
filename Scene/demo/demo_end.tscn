@@ -1,8 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdhd1n6lemc3h"]
+[gd_scene load_steps=7 format=3 uid="uid://bdhd1n6lemc3h"]
 
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_ti7vd"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="2_2aubk"]
 [ext_resource type="Script" uid="uid://y0r6p0tdxywp" path="res://Scripts/demo_end.gd" id="2_ej0fg"]
+[ext_resource type="Shader" uid="uid://b3lvhbwu7lsot" path="res://Shader/background_expe.gdshader" id="3_caexs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ia1n3"]
+shader = ExtResource("3_caexs")
+shader_parameter/scale = 5.0
+shader_parameter/speed = 0.3
+shader_parameter/octaves = 7
+shader_parameter/persistence = 0.909
+shader_parameter/color_1 = Color(1, 1, 1, 1)
+shader_parameter/color_2 = Color(0.650129, 0.650128, 0.650128, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_b20qq"]
 font = ExtResource("2_2aubk")
@@ -21,11 +31,12 @@ grow_vertical = 2
 theme = ExtResource("1_ti7vd")
 script = ExtResource("2_ej0fg")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ia1n3")
 layout_mode = 0
-offset_right = 1154.0
-offset_bottom = 652.0
-color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+offset_top = -8.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

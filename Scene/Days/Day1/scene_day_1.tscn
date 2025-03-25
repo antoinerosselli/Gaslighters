@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=23 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="Script" uid="uid://b4v2q4bytqy57" path="res://Scene/Days/Day1/scene_day_1.gd" id="1_f86ad"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
@@ -8,8 +8,10 @@
 [ext_resource type="Script" uid="uid://c5msg4g651xi1" path="res://Scripts/em_day_1.gd" id="7_rvlxt"]
 [ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_5gr6e"]
 [ext_resource type="PackedScene" uid="uid://pjjbvhiflurr" path="res://Note/notefromafriend.tscn" id="9_rvlxt"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="10_f86ad"]
 [ext_resource type="PackedScene" uid="uid://dydkbrvc7it6i" path="res://Prefab/letter.tscn" id="10_rvlxt"]
 [ext_resource type="PackedScene" uid="uid://bm6r7hvbwexl0" path="res://Note/note_stayaway.tscn" id="11_gxdup"]
+[ext_resource type="Texture2D" uid="uid://bvrkg6q7rugdh" path="res://Sprite/letter.png" id="12_17coq"]
 
 [sub_resource type="Sky" id="Sky_f86ad"]
 
@@ -95,6 +97,14 @@ _data = {
 &"slide_letter": SubResource("Animation_rvlxt")
 }
 
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_n7vka"]
+albedo_texture = ExtResource("12_17coq")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hiqcw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j32o0"]
+size = Vector3(1.70282, 0.631683, 0.998108)
+
 [node name="SceneDay1" type="Node3D" groups=["scene"]]
 script = ExtResource("1_f86ad")
 
@@ -173,6 +183,7 @@ texts = ["Hmm"]
 
 [node name="managers" type="Node" parent="." groups=["event_manager"]]
 script = ExtResource("7_rvlxt")
+DANGER_LEVEL = 3
 
 [node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
 
@@ -211,17 +222,21 @@ libraries = {
 &"": SubResource("AnimationLibrary_f86ad")
 }
 
-[node name="Letter2" parent="." instance=ExtResource("10_rvlxt")]
-transform = Transform3D(0.192867, 0, 0, 0, 1, 0, 0, 0, 0.208725, 0.831636, -0.651308, 7.54161)
-item_name = "letterfromfriend"
+[node name="Letter2" type="StaticBody3D" parent="." groups=["letter"]]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.953054, -0.616799, 7.53552)
+script = ExtResource("10_f86ad")
+item_name = "letter"
 is_note = true
 note = ExtResource("9_rvlxt")
 
-[node name="MeshInstance3D" parent="Letter2" index="0"]
-skeleton = NodePath("../../Letter2")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Letter2"]
+transform = Transform3D(0.76681, 0, 0, 0, 1, 0, 0, 0, 0.441186, 0, 0, 0)
+material_override = SubResource("ORMMaterial3D_n7vka")
+mesh = SubResource("PlaneMesh_hiqcw")
 
-[node name="AnimationPlayer" parent="Letter2" index="2"]
-root_node = NodePath("../../Letter2")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Letter2"]
+transform = Transform3D(0.896602, 0, 0, 0, 0.896602, 0, 0, 0, 0.896602, 0.00514627, 0.199237, -0.00392151)
+shape = SubResource("BoxShape3D_j32o0")
 
 [connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 
@@ -233,4 +248,3 @@ root_node = NodePath("../../Letter2")
 [editable path="tres2"]
 [editable path="two2"]
 [editable path="Letter"]
-[editable path="Letter2"]

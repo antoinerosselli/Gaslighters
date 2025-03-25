@@ -101,7 +101,7 @@ _data = {
 &"slide_contrat": SubResource("Animation_hrudi")
 }
 
-[node name="scene_day_1_5" type="Node3D"]
+[node name="scene_day_1_5" type="Node3D" groups=["day"]]
 script = ExtResource("1_kv254")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

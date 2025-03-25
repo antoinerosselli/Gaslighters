@@ -91,7 +91,7 @@ shader_parameter/edgeGlowIntensity = 1.466
 shader_parameter/enable_dissolve_animation = false
 shader_parameter/animation_speed = 0.6
 
-[node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 0, 0.61745, 0)
 script = ExtResource("1_cc2ll")
 

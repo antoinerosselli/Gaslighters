@@ -49,13 +49,10 @@ func check_event_conditions():
 	if time_elapsed == 20:
 		var alarm = get_tree().get_first_node_in_group("alarm")
 		alarm.stop()
-	#parler des depots
 	if time_elapsed == 120:
 		if Tools.get_color_fd() == "blue":
 			Tools.colis_departure()
-	#prevenir que de fausses informartion peuvent circuler dans les autres chans
-	if time_elapsed == 150:
-		Tools.expe_status(true)
+			Tools.expe_status(true)
 	if time_elapsed == 200: 
 		Tools.door_letter()
 	if time_elapsed == 230:
@@ -72,7 +69,7 @@ func play_radio_message(file_path, text, duration, color, sender, what_cd):
 	played_messages[text] = true  
 
 func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
-	Tools.set_radio_sound(1,load(sound))
+	#Tools.set_radio_sound(1,load(sound))
 	Tools.radio_text(text,time_text,color_ok)
 	Tools.add_journal(text, color_ok)
 	Tools.unlock_fm(what_fm)
@@ -88,77 +85,135 @@ func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
 
 func check_radio_conditions():
 	var radio_value = Radio.getValue()
+
 	#gouv radio ==>
-	#change voice ALL !!
-	if time_elapsed >= 0 and time_elapsed <= 70:
+	if time_elapsed >= 0 and time_elapsed <= 30:
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://voice/day1/gov/1. Official government communication.wav", "Alert! An attack has taken place on one of our gas reserve sites.", 5, gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day1/gov/1. Official government communication.wav", "This is an official government message.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day1/gov/2. Accident.wav", "Poisonous gases have invaded the streets, stay at home", 5, gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "A mist has settled over Rock Valley. For your safety, please remain indoors.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day1/gov/3. Citizens stay home.wav", "To communicate with us, access the secure room using the button at the end of the corridor.", 5, gouv_color,"gouv", 0)
-	if time_elapsed >= 90 and time_elapsed <= 120:
+			play_radio_message("res://voice/day1/gov/3. Citizens stay home.wav", "Security units are actively patrolling to maintain public order.", 5, gouv_color,"gouv", 0)
+	if time_elapsed >= 40 and time_elapsed <= 90:
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://voice/day1/gov/4. Stay tuned.wav", "Information on how to proceed will be sent to you shortly", 5, gouv_color,"gouv", 0)
-	if time_elapsed >= 135 and time_elapsed <= 230:
+			play_radio_message("res://voice/day1/gov/1. Official government communication.wav", "Residents of the new miners' district can access a security room. An access device is located at the end of the main corridor.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "Rationing trucks are currently circulating in the city. Signal your presence by pressing the blue button on your security console.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "Check the operation of your console. If the blue light is visible through your front door, the system is operating normally.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "After the rationing truck passes, your protective suit will be available for collection of your provisions.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/3. Citizens stay home.wav", "We will keep you informed as the situation evolves.", 5, gouv_color,"gouv", 0)
+	if time_elapsed >= 100 and time_elapsed <= 130:
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://voice/day1/gov/5. Blue light.wav", "To signal your presence, activate the blue button and see if it works through your door." , 5, gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day1/gov/1. Official government communication.wav", "This is an official government message.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/3. Citizens stay home.wav", "Unofficial sources are spreading incorrect information. We urge you to remain vigilant and follow only government communications.", 5, gouv_color,"gouv", 0)
+	if time_elapsed >= 160 and time_elapsed <= 230:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://voice/day1/gov/5. Blue light.wav", "This is an official government message." , 5, gouv_color,"gouv", 6)
 		if radio_value > 54 and radio_value < 64  and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day1/gov/6. Rations.wav", "Rations will be delivered to your secure room as soon as possible." , 5, gouv_color,"gouv", 0)
-	if time_elapsed >= 250 and time_elapsed <= 310:
-		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://voice/day1/gov/7. Stay home citizens.wav", "Please stay at home, the army will be deployed to secure the area." , 5, gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day1/gov/6. Rations.wav", "Deposits of mist, visible as white spots, may appear in your homes. It is imperative to clean them immediately." , 5, gouv_color,"gouv", 6)
 		if radio_value > 54 and radio_value < 64  and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day1/gov/8. More Info to follow.wav", "Stay at home, we'll be in touch soon." , 5, gouv_color,"gouv", 0)
-
+			play_radio_message("res://voice/day1/gov/6. Rations.wav", "For residents of the new miners' quarter, an effective cleaner is provided in your bathroom." , 5, gouv_color,"gouv", 0)
+	if time_elapsed >= 230 and time_elapsed <= 330:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://voice/day1/gov/4. Stay tuned.wav", "This is an official government message.", 5, gouv_color,"gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "The evacuation plan is in place.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "Rock Valley is divided into five zones.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "Each day, teams are sent to secure the residents of the zones in the following order:", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "Downtown", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "Historic Quarter", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "Old Miners' Quarter", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "Road Quarter.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "New Miners' Quarter.", 5, gouv_color, "gouv", 0)	
+	
 	#belle radio ==>
-	if time_elapsed >= 70 and time_elapsed <= 170:
+	if time_elapsed >= 50 and time_elapsed <= 90:
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://voice/day1/belle/hello !.mp3", "Hello...? Is anyone out there? Please, if you can hear me, respond...",5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day1/belle/hello !.mp3", "Good evening everyone and welcome to this special edition of Belle Radio.",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
-			play_radio_message("res://voice/day1/belle/You too .mp3", "You too... You've discovered that room, haven't you? What does all this mean?",5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day1/belle/You too .mp3", "I am alone in the studio, but I am here to share with you the latest news from Rock Valley, which is currently enveloped in a mysterious mist.",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
-			play_radio_message("res://voice/day1/belle/This is insane.mp3", "This is insane... Everything feels so strange. I must admit, I'm starting to get worried.",5, belle_color, "belle", 0)
-	if time_elapsed >= 160 and time_elapsed <= 190:
+			play_radio_message("res://voice/day1/belle/You too .mp3", "Authorities say it is toxic.",5, belle_color, "belle", 6)
+		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
+			play_radio_message("res://voice/day1/belle/This is insane.mp3", "Stay tuned, I will keep you updated on any developments.",5, belle_color, "belle", 0)
+	if time_elapsed >= 120 and time_elapsed <= 190:
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://voice/day1/belle/Hopeok.mp3", "I hope you're holding up... I just received my ration. We have to stay strong. You're not alone.",5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day1/belle/Hopeok.mp3", "This is Belle,",5, belle_color, "belle", 6)
+		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
+			play_radio_message("res://voice/day1/belle/You too .mp3", "Reports are coming in from all over the city: a group of unidentified individuals in suits has been seen.",5, belle_color, "belle", 6)
+		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
+			play_radio_message("res://voice/day1/belle/You too .mp3", "They do not appear to be government agents.",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day1/belle/Others.mp3", "There are other people who communicate on the radio, try to get as much information as possible!",5, belle_color, "belle", 0)
-
+			play_radio_message("res://voice/day1/belle/Others.mp3", "They were last spotted downtown.",5, belle_color, "belle", 0)
+	if time_elapsed >= 200 and time_elapsed <= 240:
+		if radio_value > 22 and radio_value < 32 :
+			play_radio_message("res://voice/day1/belle/Hopeok.mp3", "This is Belle,",5, belle_color, "belle", 6)
+		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
+			play_radio_message("res://voice/day1/belle/You too .mp3", "Hold on. White spots have started appearing here in the studio. I used ROCKCLEAN's EVERSPRAY and they disappeared.",5, belle_color, "belle", 6)
+		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
+			play_radio_message("res://voice/day1/belle/Others.mp3", "Do not hesitate to do the same if you see these marks in your home.",5, belle_color, "belle", 0)
+	if time_elapsed >= 250 and time_elapsed <= 300:
+		if radio_value > 22 and radio_value < 32 :
+			play_radio_message("res://voice/day1/belle/Hopeok.mp3", "This is Belle,",5, belle_color, "belle", 6)
+		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
+			play_radio_message("res://voice/day1/belle/You too .mp3", "Our sources in the new miners' quarter report that each apartment is equipped with a cleaner.",5, belle_color, "belle", 6)
+		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
+			play_radio_message("res://voice/day1/belle/Others.mp3", "These spots are dangerous; a young girl told me her mother fainted due to prolonged exposure.",5, belle_color, "belle", 0)
+	if time_elapsed >= 320 and time_elapsed <= 360:
+		if radio_value > 22 and radio_value < 32 :
+			play_radio_message("res://voice/day1/belle/Hopeok.mp3", "This is Belle,",5, belle_color, "belle", 6)
+		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
+			play_radio_message("res://voice/day1/belle/You too .mp3", "This enigmatic group stopped in a church before heading to the new miners' quarter.",5, belle_color, "belle", 6)
+		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
+			play_radio_message("res://voice/day1/belle/Others.mp3", "Stay cautious and informed.",5, belle_color, "belle", 0)
 
 	#Fanatic Radio ==>
-	if  time_elapsed >= 50 and time_elapsed <= 90:
+	if  time_elapsed >= 50 and time_elapsed <= 100:
 		if radio_value > 66 and radio_value < 76 :
-			play_radio_message("res://voice/day1/complot/1. Just an excuse.mp3",
-			"Wake up! The attack is just an excuse! They’re trying to control us!",
-			5, Fanatic_color, "fanatic", 6)
+			play_radio_message("res://voice/day1/complot/1. Just an excuse.mp3","My friends,",5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
-			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3",
-			"Don’t trust their broadcasts! They feed you nothing but lies. Think for yourself!",
-			5, Fanatic_color, "fanatic", 0)
-
-	if time_elapsed >= 110 and time_elapsed <= 200:
-		if radio_value > 66 and radio_value < 76 :
-			play_radio_message("res://voice/day1/complot/3. GONE.mp3",
-			"They’re trying to isolate us! If you listen to them, you’ll end up like the others… gone.",
-			5, Fanatic_color, "fanatic", 0)
-
-	if time_elapsed >= 210 and time_elapsed <= 260:
-		if radio_value > 66 and radio_value < 76 :
-			play_radio_message("res://voice/day1/complot/4. An other way.mp3",
-			"I found a way out. The blue button? It’s a trick. There’s another way… but I can’t say it here.",
-			5, Fanatic_color, "fanatic", 6)
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","The government has lied to you, betrayed our miners, and poisoned your children.",5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
-			play_radio_message("res://voice/day1/complot/5. Food problem.mp3",
-			"Did they bring you food? DON’T TOUCH IT! It’s poisoned to keep you weak!",
-			5, Fanatic_color, "fanatic", 0)
-
-	if time_elapsed >= 270 and time_elapsed <= 320:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","Yet, some continue to believe their sweet words.",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","Since Rock Valley joined the United Cities, our problems have multiplied, our local decisions overshadowed by distant bureaucracies.",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","They exploit our lands and our people without scruple.",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","Do not be fooled by their lies.",5, Fanatic_color, "fanatic", 0)
+	if time_elapsed >= 110 and time_elapsed <= 190:
 		if radio_value > 66 and radio_value < 76 :
-			play_radio_message("res://voice/day1/complot/6. Resist.mp3",
-			"You feel it too, don’t you? Something’s wrong. They don’t want us to resist.",
-			5, Fanatic_color, "fanatic", 6)
-		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://voice/day1/complot/7. Dont be a sheep.mp3",
-			"Trust me… when the time comes, you’ll have to make a choice. Don't be a sheep.",
-			5, Fanatic_color, "fanatic", 0)
+			play_radio_message("res://voice/day1/complot/1. Just an excuse.mp3","My friends,",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","Isn't it suspicious that the new government housing was ready to handle this crisis?",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","As if they anticipated this disaster.",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","We have always been proud of our independence. Look at how they treat us now!",5, Fanatic_color, "fanatic", 0)
+	if time_elapsed >= 200 and time_elapsed <= 260:
+		if radio_value > 66 and radio_value < 76 :
+			play_radio_message("res://voice/day1/complot/1. Just an excuse.mp3","My friends,",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","I have terrible news.",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","Near downtown, individuals have murdered a representative of our brave miners.",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","This is the true face of this government.",5, Fanatic_color, "fanatic", 0)
+	if time_elapsed >= 350 and time_elapsed <= 400:
+		if radio_value > 66 and radio_value < 76 :
+			play_radio_message("res://voice/day1/complot/1. Just an excuse.mp3","My friends,",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","Neither God nor the government will save us from this scourge.",5, Fanatic_color, "fanatic", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","Prepare yourselves. When the time comes, we will take back what belongs to us.",5, Fanatic_color, "fanatic", 0)	

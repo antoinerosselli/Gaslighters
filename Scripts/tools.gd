@@ -124,7 +124,7 @@ func unlock_fm(what_fm):
 		get_tree().get_first_node_in_group("fanaticfm").visible = true
 
 func spawn_conserve(i):
-	get_tree().get_first_node_in_group("spawner").spawn_conserve(i)
+	get_tree().get_first_node_in_group("foods").update_conserves(i)
 	
 func get_elec():
 	return val_elec
