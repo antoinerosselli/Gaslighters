@@ -109,7 +109,7 @@ size = Vector3(1.70282, 0.631683, 0.998108)
 script = ExtResource("1_f86ad")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_36dop")]
-transform = Transform3D(1, 0, 0, 0, 1.19877, 0, 0, 0, 1, -2.80715, -0.247539, 6.51119)
+transform = Transform3D(1, 0, 0, 0, 1.19877, 0, 0, 0, 1, -2.80715, -0.40799, 6.51119)
 
 [node name="Node3D" parent="." instance=ExtResource("1_jb5ec")]
 

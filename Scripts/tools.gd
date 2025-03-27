@@ -37,13 +37,14 @@ func paused_game():
 
 func door_letter():
 	var letter = get_tree().get_first_node_in_group("letter")
+	Tools.sound_now(Tools.get_player(), preload("res://Music&Sound/door-knocking-175163.mp3") as AudioStreamMP3)
 	letter.get_child(2).play("slide_letter")
 
 func go_to_expe():
 	var es:PackedScene = preload("res://Prefab/expe.tscn") as PackedScene
 	var es_tmp = es.instantiate()
 	get_tree().get_first_node_in_group("canvas").visible = false
-	add_child(es_tmp)
+	add_child(es_tmp)	
 	print("go to expe")
 
 func call_pause():
@@ -208,7 +209,10 @@ func colis_departure():
 
 func expe_status(status):
 	var expe_lum = get_tree().get_first_node_in_group("canexpe")
+	var anim = get_tree().get_first_node_in_group("animexpe")
 	if status == true:
+		anim.play("start_expe")
 		expe_lum.set_color(Color(0, 1, 0, 1))
 	elif status == false:
+		anim.play("end_expe")
 		expe_lum.set_color(Color(1, 0, 0, 1))

@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://4n1p68ofm3bv"]
+[gd_scene load_steps=4 format=3 uid="uid://4n1p68ofm3bv"]
 
 [ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_y4k0b"]
-
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_urjpq"]
-albedo_color = Color(0.2484, 0.2484, 0.2484, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_bac11"]
+[ext_resource type="PackedScene" uid="uid://cr3ryistechjj" path="res://EndObject/scene.gltf" id="2_x0gjl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4j48l"]
-size = Vector3(0.134155, 0.415039, 0.0789795)
+size = Vector3(0.134155, 0.415039, 0.0697632)
 
 [node name="pen" type="RigidBody3D"]
 mass = 100.0
@@ -16,11 +12,9 @@ script = ExtResource("1_y4k0b")
 item_name = "pen"
 script_trait = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0787381, 0, 0, 0, 0.00550408, 0.0891148, 0, -0.193658, 0.00253279, 0, 0, 0)
-material_override = SubResource("ORMMaterial3D_urjpq")
-mesh = SubResource("CapsuleMesh_bac11")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0191277, 0.999817, 0, -0.999817, 0.0191277, -0.0172729, 0.00675561, 0.0074548)
+transform = Transform3D(1, 0, 0, 0, 0.0191277, 0.999817, 0, -0.999817, 0.0191277, -0.0172729, 0.0113629, 0.00754294)
 shape = SubResource("BoxShape3D_4j48l")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_x0gjl")]
+transform = Transform3D(0.0729391, 0, -9.40566, 0, 6.8443, 0, 5.0591, 0, 0.135605, -0.0137649, 0, 0.00138408)

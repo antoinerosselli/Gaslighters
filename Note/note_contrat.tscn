@@ -5,7 +5,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxs7l"]
 bg_color = Color(0.683305, 0.673851, 0.610326, 1)
 
-[node name="note_contrat" type="Control"]
+[node name="note_contrat" type="Control" groups=["notenote"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -33,8 +33,9 @@ extends Node3D
 @export var script_trait:bool
 
 func _ready():
-	pass 
-	
+	if depot == true:
+		$AnimationPlayer.play("spawn")
+
 func interact():
 	if is_text == true:
 		var player = Tools.get_player()	

@@ -9,9 +9,9 @@
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
 [ext_resource type="Texture2D" uid="uid://boqoqorx68jb3" path="res://Sprite/Radio.png" id="7_6hmev"]
 [ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
+[ext_resource type="Script" uid="uid://chcm2kadulrxu" path="res://Prefab/useUscript.gd" id="10_0r8a8"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="10_3h1t1"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="11_7q8gp"]
-[ext_resource type="AudioStream" uid="uid://b0jngj4uq3osf" path="res://Music&Sound/hearbeat-71701.mp3" id="12_utawn"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="12_x4psa"]
 [ext_resource type="PackedScene" uid="uid://dpi8t3jrme5d" path="res://Extern/Rework Appart/spray/scene.gltf" id="13_wyp7x"]
 
@@ -23,11 +23,11 @@ font_size = 37
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2w04"]
 shader = ExtResource("4_evs1m")
 shader_parameter/resolution = Vector2(470, 380)
-shader_parameter/scan_line_amount = 0.121
+shader_parameter/scan_line_amount = 0.0
 shader_parameter/warp_amount = 0.1
 shader_parameter/noise_amount = 0.03
 shader_parameter/interference_amount = 0.054
-shader_parameter/grille_amount = 0.082
+shader_parameter/grille_amount = 0.1
 shader_parameter/grille_size = 1.227
 shader_parameter/vignette_amount = 0.181
 shader_parameter/vignette_intensity = 0.336
@@ -35,7 +35,7 @@ shader_parameter/aberation_amount = 0.0
 shader_parameter/roll_line_amount = 0.0
 shader_parameter/roll_speed = -2.635
 shader_parameter/scan_line_strength = -6.662
-shader_parameter/pixel_strength = -0.135
+shader_parameter/pixel_strength = -3.111
 
 [sub_resource type="LabelSettings" id="LabelSettings_mb3ur"]
 font = ExtResource("6_v1iah")
@@ -146,7 +146,7 @@ offset_left = -3.0
 offset_right = 1152.0
 offset_bottom = 648.0
 mouse_filter = 2
-color = Color(1, 1, 1, 0.156863)
+color = Color(1, 1, 1, 0)
 
 [node name="show_text" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -278,6 +278,7 @@ offset_right = 619.0
 offset_bottom = 316.0
 text = "USE"
 label_settings = SubResource("LabelSettings_cck1k")
+script = ExtResource("10_0r8a8")
 
 [node name="Mainorange" type="Sprite2D" parent="CanvasLayer/Control/Label"]
 position = Vector2(-24, 16)
@@ -301,12 +302,6 @@ text = "[ E ] Interact
 [ Ctrl ] Crouch"
 label_settings = SubResource("LabelSettings_fy4og")
 horizontal_alignment = 2
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.979202, 0, 0, 0, 1, 0, 0.731353, -1.12726)
-stream = ExtResource("12_utawn")
-unit_size = 0.1
-autoplay = true
 
 [node name="transition" parent="." instance=ExtResource("11_7q8gp")]
 process_mode = 3
