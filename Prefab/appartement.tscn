@@ -2123,9 +2123,9 @@ operation = 2
 size = Vector3(5.59792, 0.51062, 5.81917)
 
 [node name="holewoodfloor2" type="CSGBox3D" parent="fondation/CSGCombiner3D/woodfloor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6252, -0.24469, 4.10939)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6252, -0.24469, 2.91262)
 operation = 2
-size = Vector3(8.78333, 0.51062, 9.70115)
+size = Vector3(8.78333, 0.51062, 7.30761)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="fondation"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06358, 0.16475, -8.20062)

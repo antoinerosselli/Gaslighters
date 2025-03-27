@@ -16,8 +16,8 @@
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_2v5un"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vuakp"]
-albedo_texture = ExtResource("2_18ocy")
-uv1_scale = Vector3(2, 2, 2)
+albedo_texture = ExtResource("6_wsla1")
+uv1_scale = Vector3(0.715, 0.715, 0.715)
 
 [sub_resource type="PrismMesh" id="PrismMesh_2v5un"]
 material = SubResource("StandardMaterial3D_vuakp")

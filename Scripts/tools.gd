@@ -184,20 +184,23 @@ func note_close(note, player):
 	note.queue_free()
 	
 func change_lesinputs(what_lesinputs):
+	print(what_lesinputs)
 	var text_input = get_tree().get_first_node_in_group("lesinputs")
+	if what_lesinputs == "inventory":
+		print("wallah ça marche")
+		text_input.text = "[ TAB ] Close"
 	if what_lesinputs == "player":
 		text_input.text = "[ E ] Interact
-[ Tab ] Journal
+[ Tab ] Info
 [ Ctrl ] Crouch"
 	if what_lesinputs == "frontdoor" or what_lesinputs == "note":
 		text_input.text = "[ C ] Close"
 	if what_lesinputs == "radio":
 		text_input.text = "[ C ] Close
 		[ Move ] Change FM"
-	if what_lesinputs == "inventory":
-		text_input.text == "[ TAB ] Close"
 	if what_lesinputs == "blank":
 		text_input.text == ""
+	print(text_input.text)
 		
 func start_the_day():
 	var timerevent = get_tree().get_first_node_in_group("timerevent")
@@ -216,3 +219,7 @@ func expe_status(status):
 	elif status == false:
 		anim.play("end_expe")
 		expe_lum.set_color(Color(1, 0, 0, 1))
+
+func event_journal_ok(index):
+	var eventjournal = get_tree().get_first_node_in_group("eventjournal")
+	eventjournal.get_child(index).visible = true

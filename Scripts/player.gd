@@ -53,7 +53,6 @@ func dialogues_manager():
 
 func _physics_process(delta):
 	var scaled_sanity = 0.3 - 0.0027 * sanity
-	print(scaled_sanity)
 	if scaled_sanity > 0.3 :
 		scaled_sanity = 0.3
 	if scaled_sanity < 0.03 :
@@ -125,9 +124,11 @@ func _input(event):
 	if Input.is_action_just_pressed("select"):
 		on_inventory = !on_inventory
 		if inventory.visible == false :
+			Tools.change_lesinputs("inventory")
 			inventory.visible = true
 			icon.visible = false
 		elif inventory.visible == true :
+			Tools.change_lesinputs("player")
 			inventory.visible = false
 			icon.visible = true
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED && $Camera3D.current == true:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=26 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="Script" uid="uid://b4v2q4bytqy57" path="res://Scene/Days/Day1/scene_day_1.gd" id="1_f86ad"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
@@ -13,15 +13,33 @@
 [ext_resource type="PackedScene" uid="uid://bm6r7hvbwexl0" path="res://Note/note_stayaway.tscn" id="11_gxdup"]
 [ext_resource type="Texture2D" uid="uid://bvrkg6q7rugdh" path="res://Sprite/letter.png" id="12_17coq"]
 
-[sub_resource type="Sky" id="Sky_f86ad"]
+[sub_resource type="Gradient" id="Gradient_f86ad"]
+offsets = PackedFloat32Array(0.0263158, 0.747368, 0.947368, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.247836, 0.247836, 0.247836, 1, 0.857895, 0.857895, 0.857895, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_17coq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fx68q"]
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_f86ad")
+noise = SubResource("FastNoiseLite_17coq")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ly3ml"]
+panorama = SubResource("NoiseTexture2D_fx68q")
+energy_multiplier = 3.12
+
+[sub_resource type="Sky" id="Sky_8e1tg"]
+sky_material = SubResource("PanoramaSkyMaterial_ly3ml")
 
 [sub_resource type="Environment" id="Environment_paq7g"]
 background_mode = 2
-sky = SubResource("Sky_f86ad")
-ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
+background_energy_multiplier = 0.39
+sky = SubResource("Sky_8e1tg")
 ambient_light_sky_contribution = 0.51
-ambient_light_energy = 0.35
 ssao_radius = 3.49
+glow_enabled = true
 glow_normalized = true
 glow_intensity = 7.2
 volumetric_fog_enabled = true
@@ -30,8 +48,6 @@ volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
 volumetric_fog_anisotropy = -0.51
 adjustment_enabled = true
 adjustment_saturation = 1.44
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2jnq7"]
 
 [sub_resource type="FogMaterial" id="FogMaterial_87u83"]
 emission = Color(0.281187, 0.281187, 0.281187, 1)
@@ -115,7 +131,6 @@ transform = Transform3D(1, 0, 0, 0, 1.19877, 0, 0, 0, 1, -2.80715, -0.40799, 6.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_paq7g")
-camera_attributes = SubResource("CameraAttributesPractical_2jnq7")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
@@ -140,13 +155,13 @@ size = Vector3(13.9297, 7.08786, 2)
 material = SubResource("FogMaterial_87u83")
 
 [node name="one" parent="." instance=ExtResource("7_frxae")]
-transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, -0.955145, -0.722322, 3.3345)
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, -2.00446, -0.722322, 3.3345)
 one_shot = true
 is_text = true
 texts = ["What's that noise?", "Looks like it's coming from outside"]
 
 [node name="two" parent="." instance=ExtResource("7_frxae")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1, 6.32785, -0.722322, -0.281386)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1, 5.12877, -0.722322, -0.506004)
 one_shot = true
 is_text = true
 texts = ["It looks like mist "]
@@ -158,7 +173,7 @@ is_text = true
 texts = ["I might have more information on the radio"]
 
 [node name="four" parent="." instance=ExtResource("7_frxae")]
-transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, -3.6721, -0.722322, -4.28139)
+transform = Transform3D(0.767904, 0, -1.34519, 0, 1, 0, 0.640566, 0, 1.6126, -4.52373, -0.722322, -6.0039)
 one_shot = true
 is_text = true
 texts = ["What is this place?"]
@@ -170,13 +185,13 @@ is_text = true
 texts = ["I need to calm down"]
 
 [node name="tres2" parent="." instance=ExtResource("7_frxae")]
-transform = Transform3D(0.993824, 0, 0.233028, 0, 1, 0, -0.110966, 0, 2.08703, 11.3347, -0.722322, 4.38196)
+transform = Transform3D(0.993824, 0, 0.233028, 0, 1, 0, -0.110966, 0, 2.08703, 10.9526, -0.722322, 4.23733)
 one_shot = true
 is_text = true
 texts = ["I hope I'll have enough food"]
 
 [node name="two2" parent="." instance=ExtResource("7_frxae")]
-transform = Transform3D(0.0101925, 0, -2.09989, 0, 1, 0, 0.999948, 0, 0.0214043, -3.59913, -0.722322, -1.12957)
+transform = Transform3D(0.0101925, 0, -2.09989, 0, 1, 0, 0.999948, 0, 0.0214043, -4.55809, -0.722322, -1.12957)
 one_shot = true
 is_text = true
 texts = ["Hmm"]

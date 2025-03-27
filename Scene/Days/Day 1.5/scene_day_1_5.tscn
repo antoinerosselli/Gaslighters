@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://7cqbfhd81slb"]
+[gd_scene load_steps=24 format=4 uid="uid://7cqbfhd81slb"]
 
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="1_152uh"]
 [ext_resource type="Script" uid="uid://b7vioc81fxt7i" path="res://Scene/Days/Day 1.5/scene_day_1_5.gd" id="1_kv254"]
@@ -9,9 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://bwb2a7jakivfd" path="res://Prefab/pills_spawner.tscn" id="5_skkch"]
 [ext_resource type="PackedScene" uid="uid://4n1p68ofm3bv" path="res://EndObject/pen.tscn" id="6_oh546"]
 [ext_resource type="PackedScene" uid="uid://bfwip75uecxa8" path="res://Scene/Days/Day 1.5/em_day_1_5.tscn" id="7_wxr26"]
+[ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="10_44xis"]
+
+[sub_resource type="Sky" id="Sky_ne3am"]
 
 [sub_resource type="Environment" id="Environment_q84mf"]
-background_energy_multiplier = 0.0
+background_mode = 2
+sky = SubResource("Sky_ne3am")
 ambient_light_source = 2
 ambient_light_energy = 0.0
 
@@ -137,7 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.86265e-09)
 shape = SubResource("BoxShape3D_n1q6q")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0135434, 0.999908, 0, -0.999908, 0.0135434, 0.328129, 3.86694, -0.18324)
+transform = Transform3D(1, 0, 0, 0, 0.0135434, 0.999908, 0, -0.999908, 0.0135434, 0.381273, 3.86694, -0.241137)
 light_energy = 16.0
 spot_range = 5.167
 spot_attenuation = 0.8
@@ -160,3 +164,6 @@ transform = Transform3D(0.00019339, 0, 0.34738, 0, 0.994139, 0, -0.246224, 0, 0.
 [node name="guy" parent="." instance=ExtResource("4_offwv")]
 transform = Transform3D(-0.842687, 0, -0.538403, 0, 1, 0, 0.538403, 0, -0.842687, -3.30116, 1.51412, -4.75129)
 guy_talk = true
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("10_44xis")]
+transform = Transform3D(-0.205996, 0, 0.0615668, 0, 0.415219, 0, -0.0615668, 0, -0.205996, -0.0231366, 1.10041, 0.636451)

@@ -4,10 +4,8 @@
 [ext_resource type="Script" uid="uid://8aqmy8q7388i" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
 [ext_resource type="PackedScene" uid="uid://bhot50ba066lf" path="res://Prefab/popup_sure.tscn" id="4_0r8a8"]
 [ext_resource type="Shader" uid="uid://exr4uhb1s52k" path="res://Shader/psxcameraeffect.gdshader" id="4_evs1m"]
-[ext_resource type="Texture2D" uid="uid://cpxh0j8eqp0ia" path="res://Sprite/Carnet.png" id="6_htqqd"]
 [ext_resource type="Texture2D" uid="uid://bds6idchttvqj" path="res://Sprite/mainorange.png" id="6_oj1nk"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
-[ext_resource type="Texture2D" uid="uid://boqoqorx68jb3" path="res://Sprite/Radio.png" id="7_6hmev"]
 [ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
 [ext_resource type="Script" uid="uid://chcm2kadulrxu" path="res://Prefab/useUscript.gd" id="10_0r8a8"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="10_3h1t1"]
@@ -23,15 +21,15 @@ font_size = 37
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2w04"]
 shader = ExtResource("4_evs1m")
 shader_parameter/resolution = Vector2(470, 380)
-shader_parameter/scan_line_amount = 0.0
+shader_parameter/scan_line_amount = 0.035
 shader_parameter/warp_amount = 0.1
 shader_parameter/noise_amount = 0.03
 shader_parameter/interference_amount = 0.054
 shader_parameter/grille_amount = 0.1
-shader_parameter/grille_size = 1.227
+shader_parameter/grille_size = 1.287
 shader_parameter/vignette_amount = 0.181
 shader_parameter/vignette_intensity = 0.336
-shader_parameter/aberation_amount = 0.0
+shader_parameter/aberation_amount = 0.5
 shader_parameter/roll_line_amount = 0.0
 shader_parameter/roll_speed = -2.635
 shader_parameter/scan_line_strength = -6.662
@@ -65,7 +63,17 @@ font_size = 14
 [sub_resource type="LabelSettings" id="LabelSettings_bv1s3"]
 font = ExtResource("6_v1iah")
 font_size = 22
-font_color = Color(0.870588, 0.623529, 0.145098, 1)
+font_color = Color(0.741176, 0.411765, 0.188235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i32cl"]
+bg_color = Color(0.229759, 0.374081, 0.471222, 0.14902)
+border_width_left = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_i32cl"]
+font = ExtResource("6_v1iah")
+font_size = 17
 
 [sub_resource type="LabelSettings" id="LabelSettings_cck1k"]
 font = ExtResource("6_v1iah")
@@ -151,9 +159,9 @@ color = Color(1, 1, 1, 0)
 [node name="show_text" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 128.0
-offset_top = 528.0
+offset_top = 543.0
 offset_right = 1024.0
-offset_bottom = 566.0
+offset_bottom = 581.0
 label_settings = SubResource("LabelSettings_mb3ur")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -165,9 +173,9 @@ wait_time = 4.0
 [node name="show_text_radio" type="RichTextLabel" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 75.0
-offset_top = 566.0
+offset_top = 581.0
 offset_right = 977.0
-offset_bottom = 632.0
+offset_bottom = 647.0
 scale = Vector2(1.16, 1)
 theme = ExtResource("10_3h1t1")
 theme_override_styles/background = SubResource("StyleBoxFlat_65idd")
@@ -186,21 +194,22 @@ offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_xi1ut")
 
+[node name="Line2D" type="Line2D" parent="CanvasLayer/Control/Inventory"]
+position = Vector2(0, 8)
+points = PackedVector2Array(0, 64, 1152, 64)
+width = 2.0
+default_color = Color(0.870588, 0.443137, 0.14902, 1)
+
 [node name="Label" type="Label" parent="CanvasLayer/Control/Inventory"]
 layout_mode = 0
-offset_right = 1152.0
+offset_right = 296.0
 offset_bottom = 88.0
-text = "- Journal -"
+text = "- Info -"
 label_settings = SubResource("LabelSettings_figmh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Sprite2D" parent="CanvasLayer/Control/Inventory"]
-position = Vector2(834, 331.5)
-scale = Vector2(3.09542, 2.68333)
-texture = ExtResource("6_htqqd")
-
-[node name="Panel" type="Panel" parent="CanvasLayer/Control/Inventory"]
+[node name="Frequency" type="Panel" parent="CanvasLayer/Control/Inventory"]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 91.0
@@ -209,66 +218,127 @@ offset_bottom = 339.0
 theme = ExtResource("10_3h1t1")
 theme_override_styles/panel = SubResource("StyleBoxTexture_x6h77")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/Inventory/Panel"]
-position = Vector2(287, 204)
-scale = Vector2(3.71333, 3.13333)
-texture = ExtResource("7_6hmev")
-
-[node name="GOVFM" type="Label" parent="CanvasLayer/Control/Inventory/Panel" groups=["govfm"]]
+[node name="GOVFM" type="Label" parent="CanvasLayer/Control/Inventory/Frequency" groups=["govfm"]]
 visible = false
 layout_mode = 0
-offset_left = 278.0
-offset_top = 177.0
-offset_right = 441.0
-offset_bottom = 194.0
+offset_left = 3.0
+offset_top = 53.0
+offset_right = 166.0
+offset_bottom = 70.0
 text = "GOV FM 54 - 64"
 label_settings = SubResource("LabelSettings_7st8c")
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BELLEFM" type="Label" parent="CanvasLayer/Control/Inventory/Panel" groups=["bellefm"]]
+[node name="BELLEFM" type="Label" parent="CanvasLayer/Control/Inventory/Frequency" groups=["bellefm"]]
 visible = false
 layout_mode = 0
-offset_left = 260.0
-offset_top = 206.0
-offset_right = 458.0
-offset_bottom = 223.0
+offset_left = 4.0
+offset_top = 85.0
+offset_right = 202.0
+offset_bottom = 102.0
 text = "BELLE FM 22 - 32"
 label_settings = SubResource("LabelSettings_7st8c")
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="COMPLOTFM" type="Label" parent="CanvasLayer/Control/Inventory/Panel" groups=["fanaticfm"]]
+[node name="COMPLOTFM" type="Label" parent="CanvasLayer/Control/Inventory/Frequency" groups=["fanaticfm"]]
 visible = false
 layout_mode = 0
-offset_left = 251.0
-offset_top = 238.0
-offset_right = 470.0
-offset_bottom = 255.0
+offset_left = 4.0
+offset_top = 116.0
+offset_right = 223.0
+offset_bottom = 133.0
 text = "COMPLOT FM 66 - 76"
 label_settings = SubResource("LabelSettings_7st8c")
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Inventory/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/Inventory/Frequency"]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 107.0
-offset_right = 193.0
-offset_bottom = 131.0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 150.0
+offset_bottom = 32.0
 text = "Frequency"
 label_settings = SubResource("LabelSettings_bv1s3")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/Inventory" groups=["journal_inside"]]
 layout_mode = 0
-offset_left = 688.0
-offset_top = 110.0
-offset_right = 1024.0
-offset_bottom = 581.0
+offset_left = 664.0
+offset_top = 144.0
+offset_right = 1128.0
+offset_bottom = 624.0
 theme_override_fonts/normal_font = ExtResource("6_v1iah")
 scroll_active = false
 scroll_following = true
 tab_size = 15
+
+[node name="history" type="Panel" parent="CanvasLayer/Control/Inventory"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 128.0
+offset_right = 1150.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i32cl")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Inventory"]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 99.0
+offset_right = 787.0
+offset_bottom = 123.0
+text = "Conversation log"
+label_settings = SubResource("LabelSettings_bv1s3")
+
+[node name="Event" type="Label" parent="CanvasLayer/Control/Inventory" groups=["eventjournal"]]
+offset_left = 60.0
+offset_top = 312.0
+offset_right = 316.0
+offset_bottom = 336.0
+text = "Event "
+label_settings = SubResource("LabelSettings_bv1s3")
+
+[node name="Event" type="Label" parent="CanvasLayer/Control/Inventory/Event"]
+visible = false
+offset_left = -1.0
+offset_top = 40.0
+offset_right = 255.0
+offset_bottom = 64.0
+text = "> A mist has appeared in the city"
+label_settings = SubResource("LabelSettings_i32cl")
+
+[node name="Event2" type="Label" parent="CanvasLayer/Control/Inventory/Event"]
+visible = false
+offset_top = 88.0
+offset_right = 408.0
+offset_bottom = 112.0
+text = "> A mysterious group is moving through town"
+label_settings = SubResource("LabelSettings_i32cl")
+
+[node name="Event3" type="Label" parent="CanvasLayer/Control/Inventory/Event"]
+visible = false
+offset_left = 4.0
+offset_top = 144.0
+offset_right = 412.0
+offset_bottom = 168.0
+text = "> My area will be evacuated on the 5th day"
+label_settings = SubResource("LabelSettings_i32cl")
+
+[node name="Event4" type="Label" parent="CanvasLayer/Control/Inventory/Event"]
+visible = false
+offset_left = 4.0
+offset_top = 200.0
+offset_right = 412.0
+offset_bottom = 224.0
+text = "> White deposits appear in houses "
+label_settings = SubResource("LabelSettings_i32cl")
+
+[node name="Event5" type="Label" parent="CanvasLayer/Control/Inventory/Event"]
+visible = false
+offset_left = 4.0
+offset_top = 256.0
+offset_right = 412.0
+offset_bottom = 280.0
+text = "> The miners' representative is dead"
+label_settings = SubResource("LabelSettings_i32cl")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -292,13 +362,13 @@ texture = ExtResource("7_252vv")
 
 [node name="input" type="Label" parent="CanvasLayer/Control" groups=["lesinputs"]]
 layout_mode = 0
-offset_left = 963.0
-offset_top = 468.0
-offset_right = 1295.0
-offset_bottom = 609.0
+offset_left = 960.0
+offset_top = 520.0
+offset_right = 1292.0
+offset_bottom = 661.0
 scale = Vector2(0.567531, 0.464598)
 text = "[ E ] Interact
-[ Tab ] Journal
+[ Tab ] Info
 [ Ctrl ] Crouch"
 label_settings = SubResource("LabelSettings_fy4og")
 horizontal_alignment = 2

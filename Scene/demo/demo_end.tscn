@@ -16,7 +16,7 @@ shader_parameter/color_2 = Color(0.650129, 0.650128, 0.650128, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_b20qq"]
 font = ExtResource("2_2aubk")
-font_size = 50
+font_size = 37
 font_color = Color(0.882353, 0.478431, 0.145098, 1)
 shadow_size = 5
 shadow_color = Color(0, 0, 0, 1)
@@ -34,19 +34,23 @@ script = ExtResource("2_ej0fg")
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ia1n3")
 layout_mode = 0
-offset_top = -8.0
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 62.0
-offset_top = 165.0
-offset_right = 1071.0
-offset_bottom = 432.0
+offset_left = 64.0
+offset_top = 40.0
+offset_right = 1073.0
+offset_bottom = 577.0
 text = "Thanks for playing this demo
 
-the complete version will be released in spring 2025"
+the complete version will be released in Q2 
+(April - June) 2025
+
+we'll keep you updated
+
+to support us put the game on your wish list :)"
 label_settings = SubResource("LabelSettings_b20qq")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -54,11 +58,11 @@ autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 527.0
-offset_top = 517.0
-offset_right = 627.0
-offset_bottom = 557.0
-text = "QUIT"
+offset_left = 744.0
+offset_top = 576.0
+offset_right = 1147.0
+offset_bottom = 637.0
+text = "back to menu"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

@@ -92,6 +92,7 @@ func check_radio_conditions():
 			play_radio_message("res://voice/day1/gov/1. Official government communication.wav", "This is an official government message.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://voice/day1/gov/2. Accident.wav", "A mist has settled over Rock Valley. For your safety, please remain indoors.", 5, gouv_color, "gouv", 6)
+			Tools.event_journal_ok(0)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://voice/day1/gov/3. Citizens stay home.wav", "Security units are actively patrolling to maintain public order.", 5, gouv_color,"gouv", 0)
 	if time_elapsed >= 40 and time_elapsed <= 90:
@@ -115,6 +116,7 @@ func check_radio_conditions():
 			play_radio_message("res://voice/day1/gov/5. Blue light.wav", "This is an official government message." , 5, gouv_color,"gouv", 6)
 		if radio_value > 54 and radio_value < 64  and time_elapsed > gouv_time:
 			play_radio_message("res://voice/day1/gov/6. Rations.wav", "Deposits of mist, visible as white spots, may appear in your homes. It is imperative to clean them immediately." , 5, gouv_color,"gouv", 6)
+			Tools.event_journal_ok(3)
 		if radio_value > 54 and radio_value < 64  and time_elapsed > gouv_time:
 			play_radio_message("res://voice/day1/gov/6. Rations.wav", "For residents of the new miners' quarter, an effective cleaner is provided in your bathroom." , 5, gouv_color,"gouv", 0)
 	if time_elapsed >= 230 and time_elapsed <= 330:
@@ -135,10 +137,11 @@ func check_radio_conditions():
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://voice/day1/gov/2. Accident.wav", "Road Quarter.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day1/gov/2. Accident.wav", "New Miners' Quarter.", 5, gouv_color, "gouv", 0)	
+			play_radio_message("res://voice/day1/gov/2. Accident.wav", "New Miners' Quarter.", 5, gouv_color, "gouv", 0)
+			Tools.event_journal_ok(2)
 	
 	#belle radio ==>
-	if time_elapsed >= 50 and time_elapsed <= 90:
+	if time_elapsed >= 50 and time_elapsed <= 110:
 		if radio_value > 22 and radio_value < 32 :
 			play_radio_message("res://voice/day1/belle/hello !.mp3", "Good evening everyone and welcome to this special edition of Belle Radio.",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
@@ -152,6 +155,7 @@ func check_radio_conditions():
 			play_radio_message("res://voice/day1/belle/Hopeok.mp3", "This is Belle,",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
 			play_radio_message("res://voice/day1/belle/You too .mp3", "Reports are coming in from all over the city: a group of unidentified individuals in suits has been seen.",5, belle_color, "belle", 6)
+			Tools.event_journal_ok(1)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
 			play_radio_message("res://voice/day1/belle/You too .mp3", "They do not appear to be government agents.",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
@@ -160,7 +164,8 @@ func check_radio_conditions():
 		if radio_value > 22 and radio_value < 32 :
 			play_radio_message("res://voice/day1/belle/Hopeok.mp3", "This is Belle,",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
-			play_radio_message("res://voice/day1/belle/You too .mp3", "Hold on. White spots have started appearing here in the studio. I used ROCKCLEAN's EVERSPRAY and they disappeared.",5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day1/belle/You too .mp3", " White spots have started appearing here in the studio. I used ROCKCLEAN's EVERSPRAY and they disappeared.",5, belle_color, "belle", 6)
+			Tools.event_journal_ok(3)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
 			play_radio_message("res://voice/day1/belle/Others.mp3", "Do not hesitate to do the same if you see these marks in your home.",5, belle_color, "belle", 0)
 	if time_elapsed >= 250 and time_elapsed <= 300:
@@ -170,11 +175,13 @@ func check_radio_conditions():
 			play_radio_message("res://voice/day1/belle/You too .mp3", "Our sources in the new miners' quarter report that each apartment is equipped with a cleaner.",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
 			play_radio_message("res://voice/day1/belle/Others.mp3", "These spots are dangerous; a young girl told me her mother fainted due to prolonged exposure.",5, belle_color, "belle", 0)
+			Tools.event_journal_ok(3)
 	if time_elapsed >= 320 and time_elapsed <= 360:
 		if radio_value > 22 and radio_value < 32 :
 			play_radio_message("res://voice/day1/belle/Hopeok.mp3", "This is Belle,",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
 			play_radio_message("res://voice/day1/belle/You too .mp3", "This enigmatic group stopped in a church before heading to the new miners' quarter.",5, belle_color, "belle", 6)
+			Tools.event_journal_ok(1)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
 			play_radio_message("res://voice/day1/belle/Others.mp3", "Stay cautious and informed.",5, belle_color, "belle", 0)
 
@@ -208,6 +215,8 @@ func check_radio_conditions():
 			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","I have terrible news.",5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
 			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","Near downtown, individuals have murdered a representative of our brave miners.",5, Fanatic_color, "fanatic", 6)
+			Tools.event_journal_ok(4)
+			Tools.event_journal_ok(1)
 		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
 			play_radio_message("res://voice/day1/complot/2. Don't trust.mp3","This is the true face of this government.",5, Fanatic_color, "fanatic", 0)
 	if time_elapsed >= 350 and time_elapsed <= 400:

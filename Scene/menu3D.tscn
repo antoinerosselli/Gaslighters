@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://chaipkbutk75o" path="res://Extern/Prop Textures/Carpet 3.png" id="10_mo4is"]
 [ext_resource type="Texture2D" uid="uid://ckusb1af2djns" path="res://Extern/model-assignmentradio/source/v5/leather 5_4K_Color.jpg" id="11_3p776"]
 [ext_resource type="Texture2D" uid="uid://bepvtiklvn0t2" path="res://Extern/model-assignmentradio/source/v5/leather 5_4K_Roughness.png" id="12_rf2cw"]
-[ext_resource type="Script" uid="uid://c8if38w4mykjo" path="res://Scene/lightUmenu3D.gd" id="13_1ufke"]
+[ext_resource type="Script" uid="uid://c8if38w4mykjo" path="res://Scripts/lightUmenu3D.gd" id="13_1ufke"]
 [ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="13_3b71p"]
 [ext_resource type="Texture2D" uid="uid://bk0cj16mlrtab" path="res://Extern/model-assignmentradio/source/v5/leather 5_4K_NormalGL.jpg" id="13_b0flb"]
 [ext_resource type="Texture2D" uid="uid://5iu0qnsfvuda" path="res://Extern/model-assignmentradio/textures/leather 5_4K_Color.jpeg" id="14_ae0jc"]
@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://chncdhii6c5mg" path="res://Extern/Home kit 2/Textures/Table/Table_256.png" id="19_mirn4"]
 [ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://Model_House/table_corridor.res" id="20_uah1h"]
 [ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="27_62doh"]
-[ext_resource type="Script" uid="uid://b1ng32bdp0had" path="res://Scene/speciallabelmenu3d.gd" id="27_gxa06"]
+[ext_resource type="Script" uid="uid://b1ng32bdp0had" path="res://Scripts/speciallabelmenu3d.gd" id="27_gxa06"]
 [ext_resource type="Shader" uid="uid://cltycr033e17u" path="res://Scene/glass.gdshader" id="29_j6e2t"]
 [ext_resource type="AudioStream" uid="uid://8tsdxs2qmxce" path="res://Music&Sound/tuning-radio-7150.mp3" id="35_41xcc"]
 
@@ -737,7 +737,7 @@ size = Vector3(4.00024, 1.76538, 1)
 material = SubResource("StandardMaterial3D_nnvqy")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NEWMENU"]
-transform = Transform3D(4.69768, 0, 0, 0, 1.32891, 0, 0, 0, 2.04834, 3.49279, -1.52723, -8.14507)
+transform = Transform3D(4.69768, 0, 0, 0, 1.32891, 0, 0, 0, 2.04834, 3.49279, -1.52723, -7.3035)
 material_override = SubResource("StandardMaterial3D_j6e2t")
 mesh = SubResource("PlaneMesh_qspml")
 skeleton = NodePath("../../Node3D/Node3D")

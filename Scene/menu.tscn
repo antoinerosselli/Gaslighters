@@ -216,6 +216,11 @@ offset_right = 253.0
 offset_bottom = 641.0
 text = "version : DEMO3"
 
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 17.0
+
 [connection signal="pressed" from="continue_button" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="options_button" to="." method="_on_options_button_pressed"]

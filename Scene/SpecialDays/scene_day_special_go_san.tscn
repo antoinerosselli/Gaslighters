@@ -1,6 +1,6 @@
 [gd_scene load_steps=79 format=4 uid="uid://c7bb16lyfrvd6"]
 
-[ext_resource type="Script" uid="uid://wavbuyvwvbum" path="res://Scene/SpecialDays/scene_day_special_go_san.gd" id="1_imwxl"]
+[ext_resource type="Script" uid="uid://wavbuyvwvbum" path="res://Scripts/scene_day_special_go_san.gd" id="1_imwxl"]
 [ext_resource type="Texture2D" uid="uid://c6seq6ytbogb0" path="res://Extern/Abandoned_House/Abandoned_House_Madera2.jpg" id="1_kqcuy"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_fhrt4"]
 [ext_resource type="PackedScene" uid="uid://jq2qjyp07h12" path="res://Prefab/door.tscn" id="2_tiumv"]
