@@ -1,0 +1,326 @@
+[gd_scene load_steps=17 format=3 uid="uid://dwi44rv8sigev"]
+
+[ext_resource type="Script" uid="uid://d0svgp66y5er7" path="res://Scene/Days/Day2/scene_day_2.gd" id="1_mnosv"]
+[ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_o3dra"]
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_gfllc"]
+[ext_resource type="PackedScene" uid="uid://dydkbrvc7it6i" path="res://Prefab/letter.tscn" id="3_r63h0"]
+[ext_resource type="PackedScene" uid="uid://bxny8biun3n3g" path="res://Note/note_cachetoi.tscn" id="4_ht0eg"]
+[ext_resource type="Script" uid="uid://rnxgsqksahu1" path="res://Scene/Days/Day1/dm_day_1.gd" id="7_t23kc"]
+[ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_kayp0"]
+
+[sub_resource type="Sky" id="Sky_gxdup"]
+
+[sub_resource type="Environment" id="Environment_gfllc"]
+background_mode = 2
+sky = SubResource("Sky_gxdup")
+ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
+ambient_light_sky_contribution = 0.51
+ambient_light_energy = 0.35
+ssao_radius = 3.49
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0157
+volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
+volumetric_fog_anisotropy = -0.51
+adjustment_enabled = true
+adjustment_saturation = 1.44
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_5h5o6"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_r63h0"]
+emission = Color(0.281187, 0.281187, 0.281187, 1)
+
+[sub_resource type="Animation" id="Animation_gxdup"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(16.2043, -1.72069, 0.792677)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rvlxt"]
+resource_name = "slide_letter"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(16.2043, -1.72069, 0.792677), Vector3(14.9671, -1.72069, 0.792677)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.878075, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f86ad"]
+_data = {
+&"RESET": SubResource("Animation_gxdup"),
+&"slide_letter": SubResource("Animation_rvlxt")
+}
+
+[sub_resource type="GDScript" id="GDScript_sxq2h"]
+script/source = "extends Node
+
+var time_elapsed:int = 0
+
+#gouv
+var gouv_color = Color(0.117647, 0.564706, 1, 1)
+var gouv_time = 0
+
+#belle
+var belle_color = Color(1, 0.0784314, 0.576471, 1)
+var belle_time = 0
+
+#Fanatic
+var Fanatic_color = Color(0.545098, 0, 0, 1)
+var Fanatic_time = 0
+
+var played_messages = {}  # Dictionnaire pour stocker les messages déjà joués
+
+var ones: bool = false
+
+func _process(delta):
+	if ones == false:
+		if Radio.getValue() > 54 and Radio.getValue() < 64 :
+			Tools.start_the_day()
+			ones = true
+
+func _on_timer_timeout():
+	time_elapsed += 1  # Incrémente le temps écoulé chaque seconde
+	check_radio_conditions()
+
+func play_radio_message(file_path, text, duration, color, sender, what_cd):
+	if text in played_messages:  # Vérifie si le message a déjà été joué
+		return  # Si oui, on ne le rejoue pas
+	
+	radio_event_adv(file_path, text, duration, color, sender, what_cd)  # Joue le message
+	played_messages[text] = true  # Marque ce message comme \"joué\"
+
+
+func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
+	Tools.set_radio_sound(1,load(sound))
+	Tools.radio_text(text,time_text,color_ok)
+	Tools.add_journal(text, color_ok)
+	Tools.unlock_fm(what_fm)
+	if what_fm == \"gouv\":
+		if what_cd != 0:
+			gouv_time = time_elapsed + what_cd
+	elif what_fm == \"belle\":
+		if what_cd != 0:
+			belle_time = time_elapsed + what_cd
+	elif what_fm == \"fanatic\":
+		if what_cd != 0:
+			Fanatic_time = time_elapsed + what_cd
+
+func check_radio_conditions():
+	var radio_value = Radio.getValue()
+	#gouv radio ==>
+	#change voice ALL !!
+	if time_elapsed >= 0 and time_elapsed <= 70:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message(\"res://voice/day1/gov/1. Official government communication.wav\", \"Alert! An attack has taken place on one of our gas reserve sites.\", 5, gouv_color, \"gouv\", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message(\"res://voice/day1/gov/2. Accident.wav\", \"Poisonous gases have invaded the streets, stay at home\", 5, gouv_color, \"gouv\", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message(\"res://voice/day1/gov/3. Citizens stay home.wav\", \"To communicate with us, access the secure room using the button at the end of the corridor.\", 5, gouv_color,\"gouv\", 0)
+	if time_elapsed >= 90 and time_elapsed <= 120:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message(\"res://voice/day1/gov/4. Stay tuned.wav\", \"Information on how to proceed will be sent to you shortly\", 5, gouv_color,\"gouv\", 0)
+	if time_elapsed >= 135 and time_elapsed <= 230:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message(\"res://voice/day1/gov/5. Blue light.wav\", \"To signal your presence, activate the blue button and see if it works through your door.\" , 5, gouv_color,\"gouv\", 6)
+		if radio_value > 54 and radio_value < 64  and time_elapsed > gouv_time:
+			play_radio_message(\"res://voice/day1/gov/6. Rations.wav\", \"Rations will be delivered to your secure room as soon as possible.\" , 5, gouv_color,\"gouv\", 0)
+	if time_elapsed >= 250 and time_elapsed <= 310:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message(\"res://voice/day1/gov/7. Stay home citizens.wav\", \"Please stay at home, the army will be deployed to secure the area.\" , 5, gouv_color,\"gouv\", 6)
+		if radio_value > 54 and radio_value < 64  and time_elapsed > gouv_time:
+			play_radio_message(\"res://voice/day1/gov/8. More Info to follow.wav\", \"Stay at home, we'll be in touch soon.\" , 5, gouv_color,\"gouv\", 0)
+
+	#belle radio ==>
+	if time_elapsed >= 70 and time_elapsed <= 170:
+		if radio_value > 22 and radio_value < 32 :
+			play_radio_message(\"res://voice/day1/belle/hello !.mp3\", \"Hello...? Is anyone out there? Please, if you can hear me, respond...\",5, belle_color, \"belle\", 6)
+		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
+			play_radio_message(\"res://voice/day1/belle/You too .mp3\", \"You too... You've discovered that room, haven't you? What does all this mean?\",5, belle_color, \"belle\", 6)
+		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
+			play_radio_message(\"res://voice/day1/belle/This is insane.mp3\", \"This is insane... Everything feels so strange. I must admit, I'm starting to get worried.\",5, belle_color, \"belle\", 0)
+	if time_elapsed >= 160 and time_elapsed <= 190:
+		if radio_value > 22 and radio_value < 32 :
+			play_radio_message(\"res://voice/day1/belle/Hopeok.mp3\", \"I hope you're holding up... I just received my ration. We have to stay strong. You're not alone.\",5, belle_color, \"belle\", 6)
+		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
+			play_radio_message(\"res://voice/day1/belle/Others.mp3\", \"There are other people who communicate on the radio, try to get as much information as possible!\",5, belle_color, \"belle\", 0)
+
+
+	#Fanatic Radio ==>
+	if  time_elapsed >= 50 and time_elapsed <= 90:
+		if radio_value > 66 and radio_value < 76 :
+			play_radio_message(\"res://voice/day1/complot/1. Just an excuse.mp3\",
+			\"Wake up! The attack is just an excuse! They’re trying to control us!\",
+			5, Fanatic_color, \"fanatic\", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message(\"res://voice/day1/complot/2. Don't trust.mp3\",
+			\"Don’t trust their broadcasts! They feed you nothing but lies. Think for yourself!\",
+			5, Fanatic_color, \"fanatic\", 0)
+
+	if time_elapsed >= 110 and time_elapsed <= 200:
+		if radio_value > 66 and radio_value < 76 :
+			play_radio_message(\"res://voice/day1/complot/3. GONE.mp3\",
+			\"They’re trying to isolate us! If you listen to them, you’ll end up like the others… gone.\",
+			5, Fanatic_color, \"fanatic\", 0)
+
+	if time_elapsed >= 210 and time_elapsed <= 260:
+		if radio_value > 66 and radio_value < 76 :
+			play_radio_message(\"res://voice/day1/complot/4. An other way.mp3\",
+			\"I found a way out. The blue button? It’s a trick. There’s another way… but I can’t say it here.\",
+			5, Fanatic_color, \"fanatic\", 6)
+		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
+			play_radio_message(\"res://voice/day1/complot/5. Food problem.mp3\",
+			\"Did they bring you food? DON’T TOUCH IT! It’s poisoned to keep you weak!\",
+			5, Fanatic_color, \"fanatic\", 0)
+
+	if time_elapsed >= 270 and time_elapsed <= 320:
+		if radio_value > 66 and radio_value < 76 :
+			play_radio_message(\"res://voice/day1/complot/6. Resist.mp3\",
+			\"You feel it too, don’t you? Something’s wrong. They don’t want us to resist.\",
+			5, Fanatic_color, \"fanatic\", 6)
+		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
+			play_radio_message(\"res://voice/day1/complot/7. Dont be a sheep.mp3\",
+			\"Trust me… when the time comes, you’ll have to make a choice. Don't be a sheep.\",
+			5, Fanatic_color, \"fanatic\", 0)
+"
+
+[sub_resource type="GDScript" id="GDScript_mnosv"]
+script/source = "extends Node
+
+var time_elapsed = 0
+var event_adv = 0
+
+
+func _on_timer_timeout():
+	time_elapsed += 1
+	check_event_conditions()
+	
+func check_event_conditions():
+	if time_elapsed == 20:
+		Tools.door_letter()
+"
+
+[node name="SceneDay2" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125958)
+script = ExtResource("1_mnosv")
+
+[node name="appartement" parent="." instance=ExtResource("1_o3dra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00315857, -1.19209e-07, -0.127772)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_gfllc")]
+transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gfllc")
+camera_attributes = SubResource("CameraAttributesPractical_5h5o6")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
+size = Vector3(24.1484, 6.75517, 2)
+material = SubResource("FogMaterial_r63h0")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00224, -0.155392, 11.3124)
+size = Vector3(20.3026, 7.08786, 2.43262)
+material = SubResource("FogMaterial_r63h0")
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1887, -0.155392, -2.2077)
+size = Vector3(13.9297, 7.08786, 2)
+material = SubResource("FogMaterial_r63h0")
+
+[node name="Letter" parent="." instance=ExtResource("3_r63h0")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 16.2043, -1.72069, 0.792677)
+item_name = "letter"
+is_note = true
+note = ExtResource("4_ht0eg")
+
+[node name="AnimationPlayer" parent="Letter" index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_f86ad")
+}
+
+[node name="MOTORS" type="Node" parent="."]
+
+[node name="rm_day_2" type="Node" parent="MOTORS"]
+script = SubResource("GDScript_sxq2h")
+
+[node name="timer" type="Timer" parent="MOTORS/rm_day_2" groups=["timerradio"]]
+
+[node name="em_day_2" type="Node" parent="MOTORS" groups=["event_manager"]]
+script = SubResource("GDScript_mnosv")
+
+[node name="Timer" type="Timer" parent="MOTORS/em_day_2" groups=["timerevent"]]
+
+[node name="dm_day_2" type="Node" parent="MOTORS"]
+script = ExtResource("7_t23kc")
+DANGER_LEVEL = 4
+
+[node name="depot_spawner" parent="MOTORS/dm_day_2" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0860391, -1.5983, 8.4577)
+activation = false
+
+[node name="depot_spawner2" parent="MOTORS/dm_day_2" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.832851, -1.5983, -6.62545)
+activation = false
+
+[node name="depot_spawner3" parent="MOTORS/dm_day_2" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8343, -1.5983, -6.83925)
+activation = false
+
+[node name="depot_spawner4" parent="MOTORS/dm_day_2" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.272, -1.5983, 0.690172)
+activation = false
+
+[node name="depot_spawner5" parent="MOTORS/dm_day_2" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5527, -1.5983, 7.79251)
+activation = false
+
+[node name="depot_spawner6" parent="MOTORS/dm_day_2" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58043, -1.5983, 0.445554)
+activation = false
+
+[connection signal="timeout" from="MOTORS/rm_day_2/timer" to="MOTORS/rm_day_2" method="_on_timer_timeout"]
+[connection signal="timeout" from="MOTORS/em_day_2/Timer" to="MOTORS/em_day_2" method="_on_timer_timeout"]
+
+[editable path="Letter"]

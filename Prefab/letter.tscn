@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dydkbrvc7it6i"]
 
 [ext_resource type="Texture2D" uid="uid://bvrkg6q7rugdh" path="res://Sprite/letter.png" id="1_40q5c"]
-[ext_resource type="Script" uid="uid://dppasyvtvj4g6" path="res://Prefab/letter.gd" id="1_n7vka"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_n7vka"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_n7vka"]
 albedo_texture = ExtResource("1_40q5c")
@@ -9,7 +9,7 @@ albedo_texture = ExtResource("1_40q5c")
 [sub_resource type="PlaneMesh" id="PlaneMesh_hiqcw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j32o0"]
-size = Vector3(1.70282, 0.122925, 0.998108)
+size = Vector3(1.70282, 0.631683, 0.998108)
 
 [sub_resource type="Animation" id="Animation_n7vka"]
 length = 0.001

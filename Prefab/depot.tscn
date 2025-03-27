@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvana5agg7gxp"]
+[gd_scene load_steps=10 format=3 uid="uid://bvana5agg7gxp"]
 
 [ext_resource type="Texture2D" uid="uid://c56qxj4ftjxny" path="res://Sprite/spot.png" id="1_f5qfb"]
 [ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_kpvhp"]
+[ext_resource type="Script" uid="uid://bdspv350jcjv5" path="res://Prefab/affect_san.gd" id="3_vicni"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f5qfb"]
 size = Vector3(1.13696, 0.47168, 1.20058)
@@ -13,6 +14,67 @@ radius = 0.895136
 density = 0.498
 emission = Color(1, 1, 1, 1)
 
+[sub_resource type="Animation" id="Animation_vicni"]
+resource_name = "spawn"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.2, 0.2, 0.2), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ub85n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:transparency")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_236sl"]
+_data = {
+&"RESET": SubResource("Animation_ub85n"),
+&"spawn": SubResource("Animation_vicni")
+}
+
 [node name="depot" type="StaticBody3D"]
 script = ExtResource("1_kpvhp")
 item_name = "depot"
@@ -20,6 +82,7 @@ depot = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+transparency = 1.0
 texture = ExtResource("1_f5qfb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -27,6 +90,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00231934, -0.342768, -0.012
 shape = SubResource("BoxShape3D_f5qfb")
 
 [node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("3_vicni")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_kpvhp")
@@ -36,3 +100,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0474854, 0.146782, 0.017700
 size = Vector3(1.22095, 0.677979, 1.52075)
 shape = 2
 material = SubResource("FogMaterial_kpvhp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_236sl")
+}
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

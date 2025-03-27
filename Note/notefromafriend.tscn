@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://pjjbvhiflurr"]
+
+[ext_resource type="Script" uid="uid://cycbsrkso5yfk" path="res://Note/note_contrat.gd" id="1_027sf"]
+[ext_resource type="Texture2D" uid="uid://bhbvgysfm724d" path="res://Sprite/letterfromfriend.png" id="2_13l8f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkpy0"]
+bg_color = Color(0.683305, 0.673851, 0.610326, 1)
+
+[node name="Notefromafriend" type="Control" groups=["notenote"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_027sf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_right = 880.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gkpy0")
+
+[node name="NoteStayaway" type="Sprite2D" parent="."]
+position = Vector2(576.5, 326.5)
+scale = Vector2(1.08242, 1.07732)
+texture = ExtResource("2_13l8f")

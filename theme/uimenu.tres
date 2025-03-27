@@ -1,17 +1,14 @@
 [gd_resource type="Theme" load_steps=8 format=3 uid="uid://csapexuuln7nx"]
 
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="1_s4nag"]
-[ext_resource type="Texture2D" uid="uid://b2cp4jn72xu11" path="res://Sprite/orangeslider.png" id="2_nvduu"]
+[ext_resource type="Texture2D" uid="uid://0qcfb5k6atwy" path="res://Sprite/checkon.png" id="2_28wia"]
+[ext_resource type="Texture2D" uid="uid://dnatpndg8bran" path="res://Sprite/checkoff.png" id="3_g5beo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssuff"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi60y"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_nvduu"]
-color = Color(0.380392, 0.25098, 0, 1)
-thickness = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5beo"]
 bg_color = Color(0.0718743, 0.0552195, 0.00920546, 1)
@@ -25,10 +22,29 @@ Button/font_sizes/font_size = 36
 Button/fonts/font = ExtResource("1_s4nag")
 Button/styles/normal = SubResource("StyleBoxFlat_ssuff")
 Button/styles/pressed = SubResource("StyleBoxFlat_xi60y")
-HSlider/icons/grabber = ExtResource("2_nvduu")
-HSlider/icons/grabber_disabled = ExtResource("2_nvduu")
-HSlider/icons/grabber_highlight = ExtResource("2_nvduu")
-HSlider/styles/slider = SubResource("StyleBoxLine_nvduu")
+CheckBox/icons/checked = ExtResource("2_28wia")
+CheckBox/icons/unchecked = ExtResource("3_g5beo")
+CheckButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+CheckButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+CheckButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+CheckButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+CheckButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_outline_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckButton/colors/icon_disabled_color = Color(0, 0, 0, 1)
+CheckButton/colors/icon_focus_color = Color(0, 0, 0, 1)
+CheckButton/colors/icon_hover_color = Color(0, 0, 0, 1)
+CheckButton/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+CheckButton/colors/icon_normal_color = Color(0, 0, 0, 1)
+CheckButton/colors/icon_pressed_color = Color(0, 0, 0, 1)
+CheckButton/icons/checked = ExtResource("2_28wia")
+CheckButton/icons/unchecked = ExtResource("3_g5beo")
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
 Label/fonts/font = ExtResource("1_s4nag")
 Panel/styles/panel = SubResource("StyleBoxFlat_g5beo")
 RichTextLabel/fonts/normal_font = ExtResource("1_s4nag")

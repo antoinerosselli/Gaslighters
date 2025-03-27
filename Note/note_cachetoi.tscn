@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxny8biun3n3g"]
+
+[ext_resource type="Script" uid="uid://cycbsrkso5yfk" path="res://Note/note_contrat.gd" id="1_1yk22"]
+[ext_resource type="Texture2D" uid="uid://chox1h8y8r6gq" path="res://Sprite/eloignetoidesfenetres.png" id="1_xcbu5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yk22"]
+bg_color = Color(0.683305, 0.673851, 0.610326, 1)
+
+[node name="note_cachetoi" type="Control" groups=["notenote"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1yk22")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_right = 880.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1yk22")
+
+[node name="Eloignetoidesfenetres" type="Sprite2D" parent="."]
+position = Vector2(572, 332)
+texture = ExtResource("1_xcbu5")

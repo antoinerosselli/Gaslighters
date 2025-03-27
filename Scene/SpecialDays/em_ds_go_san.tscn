@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://blnixnosffc5x"]
+
+[ext_resource type="Script" uid="uid://bvbqrsotalvvc" path="res://Scripts/em_ds_go_san.gd" id="1_a35ns"]
+
+[node name="em_ds_go_san" type="Node"]
+script = ExtResource("1_a35ns")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

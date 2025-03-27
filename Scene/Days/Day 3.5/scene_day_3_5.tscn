@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cly2vuchsw7j"]
+[gd_scene load_steps=7 format=3 uid="uid://cly2vuchsw7j"]
 
+[ext_resource type="Script" uid="uid://cv60ce3qwgnat" path="res://Scene/Days/Day 3.5/scene_day_3_5.gd" id="1_jcti1"]
 [ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="1_vk00q"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_jcti1"]
 
@@ -15,6 +16,7 @@ fog_sky_affect = 0.681
 [sub_resource type="BoxMesh" id="BoxMesh_vk00q"]
 
 [node name="scene_day_3_5" type="Node3D"]
+script = ExtResource("1_jcti1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_87q4o")

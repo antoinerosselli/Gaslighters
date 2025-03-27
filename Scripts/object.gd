@@ -2,6 +2,12 @@ extends Node3D
 
 @export var item_name:String
 
+@export_category("Food ?")
+@export var food:bool
+
+@export_category("pickable ?")
+@export var pickable:bool
+
 @export_category("depot ?")
 @export var depot:bool
 
@@ -27,8 +33,9 @@ extends Node3D
 @export var script_trait:bool
 
 func _ready():
-	pass 
-	
+	if depot == true:
+		$AnimationPlayer.play("spawn")
+
 func interact():
 	if is_text == true:
 		var player = Tools.get_player()	
@@ -52,5 +59,14 @@ func interact():
 				ligth.omni_range = 0.0
 	if is_note == true:
 		Tools.notespawn(note)
+	if food == true:
+		var player = Tools.get_player()
+		if player.sanity == 100:
+			return
+		player.sanity += 10
+		if player.sanity > 100:
+			player.sanity = 100
 	if script_trait == true:
 		UniqueTrait.unique(item_name)
+	if pickable == true:
+		self.queue_free()

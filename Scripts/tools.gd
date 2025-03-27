@@ -2,7 +2,7 @@ extends Node
 
 const ICON = preload("res://Sprite/icon.svg")
 
-var val_elec:int = 90
+var val_elec:int = 100
 
 func get_icon(item_name):
 	match item_name:
@@ -25,24 +25,26 @@ func get_player():
 func paused_game():
 	print("POPPOPOPOPOPOPAUSE")
 	get_tree().paused = !get_tree().paused
-	if get_tree().paused == true:
-		Tools.get_player().paused.visible = true
-		Tools.get_player().logo_inter.visible = false
-		Tools.get_player().icon.visible = false
-	elif get_tree().paused == false:
-		Tools.get_player().paused.visible = false
-		Tools.get_player().logo_inter.visible = true
-		Tools.get_player().icon.visible = true
+	if Tools.get_player() != null:
+		if get_tree().paused == true:
+			Tools.get_player().paused.visible = true
+			Tools.get_player().logo_inter.visible = false
+			Tools.get_player().icon.visible = false
+		elif get_tree().paused == false:
+			Tools.get_player().paused.visible = false
+			Tools.get_player().logo_inter.visible = true
+			Tools.get_player().icon.visible = true
 
 func door_letter():
 	var letter = get_tree().get_first_node_in_group("letter")
-	letter.new_letter()
+	Tools.sound_now(Tools.get_player(), preload("res://Music&Sound/door-knocking-175163.mp3") as AudioStreamMP3)
+	letter.get_child(2).play("slide_letter")
 
 func go_to_expe():
 	var es:PackedScene = preload("res://Prefab/expe.tscn") as PackedScene
 	var es_tmp = es.instantiate()
 	get_tree().get_first_node_in_group("canvas").visible = false
-	add_child(es_tmp)
+	add_child(es_tmp)	
 	print("go to expe")
 
 func call_pause():
@@ -123,12 +125,19 @@ func unlock_fm(what_fm):
 		get_tree().get_first_node_in_group("fanaticfm").visible = true
 
 func spawn_conserve(i):
-	get_tree().get_first_node_in_group("spawner").spawn_conserve(i)
+	get_tree().get_first_node_in_group("foods").update_conserves(i)
 	
 func get_elec():
 	return val_elec
 	
 func set_elec(nval):
+	if nval <= 0:
+		nval = 0
+		UniqueTrait.elec = false
+		var light_elec = get_tree().get_first_node_in_group("courantup")
+		Tools.sound_now(light_elec, load("res://Music&Sound/electric-155027.mp3") as AudioStream)
+		if UniqueTrait.elec == false:
+			light_elec.omni_range = 0
 	val_elec = nval
 
 func San_modif(santexture):
@@ -146,15 +155,13 @@ func sound_now(here: Node3D, what_sound: AudioStream):
 	audio_player.global_position = here.get_global_position()
 	audio_player.autoplay = true
 	audio_player.finished.connect(func(): audio_player.queue_free())
-
 	here.get_parent().add_child(audio_player)
 
-
 func start_transition(text,nscene):
+	Tools.paused_game()
 	var cl = get_tree().get_first_node_in_group("transi")
 	cl.transition(text, nscene)
 
-#demo	
 func eotd():
 	var alarm =  get_tree().get_first_node_in_group("alarmepills")
 	var pills = get_tree().get_first_node_in_group("pills")
@@ -166,7 +173,6 @@ func notespawn(note):
 	change_lesinputs("note")
 	player.can_interact = false
 	player.icon.visible = false
-	player.paused = true
 	var inst = note.instantiate()
 	player.add_child(inst)
 	player.move_child(inst,0)
@@ -174,32 +180,46 @@ func notespawn(note):
 func note_close(note, player):
 	Tools.change_lesinputs("player")
 	player.icon.visible = true
-	player.paused = false
 	player.can_interact = true
 	note.queue_free()
 	
 func change_lesinputs(what_lesinputs):
+	print(what_lesinputs)
 	var text_input = get_tree().get_first_node_in_group("lesinputs")
+	if what_lesinputs == "inventory":
+		print("wallah ça marche")
+		text_input.text = "[ TAB ] Close"
 	if what_lesinputs == "player":
 		text_input.text = "[ E ] Interact
-[ Tab ] Journal
+[ Tab ] Info
 [ Ctrl ] Crouch"
 	if what_lesinputs == "frontdoor" or what_lesinputs == "note":
 		text_input.text = "[ C ] Close"
 	if what_lesinputs == "radio":
 		text_input.text = "[ C ] Close
 		[ Move ] Change FM"
-	if what_lesinputs == "inventory":
-		text_input.text == "[ TAB ] Close"
 	if what_lesinputs == "blank":
 		text_input.text == ""
+	print(text_input.text)
 		
 func start_the_day():
-	var timerradio = get_tree().get_first_node_in_group("timerradio")
 	var timerevent = get_tree().get_first_node_in_group("timerevent")
-	timerradio.start()
 	timerevent.start()
 
 func colis_departure():
 	var TS = get_tree().get_first_node_in_group("truckspawn")
 	TS.truck_spawn()
+
+func expe_status(status):
+	var expe_lum = get_tree().get_first_node_in_group("canexpe")
+	var anim = get_tree().get_first_node_in_group("animexpe")
+	if status == true:
+		anim.play("start_expe")
+		expe_lum.set_color(Color(0, 1, 0, 1))
+	elif status == false:
+		anim.play("end_expe")
+		expe_lum.set_color(Color(1, 0, 0, 1))
+
+func event_journal_ok(index):
+	var eventjournal = get_tree().get_first_node_in_group("eventjournal")
+	eventjournal.get_child(index).visible = true

@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqweg357g3y3f"]
+[gd_scene load_steps=12 format=3 uid="uid://dqweg357g3y3f"]
 
+[ext_resource type="Script" uid="uid://ciaot05myvu11" path="res://Scene/Days/Day 4_5/scene_day_4_5.gd" id="1_fy7iv"]
 [ext_resource type="Texture2D" uid="uid://cdcr1dvyfigu" path="res://Extern/Abandoned_House/Abandoned_House_road.jpg" id="1_vk00q"]
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="2_jcti1"]
 [ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="3_jcti1"]
@@ -24,6 +25,7 @@ albedo_texture = ExtResource("2_jcti1")
 uv1_scale = Vector3(3, 3, 3)
 
 [node name="scene_day_3_5" type="Node3D"]
+script = ExtResource("1_fy7iv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_y7510")

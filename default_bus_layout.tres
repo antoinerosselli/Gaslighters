@@ -6,7 +6,7 @@ range_min_hz = 1117.29
 depth = 1.9
 
 [resource]
-bus/0/volume_db = -6.24739
+bus/0/volume_db = 0.0672607
 bus/1/name = &"Voice"
 bus/1/solo = false
 bus/1/mute = false

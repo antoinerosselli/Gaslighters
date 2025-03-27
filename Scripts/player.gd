@@ -11,6 +11,7 @@ extends CharacterBody3D
 @onready var ptich = $Camera3D/ptich
 @onready var popup_sure = $CanvasLayer/popup_sure
 @onready var paused:Label = $CanvasLayer/Control/paused
+@onready var color_rect = $CanvasLayer/Control/ColorRect
 
 #inventory
 var on_inventory:bool = false
@@ -51,6 +52,12 @@ func dialogues_manager():
 	dialogues_id += 1
 
 func _physics_process(delta):
+	var scaled_sanity = 0.3 - 0.0027 * sanity
+	if scaled_sanity > 0.3 :
+		scaled_sanity = 0.3
+	if scaled_sanity < 0.03 :
+		scaled_sanity = 0.03
+	color_rect.get_material().set_shader_parameter('noise_amount', scaled_sanity)
 	if camera_3d.current == true:
 		if can_interact == true:
 			logo_inter.visible = true
@@ -117,9 +124,11 @@ func _input(event):
 	if Input.is_action_just_pressed("select"):
 		on_inventory = !on_inventory
 		if inventory.visible == false :
+			Tools.change_lesinputs("inventory")
 			inventory.visible = true
 			icon.visible = false
 		elif inventory.visible == true :
+			Tools.change_lesinputs("player")
 			inventory.visible = false
 			icon.visible = true
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED && $Camera3D.current == true:
