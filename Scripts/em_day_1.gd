@@ -97,7 +97,7 @@ func check_radio_conditions():
 		Tools.event_journal_ok(2,true)
 	if time_elapsed == 361:
 		Tools.event_journal_ok(1,true)
-
+		
 	#gouv radio ==>
 	if time_elapsed >= 0 and time_elapsed <= 30:
 		if radio_value > 54 and radio_value < 64 :

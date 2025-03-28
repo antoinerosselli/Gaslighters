@@ -225,3 +225,11 @@ func event_journal_ok(index, missed):
 	if missed == true && eventjournal.get_child(index).visible == false:
 		eventjournal.get_child(index).text = "[color=#ff0000][shake]!   M i s s e d   ![/shake][/color]"
 	eventjournal.get_child(index).visible = true
+
+
+func timer_event_action(is_active):
+	var timer_event = get_tree().get_first_node_in_group("timerevent")
+	if is_active == false:
+		timer_event.stop()
+	elif is_active == true:
+		timer_event.start()
