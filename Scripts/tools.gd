@@ -220,6 +220,8 @@ func expe_status(status):
 		anim.play("end_expe")
 		expe_lum.set_color(Color(1, 0, 0, 1))
 
-func event_journal_ok(index):
+func event_journal_ok(index, missed):
 	var eventjournal = get_tree().get_first_node_in_group("eventjournal")
+	if missed == true && eventjournal.get_child(index).visible == false:
+		eventjournal.get_child(index).text = "[color=#ff0000][shake]!   M i s s e d   ![/shake][/color]"
 	eventjournal.get_child(index).visible = true

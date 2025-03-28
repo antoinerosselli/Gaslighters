@@ -66,6 +66,7 @@ func interact():
 		player.sanity += 10
 		if player.sanity > 100:
 			player.sanity = 100
+		Tools.sound_now(self,preload("res://Music&Sound/eat.mp3") as AudioStreamMP3)
 	if script_trait == true:
 		UniqueTrait.unique(item_name)
 	if pickable == true:

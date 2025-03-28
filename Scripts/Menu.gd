@@ -29,3 +29,10 @@ func _on_continue_button_pressed():
 		Tools.start_transition("1 a.m Rock Valley new miners area ",load("res://Scene/Days/Day1/scene_day_1.tscn") as PackedScene)
 	if Save.actual_level() == 2:
 		Tools.start_transition("Day 2", load("res://Scene/Days/Day2/scene_day_2.tscn") as PackedScene)
+
+func _on_button_pressed():
+	var thelamp = get_tree().get_first_node_in_group("lampmenu")
+	if thelamp.omni_range == 1:
+		thelamp.omni_range = 0
+	elif thelamp.omni_range == 0:
+		thelamp.omni_range = 1

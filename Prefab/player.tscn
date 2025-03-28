@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=28 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" uid="uid://ckooh51x0xywe" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Script" uid="uid://8aqmy8q7388i" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
@@ -35,6 +35,13 @@ shader_parameter/roll_speed = -2.635
 shader_parameter/scan_line_strength = -6.662
 shader_parameter/pixel_strength = -3.111
 
+[sub_resource type="LabelSettings" id="LabelSettings_cck1k"]
+font = ExtResource("6_v1iah")
+font_size = 30
+font_color = Color(0.870588, 0.623529, 0.145098, 1)
+outline_size = 5
+outline_color = Color(0.870588, 0.623529, 0.145098, 1)
+
 [sub_resource type="LabelSettings" id="LabelSettings_mb3ur"]
 font = ExtResource("6_v1iah")
 font_size = 20
@@ -70,17 +77,6 @@ bg_color = Color(0.229759, 0.374081, 0.471222, 0.14902)
 border_width_left = 3
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 2
-
-[sub_resource type="LabelSettings" id="LabelSettings_i32cl"]
-font = ExtResource("6_v1iah")
-font_size = 17
-
-[sub_resource type="LabelSettings" id="LabelSettings_cck1k"]
-font = ExtResource("6_v1iah")
-font_size = 30
-font_color = Color(0.870588, 0.623529, 0.145098, 1)
-outline_size = 5
-outline_color = Color(0.870588, 0.623529, 0.145098, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_fy4og"]
 font = ExtResource("6_v1iah")
@@ -156,12 +152,28 @@ offset_bottom = 648.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 285.0
+offset_right = 619.0
+offset_bottom = 316.0
+text = "USE"
+label_settings = SubResource("LabelSettings_cck1k")
+script = ExtResource("10_0r8a8")
+
+[node name="Mainorange" type="Sprite2D" parent="CanvasLayer/Control/Label"]
+position = Vector2(-24, 16)
+scale = Vector2(1.45, 1.45)
+texture = ExtResource("6_oj1nk")
+
 [node name="show_text" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 128.0
-offset_top = 543.0
-offset_right = 1024.0
-offset_bottom = 581.0
+offset_left = 224.0
+offset_top = 520.0
+offset_right = 1120.0
+offset_bottom = 558.0
+scale = Vector2(0.827586, 1)
 label_settings = SubResource("LabelSettings_mb3ur")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -172,11 +184,11 @@ wait_time = 4.0
 
 [node name="show_text_radio" type="RichTextLabel" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 581.0
-offset_right = 977.0
-offset_bottom = 647.0
-scale = Vector2(1.16, 1)
+offset_left = 168.0
+offset_top = 560.0
+offset_right = 1070.0
+offset_bottom = 626.0
+scale = Vector2(0.96, 1)
 theme = ExtResource("10_3h1t1")
 theme_override_styles/background = SubResource("StyleBoxFlat_65idd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3ja16")
@@ -188,7 +200,6 @@ autowrap_mode = 2
 wait_time = 3.0
 
 [node name="Inventory" type="Panel" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -289,6 +300,7 @@ text = "Conversation log"
 label_settings = SubResource("LabelSettings_bv1s3")
 
 [node name="Event" type="Label" parent="CanvasLayer/Control/Inventory" groups=["eventjournal"]]
+layout_mode = 0
 offset_left = 60.0
 offset_top = 312.0
 offset_right = 316.0
@@ -296,64 +308,79 @@ offset_bottom = 336.0
 text = "Event "
 label_settings = SubResource("LabelSettings_bv1s3")
 
-[node name="Event" type="Label" parent="CanvasLayer/Control/Inventory/Event"]
+[node name="Event" type="RichTextLabel" parent="CanvasLayer/Control/Inventory/Event"]
 visible = false
-offset_left = -1.0
-offset_top = 40.0
-offset_right = 255.0
-offset_bottom = 64.0
-text = "> A mist has appeared in the city"
-label_settings = SubResource("LabelSettings_i32cl")
-
-[node name="Event2" type="Label" parent="CanvasLayer/Control/Inventory/Event"]
-visible = false
-offset_top = 88.0
-offset_right = 408.0
-offset_bottom = 112.0
-text = "> A mysterious group is moving through town"
-label_settings = SubResource("LabelSettings_i32cl")
-
-[node name="Event3" type="Label" parent="CanvasLayer/Control/Inventory/Event"]
-visible = false
-offset_left = 4.0
-offset_top = 144.0
-offset_right = 412.0
-offset_bottom = 168.0
-text = "> My area will be evacuated on the 5th day"
-label_settings = SubResource("LabelSettings_i32cl")
-
-[node name="Event4" type="Label" parent="CanvasLayer/Control/Inventory/Event"]
-visible = false
-offset_left = 4.0
-offset_top = 200.0
-offset_right = 412.0
-offset_bottom = 224.0
-text = "> White deposits appear in houses "
-label_settings = SubResource("LabelSettings_i32cl")
-
-[node name="Event5" type="Label" parent="CanvasLayer/Control/Inventory/Event"]
-visible = false
-offset_left = 4.0
-offset_top = 256.0
-offset_right = 412.0
-offset_bottom = 280.0
-text = "> The miners' representative is dead"
-label_settings = SubResource("LabelSettings_i32cl")
-
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 553.0
-offset_top = 285.0
-offset_right = 619.0
-offset_bottom = 316.0
-text = "USE"
-label_settings = SubResource("LabelSettings_cck1k")
-script = ExtResource("10_0r8a8")
+offset_top = 48.0
+offset_right = 408.0
+offset_bottom = 72.0
+theme_override_fonts/normal_font = ExtResource("6_v1iah")
+theme_override_fonts/mono_font = ExtResource("6_v1iah")
+theme_override_fonts/italics_font = ExtResource("6_v1iah")
+theme_override_fonts/bold_italics_font = ExtResource("6_v1iah")
+theme_override_fonts/bold_font = ExtResource("6_v1iah")
+bbcode_enabled = true
+text = "> A mist has appeared in the city"
 
-[node name="Mainorange" type="Sprite2D" parent="CanvasLayer/Control/Label"]
-position = Vector2(-24, 16)
-scale = Vector2(1.45, 1.45)
-texture = ExtResource("6_oj1nk")
+[node name="Event2" type="RichTextLabel" parent="CanvasLayer/Control/Inventory/Event"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = 88.0
+offset_right = 530.0
+offset_bottom = 112.0
+theme_override_fonts/normal_font = ExtResource("6_v1iah")
+theme_override_fonts/mono_font = ExtResource("6_v1iah")
+theme_override_fonts/italics_font = ExtResource("6_v1iah")
+theme_override_fonts/bold_italics_font = ExtResource("6_v1iah")
+theme_override_fonts/bold_font = ExtResource("6_v1iah")
+bbcode_enabled = true
+text = "> A mysterious group is moving through town"
+
+[node name="Event3" type="RichTextLabel" parent="CanvasLayer/Control/Inventory/Event"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = 128.0
+offset_right = 518.0
+offset_bottom = 152.0
+theme_override_fonts/normal_font = ExtResource("6_v1iah")
+theme_override_fonts/mono_font = ExtResource("6_v1iah")
+theme_override_fonts/italics_font = ExtResource("6_v1iah")
+theme_override_fonts/bold_italics_font = ExtResource("6_v1iah")
+theme_override_fonts/bold_font = ExtResource("6_v1iah")
+bbcode_enabled = true
+text = "> My area will be evacuated on the 5th day"
+
+[node name="Event4" type="RichTextLabel" parent="CanvasLayer/Control/Inventory/Event"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = 168.0
+offset_right = 419.0
+offset_bottom = 192.0
+theme_override_fonts/normal_font = ExtResource("6_v1iah")
+theme_override_fonts/mono_font = ExtResource("6_v1iah")
+theme_override_fonts/italics_font = ExtResource("6_v1iah")
+theme_override_fonts/bold_italics_font = ExtResource("6_v1iah")
+theme_override_fonts/bold_font = ExtResource("6_v1iah")
+bbcode_enabled = true
+text = "> White deposits appear in houses "
+
+[node name="Event5" type="RichTextLabel" parent="CanvasLayer/Control/Inventory/Event"]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = 208.0
+offset_right = 444.0
+offset_bottom = 232.0
+theme_override_fonts/normal_font = ExtResource("6_v1iah")
+theme_override_fonts/mono_font = ExtResource("6_v1iah")
+theme_override_fonts/italics_font = ExtResource("6_v1iah")
+theme_override_fonts/bold_italics_font = ExtResource("6_v1iah")
+theme_override_fonts/bold_font = ExtResource("6_v1iah")
+bbcode_enabled = true
+text = "> The miners' representative is dead"
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Control"]
 position = Vector2(583, 334)
@@ -362,16 +389,15 @@ texture = ExtResource("7_252vv")
 
 [node name="input" type="Label" parent="CanvasLayer/Control" groups=["lesinputs"]]
 layout_mode = 0
-offset_left = 960.0
-offset_top = 520.0
-offset_right = 1292.0
-offset_bottom = 661.0
+offset_left = 8.0
+offset_top = 584.0
+offset_right = 340.0
+offset_bottom = 725.0
 scale = Vector2(0.567531, 0.464598)
 text = "[ E ] Interact
 [ Tab ] Info
 [ Ctrl ] Crouch"
 label_settings = SubResource("LabelSettings_fy4og")
-horizontal_alignment = 2
 
 [node name="transition" parent="." instance=ExtResource("11_7q8gp")]
 process_mode = 3

@@ -214,12 +214,21 @@ offset_left = 8.0
 offset_top = 624.0
 offset_right = 253.0
 offset_bottom = 641.0
-text = "version : DEMO3"
+text = "version : DEMO4"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 17.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 128.0
+offset_right = 1048.0
+offset_bottom = 272.0
+focus_mode = 0
+flat = true
 
 [connection signal="pressed" from="continue_button" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
@@ -227,5 +236,6 @@ offset_bottom = 17.0
 [connection signal="pressed" from="credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="credits/CLOSE" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 
 [editable path="transition"]

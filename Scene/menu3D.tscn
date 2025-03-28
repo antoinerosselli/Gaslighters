@@ -692,6 +692,11 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.14857, -1.0286, -8.62
 material_override = SubResource("StandardMaterial3D_p1uu7")
 mesh = ExtResource("18_01uq3")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D/Node3D/Lamp" groups=["lampmenu"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.18841, 0.051631)
+shadow_enabled = true
+omni_range = 0.0
+
 [node name="TableCorridor" type="MeshInstance3D" parent="Node3D/Node3D"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.63783, -2, 0.446098)
 material_override = SubResource("StandardMaterial3D_33mri")
