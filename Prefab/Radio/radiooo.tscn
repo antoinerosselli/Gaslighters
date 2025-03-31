@@ -433,9 +433,10 @@ transform = Transform3D(-4.37114e-08, -0.0871557, 0.996195, 0, 0.996195, 0.08715
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["radio_sound"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.254973, 0, 0)
 stream = SubResource("AudioStreamMP3_n8nwt")
-volume_db = -1.0
+volume_db = -8.142
 unit_size = 1.0
 autoplay = true
+bus = &"Sfx"
 
 [node name="Audio1" type="AudioStreamPlayer3D" parent="AudioStreamPlayer3D"]
 bus = &"Voice"

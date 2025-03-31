@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dee4yq0rea45s"]
+[gd_scene load_steps=11 format=3 uid="uid://dee4yq0rea45s"]
 
 [ext_resource type="Script" uid="uid://uhhhcts2bho7" path="res://Scripts/transition_setup.gd" id="1_qfohy"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="2_3fkm3"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="2_4yamf"]
+[ext_resource type="Texture2D" uid="uid://bfnt5twpoulux" path="res://Extern/FONT/save icon.png" id="4_r2yxk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vhaag"]
 resource_local_to_scene = true
@@ -31,6 +32,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bnsyd"]
 resource_name = "fade_to_black"
@@ -47,6 +72,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.66),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.66),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xd5k4"]
 _data = {
@@ -58,6 +107,9 @@ _data = {
 font = ExtResource("2_3fkm3")
 font_size = 40
 font_color = Color(0.810141, 0.585559, 0.160276, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uqgtk"]
+font = ExtResource("2_3fkm3")
 
 [node name="CanvasLayer" type="CanvasLayer" groups=["transi"]]
 script = ExtResource("1_qfohy")
@@ -82,5 +134,19 @@ offset_top = 297.0
 offset_right = 760.0
 offset_bottom = 338.0
 label_settings = SubResource("LabelSettings_7b1mk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1116, 613)
+texture = ExtResource("4_r2yxk")
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+offset_left = 1013.0
+offset_top = 611.0
+offset_right = 1095.0
+offset_bottom = 634.0
+text = "Save..."
+label_settings = SubResource("LabelSettings_uqgtk")
 
 [connection signal="animation_finished" from="AP" to="." method="_on_animation_player_animation_finished"]

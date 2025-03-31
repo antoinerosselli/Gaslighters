@@ -55,6 +55,9 @@ func _process(delta):
 		resultat.text = get_line(expe_day, lines_result)
 
 func _on_go_home_pressed():
+	if get_tree().get_first_node_in_group(\"colisobject\") != null:
+		var colis = get_tree().get_first_node_in_group(\"colisobject\")
+		colis.queue_free()
 	if expe_day == 0:
 		Tools.spawn_conserve(3)
 		var player = Tools.get_player()

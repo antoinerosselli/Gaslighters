@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxd64vec7mdse"
+path="res://.godot/imported/8. We will keep you informed.wav-8001a0bfa7fbb65894b9068fe4de42bb.sample"
+
+[deps]
+
+source_file="res://Voice/day1/gov/8. We will keep you informed.wav"
+dest_files=["res://.godot/imported/8. We will keep you informed.wav-8001a0bfa7fbb65894b9068fe4de42bb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

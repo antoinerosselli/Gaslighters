@@ -213,6 +213,7 @@ func colis_departure():
 func expe_status(status):
 	var expe_lum = get_tree().get_first_node_in_group("canexpe")
 	var anim = get_tree().get_first_node_in_group("animexpe")
+	Tools.sound_now(expe_lum,preload("res://Music&Sound/sound/heavy-mechancial-door-open-6934.mp3") as AudioStreamMP3 )
 	if status == true:
 		anim.play("start_expe")
 		expe_lum.set_color(Color(0, 1, 0, 1))
@@ -233,3 +234,7 @@ func timer_event_action(is_active):
 		timer_event.stop()
 	elif is_active == true:
 		timer_event.start()
+
+func get_timer_action():
+	var timer_event = get_tree().get_first_node_in_group("timerevent")
+	return timer_event.is_stopped()

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bqrnrisllr8e"
+path="res://.godot/imported/Know to shut up.wav-8675c8230b2a7cfc297438d910ea936f.sample"
+
+[deps]
+
+source_file="res://Voice/day1_5/Know to shut up.wav"
+dest_files=["res://.godot/imported/Know to shut up.wav-8675c8230b2a7cfc297438d910ea936f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

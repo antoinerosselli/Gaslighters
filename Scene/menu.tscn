@@ -115,7 +115,6 @@ scale = Vector2(0.354988, 0.37229)
 texture = ExtResource("3_lbxic")
 
 [node name="credits" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -129,9 +128,7 @@ offset_right = 1088.0
 offset_bottom = 552.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_hgydy")
 bbcode_enabled = true
-text = "[center]- Experienced Junior - [/center]
-
-
+text = "[font_size=30]Created by[/font_size]
 
 Antoine Rosselli
 
@@ -139,52 +136,25 @@ Pierrick Mahe
 
 Guillaume Delboulbes
 
-Liam Mottet 
+
+[font_size=25]With the participation of[/font_size] 
 
 Tom Lori 
 
-Marius Barthelemy
+Liam Mottet
 
-Romain Garsiot
+Romain Garsiot (for graphics)
 
-								With the participation of 
-								
+Max Guillot (for the music)
 
 
-									Special thanks to 
-
+[font_size=25]Our sincere thanks to[/font_size]
 
 Guillaume Cristiani
 
-Max Guillot
+Marius Barthelemy 
 
-
-
-3d Models from :
-
-\"Psx canned tomato soup\" (https://skfb.ly/oT9In) by Brainsick Games is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-
-\"PSX Style Trees\" (https://skfb.ly/pswGE) by wooolvie is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-
-https://rbgr.itch.io/psx-assets-aparment-pack
-
-https://sourpickle35.itch.io/psx-assets-wardrobe-kit-doors-drawers-interactable
-
-https://sourpickle35.itch.io/psx-assets-wardrobe-kit-doors-drawers-interactable
-
-https://sourpickle35.itch.io/psx-assets-modular-survival-house
-
-https://sourpickle35.itch.io/psx-assets-old-oil-painting-kit
-
-https://sourpickle35.itch.io/psx-assets-home-furniture-kit-2
-
-https://sourpickle35.itch.io/psx-assets-balkan-interior-modular-props
-
-\"Low Poly Truck\" (https://skfb.ly/ontII) by Arifido._ is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
-
-GermanCar (c) by Luca Anthony Schwarz
-
-\"Cardboard Box Low Poly\" (https://skfb.ly/oN8vw) by Ellis Rogers-Byrne is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)."
+for testing the game"
 autowrap_mode = 2
 
 [node name="CLOSE" type="Button" parent="credits"]
@@ -214,7 +184,7 @@ offset_left = 8.0
 offset_top = 624.0
 offset_right = 253.0
 offset_bottom = 641.0
-text = "version : DEMO4"
+text = "version : DEMO5"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
