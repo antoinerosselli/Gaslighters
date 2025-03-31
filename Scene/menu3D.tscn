@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dl341y0w6e2df" path="res://Extern/model-assignmentradio/source/v5/未命名.png" id="6_cc2ru"]
 [ext_resource type="Texture2D" uid="uid://qunejf5xui6j" path="res://Extern/model-assignmentradio/source/v5/bady-2.png" id="7_1rxak"]
 [ext_resource type="Texture2D" uid="uid://dys4posym2uc6" path="res://Extern/model-assignmentradio/textures/woodMid-ToneGlossy_diffuse.jpg" id="8_26mww"]
-[ext_resource type="Shader" uid="uid://b801gs84w2k41" path="res://Scene/menu3D.gdshader" id="9_0qme6"]
+[ext_resource type="Shader" uid="uid://b801gs84w2k41" path="res://Shader/menu3D.gdshader" id="9_0qme6"]
 [ext_resource type="Texture2D" uid="uid://cd458kpdgcthk" path="res://Extern/Rework Appart/Deds/textures/Wood_10_baseColor.jpeg" id="9_3b71p"]
 [ext_resource type="Texture2D" uid="uid://cud33hvmo87be" path="res://Extern/model-assignmentradio/textures/plane_divided_DefaultMaterial_Roughness@channels=B.png" id="9_ng68d"]
 [ext_resource type="Texture2D" uid="uid://chaipkbutk75o" path="res://Extern/Prop Textures/Carpet 3.png" id="10_mo4is"]
@@ -30,7 +30,7 @@
 [ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://Model_House/table_corridor.res" id="20_uah1h"]
 [ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="27_62doh"]
 [ext_resource type="Script" uid="uid://b1ng32bdp0had" path="res://Scripts/speciallabelmenu3d.gd" id="27_gxa06"]
-[ext_resource type="Shader" uid="uid://cltycr033e17u" path="res://Scene/glass.gdshader" id="29_j6e2t"]
+[ext_resource type="Shader" uid="uid://cltycr033e17u" path="res://Shader/glass.gdshader" id="29_j6e2t"]
 [ext_resource type="AudioStream" uid="uid://8tsdxs2qmxce" path="res://Music&Sound/tuning-radio-7150.mp3" id="35_41xcc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vjl52"]

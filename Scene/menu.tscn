@@ -115,6 +115,7 @@ scale = Vector2(0.354988, 0.37229)
 texture = ExtResource("3_lbxic")
 
 [node name="credits" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -154,7 +155,77 @@ Guillaume Cristiani
 
 Marius Barthelemy 
 
-for testing the game"
+[font_size=22]for testing the game[/font_size]
+
+
+
+
+[font_size=25]Licenses[/font_size] 
+
+This work is based on \"Low Poly Pen (Blue)\" (https://sketchfab.com/3d-models/low-poly-pen-blue-06708e597c60482d92161fe3cf770cf6) by Liaval (https://sketchfab.com/Liaval) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+The FontStruction “Suikoden (Monospaced)”
+(https://www.fontstruct.com/fontstructions/show/1723095) by Patrick H. Lauke is
+licensed under a Creative Commons Attribution license
+(http://creativecommons.org/licenses/by/3.0/).
+
+This work is based on \"\"Moskvich\" suitcase PS1\" (https://sketchfab.com/3d-models/moskvich-suitcase-ps1-230f9568252741f6b1d6f590a744c4f1) by Homie (https://sketchfab.com/nurbolnygmanov) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Cultist Book\" (https://sketchfab.com/3d-models/cultist-book-49363bd6199c435a9313096d1b73bb96) by luckyshotlayne (https://sketchfab.com/luckyshotlayne) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+PSX Armchair
+* source:	https://sketchfab.com/3d-models/psx-armchair-fc99d5cea60b433c8222fd916e010c1f
+* author:	Charckes (https://sketchfab.com/charlesmoch)
+
+PSX Chair
+* source:	https://sketchfab.com/3d-models/psx-chair-190afd784b4d443a8036f3482ed09713
+* author:	Charckes (https://sketchfab.com/charlesmoch)
+
+This work is based on \"PS1/N64 Style Cupboard\" (https://sketchfab.com/3d-models/ps1n64-style-cupboard-f983dc1487c14d65a0e58ba251d6907a) by jsandwich96 (https://sketchfab.com/jsandwich96) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Deds Others\" (https://sketchfab.com/3d-models/deds-others-7861f63f4a9647ee8391bf7f2ef6e805) by Elbolillo (https://sketchfab.com/Elbolilloduro) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+PSX Wooden Drawers
+* source:	https://sketchfab.com/3d-models/psx-wooden-drawers-42fc9b554dbe43bc9402d87cf66d37ee
+* author:	Charckes (https://sketchfab.com/charlesmoch)
+
+This work is based on \"Food Equipment .Blend FREE Low Poly\" (https://sketchfab.com/3d-models/food-equipment-blend-free-low-poly-01f9acaddd564321a53d261d47e0c782) by LordSamueliSolo (https://sketchfab.com/LadyLionStudios) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Guarda Roupa no estilo de ps1\" (https://sketchfab.com/3d-models/guarda-roupa-no-estilo-de-ps1-d7b17673e81146c7a9bd620e2d8e47e0) by Moustache_Cat (https://sketchfab.com/moustachecat) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+Hazmat Suit
+* source:	https://sketchfab.com/3d-models/hazmat-suit-794ccaabb9e143b5b1737985bb0c52b2
+* author:	assetfactory (https://sketchfab.com/assetfactory)
+
+This work is based on \"Old Lowpoly Furniture\" (https://sketchfab.com/3d-models/old-lowpoly-furniture-66bed104642c454a9930bdf0f161c35c) by Wardster (https://sketchfab.com/WardsterSAW) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+PSX Old Microwave
+* source:	https://sketchfab.com/3d-models/psx-old-microwave-9433f4b145414c839c243e66403c8261
+* author:	Charckes (https://sketchfab.com/charlesmoch)
+
+This work is based on \"Trailer Park Props\" (https://sketchfab.com/3d-models/trailer-park-props-009a2ada8f874aa2bb643a60f2fbcae4) by Elbolillo (https://sketchfab.com/Elbolilloduro) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Flowerpot Plant - PS1 Low Poly\" (https://sketchfab.com/3d-models/flowerpot-plant-ps1-low-poly-938b417b0c24412fa223a776e1483c65) by Wersaus33 (https://sketchfab.com/wersaus33) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Final Fantasy 7: Buster Sword\" (https://sketchfab.com/3d-models/final-fantasy-7-buster-sword-9b931e7276c54c25ba919393f23500e4) by Dharvey296 (https://sketchfab.com/dharvey296) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Dofus Emeraude\" (https://sketchfab.com/3d-models/dofus-emeraude-61cc07edd271423a876375c3d8f8ebe4) by lmenjoulet (https://sketchfab.com/lmenjoulet) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+
+This work is based on \"GameBoy Pokemon ! [1hourChallenge]\" (https://sketchfab.com/3d-models/gameboy-pokemon-1hourchallenge-0f2b0ce9c5c44499b2f00c128b3e36b9) by rommalart (https://sketchfab.com/rommalart) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Servant PS1\" (https://sketchfab.com/3d-models/servant-ps1-456e6fe36cd34f518a34cda2e597884b) by Homie (https://sketchfab.com/nurbolnygmanov) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Spray Bottle\" (https://sketchfab.com/3d-models/spray-bottle-1611833f3eaa41bbba2b6944269429ab) by Anthony Yanez (https://sketchfab.com/paulyanez) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+PSX Wooden Drawers
+* source:	https://sketchfab.com/3d-models/psx-wooden-drawers-42fc9b554dbe43bc9402d87cf66d37ee
+* author:	Charckes (https://sketchfab.com/charlesmoch)
+
+This work is based on \"Low Poly Truck\" (https://sketchfab.com/3d-models/low-poly-truck-98826ebd44e2492298ac925461509216) by Arifido._ (https://sketchfab.com/Arifido._) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Cardboard Box Low Poly\" (https://sketchfab.com/3d-models/cardboard-box-low-poly-6f66679005e24ff9a017c61c1f4f1cda) by Ellis Rogers-Byrne (https://sketchfab.com/ellisrb) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Low Poly Truck\" (https://sketchfab.com/3d-models/low-poly-truck-98826ebd44e2492298ac925461509216) by Arifido._ (https://sketchfab.com/Arifido._) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)"
 autowrap_mode = 2
 
 [node name="CLOSE" type="Button" parent="credits"]

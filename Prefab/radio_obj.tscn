@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://jgo413cihxir"]
+
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_c4nsr"]
+[ext_resource type="PackedScene" uid="uid://chacbj2q6jcmg" path="res://Prefab/Radio/radiooo.tscn" id="2_mvjkx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1wkgl"]
+
+[node name="RadioObj" type="StaticBody3D"]
+script = ExtResource("1_c4nsr")
+item_name = "radio"
+script_trait = true
+
+[node name="Radiooo" parent="." instance=ExtResource("2_mvjkx")]
+
+[node name="Audio1" parent="Radiooo/AudioStreamPlayer3D" index="0"]
+unit_size = 1.0
+
+[node name="Audio2" parent="Radiooo/AudioStreamPlayer3D" index="1"]
+unit_size = 1.0
+
+[node name="Audio3" parent="Radiooo/AudioStreamPlayer3D" index="2"]
+unit_size = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1wkgl")
+
+[editable path="Radiooo"]

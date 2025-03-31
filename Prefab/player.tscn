@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bds6idchttvqj" path="res://Sprite/mainorange.png" id="6_oj1nk"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
 [ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
-[ext_resource type="Script" uid="uid://chcm2kadulrxu" path="res://Prefab/useUscript.gd" id="10_0r8a8"]
+[ext_resource type="Script" uid="uid://chcm2kadulrxu" path="res://Scripts/useUscript.gd" id="10_0r8a8"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="10_3h1t1"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="11_7q8gp"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="12_x4psa"]
