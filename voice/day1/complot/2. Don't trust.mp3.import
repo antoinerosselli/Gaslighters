@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://binj0iknvfbts"
+path="res://.godot/imported/2. Don't trust.mp3-1eec791643582045a469bb12246f13e7.mp3str"
+
+[deps]
+
+source_file="res://voice/day1/complot/2. Don't trust.mp3"
+dest_files=["res://.godot/imported/2. Don't trust.mp3-1eec791643582045a469bb12246f13e7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

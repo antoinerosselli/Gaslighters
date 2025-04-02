@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://du2gs34mw5a3q"
+path="res://.godot/imported/5. Food problem.mp3-4279d0203e96e715601797fb07b3e16d.mp3str"
+
+[deps]
+
+source_file="res://voice/day1/complot/5. Food problem.mp3"
+dest_files=["res://.godot/imported/5. Food problem.mp3-4279d0203e96e715601797fb07b3e16d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0ibxiux6mdis"
+path="res://.godot/imported/6. Resist.mp3-428ed9b853f77566df0fb58bbd78506d.mp3str"
+
+[deps]
+
+source_file="res://voice/day1/complot/6. Resist.mp3"
+dest_files=["res://.godot/imported/6. Resist.mp3-428ed9b853f77566df0fb58bbd78506d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

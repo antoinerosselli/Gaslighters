@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxcwx6aib2vmw"
+path="res://.godot/imported/This is insane.mp3-72a6794f39d69140c37bed4e6d394a07.mp3str"
+
+[deps]
+
+source_file="res://voice/day1/belle/This is insane.mp3"
+dest_files=["res://.godot/imported/This is insane.mp3-72a6794f39d69140c37bed4e6d394a07.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
