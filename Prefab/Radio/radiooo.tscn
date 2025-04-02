@@ -512,7 +512,7 @@ size = Vector3(0.427055, 0.0904999, 0.213013)
 material = SubResource("StandardMaterial3D_t5jdj")
 
 [node name="Label3D" type="Label3D" parent="RadioBody/BarreAffi"]
-transform = Transform3D(2, 0, 2.13163e-14, 0, 2, 0, -2.13163e-14, 0, 2, 0.0755121, -0.000251383, 0.115099)
+transform = Transform3D(2, 0, 2.13163e-14, 0, 2, 0, -2.13163e-14, 0, 2, 0.0755121, -0.000251383, 0.1186)
 pixel_size = 0.001
 billboard = 1
 double_sided = false
