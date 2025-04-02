@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=4 uid="uid://cgp8iojh0a330"]
+[gd_scene load_steps=265 format=4 uid="uid://cgp8iojh0a330"]
 
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_ivsu5"]
 [ext_resource type="Texture2D" uid="uid://4rd65620hsko" path="res://Extern/Abandoned_House/Textures/Piso_cocina.jpg" id="3_0cild"]
@@ -17,7 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://dxis8exg7hx4w" path="res://Extern/Home kit 2/Textures/Desk Lamp 1/Desk Lamp 1_256.png" id="16_xwbb6"]
 [ext_resource type="ArrayMesh" uid="uid://bhogxa7a3s1vu" path="res://Model_House/lamp.res" id="17_hqtfn"]
 [ext_resource type="Texture2D" uid="uid://chncdhii6c5mg" path="res://Extern/Home kit 2/Textures/Table/Table_256.png" id="18_nxgg6"]
+<<<<<<< HEAD
 [ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://model_House/table_corridor.res" id="19_h016w"]
+=======
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Script" uid="uid://b5r0ey7g14fmr" path="res://Scripts/lamp_uniq.gd" id="19_5m5wx"]
+[ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://Model_House/table_corridor.res" id="19_h016w"]
+>>>>>>> d33f9da (New radio part 1)
 [ext_resource type="PackedScene" uid="uid://jq2qjyp07h12" path="res://Prefab/door.tscn" id="20_sptjv"]
 [ext_resource type="Texture2D" uid="uid://c6seq6ytbogb0" path="res://Extern/Abandoned_House/Abandoned_House_Madera2.jpg" id="21_d2xxn"]
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="22_brtl6"]
@@ -3474,7 +3481,20 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.607
 transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 0, 0.0410678, 0)
 
 [editable path="Lamp1"]
+<<<<<<< HEAD
 [editable path="StaticBody3D3"]
 [editable path="StaticBody3D3/Interrupteur"]
 [editable path="StaticBody3D3/Interrupteur2"]
 [editable path="Radiooo"]
+=======
+[editable path="RadioObj"]
+[editable path="RadioObj/Radiooo"]
+[editable path="Interrupteur4"]
+[editable path="Deco/Sketchfab_Scene2"]
+[editable path="Deco/Sketchfab_Scene3"]
+[editable path="Deco/Sketchfab_Scene6"]
+[editable path="Deco/Sketchfab_Scene7"]
+[editable path="New_Console"]
+[editable path="lavedepot"]
+>>>>>>> Stashed changes
+>>>>>>> d33f9da (New radio part 1)
