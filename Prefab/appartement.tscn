@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=171 format=4 uid="uid://cgp8iojh0a330"]
-=======
-[gd_scene load_steps=267 format=4 uid="uid://cgp8iojh0a330"]
->>>>>>> Stashed changes
+[gd_scene load_steps=265 format=4 uid="uid://cgp8iojh0a330"]
 
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_ivsu5"]
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="2_gtmph"]
@@ -26,8 +22,7 @@
 <<<<<<< Updated upstream
 =======
 [ext_resource type="Script" uid="uid://b5r0ey7g14fmr" path="res://Scripts/lamp_uniq.gd" id="19_5m5wx"]
->>>>>>> Stashed changes
-[ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://model_House/table_corridor.res" id="19_h016w"]
+[ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://Model_House/table_corridor.res" id="19_h016w"]
 [ext_resource type="PackedScene" uid="uid://jq2qjyp07h12" path="res://Prefab/door.tscn" id="20_sptjv"]
 [ext_resource type="Texture2D" uid="uid://c6seq6ytbogb0" path="res://Extern/Abandoned_House/Abandoned_House_Madera2.jpg" id="21_d2xxn"]
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="22_brtl6"]
@@ -2683,22 +2678,28 @@ lamp = NodePath("../Lamp3")
 [node name="Lamp3" parent="." instance=ExtResource("32_5p1tq")]
 transform = Transform3D(0.992745, 0, 0.120241, 0, 1, 0, -0.120241, 0, 0.992745, 15.6983, 1.62313, -2.31484)
 
-[node name="StaticBody3D3" parent="." instance=ExtResource("33_7ud62")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8866, -1.08741, -3.85483)
+[node name="Courant" parent="." instance=ExtResource("37_uj65h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.420035, -8.82901, 0.545004, -7.99896)
 
-<<<<<<< Updated upstream
-[node name="Interrupteur" parent="StaticBody3D3" index="2"]
-item_name = "blue_lamp"
+[node name="RadioObj" parent="." instance=ExtResource("40_ijhvj")]
+transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.445068, -4.58302)
 
-[node name="Interrupteur2" parent="StaticBody3D3" index="3"]
-item_name = "red_lamp"
+[node name="Camera3D" parent="RadioObj/Radiooo" index="0"]
+transform = Transform3D(-0.089916, -0.088057, 0.992049, -0.0139091, 0.996098, 0.0871557, -0.995852, -0.0059618, -0.0907899, 0.557325, 0.0626082, 0.00615215)
+fov = 69.6711
 
-[node name="Radiooo" parent="." instance=ExtResource("34_gca3k")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.6078, -0.870256, -4.64879)
+[node name="AudioStreamPlayer3D" parent="RadioObj/Radiooo" index="1"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, 0, 0, 1, -0.0273314, 0.165519, -0.0482235)
 
-[node name="Radio" parent="Radiooo" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 0, 0.0410678, 0)
-=======
+[node name="Radio_NodeOfKnob#Knob3D2" parent="RadioObj/Radiooo" index="2"]
+transform = Transform3D(-5.24537e-09, 0.0276934, -2.79397e-09, -0.12, -1.21052e-09, -7.77629e-09, -9.05975e-09, 0, 0.103, -0.186411, 0.043699, 0.228669)
+
+[node name="Radio_NodeOfKnob_Knob3D_StaticBody3D#CollisionShape3D" parent="RadioObj/Radiooo" index="4"]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
+
+[node name="CollisionShape3D" parent="RadioObj" index="1"]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
+
 [node name="New_Console_SubViewport#Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1.0205, 0, 0.0412816, 0, 0.863311, 0, -0.0293248, 0, 1.43659, -3.80287, 0.223529, -7.9891)
 modulate = Color(0.572988, 0.572988, 0.572988, 1)
@@ -4094,12 +4095,8 @@ door = true
 
 [editable path="RadioBody/Radiooo"]
 [editable path="Lamp1"]
-<<<<<<< Updated upstream
-[editable path="StaticBody3D3"]
-[editable path="StaticBody3D3/Interrupteur"]
-[editable path="StaticBody3D3/Interrupteur2"]
-[editable path="Radiooo"]
-=======
+[editable path="RadioObj"]
+[editable path="RadioObj/Radiooo"]
 [editable path="Interrupteur4"]
 [editable path="Deco/Sketchfab_Scene2"]
 [editable path="Deco/Sketchfab_Scene3"]
