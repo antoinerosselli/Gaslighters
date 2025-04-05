@@ -1,1 +1,1 @@
--10 SAN, +3 FOOD
+-10 SANITY, +3 FOOD

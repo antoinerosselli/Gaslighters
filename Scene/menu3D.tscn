@@ -89,7 +89,7 @@ albedo_texture = ExtResource("3_cxm2i")
 [sub_resource type="PlaneMesh" id="PlaneMesh_qspml"]
 material = SubResource("StandardMaterial3D_hlyes")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1cdde"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ufke"]
 render_priority = 0
 shader = ExtResource("9_0qme6")
 shader_parameter/scale = 7.75
@@ -100,7 +100,7 @@ shader_parameter/color_1 = Vector4(1, 0, 0.4, 1)
 shader_parameter/color_2 = Vector4(1, 1, 1, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1ji0d"]
-material = SubResource("ShaderMaterial_1cdde")
+material = SubResource("ShaderMaterial_1ufke")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6808"]
 albedo_texture = ExtResource("13_3b71p")
@@ -110,7 +110,7 @@ resource_name = "Wooden"
 metallic = 0.4
 roughness = 0.140028
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_b5rig"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lbc5c"]
 _surfaces = [{
 "aabb": AABB(-1, -1.20417, -0.672283, 2, 1.25418, 1.34458),
 "format": 34896613377,
@@ -140,7 +140,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAD+//7//78AAJXrAAD/vwAAlev+//+/AAD+/wAA/78AAP7/AAD/////lesAAP//AACV6wAA//////7/AAD//////v8AAP+///+V6/7//7///5XrAAD/v////v/+//+////+//7/AIAAAJXr/v8AgP//lev+/wCAAAD+//7/AIA/8ZXrvw5U1T/xdeA/8VTVP/F14L8OVNU/8ZXrP/FU1QAA/v8AAFTV///+//7/VNX///7/AABU1QAA/v/+/1TVvw6V6z/xVNUAAJXrAABU1b8Oleu/DlTVAACV6/7/VNX//5XrAABU1T/xleu/DlTV//+V6/7/VNU/8ZXrP/FU1SQcdeDa4///2uOj69rj///a43Xg2uP//yQco+va4///vw6V678OVNW/DnXgP/FU1b8Oles/8VTVvw514L8OVNW/DpXrP/H/vz/xdeA/8f+/P/GV6z/x/7+/DnXgP/H/vz/xleu/Dv//vw514L8O//+/DpXrvw7//z/xdeC/Dv//TSej6ynT/79NJwAA2uP/v00nAAAp0/+/TSej69rj/78kHHXg2uP/vyQco+skHP+/JByj69rj/78kHHXgJBz/v9rjdeAkHP+/2uOj69rj/7/a46PrJBz/v9rjdeDa4/+/2uN14CQc/78kHKPrJBz/vyQcdeAkHP+/2uOj6yQc/78kHKPrJBxU1drjo+va41TVJByj69rjVNXa46PrJBxU1SQcdeDa41TVvw514L8OVNUkHHXgJBxU1b8OdeA/8VTVP/F14L8OVNXa43XgJBxU1T/xdeA/8VTV2uN14NrjVNVNJ6Pr2uMAgCQcAADa4wCATScAANrjAIAkHKPr2uMAgCQco+va4/+/JBwAACnT/78kHAAA2uP/vyQco+sp0/+/JByj6ynT//9NJwAAKdP//yQcAAAp0///TSej6ynT//8kHAAA2uP/v00nAAAp0/+/TScAANrj/78kHAAAKdP/v9rjo+sp0/+/2uMAANrj/7/a4wAAKdP/v9rjo+va4/+/2uOj69rjAICx2AAA2uMAgNrjAADa4wCAsdij69rjAICx2KPr2uP/v7HYAAAp0/+/sdgAANrj/7+x2KPrKdP/v7HYo+sp0///2uMAACnT//+x2AAAKdP//9rjo+sp0///sdgAANrj/7/a4wAAKdP/v9rjAADa4/+/sdgAACnT/7/a46PrJBz/v9rjAADVLP+/2uMAACQc/7/a46Pr1Sz/v9rjo+vVLACAsdgAANUsAIDa4wAA1SwAgLHYo+vVLACAsdij69Us/7+x2AAAJBz/v7HYAADVLP+/sdij6yQc/7+x2KPrJBz//9rjAAAkHP//sdgAACQc///a46PrJBz//7HYAADVLP+/2uMAACQc/7/a4wAA1Sz/v7HYAAAkHP+/TSej6yQc/79NJwAA1Sz/v00nAAAkHP+/TSej69Us/79NJ6Pr1SwAgCQcAADVLACATScAANUsAIAkHKPr1SwAgCQcAADVLP+/JByj6yQc/78kHAAAJBz/vyQco+vVLP+/JByj6yQc//9NJwAAJBz//yQcAAAkHP//TSej6yQc//8kHAAA1Sz/v00nAAAkHP+/TScAANUs/78kHAAAJBz/v/9/////f////3////9/////f////3////9/////f////38AAP9/AAD/fwAA/38AAP9/////f////3////9///+qqlRVqqpUVaqqVFWqqlRVVNWqKlTVqipU1aoqVNWqKlRVVVVVVVRVVVVUVVRVVVVVVVRVVVVUVVRVVVVUVVVV/z//v/8//7//P/+//z//v1RVqqpUVaqqVFWqqlRVqqr//////////////////////7//v/+//7//v/+//7//v/9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9//3//f/9//3//f/9//39VVVVVVVVVVVVVVVVUVVRVqipU1aoqVNWqKlTVqipU1aoqVNWqKlTVqipU1aoqVNX/f////3////9/////f////3////9/////f////3////9/////f////3////9///8AAP9/AAD/fwAA/38AAP9//38AAP9/AAD/fwAA/38AAP9/////f////3////9/////f////3////9/////f////3////9/////f////3///wAA/38AAP9/AAD/fwAA/3//fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f////3////9/////f////3////9/////f///AAD/fwAA/38AAP9/AAD/f/9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////3////9//v//f////3/+//9//v//f/7//3/+//9//v8AAP9/AAD/fwAA/38AAP9/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_b5rig")
+shadow_mesh = SubResource("ArrayMesh_lbc5c")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_15nsi"]
 size = Vector3(1.87427, 1.11414, 1.21912)
@@ -708,7 +708,7 @@ mesh = ExtResource("20_uah1h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.268288, 3.22693, -0.0393069)
 shape = SubResource("BoxShape3D_e47n2")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["musicmenu"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.62787, 0, -6.8055)
 stream = ExtResource("35_41xcc")
 unit_size = 0.2
@@ -752,12 +752,12 @@ transform = Transform3D(2.57205, 0, 0, 0, -4.37114e-08, -1.2125, 0, 1, -5.3e-08,
 mesh = SubResource("PlaneMesh_1ji0d")
 
 [node name="OmniLight3D2" type="SpotLight3D" parent="NEWMENU"]
-transform = Transform3D(0.998, 0.0535046, -0.033669, -0.0455602, 0.977979, 0.203668, 0.0438248, -0.201727, 0.978461, 3.35783, -1.07159, -6.79067)
+transform = Transform3D(0.998, 0.0535046, -0.033669, -0.0455602, 0.977979, 0.203668, 0.0438248, -0.201727, 0.978461, 3.35783, -1.15852, -6.79067)
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.0
 light_volumetric_fog_energy = 15.459
-spot_range = 2.30697
-spot_angle = 51.1537
+spot_range = 3.31215
+spot_angle = 47.6878
 script = ExtResource("13_1ufke")
 
 [node name="OmniLight3D" type="SpotLight3D" parent="NEWMENU"]
@@ -766,7 +766,7 @@ light_color = Color(0.933333, 0.858824, 0.439216, 1)
 spot_range = 5.2969
 
 [node name="Wooden Table" type="MeshInstance3D" parent="NEWMENU"]
-transform = Transform3D(1.24702, 0, 0, 0, 1, 6.63087e-08, 0, -7.54979e-08, 0.878288, 3.58211, -0.693745, -8.22806)
+transform = Transform3D(1.24702, 0, 0, 0, 1, 6.63087e-08, 0, -7.54979e-08, 0.878288, 3.59189, -0.693745, -8.22337)
 material_override = SubResource("StandardMaterial3D_p6808")
 mesh = SubResource("ArrayMesh_vj4or")
 skeleton = NodePath("")
@@ -875,7 +875,7 @@ font_size = 50
 outline_size = 3
 
 [node name="Sketchfab_Scene" parent="NEWMENU" instance=ExtResource("27_62doh")]
-transform = Transform3D(0.283168, 0, -0.0990752, 0, 0.3, 0, 0.0990752, 0, 0.283168, 3.33215, -0.554318, -8.26705)
+transform = Transform3D(0.283168, 0, -0.0990752, 0, 0.3, 0, 0.0990752, 0, 0.283168, 3.20537, -0.554318, -8.26705)
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("14_nnvqy")]
 transform = Transform3D(0.232761, 0, 0, 0, 0.321257, 0, 0, 0, 0.203111, 1.71542, -1.47381, -8.27737)

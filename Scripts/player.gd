@@ -110,7 +110,7 @@ func camera_joystick():
 
 
 func _input(event):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") && inventory.visible == false:
 		Tools.call_pause()
 	if Input.is_action_just_pressed("crouch") && can_move == true:
 		if crouch == false:

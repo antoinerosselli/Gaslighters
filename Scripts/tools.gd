@@ -2,7 +2,7 @@ extends Node
 
 const ICON = preload("res://Sprite/icon.svg")
 
-var val_elec:int = 100
+var val_elec:int = 60
 
 func get_icon(item_name):
 	match item_name:

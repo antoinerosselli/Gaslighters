@@ -36,6 +36,10 @@ func _ready():
 	if depot == true:
 		$AnimationPlayer.play("spawn")
 
+func _process(delta):
+	if is_an_interruptor == true && UniqueTrait.elec == false:
+		is_on = false
+
 func interact():
 	if is_text == true:
 		var player = Tools.get_player()	
@@ -58,6 +62,7 @@ func interact():
 				var ligth = lamp.get_node("OmniLight3D")
 				ligth.omni_range = 0.0
 	if is_note == true:
+		Tools.sound_now(self, load("res://Music&Sound/sound/paperopen.mp3") as AudioStreamMP3)
 		Tools.notespawn(note)
 	if food == true:
 		var player = Tools.get_player()

@@ -18,6 +18,8 @@ func _on_close_pressed():
 	credits.visible = false
 
 func _on_play_button_pressed():
+	var menusound = get_tree().get_first_node_in_group("musicmenu")
+	menusound.stop()
 	Save.set_level(1)
 	Tools.start_transition("1 a.m Rock Valley new miners area ",load("res://Scene/Days/Day1/scene_day_1.tscn") as PackedScene)
 
@@ -25,6 +27,8 @@ func _on_options_button_pressed():
 	Tools.call_options()
 
 func _on_continue_button_pressed():
+	var menusound = get_tree().get_first_node_in_group("musicmenu")
+	menusound.stop()
 	if Save.actual_level() == 1:
 		Tools.start_transition("1 a.m Rock Valley new miners area ",load("res://Scene/Days/Day1/scene_day_1.tscn") as PackedScene)
 	if Save.actual_level() == 2:
