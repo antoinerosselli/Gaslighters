@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bxkf8mj6dtr0k"
-path="res://.godot/imported/Hopeok.mp3-a87ab96a9c4fef0f696200a2021f26bb.mp3str"
+path="res://.godot/imported/Hopeok.mp3-dccf40ef949cc69d1f9cfc8e56817454.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/belle/Hopeok.mp3"
-dest_files=["res://.godot/imported/Hopeok.mp3-a87ab96a9c4fef0f696200a2021f26bb.mp3str"]
+source_file="res://voice/day1/belle/Hopeok.mp3"
+dest_files=["res://.godot/imported/Hopeok.mp3-dccf40ef949cc69d1f9cfc8e56817454.mp3str"]
 
 [params]
 
