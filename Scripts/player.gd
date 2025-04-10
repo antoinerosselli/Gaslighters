@@ -12,6 +12,7 @@ extends CharacterBody3D
 @onready var popup_sure = $CanvasLayer/popup_sure
 @onready var paused:Label = $CanvasLayer/Control/paused
 @onready var color_rect = $CanvasLayer/Control/ColorRect
+@onready var detect_value = $CanvasLayer/eyecontrol/TextureProgressBar
 
 #inventory
 var on_inventory:bool = false
@@ -110,7 +111,7 @@ func camera_joystick():
 
 
 func _input(event):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") && inventory.visible == false:
 		Tools.call_pause()
 	if Input.is_action_just_pressed("crouch") && can_move == true:
 		if crouch == false:
@@ -145,3 +146,6 @@ func on_hand():
 func _on_timer_timeout():
 	read_dialogue = false
 	show_text.text = ""
+
+func detect():
+	detect_value.value += 10

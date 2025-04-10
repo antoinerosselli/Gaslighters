@@ -1,0 +1,301 @@
+{
+  "accessors": [
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 10100,
+      "max": [
+        64.22518157958984,
+        -11.616317749023438,
+        196.26663208007813
+      ],
+      "min": [
+        1.710265040397644,
+        -92.35494995117188,
+        187.48023986816406
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 121200,
+      "componentType": 5126,
+      "count": 10100,
+      "max": [
+        0.999998927116394,
+        1.0,
+        0.9913612008094788
+      ],
+      "min": [
+        -0.9999985694885254,
+        -1.0,
+        -0.9924536943435669
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 40524,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 242400,
+      "componentType": 5126,
+      "count": 1330,
+      "max": [
+        66.30244445800781,
+        -7.546871185302734,
+        190.1239013671875
+      ],
+      "min": [
+        4.639432907104492,
+        -91.97452545166016,
+        -9.000000318337698e-06
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 258360,
+      "componentType": 5126,
+      "count": 1330,
+      "max": [
+        1.0,
+        0.9999989867210388,
+        1.0
+      ],
+      "min": [
+        -0.9999998807907104,
+        -0.9999980330467224,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 162096,
+      "componentType": 5125,
+      "count": 3936,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 274320,
+      "componentType": 5126,
+      "count": 724,
+      "max": [
+        73.8510971069336,
+        -0.4052239954471588,
+        197.94451904296875
+      ],
+      "min": [
+        0.2617120146751404,
+        -93.792236328125,
+        187.9445037841797
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 283008,
+      "componentType": 5126,
+      "count": 724,
+      "max": [
+        1.0,
+        1.0,
+        0.9999756813049316
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -0.9999756813049316
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 177840,
+      "componentType": 5125,
+      "count": 2712,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "1-3D.com (https://sketchfab.com/1-3D.com)",
+      "license": "CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)",
+      "source": "https://sketchfab.com/3d-models/corner-shower-curtain-61b448368b3b439a80937048b3f9bb42",
+      "title": "Corner shower curtain"
+    },
+    "generator": "Sketchfab-12.74.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 188688,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 291696,
+      "byteOffset": 188688,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 480384,
+      "uri": "scene.bin"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": true,
+      "name": "Curtain",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.498039,
+          0.498039,
+          1.0,
+          0.75
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9822172058996108
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Ring",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.980392,
+          0.980392,
+          0.980392,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.7193933736703317
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "material",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.901961,
+          0.901961,
+          0.901961,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.8670426025763753
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Object_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0
+          },
+          "indices": 2,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 4,
+            "POSITION": 3
+          },
+          "indices": 5,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object_2",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 7,
+            "POSITION": 6
+          },
+          "indices": 8,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2,
+        3,
+        4
+      ],
+      "name": "tendaDoccia.obj.cleaner.materialmerger.gles"
+    },
+    {
+      "mesh": 0,
+      "name": "Object_2"
+    },
+    {
+      "mesh": 1,
+      "name": "Object_3"
+    },
+    {
+      "mesh": 2,
+      "name": "Object_4"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ]
+}

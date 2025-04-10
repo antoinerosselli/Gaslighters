@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=3 uid="uid://2vl0wqdyhik8"]
+
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="1_kx3wg"]
+[ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="3_dxumf"]
+[ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="3_rkybi"]
+[ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="4_21rkp"]
+[ext_resource type="AudioStream" uid="uid://deb1cmth3t1nu" path="res://Music&Sound/explosion-47821.mp3" id="5_i52nl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vjl52"]
+
+[sub_resource type="Sky" id="Sky_pa1gw"]
+sky_material = SubResource("ProceduralSkyMaterial_vjl52")
+
+[sub_resource type="Environment" id="Environment_uua4v"]
+background_mode = 2
+sky = SubResource("Sky_pa1gw")
+ambient_light_color = Color(0.244776, 0.244776, 0.244776, 1)
+ambient_light_sky_contribution = 0.05
+ssao_radius = 3.49
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.037
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6bp44"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_dfetp"]
+emission = Color(0.281187, 0.281187, 0.281187, 1)
+
+[sub_resource type="Resource" id="Resource_ikvgt"]
+metadata/__load_path__ = "res://manager/event_manager_test.tscn"
+
+[sub_resource type="Resource" id="Resource_yhqik"]
+metadata/__load_path__ = "res://manager/event_radio_test.tscn"
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406051, 0.362561, -0.0511785)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uua4v")
+camera_attributes = SubResource("CameraAttributesPractical_6bp44")
+
+[node name="Area3D" parent="." instance=ExtResource("3_dxumf")]
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, -0.955145, -0.722322, 3.3345)
+one_shot = true
+is_text = true
+texts = ["C'est quoi ce bruit", "On dirait que ça vient de dehors"]
+
+[node name="Node3D" parent="." instance=ExtResource("3_rkybi")]
+
+[node name="WC" parent="Node3D" index="94"]
+surface_material_override/0 = null
+
+[node name="RadioObj" parent="Node3D" index="116"]
+transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.662804, -4.77569)
+
+[node name="Camera3D" parent="Node3D/RadioObj/Radiooo" index="0"]
+transform = Transform3D(0.999877, 0.0144928, -0.0060679, -0.0139091, 0.996098, 0.0871556, 0.00730735, -0.0870605, 0.996176, 11.4845, -0.139476, -3.94333)
+
+[node name="BathroomSink" parent="Node3D" index="117"]
+surface_material_override/0 = null
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
+size = Vector3(24.1484, 6.75517, 2)
+material = SubResource("FogMaterial_dfetp")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1887, -0.155392, 11.7923)
+size = Vector3(13.9297, 7.08786, 2)
+material = SubResource("FogMaterial_dfetp")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4352, 0, -33.1535)
+stream = ExtResource("4_21rkp")
+volume_db = -4.0
+autoplay = true
+max_distance = 100.0
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_kx3wg")]
+transform = Transform3D(0.827428, 0, 0, 0, 1.26606, 0, 0, 0, 0.852664, -3.36637, 0.198096, 6.13779)
+
+[node name="Camera3D" parent="CharacterBody3D" index="0"]
+transform = Transform3D(1.20856, 0, 0, 0, 0.789852, 0, 0, 0, 1.17279, 0, 0.76951, -0.322976)
+
+[node name="Area3D2" parent="." instance=ExtResource("3_dxumf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1, 6.32785, -0.722322, -0.281386)
+one_shot = true
+is_text = true
+texts = ["On dirait de la brume ? "]
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -36)
+stream = ExtResource("5_i52nl")
+autoplay = true
+
+[node name="Area3D3" parent="." instance=ExtResource("3_dxumf")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 12.3279, -0.722322, 1.71861)
+one_shot = true
+is_text = true
+texts = ["J'aurais peut-être plus d'information à la radio"]
+
+[node name="Area3D4" parent="." instance=ExtResource("3_dxumf")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, -3.6721, -0.722322, -4.28139)
+one_shot = true
+is_text = true
+texts = ["C'est quoi cet endroit ?"]
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1887, -0.155392, -2.2077)
+size = Vector3(13.9297, 7.08786, 2)
+material = SubResource("FogMaterial_dfetp")
+
+[node name="event_manager" parent="."]
+
+[node name="event_radio_test" parent="."]
+
+[editable path="Area3D"]
+[editable path="Node3D"]
+[editable path="Node3D/Lamp1"]
+[editable path="Node3D/StaticBody3D3"]
+[editable path="Node3D/StaticBody3D3/Interrupteur"]
+[editable path="Node3D/StaticBody3D3/Interrupteur2"]
+[editable path="Node3D/RadioObj"]
+[editable path="Node3D/RadioObj/Radiooo"]
+[editable path="CharacterBody3D"]
+[editable path="Area3D2"]
+[editable path="Area3D3"]
+[editable path="Area3D4"]

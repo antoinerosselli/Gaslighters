@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdhd1n6lemc3h"]
 
+[ext_resource type="Script" uid="uid://s6b6q5iro848" path="res://Scene/demo/demo_end.gd" id="1_caexs"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_ti7vd"]
-[ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="2_2aubk"]
-[ext_resource type="Script" uid="uid://y0r6p0tdxywp" path="res://Scripts/demo_end.gd" id="2_ej0fg"]
 [ext_resource type="Shader" uid="uid://b3lvhbwu7lsot" path="res://Shader/background_expe.gdshader" id="3_caexs"]
+[ext_resource type="AudioStream" uid="uid://bxyjfsp84jp7c" path="res://Music&Sound/sound/applause-105579.mp3" id="5_ia1n3"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ia1n3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y57gl"]
 shader = ExtResource("3_caexs")
 shader_parameter/scale = 5.0
 shader_parameter/speed = 0.3
@@ -14,56 +14,56 @@ shader_parameter/persistence = 0.909
 shader_parameter/color_1 = Color(1, 1, 1, 1)
 shader_parameter/color_2 = Color(0.650129, 0.650128, 0.650128, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_b20qq"]
-font = ExtResource("2_2aubk")
-font_size = 37
-font_color = Color(0.882353, 0.478431, 0.145098, 1)
-shadow_size = 5
-shadow_color = Color(0, 0, 0, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_caexs"]
+font_size = 30
+font_color = Color(0.890196, 0.513726, 0.203922, 1)
 
-[node name="DemoEnd" type="Control"]
+[node name="demo_end" type="Node2D"]
+script = ExtResource("1_caexs")
+
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
 theme = ExtResource("1_ti7vd")
-script = ExtResource("2_ej0fg")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_ia1n3")
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_y57gl")
 layout_mode = 0
+offset_top = -8.0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="Label" type="Label" parent="."]
+[node name="Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 40.0
-offset_right = 1073.0
-offset_bottom = 577.0
-text = "Thanks for playing this demo
-
-the complete version will be released in Q2 
-(April - June) 2025
-
-we'll keep you updated
-
-to support us put the game on your wish list :)"
-label_settings = SubResource("LabelSettings_b20qq")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 744.0
+offset_left = 632.0
 offset_top = 576.0
-offset_right = 1147.0
-offset_bottom = 637.0
+offset_right = 1115.0
+offset_bottom = 613.0
 text = "back to menu"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 112.0
+offset_right = 1120.0
+offset_bottom = 448.0
+text = "Thank you for playing the demo! 
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+We'd love to hear your feedback 
+(https://discord.gg/pjFVK7emDe)
+
+if you'd like to help out, please don't hesitate to whislist the game on steam
+
+The full game will be released before summer 2025 
+
+<3"
+label_settings = SubResource("LabelSettings_caexs")
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ia1n3")
+autoplay = true
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

@@ -32,5 +32,5 @@ far = 60.52
 script = ExtResource("3_fupyg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.780735, -0.00223923, 0.00660369, 0.013999, 0.000405415, -1.6546, 0.00331023, 1.15564, 0.000311116, 0.745489, 1.23735, -0.194507)
+transform = Transform3D(0.780735, -0.00223923, 0.00660369, 0.013999, 0.000405415, -1.6546, 0.00331023, 1.15564, 0.000311116, 0.745489, 1.23735, 0.16016)
 shape = SubResource("BoxShape3D_om2qm")

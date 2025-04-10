@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://deoyutq1w6601"
+path="res://.godot/imported/10. The mist deposits.wav-04a866e1d580a5ede5568832294b3fc4.sample"
+
+[deps]
+
+source_file="res://Voice/day1/gov/10. The mist deposits.wav"
+dest_files=["res://.godot/imported/10. The mist deposits.wav-04a866e1d580a5ede5568832294b3fc4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

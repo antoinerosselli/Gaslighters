@@ -1,0 +1,333 @@
+[gd_scene load_steps=2 format=3 uid="uid://7g82ajbam54"]
+
+[sub_resource type="Resource" id="Resource_akppb"]
+metadata/__load_path__ = "res://PSX Assets - B alkan Interior/Props.fbx"
+
+[node name="Props"]
+
+[node name="Door 1" parent="." index="0"]
+visible = false
+
+[node name="Bedstead" parent="." index="1"]
+visible = false
+
+[node name="Bed" parent="Bedstead" index="0"]
+visible = false
+
+[node name="Cube" parent="Bedstead/Bed" index="0"]
+visible = false
+
+[node name="Big Wardrobe" parent="." index="2"]
+visible = false
+
+[node name="Book 1" parent="." index="3"]
+visible = false
+
+[node name="Book 2" parent="." index="4"]
+visible = false
+
+[node name="Burek 1" parent="." index="5"]
+visible = false
+
+[node name="Burek 2" parent="." index="6"]
+visible = false
+
+[node name="Burek 3" parent="." index="7"]
+visible = false
+
+[node name="Burek 4" parent="." index="8"]
+visible = false
+
+[node name="Carpet 1" parent="." index="9"]
+visible = false
+
+[node name="Carpet 1 Large" parent="." index="10"]
+visible = false
+
+[node name="Carpet 2" parent="." index="11"]
+visible = false
+
+[node name="Carpet 2 Large" parent="." index="12"]
+visible = false
+
+[node name="Carpet 3" parent="." index="13"]
+visible = false
+
+[node name="Carpet 3 Large" parent="." index="14"]
+visible = false
+
+[node name="Carpet 4" parent="." index="15"]
+visible = false
+
+[node name="Carpet 4 Large" parent="." index="16"]
+visible = false
+
+[node name="Cheese Tin Flower Pot 1" parent="." index="17"]
+visible = false
+
+[node name="Cheese Tin Flower Pot 2" parent="." index="18"]
+visible = false
+
+[node name="Cheese Tin Flower Pot 3" parent="." index="19"]
+visible = false
+
+[node name="Curtain Railing" parent="." index="20"]
+visible = false
+
+[node name="Curtain Small" parent="Curtain Railing" index="0"]
+visible = false
+
+[node name="Curtain Railing Large" parent="." index="21"]
+visible = false
+
+[node name="Curtain Large" parent="Curtain Railing Large" index="0"]
+visible = false
+
+[node name="Curtain Railing Medium" parent="." index="22"]
+visible = false
+
+[node name="Curtain Medium" parent="Curtain Railing Medium" index="0"]
+visible = false
+
+[node name="Custom Radiator Left Start" parent="." index="23"]
+visible = false
+
+[node name="Custom Radiator Middle" parent="." index="24"]
+visible = false
+
+[node name="Custom Radiator Right End" parent="." index="25"]
+visible = false
+
+[node name="Dantel 1" parent="." index="26"]
+visible = false
+
+[node name="Dantel 2" parent="." index="27"]
+visible = false
+
+[node name="Enamel Mug 1" parent="." index="28"]
+visible = false
+
+[node name="Enamel Mug 2" parent="." index="29"]
+visible = false
+
+[node name="Enamel Pot 1" parent="." index="30"]
+visible = false
+
+[node name="Cylinder_001" parent="Enamel Pot 1" index="0"]
+visible = false
+
+[node name="Enamel Çaydanlık" parent="." index="31"]
+visible = false
+
+[node name="Fridge" parent="." index="32"]
+visible = false
+
+[node name="Cube_002" parent="Fridge" index="0"]
+visible = false
+
+[node name="Gas Lamp" parent="." index="33"]
+visible = false
+
+[node name="Gas Lamp Glass" parent="Gas Lamp" index="0"]
+visible = false
+
+[node name="HiRes table" parent="." index="34"]
+visible = false
+
+[node name="Jug" parent="." index="35"]
+visible = false
+
+[node name="Kebapche" parent="." index="36"]
+visible = false
+
+[node name="Kitchen" parent="." index="37"]
+visible = false
+
+[node name="Kitchen Wall Cabinet" parent="." index="38"]
+visible = false
+
+[node name="Kofte" parent="." index="39"]
+visible = false
+
+[node name="Kofte 2" parent="." index="40"]
+visible = false
+
+[node name="Light Switch" parent="." index="41"]
+visible = false
+
+[node name="Medium Wardrobe" parent="." index="42"]
+visible = false
+
+[node name="Oil Painting" parent="." index="43"]
+visible = false
+
+[node name="Pasteta 1" parent="." index="44"]
+visible = false
+
+[node name="Pasteta 2" parent="." index="45"]
+visible = false
+
+[node name="Pasteta 3" parent="." index="46"]
+visible = false
+
+[node name="Pecka" parent="." index="47"]
+visible = false
+
+[node name="Pecka Lids" parent="Pecka" index="0"]
+visible = false
+
+[node name="Plant 1" parent="." index="48"]
+visible = false
+
+[node name="Plant 2" parent="." index="49"]
+visible = false
+
+[node name="Plate 1" parent="." index="50"]
+visible = false
+
+[node name="Plate 1_001" parent="." index="51"]
+visible = false
+
+[node name="Plate 2" parent="." index="52"]
+visible = false
+
+[node name="Praying Table" parent="." index="53"]
+visible = false
+
+[node name="Radiator" parent="." index="54"]
+visible = false
+
+[node name="Radio" parent="." index="55"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.267664, 0.838881, 1.0813)
+
+[node name="Radio Cabinet" parent="." index="56"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.186371, -0.491572, 0.330848)
+
+[node name="Receiver" parent="." index="57"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628768, 0.66647, 0.0590463)
+
+[node name="Receiver Remote" parent="." index="58"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.611146, 0.665145, -0.763134)
+
+[node name="Single Kitchen Cabinet" parent="." index="59"]
+visible = false
+
+[node name="Kitchen Cabinet Door_002" parent="Single Kitchen Cabinet" index="0"]
+visible = false
+
+[node name="Kitchen Cabinet Door_009" parent="Single Kitchen Cabinet" index="1"]
+visible = false
+
+[node name="Single Seat" parent="." index="60"]
+visible = false
+
+[node name="Small Radiator" parent="." index="61"]
+visible = false
+
+[node name="Stove Oven" parent="." index="62"]
+visible = false
+
+[node name="Oven Drawer" parent="Stove Oven" index="0"]
+visible = false
+
+[node name="Naked Table" parent="." index="63"]
+visible = false
+
+[node name="Tablecloth" parent="." index="64"]
+visible = false
+
+[node name="Tray" parent="." index="65"]
+visible = false
+
+[node name="Triple Couch" parent="." index="66"]
+visible = false
+
+[node name="TV" parent="." index="67"]
+visible = false
+
+[node name="TV Table" parent="." index="68"]
+visible = false
+
+[node name="Vafla 1" parent="." index="69"]
+visible = false
+
+[node name="Vafla 2" parent="." index="70"]
+visible = false
+
+[node name="Vafla 3" parent="." index="71"]
+visible = false
+
+[node name="Vafla 5" parent="." index="72"]
+visible = false
+
+[node name="Vafla 6" parent="." index="73"]
+visible = false
+
+[node name="Vafla4" parent="." index="74"]
+visible = false
+
+[node name="Wall Carpet" parent="." index="75"]
+visible = false
+
+[node name="Wall Carpet_001" parent="." index="76"]
+visible = false
+
+[node name="Wall Carpet_002" parent="." index="77"]
+visible = false
+
+[node name="Wall Carpet_003" parent="." index="78"]
+visible = false
+
+[node name="Wall Decoration 1" parent="." index="79"]
+visible = false
+
+[node name="Wall Decoration 2" parent="." index="80"]
+visible = false
+
+[node name="Wall Decoration 3" parent="." index="81"]
+visible = false
+
+[node name="Wall Decoration 4" parent="." index="82"]
+visible = false
+
+[node name="Wall Decoration 5" parent="." index="83"]
+visible = false
+
+[node name="Wall Decoration 6" parent="." index="84"]
+visible = false
+
+[node name="Wall Decoration 7" parent="." index="85"]
+visible = false
+
+[node name="Wall Decoration 8" parent="." index="86"]
+visible = false
+
+[node name="Wall Decoration 9" parent="." index="87"]
+visible = false
+
+[node name="Wall Decoration 10" parent="." index="88"]
+visible = false
+
+[node name="Wall Decoration 11" parent="." index="89"]
+visible = false
+
+[node name="Wall Decoration 12" parent="." index="90"]
+visible = false
+
+[node name="Wallclock" parent="." index="91"]
+visible = false
+
+[node name="Wallclock Door" parent="Wallclock" index="0"]
+visible = false
+
+[node name="Window Template" parent="." index="92"]
+visible = false
+
+[node name="Window" parent="Window Template" index="0"]
+visible = false
+
+[node name="Wooden Furniture" parent="." index="93"]
+visible = false
+
+[node name="Wooden Furniture Drawer 1" parent="Wooden Furniture" index="0"]
+visible = false

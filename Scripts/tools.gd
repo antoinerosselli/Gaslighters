@@ -2,7 +2,7 @@ extends Node
 
 const ICON = preload("res://Sprite/icon.svg")
 
-var val_elec:int = 100
+var val_elec:int = 60
 
 func get_icon(item_name):
 	match item_name:
@@ -41,7 +41,11 @@ func door_letter():
 	letter.get_child(2).play("slide_letter")
 
 func go_to_expe():
-	var es:PackedScene = preload("res://Prefab/expe.tscn") as PackedScene
+	var es:PackedScene
+	if Data.get_level() == 1:
+		es = preload("res://Prefab/expe.tscn") as PackedScene
+	elif Data.get_level() == 2:
+		es = preload("res://Prefab/expe_d2.tscn") as PackedScene
 	var es_tmp = es.instantiate()
 	get_tree().get_first_node_in_group("canvas").visible = false
 	add_child(es_tmp)	
@@ -97,9 +101,10 @@ func radio_text(simple_text: String, time: float, color: Color) -> void:
 	style.content_margin_bottom = 10
 	text_radio.add_theme_stylebox_override("normal", style)
 	await get_tree().create_timer(time).timeout
-	text_radio.text = ""
-	style.bg_color = Color(0, 0, 0, 0)  
-	text_radio.add_theme_stylebox_override("normal", style)
+	if text_radio != null:
+		text_radio.text = ""
+		style.bg_color = Color(0, 0, 0, 0)  
+		text_radio.add_theme_stylebox_override("normal", style)
 
 func add_journal(text, ncolor):
 	var journal_inside = get_tree().get_first_node_in_group("journal_inside")
@@ -152,7 +157,7 @@ func sound_now(here: Node3D, what_sound: AudioStream):
 		
 	var audio_player = AudioStreamPlayer3D.new()
 	audio_player.stream = what_sound
-	audio_player.global_position = here.get_global_position()
+	audio_player.position = here.get_global_position()
 	audio_player.autoplay = true
 	audio_player.finished.connect(func(): audio_player.queue_free())
 	here.get_parent().add_child(audio_player)
@@ -213,6 +218,7 @@ func colis_departure():
 func expe_status(status):
 	var expe_lum = get_tree().get_first_node_in_group("canexpe")
 	var anim = get_tree().get_first_node_in_group("animexpe")
+	Tools.sound_now(expe_lum,preload("res://Music&Sound/sound/heavy-mechancial-door-open-6934.mp3") as AudioStreamMP3 )
 	if status == true:
 		anim.play("start_expe")
 		expe_lum.set_color(Color(0, 1, 0, 1))
@@ -220,6 +226,27 @@ func expe_status(status):
 		anim.play("end_expe")
 		expe_lum.set_color(Color(1, 0, 0, 1))
 
-func event_journal_ok(index):
+func get_expe_status():
+	var expe_lum = get_tree().get_first_node_in_group("canexpe")
+	if expe_lum.get_color() == Color(0,1,0,1) :
+		return true
+	else:
+		return false
+
+func event_journal_ok(index, missed):
 	var eventjournal = get_tree().get_first_node_in_group("eventjournal")
+	if missed == true && eventjournal.get_child(index).visible == false:
+		eventjournal.get_child(index).text = "[color=#ff0000][shake]!   M i s s e d   ![/shake][/color]"
 	eventjournal.get_child(index).visible = true
+
+
+func timer_event_action(is_active):
+	var timer_event = get_tree().get_first_node_in_group("timerevent")
+	if is_active == false:
+		timer_event.stop()
+	elif is_active == true:
+		timer_event.start()
+
+func get_timer_action():
+	var timer_event = get_tree().get_first_node_in_group("timerevent")
+	return timer_event.is_stopped()

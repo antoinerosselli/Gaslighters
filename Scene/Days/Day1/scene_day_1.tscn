@@ -1,17 +1,31 @@
-[gd_scene load_steps=26 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=28 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="Script" uid="uid://b4v2q4bytqy57" path="res://Scene/Days/Day1/scene_day_1.gd" id="1_f86ad"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_36dop"]
 [ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="3_8js8r"]
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="3_17coq"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="7_frxae"]
-[ext_resource type="Script" uid="uid://c5msg4g651xi1" path="res://Scripts/em_day_1.gd" id="7_rvlxt"]
+[ext_resource type="Script" uid="uid://c5msg4g651xi1" path="res://Scene/Days/Day1/em_day_1.gd" id="7_rvlxt"]
 [ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_5gr6e"]
 [ext_resource type="PackedScene" uid="uid://pjjbvhiflurr" path="res://Note/notefromafriend.tscn" id="9_rvlxt"]
 [ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="10_f86ad"]
 [ext_resource type="PackedScene" uid="uid://dydkbrvc7it6i" path="res://Prefab/letter.tscn" id="10_rvlxt"]
 [ext_resource type="PackedScene" uid="uid://bm6r7hvbwexl0" path="res://Note/note_stayaway.tscn" id="11_gxdup"]
 [ext_resource type="Texture2D" uid="uid://bvrkg6q7rugdh" path="res://Sprite/letter.png" id="12_17coq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fx68q"]
+resource_local_to_scene = true
+shader = ExtResource("3_17coq")
+shader_parameter/baseColor = Color(0, 0, 0, 1)
+shader_parameter/dissolveSlider = 0.0
+shader_parameter/holeScale = 15.0
+shader_parameter/holeDensity = 1.5
+shader_parameter/edgeColor = Color(0.980392, 0.568627, 0.258824, 1)
+shader_parameter/edgeThickness = 0.025
+shader_parameter/edgeGlowIntensity = 1.466
+shader_parameter/enable_dissolve_animation = false
+shader_parameter/animation_speed = 0.6
 
 [sub_resource type="Gradient" id="Gradient_f86ad"]
 offsets = PackedFloat32Array(0.0263158, 0.747368, 0.947368, 1)
@@ -64,19 +78,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(16.2043, -1.72069, 0.792677)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(16.2043, -1.68583, 0.792677)]
 }
 
 [sub_resource type="Animation" id="Animation_rvlxt"]
@@ -92,7 +94,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(16.2043, -1.72069, 0.792677), Vector3(14.9671, -1.72069, 0.792677)]
+"values": [Vector3(16.2043, -1.68583, 0.792677), Vector3(14.9671, -1.68924, 0.792677)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -126,6 +128,9 @@ script = ExtResource("1_f86ad")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_36dop")]
 transform = Transform3D(1, 0, 0, 0, 1.19877, 0, 0, 0, 1, -2.80715, -0.40799, 6.51119)
+
+[node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
+material = SubResource("ShaderMaterial_fx68q")
 
 [node name="Node3D" parent="." instance=ExtResource("1_jb5ec")]
 
@@ -227,7 +232,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58043, -1.5983, 0.445554)
 activation = false
 
 [node name="Letter" parent="." instance=ExtResource("10_rvlxt")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 16.2043, -1.72069, 0.792677)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 16.2043, -1.68583, 0.792677)
 item_name = "letter"
 is_note = true
 note = ExtResource("11_gxdup")
@@ -255,6 +260,8 @@ shape = SubResource("BoxShape3D_j32o0")
 
 [connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 
+[editable path="CharacterBody3D"]
+[editable path="CharacterBody3D/transition"]
 [editable path="one"]
 [editable path="two"]
 [editable path="tres"]

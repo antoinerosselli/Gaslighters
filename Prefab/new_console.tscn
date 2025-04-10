@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://yu2f1pr7sqy0" path="res://Sprite/sancheck_nothing.png" id="6_yianv"]
 [ext_resource type="Script" uid="uid://cn7om3pwc7ed8" path="res://Scripts/sancheck_img.gd" id="7_pxwd4"]
 [ext_resource type="Shader" uid="uid://exr4uhb1s52k" path="res://Shader/psxcameraeffect.gdshader" id="8_d7shy"]
-[ext_resource type="Script" uid="uid://xjhkgc3d1qow" path="res://Prefab/camerasecure.gd" id="8_dlp4k"]
+[ext_resource type="Script" uid="uid://xjhkgc3d1qow" path="res://Scripts/camerasecure.gd" id="8_dlp4k"]
 [ext_resource type="PackedScene" uid="uid://crp6f42klvrao" path="res://Prefab/hamzat.tscn" id="12_18ocy"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_2v5un"]
@@ -208,14 +208,12 @@ transform = Transform3D(1, 0, 0, 0, 0.971334, 0.23772, 0, -0.23772, 0.971334, 2.
 size = Vector3(2.14668, 1.25491, 0.12616)
 material = ExtResource("4_xuk2y")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.0691765, 0.0722122, 0, -0.0722122, 0.0691765, -1.06037, 1.29615, 0.249462)
-size = Vector3(1.06787, 1.95502, 0.364136)
+[node name="CSGBox3D5" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.103765, 0.108318, 0, -0.108318, 0.103765, -1.06037, 1.29615, 0.249462)
 material = SubResource("StandardMaterial3D_2v5un")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.0691765, 0.0722122, 0, -0.0722122, 0.0691765, -0.164811, 1.29615, 0.249462)
-size = Vector3(1.06787, 1.95502, 0.364136)
+[node name="CSGBox3D6" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.103765, 0.108318, 0, -0.108318, 0.103765, -0.164811, 1.29615, 0.249462)
 material = SubResource("StandardMaterial3D_8bjpw")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D"]
@@ -224,9 +222,8 @@ material_override = SubResource("ORMMaterial3D_2v5un")
 size = Vector3(1.2999, 2.62998, 0.992676)
 material = SubResource("StandardMaterial3D_7pj20")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(0.1, 0, 0, 0, 0.0691765, 0.0722122, 0, -0.0722122, 0.0691765, -0.600976, 1.29615, 0.249462)
-size = Vector3(1.06787, 1.95502, 0.364136)
+[node name="CSGBox3D7" type="CSGSphere3D" parent="CSGCombiner3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.103765, 0.108318, 0, -0.108318, 0.103765, -0.600976, 1.29615, 0.249462)
 material = SubResource("StandardMaterial3D_56sf1")
 
 [node name="CSGBox3D9" type="CSGCylinder3D" parent="CSGCombiner3D"]

@@ -52,7 +52,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2g01q")
 
-[node name="RigidBody3D" type="RigidBody3D"]
+[node name="RigidBody3D" type="RigidBody3D" groups=["colisobject"]]
 physics_material_override = SubResource("PhysicsMaterial_emck4")
 can_sleep = false
 

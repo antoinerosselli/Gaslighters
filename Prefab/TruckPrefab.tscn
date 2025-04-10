@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://h5qcfbgmttt1"]
+[gd_scene load_steps=10 format=3 uid="uid://h5qcfbgmttt1"]
 
 [ext_resource type="PackedScene" uid="uid://c6vkd0y3j4rnm" path="res://Prefab/Truck/scene.gltf" id="1_fe748"]
 [ext_resource type="Script" uid="uid://c58th1hm3qyam" path="res://Scripts/truck_logic.gd" id="2_n33dm"]
 [ext_resource type="Script" uid="uid://coeue3v471of6" path="res://Scripts/colis_spawner.gd" id="3_y2io4"]
 [ext_resource type="PackedScene" uid="uid://bhxxg0vykvlva" path="res://Prefab/colis.tscn" id="4_elmu3"]
+[ext_resource type="AudioStream" uid="uid://cqo057y1g2rrw" path="res://Prefab/Truck/truck-signal-153263.mp3" id="5_shyeq"]
 
 [sub_resource type="Animation" id="Animation_y2io4"]
 length = 0.001
@@ -182,5 +183,10 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.00891)
 script = ExtResource("3_y2io4")
 colis = ExtResource("4_elmu3")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.469117, 2.1502)
+stream = ExtResource("5_shyeq")
+autoplay = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -20,6 +20,8 @@ func unique(object_name):
 			Tools.change_lesinputs("frontdoor")
 			door_camera.current = true
 		"blue_lamp":
+			if Tools.get_timer_action() == true:
+				Tools.timer_event_action(true)
 			Tools.sound_now(Tools.get_player(), load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
 			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
 			lamp_door.light_color = Color(0, 0, 1, 1)
@@ -76,7 +78,7 @@ func unique(object_name):
 			var emds = get_tree().get_first_node_in_group("eventmanager")
 			emds.eat_a_pills()
 		"pen":
-			Save.set_level(2)
+			Data.set_level(2)
 			Tools.start_transition("DAY 2", load("res://Scene/demo/demo_end.tscn") as PackedScene)
 		"phone":
 			print("phone")

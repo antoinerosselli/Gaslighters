@@ -1,0 +1,11 @@
+Model Information:
+* title:	Radio tower Antenna.
+* source:	https://sketchfab.com/3d-models/radio-tower-antenna-f49da5481d914ab485459b9d7c5dde93
+* author:	ocelotlmx (https://sketchfab.com/ocelotlmx)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Radio tower Antenna." (https://sketchfab.com/3d-models/radio-tower-antenna-f49da5481d914ab485459b9d7c5dde93) by ocelotlmx (https://sketchfab.com/ocelotlmx) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -75,6 +75,7 @@ offset_left = 216.0
 offset_top = -16.0
 offset_right = 256.0
 offset_bottom = 32.0
+focus_mode = 0
 shortcut_feedback = false
 shortcut_in_tooltip = false
 script = ExtResource("3_icosh")

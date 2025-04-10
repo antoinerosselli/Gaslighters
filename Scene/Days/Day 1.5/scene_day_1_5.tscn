@@ -1,15 +1,17 @@
-[gd_scene load_steps=24 format=4 uid="uid://7cqbfhd81slb"]
+[gd_scene load_steps=28 format=4 uid="uid://7cqbfhd81slb"]
 
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="1_152uh"]
 [ext_resource type="Script" uid="uid://b7vioc81fxt7i" path="res://Scene/Days/Day 1.5/scene_day_1_5.gd" id="1_kv254"]
 [ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="2_r6x0h"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="3_0ejrs"]
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="4_hfqh6"]
 [ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="4_offwv"]
 [ext_resource type="PackedScene" uid="uid://bths2mtikka83" path="res://Prefab/contract_paper.tscn" id="5_hrudi"]
 [ext_resource type="PackedScene" uid="uid://bwb2a7jakivfd" path="res://Prefab/pills_spawner.tscn" id="5_skkch"]
 [ext_resource type="PackedScene" uid="uid://4n1p68ofm3bv" path="res://EndObject/pen.tscn" id="6_oh546"]
 [ext_resource type="PackedScene" uid="uid://bfwip75uecxa8" path="res://Scene/Days/Day 1.5/em_day_1_5.tscn" id="7_wxr26"]
 [ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="10_44xis"]
+[ext_resource type="AudioStream" uid="uid://bjomo50abflp8" path="res://Scene/Days/Day1/harmo.wav" id="12_x7g1a"]
 
 [sub_resource type="Sky" id="Sky_ne3am"]
 
@@ -62,6 +64,19 @@ shadow_mesh = SubResource("ArrayMesh_b1nkn")
 [sub_resource type="BoxShape3D" id="BoxShape3D_btkx6"]
 size = Vector3(1.9986, 0.783845, 1.33269)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7g1a"]
+resource_local_to_scene = true
+shader = ExtResource("4_hfqh6")
+shader_parameter/baseColor = Color(0, 0, 0, 1)
+shader_parameter/dissolveSlider = 0.0
+shader_parameter/holeScale = 15.0
+shader_parameter/holeDensity = 1.5
+shader_parameter/edgeColor = Color(0.980392, 0.568627, 0.258824, 1)
+shader_parameter/edgeThickness = 0.025
+shader_parameter/edgeGlowIntensity = 1.466
+shader_parameter/enable_dissolve_animation = false
+shader_parameter/animation_speed = 0.6
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w61do"]
 albedo_texture = ExtResource("1_152uh")
 
@@ -83,6 +98,58 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(-1.85282, 0.99327, -0.128485)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("guy:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.77793, 1.51412, -6.33618)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("guy:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.82383, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hfqh6"]
+resource_name = "come_to_me"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("guy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.51),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-7.77793, 1.51412, -6.33618), Vector3(-4.24608, 1.51412, -3.218)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("guy:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.02, 2.22),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.82383, 0), Vector3(0, -2.40061, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_hrudi"]
 resource_name = "slide_contrat"
@@ -102,6 +169,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kv254"]
 _data = {
 &"RESET": SubResource("Animation_kv254"),
+&"come_to_me": SubResource("Animation_hfqh6"),
 &"slide_contrat": SubResource("Animation_hrudi")
 }
 
@@ -127,6 +195,9 @@ shape = SubResource("BoxShape3D_btkx6")
 transform = Transform3D(-0.0144683, 0, 0.999895, 0, 1.02124, 0, -0.999895, 0, -0.0144683, 1.29872, 1.19812, -0.252722)
 affect_by_gravity = false
 can_move = false
+
+[node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
+material = SubResource("ShaderMaterial_x7g1a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -162,8 +233,25 @@ libraries = {
 transform = Transform3D(0.00019339, 0, 0.34738, 0, 0.994139, 0, -0.246224, 0, 0.000272841, -1.85282, 0.99327, -0.128485)
 
 [node name="guy" parent="." instance=ExtResource("4_offwv")]
-transform = Transform3D(-0.842687, 0, -0.538403, 0, 1, 0, 0.538403, 0, -0.842687, -3.30116, 1.51412, -4.75129)
+transform = Transform3D(0.679415, 0, 0.733753, 0, 1, 0, -0.733753, 0, 0.679415, -7.77793, 1.51412, -6.33618)
 guy_talk = true
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("10_44xis")]
 transform = Transform3D(-0.205996, 0, 0.0615668, 0, 0.415219, 0, -0.0615668, 0, -0.205996, -0.0231366, 1.10041, 0.636451)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["talkers"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50118, 1.70768, 0)
+autoplay = true
+max_distance = 10.0
+emission_angle_enabled = true
+doppler_tracking = 2
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50118, 1.70768, 0)
+stream = ExtResource("12_x7g1a")
+autoplay = true
+doppler_tracking = 2
+
+[editable path="CharacterBody3D"]
+[editable path="CharacterBody3D/transition"]
+[editable path="guy"]

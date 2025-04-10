@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpbv5mcs1iuo7"]
+
+[ext_resource type="AudioStream" uid="uid://bqbv7veykxyxw" path="res://Voice/day1/complot/prepareyourself.mp3" id="1_wqbqv"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_wqbqv")
+autoplay = true
+bus = &"Voice"
+
+[node name="Camera3D" type="Camera3D" parent="."]

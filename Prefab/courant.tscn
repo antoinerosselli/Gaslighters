@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://do4vqec45hk5"]
+[gd_scene load_steps=10 format=3 uid="uid://do4vqec45hk5"]
 
 [ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="1_pu7aw"]
 [ext_resource type="Texture2D" uid="uid://dcwuxy4f6p0di" path="res://Extern/textures/WallLong.png" id="2_4rbpc"]
 [ext_resource type="PackedScene" uid="uid://di2g1g6g2kpk8" path="res://Scene/stat_shower.tscn" id="2_4vjn1"]
+[ext_resource type="Texture2D" uid="uid://d176ywa7t5ve7" path="res://Extern/FONT/elecalert.png" id="4_sg1ic"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8edu"]
 albedo_texture = ExtResource("2_4rbpc")
@@ -46,3 +47,7 @@ omni_range = 3.0
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.0159994, 0.53619, 0.376123)
 mesh = SubResource("SphereMesh_2tdss")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.327307, 0, 0, 0, 0.282319, 0, 0, 0, 1, 0.297633, 0.320254, 0.500383)
+texture = ExtResource("4_sg1ic")

@@ -1,4 +1,4 @@
-﻿The FontStruction “Suikoden (Monospaced)”
+The FontStruction “Suikoden (Monospaced)”
 (https://www.fontstruct.com/fontstructions/show/1723095) by Patrick H. Lauke is
 licensed under a Creative Commons Attribution license
 (http://creativecommons.org/licenses/by/3.0/).

@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0gjlcrjiigw3"]
+
+[ext_resource type="Texture2D" uid="uid://diu7pd73qcrkb" path="res://Sprite/face_cagoule.png" id="1_dyvmt"]
+[ext_resource type="Script" uid="uid://b0pem4vftbfd1" path="res://Characters/guys/guy_cagoule.gd" id="1_evabc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diuss"]
+shading_mode = 2
+albedo_texture = ExtResource("1_dyvmt")
+albedo_texture_force_srgb = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_evabc"]
+material = SubResource("StandardMaterial3D_diuss")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_pw75g"]
+albedo_color = Color(0.222195, 0.196703, 0.277397, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_te5cv"]
+material = SubResource("ORMMaterial3D_pw75g")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_evabc"]
+height = 11.2198
+radius = 2.90576
+
+[node name="guy_cagoule" type="StaticBody3D"]
+script = ExtResource("1_evabc")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.981077, 0.193618, 0, -0.193618, 0.981077, 0, 0.3, -0.491092)
+light_color = Color(1, 0, 0, 1)
+light_energy = 3.0
+spot_range = 17.2344
+spot_attenuation = 0.03
+spot_angle = 22.2721
+
+[node name="face" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="face"]
+transform = Transform3D(1.53184, 0, 0, 0, 1.32238, 0, 0, 0, 0.984389, 0, 0, 0)
+mesh = SubResource("SphereMesh_evabc")
+skeleton = NodePath("../..")
+
+[node name="SpotLight3D" type="OmniLight3D" parent="face"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.486063, 0.0738019, -0.459827)
+light_color = Color(1, 0.235294, 0, 1)
+light_energy = 1.074
+omni_range = 1.665
+omni_attenuation = 1.826
+
+[node name="SpotLight3D2" type="OmniLight3D" parent="face"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.526505, 0.0738019, -0.459827)
+light_color = Color(1, 0.235294, 0, 1)
+light_energy = 1.074
+omni_range = 1.665
+omni_attenuation = 1.826
+
+[node name="body" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="body"]
+transform = Transform3D(2.11833, 0, 0, 0, 1.43905, 0, 0, 0, 1.20285, -0.0469393, -1.89395, 0)
+mesh = SubResource("CapsuleMesh_te5cv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.68403)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -0.00139622, 0.999999, 0, -0.999999, -0.00139622, 0, -0.860473, -0.890843)
+shape = SubResource("CylinderShape3D_evabc")
+debug_color = Color(0.894118, 0.270588, 0.431373, 0.733333)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -1,9 +1,13 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://mfe8tefvq6bc"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://mfe8tefvq6bc"]
 
 [sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_obhhx"]
 resource_name = "Phaser"
 range_min_hz = 1117.29
 depth = 1.9
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_j3pel"]
+resource_name = "Distortion"
+pre_gain = 17.14
 
 [resource]
 bus/0/volume_db = 0.0672607
@@ -15,6 +19,8 @@ bus/1/volume_db = 0.0
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectPhaser_obhhx")
 bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectDistortion_j3pel")
+bus/1/effect/1/enabled = true
 bus/2/name = &"Music"
 bus/2/solo = false
 bus/2/mute = false

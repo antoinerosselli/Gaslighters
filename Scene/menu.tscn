@@ -129,62 +129,103 @@ offset_right = 1088.0
 offset_bottom = 552.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_hgydy")
 bbcode_enabled = true
-text = "[center]- Experienced Junior - [/center]
-
-
+text = "[font_size=30]Created by[/font_size]
 
 Antoine Rosselli
 
 Pierrick Mahe
 
+
+
+[font_size=25]With the participation of[/font_size] 
+
 Guillaume Delboulbes
 
-Liam Mottet 
+Romain Garsiot 
 
-Tom Lori 
-
-Marius Barthelemy
-
-Romain Garsiot
-
-								With the participation of 
-								
+Max Guillot 
 
 
-									Special thanks to 
-
+[font_size=25]Our sincere thanks to[/font_size]
 
 Guillaume Cristiani
 
-Max Guillot
+Marius Barthelemy 
+
+Alexi Bermond 
+
+
+[font_size=22]for testing the game[/font_size]
 
 
 
-3d Models from :
 
-\"Psx canned tomato soup\" (https://skfb.ly/oT9In) by Brainsick Games is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+[font_size=25]Licenses[/font_size] 
 
-\"PSX Style Trees\" (https://skfb.ly/pswGE) by wooolvie is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+This work is based on \"Low Poly Pen (Blue)\" (https://sketchfab.com/3d-models/low-poly-pen-blue-06708e597c60482d92161fe3cf770cf6) by Liaval (https://sketchfab.com/Liaval) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 
-https://rbgr.itch.io/psx-assets-aparment-pack
+The FontStruction “Suikoden (Monospaced)”
+(https://www.fontstruct.com/fontstructions/show/1723095) by Patrick H. Lauke is
+licensed under a Creative Commons Attribution license
+(http://creativecommons.org/licenses/by/3.0/).
 
-https://sourpickle35.itch.io/psx-assets-wardrobe-kit-doors-drawers-interactable
+This work is based on \"\"Moskvich\" suitcase PS1\" (https://sketchfab.com/3d-models/moskvich-suitcase-ps1-230f9568252741f6b1d6f590a744c4f1) by Homie (https://sketchfab.com/nurbolnygmanov) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 
-https://sourpickle35.itch.io/psx-assets-wardrobe-kit-doors-drawers-interactable
+This work is based on \"Cultist Book\" (https://sketchfab.com/3d-models/cultist-book-49363bd6199c435a9313096d1b73bb96) by luckyshotlayne (https://sketchfab.com/luckyshotlayne) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 
-https://sourpickle35.itch.io/psx-assets-modular-survival-house
+PSX Armchair
+* source:	https://sketchfab.com/3d-models/psx-armchair-fc99d5cea60b433c8222fd916e010c1f
+* author:	Charckes (https://sketchfab.com/charlesmoch)
 
-https://sourpickle35.itch.io/psx-assets-old-oil-painting-kit
+PSX Chair
+* source:	https://sketchfab.com/3d-models/psx-chair-190afd784b4d443a8036f3482ed09713
+* author:	Charckes (https://sketchfab.com/charlesmoch)
 
-https://sourpickle35.itch.io/psx-assets-home-furniture-kit-2
+This work is based on \"PS1/N64 Style Cupboard\" (https://sketchfab.com/3d-models/ps1n64-style-cupboard-f983dc1487c14d65a0e58ba251d6907a) by jsandwich96 (https://sketchfab.com/jsandwich96) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 
-https://sourpickle35.itch.io/psx-assets-balkan-interior-modular-props
+This work is based on \"Deds Others\" (https://sketchfab.com/3d-models/deds-others-7861f63f4a9647ee8391bf7f2ef6e805) by Elbolillo (https://sketchfab.com/Elbolilloduro) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 
-\"Low Poly Truck\" (https://skfb.ly/ontII) by Arifido._ is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+PSX Wooden Drawers
+* source:	https://sketchfab.com/3d-models/psx-wooden-drawers-42fc9b554dbe43bc9402d87cf66d37ee
+* author:	Charckes (https://sketchfab.com/charlesmoch)
 
-GermanCar (c) by Luca Anthony Schwarz
+This work is based on \"Food Equipment .Blend FREE Low Poly\" (https://sketchfab.com/3d-models/food-equipment-blend-free-low-poly-01f9acaddd564321a53d261d47e0c782) by LordSamueliSolo (https://sketchfab.com/LadyLionStudios) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 
-\"Cardboard Box Low Poly\" (https://skfb.ly/oN8vw) by Ellis Rogers-Byrne is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)."
+This work is based on \"Guarda Roupa no estilo de ps1\" (https://sketchfab.com/3d-models/guarda-roupa-no-estilo-de-ps1-d7b17673e81146c7a9bd620e2d8e47e0) by Moustache_Cat (https://sketchfab.com/moustachecat) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+Hazmat Suit
+* source:	https://sketchfab.com/3d-models/hazmat-suit-794ccaabb9e143b5b1737985bb0c52b2
+* author:	assetfactory (https://sketchfab.com/assetfactory)
+
+This work is based on \"Old Lowpoly Furniture\" (https://sketchfab.com/3d-models/old-lowpoly-furniture-66bed104642c454a9930bdf0f161c35c) by Wardster (https://sketchfab.com/WardsterSAW) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+PSX Old Microwave
+* source:	https://sketchfab.com/3d-models/psx-old-microwave-9433f4b145414c839c243e66403c8261
+* author:	Charckes (https://sketchfab.com/charlesmoch)
+
+This work is based on \"Trailer Park Props\" (https://sketchfab.com/3d-models/trailer-park-props-009a2ada8f874aa2bb643a60f2fbcae4) by Elbolillo (https://sketchfab.com/Elbolilloduro) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Flowerpot Plant - PS1 Low Poly\" (https://sketchfab.com/3d-models/flowerpot-plant-ps1-low-poly-938b417b0c24412fa223a776e1483c65) by Wersaus33 (https://sketchfab.com/wersaus33) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Final Fantasy 7: Buster Sword\" (https://sketchfab.com/3d-models/final-fantasy-7-buster-sword-9b931e7276c54c25ba919393f23500e4) by Dharvey296 (https://sketchfab.com/dharvey296) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Dofus Emeraude\" (https://sketchfab.com/3d-models/dofus-emeraude-61cc07edd271423a876375c3d8f8ebe4) by lmenjoulet (https://sketchfab.com/lmenjoulet) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+
+This work is based on \"GameBoy Pokemon ! [1hourChallenge]\" (https://sketchfab.com/3d-models/gameboy-pokemon-1hourchallenge-0f2b0ce9c5c44499b2f00c128b3e36b9) by rommalart (https://sketchfab.com/rommalart) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Servant PS1\" (https://sketchfab.com/3d-models/servant-ps1-456e6fe36cd34f518a34cda2e597884b) by Homie (https://sketchfab.com/nurbolnygmanov) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Spray Bottle\" (https://sketchfab.com/3d-models/spray-bottle-1611833f3eaa41bbba2b6944269429ab) by Anthony Yanez (https://sketchfab.com/paulyanez) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+PSX Wooden Drawers
+* source:	https://sketchfab.com/3d-models/psx-wooden-drawers-42fc9b554dbe43bc9402d87cf66d37ee
+* author:	Charckes (https://sketchfab.com/charlesmoch)
+
+This work is based on \"Low Poly Truck\" (https://sketchfab.com/3d-models/low-poly-truck-98826ebd44e2492298ac925461509216) by Arifido._ (https://sketchfab.com/Arifido._) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Cardboard Box Low Poly\" (https://sketchfab.com/3d-models/cardboard-box-low-poly-6f66679005e24ff9a017c61c1f4f1cda) by Ellis Rogers-Byrne (https://sketchfab.com/ellisrb) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+
+This work is based on \"Low Poly Truck\" (https://sketchfab.com/3d-models/low-poly-truck-98826ebd44e2492298ac925461509216) by Arifido._ (https://sketchfab.com/Arifido._) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)"
 autowrap_mode = 2
 
 [node name="CLOSE" type="Button" parent="credits"]
@@ -214,12 +255,21 @@ offset_left = 8.0
 offset_top = 624.0
 offset_right = 253.0
 offset_bottom = 641.0
-text = "version : DEMO3"
+text = "version : 0.2.1"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 17.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 128.0
+offset_right = 1048.0
+offset_bottom = 272.0
+focus_mode = 0
+flat = true
 
 [connection signal="pressed" from="continue_button" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
@@ -227,5 +277,6 @@ offset_bottom = 17.0
 [connection signal="pressed" from="credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="credits/CLOSE" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 
 [editable path="transition"]
