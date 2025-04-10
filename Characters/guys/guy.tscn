@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://hpk0oe5w1t08" path="res://Characters/guys/guy.gd" id="1_x6tra"]
 [ext_resource type="Texture2D" uid="uid://c0vdvxs6slkiv" path="res://Sprite/face.png" id="2_jh5vx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diuss"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jh5vx"]
 shading_mode = 2
 albedo_texture = ExtResource("2_jh5vx")
 albedo_texture_force_srgb = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_73wj5"]
-material = SubResource("StandardMaterial3D_diuss")
+material = SubResource("StandardMaterial3D_jh5vx")
 
 [sub_resource type="Animation" id="Animation_diuss"]
 length = 0.001
@@ -72,11 +72,11 @@ _data = {
 &"cligne": SubResource("Animation_jh5vx")
 }
 
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_jh5vx"]
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_diuss"]
 albedo_color = Color(0.807843, 0.517647, 0.313726, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jh5vx"]
-material = SubResource("ORMMaterial3D_jh5vx")
+material = SubResource("ORMMaterial3D_diuss")
 
 [node name="guy" type="StaticBody3D"]
 script = ExtResource("1_x6tra")

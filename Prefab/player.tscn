@@ -1,9 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=30 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" uid="uid://ckooh51x0xywe" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Script" uid="uid://8aqmy8q7388i" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
 [ext_resource type="PackedScene" uid="uid://bhot50ba066lf" path="res://Prefab/popup_sure.tscn" id="4_0r8a8"]
 [ext_resource type="Shader" uid="uid://exr4uhb1s52k" path="res://Shader/psxcameraeffect.gdshader" id="4_evs1m"]
+[ext_resource type="Texture2D" uid="uid://ded5iqu07yukb" path="res://Sprite/eyeempty.png" id="5_0r8a8"]
+[ext_resource type="Texture2D" uid="uid://dkrklgry6qgs2" path="res://Sprite/eyefull.png" id="6_l2bej"]
 [ext_resource type="Texture2D" uid="uid://bds6idchttvqj" path="res://Sprite/mainorange.png" id="6_oj1nk"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
 [ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
@@ -126,6 +128,24 @@ offset_left = -4.0
 offset_top = -1.0
 offset_right = -4.0
 offset_bottom = -1.0
+
+[node name="eyecontrol" type="Control" parent="CanvasLayer" groups=["eyecontrol"]]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/eyecontrol"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 232.0
+offset_right = 651.0
+offset_bottom = 292.0
+scale = Vector2(0.64, 0.56)
+fill_mode = 3
+texture_under = ExtResource("5_0r8a8")
+texture_progress = ExtResource("6_l2bej")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3

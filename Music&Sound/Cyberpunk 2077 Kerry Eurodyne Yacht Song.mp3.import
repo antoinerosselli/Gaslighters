@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3o0205oi11y5"
+path="res://.godot/imported/Cyberpunk 2077 Kerry Eurodyne Yacht Song.mp3-4173a8bb1b0c6d21cbdf7315c7f0fe24.mp3str"
+
+[deps]
+
+source_file="res://Music&Sound/Cyberpunk 2077 Kerry Eurodyne Yacht Song.mp3"
+dest_files=["res://.godot/imported/Cyberpunk 2077 Kerry Eurodyne Yacht Song.mp3-4173a8bb1b0c6d21cbdf7315c7f0fe24.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

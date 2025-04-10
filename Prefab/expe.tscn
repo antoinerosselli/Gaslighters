@@ -12,8 +12,8 @@
 script/source = "extends Control
 
 @onready var rich_text_label = $aventure
-@onready var path_expes = \"res://EXPE/expes.txt\"
-@onready var path_expes_result = \"res://EXPE/expes_result.txt\"
+@export var expes = \"As you go out into the street, the atmosphere seems tense, you're stressed and you feel pressure. Someone or something may be watching you. You approach the ration pack left behind by the lorry. You pick it up in an ominous silence and pick up the pace to return to your house, which has become a shelter. \"
+@export var expes_result = \"-10 SANITY, +3 FOOD\"
 @export var text_intro = \"[wave][color=yellow]You're ready to face the gas.[/color][/wave]\\n\\n\\n\"
 @export var expe_day:int
 @onready var resultat = $resultat
@@ -31,9 +31,7 @@ var all_char:int
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	set_process(false)
-	read_text_file(path_expes, lines)
-	read_text_file(path_expes_result, lines_result)
-	var new_text: String = get_line(expe_day, lines)
+	var new_text: String = expes
 	all_char = (new_text.length() + text_intro.length())
 	rich_text_label.bbcode_enabled = true  
 	var all_text = text_intro + new_text
@@ -52,7 +50,7 @@ func _process(delta):
 	if current_index == len(stripped_text):
 		go_home.disabled = false
 		resultat.bbcode_enabled = true
-		resultat.text = get_line(expe_day, lines_result)
+		resultat.text = expes_result
 
 func _on_go_home_pressed():
 	if get_tree().get_first_node_in_group(\"colisobject\") != null:
@@ -67,20 +65,6 @@ func _on_go_home_pressed():
 	Tools.expe_status(false)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	self.queue_free()
-
-func read_text_file(path, kid):
-	var file = FileAccess.open(path, FileAccess.READ)
-	if file:
-		while not file.eof_reached():
-			kid.append(file.get_line())  # Stocke chaque ligne dans un tableau
-		file.close()
-	else:
-		print(\"Erreur : Impossible d'ouvrir le fichier \", path)
-
-func get_line(index: int, kid) -> String:
-	if index >= 0 and index < kid.size():
-		return kid[index]
-	return \"\"
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kj2cy"]

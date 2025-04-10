@@ -1,0 +1,489 @@
+[gd_scene load_steps=22 format=3 uid="uid://dwi44rv8sigev"]
+
+[ext_resource type="Script" uid="uid://d0svgp66y5er7" path="res://Scene/Days/Day2/scene_day_2.gd" id="1_mnosv"]
+[ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_o3dra"]
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_gfllc"]
+[ext_resource type="PackedScene" uid="uid://dydkbrvc7it6i" path="res://Prefab/letter.tscn" id="3_r63h0"]
+[ext_resource type="PackedScene" uid="uid://bxny8biun3n3g" path="res://Note/note_cachetoi.tscn" id="4_ht0eg"]
+[ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="4_t23kc"]
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="4_wfw2x"]
+[ext_resource type="Script" uid="uid://3v1u1qkeqlyt" path="res://Scene/Days/Day2/em_day_2.gd" id="6_mnosv"]
+[ext_resource type="PackedScene" uid="uid://c0gjlcrjiigw3" path="res://Characters/guys/guy_cagoule.tscn" id="8_jhd05"]
+[ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_kayp0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t23kc"]
+resource_local_to_scene = true
+shader = ExtResource("4_wfw2x")
+shader_parameter/baseColor = Color(0, 0, 0, 1)
+shader_parameter/dissolveSlider = 0.0
+shader_parameter/holeScale = 15.0
+shader_parameter/holeDensity = 1.5
+shader_parameter/edgeColor = Color(0.980392, 0.568627, 0.258824, 1)
+shader_parameter/edgeThickness = 0.025
+shader_parameter/edgeGlowIntensity = 1.466
+shader_parameter/enable_dissolve_animation = false
+shader_parameter/animation_speed = 0.6
+
+[sub_resource type="Sky" id="Sky_gxdup"]
+
+[sub_resource type="Environment" id="Environment_gfllc"]
+background_mode = 2
+sky = SubResource("Sky_gxdup")
+ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
+ambient_light_sky_contribution = 0.51
+ambient_light_energy = 0.35
+ssao_radius = 3.49
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0157
+volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
+volumetric_fog_anisotropy = -0.51
+adjustment_enabled = true
+adjustment_saturation = 1.44
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_5h5o6"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_r63h0"]
+emission = Color(0.281187, 0.281187, 0.281187, 1)
+
+[sub_resource type="Animation" id="Animation_gxdup"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(16.2043, -1.72069, 0.792677)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rvlxt"]
+resource_name = "slide_letter"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(16.2043, -1.72069, 0.792677), Vector3(14.9671, -1.72069, 0.792677)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.878075, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f86ad"]
+_data = {
+&"RESET": SubResource("Animation_gxdup"),
+&"slide_letter": SubResource("Animation_rvlxt")
+}
+
+[sub_resource type="Animation" id="Animation_jhd05"]
+resource_name = "REDEVENT"
+length = 200.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("guy_cagoule3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 159.973),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("guy_cagoule2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 150.302),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("guy_cagoule:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 159.973),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("guy_cagoule:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 12.0526, 20.0123, 28.0109, 40.0212, 66.0999, 72.1063, 77.9107, 92.9071, 140.149, 159.973),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(10.9193, -6.93562, -48.8666), Vector3(10.9193, -6.93562, -25.4083), Vector3(10.9193, -6.93562, -10.0979), Vector3(-14.1151, -6.93562, 4.05807), Vector3(-14.1151, 1.23536, 4.05807), Vector3(-14.1151, 0.575331, 11.0146), Vector3(-2.97168, 0.575331, 11.0146), Vector3(0.97914, 0.575331, 13.877), Vector3(0.97914, 0.575331, 12.8928), Vector3(-14.3613, -6.8456, 12.8928), Vector3(-14.3613, -6.8456, -43.4746)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("guy_cagoule2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 12.0682, 20.0123, 28.0109, 40.0212, 50.0855, 50.6756, 78.1074, 80, 89.869, 96.0216, 102.054, 103.061, 120.121, 146.499),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 955.424, 955.424, 1),
+"update": 0,
+"values": [Vector3(10.9193, -7.25512, 63.939), Vector3(10.9193, -7.25512, 43.5147), Vector3(10.9193, -7.25512, 16.1377), Vector3(-13.1752, -7.25512, 11.6612), Vector3(-10.7193, 0.611344, 12.9765), Vector3(11.075, 0.611344, 12.9765), Vector3(11.075, 0.611344, 10.4322), Vector3(18.9622, 0.611344, 10.4322), Vector3(18.9622, 0.611344, -5.277), Vector3(22.7124, 6.5294, -5.277), Vector3(2.76907, 6.5294, -11.9291), Vector3(2.76907, -0.208956, -16.1594), Vector3(-0.0483956, 1.10604, -16.1594), Vector3(-0.0483952, -6.79273, -16.1594), Vector3(-0.0483952, -6.79273, -38.1345)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("guy_cagoule3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 12.0682, 20.0123, 28.0109, 40.0212, 77.9107, 80, 89.9346, 91.7269, 104.57, 130.117, 140.149, 159.973),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(48.6761, -6.93562, -0.631544), Vector3(24.5182, -6.93562, -0.631544), Vector3(20.7218, -6.93562, -0.631544), Vector3(-14.5941, -6.93562, -0.631544), Vector3(-14.5941, 1.23536, -0.631544), Vector3(-7.96904, 0.59024, 10.9861), Vector3(-7.96904, 0.59024, 12.6444), Vector3(16.1282, 0.59024, 12.6444), Vector3(18.7773, 0.59024, 3.49623), Vector3(18.7773, 0.59024, 11.1385), Vector3(-10.014, 0.59024, 11.8779), Vector3(-10.014, -7.06361, 1.59883), Vector3(-10.014, -7.06361, -47.4916)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("guy_cagoule2:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 28.0491, 50.0855, 50.6756, 78.1074, 80, 89.869, 96.0216, 102.054, 103.061, 120.121, 146.499),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(0, -0.0509289, 0), Vector3(0, -1.66831, 0), Vector3(0, -0.246511, 0), Vector3(0, -0.216142, 0), Vector3(0, -0.216142, 0), Vector3(0, -0.216142, 0), Vector3(0, 1.44363, 0), Vector3(0, -3.04143, 0), Vector3(0, -3.04143, 0), Vector3(0, -2.94753, 0), Vector3(0, -2.94753, 0), Vector3(0, 0.194691, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("guy_cagoule3:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.503559, 28.0491, 77.9107, 80, 89.9346, 91.7269, 104.57, 130.117, 140.149, 159.973),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.74617, 0), Vector3(0, -2.99577, 0), Vector3(0, -2.04626, 0), Vector3(0, -1.65225, 0), Vector3(0, -1.04427, 0), Vector3(0, -0.0842471, 0), Vector3(0, -3.12693, 0), Vector3(0, -3.12693, 0), Vector3(0, 0.0388163, 0), Vector3(0, 0.0388163, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("guy_cagoule:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(28.0491, 66.0999, 72.1063, 77.9107, 92.9071, 140.149, 159.973),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(0, 3.05426, 0), Vector3(0, 3.05426, 0), Vector3(0, -1.80395, 0), Vector3(0, 0.229249, 0), Vector3(0, 3.12917, 0), Vector3(0, 1.46128, 0), Vector3(0, 0.0574038, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CharacterBody3D/CanvasLayer/eyecontrol:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(9.96638, 159.909),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sketchfab_Scene:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wfw2x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("guy_cagoule3:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("guy_cagoule2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("guy_cagoule:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("guy_cagoule:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(10.9193, -6.93562, -25.4083)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("guy_cagoule2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(10.9193, -7.25512, 63.939)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("guy_cagoule3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(48.6761, -6.93562, -0.631544)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("guy_cagoule2:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.0509289, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("guy_cagoule3:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.74617, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("guy_cagoule:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.05426, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = false
+tracks/9/path = NodePath("CharacterBody3D/CanvasLayer/eyecontrol:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = false
+tracks/10/path = NodePath("Sketchfab_Scene:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t23kc"]
+_data = {
+&"REDEVENT": SubResource("Animation_jhd05"),
+&"RESET": SubResource("Animation_wfw2x")
+}
+
+[node name="SceneDay2" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125958)
+script = ExtResource("1_mnosv")
+
+[node name="appartement" parent="." instance=ExtResource("1_o3dra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00315857, -1.19209e-07, -0.127772)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_gfllc")]
+transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
+
+[node name="Event2" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="1"]
+visible = true
+
+[node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
+material = SubResource("ShaderMaterial_t23kc")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gfllc")
+camera_attributes = SubResource("CameraAttributesPractical_5h5o6")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
+size = Vector3(24.1484, 6.75517, 2)
+material = SubResource("FogMaterial_r63h0")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00224, -0.155392, 11.3124)
+size = Vector3(20.3026, 7.08786, 2.43262)
+material = SubResource("FogMaterial_r63h0")
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1887, -0.155392, -2.2077)
+size = Vector3(13.9297, 7.08786, 2)
+material = SubResource("FogMaterial_r63h0")
+
+[node name="Letter" parent="." instance=ExtResource("3_r63h0")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 16.2043, -1.72069, 0.792677)
+item_name = "letter"
+is_note = true
+note = ExtResource("4_ht0eg")
+
+[node name="AnimationPlayer" parent="Letter" index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_f86ad")
+}
+
+[node name="managers" type="Node" parent="." groups=["event_manager"]]
+script = ExtResource("6_mnosv")
+DANGER_LEVEL = 4
+
+[node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
+
+[node name="depot_spawner" parent="managers" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0860391, -1.5983, 8.4577)
+activation = false
+
+[node name="depot_spawner2" parent="managers" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.832851, -1.5983, -6.62545)
+activation = false
+
+[node name="depot_spawner3" parent="managers" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8343, -1.5983, -6.83925)
+activation = false
+
+[node name="depot_spawner4" parent="managers" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.272, -1.5983, 0.690172)
+activation = false
+
+[node name="depot_spawner5" parent="managers" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5527, -1.5983, 7.79251)
+activation = false
+
+[node name="depot_spawner6" parent="managers" instance=ExtResource("8_kayp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58043, -1.5983, 0.445554)
+activation = false
+
+[node name="guy_cagoule" parent="." instance=ExtResource("8_jhd05")]
+transform = Transform3D(-0.996189, 0, 0.0872253, 0, 1, 0, -0.0872253, 0, -0.996189, 10.9193, -6.93562, -25.4083)
+visible = false
+
+[node name="guy_cagoule2" parent="." instance=ExtResource("8_jhd05")]
+transform = Transform3D(0.998703, 0, -0.0509069, 0, 1, 0, 0.0509069, 0, 0.998703, 10.9193, -7.25512, 63.939)
+visible = false
+
+[node name="guy_cagoule3" parent="." instance=ExtResource("8_jhd05")]
+transform = Transform3D(-0.174473, 0, 0.984662, 0, 1, 0, -0.984662, 0, -0.174473, 48.6761, -6.93562, -0.631544)
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_t23kc")
+}
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("4_t23kc")]
+transform = Transform3D(-0.0334399, -0.0146691, -0.215633, 1.59231e-05, -0.330956, 0.00973293, -0.24556, 0.00197617, 0.0293652, 1.2653, -0.485574, 5.92725)
+visible = false
+
+[connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
+
+[editable path="CharacterBody3D"]
+[editable path="CharacterBody3D/transition"]
+[editable path="Letter"]

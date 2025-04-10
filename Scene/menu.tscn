@@ -135,18 +135,15 @@ Antoine Rosselli
 
 Pierrick Mahe
 
-Guillaume Delboulbes
 
 
 [font_size=25]With the participation of[/font_size] 
 
-Tom Lori 
+Guillaume Delboulbes
 
-Liam Mottet
+Romain Garsiot 
 
-Romain Garsiot (for graphics)
-
-Max Guillot (for the music)
+Max Guillot 
 
 
 [font_size=25]Our sincere thanks to[/font_size]
@@ -156,6 +153,7 @@ Guillaume Cristiani
 Marius Barthelemy 
 
 Alexi Bermond 
+
 
 [font_size=22]for testing the game[/font_size]
 
@@ -257,7 +255,7 @@ offset_left = 8.0
 offset_top = 624.0
 offset_right = 253.0
 offset_bottom = 641.0
-text = "version : 0.1.8D"
+text = "version : 0.1.9D"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0

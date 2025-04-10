@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bdspv350jcjv5" path="res://Scripts/affect_san.gd" id="3_vicni"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f5qfb"]
-size = Vector3(1.13696, 0.47168, 1.20058)
+size = Vector3(1.13696, 0.348633, 1.20058)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kpvhp"]
 radius = 0.895136
@@ -86,7 +86,7 @@ transparency = 1.0
 texture = ExtResource("1_f5qfb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00231934, -0.342768, -0.0120621)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00231934, -0.404292, -0.0120621)
 shape = SubResource("BoxShape3D_f5qfb")
 
 [node name="Area3D" type="Area3D" parent="."]

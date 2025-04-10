@@ -1,0 +1,142 @@
+[gd_scene load_steps=10 format=3 uid="uid://cg3l35e7al6qp"]
+
+[ext_resource type="Shader" uid="uid://b3lvhbwu7lsot" path="res://Shader/background_expe.gdshader" id="1_njtnc"]
+[ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="2_shxjg"]
+[ext_resource type="AudioStream" uid="uid://4u06tpj2hmdp" path="res://Music&Sound/Echexe2.mp3" id="3_k0kvs"]
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="4_q382r"]
+[ext_resource type="Texture2D" uid="uid://diqhrw0q41ydn" path="res://Sprite/exit.png" id="5_brbuj"]
+[ext_resource type="Texture2D" uid="uid://dd8ug7pci12hh" path="res://Sprite/exithover.png" id="6_wic5d"]
+[ext_resource type="Texture2D" uid="uid://del84k3axw4mu" path="res://Sprite/exitdisabled.png" id="7_5xlaq"]
+
+[sub_resource type="GDScript" id="GDScript_cqvc2"]
+script/source = "extends Control
+
+@onready var rich_text_label = $aventure
+@export var expes = \"As you go out into the street, the atmosphere seems tense, you're stressed and you feel pressure. Someone or something may be watching you. You approach the ration pack left behind by the lorry. You pick it up in an ominous silence and pick up the pace to return to your house, which has become a shelter. \"
+@export var expes_result = \"-10 SANITY, +3 FOOD\"
+@export var text_intro = \"[wave][color=yellow]You're ready to face the gas.[/color][/wave]\\n\\n\\n\"
+@export var expe_day:int
+@onready var resultat = $resultat
+@onready var go_home = $GoHome
+
+var stripped_text = \"\"
+var current_index = 0
+var speed = 0.05 
+var timer = 0.0
+var lines = []
+var lines_result = []
+
+var all_char:int
+
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	set_process(false)
+	var new_text: String = expes
+	all_char = (new_text.length() + text_intro.length())
+	rich_text_label.bbcode_enabled = true  
+	var all_text = text_intro + new_text
+	rich_text_label.bbcode_text = all_text
+	stripped_text = all_text.replace(\"[wave]\", \"\").replace(\"[/wave]\", \"\") \\
+							 .replace(\"[color=yellow]\", \"\").replace(\"[/color]\", \"\")
+	rich_text_label.visible_characters = 0  
+	set_process(true)
+
+func _process(delta):
+	timer += delta
+	if timer >= speed and current_index < len(stripped_text):
+		timer = 0.0 
+		current_index += 1
+		rich_text_label.visible_characters = current_index
+	if current_index == len(stripped_text):
+		go_home.disabled = false
+		resultat.bbcode_enabled = true
+		resultat.text = expes_result
+
+func _on_go_home_pressed():
+	if get_tree().get_first_node_in_group(\"colisobject\") != null:
+		var colis = get_tree().get_first_node_in_group(\"colisobject\")
+		colis.queue_free()
+	if expe_day == 0:
+		Tools.spawn_conserve(3)
+		var player = Tools.get_player()
+		player.sanity -= 10
+	get_tree().get_first_node_in_group(\"canvas\").visible = true
+	Tools.paused_game()
+	Tools.expe_status(false)
+	if Data.get_level() == 2:
+		Tools.timer_event_action(true)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	self.queue_free()
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kj2cy"]
+shader = ExtResource("1_njtnc")
+shader_parameter/scale = 5.0
+shader_parameter/speed = 0.3
+shader_parameter/octaves = 7
+shader_parameter/persistence = 0.909
+shader_parameter/color_1 = Color(1, 1, 1, 1)
+shader_parameter/color_2 = Color(0.650129, 0.650128, 0.650128, 1)
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_cqvc2")
+expes = "C'est la folie la team"
+expes_result = "-30 SANITY, +1 SUITCASE"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_kj2cy")
+layout_mode = 0
+offset_top = -8.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="aventure" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 1088.0
+offset_bottom = 464.0
+theme_override_constants/line_separation = 7
+theme_override_fonts/normal_font = ExtResource("2_shxjg")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_k0kvs")
+volume_db = 1.193
+autoplay = true
+attenuation = 2.0
+
+[node name="GoHome" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 576.0
+offset_right = 1144.0
+offset_bottom = 640.0
+theme = ExtResource("4_q382r")
+disabled = true
+texture_normal = ExtResource("5_brbuj")
+texture_pressed = ExtResource("6_wic5d")
+texture_hover = ExtResource("6_wic5d")
+texture_disabled = ExtResource("7_5xlaq")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="resultat" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 488.0
+offset_right = 1088.0
+offset_bottom = 592.0
+theme_override_fonts/normal_font = ExtResource("2_shxjg")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+
+[connection signal="pressed" from="GoHome" to="." method="_on_go_home_pressed"]

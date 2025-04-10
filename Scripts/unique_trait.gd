@@ -78,7 +78,7 @@ func unique(object_name):
 			var emds = get_tree().get_first_node_in_group("eventmanager")
 			emds.eat_a_pills()
 		"pen":
-			Save.set_level(2)
+			Data.set_level(2)
 			Tools.start_transition("DAY 2", load("res://Scene/demo/demo_end.tscn") as PackedScene)
 		"phone":
 			print("phone")
