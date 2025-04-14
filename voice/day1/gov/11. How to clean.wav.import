@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cladqqo8iigbo"
-path="res://.godot/imported/11. How to clean.wav-db6723b845ff9ca67e8a5feb043929ee.sample"
+path="res://.godot/imported/11. How to clean.wav-b95c594e908430095275dcfa789420e6.sample"
 
 [deps]
 
-source_file="res://Voice/day1/gov/11. How to clean.wav"
-dest_files=["res://.godot/imported/11. How to clean.wav-db6723b845ff9ca67e8a5feb043929ee.sample"]
+source_file="res://voice/day1/gov/11. How to clean.wav"
+dest_files=["res://.godot/imported/11. How to clean.wav-b95c594e908430095275dcfa789420e6.sample"]
 
 [params]
 

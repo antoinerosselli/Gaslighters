@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=32 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" uid="uid://ckooh51x0xywe" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Script" uid="uid://8aqmy8q7388i" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
@@ -10,10 +10,12 @@
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
 [ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
 [ext_resource type="Script" uid="uid://chcm2kadulrxu" path="res://Scripts/useUscript.gd" id="10_0r8a8"]
-[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="10_3h1t1"]
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="10_3h1t1"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="11_7q8gp"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="12_x4psa"]
+[ext_resource type="Texture2D" uid="uid://bfl1mcxrxvbxd" path="res://Prefab/Capture d'écran 2025-04-11 114300.png" id="13_l2bej"]
 [ext_resource type="PackedScene" uid="uid://dpi8t3jrme5d" path="res://Extern/Rework Appart/spray/scene.gltf" id="13_wyp7x"]
+[ext_resource type="AudioStream" uid="uid://dnia72tkl7a4k" path="res://Music&Sound/sound/screamer.mp3" id="14_ui8k8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
 
@@ -110,6 +112,7 @@ script = ExtResource("2_pajc1")
 transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 2.002, 0, -0.0246154, -0.1144)
 rotation_edit_mode = 2
 target_position = Vector3(0, 0, -1)
+collision_mask = 3
 debug_shape_custom_color = Color(0.701961, 0.639216, 0, 1)
 debug_shape_thickness = 1
 
@@ -209,6 +212,7 @@ offset_top = 560.0
 offset_right = 1070.0
 offset_bottom = 626.0
 scale = Vector2(0.96, 1)
+mouse_filter = 2
 theme = ExtResource("10_3h1t1")
 theme_override_styles/background = SubResource("StyleBoxFlat_65idd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3ja16")
@@ -251,7 +255,6 @@ theme = ExtResource("10_3h1t1")
 theme_override_styles/panel = SubResource("StyleBoxTexture_x6h77")
 
 [node name="GOVFM" type="Label" parent="CanvasLayer/Control/Inventory/Frequency" groups=["govfm"]]
-visible = false
 layout_mode = 0
 offset_left = 3.0
 offset_top = 53.0
@@ -262,7 +265,6 @@ label_settings = SubResource("LabelSettings_7st8c")
 vertical_alignment = 1
 
 [node name="BELLEFM" type="Label" parent="CanvasLayer/Control/Inventory/Frequency" groups=["bellefm"]]
-visible = false
 layout_mode = 0
 offset_left = 4.0
 offset_top = 85.0
@@ -273,13 +275,22 @@ label_settings = SubResource("LabelSettings_7st8c")
 vertical_alignment = 1
 
 [node name="COMPLOTFM" type="Label" parent="CanvasLayer/Control/Inventory/Frequency" groups=["fanaticfm"]]
-visible = false
 layout_mode = 0
 offset_left = 4.0
 offset_top = 116.0
 offset_right = 223.0
 offset_bottom = 133.0
-text = "COMPLOT FM 66 - 76"
+text = "Galleries FM 66 - 76"
+label_settings = SubResource("LabelSettings_7st8c")
+vertical_alignment = 1
+
+[node name="??FM" type="Label" parent="CanvasLayer/Control/Inventory/Frequency" groups=["enigmfm", "fanaticfm"]]
+visible = false
+offset_left = 4.0
+offset_top = 149.0
+offset_right = 223.0
+offset_bottom = 166.0
+text = "??? FM 88 - 98"
 label_settings = SubResource("LabelSettings_7st8c")
 vertical_alignment = 1
 
@@ -420,20 +431,41 @@ text = "[ E ] Interact
 [ Ctrl ] Crouch"
 label_settings = SubResource("LabelSettings_fy4og")
 
+[node name="ScreamerControl" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="screamer" type="Sprite2D" parent="CanvasLayer/ScreamerControl"]
+position = Vector2(582, 313)
+scale = Vector2(0.984, 0.864)
+texture = ExtResource("13_l2bej")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CanvasLayer/ScreamerControl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+stream = ExtResource("14_ui8k8")
+
 [node name="transition" parent="." instance=ExtResource("11_7q8gp")]
 process_mode = 3
 
 [node name="ColorRect" parent="transition" index="0"]
 material = SubResource("ShaderMaterial_xe2cg")
+offset_left = -19.0
+offset_top = -10.0
+offset_right = 23.0
+offset_bottom = 13.0
 mouse_filter = 2
 
 [node name="Label" parent="transition" index="2"]
-offset_left = 284.0
-offset_top = 222.0
-offset_right = 900.0
-offset_bottom = 407.0
+offset_left = 279.0
+offset_top = 227.0
+offset_right = 895.0
+offset_bottom = 412.0
 autowrap_mode = 3
 
 [connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="CanvasLayer/ScreamerControl/AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]
 
 [editable path="transition"]

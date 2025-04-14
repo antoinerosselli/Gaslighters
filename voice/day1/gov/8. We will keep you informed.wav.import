@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bxd64vec7mdse"
-path="res://.godot/imported/8. We will keep you informed.wav-8001a0bfa7fbb65894b9068fe4de42bb.sample"
+path="res://.godot/imported/8. We will keep you informed.wav-06aea937eb3397280e0e3a5f9b6c1d92.sample"
 
 [deps]
 
-source_file="res://Voice/day1/gov/8. We will keep you informed.wav"
-dest_files=["res://.godot/imported/8. We will keep you informed.wav-8001a0bfa7fbb65894b9068fe4de42bb.sample"]
+source_file="res://voice/day1/gov/8. We will keep you informed.wav"
+dest_files=["res://.godot/imported/8. We will keep you informed.wav-06aea937eb3397280e0e3a5f9b6c1d92.sample"]
 
 [params]
 

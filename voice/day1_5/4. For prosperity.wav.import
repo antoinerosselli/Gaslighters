@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bfy88td03blyr"
-path="res://.godot/imported/4. For prosperity.wav-5aaf703e60f184c2358864264772a64e.sample"
+path="res://.godot/imported/4. For prosperity.wav-e83916cdd4159c1e8011a28ba3b0b7b0.sample"
 
 [deps]
 
-source_file="res://Voice/day1_5/4. For prosperity.wav"
-dest_files=["res://.godot/imported/4. For prosperity.wav-5aaf703e60f184c2358864264772a64e.sample"]
+source_file="res://voice/day1_5/4. For prosperity.wav"
+dest_files=["res://.godot/imported/4. For prosperity.wav-e83916cdd4159c1e8011a28ba3b0b7b0.sample"]
 
 [params]
 

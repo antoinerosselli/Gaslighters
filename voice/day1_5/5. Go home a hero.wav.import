@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://hdk63lfrsehs"
-path="res://.godot/imported/5. Go home a hero.wav-ff262b2b1d00a3b679f564275f9566d3.sample"
+path="res://.godot/imported/5. Go home a hero.wav-be5b3b20e5af62a43a91474ceb7ec8a4.sample"
 
 [deps]
 
-source_file="res://Voice/day1_5/5. Go home a hero.wav"
-dest_files=["res://.godot/imported/5. Go home a hero.wav-ff262b2b1d00a3b679f564275f9566d3.sample"]
+source_file="res://voice/day1_5/5. Go home a hero.wav"
+dest_files=["res://.godot/imported/5. Go home a hero.wav-be5b3b20e5af62a43a91474ceb7ec8a4.sample"]
 
 [params]
 

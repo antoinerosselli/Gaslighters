@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://car3ip0liu41e"
-path="res://.godot/imported/Stay cautious and informed.mp3-d4f0e0a13eb43445a1117fd03d24ee39.mp3str"
+path="res://.godot/imported/Stay cautious and informed.mp3-acab30550d55d7d0ac58d6c34539a1b5.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/belle/Stay cautious and informed.mp3"
-dest_files=["res://.godot/imported/Stay cautious and informed.mp3-d4f0e0a13eb43445a1117fd03d24ee39.mp3str"]
+source_file="res://voice/day1/belle/Stay cautious and informed.mp3"
+dest_files=["res://.godot/imported/Stay cautious and informed.mp3-acab30550d55d7d0ac58d6c34539a1b5.mp3str"]
 
 [params]
 

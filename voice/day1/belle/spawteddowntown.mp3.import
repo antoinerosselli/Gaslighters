@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ddagoprtp1n5t"
-path="res://.godot/imported/spawteddowntown.mp3-452ef3a9c8398ce2685d5c137fcfd09c.mp3str"
+path="res://.godot/imported/spawteddowntown.mp3-dc2d3f0adb5b661d411d45cd9a09fe38.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/belle/spawteddowntown.mp3"
-dest_files=["res://.godot/imported/spawteddowntown.mp3-452ef3a9c8398ce2685d5c137fcfd09c.mp3str"]
+source_file="res://voice/day1/belle/spawteddowntown.mp3"
+dest_files=["res://.godot/imported/spawteddowntown.mp3-dc2d3f0adb5b661d411d45cd9a09fe38.mp3str"]
 
 [params]
 

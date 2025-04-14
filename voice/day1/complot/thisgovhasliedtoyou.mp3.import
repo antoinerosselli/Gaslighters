@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://caq2rso56fj1i"
-path="res://.godot/imported/thisgovhasliedtoyou.mp3-6b6fec1d45730e39baf82787d8d0139e.mp3str"
+path="res://.godot/imported/thisgovhasliedtoyou.mp3-11daeb2991eb5f51ed27bc2c9e4d1ca1.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/thisgovhasliedtoyou.mp3"
-dest_files=["res://.godot/imported/thisgovhasliedtoyou.mp3-6b6fec1d45730e39baf82787d8d0139e.mp3str"]
+source_file="res://voice/day1/complot/thisgovhasliedtoyou.mp3"
+dest_files=["res://.godot/imported/thisgovhasliedtoyou.mp3-11daeb2991eb5f51ed27bc2c9e4d1ca1.mp3str"]
 
 [params]
 

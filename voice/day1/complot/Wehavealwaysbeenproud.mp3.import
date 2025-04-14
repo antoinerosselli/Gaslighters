@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://clp427jcyowsv"
-path="res://.godot/imported/Wehavealwaysbeenproud.mp3-4214ed1470130443f0e7ab4461e6ef0d.mp3str"
+path="res://.godot/imported/Wehavealwaysbeenproud.mp3-cf2c370933835fb08377916aa978ca6e.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/Wehavealwaysbeenproud.mp3"
-dest_files=["res://.godot/imported/Wehavealwaysbeenproud.mp3-4214ed1470130443f0e7ab4461e6ef0d.mp3str"]
+source_file="res://voice/day1/complot/Wehavealwaysbeenproud.mp3"
+dest_files=["res://.godot/imported/Wehavealwaysbeenproud.mp3-cf2c370933835fb08377916aa978ca6e.mp3str"]
 
 [params]
 

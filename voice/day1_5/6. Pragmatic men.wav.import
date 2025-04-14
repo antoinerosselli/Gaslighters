@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b71i6xfaylt6y"
-path="res://.godot/imported/6. Pragmatic men.wav-e9ae0826f34e74d1bc609e906979b5ad.sample"
+path="res://.godot/imported/6. Pragmatic men.wav-461abe9d647ba6d38a21f02a5132b929.sample"
 
 [deps]
 
-source_file="res://Voice/day1_5/6. Pragmatic men.wav"
-dest_files=["res://.godot/imported/6. Pragmatic men.wav-e9ae0826f34e74d1bc609e906979b5ad.sample"]
+source_file="res://voice/day1_5/6. Pragmatic men.wav"
+dest_files=["res://.godot/imported/6. Pragmatic men.wav-461abe9d647ba6d38a21f02a5132b929.sample"]
 
 [params]
 

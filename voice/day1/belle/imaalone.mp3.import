@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d2wpykqt24use"
-path="res://.godot/imported/imaalone.mp3-b6745905729082f9b5c9abe3c650d770.mp3str"
+path="res://.godot/imported/imaalone.mp3-32563ab7903169fc94ccfbc013552436.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/belle/imaalone.mp3"
-dest_files=["res://.godot/imported/imaalone.mp3-b6745905729082f9b5c9abe3c650d770.mp3str"]
+source_file="res://voice/day1/belle/imaalone.mp3"
+dest_files=["res://.godot/imported/imaalone.mp3-32563ab7903169fc94ccfbc013552436.mp3str"]
 
 [params]
 

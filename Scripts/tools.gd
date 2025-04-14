@@ -23,7 +23,6 @@ func get_player():
 	return player
 
 func paused_game():
-	print("POPPOPOPOPOPOPAUSE")
 	get_tree().paused = !get_tree().paused
 	if Tools.get_player() != null:
 		if get_tree().paused == true:
@@ -49,14 +48,12 @@ func go_to_expe():
 	var es_tmp = es.instantiate()
 	get_tree().get_first_node_in_group("canvas").visible = false
 	add_child(es_tmp)	
-	print("go to expe")
 
 func call_pause():
 	if get_tree().get_first_node_in_group("pause") == null:
 		var mp:PackedScene = preload("res://Prefab/ui/pause.tscn")
 		var mp_tmp = mp.instantiate()
 		add_child(mp_tmp)
-		print("pause !!")
 	elif get_tree().get_first_node_in_group("pause") != null :
 		var mp_tmp = get_tree().get_first_node_in_group("pause")
 		mp_tmp.queue_free()
@@ -74,7 +71,6 @@ func call_options():
 func get_color_fd():
 	var lamp_door = get_tree().get_first_node_in_group("lamp_door")
 	if lamp_door.spot_range != 0.00:
-		print(lamp_door.light_color)
 		if lamp_door.light_color == Color(1, 0, 0, 1):
 			return "red"
 		if lamp_door.light_color == Color(0, 0, 1, 1):
@@ -128,6 +124,8 @@ func unlock_fm(what_fm):
 		get_tree().get_first_node_in_group("bellefm").visible = true
 	if what_fm == "fanatic":
 		get_tree().get_first_node_in_group("fanaticfm").visible = true
+	if what_fm == "enigm":
+		get_tree().get_first_node_in_group("enigmfm").visible = true
 
 func spawn_conserve(i):
 	get_tree().get_first_node_in_group("foods").update_conserves(i)
@@ -168,10 +166,17 @@ func start_transition(text,nscene):
 	cl.transition(text, nscene)
 
 func eotd():
-	var alarm =  get_tree().get_first_node_in_group("alarmepills")
-	var pills = get_tree().get_first_node_in_group("pills")
-	alarm.go_bip()
-	pills.spawn()
+	if Data.get_level() == 4:
+		print("end of day 4")
+		var horn = get_tree().get_first_node_in_group("sound_end")
+		var valise = get_tree().get_first_node_in_group("valise")
+		valise.activate = true
+		horn.play()
+	else:
+		var alarm =  get_tree().get_first_node_in_group("alarmepills")
+		var pills = get_tree().get_first_node_in_group("pills")
+		alarm.go_bip()
+		pills.spawn()
 
 func notespawn(note):
 	var player = Tools.get_player()

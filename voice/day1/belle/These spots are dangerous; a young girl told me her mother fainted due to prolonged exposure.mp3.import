@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ba8fgw0pahjc4"
-path="res://.godot/imported/These spots are dangerous; a young girl told me her mother fainted due to prolonged exposure.mp3-e2d339712e12e2218bcae9369547f107.mp3str"
+path="res://.godot/imported/These spots are dangerous; a young girl told me her mother fainted due to prolonged exposure.mp3-1836e29587c7f7615d494439c4b9503f.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/belle/These spots are dangerous; a young girl told me her mother fainted due to prolonged exposure.mp3"
-dest_files=["res://.godot/imported/These spots are dangerous; a young girl told me her mother fainted due to prolonged exposure.mp3-e2d339712e12e2218bcae9369547f107.mp3str"]
+source_file="res://voice/day1/belle/These spots are dangerous; a young girl told me her mother fainted due to prolonged exposure.mp3"
+dest_files=["res://.godot/imported/These spots are dangerous; a young girl told me her mother fainted due to prolonged exposure.mp3-1836e29587c7f7615d494439c4b9503f.mp3str"]
 
 [params]
 

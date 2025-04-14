@@ -1,7 +1,7 @@
 [gd_scene load_steps=129 format=4 uid="uid://qshxlersowrx"]
 
 [ext_resource type="Script" uid="uid://c7kxa6nge1ol4" path="res://Scene/final_days/scene_final.gd" id="1_g6yd0"]
-[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="2_ym01d"]
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="2_ym01d"]
 [ext_resource type="Texture2D" uid="uid://dxrs6a1noama3" path="res://Extern/Rework Appart/Balkan/Prop Textures/Seamless/WP1.png" id="3_4bnjx"]
 [ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="3_dgy1d"]
 [ext_resource type="PackedScene" uid="uid://jq2qjyp07h12" path="res://Prefab/door.tscn" id="7_0th3s"]

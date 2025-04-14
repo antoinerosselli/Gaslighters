@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ckqjmtg5vluh8"
-path="res://.godot/imported/downtown.mp3-972c5fdbaf8a6288793c36ef31abefe9.mp3str"
+path="res://.godot/imported/downtown.mp3-11b7752244c0115e50b105849db34f52.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/gov/downtown.mp3"
-dest_files=["res://.godot/imported/downtown.mp3-972c5fdbaf8a6288793c36ef31abefe9.mp3str"]
+source_file="res://voice/day1/gov/downtown.mp3"
+dest_files=["res://.godot/imported/downtown.mp3-11b7752244c0115e50b105849db34f52.mp3str"]
 
 [params]
 

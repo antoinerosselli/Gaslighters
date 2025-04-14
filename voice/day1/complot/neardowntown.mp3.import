@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://i5exngdsrcv5"
-path="res://.godot/imported/neardowntown.mp3-e0369ba080cb9644af00c301f781494a.mp3str"
+path="res://.godot/imported/neardowntown.mp3-f0f2961233d73409531551dd629b724e.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/neardowntown.mp3"
-dest_files=["res://.godot/imported/neardowntown.mp3-e0369ba080cb9644af00c301f781494a.mp3str"]
+source_file="res://voice/day1/complot/neardowntown.mp3"
+dest_files=["res://.godot/imported/neardowntown.mp3-f0f2961233d73409531551dd629b724e.mp3str"]
 
 [params]
 

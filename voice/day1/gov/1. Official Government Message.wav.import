@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://da60k3qjm1fg1"
-path="res://.godot/imported/1. Official Government Message.wav-4580c8c757af1d0d44162b77d4557226.sample"
+path="res://.godot/imported/1. Official Government Message.wav-60f32ea7f9e7c81219101aa789aa5542.sample"
 
 [deps]
 
-source_file="res://Voice/day1/gov/1. Official Government Message.wav"
-dest_files=["res://.godot/imported/1. Official Government Message.wav-4580c8c757af1d0d44162b77d4557226.sample"]
+source_file="res://voice/day1/gov/1. Official Government Message.wav"
+dest_files=["res://.godot/imported/1. Official Government Message.wav-60f32ea7f9e7c81219101aa789aa5542.sample"]
 
 [params]
 

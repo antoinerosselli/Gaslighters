@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://skohf2u0pqnv" path="res://Scene/final_days/end_cinema.gd" id="1_uum13"]
 [ext_resource type="Texture2D" uid="uid://jsib8v5kcht1" path="res://Extern/Rework Appart/Floors/Grass.png" id="2_tu1vy"]
 [ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="3_rvc8b"]
-[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="4_8m3ge"]
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="4_8m3ge"]
 [ext_resource type="PackedScene" uid="uid://mwbb6ijmkuo4" path="res://Extern/antowaan_3d/source/2 Trees/GermanCar.fbx" id="4_tu1vy"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="5_b0igi"]
 [ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="5_tu1vy"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://saktvxup8cjo"]
 
-[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_sb1jo"]
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_sb1jo"]
 [ext_resource type="Script" uid="uid://dp6l7ry888ujw" path="res://Scripts/Menu.gd" id="3_2v8d6"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="3_alu6o"]
 [ext_resource type="Texture2D" uid="uid://bau0dr758he5h" path="res://Sprite/logoEJ.png" id="3_lbxic"]
@@ -240,6 +240,10 @@ text = "CLOSE"
 
 [node name="ColorRect" parent="transition" index="0"]
 material = SubResource("ShaderMaterial_k52wo")
+offset_left = -8.0
+offset_top = -7.0
+offset_right = 1.0
+offset_bottom = 1.0
 mouse_filter = 2
 
 [node name="Label" parent="transition" index="2"]
@@ -255,7 +259,7 @@ offset_left = 8.0
 offset_top = 624.0
 offset_right = 253.0
 offset_bottom = 641.0
-text = "version : 0.2.1"
+text = "version : 0.2.2"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0

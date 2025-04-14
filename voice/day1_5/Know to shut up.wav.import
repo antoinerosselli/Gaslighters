@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bqrnrisllr8e"
-path="res://.godot/imported/Know to shut up.wav-8675c8230b2a7cfc297438d910ea936f.sample"
+path="res://.godot/imported/Know to shut up.wav-92247a47dc37b7129f78ffb1d72f9053.sample"
 
 [deps]
 
-source_file="res://Voice/day1_5/Know to shut up.wav"
-dest_files=["res://.godot/imported/Know to shut up.wav-8675c8230b2a7cfc297438d910ea936f.sample"]
+source_file="res://voice/day1_5/Know to shut up.wav"
+dest_files=["res://.godot/imported/Know to shut up.wav-92247a47dc37b7129f78ffb1d72f9053.sample"]
 
 [params]
 

@@ -129,6 +129,16 @@ script = ExtResource("1_f86ad")
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_36dop")]
 transform = Transform3D(1, 0, 0, 0, 1.19877, 0, 0, 0, 1, -2.80715, -0.40799, 6.51119)
 
+[node name="Control" parent="CharacterBody3D/CanvasLayer" index="2"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.988
+offset_right = 0.0
+offset_bottom = -0.223999
+
+[node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3" groups=["enigmfm"]]
+layout_mode = 0
+
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_fx68q")
 

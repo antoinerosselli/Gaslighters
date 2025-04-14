@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhot50ba066lf"]
 
-[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_m5eq7"]
-[ext_resource type="Script" uid="uid://bwi7np4htgt6o" path="res://Prefab/popup_sure.gd" id="2_gfym5"]
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_m5eq7"]
+[ext_resource type="Script" uid="uid://bwi7np4htgt6o" path="res://Scripts/popup_sure.gd" id="2_gfym5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gfym5"]
 font_size = 29
@@ -32,8 +32,10 @@ offset_left = 328.0
 offset_top = 232.0
 offset_right = 832.0
 offset_bottom = 361.0
-text = "you're about to go out, it will cost you food and time, are you sure? "
+text = "You're about to go out, are you sure ? "
 label_settings = SubResource("LabelSettings_gfym5")
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="yesbutton" type="Button" parent="."]

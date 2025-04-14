@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dno55qgtig35q"
-path="res://.godot/imported/terriblenews.mp3-0b3408ca2dcf069c8dd6a9a12cf29ed4.mp3str"
+path="res://.godot/imported/terriblenews.mp3-a730dfb7176dd9e557869dbf33de8b85.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/terriblenews.mp3"
-dest_files=["res://.godot/imported/terriblenews.mp3-0b3408ca2dcf069c8dd6a9a12cf29ed4.mp3str"]
+source_file="res://voice/day1/complot/terriblenews.mp3"
+dest_files=["res://.godot/imported/terriblenews.mp3-a730dfb7176dd9e557869dbf33de8b85.mp3str"]
 
 [params]
 

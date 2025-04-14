@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cepnt8lk8yq4o"]
 
-[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="1_4lta0"]
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_4lta0"]
 [ext_resource type="Shader" uid="uid://b3lvhbwu7lsot" path="res://Shader/background_expe.gdshader" id="2_5pe61"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="3_kj2cy"]
 [ext_resource type="AudioStream" uid="uid://4u06tpj2hmdp" path="res://Music&Sound/Echexe2.mp3" id="4_347xl"]

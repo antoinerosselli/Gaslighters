@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bo6liecbyw7ry"
-path="res://.godot/imported/asiftheyanticipated.mp3-6a95283c336f062d86c077f9b614871e.mp3str"
+path="res://.godot/imported/asiftheyanticipated.mp3-433d2d8e526bead0df7ec260f65a90b0.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/asiftheyanticipated.mp3"
-dest_files=["res://.godot/imported/asiftheyanticipated.mp3-6a95283c336f062d86c077f9b614871e.mp3str"]
+source_file="res://voice/day1/complot/asiftheyanticipated.mp3"
+dest_files=["res://.godot/imported/asiftheyanticipated.mp3-433d2d8e526bead0df7ec260f65a90b0.mp3str"]
 
 [params]
 

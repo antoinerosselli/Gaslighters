@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d03ljrcbjvh7g"
-path="res://.godot/imported/SinceRockValley.mp3-2b017f8d410d4f1f7eb98024632a83e3.mp3str"
+path="res://.godot/imported/SinceRockValley.mp3-4c3afbacfad06bc53c9c5ad83b0cd0b4.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/SinceRockValley.mp3"
-dest_files=["res://.godot/imported/SinceRockValley.mp3-2b017f8d410d4f1f7eb98024632a83e3.mp3str"]
+source_file="res://voice/day1/complot/SinceRockValley.mp3"
+dest_files=["res://.godot/imported/SinceRockValley.mp3-4c3afbacfad06bc53c9c5ad83b0cd0b4.mp3str"]
 
 [params]
 

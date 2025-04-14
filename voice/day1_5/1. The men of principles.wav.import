@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c5jansd5vmp0l"
-path="res://.godot/imported/1. The men of principles.wav-1c0526faf9b13ce35be96a9ffd8d6295.sample"
+path="res://.godot/imported/1. The men of principles.wav-348f49827b589fe626a3bc59e74c53e4.sample"
 
 [deps]
 
-source_file="res://Voice/day1_5/1. The men of principles.wav"
-dest_files=["res://.godot/imported/1. The men of principles.wav-1c0526faf9b13ce35be96a9ffd8d6295.sample"]
+source_file="res://voice/day1_5/1. The men of principles.wav"
+dest_files=["res://.godot/imported/1. The men of principles.wav-348f49827b589fe626a3bc59e74c53e4.sample"]
 
 [params]
 

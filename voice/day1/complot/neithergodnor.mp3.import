@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bok2rkn6wuv71"
-path="res://.godot/imported/neithergodnor.mp3-5cfba70f225cd43fada209611db88619.mp3str"
+path="res://.godot/imported/neithergodnor.mp3-7853d76cf7066b50babe05cdf30a6575.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/neithergodnor.mp3"
-dest_files=["res://.godot/imported/neithergodnor.mp3-5cfba70f225cd43fada209611db88619.mp3str"]
+source_file="res://voice/day1/complot/neithergodnor.mp3"
+dest_files=["res://.godot/imported/neithergodnor.mp3-7853d76cf7066b50babe05cdf30a6575.mp3str"]
 
 [params]
 

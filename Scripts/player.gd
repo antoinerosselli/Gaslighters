@@ -13,6 +13,8 @@ extends CharacterBody3D
 @onready var paused:Label = $CanvasLayer/Control/paused
 @onready var color_rect = $CanvasLayer/Control/ColorRect
 @onready var detect_value = $CanvasLayer/eyecontrol/TextureProgressBar
+@onready var screamer_control = $CanvasLayer/ScreamerControl
+@onready var screamer_sound = $CanvasLayer/ScreamerControl/AudioStreamPlayer3D
 
 #inventory
 var on_inventory:bool = false
@@ -148,4 +150,16 @@ func _on_timer_timeout():
 	show_text.text = ""
 
 func detect():
-	detect_value.value += 10
+	detect_value.value += 34
+	if detect_value.value >= 100:
+		screamer_control.visible = true
+		screamer_sound.play()
+		
+func _on_audio_stream_player_3d_finished():
+	screamer_control.visible = false
+	var evman = get_tree().get_first_node_in_group("event_manager")
+	var ani =  get_tree().get_first_node_in_group("animamanager")
+	evman.time_elapsed = 11
+	detect_value.value = 0
+	ani.play("RESET")
+	

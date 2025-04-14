@@ -1,0 +1,160 @@
+[gd_scene load_steps=17 format=3 uid="uid://burmfonrenium"]
+
+[ext_resource type="Script" uid="uid://c7x1krdmm8fej" path="res://Scene/Days/Day4/scene_day_4.gd" id="1_nyh0e"]
+[ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="2_5g634"]
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="3_xvotj"]
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="4_u7eqg"]
+[ext_resource type="Script" uid="uid://ce0skcxppltxr" path="res://Scene/Days/Day4/em_day_4.gd" id="5_5g634"]
+[ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="6_ymfik"]
+[ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="7_vc1tc"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="8_xvotj"]
+[ext_resource type="AudioStream" uid="uid://by8k4wkyqp6xg" path="res://Music&Sound/sound/car-horn-6408.mp3" id="9_u7eqg"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u7eqg"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67yib"]
+resource_local_to_scene = true
+shader = ExtResource("4_u7eqg")
+shader_parameter/baseColor = Color(0, 0, 0, 1)
+shader_parameter/dissolveSlider = 0.0
+shader_parameter/holeScale = 15.0
+shader_parameter/holeDensity = 1.5
+shader_parameter/edgeColor = Color(0.980392, 0.568627, 0.258824, 1)
+shader_parameter/edgeThickness = 0.025
+shader_parameter/edgeGlowIntensity = 1.466
+shader_parameter/enable_dissolve_animation = false
+shader_parameter/animation_speed = 0.6
+
+[sub_resource type="Sky" id="Sky_gxdup"]
+
+[sub_resource type="Environment" id="Environment_1t4ng"]
+background_mode = 2
+sky = SubResource("Sky_gxdup")
+ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
+ambient_light_sky_contribution = 0.51
+ambient_light_energy = 0.35
+ssao_radius = 3.49
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0157
+volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
+volumetric_fog_anisotropy = -0.51
+adjustment_enabled = true
+adjustment_saturation = 1.44
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_aq04m"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_d3oq6"]
+emission = Color(0.281187, 0.281187, 0.281187, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7eqg"]
+size = Vector3(1, 0.160645, 1)
+
+[node name="SceneDay4" type="Node3D"]
+script = ExtResource("1_nyh0e")
+
+[node name="appartement" parent="." instance=ExtResource("2_5g634")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00315857, -1.19209e-07, -0.127772)
+
+[node name="secretdoor" parent="appartement" index="8"]
+transform = Transform3D(0.550753, 0, 0, 0, 1, 0, 0, 0, 1, -3.536, 3.93459, -2.625)
+
+[node name="New_Console_SubViewport#Sprite3D" parent="appartement" index="18"]
+texture = SubResource("ViewportTexture_u7eqg")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_xvotj")]
+transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
+
+[node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3"]
+layout_mode = 0
+
+[node name="Event2" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="1"]
+visible = true
+
+[node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
+material = SubResource("ShaderMaterial_67yib")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1t4ng")
+camera_attributes = SubResource("CameraAttributesPractical_aq04m")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
+size = Vector3(24.1484, 6.75517, 2)
+material = SubResource("FogMaterial_d3oq6")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00224, -0.155392, 11.3124)
+size = Vector3(20.3026, 7.08786, 2.43262)
+material = SubResource("FogMaterial_d3oq6")
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1887, -0.155392, -2.2077)
+size = Vector3(13.9297, 7.08786, 2)
+material = SubResource("FogMaterial_d3oq6")
+
+[node name="managers" type="Node" parent="." groups=["event_manager"]]
+script = ExtResource("5_5g634")
+
+[node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
+
+[node name="depot_spawner" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0860391, -1.5983, 8.4577)
+activation = false
+
+[node name="depot_spawner2" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.832851, -1.5983, -6.62545)
+activation = false
+
+[node name="depot_spawner3" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8343, -1.5983, -6.83925)
+activation = false
+
+[node name="depot_spawner4" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.272, -1.5983, 0.690172)
+activation = false
+
+[node name="depot_spawner5" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5527, -1.5983, 7.79251)
+activation = false
+
+[node name="depot_spawner6" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58043, -1.5983, 0.445554)
+activation = false
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("7_vc1tc")]
+transform = Transform3D(-0.0334399, -0.0146691, -0.215633, 1.59231e-05, -0.330956, 0.00973293, -0.24556, 0.00197617, 0.0293652, 1.2653, -0.485574, 5.92725)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["sound_end"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6504, -7.73624, 43.4342)
+stream = ExtResource("9_u7eqg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["valise"]]
+script = ExtResource("8_xvotj")
+item_name = "valise"
+activate = false
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22262, -0.419678, 5.93256)
+shape = SubResource("BoxShape3D_u7eqg")
+
+[connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
+
+[editable path="appartement"]
+[editable path="appartement/Lamp1"]
+[editable path="appartement/frontdoor"]
+[editable path="appartement/Lamp3"]
+[editable path="appartement/RadioObj"]
+[editable path="appartement/RadioObj/Radiooo"]
+[editable path="appartement/Interrupteur4"]
+[editable path="appartement/Deco/Sketchfab_Scene2"]
+[editable path="appartement/Deco/Sketchfab_Scene3"]
+[editable path="appartement/Deco/Sketchfab_Scene6"]
+[editable path="appartement/Deco/Sketchfab_Scene7"]
+[editable path="appartement/New_Console"]
+[editable path="appartement/lavedepot"]
+[editable path="CharacterBody3D"]
+[editable path="CharacterBody3D/transition"]

@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var item_name:String
+@export var activate:bool = true
 
 @export_category("Food ?")
 @export var food:bool
@@ -41,38 +42,39 @@ func _process(delta):
 		is_on = false
 
 func interact():
-	if is_text == true:
-		var player = Tools.get_player()	
-		player.dialogues = texts
-	if depot == true and Tools.get_player().ptich.visible == true:
-		Tools.sound_now(self,load("res://Music&Sound/sound/spray-36842.mp3") as AudioStream)
-		queue_free()
-	if door == true:
-		Tools.sound_now(self, load("res://Music&Sound/sound/door_sound.mp3") as AudioStream)
-		transform.basis = Basis(Vector3(0, 1, 0), rotation_amount) * transform.basis
-		rotation_amount = -(rotation_amount)
-	if is_an_interruptor == true:
-		Tools.sound_now(self, load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
-		is_on = !is_on
-		if UniqueTrait.elec == true :
-			if is_on == true:
-				var ligth = lamp.get_node("OmniLight3D")
-				ligth.omni_range = custom_range
-			elif  is_on == false:
-				var ligth = lamp.get_node("OmniLight3D")
-				ligth.omni_range = 0.0
-	if is_note == true:
-		Tools.sound_now(self, load("res://Music&Sound/sound/paperopen.mp3") as AudioStreamMP3)
-		Tools.notespawn(note)
-	if food == true:
-		var player = Tools.get_player()
-		if player.sanity == 100:
-			return
-		player.sanity += 10
-		if player.sanity > 100:
-			player.sanity = 100
-		Tools.sound_now(self,preload("res://Music&Sound/eat.mp3") as AudioStreamMP3)
-	if script_trait == true:
-		UniqueTrait.unique(item_name)
-	if pickable == true:
-		self.queue_free()
+	if activate == true:
+		if is_text == true:
+			var player = Tools.get_player()	
+			player.dialogues = texts
+		if depot == true and Tools.get_player().ptich.visible == true:
+			Tools.sound_now(self,load("res://Music&Sound/sound/spray-36842.mp3") as AudioStream)
+			queue_free()
+		if door == true:
+			Tools.sound_now(self, load("res://Music&Sound/sound/door_sound.mp3") as AudioStream)
+			transform.basis = Basis(Vector3(0, 1, 0), rotation_amount) * transform.basis
+			rotation_amount = -(rotation_amount)
+		if is_an_interruptor == true:
+			Tools.sound_now(self, load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
+			is_on = !is_on
+			if UniqueTrait.elec == true :
+				if is_on == true:
+					var ligth = lamp.get_node("OmniLight3D")
+					ligth.omni_range = custom_range
+				elif  is_on == false:
+					var ligth = lamp.get_node("OmniLight3D")
+					ligth.omni_range = 0.0
+		if is_note == true:
+			Tools.sound_now(self, load("res://Music&Sound/sound/paperopen.mp3") as AudioStreamMP3)
+			Tools.notespawn(note)
+		if food == true:
+			var player = Tools.get_player()
+			if player.sanity == 100:
+				return
+			player.sanity += 10
+			if player.sanity > 100:
+				player.sanity = 100
+			Tools.sound_now(self,preload("res://Music&Sound/eat.mp3") as AudioStreamMP3)
+		if script_trait == true:
+			UniqueTrait.unique(item_name)
+		if pickable == true:
+			self.queue_free()

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://xytgdwiy4cwy"
-path="res://.godot/imported/2. The mist.wav-2d0707d713256fa8608bcf3ed936f8e4.sample"
+path="res://.godot/imported/2. The mist.wav-2d2973fa3fb70923182e610290ba4413.sample"
 
 [deps]
 
-source_file="res://Voice/day1/gov/2. The mist.wav"
-dest_files=["res://.godot/imported/2. The mist.wav-2d0707d713256fa8608bcf3ed936f8e4.sample"]
+source_file="res://voice/day1/gov/2. The mist.wav"
+dest_files=["res://.godot/imported/2. The mist.wav-2d2973fa3fb70923182e610290ba4413.sample"]
 
 [params]
 

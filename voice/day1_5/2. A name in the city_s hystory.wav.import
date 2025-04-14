@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bhlst05dvybug"
-path="res://.godot/imported/2. A name in the city_s hystory.wav-c30ba9aceeec0ac67cd8ed32013c2aeb.sample"
+path="res://.godot/imported/2. A name in the city_s hystory.wav-74eabaead147666d22199ea9995ea059.sample"
 
 [deps]
 
-source_file="res://Voice/day1_5/2. A name in the city_s hystory.wav"
-dest_files=["res://.godot/imported/2. A name in the city_s hystory.wav-c30ba9aceeec0ac67cd8ed32013c2aeb.sample"]
+source_file="res://voice/day1_5/2. A name in the city_s hystory.wav"
+dest_files=["res://.godot/imported/2. A name in the city_s hystory.wav-74eabaead147666d22199ea9995ea059.sample"]
 
 [params]
 

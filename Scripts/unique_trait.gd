@@ -7,6 +7,8 @@ func unique(object_name):
 		"codesr":
 			var sdoor = get_tree().get_first_node_in_group("secretdoor")
 			sdoor.get_node("AnimationPlayer").play("open")
+			var codesr = get_tree().get_first_node_in_group("codesr")
+			codesr.activate = false
 		"front_door":
 			var front_door = get_tree().get_first_node_in_group("frontdoor")
 			var door_camera = front_door.get_node("Camera3D")
@@ -72,17 +74,20 @@ func unique(object_name):
 			print("TAKE FOOD")
 		"pills":
 			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/heavy_swallowwav-14682.mp3") as AudioStreamMP3)
-			Tools.start_transition("2 YEARS AGO", load("res://Scene/Days/Day 1.5/scene_day_1_5.tscn") as PackedScene)
+			if Data.get_level() == 1:
+				Tools.start_transition("2 YEARS AGO", load("res://Scene/Days/Day 1.5/scene_day_1_5.tscn") as PackedScene)
+			if Data.get_level() == 2:
+				Tools.start_transition("2 MONTHS AGO", load("res://Scene/Days/Day 2.5/scene_day_2_5.tscn") as PackedScene)
 		"fakepills":
 			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/heavy_swallowwav-14682.mp3") as AudioStreamMP3)
 			var emds = get_tree().get_first_node_in_group("eventmanager")
 			emds.eat_a_pills()
 		"pen":
 			Data.set_level(2)
-			Tools.start_transition("DAY 2", load("res://Scene/demo/demo_end.tscn") as PackedScene)
+			Tools.start_transition("DAY 2", load("res://Scene/Days/Day2/scene_day_2.tscn") as PackedScene)
 		"phone":
 			print("phone")
-			Tools.start_transition("1 YEARS AGO", load("res://Scene/Days/Day 3.5/scene_day_3_5.tscn") as PackedScene)
+			Tools.start_transition("DAY 4", load("res://Scene/Days/Day4/scene_day_4.tscn") as PackedScene)
 		"screencamera":
 			print("use screen")
 			var screencam = get_tree().get_first_node_in_group("screencam")
@@ -107,3 +112,5 @@ func unique(object_name):
 				Tools.get_player().popup_sure.visible = true
 		"fakedoorchamber":
 			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/door_sound.mp3") as AudioStreamMP3)
+		"valise": 
+			Tools.start_transition("", load("res://Scene/final_days/scene_final.tscn") as PackedScene)

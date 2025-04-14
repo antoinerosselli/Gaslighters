@@ -3,7 +3,7 @@
 [ext_resource type="Shader" uid="uid://b3lvhbwu7lsot" path="res://Shader/background_expe.gdshader" id="1_njtnc"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="2_shxjg"]
 [ext_resource type="AudioStream" uid="uid://4u06tpj2hmdp" path="res://Music&Sound/Echexe2.mp3" id="3_k0kvs"]
-[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://Theme/uimenu.tres" id="4_q382r"]
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="4_q382r"]
 [ext_resource type="Texture2D" uid="uid://diqhrw0q41ydn" path="res://Sprite/exit.png" id="5_brbuj"]
 [ext_resource type="Texture2D" uid="uid://dd8ug7pci12hh" path="res://Sprite/exithover.png" id="6_wic5d"]
 [ext_resource type="Texture2D" uid="uid://del84k3axw4mu" path="res://Sprite/exitdisabled.png" id="7_5xlaq"]

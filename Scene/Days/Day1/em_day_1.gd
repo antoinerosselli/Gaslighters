@@ -24,12 +24,12 @@ var time_elapsed = 0
 
 func _ready():
 	depots = get_tree().get_nodes_in_group("depot")
-	activate_depots()
 
 func _process(_delta):
 	if ones == false:
 		if Radio.getValue() > 54 and Radio.getValue() < 64 :
 			Tools.start_the_day()
+			activate_depots()
 			ones = true
 
 func activate_depots():
@@ -125,12 +125,12 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/gov/8. We will keep you informed.wav", "We will keep you informed as the situation evolves.", 5, gouv_color,"gouv", 0)
 	if time_elapsed >= 100 and time_elapsed <= 130:
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message.", 5, gouv_color, "gouv", 6)
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message !", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://Voice/day1/gov/9. Misinformation.wav", "Unofficial sources are spreading incorrect information. We urge you to remain vigilant and follow only government communications.", 5, gouv_color,"gouv", 0)
 	if time_elapsed >= 160 and time_elapsed <= 230:
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message." , 5, gouv_color,"gouv", 6)
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message" , 5, gouv_color,"gouv", 6)
 		if radio_value > 54 and radio_value < 64  and time_elapsed > gouv_time:
 			play_radio_message("res://Voice/day1/gov/10. The mist deposits.wav", "Deposits of mist, visible as white spots, may appear in your homes. It is imperative to clean them immediately." , 5, gouv_color,"gouv", 10)
 			Tools.event_journal_ok(3,false)
@@ -138,9 +138,9 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/gov/11. How to clean.wav", "For residents of the new miners' quarter, an effective cleaner is provided in your bathroom." , 5, gouv_color,"gouv", 0)
 	if time_elapsed >= 230 and time_elapsed <= 330:
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message.", 5, gouv_color,"gouv", 6)
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message .", 5, gouv_color,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://Voice/day1/gov/evacplan.mp3", "The evacuation plan is in place, Rock Valley is divided into five zones, Each day, teams are sent to secure the residents of the zones in the following order: ", 5, gouv_color, "gouv", 6)
+			play_radio_message("res://Voice/day1/gov/evacplan.mp3", "The evacuation plan is in place, Rock Valley is divided into five zones, Each day, teams are sent to secure the residents of the zones in the following order: ", 5, gouv_color, "gouv", 15)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://Voice/day1/gov/downtown.mp3", "Downtown", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
@@ -175,7 +175,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/belle/spawteddowntown.mp3", "They were last spotted downtown.",5, belle_color, "belle", 0)
 	if time_elapsed >= 200 and time_elapsed <= 240:
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://Voice/day1/belle/thisisbelle.mp3", "This is Belle,",5, belle_color, "belle", 6)
+			play_radio_message("res://Voice/day1/belle/thisisbelle.mp3", "This is Belle.",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
 			play_radio_message("res://Voice/day1/belle/whitespots.mp3", " White spots have started appearing here in the studio. I used ROCKCLEAN's EVERSPRAY and they disappeared.",5, belle_color, "belle", 10)
 			Tools.event_journal_ok(3, false)
@@ -183,7 +183,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/belle/donothesitate.mp3", "Do not hesitate to do the same if you see these marks in your home.",5, belle_color, "belle", 0)
 	if time_elapsed >= 250 and time_elapsed <= 300:
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://Voice/day1/belle/thisisbelle.mp3", "This is Belle,",5, belle_color, "belle", 6)
+			play_radio_message("res://Voice/day1/belle/thisisbelle.mp3", "This is Belle ! ",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
 			play_radio_message("res://Voice/day1/belle/Oursources.mp3", "Our sources in the new miners' quarter report that each apartment is equipped with a cleaner.",5, belle_color, "belle", 8)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
@@ -191,7 +191,7 @@ func check_radio_conditions():
 			Tools.event_journal_ok(3, false)
 	if time_elapsed >= 320 and time_elapsed <= 360:
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://Voice/day1/belle/thisisbelle.mp3", "This is Belle,",5, belle_color, "belle", 6)
+			play_radio_message("res://Voice/day1/belle/thisisbelle.mp3", "This is Belle ,",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
 			play_radio_message("res://Voice/day1/belle/This enigmatic group stopped in a church before heading to the new miners quarter.mp3", "This enigmatic group stopped in a church before heading to the new miners' quarter.",5, belle_color, "belle", 6)
 			Tools.event_journal_ok(1, false)
@@ -214,7 +214,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/complot/Donotbefooled.mp3","Do not be fooled by their lies.",5, Fanatic_color, "fanatic", 0)
 	if time_elapsed >= 110 and time_elapsed <= 190:
 		if radio_value > 66 and radio_value < 76 :
-			play_radio_message("res://Voice/day1/complot/myfriend.mp3","My friends,",5, Fanatic_color, "fanatic", 6)
+			play_radio_message("res://Voice/day1/complot/myfriend.mp3","My friends !",5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/complot/Isntitsuspicious.mp3","Isn't it suspicious that the new government housing was ready to handle this crisis?",5, Fanatic_color, "fanatic", 8)
 		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
@@ -223,7 +223,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/complot/Wehavealwaysbeenproud.mp3","We have always been proud of our independence. Look at how they treat us now!",5, Fanatic_color, "fanatic", 0)
 	if time_elapsed >= 200 and time_elapsed <= 260:
 		if radio_value > 66 and radio_value < 76 :
-			play_radio_message("res://Voice/day1/complot/myfriend.mp3","My friends,",5, Fanatic_color, "fanatic", 4)
+			play_radio_message("res://Voice/day1/complot/myfriend.mp3","My friends ,",5, Fanatic_color, "fanatic", 4)
 		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/complot/terriblenews.mp3","I have terrible news.",5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
@@ -234,7 +234,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/complot/thetruefaceofthegouv.mp3","This is the true face of this government.",5, Fanatic_color, "fanatic", 0)
 	if time_elapsed >= 350 and time_elapsed <= 400:
 		if radio_value > 66 and radio_value < 76 :
-			play_radio_message("res://Voice/day1/complot/myfriend.mp3","My friends,",5, Fanatic_color, "fanatic", 4)
+			play_radio_message("res://Voice/day1/complot/myfriend.mp3","My friends",5, Fanatic_color, "fanatic", 4)
 		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/complot/neithergodnor.mp3","Neither God nor the government will save us from this scourge.",5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76  and time_elapsed > Fanatic_time:

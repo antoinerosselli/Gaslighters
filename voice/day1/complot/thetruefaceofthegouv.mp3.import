@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dha24opgmp1ll"
-path="res://.godot/imported/thetruefaceofthegouv.mp3-cd69ae7950e257ba4ac883862384d660.mp3str"
+path="res://.godot/imported/thetruefaceofthegouv.mp3-2a65bab9816a55f9ba196275c890b483.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/thetruefaceofthegouv.mp3"
-dest_files=["res://.godot/imported/thetruefaceofthegouv.mp3-cd69ae7950e257ba4ac883862384d660.mp3str"]
+source_file="res://voice/day1/complot/thetruefaceofthegouv.mp3"
+dest_files=["res://.godot/imported/thetruefaceofthegouv.mp3-2a65bab9816a55f9ba196275c890b483.mp3str"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cg3bc3v82fnt8"
-path="res://.godot/imported/Donotbefooled.mp3-0edc9c29ccff991bb3c63a7204de663c.mp3str"
+path="res://.godot/imported/Donotbefooled.mp3-ffabed06ead0171632b8ac2fddb532bf.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/Donotbefooled.mp3"
-dest_files=["res://.godot/imported/Donotbefooled.mp3-0edc9c29ccff991bb3c63a7204de663c.mp3str"]
+source_file="res://voice/day1/complot/Donotbefooled.mp3"
+dest_files=["res://.godot/imported/Donotbefooled.mp3-ffabed06ead0171632b8ac2fddb532bf.mp3str"]
 
 [params]
 

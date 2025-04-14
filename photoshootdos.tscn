@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceofarlgd5wqv"]
+
+[ext_resource type="PackedScene" uid="uid://c0gjlcrjiigw3" path="res://Characters/guys/guy_cagoule.tscn" id="1_is88q"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="guy_cagoule" parent="." instance=ExtResource("1_is88q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.893562, 0, -1.17794)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.999954, 0, 0.00959914, 0, 1, 0, -0.00959914, 0, -0.999954, -0.923858, 0.0305417, -2.12821)

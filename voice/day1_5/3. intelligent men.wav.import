@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cgcqvth3x1p34"
-path="res://.godot/imported/3. intelligent men.wav-67f3664a9224f154cfafcbd943f4ea2f.sample"
+path="res://.godot/imported/3. intelligent men.wav-bc70710d7df3f4e866865c93eb2ff28c.sample"
 
 [deps]
 
-source_file="res://Voice/day1_5/3. intelligent men.wav"
-dest_files=["res://.godot/imported/3. intelligent men.wav-67f3664a9224f154cfafcbd943f4ea2f.sample"]
+source_file="res://voice/day1_5/3. intelligent men.wav"
+dest_files=["res://.godot/imported/3. intelligent men.wav-bc70710d7df3f4e866865c93eb2ff28c.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://nh7qncibodko"
-path="res://.godot/imported/roadquarter.mp3-08a7e6fd6aef47726318fb8df46cc4be.mp3str"
+path="res://.godot/imported/roadquarter.mp3-bed69d3ee2d0d97b80791945b4c74a69.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/gov/roadquarter.mp3"
-dest_files=["res://.godot/imported/roadquarter.mp3-08a7e6fd6aef47726318fb8df46cc4be.mp3str"]
+source_file="res://voice/day1/gov/roadquarter.mp3"
+dest_files=["res://.godot/imported/roadquarter.mp3-bed69d3ee2d0d97b80791945b4c74a69.mp3str"]
 
 [params]
 

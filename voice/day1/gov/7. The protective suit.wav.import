@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bw475dqbp5qf5"
-path="res://.godot/imported/7. The protective suit.wav-e6143233c53c05693fbad278ad1965d2.sample"
+path="res://.godot/imported/7. The protective suit.wav-97abb3b4356ab084450a8078f9ad5545.sample"
 
 [deps]
 
-source_file="res://Voice/day1/gov/7. The protective suit.wav"
-dest_files=["res://.godot/imported/7. The protective suit.wav-e6143233c53c05693fbad278ad1965d2.sample"]
+source_file="res://voice/day1/gov/7. The protective suit.wav"
+dest_files=["res://.godot/imported/7. The protective suit.wav-97abb3b4356ab084450a8078f9ad5545.sample"]
 
 [params]
 

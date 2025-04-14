@@ -1,12 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://dqweg357g3y3f"]
 
-[ext_resource type="Script" uid="uid://ciaot05myvu11" path="res://Scene/Days/Day 4_5/scene_day_4_5.gd" id="1_fy7iv"]
+[ext_resource type="Script" uid="uid://ciaot05myvu11" path="res://Scene/Days/Day 3_5/scene_day_3_5.gd" id="1_fy7iv"]
 [ext_resource type="Texture2D" uid="uid://cdcr1dvyfigu" path="res://Extern/Abandoned_House/Abandoned_House_road.jpg" id="1_vk00q"]
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="2_jcti1"]
 [ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="3_jcti1"]
 [ext_resource type="PackedScene" uid="uid://mwbb6ijmkuo4" path="res://Extern/antowaan_3d/source/2 Trees/GermanCar.fbx" id="4_y7510"]
 [ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="5_sj1gt"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="6_3h2jq"]
+
 
 [sub_resource type="Environment" id="Environment_y7510"]
 background_energy_multiplier = 0.0

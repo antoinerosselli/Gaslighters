@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dc8qenhqr4exb"
-path="res://.godot/imported/oldminersquarter.mp3-5dee1e8ab2d920c9a6ffb297e9b0880b.mp3str"
+path="res://.godot/imported/oldminersquarter.mp3-1368f9d51669ebf592c926b1322d380a.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/gov/oldminersquarter.mp3"
-dest_files=["res://.godot/imported/oldminersquarter.mp3-5dee1e8ab2d920c9a6ffb297e9b0880b.mp3str"]
+source_file="res://voice/day1/gov/oldminersquarter.mp3"
+dest_files=["res://.godot/imported/oldminersquarter.mp3-1368f9d51669ebf592c926b1322d380a.mp3str"]
 
 [params]
 

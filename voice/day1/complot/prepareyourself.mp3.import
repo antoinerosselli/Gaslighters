@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bqbv7veykxyxw"
-path="res://.godot/imported/prepareyourself.mp3-48b753b231233e97eb9f4811cd7aaeff.mp3str"
+path="res://.godot/imported/prepareyourself.mp3-55f24180c8ae437421f194649a5e95b6.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/complot/prepareyourself.mp3"
-dest_files=["res://.godot/imported/prepareyourself.mp3-48b753b231233e97eb9f4811cd7aaeff.mp3str"]
+source_file="res://voice/day1/complot/prepareyourself.mp3"
+dest_files=["res://.godot/imported/prepareyourself.mp3-55f24180c8ae437421f194649a5e95b6.mp3str"]
 
 [params]
 

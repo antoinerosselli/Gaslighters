@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dhyyjdetsoqkb"
-path="res://.godot/imported/whitespots.mp3-30f553bae3e4134eca55ab58de1e75dc.mp3str"
+path="res://.godot/imported/whitespots.mp3-a6a2161ad7bdb7ca7e990b9f2eaad584.mp3str"
 
 [deps]
 
-source_file="res://Voice/day1/belle/whitespots.mp3"
-dest_files=["res://.godot/imported/whitespots.mp3-30f553bae3e4134eca55ab58de1e75dc.mp3str"]
+source_file="res://voice/day1/belle/whitespots.mp3"
+dest_files=["res://.godot/imported/whitespots.mp3-a6a2161ad7bdb7ca7e990b9f2eaad584.mp3str"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bk4o7s73xpylg"
-path="res://.godot/imported/5. The food rations.wav-ae8f412e0812cfabaf6d6ee514840f6f.sample"
+path="res://.godot/imported/5. The food rations.wav-6aef03740fdc17b2d2edf8bf515f85c3.sample"
 
 [deps]
 
-source_file="res://Voice/day1/gov/5. The food rations.wav"
-dest_files=["res://.godot/imported/5. The food rations.wav-ae8f412e0812cfabaf6d6ee514840f6f.sample"]
+source_file="res://voice/day1/gov/5. The food rations.wav"
+dest_files=["res://.godot/imported/5. The food rations.wav-6aef03740fdc17b2d2edf8bf515f85c3.sample"]
 
 [params]
 
