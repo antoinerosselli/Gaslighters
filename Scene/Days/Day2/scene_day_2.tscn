@@ -624,8 +624,14 @@ transform = Transform3D(0.550753, 0, 0, 0, 1, 0, 0, 0, 1, -3.536, 3.94796, -2.62
 [node name="New_Console_SubViewport#Sprite3D" parent="appartement" index="18"]
 texture = SubResource("ViewportTexture_b8cxq")
 
+[node name="OmniLight3D" parent="appartement/Lampadaires/MeshInstance3D82" index="1"]
+light_energy = 0.0
+
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_gfllc")]
 transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
+
+[node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
+visible = true
 
 [node name="GOVFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="0"]
 visible = false
@@ -753,6 +759,7 @@ omni_range = 15.0
 [editable path="appartement/RadioObj"]
 [editable path="appartement/RadioObj/Radiooo"]
 [editable path="appartement/Interrupteur4"]
+[editable path="appartement/Lampadaires/MeshInstance3D82"]
 [editable path="appartement/Deco/Sketchfab_Scene2"]
 [editable path="appartement/Deco/Sketchfab_Scene3"]
 [editable path="appartement/Deco/Sketchfab_Scene6"]

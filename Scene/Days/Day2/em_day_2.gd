@@ -33,12 +33,12 @@ func _process(_delta):
 	if ones == false:
 		if Radio.getValue() > 88 and Radio.getValue() < 98 :
 			play_radio_message("res://voice/day2/special_voice/voice_changer.mp3", "Rczij ocz gdvzo wgzzo, ocz dmdi ned vaapomn, ozij tp rdffvmdsj oz nvodmo ja ocz gziny wzgjr", 5, Fanatic_color, "enigm", 10)
+			Tools.start_the_day()
 	if ones == false and Tools.get_color_fd() == "red":
 		print("start the day")
-		Tools.start_the_day()
 		activate_depots()
 		ones = true
-	if time_elapsed == 12 and UniqueTrait.elec == false:
+	if time_elapsed == 220 and UniqueTrait.elec == false:
 		Tools.timer_event_action(true)
 		time_elapsed += 1
 
@@ -57,19 +57,19 @@ func _on_timer_timeout():
 	check_radio_conditions()
 
 func check_event_conditions():
-	if time_elapsed == 10:
+	if Tools.get_color_fd() == "red":
 		Tools.expe_status(true)
 		Tools.timer_event_action(false)
-	if time_elapsed == 12:
+	if time_elapsed == 225:
 		var suit = get_tree().get_first_node_in_group("suitcase")
 		suit.visible = true
 		Tools.door_letter()
 		if UniqueTrait.elec == true:
 			Tools.timer_event_action(false)
-	if time_elapsed == 20:
+	if time_elapsed == 233:
 		print("REDEVENT")
 		animation_player.play("REDEVENT")
-	if time_elapsed == 450:
+	if time_elapsed == 500:
 		Tools.eotd()
 
 #RADIO
@@ -102,3 +102,75 @@ func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
 
 func check_radio_conditions():
 	var radio_value = Radio.getFrequency()
+	
+	#gouv radio ==>
+	if time_elapsed >= 10 and time_elapsed <= 40:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "The mist has intensified overnight.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "For your safety, avoid opening any windows or doors.", 5, gouv_color,"gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "A curfew is now in effect. Movement is strictly prohibited without prior authorization", 5, gouv_color, "gouv", 0)
+	if time_elapsed >= 60 and time_elapsed <= 100:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message !", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Evacuation teams are continuing their mission.", 5, gouv_color,"gouv", 0)
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Residents of the Old Miners’ Quarter will be secured today.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Prepare your personal belongings and remain close to your radio.", 5, gouv_color,"gouv", 0)
+	if time_elapsed >= 140 and time_elapsed <= 180:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message ,", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Some of them may have escaped.", 5, gouv_color,"gouv", 0)
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", " If you have any information regarding their possible whereabouts, please contact the appropriate authorities.", 5, gouv_color, "gouv", 0)
+	if time_elapsed >= 200 and time_elapsed <= 240:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message !", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Our rationing truck has encountered a technical issue.", 5, gouv_color,"gouv", 0)
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Deliveries will be suspended in certain districts over the coming days.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Rest assured that the water services teams are working daily to ensure no one is left without access to water.", 5, gouv_color,"gouv", 0)
+
+	#belle radio ==>
+	if time_elapsed >= 10 and time_elapsed <= 40:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "The mist has intensified overnight.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "For your safety, avoid opening any windows or doors.", 5, gouv_color,"gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "A curfew is now in effect. Movement is strictly prohibited without prior authorization", 5, gouv_color, "gouv", 0)
+	if time_elapsed >= 60 and time_elapsed <= 100:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message !", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Evacuation teams are continuing their mission.", 5, gouv_color,"gouv", 0)
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Residents of the Old Miners’ Quarter will be secured today.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Prepare your personal belongings and remain close to your radio.", 5, gouv_color,"gouv", 0)
+	if time_elapsed >= 140 and time_elapsed <= 180:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message ,", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Some of them may have escaped.", 5, gouv_color,"gouv", 0)
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", " If you have any information regarding their possible whereabouts, please contact the appropriate authorities.", 5, gouv_color, "gouv", 0)
+	if time_elapsed >= 200 and time_elapsed <= 240:
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message !", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Our rationing truck has encountered a technical issue.", 5, gouv_color,"gouv", 0)
+		if radio_value > 54 and radio_value < 64 :
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Deliveries will be suspended in certain districts over the coming days.", 5, gouv_color, "gouv", 6)
+		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Rest assured that the water services teams are working daily to ensure no one is left without access to water.", 5, gouv_color,"gouv", 0)
