@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=29 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="Script" uid="uid://b4v2q4bytqy57" path="res://Scene/Days/Day1/scene_day_1.gd" id="1_f86ad"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
@@ -26,6 +26,9 @@ shader_parameter/edgeThickness = 0.025
 shader_parameter/edgeGlowIntensity = 1.466
 shader_parameter/enable_dissolve_animation = false
 shader_parameter/animation_speed = 0.6
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_17coq"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="Gradient" id="Gradient_f86ad"]
 offsets = PackedFloat32Array(0.0263158, 0.747368, 0.947368, 1)
@@ -136,13 +139,19 @@ anchor_bottom = 0.988
 offset_right = 0.0
 offset_bottom = -0.223999
 
-[node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3" groups=["enigmfm"]]
-layout_mode = 0
+[node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 219.0
+offset_bottom = 23.0
 
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_fx68q")
 
 [node name="Node3D" parent="." instance=ExtResource("1_jb5ec")]
+
+[node name="New_Console_SubViewport#Sprite3D" parent="Node3D" index="18"]
+texture = SubResource("ViewportTexture_17coq")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_paq7g")
@@ -272,6 +281,19 @@ shape = SubResource("BoxShape3D_j32o0")
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/transition"]
+[editable path="Node3D"]
+[editable path="Node3D/Lamp1"]
+[editable path="Node3D/frontdoor"]
+[editable path="Node3D/Lamp3"]
+[editable path="Node3D/RadioObj"]
+[editable path="Node3D/RadioObj/Radiooo"]
+[editable path="Node3D/Interrupteur4"]
+[editable path="Node3D/Deco/Sketchfab_Scene2"]
+[editable path="Node3D/Deco/Sketchfab_Scene3"]
+[editable path="Node3D/Deco/Sketchfab_Scene6"]
+[editable path="Node3D/Deco/Sketchfab_Scene7"]
+[editable path="Node3D/New_Console"]
+[editable path="Node3D/lavedepot"]
 [editable path="one"]
 [editable path="two"]
 [editable path="tres"]

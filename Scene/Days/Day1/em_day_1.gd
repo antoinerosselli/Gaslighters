@@ -88,7 +88,7 @@ func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
 
 func check_radio_conditions():
 	var radio_value = Radio.getValue()
-	
+	print("radio value : ", radio_value)
 	##MISSED 
 	if time_elapsed == 31:
 		Tools.event_journal_ok(0,true)

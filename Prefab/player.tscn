@@ -286,6 +286,7 @@ vertical_alignment = 1
 
 [node name="??FM" type="Label" parent="CanvasLayer/Control/Inventory/Frequency" groups=["enigmfm", "fanaticfm"]]
 visible = false
+layout_mode = 0
 offset_left = 4.0
 offset_top = 149.0
 offset_right = 223.0
