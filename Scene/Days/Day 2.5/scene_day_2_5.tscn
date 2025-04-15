@@ -1,17 +1,33 @@
-[gd_scene load_steps=13 format=3 uid="uid://doa4n110ydkxv"]
+[gd_scene load_steps=20 format=3 uid="uid://doa4n110ydkxv"]
 
 [ext_resource type="Script" uid="uid://dpwyjgbc1ljts" path="res://Scene/Days/Day 2.5/scene_day_2_5.gd" id="1_6bcb3"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_pkwid"]
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="3_ekcaj"]
 [ext_resource type="Texture2D" uid="uid://cdcr1dvyfigu" path="res://Extern/Abandoned_House/Abandoned_House_road.jpg" id="3_ihtlf"]
 [ext_resource type="PackedScene" uid="uid://clylj6qgxpaqe" path="res://Prefab/lampadaire.tscn" id="4_mtbc8"]
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="5_2oyqp"]
 [ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="6_orx1l"]
 [ext_resource type="PackedScene" uid="uid://dqughkfdtof0r" path="res://Prefab/phone.tscn" id="6_wr4cq"]
+[ext_resource type="Script" uid="uid://d317uxaflf5xq" path="res://Scene/Days/Day 2.5/em_day2_5.gd" id="8_mmv5e"]
+[ext_resource type="PackedScene" uid="uid://c0gjlcrjiigw3" path="res://Characters/guys/guy_cagoule.tscn" id="10_ppxuf"]
 
 [sub_resource type="Environment" id="Environment_asixl"]
 background_energy_multiplier = 0.0
 ambient_light_source = 2
 ambient_light_energy = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ppxuf"]
+resource_local_to_scene = true
+shader = ExtResource("3_ekcaj")
+shader_parameter/baseColor = Color(0, 0, 0, 1)
+shader_parameter/dissolveSlider = 0.0
+shader_parameter/holeScale = 15.0
+shader_parameter/holeDensity = 1.5
+shader_parameter/edgeColor = Color(0.980392, 0.568627, 0.258824, 1)
+shader_parameter/edgeThickness = 0.025
+shader_parameter/edgeGlowIntensity = 1.466
+shader_parameter/enable_dissolve_animation = false
+shader_parameter/animation_speed = 0.6
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct62w"]
 albedo_texture = ExtResource("3_ihtlf")
@@ -24,6 +40,139 @@ albedo_texture = ExtResource("3_ihtlf")
 albedo_texture = ExtResource("5_2oyqp")
 uv1_scale = Vector3(3, 3, 3)
 
+[sub_resource type="Animation" id="Animation_mmv5e"]
+resource_name = "phonephase"
+length = 200.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D86/OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(65.6859, 66.1859, 66.4159, 66.8259, 70.7225, 70.8859, 71.3625, 90.7033, 90.9333, 91.3433),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [3.279, 0.0, 3.279, 3.279, 0.0, 3.279, 3.279, 0.0, 3.279, 3.279]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("guy_cagoule/face/SpotLight3D2:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 25.0175, 27.1481, 120.399, 122.529),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 2.63, 0.0, 2.63, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("guy_cagoule/face/SpotLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 25.0175, 27.1481, 120.399, 122.529),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 2.63, 0.0, 2.63, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("guy_cagoule:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 117.758),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector3(-9.06223, 2.46232, -16.8999), Vector3(-15.2283, 2.46232, 7.40111)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("guy_cagoule:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 117.758),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector3(0, -2.42274, 0), Vector3(0, -1.14439, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ekcaj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D86/OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.279]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("guy_cagoule/face/SpotLight3D2:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.63]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("guy_cagoule/face/SpotLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.63]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("guy_cagoule:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-15.2283, 2.46232, -13.8854)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("guy_cagoule:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -2.42274, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekcaj"]
+_data = {
+&"RESET": SubResource("Animation_ekcaj"),
+&"phonephase": SubResource("Animation_mmv5e")
+}
+
 [node name="scene_day_2_5" type="Node3D"]
 script = ExtResource("1_6bcb3")
 
@@ -34,6 +183,18 @@ environment = SubResource("Environment_asixl")
 transform = Transform3D(-0.0144683, 0, 0.999895, 0, 1.02124, 0, -0.999895, 0, -0.0144683, 0.379147, 1.19812, 2.04878)
 affect_by_gravity = false
 can_move = false
+
+[node name="GOVFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="0"]
+visible = false
+
+[node name="BELLEFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="1"]
+visible = false
+
+[node name="COMPLOTFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="2"]
+visible = false
+
+[node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
+material = SubResource("ShaderMaterial_ppxuf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 1.7799, 0, 0.148206)
@@ -85,4 +246,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
 [node name="phone" parent="." instance=ExtResource("6_wr4cq")]
 transform = Transform3D(0.131314, 0, -0.091415, 0, 0.16, 0, 0.091415, 0, 0.131314, -1.23464, 0, 0.794076)
 
+[node name="manager" type="Node" parent="."]
+script = ExtResource("8_mmv5e")
+
+[node name="Timer" type="Timer" parent="manager"]
+autostart = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["phonesound"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02675, 2, 1.07335)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ekcaj")
+}
+
+[node name="guy_cagoule" parent="." instance=ExtResource("10_ppxuf")]
+transform = Transform3D(-0.752564, 0, -0.658519, 0, 1, 0, 0.658519, 0, -0.752564, -15.2283, 2.46232, -13.8854)
+
+[node name="SpotLight3D" parent="guy_cagoule" index="0"]
+light_energy = 0.0
+
+[node name="SpotLight3D" parent="guy_cagoule/face" index="1"]
+light_energy = 2.63
+
+[node name="SpotLight3D2" parent="guy_cagoule/face" index="2"]
+light_energy = 2.63
+
+[connection signal="timeout" from="manager/Timer" to="manager" method="_on_timer_timeout"]
+
+[editable path="CharacterBody3D"]
+[editable path="CharacterBody3D/transition"]
 [editable path="MeshInstance3D86"]
+[editable path="guy_cagoule"]
