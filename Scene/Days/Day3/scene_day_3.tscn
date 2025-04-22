@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6wf03uyto0an"]
+[gd_scene load_steps=9 format=3 uid="uid://c6wf03uyto0an"]
 
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_8xnu0"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_otx7e"]
@@ -37,6 +37,9 @@ adjustment_saturation = 1.44
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_otx7e"]
 
+[sub_resource type="FogMaterial" id="FogMaterial_8xnu0"]
+emission = Color(0.281187, 0.281187, 0.281187, 1)
+
 [node name="SceneDay3" type="Node3D"]
 
 [node name="appartement" parent="." instance=ExtResource("1_8xnu0")]
@@ -59,6 +62,27 @@ material = SubResource("ShaderMaterial_m7t7v")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8xnu0")
 camera_attributes = SubResource("CameraAttributesPractical_otx7e")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
+size = Vector3(24.1484, 6.75517, 2)
+material = SubResource("FogMaterial_8xnu0")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00224, -0.155392, 11.3124)
+size = Vector3(20.3026, 7.08786, 2.43262)
+material = SubResource("FogMaterial_8xnu0")
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1887, -0.155392, -2.2077)
+size = Vector3(13.9297, 7.08786, 2)
+material = SubResource("FogMaterial_8xnu0")
+
+[node name="managers" type="Node" parent="." groups=["event_manager"]]
+
+[node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
+
+[connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/transition"]
