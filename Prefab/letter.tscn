@@ -49,6 +49,7 @@ _data = {
 }
 
 [node name="Letter" type="StaticBody3D" groups=["letter"]]
+collision_layer = 2
 script = ExtResource("1_n7vka")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

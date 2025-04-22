@@ -1,16 +1,44 @@
 extends Node
 
-var level:int
+var level : int
+var RadioGov : int
+var RadioBelle : int
+var RadioGalleries : int
+var journal_text: Array = []
 
 func _ready():
 	level = 0
+	RadioGov = 0
+	RadioBelle = 0
+	RadioGalleries = 0
 	load_data()
 
 func save():
 	var save_dict = {
 		"level" : level,
+		"RadioGov" : RadioGov,
+		"RadioBelle" : RadioBelle,
+		"RadioGalleries" : RadioGalleries,
+		"journal_text" : journal_text,
 	}
 	return save_dict
+
+func set_radio(name_radio):
+	if name_radio == "G":
+		RadioGov = 1
+	elif name_radio == "B":
+		RadioBelle = 1
+	elif name_radio == "M":
+		RadioGalleries = 1
+	save_data()
+
+func get_radio(name_radio):
+	if name_radio == "G":
+		return RadioGov
+	elif name_radio == "B":
+		return RadioBelle
+	elif name_radio == "M":
+		return RadioGalleries
 
 func set_level(nlevel):
 	level = nlevel
@@ -18,6 +46,9 @@ func set_level(nlevel):
 
 func get_level():
 	return level
+
+func get_journal():
+	return journal_text
 
 func save_data():
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
@@ -27,7 +58,8 @@ func save_data():
 
 func load_data():
 	if not FileAccess.file_exists("user://savegame.save"):
-		FileAccess.open("user://savegame.save", FileAccess.WRITE)
+		save_data()
+		return
 	
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
 	while save_file.get_position() < save_file.get_length():
@@ -35,4 +67,8 @@ func load_data():
 		var json = JSON.new()
 		var _parse_result = json.parse(json_string)
 		var node_data = json.get_data()
-		level = node_data["level"]
+		level = node_data.get("level", 0)
+		RadioGov = node_data.get("RadioGov", 0)
+		RadioBelle = node_data.get("RadioBelle", 0)
+		RadioGalleries = node_data.get("RadioGalleries", 0)
+		journal_text = node_data.get("journal_text", []) 

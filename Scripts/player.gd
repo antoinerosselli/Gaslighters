@@ -11,10 +11,11 @@ extends CharacterBody3D
 @onready var ptich = $Camera3D/ptich
 @onready var popup_sure = $CanvasLayer/popup_sure
 @onready var paused:Label = $CanvasLayer/Control/paused
-@onready var color_rect = $CanvasLayer/Control/ColorRect
 @onready var detect_value = $CanvasLayer/eyecontrol/TextureProgressBar
 @onready var screamer_control = $CanvasLayer/ScreamerControl
 @onready var screamer_sound = $CanvasLayer/ScreamerControl/AudioStreamPlayer3D
+@onready var control = $CanvasLayer/Control
+@onready var color_rect = $CanvasLayer/ColorRect
 
 #inventory
 var on_inventory:bool = false
@@ -44,6 +45,15 @@ var crouch:bool = false
 var item
 
 func _ready():
+	if Data.get_radio("G") == 1:
+		var govfm = get_tree().get_first_node_in_group("govfm")
+		govfm.visible = true
+	if Data.get_radio("B") == 1:
+		var bellefm = get_tree().get_first_node_in_group("bellefm")
+		bellefm.visible = true
+	if Data.get_radio("M") == 1:
+		var fanaticfm = get_tree().get_first_node_in_group("fanaticfm")
+		fanaticfm.visible = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func dialogues_manager():
@@ -51,7 +61,7 @@ func dialogues_manager():
 	Tools.add_journal(show_text.text, Color(0.881,0.48,0.145,1))
 	read_dialogue = true
 	var tmp_array = dialogues[dialogues_id].rsplit(" ", true, 1)
-	timer.start(1 + (tmp_array.size() / 2))
+	timer.start(1 + (tmp_array.size() / 1.2))
 	dialogues_id += 1
 
 func _physics_process(delta):
@@ -113,7 +123,9 @@ func camera_joystick():
 
 
 func _input(event):
-	if Input.is_action_just_pressed("pause") && inventory.visible == false:
+	if Input.is_action_just_pressed("no_ui"):
+		control.visible = !control.visible
+	if Input.is_action_just_pressed("pause") && inventory.visible == false && get_tree().get_first_node_in_group("notenote") == null :
 		Tools.call_pause()
 	if Input.is_action_just_pressed("crouch") && can_move == true:
 		if crouch == false:
@@ -159,7 +171,7 @@ func _on_audio_stream_player_3d_finished():
 	screamer_control.visible = false
 	var evman = get_tree().get_first_node_in_group("event_manager")
 	var ani =  get_tree().get_first_node_in_group("animamanager")
-	evman.time_elapsed = 11
+	evman.time_elapsed = 223
 	detect_value.value = 0
 	ani.play("RESET")
 	

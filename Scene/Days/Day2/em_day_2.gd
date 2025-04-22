@@ -20,6 +20,7 @@ var Fanatic_time = 0
 var played_messages = {}  # Dictionnaire pour stocker les messages déjà joués
 var ones: bool = false
 var first_message: bool = false
+var expe_dispo: bool = true
 
 #TIMER
 var time_elapsed = 0
@@ -54,20 +55,17 @@ func activate_depots():
 
 func _on_timer_timeout():
 	time_elapsed += 1
+	print(time_elapsed)
 	check_event_conditions()
 	check_radio_conditions()
 
 func check_event_conditions():
-	if Tools.get_color_fd() == "red":
+	if Tools.get_color_fd() == "red" and expe_dispo == true:
 		Tools.expe_status(true)
 		Tools.timer_event_action(false)
-	if time_elapsed == 225:
-		var suit = get_tree().get_first_node_in_group("suitcase")
-		suit.visible = true
-		Tools.door_letter()
-		if UniqueTrait.elec == true:
-			Tools.timer_event_action(false)
-	if time_elapsed == 233:
+		expe_dispo = false
+	if time_elapsed >= 223 and UniqueTrait.elec == false:
+		activate_depots()
 		animation_player.play("REDEVENT")
 	if time_elapsed == 500:
 		Tools.eotd()
@@ -90,12 +88,15 @@ func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
 	Tools.add_journal(text, color_ok)
 	Tools.unlock_fm(what_fm)
 	if what_fm == "gouv":
+		Data.set_radio("G")
 		if what_cd != 0:
 			gouv_time = time_elapsed + what_cd
 	elif what_fm == "belle":
+		Data.set_radio("B")
 		if what_cd != 0:
 			belle_time = time_elapsed + what_cd
 	elif what_fm == "fanatic":
+		Data.set_radio("M")
 		if what_cd != 0:
 			Fanatic_time = time_elapsed + what_cd
 	elif what_fm == "enigm":
@@ -240,4 +241,4 @@ func check_radio_conditions():
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Prepare yourselves.", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "We will descend deeper than ever before.", 5, Fanatic_color, "fanatic", 0)
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "We will descend deeper than ever before.", 5, Fanatic_color, "fanatic", 0)	

@@ -36,7 +36,8 @@ func paused_game():
 
 func door_letter():
 	var letter = get_tree().get_first_node_in_group("letter")
-	Tools.sound_now(Tools.get_player(), preload("res://Music&Sound/door-knocking-175163.mp3") as AudioStreamMP3)
+	var front_door = get_tree().get_first_node_in_group("frontdoor")
+	Tools.sound_now(front_door, preload("res://Music&Sound/door-knocking-175163.mp3") as AudioStreamMP3)
 	letter.get_child(2).play("slide_letter")
 
 func go_to_expe():
@@ -240,9 +241,17 @@ func get_expe_status():
 
 func event_journal_ok(index, missed):
 	var eventjournal = get_tree().get_first_node_in_group("eventjournal")
-	if missed == true && eventjournal.get_child(index).visible == false:
-		eventjournal.get_child(index).text = "[color=#ff0000][shake]!   M i s s e d   ![/shake][/color]"
-	eventjournal.get_child(index).visible = true
+	if index < 0 or index >= eventjournal.get_child_count():
+		print("Index hors limites pour eventjournal")
+		return
+	var entry = eventjournal.get_child(index)
+	if missed and not entry.visible:
+		entry.text = "[color=#ff0000][shake]!   M i s s e d   ![/shake][/color]"
+	entry.visible = true
+	var journal = Data.get_journal()
+	if not journal.has(entry.text):
+		Data.journal_text.append(entry.text)
+		Data.save_data()
 
 
 func timer_event_action(is_active):
@@ -255,3 +264,64 @@ func timer_event_action(is_active):
 func get_timer_action():
 	var timer_event = get_tree().get_first_node_in_group("timerevent")
 	return timer_event.is_stopped()
+
+func radio_text_glitch(simple_text: String, time: float, color: Color) -> void:
+	var player = Tools.get_player()
+	var text_radio = player.get_node("CanvasLayer/Control/show_text_radio")
+	if text_radio == null:
+		print("Pas de node 'show_text_radio'")
+		return
+	
+	# Sauvegarde des paramètres visuels
+	var original_theme = text_radio.theme
+	var original_modulate = text_radio.modulate
+	var original_theme_overrides = {}
+	for name in text_radio.get_property_list():
+		if name.name.begins_with("theme_override_"):
+			original_theme_overrides[name.name] = text_radio.get(name.name)
+	
+	# Applique le fond noir semi-transparent
+	var style = StyleBoxFlat.new()
+	style.bg_color = Color(0, 0, 0, 0.7)
+	style.content_margin_left = 20
+	style.content_margin_right = 20
+	style.content_margin_top = 10
+	style.content_margin_bottom = 10
+	text_radio.add_theme_stylebox_override("normal", style)
+	text_radio.bbcode_enabled = true
+	text_radio.modulate = color
+	
+	# Glitch settings
+	var alphabet := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?@#%&*"
+	var glitch_speed := 0.05
+	var glitch_cycles := 10
+	
+	# Génère le texte final avec BBCode
+	var mod_text := "[wave amp=10.0 freq=3.0][font_size=21][center]" + simple_text + "[/center][/font_size][/wave]"
+	
+	# Effet glitch sur toute la phrase
+	for i in range(glitch_cycles):
+		var glitch_text := ""
+		for c in simple_text:
+			if c == " ":
+				glitch_text += " "
+			else:
+				glitch_text += alphabet[randi() % alphabet.length()]
+		var temp_bbcode := "[wave amp=10.0 freq=3.0][font_size=21][center]" + glitch_text + "[/center][/font_size][/wave]"
+		text_radio.text = temp_bbcode
+		await get_tree().create_timer(glitch_speed).timeout
+	
+	# Affiche le texte final après les glitchs
+	text_radio.text = mod_text
+	
+	# Garde le texte pendant le temps voulu
+	await get_tree().create_timer(time).timeout
+	
+	# Nettoyage
+	text_radio.text = ""
+	style.bg_color = Color(0, 0, 0, 0)
+	text_radio.add_theme_stylebox_override("normal", style)
+	text_radio.modulate = original_modulate
+	text_radio.theme = original_theme
+	for key in original_theme_overrides:
+		text_radio.set(key, original_theme_overrides[key])

@@ -77,12 +77,15 @@ func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
 	Tools.add_journal(text, color_ok)
 	Tools.unlock_fm(what_fm)
 	if what_fm == "gouv":
+		Data.set_radio("G")
 		if what_cd != 0:
 			gouv_time = time_elapsed + what_cd
 	elif what_fm == "belle":
+		Data.set_radio("B")
 		if what_cd != 0:
 			belle_time = time_elapsed + what_cd
 	elif what_fm == "fanatic":
+		Data.set_radio("M")
 		if what_cd != 0:
 			Fanatic_time = time_elapsed + what_cd
 

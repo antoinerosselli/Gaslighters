@@ -1,0 +1,5025 @@
+[gd_scene load_steps=44 format=3 uid="uid://burmfonrenium"]
+
+[ext_resource type="Script" uid="uid://c7x1krdmm8fej" path="res://Scene/Days/Day4/scene_day_4.gd" id="1_nyh0e"]
+[ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="2_5g634"]
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="3_xvotj"]
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="4_u7eqg"]
+[ext_resource type="Script" uid="uid://ce0skcxppltxr" path="res://Scene/Days/Day4/em_day_4.gd" id="5_5g634"]
+[ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="6_ymfik"]
+[ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="7_vc1tc"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="8_xvotj"]
+[ext_resource type="AudioStream" uid="uid://by8k4wkyqp6xg" path="res://Music&Sound/sound/car-horn-6408.mp3" id="9_u7eqg"]
+[ext_resource type="Shader" uid="uid://b801gs84w2k41" path="res://Shader/menu3D.gdshader" id="10_jlx00"]
+[ext_resource type="AudioStream" uid="uid://bw85gi8u22fka" path="res://Music&Sound/sound/space-chords-loop-310493.mp3" id="11_ymfik"]
+[ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="12_1t4ng"]
+[ext_resource type="Texture2D" uid="uid://dcwuxy4f6p0di" path="res://Extern/textures/WallLong.png" id="12_vc1tc"]
+[ext_resource type="PackedScene" uid="uid://cwt4yuodn824p" path="res://finalcube.tscn" id="13_67yib"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u7eqg"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vc1tc"]
+size = Vector3(16.3103, 4.03908, 0.248573)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67yib"]
+resource_local_to_scene = true
+shader = ExtResource("4_u7eqg")
+shader_parameter/baseColor = Color(0, 0, 0, 1)
+shader_parameter/dissolveSlider = 0.0
+shader_parameter/holeScale = 15.0
+shader_parameter/holeDensity = 1.5
+shader_parameter/edgeColor = Color(0.980392, 0.568627, 0.258824, 1)
+shader_parameter/edgeThickness = 0.025
+shader_parameter/edgeGlowIntensity = 1.466
+shader_parameter/enable_dissolve_animation = false
+shader_parameter/animation_speed = 0.6
+
+[sub_resource type="Sky" id="Sky_gxdup"]
+
+[sub_resource type="Environment" id="Environment_1t4ng"]
+background_mode = 2
+sky = SubResource("Sky_gxdup")
+ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
+ambient_light_sky_contribution = 0.51
+ambient_light_energy = 0.35
+ssao_radius = 3.49
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0
+volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
+volumetric_fog_anisotropy = -0.51
+adjustment_enabled = true
+adjustment_saturation = 1.44
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_aq04m"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_d3oq6"]
+density = 7.2353
+emission = Color(0.969137, 0.969137, 0.969137, 1)
+edge_fade = 1e-05
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7eqg"]
+size = Vector3(1, 0.160645, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d3oq6"]
+render_priority = 0
+shader = ExtResource("10_jlx00")
+shader_parameter/scale = 6.155
+shader_parameter/speed = 0.3
+shader_parameter/octaves = 8
+shader_parameter/persistence = 0.756
+shader_parameter/color_1 = Vector4(1, 0, 0.4, 0)
+shader_parameter/color_2 = Vector4(1, 1, 1, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vc1tc"]
+material = SubResource("ShaderMaterial_d3oq6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jlx00"]
+size = Vector3(1.68042, 0.825562, 1.41699)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_aq04m"]
+height = 2.23615
+radius = 0.700195
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1t4ng"]
+render_priority = 0
+shader = ExtResource("10_jlx00")
+shader_parameter/scale = 6.155
+shader_parameter/speed = 0.3
+shader_parameter/octaves = 8
+shader_parameter/persistence = 0.756
+shader_parameter/color_1 = Vector4(1, 0, 0.4, 0)
+shader_parameter/color_2 = Vector4(1, 1, 1, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aq04m"]
+material = SubResource("ShaderMaterial_1t4ng")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aq04m"]
+render_priority = 0
+shader = ExtResource("10_jlx00")
+shader_parameter/scale = 6.155
+shader_parameter/speed = 0.3
+shader_parameter/octaves = 8
+shader_parameter/persistence = 0.626
+shader_parameter/color_1 = Vector4(1, 0, 0.4, 0)
+shader_parameter/color_2 = Vector4(1, 1, 1, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d3oq6"]
+material = SubResource("ShaderMaterial_aq04m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vc1tc"]
+render_priority = 0
+shader = ExtResource("10_jlx00")
+shader_parameter/scale = 6.155
+shader_parameter/speed = 0.3
+shader_parameter/octaves = 8
+shader_parameter/persistence = 0.756
+shader_parameter/color_1 = Vector4(1, 0, 0.4, 0)
+shader_parameter/color_2 = Vector4(1, 1, 1, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_67yib"]
+material = SubResource("ShaderMaterial_vc1tc")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_benof"]
+size = Vector3(1.43469, 0.47229, 2.02701)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3emh"]
+albedo_texture = ExtResource("12_vc1tc")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_410gc"]
+material = SubResource("StandardMaterial3D_p3emh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tytjf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67yib"]
+size = Vector3(6.04259, 0.001, 24.8793)
+
+[sub_resource type="Animation" id="Animation_ymfik"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Part1/murdimension:mesh:material:shader_parameter/color_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Part1/murdimension2:mesh:material:shader_parameter/color_1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Part1/murdimension3:mesh:material:shader_parameter/color_1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Part1/murdimension4:mesh:material:shader_parameter/color_1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Part1/murdimension5:mesh:material:shader_parameter/color_1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Part1/murdimension6:mesh:material:shader_parameter/color_1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Part1/murdimension7:mesh:material:shader_parameter/color_1")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Part1/murdimension:mesh:material:shader_parameter/color_2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Part1/murdimension2:mesh:material:shader_parameter/color_2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Part1/murdimension3:mesh:material:shader_parameter/color_2")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Part1/murdimension4:mesh:material:shader_parameter/color_2")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Part1/murdimension5:mesh:material:shader_parameter/color_2")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Part1/murdimension6:mesh:material:shader_parameter/color_2")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Part1/murdimension7:mesh:material:shader_parameter/color_2")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("appartement/Lamp:transparency")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("appartement/Lamp/OmniLight3D:light_energy")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("appartement/Deco/TableCorridor:transparency")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("appartement/Deco/TableCorridor:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("appartement/Codesr/MeshInstance3D:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("appartement/Codesr/MeshInstance3D:transparency")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("appartement/Lamp2:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("appartement/Lamp2/OmniLight3D:light_energy")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("appartement/Courant:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("appartement/Courant/OmniLight3D:light_energy")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("appartement/New_Console/SuitExpe/OmniLight3D:light_energy")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("appartement/New_Console/SuitExpe:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("appartement/New_Console/Sancheck:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Part1/murdimension8:mesh:material:shader_parameter/color_1")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Part1/murdimension8:mesh:material:shader_parameter/color_2")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Part1/AudioStreamPlayer3D:playing")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Part1/AudioStreamPlayer3D:max_distance")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Part2/murdimension25:mesh:material:shader_parameter/color_1")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Part2/murdimension24:mesh:material:shader_parameter/color_1")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Part2/murdimension22:mesh:material:shader_parameter/color_1")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Part2/murdimension23:mesh:material:shader_parameter/color_1")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Part2/murdimension21:mesh:material:shader_parameter/color_1")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Part2/murdimension25:mesh:material:shader_parameter/color_2")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Part2/murdimension24:mesh:material:shader_parameter/color_2")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("Part2/murdimension22:mesh:material:shader_parameter/color_2")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("Part2/murdimension23:mesh:material:shader_parameter/color_2")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("Part2/murdimension21:mesh:material:shader_parameter/color_2")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("appartement/Deco/Fridge/Upper Door:visible")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("appartement/Deco/Dishwasher 2/Dishwasher Door:visible")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("Part2/murdimension23/StaticBody3D/CollisionShape3D:visible")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("appartement/ocak/fırın:visible")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/45/type = "value"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("appartement/Deco/KitchenPart1/StaticBody3D/CollisionShape3D:visible")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/46/type = "value"
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/path = NodePath("appartement/ocak/ocaklı fırın gövde:visible")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/47/type = "value"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("appartement/Aspirator:visible")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/48/type = "value"
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/path = NodePath("appartement/Deco/Toaster:visible")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/49/type = "value"
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/path = NodePath("appartement/Deco/Fridge/Lower Door:visible")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/50/type = "value"
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/path = NodePath("appartement/Deco/Microwave:visible")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/51/type = "value"
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/path = NodePath("appartement/Deco/KitchenSink:visible")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("appartement/Deco/Wooden Table2:visible")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("appartement/Deco/ChairKitch2:visible")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("appartement/Deco/ChairKitch:visible")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/55/type = "value"
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/path = NodePath("appartement/Deco/Trash:visible")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/56/type = "value"
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/path = NodePath("appartement/Deco/UpArmory:visible")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("appartement/Deco/Spat:visible")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/58/type = "value"
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/path = NodePath("appartement/Deco/Poel:visible")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/59/type = "value"
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/path = NodePath("appartement/Deco/Chauffehaut:visible")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/60/type = "value"
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/path = NodePath("appartement/Deco/Lavabo:visible")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/61/type = "value"
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/path = NodePath("appartement/Deco/KitchenPart1:visible")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/62/type = "value"
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/path = NodePath("appartement/Deco/KitchenPart2:visible")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/63/type = "value"
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/path = NodePath("appartement/ocak:visible")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/64/type = "value"
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/path = NodePath("appartement/ocak/ocaklı fırın button3:visible")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/65/type = "value"
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/path = NodePath("appartement/ocak/ocaklı fırın button4:visible")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/66/type = "value"
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/path = NodePath("appartement/ocak/ocaklı fırın button5:visible")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/67/type = "value"
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/path = NodePath("appartement/ocak/ocaklı fırın button6:visible")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/68/type = "value"
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/path = NodePath("appartement/Deco/Fridge:visible")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/69/type = "value"
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/path = NodePath("appartement/Deco/Dishwasher 2:visible")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/70/type = "value"
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/path = NodePath("Part2/AudioStreamPlayer3D:max_distance")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+tracks/71/type = "value"
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/path = NodePath("Part2/AudioStreamPlayer3D:autoplay")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/72/type = "value"
+tracks/72/imported = false
+tracks/72/enabled = true
+tracks/72/path = NodePath("appartement/lavedepot:visible")
+tracks/72/interp = 1
+tracks/72/loop_wrap = true
+tracks/72/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/73/type = "value"
+tracks/73/imported = false
+tracks/73/enabled = true
+tracks/73/path = NodePath("appartement/Deco/ShowerFloor:visible")
+tracks/73/interp = 1
+tracks/73/loop_wrap = true
+tracks/73/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/74/type = "value"
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/path = NodePath("appartement/Sketchfab_Scene:visible")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/75/type = "value"
+tracks/75/imported = false
+tracks/75/enabled = true
+tracks/75/path = NodePath("appartement/Deco/Savon:visible")
+tracks/75/interp = 1
+tracks/75/loop_wrap = true
+tracks/75/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/76/type = "value"
+tracks/76/imported = false
+tracks/76/enabled = true
+tracks/76/path = NodePath("appartement/Deco/Douche:visible")
+tracks/76/interp = 1
+tracks/76/loop_wrap = true
+tracks/76/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/77/type = "value"
+tracks/77/imported = false
+tracks/77/enabled = true
+tracks/77/path = NodePath("appartement/Deco/Lavemain:visible")
+tracks/77/interp = 1
+tracks/77/loop_wrap = true
+tracks/77/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/78/type = "value"
+tracks/78/imported = false
+tracks/78/enabled = true
+tracks/78/path = NodePath("appartement/Deco/Mirror:visible")
+tracks/78/interp = 1
+tracks/78/loop_wrap = true
+tracks/78/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/79/type = "value"
+tracks/79/imported = false
+tracks/79/enabled = true
+tracks/79/path = NodePath("appartement/Walls/Lavedent:visible")
+tracks/79/interp = 1
+tracks/79/loop_wrap = true
+tracks/79/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/80/type = "value"
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/path = NodePath("appartement/Walls/Brossedent:visible")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/81/type = "value"
+tracks/81/imported = false
+tracks/81/enabled = true
+tracks/81/path = NodePath("appartement/Alarme:visible")
+tracks/81/interp = 1
+tracks/81/loop_wrap = true
+tracks/81/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/82/type = "value"
+tracks/82/imported = false
+tracks/82/enabled = true
+tracks/82/path = NodePath("appartement/Deco/Ptitetable:visible")
+tracks/82/interp = 1
+tracks/82/loop_wrap = true
+tracks/82/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/83/type = "value"
+tracks/83/imported = false
+tracks/83/enabled = true
+tracks/83/path = NodePath("appartement/pills_spawner:visible")
+tracks/83/interp = 1
+tracks/83/loop_wrap = true
+tracks/83/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/84/type = "value"
+tracks/84/imported = false
+tracks/84/enabled = true
+tracks/84/path = NodePath("appartement/Deco/Toilet:visible")
+tracks/84/interp = 1
+tracks/84/loop_wrap = true
+tracks/84/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/85/type = "value"
+tracks/85/imported = false
+tracks/85/enabled = true
+tracks/85/path = NodePath("appartement/Deco/Toiletpaper:visible")
+tracks/85/interp = 1
+tracks/85/loop_wrap = true
+tracks/85/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/86/type = "value"
+tracks/86/imported = false
+tracks/86/enabled = true
+tracks/86/path = NodePath("appartement/Deco/Curtain2:visible")
+tracks/86/interp = 1
+tracks/86/loop_wrap = true
+tracks/86/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/87/type = "value"
+tracks/87/imported = false
+tracks/87/enabled = true
+tracks/87/path = NodePath("appartement/Deco/Curtbar2:visible")
+tracks/87/interp = 1
+tracks/87/loop_wrap = true
+tracks/87/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/88/type = "value"
+tracks/88/imported = false
+tracks/88/enabled = true
+tracks/88/path = NodePath("appartement/Lamp4:visible")
+tracks/88/interp = 1
+tracks/88/loop_wrap = true
+tracks/88/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/89/type = "value"
+tracks/89/imported = false
+tracks/89/enabled = true
+tracks/89/path = NodePath("appartement/Interrupteur4/CollisionShape3D:visible")
+tracks/89/interp = 1
+tracks/89/loop_wrap = true
+tracks/89/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/90/type = "value"
+tracks/90/imported = false
+tracks/90/enabled = true
+tracks/90/path = NodePath("Part3/murdimension22:mesh:material:shader_parameter/color_2")
+tracks/90/interp = 1
+tracks/90/loop_wrap = true
+tracks/90/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/91/type = "value"
+tracks/91/imported = false
+tracks/91/enabled = true
+tracks/91/path = NodePath("Part3/murdimension21:mesh:material:shader_parameter/color_2")
+tracks/91/interp = 1
+tracks/91/loop_wrap = true
+tracks/91/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/92/type = "value"
+tracks/92/imported = false
+tracks/92/enabled = true
+tracks/92/path = NodePath("Part3/murdimension23:mesh:material:shader_parameter/color_2")
+tracks/92/interp = 1
+tracks/92/loop_wrap = true
+tracks/92/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/93/type = "value"
+tracks/93/imported = false
+tracks/93/enabled = true
+tracks/93/path = NodePath("Part3/murdimension24:mesh:material:shader_parameter/color_2")
+tracks/93/interp = 1
+tracks/93/loop_wrap = true
+tracks/93/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/94/type = "value"
+tracks/94/imported = false
+tracks/94/enabled = true
+tracks/94/path = NodePath("Part3/murdimension25:mesh:material:shader_parameter/color_2")
+tracks/94/interp = 1
+tracks/94/loop_wrap = true
+tracks/94/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/95/type = "value"
+tracks/95/imported = false
+tracks/95/enabled = true
+tracks/95/path = NodePath("Part3/murdimension26:mesh:material:shader_parameter/color_2")
+tracks/95/interp = 1
+tracks/95/loop_wrap = true
+tracks/95/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/96/type = "value"
+tracks/96/imported = false
+tracks/96/enabled = true
+tracks/96/path = NodePath("Part3/murdimension22:mesh:material:shader_parameter/color_1")
+tracks/96/interp = 1
+tracks/96/loop_wrap = true
+tracks/96/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/97/type = "value"
+tracks/97/imported = false
+tracks/97/enabled = true
+tracks/97/path = NodePath("Part3/murdimension21:mesh:material:shader_parameter/color_1")
+tracks/97/interp = 1
+tracks/97/loop_wrap = true
+tracks/97/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/98/type = "value"
+tracks/98/imported = false
+tracks/98/enabled = true
+tracks/98/path = NodePath("Part3/murdimension23:mesh:material:shader_parameter/color_1")
+tracks/98/interp = 1
+tracks/98/loop_wrap = true
+tracks/98/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/99/type = "value"
+tracks/99/imported = false
+tracks/99/enabled = true
+tracks/99/path = NodePath("Part3/murdimension24:mesh:material:shader_parameter/color_1")
+tracks/99/interp = 1
+tracks/99/loop_wrap = true
+tracks/99/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/100/type = "value"
+tracks/100/imported = false
+tracks/100/enabled = true
+tracks/100/path = NodePath("Part3/murdimension25:mesh:material:shader_parameter/color_1")
+tracks/100/interp = 1
+tracks/100/loop_wrap = true
+tracks/100/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/101/type = "value"
+tracks/101/imported = false
+tracks/101/enabled = true
+tracks/101/path = NodePath("Part3/murdimension26:mesh:material:shader_parameter/color_1")
+tracks/101/interp = 1
+tracks/101/loop_wrap = true
+tracks/101/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/102/type = "value"
+tracks/102/imported = false
+tracks/102/enabled = true
+tracks/102/path = NodePath("Part3/AudioStreamPlayer3D:max_distance")
+tracks/102/interp = 1
+tracks/102/loop_wrap = true
+tracks/102/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+tracks/103/type = "value"
+tracks/103/imported = false
+tracks/103/enabled = true
+tracks/103/path = NodePath("appartement/lavedepot/ptichptich/Sketchfab_Scene:scale")
+tracks/103/interp = 1
+tracks/103/loop_wrap = true
+tracks/103/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.179769, 0.171401, 0.197927)]
+}
+tracks/104/type = "value"
+tracks/104/imported = false
+tracks/104/enabled = true
+tracks/104/path = NodePath("appartement/lavedepot/CSGCombiner3D/CSGBox3D2:scale")
+tracks/104/interp = 1
+tracks/104/loop_wrap = true
+tracks/104/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/105/type = "value"
+tracks/105/imported = false
+tracks/105/enabled = true
+tracks/105/path = NodePath("appartement/lavedepot/CSGCombiner3D/CSGBox3D:scale")
+tracks/105/interp = 1
+tracks/105/loop_wrap = true
+tracks/105/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/106/type = "value"
+tracks/106/imported = false
+tracks/106/enabled = true
+tracks/106/path = NodePath("Part3/murdimension21/StaticBody3D/CollisionShape3D:scale")
+tracks/106/interp = 1
+tracks/106/loop_wrap = true
+tracks/106/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/107/type = "value"
+tracks/107/imported = false
+tracks/107/enabled = true
+tracks/107/path = NodePath("appartement/Sketchfab_Scene:scale")
+tracks/107/interp = 1
+tracks/107/loop_wrap = true
+tracks/107/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0257555, 0.015, 0.0164718)]
+}
+tracks/108/type = "value"
+tracks/108/imported = false
+tracks/108/enabled = true
+tracks/108/path = NodePath("appartement/Deco/Douche:scale")
+tracks/108/interp = 1
+tracks/108/loop_wrap = true
+tracks/108/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/109/type = "value"
+tracks/109/imported = false
+tracks/109/enabled = true
+tracks/109/path = NodePath("appartement/Deco/Savon:scale")
+tracks/109/interp = 1
+tracks/109/loop_wrap = true
+tracks/109/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.44249, 1.52951, 1.48076)]
+}
+tracks/110/type = "value"
+tracks/110/imported = false
+tracks/110/enabled = true
+tracks/110/path = NodePath("appartement/Deco/ShowerFloor:scale")
+tracks/110/interp = 1
+tracks/110/loop_wrap = true
+tracks/110/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(159.464, 155.361, 100)]
+}
+tracks/111/type = "value"
+tracks/111/imported = false
+tracks/111/enabled = true
+tracks/111/path = NodePath("appartement/Deco/Lavemain:scale")
+tracks/111/interp = 1
+tracks/111/loop_wrap = true
+tracks/111/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5518, 1.7068, 1.75258)]
+}
+tracks/112/type = "value"
+tracks/112/imported = false
+tracks/112/enabled = true
+tracks/112/path = NodePath("appartement/Deco/Mirror:scale")
+tracks/112/interp = 1
+tracks/112/loop_wrap = true
+tracks/112/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(53.755, 35.4678, 35.4678)]
+}
+tracks/113/type = "value"
+tracks/113/imported = false
+tracks/113/enabled = true
+tracks/113/path = NodePath("appartement/Walls/Lavedent:scale")
+tracks/113/interp = 1
+tracks/113/loop_wrap = true
+tracks/113/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/114/type = "value"
+tracks/114/imported = false
+tracks/114/enabled = true
+tracks/114/path = NodePath("appartement/Walls/Brossedent:scale")
+tracks/114/interp = 1
+tracks/114/loop_wrap = true
+tracks/114/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.09993, 1.23771, 0.992098)]
+}
+tracks/115/type = "value"
+tracks/115/imported = false
+tracks/115/enabled = true
+tracks/115/path = NodePath("appartement/Alarme:scale")
+tracks/115/interp = 1
+tracks/115/loop_wrap = true
+tracks/115/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.414823, 1.0171, 0.923097)]
+}
+tracks/116/type = "value"
+tracks/116/imported = false
+tracks/116/enabled = true
+tracks/116/path = NodePath("appartement/Deco/Ptitetable:scale")
+tracks/116/interp = 1
+tracks/116/loop_wrap = true
+tracks/116/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/117/type = "value"
+tracks/117/imported = false
+tracks/117/enabled = true
+tracks/117/path = NodePath("appartement/pills_spawner:scale")
+tracks/117/interp = 1
+tracks/117/loop_wrap = true
+tracks/117/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/118/type = "value"
+tracks/118/imported = false
+tracks/118/enabled = true
+tracks/118/path = NodePath("appartement/Deco/Toilet:scale")
+tracks/118/interp = 1
+tracks/118/loop_wrap = true
+tracks/118/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.90661, 1.42633, 1.53681)]
+}
+tracks/119/type = "value"
+tracks/119/imported = false
+tracks/119/enabled = true
+tracks/119/path = NodePath("appartement/Deco/Toiletpaper:scale")
+tracks/119/interp = 1
+tracks/119/loop_wrap = true
+tracks/119/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1.53303, 1.74708)]
+}
+tracks/120/type = "value"
+tracks/120/imported = false
+tracks/120/enabled = true
+tracks/120/path = NodePath("appartement/Interrupteur4/MeshInstance3D:scale")
+tracks/120/interp = 1
+tracks/120/loop_wrap = true
+tracks/120/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.00668908, 0.1874, 0.128265)]
+}
+tracks/121/type = "value"
+tracks/121/imported = false
+tracks/121/enabled = true
+tracks/121/path = NodePath("appartement/Deco/Curtain2:scale")
+tracks/121/interp = 1
+tracks/121/loop_wrap = true
+tracks/121/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/122/type = "value"
+tracks/122/imported = false
+tracks/122/enabled = true
+tracks/122/path = NodePath("appartement/Deco/Curtbar2:scale")
+tracks/122/interp = 1
+tracks/122/loop_wrap = true
+tracks/122/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.979895, 1.2726, 1)]
+}
+tracks/123/type = "value"
+tracks/123/imported = false
+tracks/123/enabled = true
+tracks/123/path = NodePath("appartement/Lamp4:scale")
+tracks/123/interp = 1
+tracks/123/loop_wrap = true
+tracks/123/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/124/type = "value"
+tracks/124/imported = false
+tracks/124/enabled = true
+tracks/124/path = NodePath("appartement/MeshInstance3D10/StaticBody3D/CollisionShape3D:scale")
+tracks/124/interp = 1
+tracks/124/loop_wrap = true
+tracks/124/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/125/type = "value"
+tracks/125/imported = false
+tracks/125/enabled = true
+tracks/125/path = NodePath("appartement/Deco/KitchenPart2:scale")
+tracks/125/interp = 1
+tracks/125/loop_wrap = true
+tracks/125/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.13314, 1.53736, 1.00095)]
+}
+tracks/126/type = "value"
+tracks/126/imported = false
+tracks/126/enabled = true
+tracks/126/path = NodePath("appartement/Deco/KitchenPart1:scale")
+tracks/126/interp = 1
+tracks/126/loop_wrap = true
+tracks/126/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.12568, 1.48439, 1.08593)]
+}
+tracks/127/type = "value"
+tracks/127/imported = false
+tracks/127/enabled = true
+tracks/127/path = NodePath("appartement/Deco/Microwave:scale")
+tracks/127/interp = 1
+tracks/127/loop_wrap = true
+tracks/127/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/128/type = "value"
+tracks/128/imported = false
+tracks/128/enabled = true
+tracks/128/path = NodePath("appartement/Deco/KitchenSink:scale")
+tracks/128/interp = 1
+tracks/128/loop_wrap = true
+tracks/128/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.15307, 1.62, 1.00091)]
+}
+tracks/129/type = "value"
+tracks/129/imported = false
+tracks/129/enabled = true
+tracks/129/path = NodePath("appartement/Deco/Lavabo:scale")
+tracks/129/interp = 1
+tracks/129/loop_wrap = true
+tracks/129/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/130/type = "value"
+tracks/130/imported = false
+tracks/130/enabled = true
+tracks/130/path = NodePath("appartement/Deco/Spat:scale")
+tracks/130/interp = 1
+tracks/130/loop_wrap = true
+tracks/130/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/131/type = "value"
+tracks/131/imported = false
+tracks/131/enabled = true
+tracks/131/path = NodePath("appartement/Deco/Toaster:scale")
+tracks/131/interp = 1
+tracks/131/loop_wrap = true
+tracks/131/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/132/type = "value"
+tracks/132/imported = false
+tracks/132/enabled = true
+tracks/132/path = NodePath("appartement/Deco/Chauffehaut:scale")
+tracks/132/interp = 1
+tracks/132/loop_wrap = true
+tracks/132/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/133/type = "value"
+tracks/133/imported = false
+tracks/133/enabled = true
+tracks/133/path = NodePath("appartement/ocak:scale")
+tracks/133/interp = 1
+tracks/133/loop_wrap = true
+tracks/133/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/134/type = "value"
+tracks/134/imported = false
+tracks/134/enabled = true
+tracks/134/path = NodePath("appartement/Deco/Poel:scale")
+tracks/134/interp = 1
+tracks/134/loop_wrap = true
+tracks/134/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.32398, 1.40812, 0.862183)]
+}
+tracks/135/type = "value"
+tracks/135/imported = false
+tracks/135/enabled = true
+tracks/135/path = NodePath("appartement/ocak/fırın:scale")
+tracks/135/interp = 1
+tracks/135/loop_wrap = true
+tracks/135/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/136/type = "value"
+tracks/136/imported = false
+tracks/136/enabled = true
+tracks/136/path = NodePath("appartement/ocak/ocaklı fırın button6:scale")
+tracks/136/interp = 1
+tracks/136/loop_wrap = true
+tracks/136/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/137/type = "value"
+tracks/137/imported = false
+tracks/137/enabled = true
+tracks/137/path = NodePath("appartement/ocak/ocaklı fırın gövde:scale")
+tracks/137/interp = 1
+tracks/137/loop_wrap = true
+tracks/137/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/138/type = "value"
+tracks/138/imported = false
+tracks/138/enabled = true
+tracks/138/path = NodePath("appartement/ocak/ocaklı fırın button5:scale")
+tracks/138/interp = 1
+tracks/138/loop_wrap = true
+tracks/138/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/139/type = "value"
+tracks/139/imported = false
+tracks/139/enabled = true
+tracks/139/path = NodePath("appartement/ocak/ocaklı fırın button4:scale")
+tracks/139/interp = 1
+tracks/139/loop_wrap = true
+tracks/139/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/140/type = "value"
+tracks/140/imported = false
+tracks/140/enabled = true
+tracks/140/path = NodePath("appartement/ocak/ocaklı fırın button3:scale")
+tracks/140/interp = 1
+tracks/140/loop_wrap = true
+tracks/140/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/141/type = "value"
+tracks/141/imported = false
+tracks/141/enabled = true
+tracks/141/path = NodePath("appartement/Deco/Dishwasher 2/Dishwasher Door:scale")
+tracks/141/interp = 1
+tracks/141/loop_wrap = true
+tracks/141/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/142/type = "value"
+tracks/142/imported = false
+tracks/142/enabled = true
+tracks/142/path = NodePath("appartement/Deco/Dishwasher 2:scale")
+tracks/142/interp = 1
+tracks/142/loop_wrap = true
+tracks/142/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/143/type = "value"
+tracks/143/imported = false
+tracks/143/enabled = true
+tracks/143/path = NodePath("appartement/Deco/Fridge/Upper Door:scale")
+tracks/143/interp = 1
+tracks/143/loop_wrap = true
+tracks/143/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/144/type = "value"
+tracks/144/imported = false
+tracks/144/enabled = true
+tracks/144/path = NodePath("appartement/Deco/Fridge/Lower Door:scale")
+tracks/144/interp = 1
+tracks/144/loop_wrap = true
+tracks/144/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/145/type = "value"
+tracks/145/imported = false
+tracks/145/enabled = true
+tracks/145/path = NodePath("appartement/Deco/Fridge:scale")
+tracks/145/interp = 1
+tracks/145/loop_wrap = true
+tracks/145/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/146/type = "value"
+tracks/146/imported = false
+tracks/146/enabled = true
+tracks/146/path = NodePath("appartement/Aspirator:scale")
+tracks/146/interp = 1
+tracks/146/loop_wrap = true
+tracks/146/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/147/type = "value"
+tracks/147/imported = false
+tracks/147/enabled = true
+tracks/147/path = NodePath("appartement/Deco/ChairKitch2:scale")
+tracks/147/interp = 1
+tracks/147/loop_wrap = true
+tracks/147/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.65654, 1.44406, 1.31008)]
+}
+tracks/148/type = "value"
+tracks/148/imported = false
+tracks/148/enabled = true
+tracks/148/path = NodePath("appartement/Deco/ChairKitch:scale")
+tracks/148/interp = 1
+tracks/148/loop_wrap = true
+tracks/148/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.65654, 1.44406, 1.31008)]
+}
+tracks/149/type = "value"
+tracks/149/imported = false
+tracks/149/enabled = true
+tracks/149/path = NodePath("appartement/Deco/Trash:scale")
+tracks/149/interp = 1
+tracks/149/loop_wrap = true
+tracks/149/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.01569, 1.82084, 2.26795)]
+}
+tracks/150/type = "value"
+tracks/150/imported = false
+tracks/150/enabled = true
+tracks/150/path = NodePath("appartement/Deco/Wooden Table2:scale")
+tracks/150/interp = 1
+tracks/150/loop_wrap = true
+tracks/150/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.89186, 1, 1.25646)]
+}
+tracks/151/type = "value"
+tracks/151/imported = false
+tracks/151/enabled = true
+tracks/151/path = NodePath("appartement/Deco/UpArmory:scale")
+tracks/151/interp = 1
+tracks/151/loop_wrap = true
+tracks/151/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.06592, 1.23847, 1.33537)]
+}
+tracks/152/type = "value"
+tracks/152/imported = false
+tracks/152/enabled = true
+tracks/152/path = NodePath("appartement/Interrupteur4/MeshInstance3D:visible")
+tracks/152/interp = 1
+tracks/152/loop_wrap = true
+tracks/152/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/153/type = "value"
+tracks/153/imported = false
+tracks/153/enabled = true
+tracks/153/path = NodePath("PartFinal/murdimension:mesh:material:shader_parameter/color_1")
+tracks/153/interp = 1
+tracks/153/loop_wrap = true
+tracks/153/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/154/type = "value"
+tracks/154/imported = false
+tracks/154/enabled = true
+tracks/154/path = NodePath("PartFinal/murdimension2:mesh:material:shader_parameter/color_1")
+tracks/154/interp = 1
+tracks/154/loop_wrap = true
+tracks/154/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/155/type = "value"
+tracks/155/imported = false
+tracks/155/enabled = true
+tracks/155/path = NodePath("PartFinal/murdimension3:mesh:material:shader_parameter/color_1")
+tracks/155/interp = 1
+tracks/155/loop_wrap = true
+tracks/155/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/156/type = "value"
+tracks/156/imported = false
+tracks/156/enabled = true
+tracks/156/path = NodePath("PartFinal/murdimension4:mesh:material:shader_parameter/color_1")
+tracks/156/interp = 1
+tracks/156/loop_wrap = true
+tracks/156/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/157/type = "value"
+tracks/157/imported = false
+tracks/157/enabled = true
+tracks/157/path = NodePath("PartFinal/murdimension5:mesh:material:shader_parameter/color_1")
+tracks/157/interp = 1
+tracks/157/loop_wrap = true
+tracks/157/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/158/type = "value"
+tracks/158/imported = false
+tracks/158/enabled = true
+tracks/158/path = NodePath("PartFinal/murdimension:mesh:material:shader_parameter/color_2")
+tracks/158/interp = 1
+tracks/158/loop_wrap = true
+tracks/158/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/159/type = "value"
+tracks/159/imported = false
+tracks/159/enabled = true
+tracks/159/path = NodePath("PartFinal/murdimension2:mesh:material:shader_parameter/color_2")
+tracks/159/interp = 1
+tracks/159/loop_wrap = true
+tracks/159/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/160/type = "value"
+tracks/160/imported = false
+tracks/160/enabled = true
+tracks/160/path = NodePath("PartFinal/murdimension3:mesh:material:shader_parameter/color_2")
+tracks/160/interp = 1
+tracks/160/loop_wrap = true
+tracks/160/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/161/type = "value"
+tracks/161/imported = false
+tracks/161/enabled = true
+tracks/161/path = NodePath("PartFinal/murdimension4:mesh:material:shader_parameter/color_2")
+tracks/161/interp = 1
+tracks/161/loop_wrap = true
+tracks/161/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/162/type = "value"
+tracks/162/imported = false
+tracks/162/enabled = true
+tracks/162/path = NodePath("PartFinal/murdimension5:mesh:material:shader_parameter/color_2")
+tracks/162/interp = 1
+tracks/162/loop_wrap = true
+tracks/162/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/163/type = "value"
+tracks/163/imported = false
+tracks/163/enabled = true
+tracks/163/path = NodePath("appartement/OutBar/MeshInstance3D44:visible")
+tracks/163/interp = 1
+tracks/163/loop_wrap = true
+tracks/163/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/164/type = "value"
+tracks/164/imported = false
+tracks/164/enabled = true
+tracks/164/path = NodePath("appartement/OutBar/MeshInstance3D42:visible")
+tracks/164/interp = 1
+tracks/164/loop_wrap = true
+tracks/164/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/165/type = "value"
+tracks/165/imported = false
+tracks/165/enabled = true
+tracks/165/path = NodePath("appartement/OutBar/MeshInstance3D43:visible")
+tracks/165/interp = 1
+tracks/165/loop_wrap = true
+tracks/165/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/166/type = "value"
+tracks/166/imported = false
+tracks/166/enabled = true
+tracks/166/path = NodePath("appartement/OutBar/MeshInstance3D41:visible")
+tracks/166/interp = 1
+tracks/166/loop_wrap = true
+tracks/166/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/167/type = "value"
+tracks/167/imported = false
+tracks/167/enabled = true
+tracks/167/path = NodePath("appartement/OutBar/MeshInstance3D57:visible")
+tracks/167/interp = 1
+tracks/167/loop_wrap = true
+tracks/167/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/168/type = "value"
+tracks/168/imported = false
+tracks/168/enabled = true
+tracks/168/path = NodePath("appartement/fondation/CSGCombiner3D/CSGBox3D5:position")
+tracks/168/interp = 1
+tracks/168/loop_wrap = true
+tracks/168/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.45879, 0.125336, 3.51933)]
+}
+tracks/169/type = "value"
+tracks/169/imported = false
+tracks/169/enabled = true
+tracks/169/path = NodePath("appartement/fondation/CollisionShape3D7:position")
+tracks/169/interp = 1
+tracks/169/loop_wrap = true
+tracks/169/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.43872, 0.16475, 1.94028)]
+}
+tracks/170/type = "value"
+tracks/170/imported = false
+tracks/170/enabled = true
+tracks/170/path = NodePath("appartement/fondation/CollisionShape3D7:scale")
+tracks/170/interp = 1
+tracks/170/loop_wrap = true
+tracks/170/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/171/type = "value"
+tracks/171/imported = false
+tracks/171/enabled = true
+tracks/171/path = NodePath("Part1/one:visible")
+tracks/171/interp = 1
+tracks/171/loop_wrap = true
+tracks/171/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/172/type = "value"
+tracks/172/imported = false
+tracks/172/enabled = true
+tracks/172/path = NodePath("Part1/SpotLight3D:visible")
+tracks/172/interp = 1
+tracks/172/loop_wrap = true
+tracks/172/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/173/type = "value"
+tracks/173/imported = false
+tracks/173/enabled = true
+tracks/173/path = NodePath("Part1/SpotLight3D:light_energy")
+tracks/173/interp = 1
+tracks/173/loop_wrap = true
+tracks/173/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/174/type = "value"
+tracks/174/imported = false
+tracks/174/enabled = true
+tracks/174/path = NodePath("Part2/one:visible")
+tracks/174/interp = 1
+tracks/174/loop_wrap = true
+tracks/174/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/175/type = "value"
+tracks/175/imported = false
+tracks/175/enabled = true
+tracks/175/path = NodePath("Part2/SpotLight3D:light_energy")
+tracks/175/interp = 1
+tracks/175/loop_wrap = true
+tracks/175/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vk3ay"]
+resource_name = "endgame"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PartFinal/murdimension:mesh:material:shader_parameter/color_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PartFinal/murdimension2:mesh:material:shader_parameter/color_1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PartFinal/murdimension3:mesh:material:shader_parameter/color_1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PartFinal/murdimension4:mesh:material:shader_parameter/color_1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PartFinal/murdimension5:mesh:material:shader_parameter/color_1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PartFinal/murdimension:mesh:material:shader_parameter/color_2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PartFinal/murdimension2:mesh:material:shader_parameter/color_2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PartFinal/murdimension3:mesh:material:shader_parameter/color_2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PartFinal/murdimension4:mesh:material:shader_parameter/color_2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PartFinal/murdimension5:mesh:material:shader_parameter/color_2")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("appartement/OutBar/MeshInstance3D44:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("appartement/OutBar/MeshInstance3D42:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("appartement/OutBar/MeshInstance3D43:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("appartement/OutBar/MeshInstance3D41:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("appartement/OutBar/MeshInstance3D57:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("FogVolume2:size")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(17.4797, 3.79638, 2.43262), Vector3(4.65612, 3.79638, 2.43262)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("FogVolume2:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(6.7238, 0.229126, 12.3603), Vector3(-0.437834, 0.229126, 11.7514)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("appartement/fondation/CSGCombiner3D/CSGBox3D5:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(5.45879, 0.125336, 3.51933), Vector3(5.45879, 0.125336, 1.97988)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("appartement/fondation/CollisionShape3D7:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.43872, 0.16475, 1.94028), Vector3(1.10122, 0.16475, 1.94028)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("appartement/fondation/CollisionShape3D7:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.996676, 1, 0.398972)]
+}
+
+[sub_resource type="Animation" id="Animation_jlx00"]
+resource_name = "part1"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Part1/murdimension:mesh:material:shader_parameter/color_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1), Vector4(1, 5.22, 82.315, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Part1/murdimension2:mesh:material:shader_parameter/color_1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1), Vector4(1, 5.22, 82.315, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Part1/murdimension3:mesh:material:shader_parameter/color_1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1), Vector4(1, 5.22, 82.315, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Part1/murdimension4:mesh:material:shader_parameter/color_1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1), Vector4(1, 5.22, 82.315, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Part1/murdimension5:mesh:material:shader_parameter/color_1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1), Vector4(1, 5.22, 82.315, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Part1/murdimension6:mesh:material:shader_parameter/color_1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1), Vector4(1, 5.22, 82.315, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Part1/murdimension7:mesh:material:shader_parameter/color_1")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1), Vector4(1, 5.22, 82.315, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Part1/murdimension:mesh:material:shader_parameter/color_2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1), Vector4(1, 0.299, 0.269, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Part1/murdimension2:mesh:material:shader_parameter/color_2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1), Vector4(1, 0.299, 0.269, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Part1/murdimension3:mesh:material:shader_parameter/color_2")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1), Vector4(1, 0.299, 0.269, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Part1/murdimension4:mesh:material:shader_parameter/color_2")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1), Vector4(1, 0.299, 0.269, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Part1/murdimension5:mesh:material:shader_parameter/color_2")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1), Vector4(1, 0.299, 0.269, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Part1/murdimension6:mesh:material:shader_parameter/color_2")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1), Vector4(1, 0.299, 0.269, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Part1/murdimension7:mesh:material:shader_parameter/color_2")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 7.99, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1), Vector4(1, 0.299, 0.269, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("appartement/Lamp:transparency")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("appartement/Lamp/OmniLight3D:light_energy")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("appartement/Deco/TableCorridor:transparency")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("appartement/Deco/TableCorridor:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("appartement/Codesr/MeshInstance3D:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("appartement/Codesr/MeshInstance3D:transparency")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("appartement/Lamp2:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("appartement/Lamp2/OmniLight3D:light_energy")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("appartement/Courant:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("appartement/Courant/OmniLight3D:light_energy")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("appartement/New_Console/SuitExpe/OmniLight3D:light_energy")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.938, 0.0]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("appartement/New_Console/SuitExpe:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("appartement/New_Console/Sancheck:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Part1/murdimension8:mesh:material:shader_parameter/color_1")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 5.22, 82.315, 1)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Part1/murdimension8:mesh:material:shader_parameter/color_2")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 0.299, 0.269, 1)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Part1/AudioStreamPlayer3D:playing")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Part1/AudioStreamPlayer3D:max_distance")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 3.0]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Part1/one:visible")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Part1/SpotLight3D:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Part1/SpotLight3D:light_color")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Part1/SpotLight3D:light_energy")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.175]
+}
+
+[sub_resource type="Animation" id="Animation_vc1tc"]
+resource_name = "part2"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Part2/murdimension25:mesh:material:shader_parameter/color_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(64.785, 0, 0.03, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Part2/murdimension24:mesh:material:shader_parameter/color_1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(64.785, 0, 0.03, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Part2/murdimension22:mesh:material:shader_parameter/color_1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(64.785, 0, 0.03, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Part2/murdimension23:mesh:material:shader_parameter/color_1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(64.785, 0, 0.03, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Part2/murdimension21:mesh:material:shader_parameter/color_1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(64.785, 0, 0.03, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Part2/murdimension25:mesh:material:shader_parameter/color_2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(-0.01, 0, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Part2/murdimension24:mesh:material:shader_parameter/color_2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(-0.01, 0, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Part2/murdimension22:mesh:material:shader_parameter/color_2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(-0.01, 0, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Part2/murdimension23:mesh:material:shader_parameter/color_2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(-0.01, 0, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Part2/murdimension21:mesh:material:shader_parameter/color_2")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(-0.01, 0, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("appartement/Deco/Fridge/Upper Door:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("appartement/Deco/Dishwasher 2/Dishwasher Door:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Part2/murdimension23/StaticBody3D/CollisionShape3D:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("appartement/ocak/fırın:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("appartement/Deco/KitchenPart1/StaticBody3D/CollisionShape3D:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("appartement/ocak/ocaklı fırın gövde:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("appartement/Aspirator:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("appartement/Deco/Toaster:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("appartement/Deco/Fridge/Lower Door:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("appartement/Deco/Microwave:visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("appartement/Deco/KitchenSink:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("appartement/Deco/Wooden Table2:visible")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("appartement/Deco/ChairKitch2:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("appartement/Deco/ChairKitch:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("appartement/Deco/Trash:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("appartement/Deco/UpArmory:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("appartement/Deco/Spat:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("appartement/Deco/Poel:visible")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("appartement/Deco/Chauffehaut:visible")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("appartement/Deco/Lavabo:visible")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("appartement/Deco/KitchenPart1:visible")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("appartement/Deco/KitchenPart2:visible")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("appartement/ocak:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("appartement/ocak/ocaklı fırın button3:visible")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("appartement/ocak/ocaklı fırın button4:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("appartement/ocak/ocaklı fırın button5:visible")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("appartement/ocak/ocaklı fırın button6:visible")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("appartement/Deco/Fridge:visible")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("appartement/Deco/Dishwasher 2:visible")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("Part2/AudioStreamPlayer3D:max_distance")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 3.0]
+}
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("Part2/AudioStreamPlayer3D:autoplay")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0, 0.31),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("appartement/Deco/Fridge:scale")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("appartement/Deco/KitchenPart1/StaticBody3D/CollisionShape3D2:scale")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 0.999996, 1)]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("appartement/Deco/KitchenPart2:scale")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.13314, 1.53736, 1.00095), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("appartement/Deco/Microwave:scale")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/45/type = "value"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("appartement/Deco/Lavabo:scale")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/46/type = "value"
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/path = NodePath("appartement/Deco/Spat:scale")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/47/type = "value"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("appartement/Aspirator:scale")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/48/type = "value"
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/path = NodePath("appartement/Deco/Poel:scale")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.32398, 1.40812, 0.862183), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/49/type = "value"
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/path = NodePath("appartement/Deco/Chauffehaut:scale")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/50/type = "value"
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/path = NodePath("appartement/Deco/Toaster:scale")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/51/type = "value"
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/path = NodePath("appartement/Deco/KitchenSink:scale")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.15307, 1.62, 1.00091), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("appartement/Deco/KitchenPart1:scale")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.12568, 1.48439, 1.08593), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("appartement/ocak/ocaklı fırın button6:scale")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("appartement/ocak/ocaklı fırın button5:scale")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/55/type = "value"
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/path = NodePath("appartement/ocak/ocaklı fırın button4:scale")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/56/type = "value"
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/path = NodePath("appartement/ocak/ocaklı fırın button3:scale")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("appartement/ocak/ocaklı fırın gövde:scale")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/58/type = "value"
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/path = NodePath("appartement/ocak/fırın:scale")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/59/type = "value"
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/path = NodePath("appartement/Deco/Dishwasher 2/Dishwasher Door:scale")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/60/type = "value"
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/path = NodePath("appartement/Deco/Dishwasher 2:scale")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/61/type = "value"
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/path = NodePath("appartement/Deco/ChairKitch:scale")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.65654, 1.44406, 1.31008), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/62/type = "value"
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/path = NodePath("appartement/Deco/ChairKitch2:scale")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.65654, 1.44406, 1.31008), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/63/type = "value"
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/path = NodePath("appartement/Deco/Trash:scale")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.01569, 1.82084, 2.26795), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/64/type = "value"
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/path = NodePath("appartement/Deco/Wooden Table2:scale")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.89186, 1, 1.25646), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/65/type = "value"
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/path = NodePath("appartement/Deco/UpArmory:scale")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.06592, 1.23847, 1.33537), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/66/type = "value"
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/path = NodePath("appartement/ocak:scale")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/67/type = "value"
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/path = NodePath("appartement/Deco/Fridge/Lower Door:scale")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/68/type = "value"
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/path = NodePath("appartement/Deco/Fridge/Upper Door:scale")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/69/type = "value"
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/path = NodePath("Part2/one:visible")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/70/type = "value"
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/path = NodePath("Part2/SpotLight3D:light_energy")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.25]
+}
+
+[sub_resource type="Animation" id="Animation_67yib"]
+resource_name = "part3"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("appartement/lavedepot:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("appartement/Deco/ShowerFloor:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("appartement/Sketchfab_Scene:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("appartement/Deco/Savon:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("appartement/Deco/Douche:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("appartement/Deco/Lavemain:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("appartement/Deco/Mirror:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("appartement/Walls/Lavedent:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("appartement/Walls/Brossedent:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("appartement/Alarme:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("appartement/Deco/Ptitetable:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("appartement/pills_spawner:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("appartement/Deco/Toilet:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("appartement/Deco/Toiletpaper:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("appartement/Deco/Curtain2:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("appartement/Deco/Curtbar2:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("appartement/Lamp4:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("appartement/Interrupteur4/CollisionShape3D:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Part3/murdimension21:mesh:material:shader_parameter/color_1")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(32.025, 0, 35.715, 0), Vector4(32.025, 0, 35.715, 1)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Part3/murdimension21:mesh:material:shader_parameter/color_2")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Part3/AudioStreamPlayer3D:max_distance")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 3.0]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Part3/AudioStreamPlayer3D:autoplay")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("appartement/lavedepot/ptichptich/Sketchfab_Scene:scale")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.179769, 0.171401, 0.197927), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("appartement/lavedepot/CSGCombiner3D/CSGBox3D2:scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("appartement/lavedepot/CSGCombiner3D/CSGBox3D:scale")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Part3/murdimension21/StaticBody3D/CollisionShape3D:scale")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("appartement/Sketchfab_Scene:scale")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.0257555, 0.015, 0.0164718), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("appartement/Deco/Douche:scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("appartement/Deco/Savon:scale")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.44249, 1.52951, 1.48076), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("appartement/Deco/ShowerFloor:scale")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(159.464, 155.361, 100), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("appartement/Deco/Lavemain:scale")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5518, 1.7068, 1.75258), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("appartement/Deco/Mirror:scale")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(53.755, 35.4678, 35.4678), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("appartement/Walls/Lavedent:scale")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("appartement/Walls/Brossedent:scale")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.09993, 1.23771, 0.992098), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("appartement/Alarme:scale")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.414823, 1.0171, 0.923097), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("appartement/Deco/Ptitetable:scale")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("appartement/pills_spawner:scale")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("appartement/Deco/Toilet:scale")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.90661, 1.42633, 1.53681), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/38/type = "value"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("appartement/Deco/Toiletpaper:scale")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1.53303, 1.74708), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("appartement/Interrupteur4/MeshInstance3D:scale")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.00668908, 0.1874, 0.128265), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/40/type = "value"
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/path = NodePath("appartement/Deco/Curtain2:scale")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/41/type = "value"
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/path = NodePath("appartement/Deco/Curtbar2:scale")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.979895, 1.2726, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/42/type = "value"
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/path = NodePath("appartement/Lamp4:scale")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/43/type = "value"
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/path = NodePath("appartement/MeshInstance3D10/StaticBody3D/CollisionShape3D:scale")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.095, 0.11)]
+}
+tracks/44/type = "value"
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/path = NodePath("appartement/Interrupteur4/MeshInstance3D:visible")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/45/type = "value"
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/path = NodePath("Part3/murdimension22:mesh:material:shader_parameter/color_2")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/46/type = "value"
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/path = NodePath("Part3/murdimension23:mesh:material:shader_parameter/color_2")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/47/type = "value"
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/path = NodePath("Part3/murdimension24:mesh:material:shader_parameter/color_2")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/48/type = "value"
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/path = NodePath("Part3/murdimension25:mesh:material:shader_parameter/color_2")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/49/type = "value"
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/path = NodePath("Part3/murdimension26:mesh:material:shader_parameter/color_2")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/50/type = "value"
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/path = NodePath("Part3/murdimension22:mesh:material:shader_parameter/color_1")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(32.025, 0, 35.715, 0), Vector4(32.025, 0, 35.715, 1)]
+}
+tracks/51/type = "value"
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/path = NodePath("Part3/murdimension23:mesh:material:shader_parameter/color_1")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(32.025, 0, 35.715, 0), Vector4(32.025, 0, 35.715, 1)]
+}
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("Part3/murdimension24:mesh:material:shader_parameter/color_1")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(32.025, 0, 35.715, 0), Vector4(32.025, 0, 35.715, 1)]
+}
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("Part3/murdimension25:mesh:material:shader_parameter/color_1")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(32.025, 0, 35.715, 0), Vector4(32.025, 0, 35.715, 1)]
+}
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("Part3/murdimension26:mesh:material:shader_parameter/color_1")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(32.025, 0, 35.715, 0), Vector4(32.025, 0, 35.715, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vc1tc"]
+_data = {
+&"RESET": SubResource("Animation_ymfik"),
+&"endgame": SubResource("Animation_vk3ay"),
+&"part1": SubResource("Animation_jlx00"),
+&"part2": SubResource("Animation_vc1tc"),
+&"part3": SubResource("Animation_67yib")
+}
+
+[node name="SceneDay4" type="Node3D"]
+script = ExtResource("1_nyh0e")
+
+[node name="appartement" parent="." instance=ExtResource("2_5g634")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00315857, -1.19209e-07, -0.127772)
+
+[node name="floor" parent="appartement" index="1"]
+transform = Transform3D(2.49894, 0, 0, 0, 1.00929, 0, 0, 0, 1.20155, -6.07756, 0, 0)
+
+[node name="CollisionShape3D" parent="appartement/floor" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71149, -1.71342, 1.05166)
+
+[node name="Aspirator" parent="appartement" index="2"]
+transform = Transform3D(-0.999915, -9.81655e-10, 0.0130024, 0, 1, 7.54979e-08, -0.0130024, 7.54915e-08, -0.999915, 15.1956, 0.789696, 6.41234)
+
+[node name="ocak" parent="appartement" index="3"]
+transform = Transform3D(-0.999287, -2.84949e-09, 0.0377426, 0, 1, 7.54979e-08, -0.0377426, 7.54441e-08, -0.999287, 15.2544, -0.423193, 6.37697)
+
+[node name="secretdoor" parent="appartement" index="8"]
+transform = Transform3D(0.550753, 0, 0, 0, 1, 0, 0, 0, 1, -3.536, 3.93459, -2.625)
+
+[node name="OmniLight3D" parent="appartement/Lamp1" index="0"]
+shadow_enabled = true
+
+[node name="MeshInstance3D35" parent="appartement/frontdoor" index="0"]
+transform = Transform3D(0.780765, 3.15508e-14, -2.03756e-21, 0, -5.05142e-08, -1.70736, -2.13163e-14, 1.15563, -7.46311e-08, 0.748339, 1.26645, 0.0513792)
+
+[node name="New_Console_SubViewport#Sprite3D" parent="appartement" index="18"]
+texture = SubResource("ViewportTexture_u7eqg")
+
+[node name="Alarme" parent="appartement" index="23"]
+transform = Transform3D(0.286047, -0.0178841, -0.668332, 0.00916076, 1.01685, -0.00299753, 0.300285, -0.0139847, 0.636735, 1.29212, -1.13447, -7.76898)
+
+[node name="Lamp4" parent="appartement" index="25"]
+transform = Transform3D(0.992745, 0, 0.120241, 0, 1, 0, -0.120241, 0, 0.992745, 1.78979, 1.80664, -5.21442)
+
+[node name="CollisionShape3D" parent="appartement/Walls/Room_wall/StaticBody3D" index="0"]
+transform = Transform3D(0.999843, -0.017702, -2.05599e-05, 0.017702, 0.999841, 0.00232285, -2.05785e-05, -0.00232285, 0.999997, 0.0184627, 0.0324707, 0)
+
+[node name="CollisionShape3D" parent="appartement/Walls/Room_wall2/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00781155, 0.0590467, -0.000319481)
+
+[node name="Brossedent" parent="appartement/Walls" index="13"]
+transform = Transform3D(1.09993, 0, 0, 0, 0.0411226, 0.99155, 0, -1.23703, 0.0329622, -0.299993, -0.0494358, -6.13936)
+
+[node name="MeshInstance3D38" parent="appartement/OutBar" index="0"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -1.41762, -1.54774, 15.2561)
+
+[node name="MeshInstance3D41" parent="appartement/OutBar" index="3"]
+visible = false
+
+[node name="MeshInstance3D42" parent="appartement/OutBar" index="4"]
+visible = false
+
+[node name="MeshInstance3D43" parent="appartement/OutBar" index="5"]
+visible = false
+
+[node name="MeshInstance3D44" parent="appartement/OutBar" index="6"]
+visible = false
+
+[node name="MeshInstance3D57" parent="appartement/OutBar" index="19"]
+visible = false
+
+[node name="MeshInstance3D78" parent="appartement/OutBar" index="40"]
+transform = Transform3D(51.1402, 0, 0, 0, 1.00308, 0, 0, 0, 71.3667, 0, -9.21053, 0)
+
+[node name="Room_Wall" parent="appartement/fondation/CSGCombiner3D" index="1"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -1.74726, 0.0441205, 9.45937)
+size = Vector3(9.3978, 4.18689, 0.203979)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="appartement/fondation/CSGCombiner3D" index="17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.45879, 0.125336, 3.51933)
+operation = 2
+size = Vector3(4.0752, 3.94651, 1.23535)
+
+[node name="woodfloor" parent="appartement/fondation/CSGCombiner3D" index="18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50629, -1.70283, 3.42732)
+size = Vector3(35.6247, 0.001, 25.0785)
+
+[node name="CollisionShape3D3" parent="appartement/fondation" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.43713, 0.16475, 9.33324)
+shape = SubResource("BoxShape3D_vc1tc")
+
+[node name="CollisionShape3D7" parent="appartement/fondation" index="7"]
+transform = Transform3D(0.00500899, 0, 0.999987, 0, 1, 0, -0.999987, 0, 0.00500899, 4.43872, 0.16475, 1.94028)
+
+[node name="KitchenPart1" parent="appartement/Deco" index="2"]
+transform = Transform3D(1.12538, 0.0345311, 1.10423e-09, 0, -6.48848e-08, 1.08593, 0.0261865, -1.48399, -4.74547e-08, 15.3437, -0.945081, 3.59686)
+
+[node name="CollisionShape3D2" parent="appartement/Deco/KitchenPart1/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.999996, 2.13164e-14, 0, -2.13163e-14, 1, -0.767567, 0.718806, -4.76837e-07)
+
+[node name="KitchenPart2" parent="appartement/Deco" index="3"]
+transform = Transform3D(1.13301, 0.0231011, 3.02816e-05, -3.44471e-10, -0.00309514, 1.00095, 0.0170271, -1.53718, -0.00201497, 15.3294, -0.902541, 3.62281)
+
+[node name="Spat" parent="appartement/Deco" index="5"]
+transform = Transform3D(1, 0, 0, 0, -0.00455525, 0.99999, 0, -0.99999, -0.00455525, 15.7343, 0.290971, 5.26553)
+
+[node name="Poel" parent="appartement/Deco" index="6"]
+transform = Transform3D(-0.486385, -1.30952, 0.0115753, 4.84746e-10, 0.020326, 0.862093, -1.2314, 0.517241, -0.00457205, 14.8356, -0.330968, 6.56839)
+
+[node name="UpArmory" parent="appartement/Deco" index="9"]
+transform = Transform3D(-1.06591, 0.00395567, 1.86437e-10, 0, -5.41352e-08, 1.33537, 0.00340455, 1.23846, 5.83706e-08, 9.42764, 1.56793, 3.18322)
+
+[node name="Trash" parent="appartement/Deco" index="10"]
+transform = Transform3D(-0.014494, 1.8191, 0.097699, -1.31116e-08, -0.0784404, 2.26584, 2.01564, 0.0130807, 0.000702544, 9.61861, -1.26593, 8.68841)
+
+[node name="KitchenSink" parent="appartement/Deco" index="12"]
+transform = Transform3D(1.15279, 0.0355099, 3.71088e-05, 2.9449e-10, -0.00274009, 1.00091, 0.025275, -1.61961, -0.00169255, 15.3328, -0.901321, 3.60967)
+
+[node name="ChairKitch" parent="appartement/Deco" index="14"]
+transform = Transform3D(0.0224068, 1.36116, 0.437127, 0.0049888, 0.481818, -1.235, -1.65638, 0.0198644, 0.0021936, 9.23059, -0.553969, 6.83263)
+
+[node name="ChairKitch2" parent="appartement/Deco" index="15"]
+transform = Transform3D(0.0224068, 1.36116, 0.437127, 0.0049888, 0.481818, -1.235, -1.65638, 0.0198644, 0.0021936, 9.23059, -0.553969, 7.7773)
+
+[node name="Toaster" parent="appartement/Deco" index="20"]
+transform = Transform3D(0.991107, 0.133069, 5.81663e-09, 0, -4.37114e-08, 1, 0.133069, -0.991107, -4.33227e-08, 15.3961, -0.338037, 5.19309)
+
+[node name="Microwave" parent="appartement/Deco" index="21"]
+transform = Transform3D(0.827492, -0.561402, 0.00916046, 0, 0.0163149, 0.999867, -0.561477, -0.827382, 0.0135005, 15.1609, -0.289232, 2.69017)
+
+[node name="Chauffehaut" parent="appartement/Deco" index="22"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.0498, -0.382754, 5.54982)
+
+[node name="Curtbar2" parent="appartement/Deco" index="43"]
+transform = Transform3D(0.0202136, -1.27233, -2.84573e-08, 0.690078, 0.0184913, -0.709817, 0.695398, 0.0186338, 0.704386, 1.61308, 1.56412, -7.98795)
+
+[node name="CollisionShape3D" parent="appartement/Deco/Trash2/StaticBody3D" index="0"]
+transform = Transform3D(1, 4.67058e-07, -8.60775e-06, -4.53554e-07, 0.999999, 0.00132613, 8.60653e-06, -0.00132642, 0.999999, 0.121827, -0.102965, 2.68221e-07)
+
+[node name="Toilet" parent="appartement/Deco" index="51"]
+transform = Transform3D(1.90651, 0.000123953, 0.0153928, -0.0190975, 0.0122949, 1.53668, 1.02279e-06, -1.42628, 0.0132479, 3.77849, -1.14595, -7.61696)
+
+[node name="Toiletpaper" parent="appartement/Deco" index="52"]
+transform = Transform3D(-0.0530331, 1.53087, 0, -0.998593, -0.0813013, 0, 0, 0, 1.74708, 4.66182, -0.675297, -7.3128)
+
+[node name="Savon" parent="appartement/Deco" index="53"]
+transform = Transform3D(1.44249, 0, 0, 0, -0.00848885, -1.48074, 0, 1.52949, -0.00821828, -0.352592, -1.53162, -4.59945)
+
+[node name="Lavemain" parent="appartement/Deco" index="54"]
+transform = Transform3D(1.5518, 0, 0, 0, 0.0231156, 1.75242, 0, -1.70664, 0.0237357, -0.118868, -0.207093, -6.47858)
+
+[node name="Ptitetable" parent="appartement/Deco" index="59"]
+transform = Transform3D(-0.0218192, 0.999761, -0.00126136, -0.0162311, 0.000907262, 0.999868, 0.99963, 0.0218368, 0.0162074, 1.66868, -1.39035, -7.75612)
+
+[node name="Curtain3" parent="appartement/Deco" index="60"]
+transform = Transform3D(0.755287, 0, 0, 0, 1.26528, 0, 0, 0, 1, 1.21432, 0.465353, 9.25289)
+
+[node name="Fridge" parent="appartement/Deco" index="66"]
+transform = Transform3D(-0.999735, -1.73788e-09, 0.0230189, 0, 1, 7.5498e-08, -0.0230189, 7.5478e-08, -0.999735, 15.1927, -0.605604, 8.66543)
+
+[node name="Dishwasher 2" parent="appartement/Deco" index="71"]
+transform = Transform3D(-0.999497, -2.39384e-09, 0.0317074, 0, 1, 7.54978e-08, -0.0317074, 7.54599e-08, -0.999497, 15.3123, -0.901011, 7.45145)
+
+[node name="Wooden Table2" parent="appartement/Deco" index="72"]
+transform = Transform3D(-8.26958e-08, 0, 1.25646, 0, 1, 0, -1.89186, 0, -5.49216e-08, 9.47159, -0.703173, 4.30367)
+
+[node name="Mirror" parent="appartement/Deco" index="74"]
+transform = Transform3D(-1.9808e-07, -0.802198, 35.4587, 53.755, -5.77844e-06, -6.34068e-13, 8.75556e-06, 35.4587, 0.802198, -0.404962, 0.627597, -6.45798)
+
+[node name="ShowerFloor" parent="appartement/Deco" index="75"]
+transform = Transform3D(2.38787, 155.344, 4.37065e-06, 0, -6.79104e-06, 100, 159.446, -2.32643, -6.5455e-08, 0.410234, -1.68487, -3.88909)
+
+[node name="OmniLight3D" parent="appartement/New_Console/SuitExpe" index="1"]
+light_energy = 0.0
+
+[node name="Sketchfab_Scene" parent="appartement/lavedepot/ptichptich" index="0"]
+transform = Transform3D(-0.0183229, 0, 0.196896, 0, 0.171401, 0, -0.178833, 0, -0.0201736, -0.00468999, -0.329772, 0.0214319)
+
+[node name="Sketchfab_Scene" parent="appartement" index="42"]
+transform = Transform3D(-0.0257407, 0, 0.000558769, 0, 0.015, 0, -0.000873697, 0, -0.0164623, 1.42792, -1.30995, -3.07237)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_xvotj")]
+transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
+
+[node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 219.0
+offset_bottom = 23.0
+
+[node name="Event2" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="1"]
+visible = true
+
+[node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
+material = SubResource("ShaderMaterial_67yib")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1t4ng")
+camera_attributes = SubResource("CameraAttributesPractical_aq04m")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.9781)
+size = Vector3(24.1484, 6.75517, 2)
+material = SubResource("FogMaterial_d3oq6")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7238, 0.229126, 12.3603)
+size = Vector3(17.4797, 3.79638, 2.43262)
+material = SubResource("FogMaterial_d3oq6")
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.66, 0.683956, -2.2077)
+size = Vector3(13.9297, 5.40916, 2)
+material = SubResource("FogMaterial_d3oq6")
+
+[node name="FogVolume4" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.525711, 0.229126, 9.94043)
+size = Vector3(4.26617, 5.0576, 0.360535)
+material = SubResource("FogMaterial_d3oq6")
+
+[node name="managers" type="Node" parent="." groups=["event_manager"]]
+script = ExtResource("5_5g634")
+DANGER_LEVEL = null
+
+[node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
+
+[node name="depot_spawner" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0860391, -1.5983, 8.4577)
+activation = false
+
+[node name="depot_spawner2" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.832851, -1.5983, -6.62545)
+activation = false
+
+[node name="depot_spawner3" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8343, -1.5983, -6.83925)
+activation = false
+
+[node name="depot_spawner4" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.272, -1.5983, 0.690172)
+activation = false
+
+[node name="depot_spawner5" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5527, -1.5983, 7.79251)
+activation = false
+
+[node name="depot_spawner6" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58043, -1.5983, 0.445554)
+activation = false
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("7_vc1tc")]
+transform = Transform3D(-0.0334399, -0.0146691, -0.215633, 1.59231e-05, -0.330956, 0.00973293, -0.24556, 0.00197617, 0.0293652, 1.2653, -0.485574, 5.92725)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["sound_end"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6504, -7.73624, 43.4342)
+stream = ExtResource("9_u7eqg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["valise"]]
+script = ExtResource("8_xvotj")
+item_name = "valise"
+activate = false
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22262, -0.419678, 5.93256)
+shape = SubResource("BoxShape3D_u7eqg")
+
+[node name="Part1" type="Node3D" parent="."]
+
+[node name="murdimension" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(7.44182, 0, 0, 0, 1, 0.00224848, 0, -0.000261763, 8.58995, -8.54333, -1.5308, -6.78544)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="murdimension2" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(7.44182, 0, 0, 0, -4.37114e-08, -2.73568, 0, 1, -1.1958e-07, -8.54333, -0.455205, -8.18461)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part1/murdimension2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part1/murdimension2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.62901e-12, 0, 1.77636e-15, 1, 0.252197, -0.242188, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension3" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-3.25292e-07, 1, -1.1958e-07, 0, -4.37114e-08, -2.73568, -7.44182, -4.37114e-08, 5.22702e-15, -10.2891, -0.642893, -7.54717)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part1/murdimension3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part1/murdimension3/StaticBody3D"]
+transform = Transform3D(1, 0, -5.24102e-21, 0, 1, -4.50484e-12, 0, 1.77636e-15, 1, 0.131225, -0.157227, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension4" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-2.36255, -8.74228e-08, 1.0454e-14, 0, -4.37114e-08, -2.73568, 2.06541e-07, -1, 1.1958e-07, -8.54333, -0.43592, -3.16819)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part1/murdimension4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part1/murdimension4/StaticBody3D"]
+transform = Transform3D(0.999999, -2.84217e-14, -4.23516e-21, 3.69482e-13, 0.999997, -4.50484e-12, 1.48231e-21, 1.77636e-15, 1, 0.131225, -0.0872192, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension5" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-1.39357e-07, 1, -1.1958e-07, 0, -4.37114e-08, -2.73568, -3.18812, -4.37114e-08, 5.22702e-15, -5.65235, -0.580173, -1.61829)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="murdimension6" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-0.566855, -0.0202243, 2.46673e-09, -2.05633e-22, -4.28551e-08, -2.73568, 0.0116958, -0.980201, 1.19555e-07, -6.21215, -0.580173, -4.73706)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="murdimension7" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-0.124503, -0.89656, 1.18251e-07, -6.1373e-17, -3.96303e-08, -2.73568, 0.828125, -0.134792, 1.77783e-08, -6.8539, -0.580173, -4.06128)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="murdimension8" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(7.44182, 0, 0, 0, -1, 7.50957e-07, 0, -8.74228e-08, -8.58995, -8.54333, 1.84646, -6.78544)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Part1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.36679, 1.58726, -5.78699)
+stream = ExtResource("11_ymfik")
+max_distance = 1.0
+bus = &"Sfx"
+parameters/looping = true
+
+[node name="murdimension9" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-0.0238984, -0.999995, 1.1958e-07, 1.15567e-21, -4.37114e-08, -2.73568, 7.44178, -0.00321136, 3.84016e-10, -1.4416, -0.237179, -9.65401)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part1/murdimension9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part1/murdimension9/StaticBody3D"]
+transform = Transform3D(1, 0, -5.24102e-21, 0, 1, -4.50484e-12, 0, 1.77636e-15, 1, 0.131225, -0.157227, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="one" parent="Part1" instance=ExtResource("12_1t4ng")]
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, -7.85812, -0.722322, -5.7063)
+visible = false
+one_shot = true
+is_text = true
+texts = ["i betrayed my brothers in the mine"]
+
+[node name="CollisionShape3D" parent="Part1/one" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.999983, 0, 0, 0, 0.999983, -0.53231, 0.505404, 0)
+shape = SubResource("CylinderShape3D_aq04m")
+debug_color = Color(0.946724, 5.96821e-06, 0.588773, 1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Part1"]
+transform = Transform3D(1, 0, 0, 0, -0.0300849, 0.999547, 0, -0.999547, -0.0300849, -8.45077, 2.22335, -5.72236)
+light_energy = 0.0
+spot_angle = 23.9675
+
+[node name="Part2" type="Node3D" parent="."]
+
+[node name="murdimension21" type="MeshInstance3D" parent="Part2"]
+transform = Transform3D(-0.0576535, 0.99035, -1.22662e-07, 0, -4.32951e-08, -2.80653, -3.62173, -0.0157651, 1.95262e-09, 10.2588, -0.455205, 5.73896)
+mesh = SubResource("PlaneMesh_aq04m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part2/murdimension21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part2/murdimension21/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.62901e-12, 0, 1.77636e-15, 1, 0.252197, -0.242188, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension22" type="MeshInstance3D" parent="Part2"]
+transform = Transform3D(-1.73478e-07, -0.990476, 1.22677e-07, 0, -4.32951e-08, -2.80653, 3.96871, -4.32951e-08, 5.3624e-15, 15.6774, -0.455205, 5.73896)
+mesh = SubResource("PlaneMesh_aq04m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part2/murdimension22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part2/murdimension22/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.62901e-12, 0, 1.77636e-15, 1, 0.252197, -0.242188, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension23" type="MeshInstance3D" parent="Part2"]
+transform = Transform3D(-3.62219, -8.65902e-08, 1.07248e-14, 0, -4.32951e-08, -2.80653, 3.16662e-07, -0.990476, 1.22677e-07, 12.0557, -0.455205, 8.73431)
+mesh = SubResource("PlaneMesh_aq04m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part2/murdimension23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part2/murdimension23/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.62901e-12, 0, 1.77636e-15, 1, 0.252197, -0.242188, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension24" type="MeshInstance3D" parent="Part2"]
+transform = Transform3D(-0.0615957, 0, 3.41827, 0, 0.990476, 0, -3.92097, 0, -0.0536987, 12.4361, -1.68959, 5.74781)
+mesh = SubResource("PlaneMesh_aq04m")
+
+[node name="murdimension25" type="MeshInstance3D" parent="Part2"]
+transform = Transform3D(0.0615948, -0.00537632, -3.41822, -0.000334342, -0.990461, 0.0185544, -3.92097, -2.88202e-11, -0.0536987, 12.271, 1.86786, 5.66779)
+mesh = SubResource("PlaneMesh_aq04m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part2/murdimension25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part2/murdimension25/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.62901e-12, 0, 1.77636e-15, 1, 0.252197, -0.242188, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Part2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6978, 0.130361, 7.4323)
+stream = ExtResource("11_ymfik")
+autoplay = true
+max_distance = 3.0
+parameters/looping = true
+
+[node name="one" parent="Part2" instance=ExtResource("12_1t4ng")]
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, 13.4592, -0.722322, 6.29419)
+visible = false
+one_shot = true
+is_text = true
+texts = ["I preferred to preserve my secret rather than the safety of the inhabitants of this town"]
+
+[node name="CollisionShape3D" parent="Part2/one" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.999982, 0, 0, 0, 0.999982, -0.532311, 0.505404, 1.05425)
+shape = SubResource("CylinderShape3D_aq04m")
+debug_color = Color(0.946724, 5.96821e-06, 0.588773, 1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Part2"]
+transform = Transform3D(1, 0, 0, 0, -0.0300849, 0.999547, 0, -0.999547, -0.0300849, 12.6297, 1.66654, 7.25659)
+light_energy = 0.0
+spot_angle = 23.9675
+
+[node name="Part3" type="Node3D" parent="."]
+
+[node name="murdimension21" type="MeshInstance3D" parent="Part3"]
+transform = Transform3D(-0.0518716, -0.990914, 1.22662e-07, 6.63928e-16, -4.33197e-08, -2.80653, 3.27651, -0.0156875, 1.9419e-09, 4.89578, -0.455205, -6.04416)
+mesh = SubResource("PlaneMesh_d3oq6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part3/murdimension21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part3/murdimension21/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.77636e-15, 0, 1.77636e-15, 1, 0.252197, -0.242188, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension22" type="MeshInstance3D" parent="Part3"]
+transform = Transform3D(3.35222, -0.0037522, 4.64584e-10, 8.62795e-16, -4.33073e-08, -2.80653, 0.0126958, 0.990748, -1.22677e-07, 1.96063, -0.455205, -7.90493)
+mesh = SubResource("PlaneMesh_d3oq6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part3/murdimension22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part3/murdimension22/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.62901e-12, 0, 1.77636e-15, 1, 0.252197, -0.242188, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension23" type="MeshInstance3D" parent="Part3"]
+transform = Transform3D(-0.0155878, 0.988948, -1.22675e-07, -1.14198e-15, -4.3229e-08, -2.80653, -2.67393, -0.0057652, 7.15168e-10, -0.055022, -0.455205, -5.93941)
+mesh = SubResource("PlaneMesh_d3oq6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part3/murdimension23"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part3/murdimension23/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.62901e-12, 0, 1.77636e-15, 1, 0.252197, -0.242188, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension24" type="MeshInstance3D" parent="Part3"]
+transform = Transform3D(-0.000211107, 0.0112856, 2.91205, -0.0185225, 0.990185, -0.03319, -3.17754, -0.00577278, 7.42105e-10, 2.15467, -1.62716, -5.75922)
+mesh = SubResource("PlaneMesh_d3oq6")
+
+[node name="murdimension25" type="MeshInstance3D" parent="Part3"]
+transform = Transform3D(-0.000211393, 0.0113111, 2.80626, -0.0534223, -0.992293, 0.0319761, 3.18144, -0.0166616, 0.000723404, 2.06872, 1.62024, -5.4317)
+mesh = SubResource("PlaneMesh_d3oq6")
+
+[node name="murdimension26" type="MeshInstance3D" parent="Part3"]
+transform = Transform3D(-1.96006, -0.00275384, 3.57698e-10, -1.75701e-15, -4.12973e-08, -2.80718, 0.00571311, -0.944768, 1.22705e-07, 0.897684, -0.455205, -3.23884)
+mesh = SubResource("PlaneMesh_d3oq6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part3/murdimension26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part3/murdimension26/StaticBody3D"]
+transform = Transform3D(0.999999, -7.45058e-09, -8.88178e-16, -2.98023e-08, 1, -2.6148e-12, 4.44089e-16, 8.88178e-16, 1, 0.214968, -0.253102, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Part3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34798, 0, -6.12284)
+stream = ExtResource("11_ymfik")
+autoplay = true
+max_distance = 3.0
+
+[node name="PartFinal" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00120151)
+
+[node name="murdimension" type="MeshInstance3D" parent="PartFinal"]
+transform = Transform3D(2.92934, 0, 0, 0, 0.999884, 0.00278886, 0, -0.000261733, 10.6544, 5.47325, -1.68939, 12.2866)
+mesh = SubResource("PlaneMesh_67yib")
+
+[node name="murdimension2" type="MeshInstance3D" parent="PartFinal"]
+transform = Transform3D(-1.28045e-07, -1.00007, 0, 2.92934, -4.37146e-08, 0, 0, 0, 10.6544, 7.70632, -0.779718, 12.2866)
+mesh = SubResource("PlaneMesh_67yib")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PartFinal/murdimension2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PartFinal/murdimension2/StaticBody3D"]
+transform = Transform3D(0.999999, -0.00137881, -5.83644e-08, 0.00137881, 0.999999, 6.91507e-08, 5.82881e-08, -4.00178e-11, 1, -0.0330832, -0.263855, -0.0137786)
+shape = SubResource("BoxShape3D_benof")
+
+[node name="murdimension3" type="MeshInstance3D" parent="PartFinal"]
+transform = Transform3D(-1.28045e-07, 1.00007, 0, -2.92934, -4.37146e-08, 0, 0, 0, 10.6544, 3.22826, -0.066398, 12.2866)
+mesh = SubResource("PlaneMesh_67yib")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PartFinal/murdimension3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PartFinal/murdimension3/StaticBody3D"]
+transform = Transform3D(0.999999, -0.00137881, -5.83644e-08, 0.00137881, 0.999999, 6.91507e-08, 5.82881e-08, -4.00178e-11, 1, -0.0330832, -0.263855, -0.0137786)
+shape = SubResource("BoxShape3D_benof")
+
+[node name="murdimension4" type="MeshInstance3D" parent="PartFinal"]
+transform = Transform3D(-2.92934, 8.74292e-08, 0, -2.56091e-07, -1.00007, 0, 0, 0, 10.6544, 5.47325, 1.84133, 12.2866)
+mesh = SubResource("PlaneMesh_67yib")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PartFinal/murdimension4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PartFinal/murdimension4/StaticBody3D"]
+transform = Transform3D(0.999999, -0.00137881, -5.83644e-08, 0.00137881, 0.999999, 6.91507e-08, 5.82881e-08, -4.00178e-11, 1, -0.0330832, -0.263855, -0.0137786)
+shape = SubResource("BoxShape3D_benof")
+
+[node name="murdimension5" type="MeshInstance3D" parent="PartFinal"]
+transform = Transform3D(2.92934, 0, 0, 0, -0.000453588, 5.61671, 0, -1.00001, -0.00254785, 5.47325, -1.61019, 22.3137)
+mesh = SubResource("PlaneMesh_67yib")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PartFinal/murdimension5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PartFinal/murdimension5/StaticBody3D"]
+transform = Transform3D(0.999999, -0.00137881, -5.83644e-08, 0.00137881, 0.999999, 6.91507e-08, 5.82881e-08, -4.00178e-11, 1, -0.0330832, -0.263855, -0.0137786)
+shape = SubResource("BoxShape3D_benof")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="PartFinal"]
+transform = Transform3D(9.78558, 0, 0, 0, 0.558697, 0, 0, 0, 15.1715, 6.972, 2.16543, 21.4538)
+mesh = SubResource("BoxMesh_410gc")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PartFinal/MeshInstance3D26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PartFinal/MeshInstance3D26/StaticBody3D"]
+shape = SubResource("BoxShape3D_tytjf")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="PartFinal"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PartFinal/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42383, -1.7053, 11.9396)
+shape = SubResource("BoxShape3D_67yib")
+
+[node name="FinalCube" parent="PartFinal" instance=ExtResource("13_67yib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11937, 0.160911, 18.3457)
+
+[node name="one" parent="PartFinal" instance=ExtResource("12_1t4ng")]
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, 6.06758, -0.162288, 4.21379)
+one_shot = true
+is_text = true
+texts = ["I hid the contents of the suitcase from the person who could help me"]
+
+[node name="CollisionShape3D" parent="PartFinal/one" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.999982, 0, 0, 0, 0.999982, -0.532311, 0.505404, 1.05425)
+shape = SubResource("CylinderShape3D_aq04m")
+debug_color = Color(0.946724, 5.96821e-06, 0.588773, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vc1tc")
+}
+
+[connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
+
+[editable path="appartement"]
+[editable path="appartement/Codesr"]
+[editable path="appartement/Lamp1"]
+[editable path="appartement/frontdoor"]
+[editable path="appartement/Lamp3"]
+[editable path="appartement/Courant"]
+[editable path="appartement/RadioObj"]
+[editable path="appartement/RadioObj/Radiooo"]
+[editable path="appartement/Interrupteur4"]
+[editable path="appartement/Lamp2"]
+[editable path="appartement/Deco/Sketchfab_Scene2"]
+[editable path="appartement/Deco/Sketchfab_Scene3"]
+[editable path="appartement/Deco/Sketchfab_Scene6"]
+[editable path="appartement/Deco/Sketchfab_Scene7"]
+[editable path="appartement/New_Console"]
+[editable path="appartement/lavedepot"]
+[editable path="CharacterBody3D"]
+[editable path="CharacterBody3D/transition"]
+[editable path="Part1/one"]
+[editable path="Part2/one"]
+[editable path="PartFinal/one"]

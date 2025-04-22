@@ -114,3 +114,5 @@ func unique(object_name):
 			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/door_sound.mp3") as AudioStreamMP3)
 		"valise": 
 			Tools.start_transition("", load("res://Scene/final_days/scene_final.tscn") as PackedScene)
+		"valisevide":
+			Tools.start_transition("DAY 4", load("res://Scene/Days/Day4/scene_day_4.tscn") as PackedScene)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=129 format=4 uid="uid://qshxlersowrx"]
+[gd_scene load_steps=130 format=4 uid="uid://qshxlersowrx"]
 
 [ext_resource type="Script" uid="uid://c7kxa6nge1ol4" path="res://Scene/final_days/scene_final.gd" id="1_g6yd0"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="2_ym01d"]
@@ -40,6 +40,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bjn30n43ke817" path="res://Extern/Rework Appart/parkprops/trash.res" id="60_80k7n"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="60_wkpk4"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="61_umny2"]
+[ext_resource type="Script" uid="uid://b5qkrj8g1ucoe" path="res://Scene/final_days/souvenirs.gd" id="61_wkpk4"]
 [ext_resource type="ArrayMesh" uid="uid://bor0arncvhiyh" path="res://Extern/chair_kitch.res" id="63_fcukh"]
 [ext_resource type="ArrayMesh" uid="uid://bini22rbwpiib" path="res://Extern/plant1.res" id="64_5uiao"]
 [ext_resource type="ArrayMesh" uid="uid://digjesdw5e0mp" path="res://Extern/curtbar.res" id="65_k7lm2"]
@@ -1142,6 +1143,28 @@ offset_right = 900.0
 offset_bottom = 407.0
 autowrap_mode = 3
 
+[node name="Souvenirs" type="Panel" parent="Camera3D/Control"]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("61_wkpk4")
+
+[node name="Button" type="Button" parent="Camera3D/Control/Souvenirs"]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 584.0
+offset_right = 635.0
+offset_bottom = 624.0
+text = "Close"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera3D/Control/Souvenirs"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 1088.0
+offset_bottom = 576.0
+
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("3_dgy1d")]
 transform = Transform3D(-0.0334399, -0.0146691, -0.215633, 1.59231e-05, -0.330956, 0.00973293, -0.24556, 0.00197617, 0.0293652, 1.06181, -1.09011, 7.13478)
 
@@ -1154,8 +1177,11 @@ spot_angle = 25.0202
 
 [connection signal="pressed" from="Camera3D/Control/Take suit" to="." method="_on_take_suit_pressed"]
 [connection signal="pressed" from="Camera3D/Control/LET THE SUIT" to="." method="_on_let_the_suit_pressed"]
+[connection signal="pressed" from="Camera3D/Control/Logevent" to="." method="_on_logevent_pressed"]
 [connection signal="pressed" from="Camera3D/Control/Panel/yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="Camera3D/Control/Panel/no" to="." method="_on_no_pressed"]
+[connection signal="visibility_changed" from="Camera3D/Control/Souvenirs" to="Camera3D/Control/Souvenirs" method="_on_visibility_changed"]
+[connection signal="pressed" from="Camera3D/Control/Souvenirs/Button" to="Camera3D/Control/Souvenirs" method="_on_button_pressed"]
 
 [editable path="Node3D/frontdoor"]
 [editable path="Node3D/Deco/Sketchfab_Scene2"]

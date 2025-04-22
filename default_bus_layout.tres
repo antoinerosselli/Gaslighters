@@ -1,13 +1,29 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://mfe8tefvq6bc"]
+[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://mfe8tefvq6bc"]
 
-[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_obhhx"]
-resource_name = "Phaser"
-range_min_hz = 1117.29
-depth = 1.9
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_j3pel"]
+resource_name = "EQ"
+band_db/32_hz = -60.0
+band_db/100_hz = -60.0
+band_db/320_hz = -60.0
+band_db/1000_hz = 19.0
+band_db/3200_hz = 19.0
+band_db/10000_hz = -60.0
 
-[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_j3pel"]
-resource_name = "Distortion"
-pre_gain = 17.14
+[sub_resource type="AudioEffectBandPassFilter" id="AudioEffectBandPassFilter_j3pel"]
+resource_name = "BandPassFilter"
+resonance = 0.0
+
+[sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_j3pel"]
+resource_name = "Limiter"
+ceiling_db = -6.7
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_j3pel"]
+resource_name = "Compressor"
+ratio = 3.0
+gain = 1.0
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
+resource_name = "Reverb"
 
 [resource]
 bus/0/volume_db = 0.0672607
@@ -15,12 +31,16 @@ bus/1/name = &"Voice"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = 0.0
+bus/1/volume_db = -3.11736
 bus/1/send = &"Master"
-bus/1/effect/0/effect = SubResource("AudioEffectPhaser_obhhx")
+bus/1/effect/0/effect = SubResource("AudioEffectEQ_j3pel")
 bus/1/effect/0/enabled = true
-bus/1/effect/1/effect = SubResource("AudioEffectDistortion_j3pel")
+bus/1/effect/1/effect = SubResource("AudioEffectBandPassFilter_j3pel")
 bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectLimiter_j3pel")
+bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectCompressor_j3pel")
+bus/1/effect/3/enabled = true
 bus/2/name = &"Music"
 bus/2/solo = false
 bus/2/mute = false
@@ -31,5 +51,7 @@ bus/3/name = &"Sfx"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
-bus/3/volume_db = 0.0
+bus/3/volume_db = -3.32444
 bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectReverb_j3pel")
+bus/3/effect/0/enabled = false

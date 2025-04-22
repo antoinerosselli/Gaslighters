@@ -1,18 +1,30 @@
-[gd_scene load_steps=27 format=3 uid="uid://dwi44rv8sigev"]
+[gd_scene load_steps=37 format=3 uid="uid://dwi44rv8sigev"]
 
 [ext_resource type="Script" uid="uid://d0svgp66y5er7" path="res://Scene/Days/Day2/scene_day_2.gd" id="1_mnosv"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_o3dra"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_gfllc"]
+[ext_resource type="Texture2D" uid="uid://dys4posym2uc6" path="res://Extern/model-assignmentradio/textures/woodMid-ToneGlossy_diffuse.jpg" id="3_n3stj"]
 [ext_resource type="PackedScene" uid="uid://dydkbrvc7it6i" path="res://Prefab/letter.tscn" id="3_r63h0"]
+[ext_resource type="Texture2D" uid="uid://qunejf5xui6j" path="res://Extern/model-assignmentradio/source/v5/bady-2.png" id="4_4n555"]
 [ext_resource type="PackedScene" uid="uid://bxny8biun3n3g" path="res://Note/note_cachetoi.tscn" id="4_ht0eg"]
 [ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="4_t23kc"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="4_wfw2x"]
 [ext_resource type="Script" uid="uid://3v1u1qkeqlyt" path="res://Scene/Days/Day2/em_day_2.gd" id="6_mnosv"]
 [ext_resource type="PackedScene" uid="uid://c0gjlcrjiigw3" path="res://Characters/guys/guy_cagoule.tscn" id="8_jhd05"]
 [ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_kayp0"]
+[ext_resource type="Texture2D" uid="uid://bvrkg6q7rugdh" path="res://Sprite/letter.png" id="9_4n555"]
 [ext_resource type="AudioStream" uid="uid://bhte01b1phrwb" path="res://Music&Sound/sound/walking-steps-102715.mp3" id="10_kayp0"]
 [ext_resource type="AudioStream" uid="uid://c8avdkeoaav76" path="res://Music&Sound/sound/distortion-29695.mp3" id="11_327jw"]
 [ext_resource type="AudioStream" uid="uid://da423gammvo6f" path="res://Music&Sound/sound/meaty-gunshot-101257.mp3" id="12_b8cxq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sak5h"]
+albedo_texture = ExtResource("3_n3stj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4vkj"]
+resource_name = "White painted metal"
+cull_mode = 2
+albedo_texture = ExtResource("4_4n555")
+roughness = 0.5
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_b8cxq"]
 viewport_path = NodePath("SubViewport")
@@ -30,28 +42,14 @@ shader_parameter/edgeGlowIntensity = 1.466
 shader_parameter/enable_dissolve_animation = false
 shader_parameter/animation_speed = 0.6
 
-[sub_resource type="Sky" id="Sky_b8cxq"]
-
-[sub_resource type="Environment" id="Environment_gfllc"]
-background_mode = 2
-sky = SubResource("Sky_b8cxq")
-ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
-ambient_light_sky_contribution = 0.51
-ambient_light_energy = 0.35
-ssao_radius = 3.49
-glow_normalized = true
-glow_intensity = 7.2
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0157
-volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
-volumetric_fog_anisotropy = -0.51
-adjustment_enabled = true
-adjustment_saturation = 1.44
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_5h5o6"]
-
 [sub_resource type="FogMaterial" id="FogMaterial_r63h0"]
 emission = Color(0.281187, 0.281187, 0.281187, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0c7wj"]
+albedo_texture = ExtResource("9_4n555")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qai4k"]
+material = SubResource("StandardMaterial3D_0c7wj")
 
 [sub_resource type="Animation" id="Animation_gxdup"]
 length = 10.0
@@ -611,6 +609,42 @@ _data = {
 &"RESET": SubResource("Animation_wfw2x")
 }
 
+[sub_resource type="Gradient" id="Gradient_4n555"]
+offsets = PackedFloat32Array(0.0263158, 0.747368, 0.947368, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.247836, 0.247836, 0.247836, 1, 0.857895, 0.857895, 0.857895, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sak5h"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fx68q"]
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_4n555")
+noise = SubResource("FastNoiseLite_sak5h")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0c7wj"]
+panorama = SubResource("NoiseTexture2D_fx68q")
+energy_multiplier = 3.12
+
+[sub_resource type="Sky" id="Sky_8e1tg"]
+sky_material = SubResource("PanoramaSkyMaterial_0c7wj")
+
+[sub_resource type="Environment" id="Environment_qai4k"]
+background_mode = 2
+background_energy_multiplier = 0.39
+sky = SubResource("Sky_8e1tg")
+ambient_light_sky_contribution = 0.51
+ssao_radius = 3.49
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0157
+volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
+volumetric_fog_anisotropy = -0.51
+adjustment_enabled = true
+adjustment_saturation = 1.44
+
 [node name="SceneDay2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125958)
 script = ExtResource("1_mnosv")
@@ -621,6 +655,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00315857, -1.19209e-07, -0.
 [node name="secretdoor" parent="appartement" index="8"]
 transform = Transform3D(0.550753, 0, 0, 0, 1, 0, 0, 0, 1, -3.536, 3.94796, -2.625)
 
+[node name="Radio_bady" parent="appartement/RadioObj/Radiooo/RadioBody" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sak5h")
+surface_material_override/1 = SubResource("StandardMaterial3D_b4vkj")
+
 [node name="New_Console_SubViewport#Sprite3D" parent="appartement" index="18"]
 texture = SubResource("ViewportTexture_b8cxq")
 
@@ -629,9 +667,6 @@ light_energy = 0.0
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_gfllc")]
 transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
-
-[node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
-visible = true
 
 [node name="GOVFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="0"]
 visible = false
@@ -655,16 +690,14 @@ offset_right = 317.0
 offset_bottom = 328.0
 
 [node name="Event" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="0"]
-visible = true
 offset_left = -4.0
 offset_top = 40.0
 offset_right = 556.0
 offset_bottom = 88.0
-text = "> Rczij ocz gdvzo wgzzo, ocz dmdi ned vaapomn, ozij tp rdffvmdsj oz nvodmo ja ocz gziny wzgjr
+text = "> Is it a code ? : Rczij ocz gdvzo wgzzo, ocz dmdi ned vaapomn, ozij tp rdffvmdsj oz nvodmo ja ocz gziny wzgjr
 "
 
 [node name="Event2" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="1"]
-visible = true
 offset_left = -4.0
 offset_top = 96.0
 offset_right = 527.0
@@ -672,7 +705,6 @@ offset_bottom = 120.0
 text = "> Ration trucks have problems"
 
 [node name="Event3" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="2"]
-visible = true
 offset_left = -4.0
 offset_top = 136.0
 offset_right = 564.0
@@ -680,7 +712,6 @@ offset_bottom = 160.0
 text = "> Dangerous individuals still roaming the valley"
 
 [node name="Event4" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="3"]
-visible = true
 offset_left = -4.0
 offset_top = 176.0
 offset_right = 564.0
@@ -688,7 +719,6 @@ offset_bottom = 224.0
 text = "> Religion and minors have been in conflict for a long time"
 
 [node name="Event5" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="4"]
-visible = true
 offset_left = -4.0
 offset_top = 232.0
 offset_right = 441.0
@@ -701,10 +731,6 @@ offset_left = -16.0
 offset_top = -8.0
 offset_right = 26.0
 offset_bottom = 15.0
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_gfllc")
-camera_attributes = SubResource("CameraAttributesPractical_5h5o6")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
@@ -726,6 +752,10 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 16.2043, -1.72069, 0.79
 item_name = "letter"
 is_note = true
 note = ExtResource("4_ht0eg")
+
+[node name="MeshInstance3D" parent="Letter" index="0"]
+transform = Transform3D(0.76681, 0, 0, 0, 1, 0, 0, 0, 0.441186, -0.0260925, 0.0956774, 0)
+mesh = SubResource("PlaneMesh_qai4k")
 
 [node name="AnimationPlayer" parent="Letter" index="2"]
 libraries = {
@@ -800,7 +830,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51941, 0, 14)
 light_energy = 0.0
 omni_range = 15.0
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qai4k")
+
 [connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="managers" method="_on_animation_player_animation_finished"]
 
 [editable path="appartement"]
 [editable path="appartement/Lamp1"]

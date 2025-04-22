@@ -1,0 +1,864 @@
+[gd_scene load_steps=24 format=3 uid="uid://burmfonrenium"]
+
+[ext_resource type="Script" uid="uid://c7x1krdmm8fej" path="res://Scene/Days/Day4/scene_day_4.gd" id="1_nyh0e"]
+[ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="2_5g634"]
+[ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="3_xvotj"]
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="4_u7eqg"]
+[ext_resource type="Script" uid="uid://ce0skcxppltxr" path="res://Scene/Days/Day4/em_day_4.gd" id="5_5g634"]
+[ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="6_ymfik"]
+[ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="7_vc1tc"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="8_xvotj"]
+[ext_resource type="AudioStream" uid="uid://by8k4wkyqp6xg" path="res://Music&Sound/sound/car-horn-6408.mp3" id="9_u7eqg"]
+[ext_resource type="Shader" uid="uid://b801gs84w2k41" path="res://Scene/menu3D.gdshader" id="10_jlx00"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_u7eqg"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67yib"]
+resource_local_to_scene = true
+shader = ExtResource("4_u7eqg")
+shader_parameter/baseColor = Color(0, 0, 0, 1)
+shader_parameter/dissolveSlider = 0.0
+shader_parameter/holeScale = 15.0
+shader_parameter/holeDensity = 1.5
+shader_parameter/edgeColor = Color(0.980392, 0.568627, 0.258824, 1)
+shader_parameter/edgeThickness = 0.025
+shader_parameter/edgeGlowIntensity = 1.466
+shader_parameter/enable_dissolve_animation = false
+shader_parameter/animation_speed = 0.6
+
+[sub_resource type="Sky" id="Sky_gxdup"]
+
+[sub_resource type="Environment" id="Environment_1t4ng"]
+background_mode = 2
+sky = SubResource("Sky_gxdup")
+ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
+ambient_light_sky_contribution = 0.51
+ambient_light_energy = 0.35
+ssao_radius = 3.49
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0157
+volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
+volumetric_fog_anisotropy = -0.51
+adjustment_enabled = true
+adjustment_saturation = 1.44
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_aq04m"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_d3oq6"]
+emission = Color(0.281187, 0.281187, 0.281187, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7eqg"]
+size = Vector3(1, 0.160645, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ymfik"]
+render_priority = 0
+shader = ExtResource("10_jlx00")
+shader_parameter/scale = 6.155
+shader_parameter/speed = 0.3
+shader_parameter/octaves = 8
+shader_parameter/persistence = 0.756
+shader_parameter/color_1 = Vector4(1, 0, 0.4, 0)
+shader_parameter/color_2 = Vector4(1, 1, 1, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vc1tc"]
+material = SubResource("ShaderMaterial_ymfik")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jlx00"]
+size = Vector3(1.68042, 0.825562, 1.41699)
+
+[sub_resource type="Animation" id="Animation_jlx00"]
+resource_name = "part1"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Part1/murdimension:mesh:material:shader_parameter/color_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Part1/murdimension2:mesh:material:shader_parameter/color_1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Part1/murdimension3:mesh:material:shader_parameter/color_1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Part1/murdimension4:mesh:material:shader_parameter/color_1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Part1/murdimension5:mesh:material:shader_parameter/color_1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Part1/murdimension6:mesh:material:shader_parameter/color_1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Part1/murdimension7:mesh:material:shader_parameter/color_1")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0), Vector4(1, 0, 0.4, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Part1/murdimension:mesh:material:shader_parameter/color_2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Part1/murdimension2:mesh:material:shader_parameter/color_2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Part1/murdimension3:mesh:material:shader_parameter/color_2")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Part1/murdimension4:mesh:material:shader_parameter/color_2")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Part1/murdimension5:mesh:material:shader_parameter/color_2")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Part1/murdimension6:mesh:material:shader_parameter/color_2")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Part1/murdimension7:mesh:material:shader_parameter/color_2")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 7.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0), Vector4(1, 1, 1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("appartement/Lamp:transparency")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("appartement/Lamp/OmniLight3D:light_energy")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("appartement/Deco/TableCorridor:transparency")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("appartement/Deco/TableCorridor:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("appartement/Codesr/MeshInstance3D:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("appartement/Codesr/MeshInstance3D:transparency")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("appartement/Lamp2:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("appartement/Lamp2/OmniLight3D:light_energy")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("appartement/Courant:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("appartement/Courant/OmniLight3D:light_energy")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("appartement/New_Console/SuitExpe/OmniLight3D:light_energy")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.938, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ymfik"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Part1/murdimension:mesh:material:shader_parameter/color_1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Part1/murdimension2:mesh:material:shader_parameter/color_1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Part1/murdimension3:mesh:material:shader_parameter/color_1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Part1/murdimension4:mesh:material:shader_parameter/color_1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Part1/murdimension5:mesh:material:shader_parameter/color_1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Part1/murdimension6:mesh:material:shader_parameter/color_1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Part1/murdimension7:mesh:material:shader_parameter/color_1")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 0, 0.4, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Part1/murdimension:mesh:material:shader_parameter/color_2")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Part1/murdimension2:mesh:material:shader_parameter/color_2")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Part1/murdimension3:mesh:material:shader_parameter/color_2")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Part1/murdimension4:mesh:material:shader_parameter/color_2")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Part1/murdimension5:mesh:material:shader_parameter/color_2")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Part1/murdimension6:mesh:material:shader_parameter/color_2")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Part1/murdimension7:mesh:material:shader_parameter/color_2")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector4(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("appartement/Lamp:transparency")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("appartement/Lamp/OmniLight3D:light_energy")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("appartement/Deco/TableCorridor:transparency")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("appartement/Deco/TableCorridor:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("appartement/Codesr/MeshInstance3D:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("appartement/Codesr/MeshInstance3D:transparency")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("appartement/Lamp2:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("appartement/Lamp2/OmniLight3D:light_energy")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("appartement/Courant:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("appartement/Courant/OmniLight3D:light_energy")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("appartement/New_Console/SuitExpe/OmniLight3D:light_energy")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vc1tc"]
+_data = {
+&"RESET": SubResource("Animation_ymfik"),
+&"part1": SubResource("Animation_jlx00")
+}
+
+[node name="SceneDay4" type="Node3D"]
+script = ExtResource("1_nyh0e")
+
+[node name="appartement" parent="." instance=ExtResource("2_5g634")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00315857, -1.19209e-07, -0.127772)
+
+[node name="Lamp" parent="appartement" index="5"]
+transparency = 1.0
+
+[node name="OmniLight3D" parent="appartement/Lamp" index="0"]
+light_energy = 0.0
+
+[node name="secretdoor" parent="appartement" index="8"]
+transform = Transform3D(0.550753, 0, 0, 0, 1, 0, 0, 0, 1, -3.536, 3.93459, -2.625)
+
+[node name="New_Console_SubViewport#Sprite3D" parent="appartement" index="18"]
+texture = SubResource("ViewportTexture_u7eqg")
+
+[node name="Lamp2" parent="appartement" index="29"]
+visible = false
+
+[node name="TableCorridor" parent="appartement/Deco" index="73"]
+visible = false
+
+[node name="OmniLight3D" parent="appartement/New_Console/SuitExpe" index="1"]
+light_energy = 0.0
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_xvotj")]
+transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
+
+[node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3"]
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 219.0
+offset_bottom = 23.0
+
+[node name="Event2" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="1"]
+visible = true
+
+[node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
+material = SubResource("ShaderMaterial_67yib")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1t4ng")
+camera_attributes = SubResource("CameraAttributesPractical_aq04m")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
+size = Vector3(24.1484, 6.75517, 2)
+material = SubResource("FogMaterial_d3oq6")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00224, 0.859737, 11.3124)
+size = Vector3(20.3026, 5.0576, 2.43262)
+material = SubResource("FogMaterial_d3oq6")
+
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.66, 0.683956, -2.2077)
+size = Vector3(13.9297, 5.40916, 2)
+material = SubResource("FogMaterial_d3oq6")
+
+[node name="managers" type="Node" parent="." groups=["event_manager"]]
+script = ExtResource("5_5g634")
+
+[node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
+
+[node name="depot_spawner" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0860391, -1.5983, 8.4577)
+activation = false
+
+[node name="depot_spawner2" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.832851, -1.5983, -6.62545)
+activation = false
+
+[node name="depot_spawner3" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8343, -1.5983, -6.83925)
+activation = false
+
+[node name="depot_spawner4" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.272, -1.5983, 0.690172)
+activation = false
+
+[node name="depot_spawner5" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5527, -1.5983, 7.79251)
+activation = false
+
+[node name="depot_spawner6" parent="managers" instance=ExtResource("6_ymfik")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58043, -1.5983, 0.445554)
+activation = false
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("7_vc1tc")]
+transform = Transform3D(-0.0334399, -0.0146691, -0.215633, 1.59231e-05, -0.330956, 0.00973293, -0.24556, 0.00197617, 0.0293652, 1.2653, -0.485574, 5.92725)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["sound_end"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6504, -7.73624, 43.4342)
+stream = ExtResource("9_u7eqg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["valise"]]
+script = ExtResource("8_xvotj")
+item_name = "valise"
+activate = false
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22262, -0.419678, 5.93256)
+shape = SubResource("BoxShape3D_u7eqg")
+
+[node name="Part1" type="Node3D" parent="."]
+
+[node name="murdimension" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(7.44182, 0, 0, 0, 1, 0.00224848, 0, -0.000261763, 8.58995, -8.54333, -1.5308, -6.78544)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="murdimension2" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(7.44182, 0, 0, 0, -4.37114e-08, -2.73568, 0, 1, -1.1958e-07, -8.54333, -0.455205, -7.54717)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part1/murdimension2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part1/murdimension2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.62901e-12, 0, 1.77636e-15, 1, 0.252197, -0.242188, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension3" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-3.25292e-07, 1, -1.1958e-07, 0, -4.37114e-08, -2.73568, -7.44182, -4.37114e-08, 5.22702e-15, -10.2891, -0.642893, -7.54717)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part1/murdimension3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part1/murdimension3/StaticBody3D"]
+transform = Transform3D(1, 0, -5.24102e-21, 0, 1, -4.50484e-12, 0, 1.77636e-15, 1, 0.131225, -0.157227, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension4" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-2.36255, -8.74228e-08, 1.0454e-14, 0, -4.37114e-08, -2.73568, 2.06541e-07, -1, 1.1958e-07, -8.54333, -0.43592, -3.16819)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Part1/murdimension4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Part1/murdimension4/StaticBody3D"]
+transform = Transform3D(0.999999, -2.84217e-14, -4.23516e-21, 3.69482e-13, 0.999997, -4.50484e-12, 1.48231e-21, 1.77636e-15, 1, 0.131225, -0.0872192, -0.208496)
+shape = SubResource("BoxShape3D_jlx00")
+
+[node name="murdimension5" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-1.39357e-07, 1, -1.1958e-07, 0, -4.37114e-08, -2.73568, -3.18812, -4.37114e-08, 5.22702e-15, -5.65235, -0.580173, -1.61829)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="murdimension6" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-0.566855, -0.0202243, 2.46673e-09, -2.05633e-22, -4.28551e-08, -2.73568, 0.0116958, -0.980201, 1.19555e-07, -6.21215, -0.580173, -4.73706)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="murdimension7" type="MeshInstance3D" parent="Part1"]
+transform = Transform3D(-0.124503, -0.89656, 1.18251e-07, -6.1373e-17, -3.96303e-08, -2.73568, 0.828125, -0.134792, 1.77783e-08, -6.8539, -0.580173, -4.06128)
+mesh = SubResource("PlaneMesh_vc1tc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vc1tc")
+}
+
+[connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
+
+[editable path="appartement"]
+[editable path="appartement/Codesr"]
+[editable path="appartement/Lamp1"]
+[editable path="appartement/frontdoor"]
+[editable path="appartement/Lamp3"]
+[editable path="appartement/Courant"]
+[editable path="appartement/RadioObj"]
+[editable path="appartement/RadioObj/Radiooo"]
+[editable path="appartement/Interrupteur4"]
+[editable path="appartement/Lamp2"]
+[editable path="appartement/Deco/Sketchfab_Scene2"]
+[editable path="appartement/Deco/Sketchfab_Scene3"]
+[editable path="appartement/Deco/Sketchfab_Scene6"]
+[editable path="appartement/Deco/Sketchfab_Scene7"]
+[editable path="appartement/New_Console"]
+[editable path="appartement/lavedepot"]
+[editable path="CharacterBody3D"]
+[editable path="CharacterBody3D/transition"]

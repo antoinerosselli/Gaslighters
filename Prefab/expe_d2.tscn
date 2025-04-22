@@ -60,6 +60,12 @@ func _on_go_home_pressed():
 		Tools.spawn_conserve(3)
 		var player = Tools.get_player()
 		player.sanity -= 10
+	if expe_day == 1:
+		var player = Tools.get_player()
+		player.sanity -= 30
+		var suit = get_tree().get_first_node_in_group(\"suitcase\")
+		suit.visible = true
+		Tools.door_letter()
 	get_tree().get_first_node_in_group(\"canvas\").visible = true
 	Tools.paused_game()
 	Tools.expe_status(false)
@@ -87,8 +93,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_cqvc2")
-expes = "C'est la folie la team"
+expes = "You leave the apartment, following the coordinates received through the radio. The forest swallows you in a heavy silence. A house appears between the trees — someone was here earlier today. Inside, everything is torn apart. The gas has crept in, invisible but present. A body lies on the floor. You don’t stop to check. The suitcase is there. You open it — it’s exactly what you came for. You leave quickly, eyes drawn to the shifting shadows between the trunks."
 expes_result = "-30 SANITY, +1 SUITCASE"
+expe_day = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_kj2cy")

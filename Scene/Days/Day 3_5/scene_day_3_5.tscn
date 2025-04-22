@@ -1,13 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://dqweg357g3y3f"]
+[gd_scene load_steps=23 format=3 uid="uid://dqweg357g3y3f"]
 
 [ext_resource type="Script" uid="uid://ciaot05myvu11" path="res://Scene/Days/Day 3_5/scene_day_3_5.gd" id="1_fy7iv"]
 [ext_resource type="Texture2D" uid="uid://cdcr1dvyfigu" path="res://Extern/Abandoned_House/Abandoned_House_road.jpg" id="1_vk00q"]
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="2_jcti1"]
+[ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="3_f5v1x"]
 [ext_resource type="PackedScene" uid="uid://bf3hd3yksl3ls" path="res://Extern/antowaan_3d/source/2 Trees/2_trees.tscn" id="3_jcti1"]
 [ext_resource type="PackedScene" uid="uid://mwbb6ijmkuo4" path="res://Extern/antowaan_3d/source/2 Trees/GermanCar.fbx" id="4_y7510"]
 [ext_resource type="PackedScene" uid="uid://bc8ihhlscs4db" path="res://Characters/guys/guy.tscn" id="5_sj1gt"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="6_3h2jq"]
-
+[ext_resource type="PackedScene" uid="uid://clylj6qgxpaqe" path="res://Prefab/lampadaire.tscn" id="6_b868s"]
+[ext_resource type="Script" uid="uid://qorymwsmxpnp" path="res://Scene/Days/Day 3_5/em_day_3_5.gd" id="8_j0j8q"]
+[ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="10_geovp"]
+[ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="11_5vafd"]
 
 [sub_resource type="Environment" id="Environment_y7510"]
 background_energy_multiplier = 0.0
@@ -15,6 +19,21 @@ ambient_light_energy = 0.0
 glow_intensity = 3.48
 fog_light_color = Color(0.0960931, 0.108506, 0.12802, 1)
 fog_sky_affect = 0.681
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1y1h7"]
+resource_local_to_scene = true
+shader = ExtResource("3_f5v1x")
+shader_parameter/baseColor = Color(0, 0, 0, 1)
+shader_parameter/dissolveSlider = 0.0
+shader_parameter/holeScale = 15.0
+shader_parameter/holeDensity = 1.5
+shader_parameter/edgeColor = Color(0.980392, 0.568627, 0.258824, 1)
+shader_parameter/edgeThickness = 0.025
+shader_parameter/edgeGlowIntensity = 1.466
+shader_parameter/enable_dissolve_animation = false
+shader_parameter/animation_speed = 0.6
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_j0j8q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7510"]
 albedo_texture = ExtResource("1_vk00q")
@@ -25,95 +44,629 @@ albedo_texture = ExtResource("1_vk00q")
 albedo_texture = ExtResource("2_jcti1")
 uv1_scale = Vector3(3, 3, 3)
 
+[sub_resource type="Animation" id="Animation_j0j8q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.887213, 0.617452, 10.9012)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("car:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("car:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -43.4065)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fondation/MeshInstance3D88/OmniLight3D:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("car/SpotLight3D:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("car/SpotLight3D2:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("car/OmniLight3D:light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("car/OmniLight3D2:light_energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("guy:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("guy:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.54676, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("guy:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(3.19729, 1.68836, -30.8558)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Sketchfab_Scene:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sketchfab_Scene:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.91633, 0.102598, -28.0507)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sketchfab_Scene:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.353569, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b868s"]
+resource_name = "rencontredu3emetype"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8.21456, 26.301, 33.0024, 44.8198, 49.9359),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.887213, 0.617452, 10.9012), Vector3(0.887213, 0.617452, -4.84953), Vector3(0.887213, 0.617452, -4.84953), Vector3(1.81008, 0.617452, -17.9077), Vector3(1.81008, 0.617452, -17.9077), Vector3(2.04609, 0.617452, -20.3195)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("car:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8.50279),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("car:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(8.56667, 15.2762),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -50.0044), Vector3(0, 0, -28.4636)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Fondation/MeshInstance3D88/OmniLight3D:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 13.3307),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4.103, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("car/SpotLight3D:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 23.0427, 23.6191, 24.7, 25.2765),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [6.444, 0.0, 7.333, 0.0, 7.333]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("car/SpotLight3D2:light_energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 23.0427, 23.6191, 24.7, 25.2765),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [6.444, 0.0, 7.333, 0.0, 7.333]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("car/OmniLight3D:light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 23.0427, 23.6912, 24.7, 25.3485),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1.0, 0.0, 1.0, 0.0, 1.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("car/OmniLight3D2:light_energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 23.0427, 23.6912, 24.7, 25.3485),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1.0, 0.0, 1.0, 0.0, 1.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("guy:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 30.048),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("guy:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(30.4083, 32.3539),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.54676, 0), Vector3(0, 2.97156, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("guy:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(29.7598, 32.57),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.19729, 1.68836, -30.8558), Vector3(3.19729, 1.68836, -28.9338)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Sketchfab_Scene:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 32.2097),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sketchfab_Scene:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(32.699, 42.5709, 44.4333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(2.91633, 0.102598, -28.0507), Vector3(2.91633, 0.102598, -28.0507), Vector3(2.19427, 0.102598, -21.3847)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sketchfab_Scene:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(32.699, 42.5709, 44.4333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.353569, 0), Vector3(0, -0.353569, 0), Vector3(0, -0.353569, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5kbbq"]
+_data = {
+&"RESET": SubResource("Animation_j0j8q"),
+&"rencontredu3emetype": SubResource("Animation_b868s")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f5v1x"]
+
 [node name="scene_day_3_5" type="Node3D"]
 script = ExtResource("1_fy7iv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_y7510")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 1.7799, 0, 0.148206)
-material_override = SubResource("StandardMaterial3D_y7510")
-mesh = SubResource("PlaneMesh_sj1gt")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(7.27483, 0, 0, 0, 1, 0, 0, 0, 11.8098, 11.4026, 0.0115485, 0.148206)
-material_override = SubResource("StandardMaterial3D_3h2jq")
-mesh = SubResource("PlaneMesh_sj1gt")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(6.35748, 0, 0, 0, 1, 0, 0, 0, 11.8098, -6.98223, 0.0115485, 0.148206)
-material_override = SubResource("StandardMaterial3D_3h2jq")
-mesh = SubResource("PlaneMesh_sj1gt")
-
-[node name="trees" type="Node3D" parent="."]
-
-[node name="2 Trees6" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 0)
-
-[node name="2 Trees7" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 8.78755)
-
-[node name="2 Trees8" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, -9.46618)
-
-[node name="2 Trees9" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
-
-[node name="2 Trees10" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, -5.72575)
-
-[node name="2 Trees11" parent="trees" instance=ExtResource("3_jcti1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
-
-[node name="guy" parent="." instance=ExtResource("5_sj1gt")]
-transform = Transform3D(-0.375932, 0, 0.136657, 0, 0.4, 0, -0.136657, 0, -0.375932, 3.60224, 1.91745, -1.16264)
-
-[node name="SpotLight3D" parent="guy/face" index="1"]
-light_color = Color(0.722337, 0.422203, 0.814956, 1)
-
-[node name="SpotLight3D2" parent="guy/face" index="2"]
-light_color = Color(0.722337, 0.422203, 0.814956, 1)
-
-[node name="guy2" parent="." instance=ExtResource("5_sj1gt")]
-transform = Transform3D(-0.373222, 0, -0.143894, 0, 0.4, 0, 0.143894, 0, -0.373222, -0.393795, 1.91745, -1.16264)
-
-[node name="SpotLight3D" parent="guy2/face" index="1"]
-light_color = Color(0.419684, 0.580278, 0.744069, 1)
-
-[node name="SpotLight3D2" parent="guy2/face" index="2"]
-light_color = Color(0.419684, 0.580278, 0.744069, 1)
-
 [node name="CharacterBody3D" parent="." instance=ExtResource("6_3h2jq")]
-transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 1.5985, 0.61745, 4.51342)
+transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 0.887213, 0.617452, 10.9012)
 affect_by_gravity = false
 can_move = false
 
+[node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
+material = SubResource("ShaderMaterial_1y1h7")
+
+[node name="MeshInstance3D86" parent="." instance=ExtResource("6_b868s")]
+transform = Transform3D(-0.23738, 0, 0.0117195, 0, 8.03263, 0, -0.00938061, 0, -0.296566, 4.33922, 1.72418, 4.99901)
+skeleton = NodePath("../car/GermanCar")
+
+[node name="MeshInstance3D" parent="MeshInstance3D86" index="0"]
+transform = Transform3D(2.29289, 0, 0, 0, 0.0619481, 0, 0, 0, 1.67381, 1.2469, 0.486263, -0.00843811)
+material_override = SubResource("ORMMaterial3D_j0j8q")
+
+[node name="OmniLight3D" parent="MeshInstance3D86" index="1"]
+transform = Transform3D(4.20937, 0, 0, 0, 0.124492, 0, 0, 0, 3.36931, 1.62499, 0.456967, 0)
+light_energy = 3.279
+omni_range = 10.909
+
 [node name="car" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -43.4065)
+visible = false
 
 [node name="GermanCar" parent="car" instance=ExtResource("4_y7510")]
 transform = Transform3D(-0.99922, 0, 0.0394865, 0, 1, 0, -0.0394865, 0, -0.99922, 1.75955, 0, -2.45659)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14528, 0.732797, -0.071156)
+light_energy = 0.0
 distance_fade_enabled = true
 omni_range = 0.207615
 
 [node name="SpotLight3D" type="SpotLight3D" parent="car"]
 transform = Transform3D(1, 0, 0, 0, -0.999955, 0.00945953, 0, -0.00945953, -0.999955, 0.998344, 0.596898, -1.00827)
-light_energy = 4.423
+light_energy = 0.0
 spot_range = 16.5182
 spot_angle = 16.6636
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="car"]
 transform = Transform3D(1, 0, 0, 0, -0.999955, 0.00945953, 0, -0.00945953, -0.999955, 2.32589, 0.596898, -1.00827)
-light_energy = 4.423
+light_energy = 0.0
 spot_range = 15.5058
 spot_angle = 18.7364
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="car"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31439, 0.703384, -0.071156)
+light_energy = 0.0
 omni_range = 0.191088
 
+[node name="Fondation" type="Node3D" parent="."]
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 1.7799, 0, 0.148206)
+material_override = SubResource("StandardMaterial3D_y7510")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(7.27483, 0, 0, 0, 1, 0, 0, 0, 11.8098, 11.4026, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(6.35748, 0, 0, 0, 1, 0, 0, 0, 11.8098, -6.98223, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 1.7799, 0, 0.148206)
+material_override = SubResource("StandardMaterial3D_y7510")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(7.27483, 0, 0, 0, 1, 0, 0, 0, 11.8098, 11.4026, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(6.35748, 0, 0, 0, 1, 0, 0, 0, 11.8098, -6.98223, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 1.7799, 0, -23.4474)
+material_override = SubResource("StandardMaterial3D_y7510")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(7.27483, 0, 0, 0, 1, 0, 0, 0, 11.8098, 11.4026, 0.0115485, -23.4474)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(6.35748, 0, 0, 0, 1, 0, 0, 0, 11.8098, -6.98223, 0.0115485, -23.4474)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D87" parent="Fondation" instance=ExtResource("6_b868s")]
+transform = Transform3D(-0.23738, 0, 0.0117195, 0, 8.03263, 0, -0.00938061, 0, -0.296566, 4.33922, 1.72418, -11.6912)
+skeleton = NodePath("../../car/GermanCar")
+
+[node name="MeshInstance3D" parent="Fondation/MeshInstance3D87" index="0"]
+transform = Transform3D(2.29289, 0, 0, 0, 0.0619481, 0, 0, 0, 1.67381, 1.2469, 0.486263, -0.00843811)
+material_override = SubResource("ORMMaterial3D_j0j8q")
+
+[node name="OmniLight3D" parent="Fondation/MeshInstance3D87" index="1"]
+transform = Transform3D(4.20937, 0, 0, 0, 0.124492, 0, 0, 0, 3.36931, 1.62499, 0.456967, 0)
+light_energy = 3.279
+omni_range = 10.909
+
+[node name="MeshInstance3D88" parent="Fondation" instance=ExtResource("6_b868s")]
+transform = Transform3D(-0.23738, 0, 0.0117195, 0, 8.03263, 0, -0.00938061, 0, -0.296566, 4.33922, 1.72418, -23.596)
+skeleton = NodePath("../../car/GermanCar")
+
+[node name="MeshInstance3D" parent="Fondation/MeshInstance3D88" index="0"]
+transform = Transform3D(2.29289, 0, 0, 0, 0.0619481, 0, 0, 0, 1.67381, 1.2469, 0.486263, -0.00843811)
+material_override = SubResource("ORMMaterial3D_j0j8q")
+
+[node name="OmniLight3D" parent="Fondation/MeshInstance3D88" index="1"]
+transform = Transform3D(4.20937, 0, 0, 0, 0.124492, 0, 0, 0, 3.36931, 1.62499, 0.456967, 0)
+light_energy = 0.0
+omni_range = 10.909
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(2.53028, 0, 0, 0, 1, 0, 0, 0, 11.8098, 1.7799, 0, 0.148206)
+material_override = SubResource("StandardMaterial3D_y7510")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(7.27483, 0, 0, 0, 1, 0, 0, 0, 11.8098, 11.4026, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Fondation"]
+transform = Transform3D(6.35748, 0, 0, 0, 1, 0, 0, 0, 11.8098, -6.98223, 0.0115485, 0.148206)
+material_override = SubResource("StandardMaterial3D_3h2jq")
+mesh = SubResource("PlaneMesh_sj1gt")
+skeleton = NodePath("../..")
+
+[node name="trees" type="Node3D" parent="Fondation"]
+
+[node name="2 Trees6" parent="Fondation/trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 0)
+
+[node name="2 Trees7" parent="Fondation/trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 8.78755)
+
+[node name="2 Trees8" parent="Fondation/trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, -9.46618)
+
+[node name="2 Trees9" parent="Fondation/trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="2 Trees10" parent="Fondation/trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, -5.72575)
+
+[node name="2 Trees11" parent="Fondation/trees" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="trees2" type="Node3D" parent="Fondation/trees"]
+
+[node name="2 Trees6" parent="Fondation/trees/trees2" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 0)
+
+[node name="2 Trees7" parent="Fondation/trees/trees2" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 8.78755)
+
+[node name="2 Trees8" parent="Fondation/trees/trees2" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, -9.46618)
+
+[node name="2 Trees9" parent="Fondation/trees/trees2" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="2 Trees10" parent="Fondation/trees/trees2" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, -5.72575)
+
+[node name="2 Trees11" parent="Fondation/trees/trees2" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="trees3" type="Node3D" parent="Fondation/trees/trees2"]
+
+[node name="2 Trees6" parent="Fondation/trees/trees2/trees3" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 0)
+
+[node name="2 Trees7" parent="Fondation/trees/trees2/trees3" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 8.78755)
+
+[node name="2 Trees8" parent="Fondation/trees/trees2/trees3" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, -9.46618)
+
+[node name="2 Trees9" parent="Fondation/trees/trees2/trees3" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="2 Trees10" parent="Fondation/trees/trees2/trees3" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, -5.72575)
+
+[node name="2 Trees11" parent="Fondation/trees/trees2/trees3" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="trees4" type="Node3D" parent="Fondation/trees/trees2/trees3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.5956)
+
+[node name="2 Trees6" parent="Fondation/trees/trees2/trees3/trees4" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 0)
+
+[node name="2 Trees7" parent="Fondation/trees/trees2/trees3/trees4" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, 8.78755)
+
+[node name="2 Trees8" parent="Fondation/trees/trees2/trees3/trees4" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1036, 0, -9.46618)
+
+[node name="2 Trees9" parent="Fondation/trees/trees2/trees3/trees4" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="2 Trees10" parent="Fondation/trees/trees2/trees3/trees4" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, -5.72575)
+
+[node name="2 Trees11" parent="Fondation/trees/trees2/trees3/trees4" instance=ExtResource("3_jcti1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.81892, 0, 8.09559)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5kbbq")
+}
+
+[node name="manager" type="Node" parent="."]
+script = ExtResource("8_j0j8q")
+
+[node name="guy" parent="." instance=ExtResource("5_sj1gt")]
+transform = Transform3D(0.00928677, 0, -0.614942, 0, 0.511745, 0, 0.386289, 0, 0.0147838, 3.19729, 1.68836, -30.8558)
+visible = false
+
+[node name="SpotLight3D" parent="guy/face" index="1"]
+light_color = Color(0.841119, 0.350553, 0.70053, 1)
+
+[node name="SpotLight3D2" parent="guy/face" index="2"]
+light_color = Color(0.841119, 0.350553, 0.70053, 1)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("10_geovp")]
+transform = Transform3D(0.2017, 0, -0.0744431, 0, 0.415219, 0, 0.0744431, 0, 0.2017, 2.91633, 0.102598, -28.0507)
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_Scene"]
+transform = Transform3D(4.36346, 0, 1.61046, 0, 2.40837, 0, -1.61046, 0, 4.36346, -0.901049, -0.247094, 0.114494)
+script = ExtResource("11_5vafd")
+item_name = "valisevide"
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
+shape = SubResource("BoxShape3D_f5v1x")
+
+[editable path="CharacterBody3D"]
+[editable path="CharacterBody3D/transition"]
+[editable path="MeshInstance3D86"]
+[editable path="Fondation/MeshInstance3D87"]
+[editable path="Fondation/MeshInstance3D88"]
 [editable path="guy"]
-[editable path="guy2"]

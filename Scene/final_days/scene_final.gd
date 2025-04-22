@@ -1,5 +1,7 @@
 extends Node3D
 @onready var panel = $Camera3D/Control/Panel
+@onready var logevent = $Camera3D/Control/Logevent
+@onready var souvenirs = $Camera3D/Control/Souvenirs
 
 func _ready():
 	get_tree().paused = false
@@ -17,3 +19,6 @@ func _on_no_pressed():
 func _on_yes_pressed():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	Tools.start_transition("", load("res://Scene/final_days/end_cinema.tscn") as PackedScene)
+
+func _on_logevent_pressed():
+	souvenirs.visible = true

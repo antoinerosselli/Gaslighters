@@ -6,6 +6,7 @@
 bg_color = Color(0.683305, 0.673851, 0.610326, 1)
 
 [node name="note_contrat" type="Control" groups=["notenote"]]
+top_level = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

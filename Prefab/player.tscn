@@ -13,14 +13,11 @@
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="10_3h1t1"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="11_7q8gp"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="12_x4psa"]
-[ext_resource type="Texture2D" uid="uid://bfl1mcxrxvbxd" path="res://Prefab/Capture d'écran 2025-04-11 114300.png" id="13_l2bej"]
+[ext_resource type="Texture2D" uid="uid://exwibfbl6gs2" path="res://Sprite/screamer.tres" id="13_ui8k8"]
 [ext_resource type="PackedScene" uid="uid://dpi8t3jrme5d" path="res://Extern/Rework Appart/spray/scene.gltf" id="13_wyp7x"]
 [ext_resource type="AudioStream" uid="uid://dnia72tkl7a4k" path="res://Music&Sound/sound/screamer.mp3" id="14_ui8k8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_wyp7x"]
-font_size = 37
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2w04"]
 shader = ExtResource("4_evs1m")
@@ -38,6 +35,9 @@ shader_parameter/roll_line_amount = 0.0
 shader_parameter/roll_speed = -2.635
 shader_parameter/scan_line_strength = -6.662
 shader_parameter/pixel_strength = -3.111
+
+[sub_resource type="LabelSettings" id="LabelSettings_wyp7x"]
+font_size = 37
 
 [sub_resource type="LabelSettings" id="LabelSettings_cck1k"]
 font = ExtResource("6_v1iah")
@@ -125,6 +125,14 @@ shape = SubResource("CapsuleShape3D_17q4h")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["canvas"]]
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_h2w04")
+offset_left = -3.0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
 [node name="popup_sure" parent="CanvasLayer" instance=ExtResource("4_0r8a8")]
 visible = false
 offset_left = -4.0
@@ -166,15 +174,6 @@ offset_right = 729.0
 offset_bottom = 51.0
 label_settings = SubResource("LabelSettings_wyp7x")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
-material = SubResource("ShaderMaterial_h2w04")
-layout_mode = 0
-offset_left = -3.0
-offset_right = 1152.0
-offset_bottom = 648.0
-mouse_filter = 2
-color = Color(1, 1, 1, 0)
-
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 553.0
@@ -205,7 +204,7 @@ autowrap_mode = 3
 [node name="Timer" type="Timer" parent="CanvasLayer/Control/show_text"]
 wait_time = 4.0
 
-[node name="show_text_radio" type="RichTextLabel" parent="CanvasLayer/Control"]
+[node name="show_text_radio" type="RichTextLabel" parent="CanvasLayer/Control" groups=["texte_radio"]]
 layout_mode = 0
 offset_left = 168.0
 offset_top = 560.0
@@ -442,7 +441,7 @@ offset_bottom = 40.0
 [node name="screamer" type="Sprite2D" parent="CanvasLayer/ScreamerControl"]
 position = Vector2(582, 313)
 scale = Vector2(0.984, 0.864)
-texture = ExtResource("13_l2bej")
+texture = ExtResource("13_ui8k8")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CanvasLayer/ScreamerControl"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

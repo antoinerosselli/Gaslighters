@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://cwt4yuodn824p"]
+
+[ext_resource type="Script" uid="uid://c5hk52utb3dxc" path="res://finalcube.gd" id="1_15k58"]
+[ext_resource type="VideoStream" uid="uid://dwab5a1dju7kw" path="res://video/whatsinside.ogv" id="2_2qgpt"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2qgpt"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_eo7gf"]
+resource_local_to_scene = true
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_2qgpt")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2qgpt"]
+resource_local_to_scene = true
+material = SubResource("ORMMaterial3D_eo7gf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_15k58"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_eo7gf"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_rwocm"]
+resource_local_to_scene = true
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_eo7gf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qx186"]
+resource_local_to_scene = true
+material = SubResource("ORMMaterial3D_rwocm")
+
+[node name="FinalCube" type="Node3D"]
+script = ExtResource("1_15k58")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_2qgpt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_15k58")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.501391, 0, 0, 0, 1, 0, 0, 0, 0.509192, 0, 0.502365, 0)
+mesh = SubResource("PlaneMesh_qx186")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.501391, 0, 0, 0, -4.37114e-08, -0.509192, 0, 1, -2.22575e-08, 0, -0.00908378, 0.511087)
+mesh = SubResource("PlaneMesh_qx186")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-2.19165e-08, 1, -2.22575e-08, 0, -4.37114e-08, -0.509192, -0.501391, -4.37114e-08, 9.72905e-16, 0.502599, -0.00908378, 0.00197697)
+mesh = SubResource("PlaneMesh_qx186")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-2.19165e-08, -1, 2.22575e-08, 0, -4.37114e-08, -0.509192, 0.501391, -4.37114e-08, 9.72905e-16, -0.504408, -0.00908378, 0.00449783)
+mesh = SubResource("PlaneMesh_qx186")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.501391, -8.74228e-08, 1.94581e-15, 0, -4.37114e-08, -0.509192, 4.3833e-08, -1, 2.22575e-08, -0.00449225, -0.00908378, -0.500839)
+mesh = SubResource("PlaneMesh_qx186")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.501391, 8.74228e-08, 0, -4.3833e-08, -1, 0, 0, 0, 0.509192, 0, -0.521507, 0)
+mesh = SubResource("PlaneMesh_qx186")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1920, 1080)
+
+[node name="Control" type="SubViewportContainer" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport/Control"]
+layout_mode = 2
+stream = ExtResource("2_2qgpt")
+autoplay = true
+loop = true

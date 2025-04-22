@@ -12,7 +12,8 @@ func _process(_delta):
 	pass
 
 func _on_body_entered(body):
-	if is_text == true : 
-		body.dialogues = texts
-	if one_shot == true :
-		queue_free()
+	if self.visible == true :
+		if is_text == true : 
+			body.dialogues = texts
+		if one_shot == true :
+			queue_free()

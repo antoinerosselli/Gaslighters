@@ -1517,6 +1517,10 @@ transform = Transform3D(-5.24537e-09, 0.0276934, -2.79397e-09, -0.12, -1.21052e-
 [node name="Radio_NodeOfKnob_Knob3D_StaticBody3D#CollisionShape3D" parent="RadioObj/Radiooo" index="4"]
 transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
 
+[node name="Radio_bady" parent="RadioObj/Radiooo/RadioBody" index="0"]
+surface_material_override/0 = null
+surface_material_override/1 = null
+
 [node name="Label3D" parent="RadioObj/Radiooo/RadioBody/BarreAffi" index="0"]
 billboard = 0
 
