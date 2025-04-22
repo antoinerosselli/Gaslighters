@@ -1,4 +1,3 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6wf03uyto0an"]
 
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_8xnu0"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_otx7e"]
