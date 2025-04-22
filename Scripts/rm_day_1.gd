@@ -21,6 +21,7 @@ var ones: bool = false
 func _process(delta):
 	if ones == false:
 		if Radio.getValue() > 54 and Radio.getValue() < 64 :
+		if Radio.getFrequency() == 1 :
 			Tools.start_the_day()
 			ones = true
 
