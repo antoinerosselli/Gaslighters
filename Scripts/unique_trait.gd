@@ -116,3 +116,5 @@ func unique(object_name):
 			Tools.start_transition("", load("res://Scene/final_days/scene_final.tscn") as PackedScene)
 		"valisevide":
 			Tools.start_transition("DAY 4", load("res://Scene/Days/Day4/scene_day_4.tscn") as PackedScene)
+		"doorexpe":
+			Tools.get_player().popup_sure.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=384 format=4 uid="uid://c6wf03uyto0an"]
+[gd_scene load_steps=385 format=4 uid="uid://c6wf03uyto0an"]
 
 [ext_resource type="Texture2D" uid="uid://cbks0hwngu87l" path="res://Extern/Home Furniture Kit 1/Textures/Kitchen Aspirator.png" id="1_bv575"]
 [ext_resource type="Script" uid="uid://bqd5lnv7nmd1l" path="res://Scene/Days/Day3/scene_day_3.gd" id="1_vv8y6"]
@@ -2046,6 +2046,9 @@ emission = Color(0.281187, 0.281187, 0.281187, 1)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_l77r6"]
 height = 0.99585
 radius = 0.867676
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cjti"]
+size = Vector3(1, 2.49207, 1.37109)
 
 [node name="SceneDay3" type="Node3D"]
 script = ExtResource("1_vv8y6")
@@ -4198,10 +4201,20 @@ Fog_Door = NodePath("../FogVolumeDoor")
 [node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
 autostart = true
 
+[node name="DoorExpe" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8569, -1.50899, 0.587098)
+script = ExtResource("13_n5v3u")
+item_name = "doorexpe"
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorExpe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710958, 1.2558, 0.185547)
+shape = SubResource("BoxShape3D_7cjti")
+
 [connection signal="finished" from="appartement/RadioObj/Radiooo/AudioStreamPlayer3D" to="appartement/RadioObj/Radiooo" method="_on_audio_stream_player_3d_finished"]
 [connection signal="texture_changed" from="appartement/New_Console/Sancheck/Sprite3D" to="appartement/New_Console/Sancheck/Sprite3D" method="_on_texture_changed"]
-[connection signal="body_entered" from="FogVolumeDoor/Area3D" to="managers" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="FogVolumeDoor/Area3D" to="FogVolumeDoor/Area3D" method="_on_body_entered"]
+[connection signal="body_entered" from="FogVolumeDoor/Area3D" to="managers" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="FogVolumeDoor/Area3D" to="managers" method="_on_area_3d_body_exited"]
 [connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 

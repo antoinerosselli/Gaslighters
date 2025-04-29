@@ -1,0 +1,145 @@
+[gd_scene load_steps=10 format=3 uid="uid://cs7owhj1g2meb"]
+
+[ext_resource type="Shader" uid="uid://b3lvhbwu7lsot" path="res://Shader/background_expe.gdshader" id="1_ngy6u"]
+[ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="2_idiau"]
+[ext_resource type="AudioStream" uid="uid://4u06tpj2hmdp" path="res://Music&Sound/Echexe2.mp3" id="3_bpiua"]
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="4_citie"]
+[ext_resource type="Texture2D" uid="uid://diqhrw0q41ydn" path="res://Sprite/exit.png" id="5_egptt"]
+[ext_resource type="Texture2D" uid="uid://dd8ug7pci12hh" path="res://Sprite/exithover.png" id="6_d84c0"]
+[ext_resource type="Texture2D" uid="uid://del84k3axw4mu" path="res://Sprite/exitdisabled.png" id="7_rp7qy"]
+
+[sub_resource type="GDScript" id="GDScript_fm107"]
+script/source = "extends Control
+
+@onready var rich_text_label = $aventure
+@export var expes = \"You wander outside suitless. The fog feels like water through your lungs. You can't see an arm's length before you. You hear footsteps and impacts, but cannot precisely make out where they come from. Your head becomes heavy, the ground seems to slip away beneath your feet. The collision is quick but violent.\"
+@export var expes_result = \"The floor is cold against your skin.\"
+@export var text_intro = \"[wave][color=yellow]You dive in the fog.[/color][/wave]\\n\\n\\n\"
+@export var expe_day:int
+@onready var resultat = $resultat
+@onready var go_home = $GoHome
+
+var stripped_text = \"\"
+var current_index = 0
+var speed = 0.05 
+var timer = 0.0
+var lines = []
+var lines_result = []
+
+var all_char:int
+
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	set_process(false)
+	var new_text: String = expes
+	all_char = (new_text.length() + text_intro.length())
+	rich_text_label.bbcode_enabled = true  
+	var all_text = text_intro + new_text
+	rich_text_label.bbcode_text = all_text
+	stripped_text = all_text.replace(\"[wave]\", \"\").replace(\"[/wave]\", \"\") \\
+							 .replace(\"[color=yellow]\", \"\").replace(\"[/color]\", \"\")
+	rich_text_label.visible_characters = 0  
+	set_process(true)
+
+func _process(delta):
+	timer += delta
+	if timer >= speed and current_index < len(stripped_text):
+		timer = 0.0 
+		current_index += 1
+		rich_text_label.visible_characters = current_index
+	if current_index == len(stripped_text):
+		go_home.disabled = false
+		resultat.bbcode_enabled = true
+		resultat.text = expes_result
+
+func _on_go_home_pressed():
+	if get_tree().get_first_node_in_group(\"colisobject\") != null:
+		var colis = get_tree().get_first_node_in_group(\"colisobject\")
+		colis.queue_free()
+	#if expe_day == 0:
+		#Tools.spawn_conserve(3)
+		#var player = Tools.get_player()
+		#player.sanity -= 10
+	#if expe_day == 1:
+		#var player = Tools.get_player()
+		#player.sanity -= 30
+		#var suit = get_tree().get_first_node_in_group(\"suitcase\")
+		#suit.visible = true
+		#Tools.door_letter()
+	get_tree().get_first_node_in_group(\"canvas\").visible = true
+	Tools.paused_game()
+	Tools.expe_status(false)
+	if Data.get_level() == 2:
+		Tools.timer_event_action(true)
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	self.queue_free()
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d4eq7"]
+shader = ExtResource("1_ngy6u")
+shader_parameter/scale = 5.0
+shader_parameter/speed = 0.3
+shader_parameter/octaves = 7
+shader_parameter/persistence = 0.909
+shader_parameter/color_1 = Color(1, 1, 1, 1)
+shader_parameter/color_2 = Color(0.650129, 0.650128, 0.650128, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_fm107")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_d4eq7")
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 648.0
+offset_right = 2304.0
+offset_bottom = 1304.0
+rotation = 3.14159
+
+[node name="aventure" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 1088.0
+offset_bottom = 464.0
+theme_override_constants/line_separation = 7
+theme_override_fonts/normal_font = ExtResource("2_idiau")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_bpiua")
+volume_db = 1.193
+autoplay = true
+attenuation = 2.0
+
+[node name="GoHome" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 576.0
+offset_right = 1144.0
+offset_bottom = 640.0
+theme = ExtResource("4_citie")
+disabled = true
+texture_normal = ExtResource("5_egptt")
+texture_pressed = ExtResource("6_d84c0")
+texture_hover = ExtResource("6_d84c0")
+texture_disabled = ExtResource("7_rp7qy")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="resultat" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 488.0
+offset_right = 1088.0
+offset_bottom = 592.0
+theme_override_fonts/normal_font = ExtResource("2_idiau")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true

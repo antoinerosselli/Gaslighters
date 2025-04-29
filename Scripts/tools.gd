@@ -46,6 +46,8 @@ func go_to_expe():
 		es = preload("res://Prefab/expe.tscn") as PackedScene
 	elif Data.get_level() == 2:
 		es = preload("res://Prefab/expe_d2.tscn") as PackedScene
+	elif Data.get_level() == 3:
+		es = preload("res://Prefab/expe_d3.tscn") as PackedScene
 	var es_tmp = es.instantiate()
 	get_tree().get_first_node_in_group("canvas").visible = false
 	add_child(es_tmp)	
