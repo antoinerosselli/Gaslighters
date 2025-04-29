@@ -29,9 +29,6 @@ shader_parameter/edgeGlowIntensity = 1.466
 shader_parameter/enable_dissolve_animation = false
 shader_parameter/animation_speed = 0.6
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ly3ml"]
-albedo_texture = ExtResource("5_fx68q")
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_17coq"]
 viewport_path = NodePath("SubViewport")
 
@@ -127,9 +124,6 @@ offset_bottom = 23.0
 material = SubResource("ShaderMaterial_fx68q")
 
 [node name="Node3D" parent="." instance=ExtResource("1_jb5ec")]
-
-[node name="Radio_bady" parent="Node3D/RadioObj/Radiooo/RadioBody" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ly3ml")
 
 [node name="New_Console_SubViewport#Sprite3D" parent="Node3D" index="18"]
 texture = SubResource("ViewportTexture_17coq")

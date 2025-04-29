@@ -44,7 +44,7 @@ func _process(_delta):
 func interact():
 	if activate == true:
 		if is_text == true:
-			var player = Tools.get_player()	
+			var player = Tools.get_player()
 			player.dialogues = texts
 		if depot == true and Tools.get_player().ptich.visible == true:
 			Tools.sound_now(self,load("res://Music&Sound/sound/spray-36842.mp3") as AudioStream)

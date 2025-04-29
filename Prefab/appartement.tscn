@@ -1,4 +1,4 @@
-[gd_scene load_steps=276 format=4 uid="uid://cgp8iojh0a330"]
+[gd_scene load_steps=277 format=4 uid="uid://cgp8iojh0a330"]
 
 [ext_resource type="Texture2D" uid="uid://dxrs6a1noama3" path="res://Extern/Rework Appart/Balkan/Prop Textures/Seamless/WP1.png" id="3_muwmf"]
 [ext_resource type="Texture2D" uid="uid://bvrwgldyx3bqv" path="res://Extern/Abandoned_House/Textures/Alfombra1.png" id="5_t3msl"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cyh0l2vpuyrh4" path="res://Extern/Home Furniture Kit 1/Textures/Kitchen Oven.png" id="14_xyiib"]
 [ext_resource type="Texture2D" uid="uid://bl4k23dxs4qfc" path="res://Extern/Home Furniture Kit 1/Textures/Dishwasher.png" id="15_ve4wt"]
 [ext_resource type="Texture2D" uid="uid://dxis8exg7hx4w" path="res://Extern/Home kit 2/Textures/Desk Lamp 1/Desk Lamp 1_256.png" id="16_xwbb6"]
+[ext_resource type="PackedScene" uid="uid://chacbj2q6jcmg" path="res://Prefab/Radio/radiooo.tscn" id="17_2wkxd"]
 [ext_resource type="ArrayMesh" uid="uid://bhogxa7a3s1vu" path="res://model_House/lamp.res" id="17_hqtfn"]
 [ext_resource type="Texture2D" uid="uid://chncdhii6c5mg" path="res://Extern/Home kit 2/Textures/Table/Table_256.png" id="18_nxgg6"]
 [ext_resource type="Script" uid="uid://b5r0ey7g14fmr" path="res://Scripts/lamp_uniq.gd" id="19_5m5wx"]
@@ -1521,14 +1522,10 @@ transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.02733
 surface_material_override/0 = null
 surface_material_override/1 = null
 
-[node name="Label3D" parent="RadioObj/Radiooo/RadioBody/BarreAffi" index="0"]
-billboard = 0
-
-[node name="Label3D2" parent="RadioObj/Radiooo/RadioBody/BarreAffi" index="1"]
-billboard = 0
-
 [node name="CollisionShape3D" parent="RadioObj" index="1"]
 transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
+
+[node name="Radiooo2" parent="RadioObj" instance=ExtResource("17_2wkxd")]
 
 [node name="New_Console_SubViewport#Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1.0205, 0, 0.0412816, 0, 0.863311, 0, -0.0293248, 0, 1.43659, -3.80287, 0.223529, -7.9891)

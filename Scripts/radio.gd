@@ -10,6 +10,8 @@ enum Frequency {
 
 var value :float = 0.0
 var frequency :Frequency = Frequency.Static
+var display1 :String = str("0.00")
+var display2 :String = str("FM")
 
 func cmpFrequency():
 	if (value > 54 && value < 64):
@@ -32,3 +34,21 @@ func getFrequency():
 
 func setValue(n):
 	value = n
+	setDisplay(1, str(value).pad_decimals(2))
+
+func getDisplay(display_nb: int):
+	var toReturn :String = ""
+	match display_nb: # switch case en mieux!
+		1:
+			toReturn = display1
+		2:
+			toReturn = display2
+	
+	return toReturn
+
+func setDisplay(nb: int, content: String):
+	match nb:
+		1:
+			display1 = content
+		2:
+			display2 = content

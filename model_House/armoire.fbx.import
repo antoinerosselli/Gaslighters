@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://rabbrufx7pg3"
-path="res://.godot/imported/armoire.fbx-ff5ee243f311dd9a9e7b0ab6a97c3f89.scn"
+valid=false
 
 [deps]
 
 source_file="res://model_House/armoire.fbx"
-dest_files=["res://.godot/imported/armoire.fbx-ff5ee243f311dd9a9e7b0ab6a97c3f89.scn"]
 
 [params]
 
