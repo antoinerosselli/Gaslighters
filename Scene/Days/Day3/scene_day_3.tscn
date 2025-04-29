@@ -4208,7 +4208,7 @@ item_name = "doorexpe"
 script_trait = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorExpe"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710958, 1.2558, 0.185547)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0613518, 1.2558, 0.185547)
 shape = SubResource("BoxShape3D_7cjti")
 
 [connection signal="finished" from="appartement/RadioObj/Radiooo/AudioStreamPlayer3D" to="appartement/RadioObj/Radiooo" method="_on_audio_stream_player_3d_finished"]

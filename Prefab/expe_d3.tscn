@@ -29,6 +29,7 @@ var lines_result = []
 var all_char:int
 
 func _ready():
+	print(\"saucisse\")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	set_process(false)
 	var new_text: String = expes
@@ -69,7 +70,7 @@ func _on_go_home_pressed():
 	get_tree().get_first_node_in_group(\"canvas\").visible = true
 	Tools.paused_game()
 	Tools.expe_status(false)
-	if Data.get_level() == 2:
+	if Data.get_level() == 3:
 		Tools.timer_event_action(true)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	self.queue_free()
@@ -85,6 +86,7 @@ shader_parameter/color_1 = Color(1, 1, 1, 1)
 shader_parameter/color_2 = Color(0.650129, 0.650128, 0.650128, 1)
 
 [node name="Control" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -92,6 +94,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_fm107")
+expe_day = 3
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_d4eq7")
@@ -143,3 +146,5 @@ offset_bottom = 592.0
 theme_override_fonts/normal_font = ExtResource("2_idiau")
 theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
+
+[connection signal="pressed" from="GoHome" to="." method="_on_go_home_pressed"]
