@@ -10,14 +10,12 @@ func _on_timer_timeout():
 	check_event_conditions()
 
 func talk_audio(odio):
-	print(odio)
 	var bouche = get_tree().get_first_node_in_group("talkers")
 	bouche.set_stream(load(odio) as AudioStreamWAV)
 	bouche.play()
 
 func talk(odio, text,color, time):
 	tmp_te += time
-	print(tmp_te)
 	talk_audio(odio)
 	Tools.radio_text(text,time,color)
 	Tools.add_journal(text,color)

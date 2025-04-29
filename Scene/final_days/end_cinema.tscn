@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b10w6ia7633ul"]
+[gd_scene load_steps=29 format=3 uid="uid://b10w6ia7633ul"]
 
 [ext_resource type="Texture2D" uid="uid://y4popkl7ub73" path="res://Extern/Abandoned_House/Textures/road.jpg" id="1_4jy83"]
 [ext_resource type="Script" uid="uid://skohf2u0pqnv" path="res://Scene/final_days/end_cinema.gd" id="1_uum13"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://bdj878mvuh388" path="res://Music&Sound/LFEC.mp3" id="7_5f5y4"]
 [ext_resource type="PackedScene" uid="uid://b5t5fqkr404mw" path="res://Extern/antowaan_3d/dear/montain/scene.gltf" id="7_gm06b"]
 [ext_resource type="Shader" uid="uid://b801gs84w2k41" path="res://Shader/menu3D.gdshader" id="8_mlm7g"]
+[ext_resource type="PackedScene" uid="uid://pkajo8jayauf" path="res://Prefab/panneaupub.tscn" id="14_haf5w"]
+[ext_resource type="Texture2D" uid="uid://b64h3t1vvs2jx" path="res://Extern/FONT/endpanneau.png" id="15_fkg2d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvc8b"]
 albedo_texture = ExtResource("1_4jy83")
@@ -881,12 +883,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.389)
 
 [node name="2 Trees" parent="arbresset/arbrespack/arbreslots/arbres" instance=ExtResource("3_rvc8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.892, -0.794239, -102.337)
-
-[node name="2 Trees2" parent="arbresset/arbrespack/arbreslots/arbres" instance=ExtResource("3_rvc8b")]
-transform = Transform3D(0.741952, 0, 0.670453, 0, 1, 0, -0.670453, 0, 0.741952, 10.892, -0.794239, -95.5895)
-
-[node name="2 Trees3" parent="arbresset/arbrespack/arbreslots/arbres" instance=ExtResource("3_rvc8b")]
-transform = Transform3D(0.741952, 0, 0.670453, 0, 1, 0, -0.670453, 0, 0.741952, 8.6444, -0.794239, -87.6547)
 
 [node name="2 Trees4" parent="arbresset/arbrespack/arbreslots/arbres" instance=ExtResource("3_rvc8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.892, -0.794239, -81.3029)
@@ -8548,9 +8544,17 @@ transform = Transform3D(-579.03, -0.0100818, 1.13334e-07, 0, -4.41436e-08, -259.
 mesh = SubResource("PlaneMesh_kuwxe")
 skeleton = NodePath("../arbresset4")
 
+[node name="Node3D" parent="." instance=ExtResource("14_haf5w")]
+transform = Transform3D(-0.939507, 0, -0.342529, 0, 1, 0, 0.342529, 0, -0.939507, 10.3128, 4.37222, -74.6615)
+
+[node name="Sprite3D" parent="Node3D" index="0"]
+transform = Transform3D(0.613364, 0, 1.19209e-07, 0, 0.584557, 0, -1.19209e-07, 0, 0.653556, 0, 0.436799, 0)
+texture = ExtResource("15_fkg2d")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Camera3D/Control/transition"]
 [editable path="GermanCar"]
 [editable path="guy2"]
 [editable path="guy3"]
+[editable path="Node3D"]

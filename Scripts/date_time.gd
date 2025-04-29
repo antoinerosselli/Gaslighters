@@ -11,11 +11,11 @@ func increase_time_minutes(delta_mins: float) -> void:
 	delta_time += delta_mins
 	if delta_time < 1: return
 	
-	var delta_as_int :int= delta_time
+	var delta_as_int :int= int(delta_time)
 	delta_time -= delta_as_int
 	
 	minutes += delta_as_int
-	hours += minutes / 60
+	hours += int(minutes / 60)
 	
 	minutes = minutes % 60
 	hours = hours % 24

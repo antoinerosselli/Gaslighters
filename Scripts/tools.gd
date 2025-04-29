@@ -3,6 +3,34 @@ extends Node
 const ICON = preload("res://Sprite/icon.svg")
 
 var val_elec:int = 60
+var lum: int = 2
+
+var color_me = Color(1, 0.54902, 0, 1)
+var color_gov = Color(0.117647, 0.564706, 1, 1)
+var color_galleries = Color(0.545098, 0, 0, 1)
+var color_belle = Color(1, 0.0784314, 0.576471, 1)
+var color_enigm = Color(0.686275, 0.933333, 0.933333, 1)
+var color_ami = Color(0.580392, 0, 0.827451, 1)
+var daltonian_mode = false
+
+func toggle_daltonian_mode():
+	daltonian_mode = !daltonian_mode
+
+	if daltonian_mode:
+		color_me = Color(1, 1, 0.4, 1)
+		color_gov = Color(0.4, 1, 0.6, 1)
+		color_galleries = Color(0.8, 0.4, 0, 1)
+		color_belle = Color(1, 0.5, 0.7, 1)
+		color_enigm = Color(0.4, 0.8, 1, 1)
+		color_ami = Color(0.6, 0.6, 1, 1)
+	else:
+		color_me = Color(1, 0.54902, 0, 1)
+		color_gov = Color(0.117647, 0.564706, 1, 1)
+		color_galleries = Color(0.545098, 0, 0, 1)
+		color_belle = Color(1, 0.0784314, 0.576471, 1)
+		color_enigm = Color(0.686275, 0.933333, 0.933333, 1)
+		color_ami = Color(0.580392, 0, 0.827451, 1)
+
 
 func get_icon(item_name):
 	match item_name:
@@ -11,12 +39,6 @@ func get_icon(item_name):
 		_:
 			print("param3 is not 3!")
 
-func valid_quest(quest_id):
-	match quest_id :
-		1:
-			print("valid")
-		_:
-			print("rien")
 
 func get_player():
 	var player = get_tree().get_first_node_in_group("player")
@@ -80,7 +102,6 @@ func get_color_fd():
 func set_radio_sound(channel,sound):
 	var radio_sound = get_tree().get_first_node_in_group("radio_sound")
 	var audio_channel = radio_sound.get_child(channel - 1)
-	print(audio_channel.name)
 	audio_channel.set_stream(sound)
 	audio_channel.play()
 
@@ -120,12 +141,20 @@ func start_sound(path):
 	
 func unlock_fm(what_fm):
 	if what_fm == "gouv":
+		if 	get_tree().get_first_node_in_group("govfm").visible == false : 
+			Tools.new_info("new channel : Gov Fm")
 		get_tree().get_first_node_in_group("govfm").visible = true
 	if what_fm == "belle":
+		if 	get_tree().get_first_node_in_group("bellefm").visible == false : 
+			Tools.new_info("new channel : Belle Fm")
 		get_tree().get_first_node_in_group("bellefm").visible = true
 	if what_fm == "fanatic":
+		if 	get_tree().get_first_node_in_group("fanaticfm").visible == false : 
+			Tools.new_info("new channel : Galleries Fm")
 		get_tree().get_first_node_in_group("fanaticfm").visible = true
 	if what_fm == "enigm":
+		if 	get_tree().get_first_node_in_group("enigmfm").visible == false : 
+			Tools.new_info("new channel : ??? Fm")
 		get_tree().get_first_node_in_group("enigmfm").visible = true
 
 func spawn_conserve(i):
@@ -168,7 +197,6 @@ func start_transition(text,nscene):
 
 func eotd():
 	if Data.get_level() == 4:
-		print("end of day 4")
 		var horn = get_tree().get_first_node_in_group("sound_end")
 		var valise = get_tree().get_first_node_in_group("valise")
 		valise.activate = true
@@ -195,10 +223,8 @@ func note_close(note, player):
 	note.queue_free()
 	
 func change_lesinputs(what_lesinputs):
-	print(what_lesinputs)
 	var text_input = get_tree().get_first_node_in_group("lesinputs")
 	if what_lesinputs == "inventory":
-		print("wallah ça marche")
 		text_input.text = "[ TAB ] Close"
 	if what_lesinputs == "player":
 		text_input.text = "[ E ] Interact
@@ -208,10 +234,9 @@ func change_lesinputs(what_lesinputs):
 		text_input.text = "[ C ] Close"
 	if what_lesinputs == "radio":
 		text_input.text = "[ C ] Close
-		[ Move ] Change FM"
+		[ Player Move ] Change FM"
 	if what_lesinputs == "blank":
 		text_input.text == ""
-	print(text_input.text)
 		
 func start_the_day():
 	var timerevent = get_tree().get_first_node_in_group("timerevent")
@@ -224,7 +249,7 @@ func colis_departure():
 func expe_status(status):
 	var expe_lum = get_tree().get_first_node_in_group("canexpe")
 	var anim = get_tree().get_first_node_in_group("animexpe")
-	Tools.sound_now(expe_lum,preload("res://Music&Sound/sound/heavy-mechancial-door-open-6934.mp3") as AudioStreamMP3 )
+	Tools.sound_now(expe_lum,preload("res://Music&Sound/sound/expeopen.ogg") as AudioStreamOggVorbis )
 	if status == true:
 		anim.play("start_expe")
 		expe_lum.set_color(Color(0, 1, 0, 1))
@@ -242,7 +267,6 @@ func get_expe_status():
 func event_journal_ok(index, missed):
 	var eventjournal = get_tree().get_first_node_in_group("eventjournal")
 	if index < 0 or index >= eventjournal.get_child_count():
-		print("Index hors limites pour eventjournal")
 		return
 	var entry = eventjournal.get_child(index)
 	if missed and not entry.visible:
@@ -269,16 +293,15 @@ func radio_text_glitch(simple_text: String, time: float, color: Color) -> void:
 	var player = Tools.get_player()
 	var text_radio = player.get_node("CanvasLayer/Control/show_text_radio")
 	if text_radio == null:
-		print("Pas de node 'show_text_radio'")
 		return
 	
 	# Sauvegarde des paramètres visuels
 	var original_theme = text_radio.theme
 	var original_modulate = text_radio.modulate
 	var original_theme_overrides = {}
-	for name in text_radio.get_property_list():
-		if name.name.begins_with("theme_override_"):
-			original_theme_overrides[name.name] = text_radio.get(name.name)
+	for names in text_radio.get_property_list():
+		if names.name.begins_with("theme_override_"):
+			original_theme_overrides[names.name] = text_radio.get(names.name)
 	
 	# Applique le fond noir semi-transparent
 	var style = StyleBoxFlat.new()
@@ -325,3 +348,7 @@ func radio_text_glitch(simple_text: String, time: float, color: Color) -> void:
 	text_radio.theme = original_theme
 	for key in original_theme_overrides:
 		text_radio.set(key, original_theme_overrides[key])
+
+func new_info(ninfo):
+	var nmess = get_tree().get_first_node_in_group("infochat")
+	nmess.newmessage(ninfo)

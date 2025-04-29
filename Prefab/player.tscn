@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=38 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" uid="uid://ckooh51x0xywe" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Script" uid="uid://8aqmy8q7388i" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bds6idchttvqj" path="res://Sprite/mainorange.png" id="6_oj1nk"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
 [ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
+[ext_resource type="Script" uid="uid://bmt44u2tyjpo2" path="res://Prefab/new_message.gd" id="8_v383j"]
 [ext_resource type="Script" uid="uid://chcm2kadulrxu" path="res://Scripts/useUscript.gd" id="10_0r8a8"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="10_3h1t1"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="11_7q8gp"]
@@ -36,8 +37,72 @@ shader_parameter/roll_speed = -2.635
 shader_parameter/scan_line_strength = -6.662
 shader_parameter/pixel_strength = -3.111
 
-[sub_resource type="LabelSettings" id="LabelSettings_wyp7x"]
-font_size = 37
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ui8k8"]
+bg_color = Color(0.0858917, 0.0858917, 0.0858917, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.870588, 0.623529, 0.145098, 1)
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_v383j"]
+font = ExtResource("6_v1iah")
+font_size = 14
+font_color = Color(0.870588, 0.623529, 0.145098, 1)
+
+[sub_resource type="Animation" id="Animation_w6hbp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(864, -64)]
+}
+
+[sub_resource type="Animation" id="Animation_v383j"]
+resource_name = "go_in"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(824, -64), Vector2(828, -1.00001)]
+}
+
+[sub_resource type="Animation" id="Animation_pftp3"]
+resource_name = "go_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.566667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(828, -1.00001), Vector2(828, -64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h520n"]
+_data = {
+&"RESET": SubResource("Animation_w6hbp"),
+&"go_in": SubResource("Animation_v383j"),
+&"go_out": SubResource("Animation_pftp3")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_cck1k"]
 font = ExtResource("6_v1iah")
@@ -127,9 +192,10 @@ shape = SubResource("CapsuleShape3D_17q4h")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_h2w04")
-offset_left = -3.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 1184.0
+offset_bottom = 664.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
@@ -165,14 +231,32 @@ offset_right = 1152.0
 offset_bottom = 640.0
 mouse_filter = 2
 
-[node name="paused" type="Label" parent="CanvasLayer/Control"]
-process_mode = 3
-visible = false
+[node name="NewMessage" type="Panel" parent="CanvasLayer/Control" groups=["infochat"]]
 layout_mode = 0
-offset_left = 447.0
-offset_right = 729.0
-offset_bottom = 51.0
-label_settings = SubResource("LabelSettings_wyp7x")
+offset_left = 864.0
+offset_top = -64.0
+offset_right = 909.0
+offset_bottom = -24.0
+scale = Vector2(7.23498, 1.51749)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ui8k8")
+script = ExtResource("8_v383j")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/NewMessage"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 210.0
+offset_bottom = 37.0
+scale = Vector2(0.19834, 1)
+label_settings = SubResource("LabelSettings_v383j")
+autowrap_mode = 3
+justification_flags = 0
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/NewMessage"]
+libraries = {
+&"": SubResource("AnimationLibrary_h520n")
+}
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -431,6 +515,11 @@ text = "[ E ] Interact
 [ Ctrl ] Crouch"
 label_settings = SubResource("LabelSettings_fy4og")
 
+[node name="paused" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="ScreamerControl" type="Control" parent="CanvasLayer"]
 visible = false
 layout_mode = 3
@@ -465,6 +554,7 @@ offset_right = 895.0
 offset_bottom = 412.0
 autowrap_mode = 3
 
+[connection signal="animation_finished" from="CanvasLayer/Control/NewMessage/AnimationPlayer" to="CanvasLayer/Control/NewMessage" method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]
 [connection signal="finished" from="CanvasLayer/ScreamerControl/AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]
 

@@ -27,11 +27,18 @@ Radio="*res://Scripts/radio.gd"
 Horloge="*res://Scripts/date_time.gd"
 Data="*res://data.gd"
 TrailerTools="*res://TrailerTools.gd"
+SteamControl="*res://SteamControl.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://bop3pobtyk3f"
+
+[global_group]
+
+env="world env normal days"
+infochat=""
+option="option of player"
 
 [input]
 

@@ -10,7 +10,7 @@ func _process(_data):
 	if player.use_radio == true:
 		radio_usage()
 		
-	var knobCurrentVal :float= Radio.getValue()
+	var _knobCurrentVal :float= Radio.getValue()
 
 
 func _on_audio_stream_player_3d_finished() -> void:

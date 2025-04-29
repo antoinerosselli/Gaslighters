@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://saktvxup8cjo"]
+[gd_scene load_steps=10 format=3 uid="uid://saktvxup8cjo"]
 
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_sb1jo"]
 [ext_resource type="Script" uid="uid://dp6l7ry888ujw" path="res://Scripts/Menu.gd" id="3_2v8d6"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="3_alu6o"]
-[ext_resource type="Texture2D" uid="uid://bau0dr758he5h" path="res://Sprite/logoEJ.png" id="3_lbxic"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="5_6hgn1"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="6_fyf5i"]
 
@@ -109,11 +108,6 @@ text = "quit
 "
 alignment = 0
 
-[node name="Image" type="Sprite2D" parent="."]
-position = Vector2(1072, 568)
-scale = Vector2(0.354988, 0.37229)
-texture = ExtResource("3_lbxic")
-
 [node name="credits" type="Panel" parent="."]
 visible = false
 layout_mode = 0
@@ -123,10 +117,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_j1rv5")
 
 [node name="Label2" type="RichTextLabel" parent="credits"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 32.0
-offset_right = 1088.0
-offset_bottom = 552.0
+offset_left = 65.0
+offset_top = 144.0
+offset_right = 1089.0
+offset_bottom = 515.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_hgydy")
 bbcode_enabled = true
 text = "[font_size=30]Created by[/font_size]
@@ -235,6 +229,22 @@ offset_top = 576.0
 offset_right = 680.0
 offset_bottom = 616.0
 text = "CLOSE"
+
+[node name="title" type="RichTextLabel" parent="credits"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 37.0
+offset_right = 1084.0
+offset_bottom = 125.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/bold_font = ExtResource("3_alu6o")
+theme_override_font_sizes/bold_font_size = 39
+theme_override_styles/normal = SubResource("StyleBoxFlat_u2k45")
+bbcode_enabled = true
+text = "[center][b][color=#e17a25]G A S L I G H T E R S[/color][/b][/center]
+"
+vertical_alignment = 1
 
 [node name="transition" parent="." instance=ExtResource("5_6hgn1")]
 

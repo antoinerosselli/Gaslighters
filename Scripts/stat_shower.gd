@@ -7,7 +7,6 @@ func ready():
 	stat_value.text = "60" + "%"
 
 func _on_timer_timeout():
-	print("edf fui fui")
 	var all_inter = get_tree().get_nodes_in_group("inter")
 	var hm_inter:int = 0
 	for inter in all_inter:

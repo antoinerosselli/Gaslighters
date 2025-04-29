@@ -7,3 +7,4 @@ func _ready():
 	Tools.set_elec(60)
 	var codesr = get_tree().get_first_node_in_group("codesr")
 	codesr.activate = false
+	Radio.setValue(0)

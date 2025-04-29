@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://burmfonrenium"]
+[gd_scene load_steps=55 format=3 uid="uid://burmfonrenium"]
 
 [ext_resource type="Script" uid="uid://c7x1krdmm8fej" path="res://Scene/Days/Day4/scene_day_4.gd" id="1_nyh0e"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="2_5g634"]
@@ -52,30 +52,10 @@ shader_parameter/edgeGlowIntensity = 1.466
 shader_parameter/enable_dissolve_animation = false
 shader_parameter/animation_speed = 0.6
 
-[sub_resource type="Sky" id="Sky_gxdup"]
-
-[sub_resource type="Environment" id="Environment_1t4ng"]
-background_mode = 2
-sky = SubResource("Sky_gxdup")
-ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
-ambient_light_sky_contribution = 0.51
-ambient_light_energy = 0.35
-ssao_radius = 3.49
-glow_normalized = true
-glow_intensity = 7.2
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0
-volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
-volumetric_fog_anisotropy = -0.51
-adjustment_enabled = true
-adjustment_saturation = 1.44
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_aq04m"]
-
 [sub_resource type="FogMaterial" id="FogMaterial_d3oq6"]
-density = 7.2353
+density = 1.7928
 emission = Color(0.969137, 0.969137, 0.969137, 1)
-edge_fade = 1e-05
+edge_fade = 1.21257
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u7eqg"]
 size = Vector3(1, 0.160645, 1)
@@ -2388,6 +2368,42 @@ tracks/185/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/186/type = "value"
+tracks/186/imported = false
+tracks/186/enabled = true
+tracks/186/path = NodePath("PartFinal/FinalCube:visible")
+tracks/186/interp = 1
+tracks/186/loop_wrap = true
+tracks/186/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/187/type = "value"
+tracks/187/imported = false
+tracks/187/enabled = true
+tracks/187/path = NodePath("Part2/AudioStreamPlayer3D:playing")
+tracks/187/interp = 1
+tracks/187/loop_wrap = true
+tracks/187/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/188/type = "value"
+tracks/188/imported = false
+tracks/188/enabled = true
+tracks/188/path = NodePath("Part3/AudioStreamPlayer3D:playing")
+tracks/188/interp = 1
+tracks/188/loop_wrap = true
+tracks/188/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_vk3ay"]
 resource_name = "endgame"
@@ -2574,62 +2590,50 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("FogVolume2:size")
+tracks/15/path = NodePath("appartement/fondation/CSGCombiner3D/CSGBox3D5:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(17.4797, 3.79638, 2.43262), Vector3(4.65612, 3.79638, 2.43262)]
+"values": [Vector3(5.45879, 0.125336, 3.51933), Vector3(5.45879, 0.125336, 1.97988)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("FogVolume2:position")
+tracks/16/path = NodePath("appartement/fondation/CollisionShape3D7:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(6.7238, 0.229126, 12.3603), Vector3(-0.437834, 0.229126, 11.7514)]
+"values": [Vector3(4.43872, 0.16475, 1.94028), Vector3(1.10122, 0.16475, 1.94028)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("appartement/fondation/CSGCombiner3D/CSGBox3D5:position")
+tracks/17/path = NodePath("appartement/fondation/CollisionShape3D7:scale")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(5.45879, 0.125336, 3.51933), Vector3(5.45879, 0.125336, 1.97988)]
+"values": [Vector3(1, 1, 1), Vector3(0.996676, 1, 0.398972)]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("appartement/fondation/CollisionShape3D7:position")
+tracks/18/path = NodePath("PartFinal/FinalCube:visible")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(4.43872, 0.16475, 1.94028), Vector3(1.10122, 0.16475, 1.94028)]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("appartement/fondation/CollisionShape3D7:scale")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(0.996676, 1, 0.398972)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_jlx00"]
@@ -3959,6 +3963,18 @@ tracks/72/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/73/type = "value"
+tracks/73/imported = false
+tracks/73/enabled = true
+tracks/73/path = NodePath("Part2/AudioStreamPlayer3D:playing")
+tracks/73/interp = 1
+tracks/73/loop_wrap = true
+tracks/73/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_67yib"]
 resource_name = "part3"
@@ -4671,6 +4687,18 @@ tracks/58/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/59/type = "value"
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/path = NodePath("Part3/AudioStreamPlayer3D:playing")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vc1tc"]
 _data = {
@@ -4680,6 +4708,42 @@ _data = {
 &"part2": SubResource("Animation_vc1tc"),
 &"part3": SubResource("Animation_67yib")
 }
+
+[sub_resource type="Gradient" id="Gradient_j44nx"]
+offsets = PackedFloat32Array(0.0263158, 0.747368, 0.947368, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.247836, 0.247836, 0.247836, 1, 0.857895, 0.857895, 0.857895, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q0gdc"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fx68q"]
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_j44nx")
+noise = SubResource("FastNoiseLite_q0gdc")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_255v2"]
+panorama = SubResource("NoiseTexture2D_fx68q")
+energy_multiplier = 3.12
+
+[sub_resource type="Sky" id="Sky_8e1tg"]
+sky_material = SubResource("PanoramaSkyMaterial_255v2")
+
+[sub_resource type="Environment" id="Environment_scpn5"]
+background_mode = 2
+background_energy_multiplier = 0.39
+sky = SubResource("Sky_8e1tg")
+ambient_light_sky_contribution = 0.51
+ssao_radius = 3.49
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0157
+volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
+volumetric_fog_anisotropy = -0.51
+adjustment_enabled = true
+adjustment_saturation = 1.44
 
 [node name="SceneDay4" type="Node3D"]
 script = ExtResource("1_nyh0e")
@@ -4772,7 +4836,7 @@ shape = SubResource("BoxShape3D_vc1tc")
 transform = Transform3D(0.00500899, 0, 0.999987, 0, 1, 0, -0.999987, 0, 0.00500899, 4.43872, 0.16475, 1.94028)
 
 [node name="KitchenPart1" parent="appartement/Deco" index="2"]
-transform = Transform3D(1.12538, 0.0345304, 1.10421e-09, 0, -6.48848e-08, 1.08593, 0.026186, -1.48399, -4.74547e-08, 15.3437, -0.945081, 3.59686)
+transform = Transform3D(1.12538, 0.0345294, 1.10417e-09, 0, -6.48848e-08, 1.08593, 0.0261852, -1.48399, -4.74547e-08, 15.3437, -0.945081, 3.59686)
 
 [node name="CollisionShape3D2" parent="appartement/Deco/KitchenPart1/StaticBody3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.999996, 2.13164e-14, 0, -2.13163e-14, 1, -0.767567, 0.718806, -4.76837e-07)
@@ -4784,7 +4848,7 @@ transform = Transform3D(1.13301, 0.0231011, 3.02816e-05, -3.44471e-10, -0.003095
 transform = Transform3D(1, 0, 0, 0, -0.00455525, 0.99999, 0, -0.99999, -0.00455525, 15.7343, 0.290971, 5.26553)
 
 [node name="Poel" parent="appartement/Deco" index="6"]
-transform = Transform3D(-0.486389, -1.30952, 0.0115752, 4.8475e-10, 0.020326, 0.862093, -1.2314, 0.517246, -0.00457209, 14.8356, -0.330968, 6.56839)
+transform = Transform3D(-0.486389, -1.30952, 0.0115752, 4.84758e-10, 0.020326, 0.862093, -1.2314, 0.517246, -0.00457209, 14.8356, -0.330968, 6.56839)
 
 [node name="UpArmory" parent="appartement/Deco" index="9"]
 transform = Transform3D(-1.06591, 0.00395567, 1.86437e-10, 0, -5.41352e-08, 1.33537, 0.00340455, 1.23846, 5.83706e-08, 9.42764, 1.56793, 3.18322)
@@ -4796,10 +4860,10 @@ transform = Transform3D(-0.014494, 1.8191, 0.097699, -1.31116e-08, -0.0784404, 2
 transform = Transform3D(1.15279, 0.0355099, 3.71088e-05, 2.9449e-10, -0.00274009, 1.00091, 0.025275, -1.61961, -0.00169255, 15.3328, -0.901321, 3.60967)
 
 [node name="ChairKitch" parent="appartement/Deco" index="14"]
-transform = Transform3D(0.0224066, 1.36116, 0.437131, 0.0049888, 0.481823, -1.235, -1.65638, 0.0198643, 0.00219363, 9.23059, -0.553969, 6.83263)
+transform = Transform3D(0.0224066, 1.36116, 0.437133, 0.0049888, 0.481824, -1.235, -1.65638, 0.0198642, 0.00219363, 9.23059, -0.553969, 6.83263)
 
 [node name="ChairKitch2" parent="appartement/Deco" index="15"]
-transform = Transform3D(0.0224066, 1.36116, 0.437131, 0.0049888, 0.481823, -1.235, -1.65638, 0.0198643, 0.00219363, 9.23059, -0.553969, 7.7773)
+transform = Transform3D(0.0224066, 1.36116, 0.437133, 0.0049888, 0.481824, -1.235, -1.65638, 0.0198642, 0.00219363, 9.23059, -0.553969, 7.7773)
 
 [node name="Toaster" parent="appartement/Deco" index="20"]
 transform = Transform3D(0.991107, 0.133069, 5.81663e-09, 0, -4.37114e-08, 1, 0.133069, -0.991107, -4.33227e-08, 15.3961, -0.338037, 5.19309)
@@ -4811,13 +4875,13 @@ transform = Transform3D(0.827492, -0.561402, 0.00916046, 0, 0.0163149, 0.999867,
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.0498, -0.382754, 5.54982)
 
 [node name="Curtbar2" parent="appartement/Deco" index="43"]
-transform = Transform3D(0.0202136, -1.27233, -3.02248e-08, 0.690078, 0.0184913, -0.709817, 0.695398, 0.0186338, 0.704386, 1.61308, 1.56412, -7.98795)
+transform = Transform3D(0.0202136, -1.27233, -2.92055e-08, 0.690078, 0.0184913, -0.709817, 0.695398, 0.0186338, 0.704386, 1.61308, 1.56412, -7.98795)
 
 [node name="CollisionShape3D" parent="appartement/Deco/Trash2/StaticBody3D" index="0"]
 transform = Transform3D(1, 4.67058e-07, -8.60775e-06, -4.53554e-07, 0.999999, 0.00132613, 8.60653e-06, -0.00132642, 0.999999, 0.121827, -0.102965, 2.68221e-07)
 
 [node name="Toilet" parent="appartement/Deco" index="51"]
-transform = Transform3D(1.90651, 0.000123656, 0.0153928, -0.0190975, 0.0122949, 1.53668, 6.81857e-07, -1.42628, 0.0132479, 3.77849, -1.14595, -7.61696)
+transform = Transform3D(1.90651, 0.000123571, 0.0153928, -0.0190975, 0.0122949, 1.53668, 5.68214e-07, -1.42628, 0.0132479, 3.77849, -1.14595, -7.61696)
 
 [node name="Toiletpaper" parent="appartement/Deco" index="52"]
 transform = Transform3D(-0.0530331, 1.53087, 0, -0.998593, -0.0813013, 0, 0, 0, 1.74708, 4.66182, -0.675297, -7.3128)
@@ -4829,7 +4893,7 @@ transform = Transform3D(1.44249, 0, 0, 0, -0.00848885, -1.48074, 0, 1.52949, -0.
 transform = Transform3D(1.5518, 0, 0, 0, 0.0231156, 1.75242, 0, -1.70664, 0.0237357, -0.118868, -0.207093, -6.47858)
 
 [node name="Ptitetable" parent="appartement/Deco" index="59"]
-transform = Transform3D(-0.0218193, 0.999761, -0.00126135, -0.0162311, 0.000907253, 0.999868, 0.99963, 0.0218369, 0.0162074, 1.66868, -1.39035, -7.75612)
+transform = Transform3D(-0.0218193, 0.999761, -0.00126134, -0.0162311, 0.000907237, 0.999868, 0.99963, 0.0218369, 0.0162074, 1.66868, -1.39035, -7.75612)
 
 [node name="Curtain3" parent="appartement/Deco" index="60"]
 transform = Transform3D(0.755287, 0, 0, 0, 1.26528, 0, 0, 0, 1, 1.21432, 0.465353, 9.25289)
@@ -4844,7 +4908,7 @@ transform = Transform3D(-0.999497, -2.39384e-09, 0.0317074, 0, 1, 7.54979e-08, -
 transform = Transform3D(-8.26958e-08, 0, 1.25646, 0, 1, 0, -1.89186, 0, -5.49216e-08, 9.47159, -0.703173, 4.30367)
 
 [node name="Mirror" parent="appartement/Deco" index="74"]
-transform = Transform3D(-1.9808e-07, -0.802198, 35.4587, 53.755, -5.77844e-06, -6.3928e-13, 8.75556e-06, 35.4587, 0.802198, -0.404962, 0.627597, -6.45798)
+transform = Transform3D(-1.9808e-07, -0.802198, 35.4587, 53.755, -5.77844e-06, -6.25782e-13, 8.75556e-06, 35.4587, 0.802198, -0.404962, 0.627597, -6.45798)
 
 [node name="ShowerFloor" parent="appartement/Deco" index="75"]
 transform = Transform3D(2.38787, 155.344, 4.37065e-06, 0, -6.79104e-06, 100, 159.446, -2.32643, -6.5455e-08, 0.410234, -1.68487, -3.88909)
@@ -4861,21 +4925,43 @@ transform = Transform3D(-0.0257407, 0, 0.000558769, 0, 0.015, 0, -0.000873697, 0
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_xvotj")]
 transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
 
+[node name="GOVFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="0"]
+visible = false
+
+[node name="BELLEFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="1"]
+visible = false
+
+[node name="COMPLOTFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="2"]
+visible = false
+
 [node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3"]
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 219.0
 offset_bottom = 23.0
 
+[node name="Event" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="0"]
+visible = true
+text = "> A transport convoy was attacked"
+
 [node name="Event2" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="1"]
 visible = true
+text = "> Is the radio talking to me? "
+
+[node name="Event3" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="2"]
+visible = true
+text = "> The evacuation is almost complete"
+
+[node name="Event4" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="3"]
+visible = true
+text = "> Am I free ?  "
+
+[node name="Event5" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="4"]
+visible = true
+text = "> Am I a hero ? Was I ever a hero ? "
 
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_67yib")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_1t4ng")
-camera_attributes = SubResource("CameraAttributesPractical_aq04m")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.9781)
@@ -4883,8 +4969,8 @@ size = Vector3(24.1484, 6.75517, 2)
 material = SubResource("FogMaterial_d3oq6")
 
 [node name="FogVolume2" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.437834, 0.229126, 11.7514)
-size = Vector3(4.65612, 3.79638, 2.43262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.849, 0.229126, 11.4592)
+size = Vector3(7.22923, 3.79638, 2.43262)
 material = SubResource("FogMaterial_d3oq6")
 
 [node name="FogVolume3" type="FogVolume" parent="."]
@@ -4893,8 +4979,8 @@ size = Vector3(13.9297, 5.40916, 2)
 material = SubResource("FogMaterial_d3oq6")
 
 [node name="FogVolume4" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.525711, 0.229126, 9.94043)
-size = Vector3(4.26617, 5.0576, 0.360535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.255889, 0.229126, 11.206)
+size = Vector3(4.80581, 5.0576, 2.89177)
 material = SubResource("FogMaterial_d3oq6")
 
 [node name="managers" type="Node" parent="." groups=["event_manager"]]
@@ -5004,7 +5090,7 @@ bus = &"Sfx"
 parameters/looping = true
 
 [node name="murdimension9" type="MeshInstance3D" parent="Part1"]
-transform = Transform3D(-0.0238984, -0.999995, 1.1958e-07, 1.15567e-21, -4.37114e-08, -2.73568, 7.44178, -0.00321136, 3.84016e-10, -1.4416, -0.237179, -9.65401)
+transform = Transform3D(-0.0238984, -0.999995, 1.1958e-07, 1.15567e-21, -4.37114e-08, -2.73568, 7.44178, -0.00321136, 3.84016e-10, -1.50166, -0.237179, -9.65401)
 mesh = SubResource("PlaneMesh_vc1tc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Part1/murdimension9"]
@@ -5087,6 +5173,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6978, 0.130361, 7.4323)
 visible = false
 stream = ExtResource("11_ymfik")
 max_distance = 3.0
+bus = &"Music"
 parameters/looping = true
 
 [node name="one" parent="Part2" instance=ExtResource("12_1t4ng")]
@@ -5256,6 +5343,7 @@ shape = SubResource("BoxShape3D_67yib")
 
 [node name="FinalCube" parent="PartFinal" instance=ExtResource("13_67yib")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11937, 0.160911, 18.3457)
+visible = false
 
 [node name="one" parent="PartFinal" instance=ExtResource("12_1t4ng")]
 transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, 6.06758, -0.162288, 4.21379)
@@ -5277,6 +5365,9 @@ texture = ExtResource("18_benof")
 libraries = {
 &"": SubResource("AnimationLibrary_vc1tc")
 }
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." groups=["env"]]
+environment = SubResource("Environment_scpn5")
 
 [connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="managers" method="_on_animation_player_animation_finished"]

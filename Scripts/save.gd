@@ -28,7 +28,6 @@ func _ready():
 func save_level(nlevel):
 	var savefile = FileAccess.open(savefile_path, FileAccess.WRITE)
 	if savefile:
-		print("Saving level: " + str(nlevel))
 		savefile.store_string(str(nlevel))
 		savefile.close()
 	else:

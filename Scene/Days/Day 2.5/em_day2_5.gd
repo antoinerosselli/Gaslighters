@@ -20,8 +20,8 @@ func _on_timer_timeout():
 	check_event_conditions()
 
 func talk_audio(odio):
-	print(odio)
-
+	pass
+	
 func talk(odio, text,color, time):
 	talk_audio(odio)
 	Tools.radio_text(text,time,color)

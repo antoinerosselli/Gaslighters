@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=26 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="Script" uid="uid://b4v2q4bytqy57" path="res://Scene/Days/Day1/scene_day_1.gd" id="1_f86ad"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="3_8js8r"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="3_17coq"]
 [ext_resource type="Texture2D" uid="uid://dys4posym2uc6" path="res://Extern/model-assignmentradio/textures/woodMid-ToneGlossy_diffuse.jpg" id="5_fx68q"]
+[ext_resource type="Environment" uid="uid://mo0wky6kxjiy" path="res://Env/env_classic.tres" id="6_ly3ml"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="7_frxae"]
 [ext_resource type="Script" uid="uid://c5msg4g651xi1" path="res://Scene/Days/Day1/em_day_1.gd" id="7_rvlxt"]
 [ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="8_5gr6e"]
@@ -33,42 +34,6 @@ albedo_texture = ExtResource("5_fx68q")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_17coq"]
 viewport_path = NodePath("SubViewport")
-
-[sub_resource type="Gradient" id="Gradient_f86ad"]
-offsets = PackedFloat32Array(0.0263158, 0.747368, 0.947368, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.247836, 0.247836, 0.247836, 1, 0.857895, 0.857895, 0.857895, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_17coq"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fx68q"]
-in_3d_space = true
-seamless = true
-seamless_blend_skirt = 1.0
-color_ramp = SubResource("Gradient_f86ad")
-noise = SubResource("FastNoiseLite_17coq")
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ly3ml"]
-panorama = SubResource("NoiseTexture2D_fx68q")
-energy_multiplier = 3.12
-
-[sub_resource type="Sky" id="Sky_8e1tg"]
-sky_material = SubResource("PanoramaSkyMaterial_ly3ml")
-
-[sub_resource type="Environment" id="Environment_paq7g"]
-background_mode = 2
-background_energy_multiplier = 0.39
-sky = SubResource("Sky_8e1tg")
-ambient_light_sky_contribution = 0.51
-ssao_radius = 3.49
-glow_enabled = true
-glow_normalized = true
-glow_intensity = 7.2
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0157
-volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
-volumetric_fog_anisotropy = -0.51
-adjustment_enabled = true
-adjustment_saturation = 1.44
 
 [sub_resource type="FogMaterial" id="FogMaterial_87u83"]
 emission = Color(0.281187, 0.281187, 0.281187, 1)
@@ -169,8 +134,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ly3ml")
 [node name="New_Console_SubViewport#Sprite3D" parent="Node3D" index="18"]
 texture = SubResource("ViewportTexture_17coq")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_paq7g")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." groups=["env"]]
+environment = ExtResource("6_ly3ml")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)

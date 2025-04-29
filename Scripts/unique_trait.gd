@@ -71,7 +71,6 @@ func unique(object_name):
 			radio_camera.current = true
 		"conserve":
 			get_tree().get_first_node_in_group("foods").add_conserve()
-			print("TAKE FOOD")
 		"pills":
 			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/heavy_swallowwav-14682.mp3") as AudioStreamMP3)
 			if Data.get_level() == 1:
@@ -86,21 +85,18 @@ func unique(object_name):
 			Data.set_level(2)
 			Tools.start_transition("DAY 2", load("res://Scene/Days/Day2/scene_day_2.tscn") as PackedScene)
 		"phone":
-			print("phone")
 			Tools.start_transition("DAY 4", load("res://Scene/Days/Day4/scene_day_4.tscn") as PackedScene)
 		"screencamera":
-			print("use screen")
 			var screencam = get_tree().get_first_node_in_group("screencam")
+			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/tvonoff.ogg") as AudioStreamOggVorbis)
 			screencam.allume = !screencam.allume
 			if UniqueTrait.elec == false:
 				screencam.allume = false
-			print(screencam.allume)
 			if screencam.allume == true:
 				screencam.yescamcam()
 			elif screencam.allume == false:
 				screencam.nocamcam()
 		"ptichpitch":
-			print("i take the ptich")
 			var player = Tools.get_player()
 			player.on_hand()
 			var model = get_tree().get_first_node_in_group("ptichptich_depose")
