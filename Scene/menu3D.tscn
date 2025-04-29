@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=4 uid="uid://dlrpb51jtykx3"]
+[gd_scene load_steps=94 format=4 uid="uid://dlrpb51jtykx3"]
 
 [ext_resource type="Script" uid="uid://cn0abfvf7krl" path="res://Scripts/MenuCamera3D.gd" id="1_8obb3"]
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_22hrd"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dys4posym2uc6" path="res://Extern/model-assignmentradio/textures/woodMid-ToneGlossy_diffuse.jpg" id="8_26mww"]
 [ext_resource type="Shader" uid="uid://b801gs84w2k41" path="res://Shader/menu3D.gdshader" id="9_0qme6"]
 [ext_resource type="Texture2D" uid="uid://cd458kpdgcthk" path="res://Extern/Rework Appart/Deds/textures/Wood_10_baseColor.jpeg" id="9_3b71p"]
-[ext_resource type="Texture2D" uid="uid://cud33hvmo87be" path="res://Extern/model-assignmentradio/textures/plane_divided_DefaultMaterial_Roughness@channels=B.png" id="9_ng68d"]
 [ext_resource type="Texture2D" uid="uid://chaipkbutk75o" path="res://Extern/Prop Textures/Carpet 3.png" id="10_mo4is"]
 [ext_resource type="Texture2D" uid="uid://ckusb1af2djns" path="res://Extern/model-assignmentradio/source/v5/leather 5_4K_Color.jpg" id="11_3p776"]
 [ext_resource type="Texture2D" uid="uid://bepvtiklvn0t2" path="res://Extern/model-assignmentradio/source/v5/leather 5_4K_Roughness.png" id="12_rf2cw"]
@@ -222,9 +221,6 @@ shadow_mesh = SubResource("ArrayMesh_v6ke3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18v6t"]
 albedo_texture = ExtResource("8_26mww")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_si375"]
-albedo_texture = ExtResource("9_ng68d")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0wcm"]
 resource_name = "Brushed  Aluminium"
@@ -792,7 +788,6 @@ transform = Transform3D(0.641582, 0, 0, 0, 0.641582, 0, 0, 0, 0.641582, -0.04778
 mesh = SubResource("ArrayMesh_a7gcq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_18v6t")
-surface_material_override/1 = SubResource("StandardMaterial3D_si375")
 
 [node name="Plant" type="MeshInstance3D" parent="NEWMENU/RadioObj/Radiooo/RadioBody"]
 transform = Transform3D(0.641582, 0, 0, 0, 0.641582, 0, 0, 0, 0.641582, -0.451895, 0.917344, -0.498961)
@@ -915,5 +910,6 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=["musicmenu"]]
 stream = ExtResource("35_41xcc")
+volume_db = -21.478
 autoplay = true
 bus = &"Music"

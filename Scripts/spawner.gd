@@ -6,9 +6,7 @@ extends StaticBody3D
 
 func spawn_conserve(quantity):
 	audio_stream_player_3d.play()
-	print("conserve(s)")
 	if not prefab_conserve:
-		print("Erreur: Aucun prefab_conserve assigné!")
 		return
 	
 	for i in range(quantity):

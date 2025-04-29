@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dwi44rv8sigev"]
+[gd_scene load_steps=32 format=3 uid="uid://dwi44rv8sigev"]
 
 [ext_resource type="Script" uid="uid://d0svgp66y5er7" path="res://Scene/Days/Day2/scene_day_2.gd" id="1_mnosv"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_o3dra"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bhte01b1phrwb" path="res://Music&Sound/sound/walking-steps-102715.mp3" id="10_kayp0"]
 [ext_resource type="AudioStream" uid="uid://c8avdkeoaav76" path="res://Music&Sound/sound/distortion-29695.mp3" id="11_327jw"]
 [ext_resource type="AudioStream" uid="uid://da423gammvo6f" path="res://Music&Sound/sound/meaty-gunshot-101257.mp3" id="12_b8cxq"]
+[ext_resource type="Environment" uid="uid://mo0wky6kxjiy" path="res://Env/env_classic.tres" id="17_sak5h"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_b8cxq"]
 viewport_path = NodePath("SubViewport")
@@ -598,42 +599,6 @@ _data = {
 &"RESET": SubResource("Animation_wfw2x")
 }
 
-[sub_resource type="Gradient" id="Gradient_4n555"]
-offsets = PackedFloat32Array(0.0263158, 0.747368, 0.947368, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.247836, 0.247836, 0.247836, 1, 0.857895, 0.857895, 0.857895, 1, 1, 1, 1, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_sak5h"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fx68q"]
-in_3d_space = true
-seamless = true
-seamless_blend_skirt = 1.0
-color_ramp = SubResource("Gradient_4n555")
-noise = SubResource("FastNoiseLite_sak5h")
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_0c7wj"]
-panorama = SubResource("NoiseTexture2D_fx68q")
-energy_multiplier = 3.12
-
-[sub_resource type="Sky" id="Sky_8e1tg"]
-sky_material = SubResource("PanoramaSkyMaterial_0c7wj")
-
-[sub_resource type="Environment" id="Environment_qai4k"]
-background_mode = 2
-background_energy_multiplier = 0.39
-sky = SubResource("Sky_8e1tg")
-ambient_light_sky_contribution = 0.51
-ssao_radius = 3.49
-glow_enabled = true
-glow_normalized = true
-glow_intensity = 7.2
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0157
-volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
-volumetric_fog_anisotropy = -0.51
-adjustment_enabled = true
-adjustment_saturation = 1.44
-
 [node name="SceneDay2" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.125958)
 script = ExtResource("1_mnosv")
@@ -815,8 +780,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51941, 0, 14)
 light_energy = 0.0
 omni_range = 15.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_qai4k")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." groups=["env"]]
+environment = ExtResource("17_sak5h")
 
 [connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="managers" method="_on_animation_player_animation_finished"]

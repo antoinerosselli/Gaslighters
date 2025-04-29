@@ -55,7 +55,6 @@ func activate_depots():
 
 func _on_timer_timeout():
 	time_elapsed += 1
-	print(time_elapsed)
 	check_event_conditions()
 	check_radio_conditions()
 
@@ -79,7 +78,6 @@ func play_radio_message(file_path, text, duration, color, sender, what_cd):
 	played_messages[text] = true  
 
 func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
-	print(sound,text,time_text,color_ok,what_fm,what_cd)
 	Tools.set_radio_sound(1,load(sound))
 	if what_cd == 0:
 		Tools.radio_text(text,time_text,color_ok)

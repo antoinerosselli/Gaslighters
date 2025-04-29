@@ -5,13 +5,18 @@ var RadioGov : int
 var RadioBelle : int
 var RadioGalleries : int
 var journal_text: Array = []
+var daltone_mode: bool
 
 func _ready():
 	level = 0
 	RadioGov = 0
 	RadioBelle = 0
 	RadioGalleries = 0
+	daltone_mode = false
 	load_data()
+	if daltone_mode == true:
+		print("ayo")
+		Tools.toggle_daltonian_mode()
 
 func save():
 	var save_dict = {
@@ -20,8 +25,16 @@ func save():
 		"RadioBelle" : RadioBelle,
 		"RadioGalleries" : RadioGalleries,
 		"journal_text" : journal_text,
+		"daltone_mode" : daltone_mode,
 	}
 	return save_dict
+
+func set_daltone(status):
+	daltone_mode = status
+	save_data()
+
+func get_daltone():
+	return daltone_mode
 
 func set_radio(name_radio):
 	if name_radio == "G":

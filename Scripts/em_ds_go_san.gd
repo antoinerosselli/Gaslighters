@@ -19,4 +19,3 @@ func eat_a_pills():
 	pills_eaten += 1
 	if pills_eaten == 70:
 		Tools.start_transition("You've lost your mind", preload("res://Scene/menu3D.tscn") )
-	print(pills)

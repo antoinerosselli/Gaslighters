@@ -37,7 +37,7 @@ func _ready():
 	if depot == true:
 		$AnimationPlayer.play("spawn")
 
-func _process(delta):
+func _process(_delta):
 	if is_an_interruptor == true && UniqueTrait.elec == false:
 		is_on = false
 

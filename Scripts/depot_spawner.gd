@@ -6,15 +6,12 @@ extends Marker3D
 
 func _ready():
 	timer.wait_time = randi() % 250 + 10
-	print(timer.wait_time)
 
-func _process(delta):
+func _process(_delta):
 	if activation == true:
-		print("is activate")
 		activation = false
 		timer.start()
 
 func _on_timer_timeout():
-	print("spawn")
 	var ndepot = depot.instantiate()
 	self.add_child(ndepot)

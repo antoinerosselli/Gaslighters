@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7ifffa1oq6ok"]
+[gd_scene load_steps=3 format=3 uid="uid://b7ifffa1oq6ok"]
 
 [ext_resource type="Script" uid="uid://df2xo60do04m6" path="res://Scripts/bumpers.gd" id="1_hxbka"]
-[ext_resource type="Texture2D" uid="uid://bau0dr758he5h" path="res://Sprite/logoEJ.png" id="2_i2yhk"]
-[ext_resource type="AudioStream" uid="uid://c3litgb4xotmv" path="res://Music&Sound/neighing-of-a-horse-154724.mp3" id="3_muw33"]
+[ext_resource type="VideoStream" path="res://video/bumpers.ogv" id="2_p6jj2"]
 
 [node name="Bumpers" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hxbka")
@@ -19,21 +20,16 @@ offset_left = 6.10352e-05
 offset_top = 3.05176e-05
 offset_right = 1152.0
 offset_bottom = 656.0
-color = Color(0, 0.209065, 0.192006, 1)
 
-[node name="Image" type="Sprite2D" parent="."]
-position = Vector2(565, 331.679)
-scale = Vector2(0.953182, 0.932075)
-texture = ExtResource("2_i2yhk")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_muw33")
-volume_db = -12.734
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = 1.52588e-05
+offset_top = 1.52588e-05
+offset_right = 1440.0
+offset_bottom = 1080.0
+scale = Vector2(0.8, 0.600001)
+stream = ExtResource("2_p6jj2")
+volume_db = -22.92
 autoplay = true
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

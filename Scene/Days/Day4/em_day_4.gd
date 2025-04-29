@@ -57,7 +57,6 @@ func activate_depots():
 
 func _on_timer_timeout():
 	time_elapsed += 1
-	print(time_elapsed)
 	check_event_conditions()
 	check_radio_conditions()
 
@@ -104,6 +103,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "The Road Quarter is currently being secured. Over 70% of Rock Valley’s residents are now safe.", 5, gouv_color, "gouv", 6)
+			Tools.event_journal_ok(2,true)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Further clashes have occurred in the city, resulting in the disappearance of certain individuals during evacuation transports.", 5, gouv_color,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
@@ -145,6 +145,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "My friends,", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "The miners have informed me: the religious ones attacked an evacuation convoy. Innocents were caught in the crossfire.", 5, Fanatic_color, "fanatic", 6)
+			Tools.event_journal_ok(0,false)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "These are terrible times. But we will not betray you. Rock Valley will emerge stronger.", 5, Fanatic_color,"fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
@@ -153,6 +154,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "So we don't become leashed dogs like you, “hero.”", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You betrayed your brothers for a title, for peace…", 5, Fanatic_color, "fanatic", 6)
+			Tools.event_journal_ok(1,false)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "To impress whom? To prove what?", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
@@ -172,6 +174,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "That’s not what matters.", 5, other_color,"fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You stepped out of the cage you forged for yourself.", 5, other_color, "fanatic", 6)
+			Tools.event_journal_ok(3,true)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Look—you’re moving now.", 5, other_color, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
@@ -185,6 +188,7 @@ func check_radio_conditions():
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "I hope so too.", 5, other_color, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
+			Tools.event_journal_ok(5,true)
 			Tools.radio_text_glitch("Let’s get out of here.", 4.0, me_color)
 			Tools.eotd()
 			otherpart = false

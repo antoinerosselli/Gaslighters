@@ -1,0 +1,38 @@
+[gd_resource type="Environment" load_steps=6 format=3 uid="uid://mo0wky6kxjiy"]
+
+[sub_resource type="Gradient" id="Gradient_f86ad"]
+offsets = PackedFloat32Array(0.0263158, 0.747368, 0.947368, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.247836, 0.247836, 0.247836, 1, 0.857895, 0.857895, 0.857895, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_17coq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fx68q"]
+in_3d_space = true
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_f86ad")
+noise = SubResource("FastNoiseLite_17coq")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ly3ml"]
+panorama = SubResource("NoiseTexture2D_fx68q")
+energy_multiplier = 3.12
+
+[sub_resource type="Sky" id="Sky_ly3ml"]
+sky_material = SubResource("PanoramaSkyMaterial_ly3ml")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.39
+sky = SubResource("Sky_ly3ml")
+ambient_light_sky_contribution = 0.51
+ssao_radius = 3.49
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0157
+volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
+volumetric_fog_anisotropy = -0.51
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_saturation = 1.44
