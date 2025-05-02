@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dwi44rv8sigev"]
+[gd_scene load_steps=28 format=3 uid="uid://dwi44rv8sigev"]
 
 [ext_resource type="Script" uid="uid://d0svgp66y5er7" path="res://Scene/Days/Day2/scene_day_2.gd" id="1_mnosv"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_o3dra"]

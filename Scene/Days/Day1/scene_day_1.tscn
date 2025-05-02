@@ -1,11 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=24 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="Script" uid="uid://b4v2q4bytqy57" path="res://Scene/Days/Day1/scene_day_1.gd" id="1_f86ad"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_36dop"]
 [ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="3_8js8r"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="3_17coq"]
-[ext_resource type="Texture2D" uid="uid://dys4posym2uc6" path="res://Extern/model-assignmentradio/textures/woodMid-ToneGlossy_diffuse.jpg" id="5_fx68q"]
 [ext_resource type="Environment" uid="uid://mo0wky6kxjiy" path="res://Env/env_classic.tres" id="6_ly3ml"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="7_frxae"]
 [ext_resource type="Script" uid="uid://c5msg4g651xi1" path="res://Scene/Days/Day1/em_day_1.gd" id="7_rvlxt"]

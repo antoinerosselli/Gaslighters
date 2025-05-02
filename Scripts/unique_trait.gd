@@ -35,6 +35,10 @@ func unique(object_name):
 			Tools.sound_now(Tools.get_player(), load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
 			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
 			lamp_door.light_color = Color(0, 0, 0, 0)
+		"broken_lamp":
+			Tools.sound_now(Tools.get_player(), load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
+			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
+			lamp_door.light_color = Color(randi_range(-1, 1), randi_range(-1,1), randi_range(-1,1), randi_range(-1,1))
 		"sancheck":
 			if elec == true :
 				var player = Tools.get_player()

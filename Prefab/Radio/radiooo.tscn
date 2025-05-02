@@ -490,7 +490,6 @@ material = SubResource("StandardMaterial3D_t5jdj")
 [node name="Label3dRadio1" type="Label3D" parent="RadioBody/BarreAffi"]
 transform = Transform3D(2, 0, 2.13163e-14, 0, 2, 0, -2.13163e-14, 0, 2, 0.0755121, -0.000251383, 0.1186)
 pixel_size = 0.001
-billboard = 1
 double_sided = false
 texture_filter = 5
 modulate = Color(0.690196, 1, 0.47451, 1)
@@ -503,7 +502,6 @@ script = ExtResource("9_8pyjm")
 [node name="Label3dRadio2" type="Label3D" parent="RadioBody/BarreAffi"]
 transform = Transform3D(2, 0, 2.13163e-14, 0, 2, 0, -2.13163e-14, 0, 2, -0.116901, -0.00256942, 0.115811)
 pixel_size = 0.001
-billboard = 1
 double_sided = false
 texture_filter = 5
 modulate = Color(0.690196, 1, 0.47451, 1)
