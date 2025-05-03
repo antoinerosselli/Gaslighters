@@ -1,4 +1,4 @@
-[gd_scene load_steps=569 format=4 uid="uid://bo3d371qyuk7i"]
+[gd_scene load_steps=570 format=4 uid="uid://bo3d371qyuk7i"]
 
 [ext_resource type="Script" uid="uid://dayyw5emtu2wj" path="res://Scene/Days/Day3/laby_day_3.gd" id="1_n5y1d"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_7h1jf"]
@@ -3340,6 +3340,9 @@ viewport_path = NodePath("SpacialConnection/SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dlbdc"]
 size = Vector3(0.503784, 3.3399, 2.28125)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_p832b"]
+viewport_path = NodePath("SpacialConnection/SubViewport2")
 
 [node name="LabyDay3" type="Node3D"]
 script = ExtResource("1_n5y1d")
@@ -7120,7 +7123,7 @@ size = Vector3(24.1484, 6.75517, 2)
 material = SubResource("FogMaterial_d4ea4")
 
 [node name="Appartement_curse2" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 107.221, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 107.221, -60, 0)
 
 [node name="MeshInstance3D32" type="MeshInstance3D" parent="Appartement_curse2"]
 transform = Transform3D(0.00364097, -3.76746, -6.68824e-06, -2.00591, -0.00683841, 0.0036845, -0.0179255, 0, -0.412305, 10.9917, 0.438389, -8.25612)
@@ -7263,7 +7266,7 @@ omni_range = 0.0
 transform = Transform3D(-4.93615e-08, 0, -0.995633, 0, 1, 0, 1.12926, 0, -4.35205e-08, 15.9701, -1.35155, -0.045466)
 script = ExtResource("14_e648t")
 item_name = "front_door"
-script_trait = true
+door = true
 
 [node name="MeshInstance3D35" type="MeshInstance3D" parent="Appartement_curse2/frontdoor"]
 transform = Transform3D(0.780765, -2.0961e-13, -7.4631e-08, -3.41283e-08, 2.20805e-15, -1.70736, -2.13163e-14, 1.15563, 3.26222e-15, 0.748339, 1.26645, 0.0513792)
@@ -8088,7 +8091,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06358, 0.16475, -8.20062)
 shape = SubResource("BoxShape3D_6gqph")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Appartement_curse2/fondation"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.9186, 0.16475, 1.1366)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.1045, 0.164749, 1.1366)
 shape = SubResource("BoxShape3D_6gqph")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Appartement_curse2/fondation"]
@@ -9029,14 +9032,2045 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
 shape = SubResource("BoxShape3D_l2nki")
 
+[node name="Appartement_curse3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.4051, -29.3887, 130.937)
+
+[node name="MeshInstance3D32" type="MeshInstance3D" parent="Appartement_curse3"]
+transform = Transform3D(0.00364097, -3.76746, -6.68824e-06, -2.00591, -0.00683841, 0.0036845, -0.0179255, 0, -0.412305, 10.9917, 0.438389, -8.25612)
+mesh = SubResource("BoxMesh_wfwgm")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/MeshInstance3D32"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/MeshInstance3D32/StaticBody3D"]
+transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, 0, 0, 1, 0.0184627, 0.0324707, 0)
+shape = SubResource("BoxShape3D_ahif3")
+
+[node name="floor" type="StaticBody3D" parent="Appartement_curse3"]
+transform = Transform3D(1.40854, 0, 0, 0, 1, 0, 0, 0, 1, -6.07756, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.71149, -1.71342, -0.602111)
+shape = SubResource("BoxShape3D_vw65f")
+
+[node name="Aspirator" type="MeshInstance3D" parent="Appartement_curse3"]
+transform = Transform3D(-0.999915, -9.81655e-10, 0.0130024, 0, 1, 7.54979e-08, -0.0130024, 7.54915e-08, -0.999915, 15.1956, 0.789696, 6.41234)
+material_override = SubResource("StandardMaterial3D_vpkfd")
+mesh = SubResource("ArrayMesh_4bm40")
+skeleton = NodePath("")
+
+[node name="ocak" type="MeshInstance3D" parent="Appartement_curse3"]
+transform = Transform3D(-0.999287, -2.84949e-09, 0.0377426, 0, 1, 7.54979e-08, -0.0377426, 7.54441e-08, -0.999287, 15.2544, -0.423193, 6.37697)
+material_override = SubResource("StandardMaterial3D_4sbjr")
+mesh = SubResource("ArrayMesh_0pxu0")
+skeleton = NodePath("")
+
+[node name="fırın" type="MeshInstance3D" parent="Appartement_curse3/ocak"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.32349e-23, 0, -1.32349e-23, 1, 0.699973, -1.01598, -0.00710754)
+material_override = SubResource("StandardMaterial3D_1a6m7")
+mesh = SubResource("ArrayMesh_cb2hl")
+skeleton = NodePath("")
+
+[node name="ocaklı fırın button3" type="MeshInstance3D" parent="Appartement_curse3/ocak"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.32349e-23, 0, -1.32349e-23, 1, 0.679598, -0.145965, 0.180031)
+material_override = SubResource("StandardMaterial3D_2mvhv")
+mesh = SubResource("ArrayMesh_o6nip")
+skeleton = NodePath("")
+
+[node name="ocaklı fırın button4" type="MeshInstance3D" parent="Appartement_curse3/ocak"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.32349e-23, 0, -1.32349e-23, 1, 0.679598, -0.145965, -0.108204)
+material_override = SubResource("StandardMaterial3D_a7hrb")
+mesh = SubResource("ArrayMesh_bry55")
+skeleton = NodePath("")
+
+[node name="ocaklı fırın button5" type="MeshInstance3D" parent="Appartement_curse3/ocak"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.32349e-23, 0, -1.32349e-23, 1, 0.679598, -0.145965, -0.214566)
+material_override = SubResource("StandardMaterial3D_4563k")
+mesh = SubResource("ArrayMesh_qgith")
+skeleton = NodePath("")
+
+[node name="ocaklı fırın button6" type="MeshInstance3D" parent="Appartement_curse3/ocak"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.32349e-23, 0, -1.32349e-23, 1, 0.679598, -0.145965, -0.327378)
+material_override = SubResource("StandardMaterial3D_kyy61")
+mesh = SubResource("ArrayMesh_2ws2j")
+skeleton = NodePath("")
+
+[node name="ocaklı fırın gövde" type="MeshInstance3D" parent="Appartement_curse3/ocak"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.32349e-23, 0, -1.32349e-23, 1, 0.344572, -0.351956, 0.000391235)
+material_override = SubResource("StandardMaterial3D_482ii")
+mesh = SubResource("ArrayMesh_7mg75")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D36" type="MeshInstance3D" parent="Appartement_curse3"]
+transform = Transform3D(-0.0196162, 0, 0.999808, 0, 1, 0, -0.999808, 0, -0.0196162, 8.30534, 0.165519, 5.84632)
+mesh = SubResource("BoxMesh_okyb0")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/MeshInstance3D36"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/MeshInstance3D36/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
+shape = SubResource("BoxShape3D_l2nki")
+
+[node name="Lamp" type="MeshInstance3D" parent="Appartement_curse3"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.3699, -0.863081, 0.956338)
+material_override = SubResource("StandardMaterial3D_xl6xg")
+mesh = ExtResource("6_vpkfd")
+script = ExtResource("7_8ruv3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Appartement_curse3/Lamp"]
+transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, -0.0582294, 3.01847, -0.000372171)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 10.0
+shadow_blur = 10.0
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 0.0
+distance_fade_length = 51.5
+
+[node name="StaticBody3D2" parent="Appartement_curse3" instance=ExtResource("8_34jye")]
+transform = Transform3D(2.73885, 0, 0, 0, 2.24405, 0, 0, 0, 1, 2.90537, -1.60564, -2.42251)
+item_name = "doorchamber"
+
+[node name="Codesr" parent="Appartement_curse3" groups=["codesr"] instance=ExtResource("9_4bm40")]
+transform = Transform3D(0.429087, 0, 0, 0, 0.183948, 0, 0, 0, 0.507071, -5.65893, -1.07437, 0.902727)
+
+[node name="secretdoor" type="MeshInstance3D" parent="Appartement_curse3" groups=["secretdoor"]]
+transform = Transform3D(0.550753, 0, 0, 0, 1, 0, 0, 0, 1, -3.536, 0, -2.625)
+mesh = SubResource("BoxMesh_c2h3l")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/secretdoor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/secretdoor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
+shape = SubResource("BoxShape3D_l2nki")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Appartement_curse3/secretdoor"]
+libraries = {
+&"": SubResource("AnimationLibrary_nq4me")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Appartement_curse3/secretdoor"]
+
+[node name="Interrupteur" parent="Appartement_curse3" node_paths=PackedStringArray("lamp") instance=ExtResource("12_t43va")]
+transform = Transform3D(-0.0147126, 0, -0.999892, 0, 1, 0, 0.999892, 0, -0.0147126, -3.16625, 0.0177575, 2.44665)
+is_an_interruptor = true
+lamp = NodePath("../Lamp1")
+custom_range = 10.0
+script_trait = false
+
+[node name="Lamp1" type="Node3D" parent="Appartement_curse3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984962, 1.66746, 6.71348)
+script = ExtResource("13_dlbdc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Appartement_curse3/Lamp1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0497904, 0.165519, -0.0243607)
+light_color = Color(0.934725, 0.858715, 0.440763, 1)
+light_size = 0.35
+omni_range = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Appartement_curse3/Lamp1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0497904, 0.165519, -0.0243607)
+mesh = SubResource("SphereMesh_2tdss")
+
+[node name="frontdoor" type="StaticBody3D" parent="Appartement_curse3" groups=["frontdoor"]]
+transform = Transform3D(-4.93615e-08, 0, -0.995633, 0, 1, 0, 1.12926, 0, -4.35205e-08, 15.9701, -1.35155, -0.045466)
+script = ExtResource("14_e648t")
+item_name = "front_door"
+script_trait = true
+
+[node name="MeshInstance3D35" type="MeshInstance3D" parent="Appartement_curse3/frontdoor"]
+transform = Transform3D(0.780765, -2.0961e-13, -7.4631e-08, -3.41283e-08, 2.20805e-15, -1.70736, -2.13163e-14, 1.15563, 3.26222e-15, 0.748339, 1.26645, 0.0513792)
+mesh = SubResource("PlaneMesh_dsmfb")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="Appartement_curse3/frontdoor"]
+transform = Transform3D(1, 0, 0, 0, 0.927563, 0.373668, 0, -0.373668, 0.927563, 0.5, 2, -0.3)
+fov = 48.9
+far = 60.52
+script = ExtResource("16_oea12")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/frontdoor"]
+transform = Transform3D(0.780735, -0.00223923, 0.00660369, 0.013999, 0.000405415, -1.6546, 0.00331023, 1.15564, 0.000311116, 0.745489, 1.23735, 0.2939)
+shape = SubResource("BoxShape3D_om2qm")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Appartement_curse3" groups=["lamp_door"]]
+transform = Transform3D(0.0641361, 0.668131, -0.741274, -0.0575925, 0.744043, 0.665644, 0.996278, -2.2434e-08, 0.0861994, 17.0817, 1.89085, 0.815812)
+light_energy = 9.0
+spot_range = 11.681
+script = ExtResource("15_xuhqo")
+
+[node name="Interrupteur2" parent="Appartement_curse3" node_paths=PackedStringArray("lamp") instance=ExtResource("12_t43va")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74856, 0.0204909, -4.41214)
+item_name = "interrupteur2"
+is_an_interruptor = true
+lamp = NodePath("../Lamp2")
+custom_range = 10.0
+
+[node name="Interrupteur3" parent="Appartement_curse3" node_paths=PackedStringArray("lamp") instance=ExtResource("12_t43va")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81995, -0.0374835, -2.5424)
+item_name = "interrupteur3"
+is_an_interruptor = true
+lamp = NodePath("../Lamp3")
+custom_range = 14.0
+
+[node name="Lamp3" type="Node3D" parent="Appartement_curse3"]
+transform = Transform3D(0.992745, 0, 0.120241, 0, 1, 0, -0.120241, 0, 0.992745, 10.9283, 1.74722, -0.317061)
+script = ExtResource("13_dlbdc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Appartement_curse3/Lamp3"]
+light_color = Color(0.934725, 0.858715, 0.440763, 1)
+omni_range = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Appartement_curse3/Lamp3"]
+mesh = SubResource("SphereMesh_2tdss")
+
+[node name="Courant" parent="Appartement_curse3" instance=ExtResource("16_cb2hl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.420035, -8.82901, 0.545004, -7.99896)
+
+[node name="RadioObj" type="StaticBody3D" parent="Appartement_curse3"]
+transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.445068, -4.58302)
+script = ExtResource("14_e648t")
+item_name = "radio"
+script_trait = true
+
+[node name="Radiooo" type="Node3D" parent="Appartement_curse3/RadioObj"]
+script = ExtResource("19_iucim")
+
+[node name="Camera3D" type="Camera3D" parent="Appartement_curse3/RadioObj/Radiooo" groups=["radio"]]
+transform = Transform3D(-0.089916, -0.088057, 0.992049, -0.0139091, 0.996098, 0.0871557, -0.995852, -0.0059618, -0.0907899, 0.557325, 0.0626082, 0.00615215)
+fov = 69.6711
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Appartement_curse3/RadioObj/Radiooo" groups=["radio_sound"]]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, 0, 0, 1, -0.0273314, 0.165519, -0.0482235)
+stream = ExtResource("20_gn725")
+volume_db = -13.856
+unit_size = 1.0
+autoplay = true
+bus = &"Sfx"
+
+[node name="Audio1" type="AudioStreamPlayer3D" parent="Appartement_curse3/RadioObj/Radiooo/AudioStreamPlayer3D"]
+volume_db = -0.4
+unit_size = 1.0
+max_db = 0.125
+panning_strength = 0.25
+bus = &"Voice"
+
+[node name="Radio_NodeOfKnob#Knob3D2" type="CSGCylinder3D" parent="Appartement_curse3/RadioObj/Radiooo"]
+transform = Transform3D(-5.24537e-09, 0.0276934, -2.79397e-09, -0.12, -1.21052e-09, -7.77629e-09, -9.05975e-09, 0, 0.103, -0.186411, 0.043699, 0.228669)
+material_override = SubResource("StandardMaterial3D_whav6")
+
+[node name="Radio_NodeOfKnob_Knob3D#StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/RadioObj/Radiooo"]
+
+[node name="Radio_NodeOfKnob_Knob3D_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/RadioObj/Radiooo"]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
+shape = SubResource("CylinderShape3D_ipl5k")
+
+[node name="RadioBody" type="Node3D" parent="Appartement_curse3/RadioObj/Radiooo"]
+transform = Transform3D(-2.18557e-08, 0, 0.5, -3.7749e-08, 0.5, -1.65006e-15, -0.5, -3.7749e-08, -2.18557e-08, 0.104161, -0.452179, 0)
+
+[node name="Radio_bady" type="MeshInstance3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody"]
+transform = Transform3D(0.641582, 0, 0, 0, 0.641582, 0, 0, 0, 0.641582, -0.0477808, 0.908558, -0.783961)
+mesh = SubResource("ArrayMesh_a7gcq")
+skeleton = NodePath("")
+
+[node name="Plant" type="MeshInstance3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody"]
+transform = Transform3D(0.641582, 0, 0, 0, 0.641582, 0, 0, 0, 0.641582, -0.451895, 0.917344, -0.498961)
+mesh = SubResource("ArrayMesh_isfjp")
+skeleton = NodePath("")
+script = ExtResource("24_4ndc2")
+
+[node name="Volume_Knob" type="MeshInstance3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody/Plant"]
+transform = Transform3D(1, -7.10543e-15, -3.55271e-15, 7.10543e-15, 1, 4.23516e-22, 3.55271e-15, 0, 1, -0.000355422, -0.00574733, 0.0751242)
+mesh = SubResource("ArrayMesh_djbnj")
+skeleton = NodePath("")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody/Plant"]
+transform = Transform3D(0.809164, -5.32907e-15, 0, 4.9738e-14, 0.0740292, 5.29396e-22, 0, -1.85288e-22, 0.129455, 0.177, -0.041, 0.08)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.104481, 0.421615, 0.000163019, -0.00255887)
+material = SubResource("StandardMaterial3D_upji0")
+
+[node name="leg-1" type="MeshInstance3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody"]
+transform = Transform3D(0.641582, 0, 0, 0, 0.641582, 0, 0, 0, 0.641582, -0.514578, 0.561373, -0.518011)
+mesh = SubResource("ArrayMesh_hdung")
+skeleton = NodePath("")
+
+[node name="leg-2" type="MeshInstance3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody"]
+transform = Transform3D(0.641582, 0, 0, 0, 0.641582, 0, 0, 0, 0.641582, -0.514578, 0.561373, -1.03975)
+mesh = SubResource("ArrayMesh_b0bpj")
+skeleton = NodePath("")
+
+[node name="leg-3" type="MeshInstance3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody"]
+transform = Transform3D(0.641582, 0, 0, 0, 0.641582, 0, 0, 0, 0.641582, 0.406291, 0.561373, -0.518011)
+mesh = SubResource("ArrayMesh_kk0sd")
+skeleton = NodePath("")
+
+[node name="leg-4" type="MeshInstance3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody"]
+transform = Transform3D(0.641582, 0, 0, 0, 0.641582, 0, 0, 0, 0.641582, 0.406291, 0.561373, -1.03975)
+mesh = SubResource("ArrayMesh_v5cf8")
+skeleton = NodePath("")
+
+[node name="Tuning-Botom" type="MeshInstance3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody"]
+transform = Transform3D(0.641582, 0, 0, 0, 0.641582, 0, 0, 0, 0.641582, -0.0470723, 1.03448, -0.465502)
+mesh = SubResource("ArrayMesh_j8lo1")
+skeleton = NodePath("")
+
+[node name="Speaker_Grid" type="MeshInstance3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody"]
+transform = Transform3D(0.641582, 0, 0, 0, 0.641582, 0, 0, 0, 0.641582, 0.346158, 0.91275, -0.489734)
+mesh = SubResource("ArrayMesh_blexp")
+skeleton = NodePath("")
+
+[node name="BarreAffi" type="CSGBox3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0787316, 0.7362, -0.58455)
+size = Vector3(0.427055, 0.0904999, 0.213013)
+material = SubResource("StandardMaterial3D_t5jdj")
+
+[node name="Label3dRadio1" type="Label3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody/BarreAffi"]
+transform = Transform3D(2, 0, 2.13163e-14, 0, 2, 0, -2.13163e-14, 0, 2, 0.0755121, -0.000251383, 0.1186)
+pixel_size = 0.001
+billboard = 1
+double_sided = false
+texture_filter = 5
+modulate = Color(0.690196, 1, 0.47451, 1)
+text = "00.00"
+font = ExtResource("32_qr2dp")
+font_size = 46
+outline_size = 3
+script = ExtResource("33_2o26q")
+
+[node name="Label3dRadio2" type="Label3D" parent="Appartement_curse3/RadioObj/Radiooo/RadioBody/BarreAffi"]
+transform = Transform3D(2, 0, 2.13163e-14, 0, 2, 0, -2.13163e-14, 0, 2, -0.116901, -0.00256942, 0.115811)
+pixel_size = 0.001
+billboard = 1
+double_sided = false
+texture_filter = 5
+modulate = Color(0.690196, 1, 0.47451, 1)
+text = "FM"
+font = ExtResource("32_qr2dp")
+font_size = 50
+outline_size = 3
+script = ExtResource("33_2o26q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/RadioObj"]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
+shape = SubResource("BoxShape3D_1wkgl")
+
+[node name="Radiooo2" parent="Appartement_curse3/RadioObj" instance=ExtResource("18_40pc6")]
+
+[node name="New_Console_SubViewport#Sprite3D" type="Sprite3D" parent="Appartement_curse3"]
+transform = Transform3D(1.0205, 0, 0.0412816, 0, 0.863311, 0, -0.0293248, 0, 1.43659, -3.80287, 0.223529, -7.9891)
+modulate = Color(0.572988, 0.572988, 0.572988, 1)
+texture = SubResource("ViewportTexture_dlbdc")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Appartement_curse3"]
+transform = Transform3D(-0.000821644, 0, -1.01001, 0, 0.178834, 0, 0.118579, 0, -0.00699843, 15.7876, 0.348872, -1.54929)
+modulate = Color(0.462745, 0.4, 0.352941, 1)
+texture = ExtResource("19_o6nip")
+
+[node name="TableCorridor2" type="MeshInstance3D" parent="Appartement_curse3"]
+transform = Transform3D(0.158193, 0, 0, 0, 0.3, 0, 0, 0, 0.198785, -4.86071, -1.83448, 6.62458)
+material_override = SubResource("StandardMaterial3D_e648t")
+mesh = ExtResource("21_ua7dr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/TableCorridor2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/TableCorridor2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26829, 3.22693, -0.0393066)
+shape = SubResource("BoxShape3D_p832b")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Appartement_curse3" groups=["event_sound"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.41122, 11.3722, -0.0243607)
+
+[node name="Alarme" parent="Appartement_curse3" instance=ExtResource("23_4563k")]
+transform = Transform3D(0.286047, -0.0178842, -0.668332, 0.00916071, 1.01685, -0.0029975, 0.300285, -0.0139847, 0.636735, 1.29212, -1.13447, -7.76898)
+auto_start = true
+minute = 30
+hour = 1
+
+[node name="TimeSystem" type="Node" parent="Appartement_curse3"]
+script = ExtResource("24_7k72p")
+
+[node name="Lamp4" parent="Appartement_curse3" instance=ExtResource("13_0pxu0")]
+transform = Transform3D(0.992745, 0, 0.120241, 0, 1, 0, -0.120241, 0, 0.992745, 1.78979, 1.80664, -5.21442)
+
+[node name="Interrupteur4" type="StaticBody3D" parent="Appartement_curse3" node_paths=PackedStringArray("lamp") groups=["inter"]]
+transform = Transform3D(-0.999532, 0, -0.0305909, 0, 1, 0, 0.0305909, 0, -0.999532, 4.91014, 0.0599539, -4.7857)
+script = ExtResource("14_e648t")
+item_name = "interrupteur3"
+is_an_interruptor = true
+lamp = NodePath("../Lamp4")
+custom_range = 10.0
+script_trait = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Appartement_curse3/Interrupteur4"]
+transform = Transform3D(0.00668908, 0, 0, 0, 0.1874, 0, 0, 0, 0.128265, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_bxx02")
+gi_lightmap_texel_scale = 1.0255
+mesh = SubResource("BoxMesh_sbkt5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Interrupteur4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0273972, 0.000823975, -0.00237036)
+shape = SubResource("BoxShape3D_8yjkg")
+
+[node name="pills_spawner" parent="Appartement_curse3" instance=ExtResource("25_qgith")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02206, -0.951368, -7.67527)
+
+[node name="foods" parent="Appartement_curse3" instance=ExtResource("26_kyy61")]
+transform = Transform3D(2.0774, 0, 0, 0, 2.29861, 0, 0, 0, 2.18961, 9.47228, -0.72405, 4.41751)
+zone_size = Vector3(0.6, 1, 1)
+
+[node name="Lamp2" parent="Appartement_curse3" instance=ExtResource("13_0pxu0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14326, 1.76238, -4.59409)
+
+[node name="2 Trees" parent="Appartement_curse3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4126, -9.06946, -35.4139)
+
+[node name="2 Trees2" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3774, 0, 0)
+
+[node name="2 Trees3" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9833, 0, 0)
+
+[node name="2 Trees4" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.0147, 0, 0)
+
+[node name="2 Trees5" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.0637, 0, 0)
+
+[node name="2 Trees6" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4303, 0, 0)
+
+[node name="2 Trees7" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4303, 0, -10.0465)
+
+[node name="2 Trees8" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9609, 0, -10.0465)
+
+[node name="2 Trees9" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7785, 0, -10.0465)
+
+[node name="2 Trees10" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9679, 0, -10.0465)
+
+[node name="2 Trees11" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7904, 0, -10.0465)
+
+[node name="2 Trees12" parent="Appartement_curse3/2 Trees" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42237, 0, -10.0465)
+
+[node name="Walls" type="Node3D" parent="Appartement_curse3"]
+
+[node name="Room_wall" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(-0.0752822, 0, 0.573712, 0, 1, 0, -1.02834, 0, -0.0419999, 2.61716, 0.165519, 5.8805)
+material_override = SubResource("StandardMaterial3D_oea12")
+mesh = SubResource("BoxMesh_c2h3l")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Walls/Room_wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Walls/Room_wall/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
+shape = SubResource("BoxShape3D_l2nki")
+
+[node name="Room_wall2" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(-0.0121646, 0, 0.999926, 0, 1, 0, -0.999926, 0, -0.0121646, -6.09843, -0.129576, 6.14912)
+material_override = SubResource("StandardMaterial3D_oea12")
+mesh = SubResource("BoxMesh_c2h3l")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Walls/Room_wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Walls/Room_wall2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
+shape = SubResource("BoxShape3D_l2nki")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(3.4749, 0, 0, 0, 1.32891, 0, 0, 0, 2.81896, 2.21737, -1.72427, -5.32475)
+material_override = SubResource("StandardMaterial3D_iucim")
+mesh = SubResource("PlaneMesh_gn725")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(-0.0151626, 0, 1.00745, 0, 1, 0, -1.24635, 0, -0.0122561, -6.19316, -0.0565648, 0.386652)
+mesh = SubResource("BoxMesh_c2h3l")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Walls/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Walls/MeshInstance3D8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
+shape = SubResource("BoxShape3D_l2nki")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(-0.0121646, 0, 0.999926, 0, 1, 0, -0.999926, 0, -0.0121646, -0.932521, -0.034162, -6.49711)
+mesh = SubResource("BoxMesh_c2h3l")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Walls/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Walls/MeshInstance3D10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
+shape = SubResource("BoxShape3D_l2nki")
+
+[node name="Curtain" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1.37977, 0, 0, 0, 1, 13.5373, 0.366942, 9.196)
+mesh = ExtResource("29_482ii")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(4.37408, 0, 0, 0, 1.32891, 0, 0, 0, 3.85836, 11.7658, -1.72427, 6.09573)
+material_override = SubResource("StandardMaterial3D_ppo0k")
+mesh = SubResource("PlaneMesh_b4vcy")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(5.02774, 0, 0, 0, 1.32891, 0, 0, 0, 3.26219, 11.3512, -1.64025, -4.91019)
+mesh = SubResource("PlaneMesh_tdqd4")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D93" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(4.75396, 0, 0, 0, 1.45379, 0, 0, 0, 3.60607, -1.74623, -1.61294, 5.71749)
+mesh = SubResource("PlaneMesh_dnhxg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(0.00363765, -3.76746, -4.92045e-06, -2.00408, -0.00683841, 0.00271065, -0.0179092, 0, -0.303328, 11.6533, 0.545577, 9.8308)
+mesh = SubResource("BoxMesh_wfwgm")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Walls/MeshInstance3D22"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Walls/MeshInstance3D22/StaticBody3D"]
+transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, 0, 0, 1, 0.0184627, 0.0324707, 0)
+shape = SubResource("BoxShape3D_ahif3")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(35.1295, 0, 0, 0, 0.558697, 0, 0, 0, 28.4472, 4.35662, 2.16543, 0.429715)
+mesh = SubResource("BoxMesh_ir87s")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Walls/MeshInstance3D26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Walls/MeshInstance3D26/StaticBody3D"]
+shape = SubResource("BoxShape3D_ojnkb")
+
+[node name="Paint" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(-0.0327375, -1.01264, -0.00856744, -0.000499927, -0.0240641, 0.361224, -0.444078, 0.0746792, 0.000224941, 2.32213, 0.871475, 5.946)
+material_override = SubResource("StandardMaterial3D_a117t")
+mesh = ExtResource("36_ixxi7")
+
+[node name="Lavedent" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.351116, -0.0456746, -6.08626)
+mesh = ExtResource("37_c2h3l")
+
+[node name="Brossedent" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(1.09993, 0, 0, 0, 0.0411231, 0.99155, 0, -1.23703, 0.0329624, -0.299993, -0.0494358, -6.13936)
+mesh = ExtResource("38_henx7")
+
+[node name="Renfortfenetre" type="MeshInstance3D" parent="Appartement_curse3/Walls"]
+transform = Transform3D(0.00931749, 0, -0.856745, 0, 1.88753, 0, 0.999692, 0, 0.00798514, 1.86015, 1.36724, -8.10747)
+mesh = ExtResource("39_nq4me")
+
+[node name="OutBar" type="Node3D" parent="Appartement_curse3"]
+
+[node name="MeshInstance3D38" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 0.0497904, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_qr2dp")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D39" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 1.24677, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_pql0u")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D40" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 2.28104, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_kp4mi")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D41" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 3.47802, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_jkfo3")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D42" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 4.71846, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_mnt5m")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D43" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 5.91544, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_ga45s")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D44" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 6.94971, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_wt5or")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D45" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 8.14669, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_u44qi")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D46" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 9.45317, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_g13iq")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D47" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 10.6502, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_5bha5")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D48" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 11.6844, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_o3ajp")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D49" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 12.8814, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_voni5")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D50" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 14.1218, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_a5ee2")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D51" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 15.3188, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_ep2lr")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D52" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 16.3531, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_yx3nt")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D53" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 17.5501, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_pykic")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D54" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 18.4284, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_tv1fc")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D55" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 19.4627, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_5lj4o")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D56" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, 20.6596, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_sk0v3")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D57" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-8.19731e-09, -35.9686, 0, 0.187532, -1.57224e-06, 0, 0, 0, 0.196085, 2.68745, -0.383677, 14.4281)
+material_override = SubResource("StandardMaterial3D_a0d0g")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D58" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.9382, -1.54774, -6.82487)
+material_override = SubResource("StandardMaterial3D_qr2dp")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D59" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.9227, -1.54774, -5.62799)
+material_override = SubResource("StandardMaterial3D_pql0u")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D60" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.9094, -1.54774, -4.59381)
+material_override = SubResource("StandardMaterial3D_kp4mi")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D61" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.8939, -1.54774, -3.39693)
+material_override = SubResource("StandardMaterial3D_jkfo3")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D62" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.8779, -1.54774, -2.15659)
+material_override = SubResource("StandardMaterial3D_mnt5m")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D63" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.8624, -1.54774, -0.95971)
+material_override = SubResource("StandardMaterial3D_ga45s")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D64" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.8491, -1.54774, 0.0744731)
+material_override = SubResource("StandardMaterial3D_wt5or")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D65" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.8336, -1.54774, 1.27135)
+material_override = SubResource("StandardMaterial3D_u44qi")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D66" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.8167, -1.54774, 2.57772)
+material_override = SubResource("StandardMaterial3D_g13iq")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D67" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.8013, -1.54774, 3.7746)
+material_override = SubResource("StandardMaterial3D_5bha5")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D68" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.7879, -1.54774, 4.80879)
+material_override = SubResource("StandardMaterial3D_o3ajp")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D69" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.7725, -1.54774, 6.00566)
+material_override = SubResource("StandardMaterial3D_voni5")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D70" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.7564, -1.54774, 7.246)
+material_override = SubResource("StandardMaterial3D_a5ee2")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D71" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.741, -1.54774, 8.44288)
+material_override = SubResource("StandardMaterial3D_ep2lr")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D72" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.7276, -1.54774, 9.47707)
+material_override = SubResource("StandardMaterial3D_yx3nt")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D73" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.7122, -1.54774, 10.6739)
+material_override = SubResource("StandardMaterial3D_pykic")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D74" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.7008, -1.54774, 11.5522)
+material_override = SubResource("StandardMaterial3D_tv1fc")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D75" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.6875, -1.54774, 12.5863)
+material_override = SubResource("StandardMaterial3D_5lj4o")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D76" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(-0.00242199, 0, -0.196068, 0, 2.2931, 0, 0.187517, 0, -0.00253245, 20.672, -1.54774, 13.7832)
+material_override = SubResource("StandardMaterial3D_sk0v3")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D77" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(1.05868e-10, 0.300955, -0.196068, 0.187532, -1.01859e-06, 6.89751e-17, -8.19662e-09, -23.3007, -0.00253245, 20.8079, -0.383677, 2.87278)
+material_override = SubResource("StandardMaterial3D_a0d0g")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D78" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(50.9831, 0, 0, 0, 1, 0, 0, 0, 71.1474, 0, -9.21053, 0)
+material_override = SubResource("StandardMaterial3D_8tdcn")
+mesh = SubResource("PlaneMesh_b3u28")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/OutBar/MeshInstance3D78"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/OutBar/MeshInstance3D78/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0386963, -0.265385, 0.239014)
+shape = SubResource("BoxShape3D_qwvpn")
+
+[node name="MeshInstance3D79" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -11.7394, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_qr2dp")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D80" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -10.5425, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_pql0u")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D81" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -9.50818, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_kp4mi")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D82" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -8.3112, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_jkfo3")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D83" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -7.07076, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_mnt5m")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D84" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -5.87378, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_ga45s")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D85" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -4.83951, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_wt5or")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D86" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -3.64253, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_u44qi")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D87" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -2.33605, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_g13iq")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D88" type="MeshInstance3D" parent="Appartement_curse3/OutBar"]
+transform = Transform3D(0.187532, 0, 0, 0, 2.2931, 0, 0, 0, 0.196085, -1.13902, -1.54774, 14.4231)
+material_override = SubResource("StandardMaterial3D_5bha5")
+mesh = SubResource("BoxMesh_2o26q")
+skeleton = NodePath("../..")
+
+[node name="Lampadaires" type="Node3D" parent="Appartement_curse3"]
+
+[node name="MeshInstance3D80" parent="Appartement_curse3/Lampadaires" instance=ExtResource("43_oea12")]
+transform = Transform3D(0.237565, 0, 0, 0, 8.03263, 0, 0, 0, 0.296797, 3.08788, -5.94931, 45.7798)
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D82" parent="Appartement_curse3/Lampadaires" instance=ExtResource("43_oea12")]
+transform = Transform3D(0.237565, 0, 0, 0, 8.03263, 0, 0, 0, 0.296797, 26.9054, -6.11483, 45.8042)
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D83" parent="Appartement_curse3/Lampadaires" instance=ExtResource("43_oea12")]
+transform = Transform3D(0.237565, 0, 0, 0, 8.03263, 0, 0, 0, 0.296797, -18.4928, -5.94931, 45.7798)
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D86" parent="Appartement_curse3/Lampadaires" instance=ExtResource("43_oea12")]
+transform = Transform3D(0.237565, 0, 0, 0, 8.03263, 0, 0, 0, 0.296797, -42.0152, -5.94931, 45.7798)
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D84" parent="Appartement_curse3/Lampadaires" instance=ExtResource("43_oea12")]
+transform = Transform3D(0.00271992, 0, 0.296778, 0, 8.03263, 0, -0.237549, 0, 0.00339808, 39.041, -6.11483, -7.77534)
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D90" parent="Appartement_curse3/Lampadaires" instance=ExtResource("43_oea12")]
+transform = Transform3D(0.00271992, 0, 0.296778, 0, 8.03263, 0, -0.237549, 0, 0.00339808, 39.3142, -6.11483, -31.6411)
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D91" parent="Appartement_curse3/Lampadaires" instance=ExtResource("43_oea12")]
+transform = Transform3D(0.00271992, 0, 0.296778, 0, 8.03263, 0, -0.237549, 0, 0.00339808, 38.7939, -6.11483, 13.8039)
+skeleton = NodePath("../..")
+
+[node name="fondation" type="StaticBody3D" parent="Appartement_curse3"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Appartement_curse3/fondation"]
+
+[node name="Room_Wall2" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85113, 0.135246, 2.11016)
+size = Vector3(8.16426, 3.98828, 0.599272)
+material = SubResource("StandardMaterial3D_6r0ms")
+
+[node name="Room_Wall" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -1.70607, 0.0441205, 9.45937)
+size = Vector3(9.48018, 4.18689, 0.203979)
+material = SubResource("StandardMaterial3D_hatgt")
+
+[node name="new_wall1" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5483, 0.135246, -8.1977)
+material_override = SubResource("StandardMaterial3D_iow0g")
+size = Vector3(21.997, 3.98828, 0.203979)
+material = SubResource("StandardMaterial3D_hnwer")
+
+[node name="hole" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0086, 0.37902, -8.16303)
+operation = 2
+size = Vector3(3.39941, 1.78589, 0.302246)
+
+[node name="hole2" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05155, 0.563393, -8.16303)
+operation = 2
+size = Vector3(1.55109, 1.54959, 0.302246)
+
+[node name="new_wall2" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.9021, 0.135246, 1.00395)
+material_override = SubResource("StandardMaterial3D_iow0g")
+size = Vector3(18.613, 3.98828, 0.203979)
+material = SubResource("StandardMaterial3D_hnwer")
+
+[node name="new_wall2" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D/new_wall2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.200115, -0.208473, -0.0124464)
+material_override = SubResource("StandardMaterial3D_iow0g")
+operation = 2
+size = Vector3(1.74024, 3.30084, 0.281189)
+material = SubResource("StandardMaterial3D_hnwer")
+
+[node name="new_wall3" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9273, 0.0441205, 9.45937)
+material_override = SubResource("StandardMaterial3D_iow0g")
+size = Vector3(8.01165, 4.18689, 0.203979)
+material = SubResource("StandardMaterial3D_hnwer")
+
+[node name="hole3" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6268, 0.460799, 9.46525)
+operation = 2
+size = Vector3(3.83858, 1.75478, 0.302246)
+
+[node name="hole4" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.460349, 0.460799, 9.53111)
+operation = 2
+size = Vector3(2.51597, 1.75478, 0.489136)
+material = SubResource("StandardMaterial3D_c67h4")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1.11967, 0, 0, 0, 1, -7.29588, 0.137507, -8.22493)
+size = Vector3(11.9772, 3.71429, 0.218262)
+material = ExtResource("45_gn725")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1.11967, 0, 0, 0, 1, -9.85374, 0.18653, -1.77923)
+size = Vector3(6.86145, 3.71429, 0.218262)
+material = ExtResource("45_gn725")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(0.00382227, 0, -0.999993, 0, 1.11967, 0, 0.999993, 0, 0.00382227, -11.6249, 0.18653, -5.02698)
+size = Vector3(6.69705, 3.71429, 0.218262)
+material = ExtResource("45_gn725")
+
+[node name="new_wall4" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11674, 0.135246, 1.93933)
+material_override = SubResource("StandardMaterial3D_iow0g")
+size = Vector3(16.1, 3.98828, 0.900692)
+material = SubResource("StandardMaterial3D_hnwer")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08094, -0.144089, 1.79453)
+operation = 2
+size = Vector3(1.69659, 3.63516, 1.25482)
+material = SubResource("StandardMaterial3D_8d2to")
+
+[node name="new_wall5" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1915, -0.0625831, -2.59672)
+material_override = SubResource("StandardMaterial3D_iow0g")
+size = Vector3(7.1577, 3.98828, 0.967953)
+material = SubResource("StandardMaterial3D_xr45o")
+
+[node name="new_wall6" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.74345, -0.171104, -2.59672)
+material_override = SubResource("StandardMaterial3D_iow0g")
+operation = 2
+size = Vector3(1.73286, 3.37558, 0.967953)
+material = SubResource("ORMMaterial3D_bb21v")
+
+[node name="new_wall7" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(0.0203124, 0, 0.744283, 0, 1, 0, -0.994574, 0, 0.0152007, 5.50063, 0.135246, -5.10111)
+material_override = SubResource("StandardMaterial3D_iow0g")
+size = Vector3(5.91659, 3.98828, 0.952238)
+material = SubResource("StandardMaterial3D_42o4a")
+
+[node name="woodfloor" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50629, -1.70283, 3.01846)
+size = Vector3(35.6247, 0.001, 24.2608)
+material = SubResource("StandardMaterial3D_877v4")
+
+[node name="holewoodfloor" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D/woodfloor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32321, -0.24469, -8.4582)
+operation = 2
+size = Vector3(5.59792, 0.51062, 5.81917)
+
+[node name="holewoodfloor2" type="CSGBox3D" parent="Appartement_curse3/fondation/CSGCombiner3D/woodfloor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6252, -0.24469, 2.91262)
+operation = 2
+size = Vector3(8.78333, 0.51062, 7.30761)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/fondation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.06358, 0.16475, -8.20062)
+shape = SubResource("BoxShape3D_6gqph")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Appartement_curse3/fondation"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15.9186, 0.16475, 1.1366)
+shape = SubResource("BoxShape3D_6gqph")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Appartement_curse3/fondation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.46042, 0.16475, 9.33324)
+shape = SubResource("BoxShape3D_6gqph")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Appartement_curse3/fondation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17609, 0.114624, -8.23045)
+shape = SubResource("BoxShape3D_auff4")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Appartement_curse3/fondation/CollisionShape3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.69694, 0.114624, 6.42735)
+shape = SubResource("BoxShape3D_auff4")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Appartement_curse3/fondation/CollisionShape3D4"]
+transform = Transform3D(-0.00102977, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00102977, -4.4339, 0.114624, 2.49351)
+shape = SubResource("BoxShape3D_auff4")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Appartement_curse3/fondation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.737909, 0.16475, -2.59474)
+shape = SubResource("BoxShape3D_osbm0")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Appartement_curse3/fondation"]
+transform = Transform3D(0.999317, 0, -0.0369402, 0, 1, 0, 0.0369402, 0, 0.999317, 5.42636, 0.16475, -5.85436)
+shape = SubResource("BoxShape3D_owca8")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Appartement_curse3/fondation"]
+transform = Transform3D(0.00500904, 0, 0.999988, 0, 1, 0, -0.999988, 0, 0.00500904, 4.4128, 0.16475, 1.94015)
+shape = SubResource("BoxShape3D_usp4a")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Appartement_curse3/fondation"]
+transform = Transform3D(0.00500904, 0, 0.999988, 0, 1, 0, -0.999988, 0, 0.00500904, -4.38312, 0.16475, 1.90265)
+shape = SubResource("BoxShape3D_t4evq")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Appartement_curse3/fondation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0341, -0.209412, 0.653381)
+shape = SubResource("BoxShape3D_rhgpi")
+
+[node name="Deco" type="Node3D" parent="Appartement_curse3"]
+
+[node name="MeshInstance3D27" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.00316139, -1.60783, -6.33883e-06, -1.74169, -0.00291842, 0.00349203, -0.0155644, 0, -0.390768, 2.0659, 0.545577, -8.37745)
+mesh = SubResource("BoxMesh_wfwgm")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/MeshInstance3D27"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/MeshInstance3D27/StaticBody3D"]
+transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, 0, 0, 1, 0.0184627, 0.0324707, 0)
+shape = SubResource("BoxShape3D_ahif3")
+
+[node name="Sketchfab_Scene" parent="Appartement_curse3/Deco" instance=ExtResource("48_b4vcy")]
+transform = Transform3D(0.232761, 0, 0, 0, 0.321257, 0, 0, 0, 0.203111, 7.20927, -1.47381, -7.50662)
+
+[node name="KitchenPart1" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1.12538, 0.0345317, 1.10424e-09, 0, -6.48849e-08, 1.08593, 0.0261869, -1.48399, -4.74545e-08, 15.3437, -0.945081, 3.59686)
+mesh = ExtResource("49_4ndc2")
+skeleton = NodePath("../../Walls")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/KitchenPart1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/KitchenPart1/StaticBody3D"]
+transform = Transform3D(0.999808, 0.019599, 1.17107e-09, -0.0195988, 0.999797, -1.14753e-11, -1.17104e-09, -1.15108e-11, 1, -0.0725183, -1.79806, -1.19209e-07)
+shape = SubResource("BoxShape3D_2ytne")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Appartement_curse3/Deco/KitchenPart1/StaticBody3D"]
+transform = Transform3D(1, 1.28523e-07, 5.21805e-15, 0, 0.999996, 0, 0, -2.13163e-14, 1, -0.767567, 0.718806, -4.76837e-07)
+shape = SubResource("BoxShape3D_75uca")
+
+[node name="KitchenPart2" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1.13301, 0.0231013, 3.04516e-05, 0, -0.00311249, 1.00095, 0.0170273, -1.53718, -0.00202627, 15.3294, -0.902541, 3.62281)
+mesh = ExtResource("50_tdqd4")
+skeleton = NodePath("../../Walls")
+
+[node name="Lavabo" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5174, -0.125779, 3.60823)
+mesh = ExtResource("51_2nwh6")
+skeleton = NodePath("../../Walls")
+
+[node name="Spat" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, -0.00455525, 0.99999, 0, -0.99999, -0.00455525, 15.7343, 0.290971, 5.26553)
+mesh = ExtResource("52_dnhxg")
+skeleton = NodePath("../../Walls")
+
+[node name="Poel" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-0.48638, -1.30952, 0.011574, 4.84692e-10, 0.0203238, 0.862093, -1.2314, 0.517236, -0.00457151, 14.8356, -0.330968, 6.56839)
+mesh = ExtResource("53_6j67n")
+skeleton = NodePath("../../Walls")
+
+[node name="Sketchfab_Scene2" type="Node3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-0.412214, 0, 0.00078837, 0, 0.266649, 0, -0.000985663, 0, -0.329706, 15.5162, -0.45824, -3.78956)
+
+[node name="Sketchfab_model" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2"]
+transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
+
+[node name="servant_fbx" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model"]
+transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
+
+[node name="RootNode" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model/servant_fbx"]
+
+[node name="servant" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model/servant_fbx/RootNode"]
+transform = Transform3D(100, 0, 0, 0, -1.62921e-05, 100, 0, -100, -1.62921e-05, 57.451, -55.6805, 6.30455)
+
+[node name="servant_servant_0" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model/servant_fbx/RootNode/servant"]
+transform = Transform3D(1, 0, 0, 7.21775e-09, 1, 1.42109e-14, 9.4369e-16, -1.42109e-14, 1, -0.0911713, -0.160461, -0.0465758)
+mesh = SubResource("ArrayMesh_edi10")
+skeleton = NodePath("")
+
+[node name="Rbook1" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model/servant_fbx/RootNode/servant"]
+transform = Transform3D(2.4248, -0.0322265, -0.0916816, 0.0200929, 3.7499, -0.0326563, 0.0709373, 0.0394213, 3.03143, -0.446743, -0.558164, 2.18318)
+mesh = ExtResource("55_ojnkb")
+
+[node name="Rbook2" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model/servant_fbx/RootNode/servant"]
+transform = Transform3D(2.4248, -0.0322265, -0.0916816, 0.0200929, 3.7499, -0.0326563, 0.0709373, 0.0394213, 3.03143, -0.423847, -0.514329, 2.10143)
+mesh = ExtResource("56_a117t")
+
+[node name="Rbook3" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model/servant_fbx/RootNode/servant"]
+transform = Transform3D(2.4248, -0.0322265, -0.0916816, 0.0200929, 3.7499, -0.0326563, 0.0709373, 0.0394213, 3.03143, -0.426441, -0.500977, 2.25084)
+mesh = ExtResource("57_qr2dp")
+
+[node name="Rbook4" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model/servant_fbx/RootNode/servant"]
+transform = Transform3D(2.4248, -0.0322265, -0.0916816, 0.0200929, 3.7499, -0.0326563, 0.0709373, 0.0394213, 3.03143, -0.421478, -0.489487, 2.30417)
+mesh = ExtResource("58_2o26q")
+
+[node name="Rbook5" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model/servant_fbx/RootNode/servant"]
+transform = Transform3D(2.4248, -0.0322265, -0.0916816, 0.0200929, 3.7499, -0.0326563, 0.0709373, 0.0394213, 3.03143, -0.419502, -0.513546, 2.37498)
+mesh = ExtResource("59_pql0u")
+
+[node name="Rbook6" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model/servant_fbx/RootNode/servant"]
+transform = Transform3D(2.4248, -0.0322265, -0.0916816, 0.0200929, 3.7499, -0.0326563, 0.0709373, 0.0394213, 3.03143, -0.415764, -0.601055, 2.44205)
+mesh = ExtResource("60_kp4mi")
+
+[node name="Vase4" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/Sketchfab_model/servant_fbx/RootNode/servant"]
+transform = Transform3D(-2.42592, 0.00717242, 8.20124e-06, -0.00463593, -3.75024, -0.00428837, -0.00261269, -0.00530251, 3.03299, -0.510487, 3.33826, 2.10756)
+mesh = ExtResource("61_jkfo3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Sketchfab_Scene2/StaticBody3D"]
+transform = Transform3D(1, 0, -3.35276e-08, 0, 1, 0, -8.21892e-08, 0, 1.00003, 0.472923, 0.734188, -0.0222054)
+shape = SubResource("BoxShape3D_rdjq2")
+
+[node name="Sketchfab_Scene3" type="Node3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.0137591, -0.000524463, -1.00931, 0.0028198, 1.0001, -0.000516441, 1.74367, -0.00161319, 0.00796517, 15.5254, -1.85539, -1.32176)
+
+[node name="Sketchfab_model" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene3"]
+transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
+
+[node name="root" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene3/Sketchfab_model"]
+
+[node name="GLTF_SceneRootNode" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene3/Sketchfab_model/root"]
+transform = Transform3D(1, 0, 0, 0, 2.22045e-16, -1, 0, 1, 2.22045e-16, 0, 0, 0)
+
+[node name="SM_WoodenDrawers_0" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene3/Sketchfab_model/root/GLTF_SceneRootNode"]
+
+[node name="Object_4" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene3/Sketchfab_model/root/GLTF_SceneRootNode/SM_WoodenDrawers_0"]
+transform = Transform3D(1, 5.82077e-11, 0, -4.65661e-10, 1, -3.91083e-11, 0, -2.72848e-12, 1, -0.0135912, 0.165516, -0.0496025)
+mesh = SubResource("ArrayMesh_37bd5")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Sketchfab_Scene3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Sketchfab_Scene3/StaticBody3D"]
+transform = Transform3D(1, 6.98492e-10, -1.39698e-09, -4.65661e-10, 1, -3.45608e-11, 2.14204e-08, 2.21826e-09, 1, 0.0236464, 0.830196, -0.1078)
+shape = SubResource("BoxShape3D_kc7h3")
+
+[node name="UpArmory" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-1.06591, 0.00395551, 6.72618e-09, 5.51678e-09, 5.37542e-08, 1.33537, 0.00340441, 1.23846, -5.7982e-08, 9.42764, 1.56793, 3.18322)
+mesh = ExtResource("63_ga45s")
+skeleton = NodePath("../..")
+
+[node name="Trash" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-0.0144942, 1.8191, 0.097698, 0, -0.0784394, 2.26584, 2.01564, 0.0130809, 0.000702542, 9.61861, -1.26593, 8.68841)
+mesh = ExtResource("64_wt5or")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Trash"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Trash/StaticBody3D"]
+transform = Transform3D(1, 0, 5.82077e-11, 2.79397e-09, 1, -2.90356e-07, -1.86265e-09, -1.49259e-09, 1, 0.121827, -0.102965, 2.38419e-07)
+shape = SubResource("BoxShape3D_neciy")
+
+[node name="LowArmory" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1.61623, -0.015167, 1.74341e-08, -2.4165e-08, 4.71544e-08, 1.12539, -0.021355, -1.1479, 4.59995e-08, 6.84324, -1.60654, -2.65992)
+mesh = ExtResource("65_u44qi")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/LowArmory"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/LowArmory/StaticBody3D"]
+transform = Transform3D(0.999988, 0, -1.58207e-15, 1.546e-07, 1, 0, -6.78901e-14, 0, 1, 0.0283818, 0.140869, 0.289917)
+shape = SubResource("BoxShape3D_np5d2")
+
+[node name="KitchenSink" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1.15279, 0.0355096, 3.67603e-05, -4.30865e-12, -0.00271437, 1.00091, 0.0252746, -1.61961, -0.00167666, 15.3328, -0.901321, 3.60967)
+mesh = ExtResource("66_g13iq")
+skeleton = NodePath("../..")
+
+[node name="Curtain2" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01832, 0.651505, -7.9747)
+mesh = ExtResource("29_482ii")
+skeleton = NodePath("../..")
+
+[node name="ChairKitch" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.0224068, 1.36116, 0.437125, 0.0049888, 0.481814, -1.235, -1.65638, 0.0198643, 0.00219359, 9.23059, -0.553969, 6.83263)
+mesh = ExtResource("67_5bha5")
+skeleton = NodePath("../..")
+
+[node name="ChairKitch2" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.0224068, 1.36116, 0.437125, 0.0049888, 0.481814, -1.235, -1.65638, 0.0198643, 0.00219359, 9.23059, -0.553969, 7.7773)
+mesh = ExtResource("67_5bha5")
+skeleton = NodePath("../..")
+
+[node name="Plant1" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1.22661, 0, 0, 0, 0.0107677, 1.51788, 0, -1.20966, 0.0135113, 9.89961, -1.63762, 1.08716)
+mesh = ExtResource("68_o3ajp")
+skeleton = NodePath("../..")
+
+[node name="Curtbar" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.0200162, -2.4378, 0, -0.685845, -0.0355596, 0.707242, -0.686108, -0.0355733, -0.706971, 11.7343, 1.64515, 9.20413)
+mesh = ExtResource("69_voni5")
+skeleton = NodePath("../..")
+
+[node name="Figurine1" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.675024, 1.83214, 0.000920054, -0.00241184, 2.30649e-05, 1.41554, 1.41783, -0.872277, 0.00196992, 9.12172, -0.515683, 1.10606)
+mesh = ExtResource("70_a5ee2")
+skeleton = NodePath("../..")
+
+[node name="Vase1" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.0640981, -1.67226, 0, 0.055943, 0.00311007, 0.947936, -1.38742, -0.077132, 0.0382222, 7.83486, -0.590379, 1.12692)
+mesh = ExtResource("71_ep2lr")
+skeleton = NodePath("../..")
+
+[node name="Toaster" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.991107, 0.133069, 5.81665e-09, 0, -4.37114e-08, 1, 0.133069, -0.991107, -4.33227e-08, 15.3961, -0.338037, 5.19309)
+mesh = ExtResource("72_yx3nt")
+skeleton = NodePath("../..")
+
+[node name="Microwave" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.827492, -0.561402, 0.00916225, 0, 0.0163181, 0.999867, -0.561477, -0.827382, 0.0135031, 15.1609, -0.289232, 2.69017)
+mesh = ExtResource("73_pykic")
+skeleton = NodePath("../..")
+
+[node name="Chauffehaut" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.0498, -0.382754, 5.54982)
+mesh = ExtResource("74_tv1fc")
+skeleton = NodePath("../..")
+
+[node name="Lebole" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, -0.0118505, 0.99993, 0, -0.99993, -0.0118505, 15.3365, -0.399709, -2.67141)
+mesh = ExtResource("75_5lj4o")
+skeleton = NodePath("../..")
+
+[node name="Assiette" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.461323, -2.99406)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette2" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.453884, -2.99406)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette3" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.433704, -2.99406)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette4" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.444203, -2.99406)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette5" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.427435, -2.99406)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette6" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.399815, -2.99406)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette7" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.410315, -2.99406)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Vase3" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.0149569, 0.999888, 0, -0.999888, 0.0149569, 15.4565, 0.400271, -2.68861)
+mesh = ExtResource("77_a0d0g")
+skeleton = NodePath("../..")
+
+[node name="Photo2" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.978899, -0.204335, -0.00177251, 0, -0.0086742, 0.999962, -0.204342, -0.978863, -0.00849117, 15.4021, 0.0762768, -3.38135)
+mesh = ExtResource("78_8tdcn")
+skeleton = NodePath("../..")
+
+[node name="Assiette8" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.461323, -3.35275)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette9" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.453884, -3.35275)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette10" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.433704, -3.35275)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette11" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.444203, -3.35275)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette12" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.427435, -3.35275)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette13" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.399815, -3.35275)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Assiette14" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 0.00263543, 0.999997, 0, -0.999997, 0.00263543, 15.3935, -0.410315, -3.35275)
+mesh = ExtResource("76_sk0v3")
+skeleton = NodePath("../..")
+
+[node name="Sketchfab_Scene4" parent="Appartement_curse3/Deco" instance=ExtResource("79_rwc7t")]
+transform = Transform3D(0.01, 0, 0, 0, 0.0163039, 0.0175539, 0, -0.0214609, 0.0133357, 15.549, -0.0118655, -3.81178)
+
+[node name="Sketchfab_Scene5" parent="Appartement_curse3/Deco" instance=ExtResource("80_b3u28")]
+transform = Transform3D(-0.0455338, 0.00567881, -0.0198602, -0.000257735, 0.0479134, 0.0142912, 0.0206545, 0.0131171, -0.0436043, 15.4509, -0.00115652, -2.84437)
+
+[node name="Photo1" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, -0.00599164, 1.17344, 0, -1.28094, -0.0054888, 15.4697, 0.41721, -3.9987)
+mesh = ExtResource("81_qwvpn")
+skeleton = NodePath("../..")
+
+[node name="Curtbar2" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.0202136, -1.27233, 6.5867e-10, 0.690078, 0.0184914, -0.709816, 0.695398, 0.0186339, 0.704387, 1.61308, 1.56412, -7.98795)
+mesh = ExtResource("69_voni5")
+skeleton = NodePath("../..")
+
+[node name="Sketchfab_Scene6" type="Node3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.00859648, 0.000481011, 0.499834, 0.00166879, 0.422339, -0.000603694, -0.457765, 0.00154868, 0.0093843, -5.15052, -1.41143, 3.6707)
+
+[node name="Sketchfab_model" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene6"]
+transform = Transform3D(2.22045e-16, 1, -1.60812e-16, -3.82857e-16, 1.60812e-16, 1, 1, -2.22045e-16, 3.82857e-16, -8.76188e-06, 2.13082e-21, -9.59635e-06)
+
+[node name="8faf7668bee4438cab82d96c72b23725_obj_cleaner_materialmerger_gles" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene6/Sketchfab_model"]
+
+[node name="Object_2" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene6/Sketchfab_model/8faf7668bee4438cab82d96c72b23725_obj_cleaner_materialmerger_gles"]
+transform = Transform3D(1, 0, -4.00178e-11, 0, 1, -2.32831e-10, 4.36557e-11, 0, 1, 0.0982647, 0.0565567, 0.391828)
+mesh = SubResource("ArrayMesh_dpfba")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Sketchfab_Scene6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Sketchfab_Scene6/StaticBody3D"]
+transform = Transform3D(0.999978, 5.98375e-08, 3.63216e-07, -1.12224e-07, 1, -8.90577e-09, 1.71363e-07, -1.60326e-08, 0.999985, 0.0404358, 1.91576, 0.366814)
+shape = SubResource("BoxShape3D_dcorq")
+
+[node name="Wooden Table3" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-0.0492344, 0, 1.24348, 0, 1, 0, -1.37749, 0, -0.0444445, 1.40765, -0.703173, 6.66763)
+material_override = SubResource("StandardMaterial3D_3xuwn")
+mesh = SubResource("ArrayMesh_d0k5k")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Wooden Table3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Wooden Table3/StaticBody3D"]
+transform = Transform3D(0.789941, 0, 0.0640482, 0, 1, 1.94324e-12, -0.05154, 0, 0.981672, 1.15573, -0.419346, -0.0504514)
+shape = SubResource("BoxShape3D_3ay8j")
+
+[node name="Trash2" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-0.0144942, 1.8191, 0.097698, 0, -0.0784394, 2.26584, 2.01564, 0.0130809, 0.000702542, 1.68621, -1.19425, 8.64301)
+mesh = ExtResource("64_wt5or")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Trash2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Trash2/StaticBody3D"]
+transform = Transform3D(1, 0, 5.82077e-11, 2.79397e-09, 1, -2.90356e-07, -1.86265e-09, -1.49259e-09, 1, 0.121827, -0.102965, 2.38419e-07)
+shape = SubResource("BoxShape3D_neciy")
+
+[node name="Chauffage" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.0645149, 0, -0.997917, 0, 1, 0, 0.997917, 0, 0.0645149, 1.16417, -0.752634, 2.70544)
+material_override = SubResource("StandardMaterial3D_y35kq")
+mesh = ExtResource("85_hnwer")
+skeleton = NodePath("../..")
+
+[node name="Sketchfab_Scene7" type="Node3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-1.81708, 0, 0.00963225, 0, 1.37062, 0, -0.0111636, 0, -1.56783, 1.34714, -1.87844, 1.11983)
+
+[node name="Sketchfab_model" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene7"]
+transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
+
+[node name="root" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene7/Sketchfab_model"]
+
+[node name="GLTF_SceneRootNode" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene7/Sketchfab_model/root"]
+transform = Transform3D(1, 0, 0, 0, 2.22045e-16, -1, 0, 1, 2.22045e-16, 0, 0, 0)
+
+[node name="SM_WoodenDrawers_0" type="Node3D" parent="Appartement_curse3/Deco/Sketchfab_Scene7/Sketchfab_model/root/GLTF_SceneRootNode"]
+
+[node name="Object_4" type="MeshInstance3D" parent="Appartement_curse3/Deco/Sketchfab_Scene7/Sketchfab_model/root/GLTF_SceneRootNode/SM_WoodenDrawers_0"]
+transform = Transform3D(1, 0, 4.65661e-10, 0, 1, 0, 0, 0, 1, -0.0273179, 0.120762, 0.0157323)
+mesh = SubResource("ArrayMesh_hxfwk")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Sketchfab_Scene7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Sketchfab_Scene7/StaticBody3D"]
+transform = Transform3D(0.999975, 0, 2.79397e-09, 0, 1, 0, 4.65661e-10, 0, 1, 0.00033015, 0.432713, -0.117599)
+shape = SubResource("BoxShape3D_uum30")
+
+[node name="Fauteil" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.387829, -1.1356, -4.96387e-08, -2.5411e-22, -5.24537e-08, 1.2, -1.1356, -0.387829, -1.69525e-08, 1.28658, -0.91771, 4.2929)
+mesh = ExtResource("87_8d2to")
+skeleton = NodePath("../..")
+
+[node name="DownArmor" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-1.71808, 0.0063861, 0.000372101, 0.000749028, 0.0099065, 0.999715, 0.0110098, 0.99588, -0.00994704, 8.4859, -1.78777, 1.17466)
+mesh = ExtResource("88_xr45o")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/DownArmor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/DownArmor/StaticBody3D"]
+transform = Transform3D(1, 3.0268e-08, 2.2701e-09, -1.61119e-07, 1, 0, 7.23958e-09, 1.04308e-07, 1, -0.252687, 5.96046e-07, 0.366028)
+shape = SubResource("BoxShape3D_x2c4e")
+
+[node name="Vase2" type="MeshInstance3D" parent="Appartement_curse3/Deco/DownArmor/StaticBody3D"]
+transform = Transform3D(-0.826339, -0.00598325, 0.000137358, 0.00247517, -1.60682, -0.0414863, 0.00622874, -0.0493976, 1.34621, 1.26073, -3.83023, 1.15125)
+mesh = ExtResource("89_bb21v")
+
+[node name="Toilet" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1.90651, 0.000123198, 0.0153953, -0.0191005, 0.012297, 1.53668, 0, -1.42628, 0.0132501, 3.77849, -1.14595, -7.61696)
+mesh = ExtResource("90_42o4a")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Toilet"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Toilet/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.00002, -5.58794e-08, 0, -9.31323e-10, 1.00002, 0.078125, 0, 0)
+shape = SubResource("BoxShape3D_345qm")
+
+[node name="Toiletpaper" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-0.0530331, 1.53087, 0, -0.998593, -0.0813012, 0, 0, 0, 1.74708, 4.66182, -0.675297, -7.3128)
+mesh = ExtResource("91_877v4")
+skeleton = NodePath("../..")
+
+[node name="Savon" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1.44249, 0, 0, 0, -0.00848894, -1.48074, 0, 1.52949, -0.00821836, -0.352592, -1.53162, -4.59945)
+mesh = ExtResource("92_6gqph")
+skeleton = NodePath("../..")
+
+[node name="Lavemain" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1.5518, 0, 0, 0, 0.0231157, 1.75242, 0, -1.70664, 0.0237357, -0.118868, -0.207093, -6.47858)
+mesh = ExtResource("93_auff4")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Lavemain"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Lavemain/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.11759e-07, 0, 0, 0.999978, -0.0826721, -0.0284734, -0.00598218)
+shape = SubResource("BoxShape3D_cjrt7")
+
+[node name="Douche" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.393561, 1.34434, -3.07872)
+mesh = ExtResource("94_osbm0")
+skeleton = NodePath("../..")
+
+[node name="Renfortfenetre" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.00923246, 0, -1.51338, 0, 2.28955, 0, 0.990569, 0, 0.0141052, 11.0253, 1.36724, -8.07231)
+mesh = ExtResource("39_nq4me")
+skeleton = NodePath("../..")
+
+[node name="Renfortfenetre2" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.00923246, 0, -1.51338, 0, 2.08616, 0, 0.990569, 0, 0.0141052, 11.7852, 1.36724, 9.36254)
+mesh = ExtResource("39_nq4me")
+skeleton = NodePath("../..")
+
+[node name="Renfortfenetre3" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.00923664, 0, -1.11715, 0, 2.08616, 0, 0.991017, 0, 0.0104122, 0.433657, 1.36724, 9.36254)
+mesh = ExtResource("39_nq4me")
+skeleton = NodePath("../..")
+
+[node name="Ptitetable" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-0.0218192, 0.999761, -0.00126151, -0.0162331, 0.000907388, 0.999868, 0.99963, 0.0218367, 0.0162095, 1.66868, -1.39035, -7.75612)
+mesh = ExtResource("95_owca8")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Ptitetable"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Ptitetable/StaticBody3D"]
+transform = Transform3D(0.99998, -7.26432e-08, 1.49012e-07, -4.5076e-07, 0.999998, 1.7797e-07, 1.17347e-07, -1.22585e-07, 0.999984, -0.0781856, -0.31645, -0.121796)
+shape = SubResource("BoxShape3D_hgh5g")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Appartement_curse3/Deco/Ptitetable/StaticBody3D"]
+transform = Transform3D(0.99998, -6.89179e-08, 1.50874e-07, -4.58211e-07, 0.999998, 1.77562e-07, 1.22935e-07, -1.2244e-07, 0.999984, -0.1008, -0.315186, 1.27106)
+shape = SubResource("BoxShape3D_hgh5g")
+
+[node name="Curtain3" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.755287, 0, 0, 0, 1.26528, 0, 0, 0, 1, 1.45221, 0.465353, 9.25289)
+mesh = ExtResource("96_usp4a")
+skeleton = NodePath("../..")
+
+[node name="Curtbar3" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.0201403, -1.70552, 0, -0.690096, -0.0248779, 0.707242, -0.69036, -0.0248875, -0.706971, 0.698255, 1.43263, 9.30014)
+mesh = ExtResource("69_voni5")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D78" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(50.9831, 0, 0, 0, 1, 0, 0, 0, 4.6877, 0, -9.04628, 39.9443)
+mesh = SubResource("PlaneMesh_b3u28")
+skeleton = NodePath("../../..")
+
+[node name="2 Trees2" parent="Appartement_curse3/Deco" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.4126, -9.06946, 61.2015)
+
+[node name="2 Trees2" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3774, 0, 0)
+
+[node name="2 Trees3" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9833, 0, 0)
+
+[node name="2 Trees4" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.0147, 0, 0)
+
+[node name="2 Trees5" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.0637, 0, 0)
+
+[node name="2 Trees6" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4303, 0, 0)
+
+[node name="2 Trees7" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4303, 0, -10.0465)
+
+[node name="2 Trees8" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9609, 0, -10.0465)
+
+[node name="2 Trees9" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7785, 0, -10.0465)
+
+[node name="2 Trees10" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9679, 0, -10.0465)
+
+[node name="2 Trees11" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7904, 0, -10.0465)
+
+[node name="2 Trees12" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42237, 0, -10.0465)
+
+[node name="2 Trees13" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2629, 0, 0)
+
+[node name="2 Trees14" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.2629, 0, -10.0465)
+
+[node name="2 Trees15" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.3055, 0, 0)
+
+[node name="2 Trees16" parent="Appartement_curse3/Deco/2 Trees2" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.3055, 0, -10.0465)
+
+[node name="2 Trees3" parent="Appartement_curse3/Deco" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.2373, -9.06946, 61.2015)
+
+[node name="2 Trees2" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3774, 0, 0)
+
+[node name="2 Trees3" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9833, 0, 0)
+
+[node name="2 Trees4" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.0147, 0, 0)
+
+[node name="2 Trees5" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.0637, 0, 0)
+
+[node name="2 Trees6" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4303, 0, 0)
+
+[node name="2 Trees7" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.4303, 0, -10.0465)
+
+[node name="2 Trees8" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.9609, 0, -10.0465)
+
+[node name="2 Trees9" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.7785, 0, -10.0465)
+
+[node name="2 Trees10" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9679, 0, -10.0465)
+
+[node name="2 Trees11" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7904, 0, -10.0465)
+
+[node name="2 Trees12" parent="Appartement_curse3/Deco/2 Trees3" instance=ExtResource("27_4wra0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42237, 0, -10.0465)
+
+[node name="Wooden Table" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1.63033, 0, 0, 0, 1, 9.48598e-08, 0, -7.54979e-08, 1.25646, 10.8331, -0.703173, -4.91733)
+material_override = SubResource("StandardMaterial3D_3xuwn")
+mesh = SubResource("ArrayMesh_d0k5k")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Wooden Table"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Wooden Table/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.76215e-12, 0, 0, 1, -0.0507879, -0.430061, 0.00911617)
+shape = SubResource("BoxShape3D_nc0hv")
+
+[node name="Fridge" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-0.999735, -1.73788e-09, 0.0230189, 0, 1, 7.54979e-08, -0.0230189, 7.54779e-08, -0.999735, 15.1927, -0.605604, 8.66543)
+material_override = SubResource("StandardMaterial3D_8somh")
+mesh = SubResource("ArrayMesh_g4yki")
+skeleton = NodePath("")
+
+[node name="Lower Door" type="MeshInstance3D" parent="Appartement_curse3/Deco/Fridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.32349e-23, 0, -1.32349e-23, 1, 0.545824, -0.788352, -0.682295)
+material_override = SubResource("StandardMaterial3D_7x875")
+mesh = SubResource("ArrayMesh_y44ar")
+skeleton = NodePath("")
+
+[node name="Upper Door" type="MeshInstance3D" parent="Appartement_curse3/Deco/Fridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.32349e-23, 0, -1.32349e-23, 1, 0.546573, 0.550877, -0.682297)
+material_override = SubResource("StandardMaterial3D_x7u6b")
+mesh = SubResource("ArrayMesh_4og8n")
+skeleton = NodePath("")
+
+[node name="Ceiling Fan" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 10.2877, 1.47149, -4.35909)
+material_override = SubResource("StandardMaterial3D_g4aon")
+mesh = SubResource("ArrayMesh_7bftx")
+skeleton = NodePath("")
+
+[node name="pervaneler" type="MeshInstance3D" parent="Appartement_curse3/Deco/Ceiling Fan"]
+transform = Transform3D(0.159881, 0, 0.987136, 0, 1, 0, -0.987136, 0, 0.159881, -0.013195, -0.333571, -0.00732374)
+material_override = SubResource("StandardMaterial3D_6ddbq")
+mesh = SubResource("ArrayMesh_07yhs")
+skeleton = NodePath("")
+script = ExtResource("99_2ytne")
+
+[node name="Double Couch" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(0.998615, 3.9723e-09, -0.0526148, 0, 1, 7.54979e-08, 0.0526148, -7.53933e-08, 0.998615, 6.84306, -1.03135, -4.9199)
+material_override = SubResource("StandardMaterial3D_hi5p3")
+mesh = SubResource("ArrayMesh_owtkg")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Double Couch"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Double Couch/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 2.53131e-14, 1, 0, 0, 0, 1, 0.0559101, 0.181579, -0.658063)
+shape = SubResource("BoxShape3D_vk81e")
+
+[node name="Bookshelf" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-1.02466, 1.68642e-10, -0.00271965, -1.12159e-15, 1.24251, 1.14209e-07, 0.0018422, 9.38071e-08, -1.51274, 15.3331, -0.243262, -6.44042)
+material_override = SubResource("StandardMaterial3D_jhe5p")
+mesh = SubResource("ArrayMesh_8hb5b")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Bookshelf"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Bookshelf/StaticBody3D"]
+transform = Transform3D(1, -6.66134e-15, -7.45058e-09, -8.83738e-14, 1, 0, -2.6077e-08, -2.16005e-12, 1, -0.0374832, 0.0417208, 0.00324678)
+shape = SubResource("BoxShape3D_84ec0")
+
+[node name="Bed" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, -3.19648, -1.20351, 8.25889)
+material_override = SubResource("StandardMaterial3D_3oi1d")
+mesh = SubResource("ArrayMesh_fhd6p")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Bed"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Bed/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.354309, 0.0449829, 0.00189209)
+shape = SubResource("BoxShape3D_cg1pe")
+
+[node name="Dishwasher 2" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-0.999497, -2.39383e-09, 0.0317073, 0, 1, 7.54979e-08, -0.0317073, 7.54599e-08, -0.999497, 15.3123, -0.901011, 7.45145)
+material_override = SubResource("StandardMaterial3D_pdrqk")
+mesh = SubResource("ArrayMesh_676kv")
+skeleton = NodePath("")
+
+[node name="Dishwasher Door" type="MeshInstance3D" parent="Appartement_curse3/Deco/Dishwasher 2"]
+transform = Transform3D(1, -2.22045e-16, 0, 2.22045e-16, 1, 0, 0, 0, 1, 0.686758, -0.847416, 0.00602913)
+material_override = SubResource("StandardMaterial3D_rkbfa")
+mesh = SubResource("ArrayMesh_v2xd1")
+skeleton = NodePath("")
+
+[node name="Dishwasher Handle" type="MeshInstance3D" parent="Appartement_curse3/Deco/Dishwasher 2/Dishwasher Door"]
+transform = Transform3D(1e-06, 0, 0, 0, 5.36442e-13, 1e-06, 0, -1e-06, 5.36442e-13, -0.686757, 0.847416, -0.00602905)
+mesh = SubResource("ArrayMesh_tyo43")
+skeleton = NodePath("")
+
+[node name="dishwasher handle" type="MeshInstance3D" parent="Appartement_curse3/Deco/Dishwasher 2/Dishwasher Door"]
+transform = Transform3D(1e-06, 0, 0, 0, 5.36442e-13, 1e-06, 0, -1e-06, 5.36442e-13, -0.686756, 0.847416, -0.00602966)
+mesh = SubResource("ArrayMesh_omohc")
+skeleton = NodePath("")
+
+[node name="Wooden Table2" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-8.26958e-08, 0, 1.25646, 0, 1, 0, -1.89186, 0, -5.49216e-08, 9.47159, -0.703173, 4.30367)
+material_override = SubResource("StandardMaterial3D_3xuwn")
+mesh = SubResource("ArrayMesh_d0k5k")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/Wooden Table2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/Wooden Table2/StaticBody3D"]
+transform = Transform3D(0.997877, 0, 0.0651066, 0, 1, 1.97531e-12, -0.065107, 0, 0.997878, -0.585385, -0.419346, 0.0631485)
+shape = SubResource("BoxShape3D_3ay8j")
+
+[node name="TableCorridor" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-0.121948, 0, -0.00557172, 0, 0.3, 0, 0.00415838, 0, -0.163395, -5.23415, -1.83448, 0.908191)
+material_override = SubResource("StandardMaterial3D_e648t")
+mesh = ExtResource("21_ua7dr")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/Deco/TableCorridor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/Deco/TableCorridor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.268288, 3.22693, -0.0393069)
+shape = SubResource("BoxShape3D_p832b")
+
+[node name="Mirror" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(-2.17403e-07, -0.802196, 35.4587, 53.755, -4.22808e-06, -1.00805e-12, 9.60968e-06, 35.4587, 0.802196, -0.404962, 0.627597, -6.45798)
+material_override = SubResource("StandardMaterial3D_mmhqi")
+mesh = SubResource("ArrayMesh_vvpmb")
+skeleton = NodePath("")
+
+[node name="ShowerFloor" type="MeshInstance3D" parent="Appartement_curse3/Deco"]
+transform = Transform3D(2.38787, 155.344, 1.19196e-05, 0, -1.85205e-05, 100, 159.446, -2.32643, -1.78508e-07, 0.410234, -1.68487, -3.88909)
+material_override = SubResource("StandardMaterial3D_umo4u")
+mesh = SubResource("ArrayMesh_2be4p")
+skeleton = NodePath("")
+
+[node name="New_Console" type="Node3D" parent="Appartement_curse3"]
+transform = Transform3D(-0.0180981, 0, 0.999836, 0, 1, 0, -0.999836, 0, -0.0180981, -11.057, -1.71292, -4.70268)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Appartement_curse3/New_Console"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.226257, 0.553508, 0)
+size = Vector3(6.40369, 1, 1)
+material = ExtResource("123_g13iq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.48127, 0.553508, 1.24036)
+material_override = SubResource("ORMMaterial3D_2v5un")
+size = Vector3(3.47559, 1, 1)
+material = ExtResource("123_g13iq")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(-4.5108e-08, 0, -1.62365, 0, 0.475004, 0, 1.03195, 0, -7.09722e-08, -0.581319, 1.28654, -0.0112641)
+mesh = SubResource("PrismMesh_2v5un")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.60262, 1.01363, 2.11239)
+radius = 0.229492
+height = 0.914307
+material = ExtResource("125_o3ajp")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(-0.00705662, 2.83024, 0, -1.11074, -0.0179808, 0, 0, 0, 1, -2.57603, 1.71731, 2.1143)
+inner_radius = 0.159251
+outer_radius = 0.338188
+material = ExtResource("126_voni5")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2705, 0.892763, 1.41564)
+radius = 0.0786133
+height = 1.09778
+material = ExtResource("123_g13iq")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2705, 0.89322, 0.895609)
+radius = 0.0786133
+height = 1.09869
+material = ExtResource("123_g13iq")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(0.813345, -0.581782, 0, 0.581782, 0.813345, 0, 0, 0, 1, -2.20962, 1.43576, 1.13433)
+size = Vector3(0.0654297, 0.542664, 0.807251)
+material = ExtResource("127_a5ee2")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(0.0135259, 0, -0.999909, 0, 1, 0, 0.999909, 0, 0.0135259, 1.34514, 1.33614, -0.192692)
+radius = 0.0786133
+height = 1.09778
+material = ExtResource("123_g13iq")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(0.0135259, 0, -0.999909, 0, 1, 0, 0.999909, 0, 0.0135259, 2.95392, 1.32532, -0.199726)
+radius = 0.0786133
+height = 1.09869
+material = ExtResource("123_g13iq")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.971334, 0.23772, 0, -0.23772, 0.971334, 2.14678, 1.76601, -0.14449)
+size = Vector3(2.14668, 1.25491, 0.12616)
+material = ExtResource("127_a5ee2")
+
+[node name="CSGBox3D5" type="CSGSphere3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.103765, 0.108318, 0, -0.108318, 0.103765, -1.06037, 1.29615, 0.249462)
+material = SubResource("StandardMaterial3D_2v5un")
+
+[node name="CSGBox3D6" type="CSGSphere3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.103765, 0.108318, 0, -0.108318, 0.103765, -0.164811, 1.29615, 0.249462)
+material = SubResource("StandardMaterial3D_8bjpw")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(-4.89499e-08, 0, 1, 0, 1.10944, 0, -1.11984, 0, -4.37114e-08, -2.48493, 1.45636, 3.55882)
+material_override = SubResource("ORMMaterial3D_2v5un")
+size = Vector3(1.2999, 2.62998, 0.992676)
+material = SubResource("StandardMaterial3D_7pj20")
+
+[node name="CSGBox3D7" type="CSGSphere3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.103765, 0.108318, 0, -0.108318, 0.103765, -0.600976, 1.29615, 0.249462)
+material = SubResource("StandardMaterial3D_56sf1")
+
+[node name="CSGBox3D9" type="CSGCylinder3D" parent="Appartement_curse3/New_Console/CSGCombiner3D"]
+transform = Transform3D(-4.89499e-08, 0, 1, 0, 1.10944, 0, -1.11984, 0, -4.37114e-08, -2.28763, 1.48721, 3.55499)
+material_override = SubResource("ORMMaterial3D_2v5un")
+operation = 2
+radius = 0.602539
+height = 2.34633
+material = SubResource("StandardMaterial3D_brvrh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/New_Console"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/New_Console/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232338, 0.516693, 0.00906372)
+shape = SubResource("BoxShape3D_xuk2y")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Appartement_curse3/New_Console/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48198, 0.552511, 1.23636)
+shape = SubResource("BoxShape3D_x1km7")
+
+[node name="SuitExpe" type="StaticBody3D" parent="Appartement_curse3/New_Console"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.17038, 0, 3.48141)
+script = ExtResource("14_e648t")
+item_name = "suitexpe"
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/New_Console/SuitExpe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.710958, 1.2558, 0.185547)
+shape = SubResource("BoxShape3D_yianv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Appartement_curse3/New_Console/SuitExpe" groups=["canexpe"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05352, 2.96465, -0.362797)
+light_color = Color(0.996078, 0, 0, 1)
+light_energy = 2.313
+omni_range = 1.768
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Appartement_curse3/New_Console/SuitExpe"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.05701, 2.94267, -0.354384)
+mesh = SubResource("SphereMesh_18ocy")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Appartement_curse3/New_Console/SuitExpe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11781, 1.42398, 0.0830078)
+size = Vector3(0.0325928, 2.77612, 1.16602)
+material = SubResource("StandardMaterial3D_18ocy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Appartement_curse3/New_Console/SuitExpe" groups=["animexpe"]]
+libraries = {
+&"": SubResource("AnimationLibrary_7pj20")
+}
+
+[node name="BlueButton" type="StaticBody3D" parent="Appartement_curse3/New_Console"]
+script = ExtResource("14_e648t")
+item_name = "blue_lamp"
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/New_Console/BlueButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0616, 1.30624, 0.260289)
+shape = SubResource("BoxShape3D_pxwd4")
+
+[node name="NeutralButton" type="StaticBody3D" parent="Appartement_curse3/New_Console"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462779, 0, 0)
+script = ExtResource("14_e648t")
+item_name = "neutral_lamp"
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/New_Console/NeutralButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0616, 1.30624, 0.260289)
+shape = SubResource("BoxShape3D_pxwd4")
+
+[node name="RedButton" type="StaticBody3D" parent="Appartement_curse3/New_Console"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.885948, 0, 0)
+script = ExtResource("14_e648t")
+item_name = "red_lamp"
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/New_Console/RedButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0616, 1.30624, 0.260289)
+shape = SubResource("BoxShape3D_pxwd4")
+
+[node name="Sancheck" type="StaticBody3D" parent="Appartement_curse3/New_Console"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01985, 0, 1.68008)
+script = ExtResource("14_e648t")
+item_name = "sancheck"
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/New_Console/Sancheck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.509676, 1.52541, 0.46069)
+shape = SubResource("BoxShape3D_dlp4k")
+
+[node name="Sprite3D" type="Sprite3D" parent="Appartement_curse3/New_Console/Sancheck" groups=["sanmodif"]]
+transform = Transform3D(0.00305511, -0.278241, 0.659459, -0.0042914, 0.394906, 0.464639, -0.667647, -0.00381152, 3.11043e-05, 0.853337, 1.43729, -0.542899)
+texture = ExtResource("129_yx3nt")
+script = ExtResource("130_pykic")
+
+[node name="SubViewport" type="SubViewport" parent="Appartement_curse3/New_Console"]
+size = Vector2i(495, 512)
+
+[node name="Camera3D" type="Camera3D" parent="Appartement_curse3/New_Console/SubViewport" groups=["camerasecure"]]
+transform = Transform3D(-0.995704, -0.04679, 0.079905, 0, 0.862937, 0.505311, -0.0925965, 0.50314, -0.85923, 17.7015, -6.29186, 30.662)
+fov = 109.688
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Appartement_curse3/New_Console/SubViewport/Camera3D"]
+
+[node name="Control" type="Control" parent="Appartement_curse3/New_Console/SubViewport/Camera3D/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Appartement_curse3/New_Console/SubViewport/Camera3D/CanvasLayer/Control"]
+material = SubResource("ShaderMaterial_d7shy")
+layout_mode = 0
+offset_right = 1164.0
+offset_bottom = 654.0
+color = Color(1, 1, 1, 0.156863)
+
+[node name="Sprite3D" type="Sprite3D" parent="Appartement_curse3/New_Console/SubViewport" groups=["screencam"]]
+transform = Transform3D(-1.75314e-08, -0.0585825, 0.804098, -7.80154e-10, 0.205003, 0.229782, -0.40147, 2.15981e-09, -3.556e-08, -11.1351, 0.115465, -6.81872)
+script = ExtResource("132_5lj4o")
+
+[node name="screencamera" type="StaticBody3D" parent="Appartement_curse3/New_Console" groups=["screencamera"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89116, 0.390639, 0)
+script = ExtResource("14_e648t")
+item_name = "screencamera"
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/New_Console/screencamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.263062, 1.39833, -0.208342)
+shape = SubResource("BoxShape3D_d7shy")
+
+[node name="Sketchfab_Scene" parent="Appartement_curse3/New_Console" instance=ExtResource("133_sk0v3")]
+transform = Transform3D(0.0144911, 0, 1.41185, 0, 1.36394, 0, -1.45657, 0, 0.0140462, -2.46233, 0.173396, 3.59189)
+
+[node name="lavedepot" type="Node3D" parent="Appartement_curse3"]
+transform = Transform3D(-0.0070511, 0, 0.999975, 0, 1, 0, -0.999975, 0, -0.0070511, 1.96933, 0.270091, -3.36207)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Appartement_curse3/lavedepot"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Appartement_curse3/lavedepot/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13623, 0.0562134, 0)
+size = Vector3(0.727539, 1.11243, 1)
+material = SubResource("StandardMaterial3D_nfql8")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Appartement_curse3/lavedepot/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0630798, 0.0410156, 0.0194092)
+operation = 2
+size = Vector3(0.612244, 0.917969, 0.856689)
+material = SubResource("StandardMaterial3D_0mtms")
+
+[node name="ptichptich" type="StaticBody3D" parent="Appartement_curse3/lavedepot" groups=["ptichptich"]]
+script = ExtResource("14_e648t")
+item_name = "ptichpitch"
+script_trait = true
+
+[node name="Sketchfab_Scene" parent="Appartement_curse3/lavedepot/ptichptich" groups=["ptichptich_depose"] instance=ExtResource("135_8tdcn")]
+transform = Transform3D(-0.0183229, 0, 0.196896, 0, 0.171401, 0, -0.178833, 0, -0.0201736, -0.00468999, -0.329772, 0.0214319)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/lavedepot/ptichptich"]
+transform = Transform3D(1.1892, 0, 0, 0, 1.1892, 0, 0, 0, 1.1892, 0.00131371, -0.0430367, 0.0232706)
+shape = SubResource("BoxShape3D_kue6p")
+
+[node name="TruckSpawner" parent="Appartement_curse3" instance=ExtResource("106_3xuwn")]
+transform = Transform3D(-0.0194591, 0, 0.999811, 0, 1, 0, -0.999811, 0, -0.0194591, -41.9776, -7.77782, 39.6249)
+truck = ExtResource("107_0kv6t")
+
+[node name="Curtain" type="MeshInstance3D" parent="Appartement_curse3"]
+transform = Transform3D(1, 0, 0, 0, 1.37977, 0, 0, 0, 1, 10.0607, 0.366942, 9.196)
+mesh = ExtResource("29_482ii")
+skeleton = NodePath("")
+
+[node name="Rbook1" type="MeshInstance3D" parent="Appartement_curse3"]
+transform = Transform3D(-0.0418359, 0.795546, -1.42164, 0.0446379, 1.49429, 0.755885, 1.45237, -0.0230102, -0.0641826, 1.94413, -1.33991, 8.71105)
+mesh = ExtResource("55_ojnkb")
+
+[node name="StaticBody3D3" parent="Appartement_curse3" instance=ExtResource("8_34jye")]
+transform = Transform3D(2.73885, 0, 0, 0, 2.34882, 0, 0, 0, 1, -2.9124, -1.61493, 1.96941)
+item_name = "doorchamber"
+door = true
+
+[node name="Sketchfab_Scene" parent="Appartement_curse3" instance=ExtResource("108_s1dxm")]
+transform = Transform3D(-0.0257407, 0, 0.000558768, 0, 0.015, 0, -0.000873699, 0, -0.0164623, 1.42792, -1.30995, -3.07237)
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Appartement_curse3"]
+transform = Transform3D(0.00286248, 0, 0.807488, 0, 1, 0, -1.00003, 0, 0.00231135, 5.32274, -0.018717, -6.45828)
+mesh = SubResource("BoxMesh_c2h3l")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Appartement_curse3/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/MeshInstance3D10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
+shape = SubResource("BoxShape3D_l2nki")
+
 [node name="SpacialConnection" type="Node3D" parent="."]
 
 [node name="SubViewport" type="SubViewport" parent="SpacialConnection"]
 size = Vector2i(210, 350)
 
 [node name="Camera3D" type="Camera3D" parent="SpacialConnection/SubViewport"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 104.493, 0.395009, -1.98523)
-fov = 64.4525
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 103.774, -59.8911, -1.985)
+fov = 47.489
 size = 0.556872
 near = 0.985
 
@@ -9055,7 +11089,7 @@ material = SubResource("FogMaterial_d4ea4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6179, -1.65445, 0.630616)
 
 [node name="2Marker" type="Marker3D" parent="SpacialConnection/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.045, -1.63994, -2.11136)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.045, -61.6456, -2.111)
 
 [node name="Area3D" type="Area3D" parent="SpacialConnection/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.585, 0, 0)
@@ -9066,11 +11100,49 @@ shape = SubResource("BoxShape3D_dlbdc")
 script = ExtResource("149_e648t")
 MarkerTarget = NodePath("../../2Marker")
 
+[node name="SubViewport2" type="SubViewport" parent="SpacialConnection"]
+size = Vector2i(210, 350)
+
+[node name="Camera3D" type="Camera3D" parent="SpacialConnection/SubViewport2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.3397, -29.0854, 129.363)
+fov = 60.5174
+size = 0.556872
+near = 0.985
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SpacialConnection/SubViewport2/Camera3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="SpacialConnection/SubViewport2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.294, -60.0493, 15.8005)
+texture = SubResource("ViewportTexture_p832b")
+
+[node name="FogVolume6" type="FogVolume" parent="SpacialConnection/SubViewport2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.421, -60.0622, 15.6687)
+size = Vector3(1.77496, 3.16822, 0.631409)
+material = SubResource("FogMaterial_d4ea4")
+
+[node name="StartMaker" type="Marker3D" parent="SpacialConnection/SubViewport2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.369, -61.4023, 14.9532)
+
+[node name="3Marker" type="Marker3D" parent="SpacialConnection/SubViewport2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.3444, -30.5391, 127.74)
+
+[node name="Area3D" type="Area3D" parent="SpacialConnection/SubViewport2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 105.818, -59.9216, 16.4467)
+
+[node name="Teleporter" type="CollisionShape3D" parent="SpacialConnection/SubViewport2/Area3D" node_paths=PackedStringArray("MarkerTarget")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.840861, -0.0497131, 0.640625)
+shape = SubResource("BoxShape3D_dlbdc")
+script = ExtResource("149_e648t")
+MarkerTarget = NodePath("../../3Marker")
+
 [connection signal="finished" from="Appartement_curse/RadioObj/Radiooo/AudioStreamPlayer3D" to="Appartement_curse/RadioObj/Radiooo" method="_on_audio_stream_player_3d_finished"]
 [connection signal="texture_changed" from="Appartement_curse/New_Console/Sancheck/Sprite3D" to="Appartement_curse/New_Console/Sancheck/Sprite3D" method="_on_texture_changed"]
 [connection signal="finished" from="Appartement_curse2/RadioObj/Radiooo/AudioStreamPlayer3D" to="Appartement_curse2/RadioObj/Radiooo" method="_on_audio_stream_player_3d_finished"]
 [connection signal="texture_changed" from="Appartement_curse2/New_Console/Sancheck/Sprite3D" to="Appartement_curse2/New_Console/Sancheck/Sprite3D" method="_on_texture_changed"]
+[connection signal="finished" from="Appartement_curse3/RadioObj/Radiooo/AudioStreamPlayer3D" to="Appartement_curse3/RadioObj/Radiooo" method="_on_audio_stream_player_3d_finished"]
+[connection signal="texture_changed" from="Appartement_curse3/New_Console/Sancheck/Sprite3D" to="Appartement_curse3/New_Console/Sancheck/Sprite3D" method="_on_texture_changed"]
 [connection signal="body_entered" from="SpacialConnection/SubViewport/Area3D" to="SpacialConnection/SubViewport/Area3D/Teleporter" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="SpacialConnection/SubViewport2/Area3D" to="SpacialConnection/SubViewport2/Area3D/Teleporter" method="_on_area_3d_body_entered"]
 
 [editable path="appartement/Lamp1"]
 [editable path="appartement/frontdoor"]
