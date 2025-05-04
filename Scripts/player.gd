@@ -33,6 +33,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @export var affect_by_gravity:bool = true
 @export var can_move:bool = true
+@export var radioradar:bool = true
 
 var speed = 5
 var jump_speed = 5
@@ -45,6 +46,8 @@ var crouch:bool = false
 var item
 
 func _ready():
+	if radioradar == false :
+		get_tree().get_first_node_in_group("radarradio").visible = false
 	if Data.get_radio("G") == 1:
 		var govfm = get_tree().get_first_node_in_group("govfm")
 		govfm.visible = true

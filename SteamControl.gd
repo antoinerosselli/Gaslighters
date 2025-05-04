@@ -22,6 +22,7 @@ func _ready():
 	print("username : ", str(steam_name))
 	
 func unlock_achievement(ach):
+	return
 	var status = Steam.getAchievement(ach)
 	if status["achieved"]:
 		print("ALLREADY UNLOCK")

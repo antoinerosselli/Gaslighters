@@ -31,6 +31,7 @@ SteamControl="*res://SteamControl.gd"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://bop3pobtyk3f"
 
@@ -39,6 +40,10 @@ mouse_cursor/custom_image="uid://bop3pobtyk3f"
 env="world env normal days"
 infochat=""
 option="option of player"
+blueradio=""
+redradio=""
+greenradio=""
+radarradio=""
 
 [input]
 

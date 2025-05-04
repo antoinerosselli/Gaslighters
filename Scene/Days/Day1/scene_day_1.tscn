@@ -1,11 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=24 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="Script" uid="uid://b4v2q4bytqy57" path="res://Scene/Days/Day1/scene_day_1.gd" id="1_f86ad"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_36dop"]
 [ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="3_8js8r"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="3_17coq"]
-[ext_resource type="Texture2D" uid="uid://dys4posym2uc6" path="res://Extern/model-assignmentradio/textures/woodMid-ToneGlossy_diffuse.jpg" id="5_fx68q"]
 [ext_resource type="Environment" uid="uid://mo0wky6kxjiy" path="res://Env/env_classic.tres" id="6_ly3ml"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="7_frxae"]
 [ext_resource type="Script" uid="uid://c5msg4g651xi1" path="res://Scene/Days/Day1/em_day_1.gd" id="7_rvlxt"]
@@ -98,12 +97,17 @@ script = ExtResource("1_f86ad")
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_36dop")]
 transform = Transform3D(1, 0, 0, 0, 1.19877, 0, 0, 0, 1, -2.80715, -0.40799, 6.51119)
 
+[node name="CanvasLayer" parent="CharacterBody3D" index="2" groups=["enigmfm"]]
+
 [node name="Control" parent="CharacterBody3D/CanvasLayer" index="3"]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.988
 offset_right = 0.0
 offset_bottom = -0.223999
+
+[node name="BlueRadio" parent="CharacterBody3D/CanvasLayer/Control/RadarRadio" index="0"]
+autoplay = "default"
 
 [node name="GOVFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="0"]
 visible = false
@@ -120,10 +124,17 @@ offset_top = 0.0
 offset_right = 219.0
 offset_bottom = 23.0
 
+[node name="input" parent="CharacterBody3D/CanvasLayer/Control" index="7"]
+offset_left = 3.0
+offset_right = 335.0
+
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_fx68q")
 
 [node name="Node3D" parent="." instance=ExtResource("1_jb5ec")]
+
+[node name="Radio_bady" parent="Node3D/RadioObj/Radiooo/RadioBody" index="0"]
+mesh = null
 
 [node name="New_Console_SubViewport#Sprite3D" parent="Node3D" index="18"]
 texture = SubResource("ViewportTexture_17coq")

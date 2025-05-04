@@ -47,9 +47,11 @@ func interact():
 			var player = Tools.get_player()
 			player.dialogues = texts
 		if depot == true and Tools.get_player().ptich.visible == true:
+			Data.add_spots()
 			Tools.sound_now(self,load("res://Music&Sound/sound/spray-36842.mp3") as AudioStream)
 			queue_free()
 		if door == true:
+			Data.add_door()
 			Tools.sound_now(self, load("res://Music&Sound/sound/door_sound.mp3") as AudioStream)
 			transform.basis = Basis(Vector3(0, 1, 0), rotation_amount) * transform.basis
 			rotation_amount = -(rotation_amount)

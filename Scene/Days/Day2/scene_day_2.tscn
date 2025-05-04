@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dwi44rv8sigev"]
+[gd_scene load_steps=28 format=3 uid="uid://dwi44rv8sigev"]
 
 [ext_resource type="Script" uid="uid://d0svgp66y5er7" path="res://Scene/Days/Day2/scene_day_2.gd" id="1_mnosv"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_o3dra"]
@@ -618,6 +618,9 @@ light_energy = 0.0
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_gfllc")]
 transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
 
+[node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
+visible = true
+
 [node name="GOVFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="0"]
 visible = false
 
@@ -629,9 +632,8 @@ visible = false
 
 [node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3"]
 offset_left = 5.0
-offset_top = 143.0
 offset_right = 224.0
-offset_bottom = 23.0
+offset_bottom = 164.0
 
 [node name="Event" parent="CharacterBody3D/CanvasLayer/Control/Inventory" index="6"]
 offset_left = 61.0
@@ -643,36 +645,36 @@ offset_bottom = 328.0
 offset_left = -4.0
 offset_top = 40.0
 offset_right = 556.0
-offset_bottom = 88.0
+offset_bottom = 120.0
 text = "> Is it a code ? : Rczij ocz gdvzo wgzzo, ocz dmdi ned vaapomn, ozij tp rdffvmdsj oz nvodmo ja ocz gziny wzgjr
 "
 
 [node name="Event2" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="1"]
 offset_left = -4.0
-offset_top = 96.0
+offset_top = 108.0
 offset_right = 527.0
-offset_bottom = 120.0
+offset_bottom = 132.0
 text = "> Ration trucks have problems"
 
 [node name="Event3" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="2"]
 offset_left = -4.0
-offset_top = 136.0
+offset_top = 148.0
 offset_right = 564.0
-offset_bottom = 160.0
+offset_bottom = 172.0
 text = "> Dangerous individuals still roaming the valley"
 
 [node name="Event4" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="3"]
 offset_left = -4.0
-offset_top = 176.0
+offset_top = 188.0
 offset_right = 564.0
-offset_bottom = 224.0
+offset_bottom = 236.0
 text = "> Religion and minors have been in conflict for a long time"
 
 [node name="Event5" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="4"]
 offset_left = -4.0
-offset_top = 232.0
+offset_top = 244.0
 offset_right = 441.0
-offset_bottom = 256.0
+offset_bottom = 268.0
 text = "> Religious are back"
 
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]

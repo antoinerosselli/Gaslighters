@@ -65,6 +65,8 @@ func check_event_conditions():
 		expe_dispo = false
 	if time_elapsed >= 223 and UniqueTrait.elec == false:
 		activate_depots()
+		Tools.new_info("they are coming")
+		SteamControl.unlock_achievement("ACH_SUIT")
 		animation_player.play("REDEVENT")
 	if time_elapsed == 500:
 		Tools.eotd()
@@ -102,8 +104,20 @@ func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
 
 func check_radio_conditions():
 	var radio_value:float = Radio.getValue()
+	
+	##MISSED 
+	if time_elapsed == 271:
+		Tools.event_journal_ok(4,true)
+	if time_elapsed == 181:
+		Tools.event_journal_ok(3,true)
+	if time_elapsed == 271:#done
+		Tools.event_journal_ok(2,true)
+	if time_elapsed == 256:
+		Tools.event_journal_ok(1,true)
+
 	#gouv radio ==>
 	if time_elapsed >= 10 and time_elapsed <= 60:
+		animation_player.play("REDEVENT")
 		if radio_value > 54 and radio_value < 64 :
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
@@ -235,7 +249,9 @@ func check_radio_conditions():
 		if radio_value > 66 and radio_value < 76 :
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "My friends .", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is not the end.", 5, Fanatic_color,"fanatic", 6)
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is not the end.", 5, Fanatic_color,"fanatic", 6)		
+		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
+			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", " It is an old war starting again.", 5, Fanatic_color,"fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Prepare yourselves.", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:

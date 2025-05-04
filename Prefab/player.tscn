@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=43 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" uid="uid://ckooh51x0xywe" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Script" uid="uid://8aqmy8q7388i" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
@@ -10,13 +10,18 @@
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
 [ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
 [ext_resource type="Script" uid="uid://bmt44u2tyjpo2" path="res://Prefab/new_message.gd" id="8_v383j"]
+[ext_resource type="Script" uid="uid://dw2pu7uxmw7j6" path="res://Prefab/radar_radio.gd" id="8_ypgvr"]
+[ext_resource type="SpriteFrames" uid="uid://m1expbvicad2" path="res://Sprite/blueradio.tres" id="9_fu6xk"]
 [ext_resource type="Script" uid="uid://chcm2kadulrxu" path="res://Scripts/useUscript.gd" id="10_0r8a8"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="10_3h1t1"]
+[ext_resource type="SpriteFrames" uid="uid://cb18l2w6v5gi7" path="res://Sprite/redradio.tres" id="10_7dcbk"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="11_7q8gp"]
+[ext_resource type="SpriteFrames" uid="uid://bqhevke6xc63h" path="res://Sprite/greenradio.tres" id="11_ehjad"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="12_x4psa"]
 [ext_resource type="Texture2D" uid="uid://exwibfbl6gs2" path="res://Sprite/screamer.tres" id="13_ui8k8"]
 [ext_resource type="PackedScene" uid="uid://dpi8t3jrme5d" path="res://Extern/Rework Appart/spray/scene.gltf" id="13_wyp7x"]
 [ext_resource type="AudioStream" uid="uid://dnia72tkl7a4k" path="res://Music&Sound/sound/screamer.mp3" id="14_ui8k8"]
+[ext_resource type="Texture2D" uid="uid://ckqpj1xn54yqv" path="res://Sprite/neutralradio.png" id="25_wnl8h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
 
@@ -191,6 +196,7 @@ shape = SubResource("CapsuleShape3D_17q4h")
 [node name="CanvasLayer" type="CanvasLayer" parent="." groups=["canvas"]]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = -1
 material = SubResource("ShaderMaterial_h2w04")
 offset_left = -32.0
 offset_top = -32.0
@@ -230,6 +236,37 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 640.0
 mouse_filter = 2
+
+[node name="RadarRadio" type="Control" parent="CanvasLayer/Control" groups=["radarradio"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+script = ExtResource("8_ypgvr")
+
+[node name="BlueRadio" type="AnimatedSprite2D" parent="CanvasLayer/Control/RadarRadio" groups=["blueradio"]]
+visible = false
+position = Vector2(1104, 600)
+sprite_frames = ExtResource("9_fu6xk")
+frame = 2
+frame_progress = 1.0
+
+[node name="RedRadio" type="AnimatedSprite2D" parent="CanvasLayer/Control/RadarRadio" groups=["redradio"]]
+visible = false
+position = Vector2(1104, 600)
+sprite_frames = ExtResource("10_7dcbk")
+frame_progress = 0.861413
+
+[node name="GreenRadio" type="AnimatedSprite2D" parent="CanvasLayer/Control/RadarRadio" groups=["greenradio"]]
+visible = false
+position = Vector2(1104, 600)
+sprite_frames = ExtResource("11_ehjad")
+frame_progress = 0.853917
+
+[node name="NeutralRadio" type="Sprite2D" parent="CanvasLayer/Control/RadarRadio"]
+position = Vector2(1104, 600)
+texture = ExtResource("25_wnl8h")
 
 [node name="NewMessage" type="Panel" parent="CanvasLayer/Control" groups=["infochat"]]
 layout_mode = 0
@@ -554,6 +591,9 @@ offset_right = 895.0
 offset_bottom = 412.0
 autowrap_mode = 3
 
+[connection signal="visibility_changed" from="CanvasLayer/Control/RadarRadio/BlueRadio" to="CanvasLayer/Control/RadarRadio" method="_on_blue_radio_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/Control/RadarRadio/RedRadio" to="CanvasLayer/Control/RadarRadio" method="_on_red_radio_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/Control/RadarRadio/GreenRadio" to="CanvasLayer/Control/RadarRadio" method="_on_green_radio_visibility_changed"]
 [connection signal="animation_finished" from="CanvasLayer/Control/NewMessage/AnimationPlayer" to="CanvasLayer/Control/NewMessage" method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]
 [connection signal="finished" from="CanvasLayer/ScreamerControl/AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]

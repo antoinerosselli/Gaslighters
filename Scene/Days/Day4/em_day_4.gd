@@ -116,6 +116,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Was your own happiness not enough?", 5, gouv_color,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Did you really think you could buy yourself redemption?", 5, gouv_color, "gouv", 0)
+			Tools.new_info("Next : the kitchen")
 			animama.play("part2")
 			part2 = true
 			
@@ -136,11 +137,12 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You locked yourself in a cage, thinking it would protect you. Then you threw away the key, hoping no one would drag you out.", 5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You didn’t even notice. You’re stuck now in a state of numbness, unable to face the truth or escape to another one.", 5, belle_color, "belle", 0)
+			Tools.new_info("Then : the bathroom")
 			animama.play("part3")
 			part3 = true
 
 #galleries
-	if  part1 == false:
+	if  part1 == false && part2 == false:
 		if radio_value > 66 and radio_value < 76 :
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "My friends,", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
@@ -162,6 +164,7 @@ func check_radio_conditions():
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Nor the years your companions spent behind bars.", 5, Fanatic_color, "fanatic", 0)
 			animama.play("part1")
+			Tools.new_info("First : the secure room")
 			part1 = true
 
 #other
@@ -194,7 +197,9 @@ func check_radio_conditions():
 			otherpart = false
 #event 
 	if part1 == true and part2 == true and part3 == true and radio_value > 37 and radio_value < 39 :
+		Tools.new_info("The apartment collapses")
 		animama.play("endgame")
+		part1 = false
 		
 
 func _on_animation_player_animation_finished(anim_name):
