@@ -10,7 +10,7 @@ func _ready():
 	spawn_initial_conserves()
 
 func spawn_initial_conserves():
-	for i in range(3):
+	for i in range(Data.get_food()):
 		add_conserve()
 
 func add_conserve():
@@ -42,6 +42,7 @@ func add_conserve():
 	conserve.position = new_pos
 	$conserve.add_child(conserve)
 	conserves.append(conserve)
+	Data.set_food(conserves.size())
 
 func remove_conserve():
 	if conserves.size() > 0:

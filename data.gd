@@ -8,6 +8,7 @@ var journal_text: Array = []
 var daltone_mode: bool
 var doornumber:int 
 var clearspots:int
+var food:int
 
 func _ready():
 	level = 0
@@ -17,6 +18,7 @@ func _ready():
 	daltone_mode = false
 	doornumber = 0
 	clearspots = 0
+	food = 0
 	load_data()
 	if daltone_mode == true:
 		print("ayo")
@@ -32,8 +34,16 @@ func save():
 		"daltone_mode" : daltone_mode,
 		"doornumber" : doornumber,
 		"clearspots" : clearspots,
+		"food": food,
 	}
 	return save_dict
+
+func set_food(nfood:int):
+	food = nfood
+	save_data()
+
+func get_food():
+	return food
 
 func add_spots():
 	clearspots += 1
@@ -103,3 +113,4 @@ func load_data():
 		journal_text = node_data.get("journal_text", [])
 		daltone_mode = node_data.get("daltone_mode", 0)
 		doornumber = node_data.get("doornumber", 0) 
+		food = node_data.get("food", 0) 
