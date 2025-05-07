@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7x1krdmm8fej" path="res://Scene/Days/Day4/scene_day_4.gd" id="1_nyh0e"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="2_5g634"]
-[ext_resource type="Texture2D" uid="uid://dys4posym2uc6" path="res://Extern/model-assignmentradio/textures/woodMid-ToneGlossy_diffuse.jpg" id="3_j44nx"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="3_xvotj"]
-[ext_resource type="Texture2D" uid="uid://qunejf5xui6j" path="res://Extern/model-assignmentradio/source/v5/bady-2.png" id="4_q0gdc"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="4_u7eqg"]
 [ext_resource type="Script" uid="uid://ce0skcxppltxr" path="res://Scene/Days/Day4/em_day_4.gd" id="5_5g634"]
 [ext_resource type="PackedScene" uid="uid://b2n1tslsg1gs0" path="res://Prefab/depot_spawner.tscn" id="6_ymfik"]
@@ -20,18 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://b3270m8a8o7e8" path="res://Sprite/7.png" id="14_vk3ay"]
 [ext_resource type="Texture2D" uid="uid://i4l7jj0s2ec8" path="res://Sprite/12.png" id="15_vk3ay"]
 [ext_resource type="Texture2D" uid="uid://660r8gnscxo1" path="res://Sprite/4.png" id="18_benof"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xkub0"]
-resource_name = "Mid-tone wood"
-cull_mode = 2
-albedo_texture = ExtResource("3_j44nx")
-roughness = 0.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4vkj"]
-resource_name = "White painted metal"
-cull_mode = 2
-albedo_texture = ExtResource("4_q0gdc")
-roughness = 0.5
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_u7eqg"]
 viewport_path = NodePath("SubViewport")
@@ -4785,10 +4771,6 @@ shadow_enabled = true
 [node name="MeshInstance3D35" parent="appartement/frontdoor" index="0"]
 transform = Transform3D(0.780765, 3.15508e-14, -2.03756e-21, 0, -5.05142e-08, -1.70736, -2.13163e-14, 1.15563, -7.46311e-08, 0.748339, 1.26645, 0.0513792)
 
-[node name="Radio_bady" parent="appartement/RadioObj/Radiooo/RadioBody" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_xkub0")
-surface_material_override/1 = SubResource("StandardMaterial3D_b4vkj")
-
 [node name="New_Console_SubViewport#Sprite3D" parent="appartement" index="18"]
 texture = SubResource("ViewportTexture_u7eqg")
 
@@ -4859,6 +4841,7 @@ transform = Transform3D(0.00500899, 0, 0.999987, 0, 1, 0, -0.999987, 0, 0.005008
 
 [node name="KitchenPart1" parent="appartement/Deco" index="2"]
 transform = Transform3D(1.12538, 0.0345286, 1.10415e-09, 0, -6.48848e-08, 1.08593, 0.0261846, -1.48399, -4.74547e-08, 15.3437, -0.945081, 3.59686)
+
 
 [node name="CollisionShape3D2" parent="appartement/Deco/KitchenPart1/StaticBody3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.999996, 2.13164e-14, 0, -2.13163e-14, 1, -0.767567, 0.718806, -4.76837e-07)

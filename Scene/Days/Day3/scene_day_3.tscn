@@ -1,4 +1,4 @@
-[gd_scene load_steps=385 format=4 uid="uid://c6wf03uyto0an"]
+[gd_scene load_steps=384 format=4 uid="uid://c6wf03uyto0an"]
 
 [ext_resource type="Texture2D" uid="uid://cbks0hwngu87l" path="res://Extern/Home Furniture Kit 1/Textures/Kitchen Aspirator.png" id="1_bv575"]
 [ext_resource type="Script" uid="uid://bqd5lnv7nmd1l" path="res://Scene/Days/Day3/scene_day_3.gd" id="1_vv8y6"]
@@ -39,7 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://cjqwwk8cqcsjh" path="res://Extern/FONT/FMFM.png" id="32_5lf75"]
 [ext_resource type="Texture2D" uid="uid://chncdhii6c5mg" path="res://Extern/Home kit 2/Textures/Table/Table_256.png" id="33_mpicg"]
 [ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://model_House/table_corridor.res" id="34_ewn2o"]
-[ext_resource type="PackedScene" uid="uid://pkajo8jayauf" path="res://Prefab/panneaupub.tscn" id="35_ywag6"]
 [ext_resource type="PackedScene" uid="uid://bfihnkj3effvp" path="res://Prefab/Alarme/alarme.tscn" id="36_qipdk"]
 [ext_resource type="Script" uid="uid://chfxycdtii2pv" path="res://Scripts/time_system.gd" id="37_gamva"]
 [ext_resource type="PackedScene" uid="uid://ba0gk24cg7jjp" path="res://Prefab/lamp.tscn" id="38_6l3ow"]
@@ -2005,6 +2004,9 @@ albedo_texture = ExtResource("131_vlo6i")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mtms"]
 albedo_texture = ExtResource("131_vlo6i")
 
+[sub_resource type="FogMaterial" id="FogMaterial_8xnu0"]
+emission = Color(0.281187, 0.281187, 0.281187, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m7t7v"]
 resource_local_to_scene = true
 shader = ExtResource("3_mhgbc")
@@ -2018,11 +2020,11 @@ shader_parameter/edgeGlowIntensity = 1.466
 shader_parameter/enable_dissolve_animation = false
 shader_parameter/animation_speed = 0.6
 
-[sub_resource type="Sky" id="Sky_gxdup"]
+[sub_resource type="Sky" id="Sky_7cjti"]
 
 [sub_resource type="Environment" id="Environment_8xnu0"]
 background_mode = 2
-sky = SubResource("Sky_gxdup")
+sky = SubResource("Sky_7cjti")
 ambient_light_color = Color(0.29736, 0.344686, 0.339596, 1)
 ambient_light_sky_contribution = 0.51
 ambient_light_energy = 0.35
@@ -2037,9 +2039,6 @@ adjustment_enabled = true
 adjustment_saturation = 1.44
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_otx7e"]
-
-[sub_resource type="FogMaterial" id="FogMaterial_8xnu0"]
-emission = Color(0.281187, 0.281187, 0.281187, 1)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_l77r6"]
 height = 0.99585
@@ -2392,9 +2391,6 @@ mesh = ExtResource("34_ewn2o")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="appartement/TableCorridor2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26829, 3.22693, -0.0393066)
 shape = SubResource("BoxShape3D_e47n2")
-
-[node name="Node3D" parent="appartement" instance=ExtResource("35_ywag6")]
-transform = Transform3D(-0.478538, 0, -0.878067, 0, 1, 0, 0.878067, 0, -0.478538, 41.1911, -3.95594, 6.90434)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="appartement" groups=["event_sound"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.41122, 11.3722, -0.0243607)
@@ -3915,7 +3911,7 @@ material = SubResource("StandardMaterial3D_18ocy")
 
 [node name="BlueButton" type="StaticBody3D" parent="appartement/New_Console"]
 script = ExtResource("13_n5v3u")
-item_name = "blue_lamp"
+item_name = "broken_lamp"
 script_trait = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="appartement/New_Console/BlueButton"]
@@ -3925,7 +3921,7 @@ shape = SubResource("BoxShape3D_pxwd4")
 [node name="NeutralButton" type="StaticBody3D" parent="appartement/New_Console"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462779, 0, 0)
 script = ExtResource("13_n5v3u")
-item_name = "neutral_lamp"
+item_name = "broken_lamp"
 script_trait = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="appartement/New_Console/NeutralButton"]
@@ -3935,7 +3931,7 @@ shape = SubResource("BoxShape3D_pxwd4")
 [node name="RedButton" type="StaticBody3D" parent="appartement/New_Console"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.885948, 0, 0)
 script = ExtResource("13_n5v3u")
-item_name = "red_lamp"
+item_name = "broken_lamp"
 script_trait = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="appartement/New_Console/RedButton"]
@@ -4048,6 +4044,11 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="appartement/MeshInstance3D10/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
 shape = SubResource("BoxShape3D_uls34")
+
+[node name="FogVolume3" type="FogVolume" parent="appartement"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1887, -0.155392, 1.17914)
+size = Vector3(21.9797, 7.08786, 2)
+material = SubResource("FogMaterial_8xnu0")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_otx7e")]
 transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
@@ -4192,12 +4193,13 @@ material = SubResource("FogMaterial_8xnu0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.469545, 0)
 shape = SubResource("CylinderShape3D_l77r6")
 
-[node name="managers" type="Node" parent="." node_paths=PackedStringArray("Ceilling_Fan", "Start_Node", "Fog_Door") groups=["event_manager"]]
+[node name="managers" type="Node" parent="." node_paths=PackedStringArray("Ceilling_Fan", "Start_Node", "Fog_Door", "Door_expe") groups=["event_manager"]]
 script = ExtResource("137_bv575")
 DANGER_LEVEL = 1
 Ceilling_Fan = NodePath("../appartement/Deco/Ceiling Fan/pervaneler")
 Start_Node = NodePath("../appartement")
 Fog_Door = NodePath("../FogVolumeDoor")
+Door_expe = NodePath("../DoorExpe/CollisionShape3D")
 
 [node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
 autostart = true
@@ -4211,6 +4213,7 @@ script_trait = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorExpe"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0613518, 1.49191, 0.173431)
 shape = SubResource("BoxShape3D_7cjti")
+disabled = true
 
 [connection signal="finished" from="appartement/RadioObj/Radiooo/AudioStreamPlayer3D" to="appartement/RadioObj/Radiooo" method="_on_audio_stream_player_3d_finished"]
 [connection signal="texture_changed" from="appartement/New_Console/Sancheck/Sprite3D" to="appartement/New_Console/Sancheck/Sprite3D" method="_on_texture_changed"]

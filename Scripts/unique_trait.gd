@@ -35,6 +35,10 @@ func unique(object_name):
 			Tools.sound_now(Tools.get_player(), load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
 			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
 			lamp_door.light_color = Color(0, 0, 0, 0)
+		"broken_lamp":
+			Tools.sound_now(Tools.get_player(), load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
+			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
+			lamp_door.light_color = Color(randi_range(-1, 1), randi_range(-1,1), randi_range(-1,1), randi_range(-1,1))
 		"sancheck":
 			if elec == true :
 				var player = Tools.get_player()
@@ -79,6 +83,8 @@ func unique(object_name):
 			if Data.get_level() == 2:
 				SteamControl.unlock_achievement("ACH_END_DAY_2")
 				Tools.start_transition("2 MONTHS AGO", load("res://Scene/Days/Day 2.5/scene_day_2_5.tscn") as PackedScene)
+			if Data.get_level() == 30:
+				Tools.start_transition("SUR QUELLE TIMELINE ON EST ANTOINE?", load("res://Scene/Days/Day 3_5/scene_day_3_5.tscn") as PackedScene)
 		"fakepills":
 			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/heavy_swallowwav-14682.mp3") as AudioStreamMP3)
 			var emds = get_tree().get_first_node_in_group("eventmanager")

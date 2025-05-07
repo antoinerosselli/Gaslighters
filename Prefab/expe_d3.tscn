@@ -12,7 +12,7 @@
 script/source = "extends Control
 
 @onready var rich_text_label = $aventure
-@export var expes = \"You wander outside suitless. The fog feels like water through your lungs. You can't see an arm's length before you. You hear footsteps and impacts, but cannot precisely make out where they come from. Your head becomes heavy, the ground seems to slip away beneath your feet. The collision is quick but violent.\"
+@export var expes = \"You wander outside suitless. The fog feels heavy as you breathe it, and you can't see an arm's length before you. You hear footsteps and impacts, but cannot make out where they come from. Your head is heavy, the ground seems to slip away beneath your feet. The collision is quick but violent.\"
 @export var expes_result = \"The floor is cold against your skin.\"
 @export var text_intro = \"[wave][color=yellow]You dive in the fog.[/color][/wave]\\n\\n\\n\"
 @export var expe_day:int
@@ -29,7 +29,6 @@ var lines_result = []
 var all_char:int
 
 func _ready():
-	print(\"saucisse\")
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	set_process(false)
 	var new_text: String = expes
@@ -57,23 +56,15 @@ func _on_go_home_pressed():
 	if get_tree().get_first_node_in_group(\"colisobject\") != null:
 		var colis = get_tree().get_first_node_in_group(\"colisobject\")
 		colis.queue_free()
-	#if expe_day == 0:
-		#Tools.spawn_conserve(3)
-		#var player = Tools.get_player()
-		#player.sanity -= 10
-	#if expe_day == 1:
-		#var player = Tools.get_player()
-		#player.sanity -= 30
-		#var suit = get_tree().get_first_node_in_group(\"suitcase\")
-		#suit.visible = true
-		#Tools.door_letter()
 	get_tree().get_first_node_in_group(\"canvas\").visible = true
+	get_tree().get_first_node_in_group(\"player\").position = Vector3(18, -0.15, 1.5)
 	Tools.paused_game()
 	Tools.expe_status(false)
 	if Data.get_level() == 3:
 		Tools.timer_event_action(true)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	self.queue_free()
+	Tools.start_transition(\"Even dreams must come to an end.\", load(\"res://Scene/Days/Day3/laby_day_3.tscn\") as PackedScene)
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d4eq7"]

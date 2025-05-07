@@ -254,10 +254,10 @@ func expe_status(status):
 	var expe_lum = get_tree().get_first_node_in_group("canexpe")
 	var anim = get_tree().get_first_node_in_group("animexpe")
 	Tools.sound_now(expe_lum,preload("res://Music&Sound/sound/expeopen.ogg") as AudioStreamOggVorbis )
-	if status == true:
+	if status == true and expe_lum:
 		anim.play("start_expe")
 		expe_lum.set_color(Color(0, 1, 0, 1))
-	elif status == false:
+	elif status == false and anim:
 		anim.play("end_expe")
 		expe_lum.set_color(Color(1, 0, 0, 1))
 

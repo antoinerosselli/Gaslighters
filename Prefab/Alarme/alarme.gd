@@ -6,9 +6,6 @@ extends Node3D
 @export var hour:int
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
 
-func _ready():
-	label.text = "%02d:%02d" % [hour, minute]
-
 func _on_timer_timeout():
 	if auto_start == true:
 		minute += 1
@@ -17,7 +14,7 @@ func _on_timer_timeout():
 			hour += 1
 		if hour >= 24:
 			hour = 0	
-		label.text = "%02d:%02d" % [hour, minute]
+		#label.text = "%02d:%02d" % [hour, minute]
 
 func go_bip():
 	audio_stream_player_3d.play()

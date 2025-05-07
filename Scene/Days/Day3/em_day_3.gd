@@ -25,10 +25,12 @@ var time_elapsed = 0
 
 #DAY03 ELEMENTS
 var is_in_fog :bool = false
+var is_escaping :bool = false
 @export var Ceilling_Fan :MeshInstance3D
 @export var Start_Node :Node3D
 @export var Fog_Door :FogVolume
-
+@export var Door_expe :CollisionShape3D
+@export var Lampadaires :Node3D
 
 func _process(_delta):
 	if ones == false:
@@ -39,12 +41,17 @@ func _process(_delta):
 		Radio.setDisplay(1,"")
 		Radio.setDisplay(2,"EscAPE")
 		Ceilling_Fan.transform.basis = Basis(Vector3(0,1,0), -0.03) * Ceilling_Fan.transform.basis
+		is_escaping = true #discutable
 	
-	elif Radio.getDisplay(1) != "FM":
+	elif Radio.getDisplay(2) != "FM":
 		Radio.setDisplay(2,"FM")
 	
 	if Tools.get_player().position:
 		return
+	
+	#if is_escaping == true:
+		#for child in Lampadaires:
+			#
 
 func _on_timer_timeout():
 	time_elapsed += 1
@@ -60,6 +67,10 @@ func check_event_conditions():
 	
 	if time_elapsed % 5 == 0 and Tools.get_player().sanity > 30 and is_in_fog == true:
 		Tools.get_player().sanity -= 10
+	
+	if is_escaping == true and Door_expe.disabled == true:
+		Door_expe.disabled = false
+	
 
 func find_and_remove(current: Node, depth: int):
 	for child in current.get_children():
