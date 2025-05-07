@@ -97,12 +97,21 @@ script = ExtResource("1_f86ad")
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_36dop")]
 transform = Transform3D(1, 0, 0, 0, 1.19877, 0, 0, 0, 1, -2.80715, -0.40799, 6.51119)
 
+[node name="CanvasLayer" parent="CharacterBody3D" index="2" groups=["enigmfm"]]
+
 [node name="Control" parent="CharacterBody3D/CanvasLayer" index="3"]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.988
 offset_right = 0.0
 offset_bottom = -0.223999
+
+[node name="BlueRadio" parent="CharacterBody3D/CanvasLayer/Control/RadarRadio" index="0"]
+autoplay = "default"
+
+[node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
+visible = false
+mouse_filter = 2
 
 [node name="GOVFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="0"]
 visible = false
@@ -119,10 +128,20 @@ offset_top = 0.0
 offset_right = 219.0
 offset_bottom = 23.0
 
+[node name="history" parent="CharacterBody3D/CanvasLayer/Control/Inventory" index="4"]
+mouse_filter = 2
+
+[node name="input" parent="CharacterBody3D/CanvasLayer/Control" index="7"]
+offset_left = 3.0
+offset_right = 335.0
+
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_fx68q")
 
 [node name="Node3D" parent="." instance=ExtResource("1_jb5ec")]
+
+[node name="Radio_bady" parent="Node3D/RadioObj/Radiooo/RadioBody" index="0"]
+mesh = null
 
 [node name="New_Console_SubViewport#Sprite3D" parent="Node3D" index="18"]
 texture = SubResource("ViewportTexture_17coq")

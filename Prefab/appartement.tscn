@@ -1518,10 +1518,6 @@ transform = Transform3D(-5.24537e-09, 0.0276934, -2.79397e-09, -0.12, -1.21052e-
 [node name="Radio_NodeOfKnob_Knob3D_StaticBody3D#CollisionShape3D" parent="RadioObj/Radiooo" index="4"]
 transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
 
-[node name="Radio_bady" parent="RadioObj/Radiooo/RadioBody" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-
 [node name="CollisionShape3D" parent="RadioObj" index="1"]
 transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0273314, 0.165519, -0.0482235)
 
@@ -2956,6 +2952,9 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D10/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
 shape = SubResource("BoxShape3D_uls34")
+
+[node name="Marker3D" type="Marker3D" parent="." groups=["player_spawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.19263, 0.077507, 5.73851)
 
 [editable path="Lamp1"]
 [editable path="frontdoor"]

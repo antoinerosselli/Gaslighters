@@ -78,8 +78,10 @@ func unique(object_name):
 		"pills":
 			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/heavy_swallowwav-14682.mp3") as AudioStreamMP3)
 			if Data.get_level() == 1:
+				SteamControl.unlock_achievement("ACH_END_DAY_1")
 				Tools.start_transition("2 YEARS AGO", load("res://Scene/Days/Day 1.5/scene_day_1_5.tscn") as PackedScene)
 			if Data.get_level() == 2:
+				SteamControl.unlock_achievement("ACH_END_DAY_2")
 				Tools.start_transition("2 MONTHS AGO", load("res://Scene/Days/Day 2.5/scene_day_2_5.tscn") as PackedScene)
 			if Data.get_level() == 30:
 				Tools.start_transition("SUR QUELLE TIMELINE ON EST ANTOINE?", load("res://Scene/Days/Day 3_5/scene_day_3_5.tscn") as PackedScene)
@@ -89,6 +91,7 @@ func unique(object_name):
 			emds.eat_a_pills()
 		"pen":
 			Data.set_level(2)
+			SteamControl.unlock_achievement("ACH_CONTRACT")
 			Tools.start_transition("DAY 2", load("res://Scene/Days/Day2/scene_day_2.tscn") as PackedScene)
 		"phone":
 			Tools.start_transition("DAY 4", load("res://Scene/Days/Day4/scene_day_4.tscn") as PackedScene)
@@ -115,6 +118,7 @@ func unique(object_name):
 		"fakedoorchamber":
 			Tools.sound_now(Tools.get_player(),preload("res://Music&Sound/sound/door_sound.mp3") as AudioStreamMP3)
 		"valise": 
+			SteamControl.unlock_achievement("ACH_END_DAY_4")
 			Tools.start_transition("", load("res://Scene/final_days/scene_final.tscn") as PackedScene)
 		"valisevide":
 			Tools.start_transition("DAY 4", load("res://Scene/Days/Day4/scene_day_4.tscn") as PackedScene)

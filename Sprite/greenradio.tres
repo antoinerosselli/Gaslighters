@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bqhevke6xc63h"]
+
+[ext_resource type="Texture2D" uid="uid://b4khbnrkbf0y8" path="res://Sprite/Greenradio1.png" id="1_tbc5t"]
+[ext_resource type="Texture2D" uid="uid://dhf01km6quyxv" path="res://Sprite/Greenradio2.png" id="2_wunpb"]
+[ext_resource type="Texture2D" uid="uid://5bnp1iodyvg0" path="res://Sprite/Greenradio3.png" id="3_ktpom"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tbc5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wunpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ktpom")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

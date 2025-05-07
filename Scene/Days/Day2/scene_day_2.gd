@@ -8,3 +8,7 @@ func _ready():
 	var codesr = get_tree().get_first_node_in_group("codesr")
 	codesr.activate = false
 	Radio.setValue(0)
+
+
+func _on_special_radio_visibility_changed():
+	pass # Replace with function body.

@@ -6,6 +6,7 @@ extends Node3D
 func _ready():
 	get_tree().paused = false
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	SteamControl.unlock_achievement("ACH_END_GAME")
 
 func _on_take_suit_pressed():
 	panel.visible = true

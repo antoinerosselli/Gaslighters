@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://burmfonrenium"]
+[gd_scene load_steps=57 format=3 uid="uid://burmfonrenium"]
 
 [ext_resource type="Script" uid="uid://c7x1krdmm8fej" path="res://Scene/Days/Day4/scene_day_4.gd" id="1_nyh0e"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="2_5g634"]
@@ -4731,6 +4731,19 @@ volumetric_fog_anisotropy = -0.51
 adjustment_enabled = true
 adjustment_saturation = 1.44
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ufke"]
+render_priority = 0
+shader = ExtResource("10_jlx00")
+shader_parameter/scale = 7.75
+shader_parameter/speed = 0.801
+shader_parameter/octaves = 8
+shader_parameter/persistence = 0.756
+shader_parameter/color_1 = Vector4(1, 0, 0.4, 1)
+shader_parameter/color_2 = Vector4(1, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_j44nx"]
+material = SubResource("ShaderMaterial_1ufke")
+
 [node name="SceneDay4" type="Node3D"]
 script = ExtResource("1_nyh0e")
 
@@ -4797,6 +4810,15 @@ visible = false
 [node name="MeshInstance3D78" parent="appartement/OutBar" index="40"]
 transform = Transform3D(51.1402, 0, 0, 0, 1.00308, 0, 0, 0, 71.3667, 0, -9.21053, 0)
 
+[node name="OmniLight3D" parent="appartement/Lampadaires/MeshInstance3D80" index="1"]
+light_energy = 0.0
+
+[node name="OmniLight3D" parent="appartement/Lampadaires/MeshInstance3D82" index="1"]
+light_energy = 0.0
+
+[node name="OmniLight3D" parent="appartement/Lampadaires/MeshInstance3D83" index="1"]
+light_energy = 0.0
+
 [node name="Room_Wall" parent="appartement/fondation/CSGCombiner3D" index="1"]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -1.74726, 0.0441205, 9.45937)
 size = Vector3(9.3978, 4.18689, 0.203979)
@@ -4818,7 +4840,8 @@ shape = SubResource("BoxShape3D_vc1tc")
 transform = Transform3D(0.00500899, 0, 0.999987, 0, 1, 0, -0.999987, 0, 0.00500899, 4.43872, 0.16475, 1.94028)
 
 [node name="KitchenPart1" parent="appartement/Deco" index="2"]
-transform = Transform3D(1.12538, 0.0345287, 1.10415e-09, 0, -6.48848e-08, 1.08593, 0.0261847, -1.48399, -4.74547e-08, 15.3437, -0.945081, 3.59686)
+transform = Transform3D(1.12538, 0.0345286, 1.10415e-09, 0, -6.48848e-08, 1.08593, 0.0261846, -1.48399, -4.74547e-08, 15.3437, -0.945081, 3.59686)
+
 
 [node name="CollisionShape3D2" parent="appartement/Deco/KitchenPart1/StaticBody3D" index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.999996, 2.13164e-14, 0, -2.13163e-14, 1, -0.767567, 0.718806, -4.76837e-07)
@@ -4830,7 +4853,7 @@ transform = Transform3D(1.13301, 0.0231011, 3.02816e-05, -3.44471e-10, -0.003095
 transform = Transform3D(1, 0, 0, 0, -0.00455525, 0.99999, 0, -0.99999, -0.00455525, 15.7343, 0.290971, 5.26553)
 
 [node name="Poel" parent="appartement/Deco" index="6"]
-transform = Transform3D(-0.486389, -1.30952, 0.0115752, 4.84763e-10, 0.020326, 0.862093, -1.2314, 0.517246, -0.00457209, 14.8356, -0.330968, 6.56839)
+transform = Transform3D(-0.486389, -1.30952, 0.0115752, 4.84764e-10, 0.020326, 0.862093, -1.2314, 0.517246, -0.00457209, 14.8356, -0.330968, 6.56839)
 
 [node name="UpArmory" parent="appartement/Deco" index="9"]
 transform = Transform3D(-1.06591, 0.00395567, 1.86437e-10, 0, -5.41352e-08, 1.33537, 0.00340455, 1.23846, 5.83706e-08, 9.42764, 1.56793, 3.18322)
@@ -4857,7 +4880,7 @@ transform = Transform3D(0.827492, -0.561402, 0.00916046, 0, 0.0163149, 0.999867,
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.0498, -0.382754, 5.54982)
 
 [node name="Curtbar2" parent="appartement/Deco" index="43"]
-transform = Transform3D(0.0202136, -1.27233, -2.88124e-08, 0.690078, 0.0184913, -0.709817, 0.695398, 0.0186338, 0.704386, 1.61308, 1.56412, -7.98795)
+transform = Transform3D(0.0202136, -1.27233, -2.95167e-08, 0.690078, 0.0184913, -0.709817, 0.695398, 0.0186338, 0.704386, 1.61308, 1.56412, -7.98795)
 
 [node name="CollisionShape3D" parent="appartement/Deco/Trash2/StaticBody3D" index="0"]
 transform = Transform3D(1, 4.67058e-07, -8.60775e-06, -4.53554e-07, 0.999999, 0.00132613, 8.60653e-06, -0.00132642, 0.999999, 0.121827, -0.102965, 2.68221e-07)
@@ -4875,7 +4898,7 @@ transform = Transform3D(1.44249, 0, 0, 0, -0.00848885, -1.48074, 0, 1.52949, -0.
 transform = Transform3D(1.5518, 0, 0, 0, 0.0231156, 1.75242, 0, -1.70664, 0.0237357, -0.118868, -0.207093, -6.47858)
 
 [node name="Ptitetable" parent="appartement/Deco" index="59"]
-transform = Transform3D(-0.0218193, 0.999761, -0.00126133, -0.0162311, 0.000907228, 0.999868, 0.99963, 0.0218369, 0.0162074, 1.66868, -1.39035, -7.75612)
+transform = Transform3D(-0.0218192, 0.999761, -0.00126133, -0.0162311, 0.000907228, 0.999868, 0.99963, 0.0218368, 0.0162074, 1.66868, -1.39035, -7.75612)
 
 [node name="Curtain3" parent="appartement/Deco" index="60"]
 transform = Transform3D(0.755287, 0, 0, 0, 1.26528, 0, 0, 0, 1, 1.21432, 0.465353, 9.25289)
@@ -4890,7 +4913,7 @@ transform = Transform3D(-0.999497, -2.39384e-09, 0.0317074, 0, 1, 7.54979e-08, -
 transform = Transform3D(-8.26958e-08, 0, 1.25646, 0, 1, 0, -1.89186, 0, -5.49216e-08, 9.47159, -0.703173, 4.30367)
 
 [node name="Mirror" parent="appartement/Deco" index="74"]
-transform = Transform3D(-1.9808e-07, -0.802198, 35.4587, 53.755, -5.77844e-06, -6.25782e-13, 8.75556e-06, 35.4587, 0.802198, -0.404962, 0.627597, -6.45798)
+transform = Transform3D(-1.9808e-07, -0.802198, 35.4587, 53.755, -5.77844e-06, -6.36205e-13, 8.75556e-06, 35.4587, 0.802198, -0.404962, 0.627597, -6.45798)
 
 [node name="ShowerFloor" parent="appartement/Deco" index="75"]
 transform = Transform3D(2.38787, 155.344, 4.37065e-06, 0, -6.79104e-06, 100, 159.446, -2.32643, -6.5455e-08, 0.410234, -1.68487, -3.88909)
@@ -4906,15 +4929,6 @@ transform = Transform3D(-0.0257407, 0, 0.000558769, 0, 0.015, 0, -0.000873697, 0
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_xvotj")]
 transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
-
-[node name="GOVFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="0"]
-visible = false
-
-[node name="BELLEFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="1"]
-visible = false
-
-[node name="COMPLOTFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="2"]
-visible = false
 
 [node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3"]
 offset_left = 0.0
@@ -4945,24 +4959,9 @@ text = "> Am I a hero ? Was I ever a hero ? "
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_67yib")
 
-[node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.9781)
-size = Vector3(24.1484, 6.75517, 2)
-material = SubResource("FogMaterial_d3oq6")
-
-[node name="FogVolume2" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.849, 0.229126, 11.4592)
-size = Vector3(7.22923, 3.79638, 2.43262)
-material = SubResource("FogMaterial_d3oq6")
-
 [node name="FogVolume3" type="FogVolume" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.66, 0.683956, -2.2077)
 size = Vector3(13.9297, 5.40916, 2)
-material = SubResource("FogMaterial_d3oq6")
-
-[node name="FogVolume4" type="FogVolume" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.255889, 0.229126, 11.206)
-size = Vector3(4.80581, 5.0576, 2.89177)
 material = SubResource("FogMaterial_d3oq6")
 
 [node name="managers" type="Node" parent="." groups=["event_manager"]]
@@ -5351,6 +5350,18 @@ libraries = {
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." groups=["env"]]
 environment = SubResource("Environment_scpn5")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(12.1533, 0, 0, 0, -4.37114e-08, -1.38688, 0, 1, -6.06222e-08, 2.97409, 0.401751, -8.48335)
+mesh = SubResource("PlaneMesh_j44nx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.57202, 0.00495672, -2.6098e-10, 0.000362644, 0.0284446, -1.21201, -0.0127438, -0.999583, -0.0344895, 0.111278, 0.318779, 9.37549)
+mesh = SubResource("PlaneMesh_j44nx")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.57202, 0.00495672, -2.6098e-10, 0.000362644, 0.0284446, -1.21201, -0.0127438, -0.999583, -0.0344895, 11.9853, 0.318779, 9.37549)
+mesh = SubResource("PlaneMesh_j44nx")
+
 [connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="managers" method="_on_animation_player_animation_finished"]
 
@@ -5364,6 +5375,9 @@ environment = SubResource("Environment_scpn5")
 [editable path="appartement/RadioObj/Radiooo"]
 [editable path="appartement/Interrupteur4"]
 [editable path="appartement/Lamp2"]
+[editable path="appartement/Lampadaires/MeshInstance3D80"]
+[editable path="appartement/Lampadaires/MeshInstance3D82"]
+[editable path="appartement/Lampadaires/MeshInstance3D83"]
 [editable path="appartement/Deco/Sketchfab_Scene2"]
 [editable path="appartement/Deco/Sketchfab_Scene3"]
 [editable path="appartement/Deco/Sketchfab_Scene6"]

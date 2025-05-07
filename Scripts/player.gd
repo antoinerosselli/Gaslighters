@@ -20,7 +20,6 @@ extends CharacterBody3D
 #inventory
 var on_inventory:bool = false
 @onready var label = $CanvasLayer/Control/Inventory/Label
-@onready var journal = $CanvasLayer/Control/Inventory/Panel
 
 var dialogues_id:int = 0
 var dialogues:Array = []
@@ -33,6 +32,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @export var affect_by_gravity:bool = true
 @export var can_move:bool = true
+@export var radioradar:bool = true
 
 var speed = 5
 var jump_speed = 5
@@ -45,6 +45,8 @@ var crouch:bool = false
 var item
 
 func _ready():
+	if radioradar == false :
+		get_tree().get_first_node_in_group("radarradio").visible = false
 	if Data.get_radio("G") == 1:
 		var govfm = get_tree().get_first_node_in_group("govfm")
 		govfm.visible = true
@@ -140,10 +142,12 @@ func _input(event):
 		on_inventory = !on_inventory
 		if inventory.visible == false :
 			Tools.change_lesinputs("inventory")
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			inventory.visible = true
 			icon.visible = false
 		elif inventory.visible == true :
 			Tools.change_lesinputs("player")
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			inventory.visible = false
 			icon.visible = true
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED && $Camera3D.current == true:
@@ -175,3 +179,8 @@ func _on_audio_stream_player_3d_finished():
 	detect_value.value = 0
 	ani.play("RESET")
 	
+func unstuck():
+	var sp_point = get_tree().get_first_node_in_group("player_spawn")
+	if sp_point == null : 
+		return
+	self.transform = sp_point.transform

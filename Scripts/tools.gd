@@ -63,6 +63,7 @@ func door_letter():
 	letter.get_child(2).play("slide_letter")
 
 func go_to_expe():
+	SteamControl.unlock_achievement("ACH_EXPE")
 	var es:PackedScene
 	if Data.get_level() == 1:
 		es = preload("res://Prefab/expe.tscn") as PackedScene
@@ -101,7 +102,7 @@ func get_color_fd():
 		if lamp_door.light_color == Color(0, 0, 1, 1):
 			return "blue"
 
-func set_radio_sound(channel,sound):
+func set_radio_sound(channel,sound:AudioStream):
 	var radio_sound = get_tree().get_first_node_in_group("radio_sound")
 	var audio_channel = radio_sound.get_child(channel - 1)
 	audio_channel.set_stream(sound)
@@ -211,12 +212,13 @@ func eotd():
 
 func notespawn(note):
 	var player = Tools.get_player()
+	var canvas = get_tree().get_first_node_in_group("canvas")
 	change_lesinputs("note")
 	player.can_interact = false
 	player.icon.visible = false
 	var inst = note.instantiate()
-	player.add_child(inst)
-	player.move_child(inst,0)
+	canvas.add_child(inst)
+	canvas.move_child(inst,0)
 
 func note_close(note, player):
 	Tools.change_lesinputs("player")

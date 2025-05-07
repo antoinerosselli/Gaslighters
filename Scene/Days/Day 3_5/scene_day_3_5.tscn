@@ -225,7 +225,7 @@ tracks/0/path = NodePath("CharacterBody3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 8.21456, 26.301, 33.0024, 44.8198, 49.9359),
+"times": PackedFloat32Array(0, 8.21456, 26.301, 32.9667, 75.0667, 80.0667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.887213, 0.617452, 10.9012), Vector3(0.887213, 0.617452, -4.84953), Vector3(0.887213, 0.617452, -4.84953), Vector3(1.81008, 0.617452, -17.9077), Vector3(1.81008, 0.617452, -17.9077), Vector3(2.04609, 0.617452, -20.3195)]
@@ -369,7 +369,7 @@ tracks/12/path = NodePath("Sketchfab_Scene:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(32.699, 42.5709, 44.4333),
+"times": PackedFloat32Array(60.2614, 70.1333, 71.9142),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(2.91633, 0.102598, -28.0507), Vector3(2.91633, 0.102598, -28.0507), Vector3(2.19427, 0.102598, -21.3847)]
@@ -381,7 +381,7 @@ tracks/13/path = NodePath("Sketchfab_Scene:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(32.699, 42.5709, 44.4333),
+"times": PackedFloat32Array(60.1799, 70.0518, 71.9142),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.353569, 0), Vector3(0, -0.353569, 0), Vector3(0, -0.353569, 0)]
@@ -405,6 +405,7 @@ environment = SubResource("Environment_y7510")
 transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 0.887213, 0.617452, 10.9012)
 affect_by_gravity = false
 can_move = false
+radioradar = false
 
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_1y1h7")
@@ -641,9 +642,16 @@ libraries = {
 [node name="manager" type="Node" parent="."]
 script = ExtResource("8_j0j8q")
 
+[node name="Timer" type="Timer" parent="manager"]
+autostart = true
+
 [node name="guy" parent="." instance=ExtResource("5_sj1gt")]
 transform = Transform3D(0.00928677, 0, -0.614942, 0, 0.511745, 0, 0.386289, 0, 0.0147838, 3.19729, 1.68836, -30.8558)
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="guy" index="0" groups=["talkers"]]
+volume_db = -8.571
+bus = &"Voice"
 
 [node name="SpotLight3D" parent="guy/face" index="1"]
 light_color = Color(0.841119, 0.350553, 0.70053, 1)
@@ -663,6 +671,8 @@ script_trait = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
 shape = SubResource("BoxShape3D_f5v1x")
+
+[connection signal="timeout" from="manager/Timer" to="manager" method="_on_timer_timeout"]
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/transition"]

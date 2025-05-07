@@ -24,6 +24,11 @@ var other_color = Color(0.580392, 0, 0.827451, 1)
 var played_messages = {}  # Dictionnaire pour stocker les messages déjà joués
 var ones: bool = false
 
+var BlueRadio: AnimatedSprite2D
+var RedRadio: AnimatedSprite2D
+var GreenRadio: AnimatedSprite2D
+var SpecialRadio: AnimatedSprite2D
+
 #part
 var part1: bool = false
 var part2: bool = false
@@ -36,12 +41,17 @@ var otherpart: bool = false
 var time_elapsed = 0
 
 func _ready():
+	BlueRadio = get_tree().get_first_node_in_group("blueradio")
+	RedRadio = get_tree().get_first_node_in_group("redradio")
+	GreenRadio = get_tree().get_first_node_in_group("greenradio")
+	SpecialRadio = get_tree().get_first_node_in_group("specialradio")
 	activate_depots()
 	depots = get_tree().get_nodes_in_group("depot")
 	activate_depots()
 
 func _process(_delta):
 	if  ones == false:
+		RedRadio.visible = true
 		if Radio.getValue() > 66 and Radio.getValue() < 76 :
 			Tools.start_the_day()
 			ones = true
@@ -71,7 +81,10 @@ func play_radio_message(file_path, text, duration, color, sender, what_cd):
 	played_messages[text] = true  
 
 func radio_event_adv(sound, text, time_text, color_ok, what_fm, what_cd):
-	Tools.set_radio_sound(1,load(sound))
+	if color_ok == me_color :
+		pass
+	else :
+		Tools.set_radio_sound(1,load(sound))
 	if what_cd == 0:
 		Tools.radio_text(text,time_text,color_ok)
 	elif what_cd != 0:
@@ -99,103 +112,118 @@ func check_radio_conditions():
 
 #gov
 	if part1 == true and part2 == false:
+		BlueRadio.visible = true
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message.", 5, gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day4/gov/offgovmess.ogg", "This is an official government message.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "The Road Quarter is currently being secured. Over 70% of Rock Valley’s residents are now safe.", 5, gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day4/gov/nowsafe.ogg", "The Road Quarter is currently being secured. Over 70% of Rock Valley’s residents are now safe.", 5, gouv_color, "gouv", 6)
 			Tools.event_journal_ok(2,true)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Further clashes have occurred in the city, resulting in the disappearance of certain individuals during evacuation transports.", 5, gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day4/gov/evacuationtransport.ogg", "Further clashes have occurred in the city, resulting in the disappearance of certain individuals during evacuation transports.", 5, gouv_color,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Some people are still missing. A special search team is currently handling the situation.", 5, gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day4/gov/handlingsituation.ogg", "Some people are still missing. A special search team is currently handling the situation.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "…All of this—because of you.", 5, gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day4/gov/becauseofyou.ogg", "…All of this—because of you.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You really had to break your oath and put everyone at risk.", 5, gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day4/gov/everyoneatrisl.ogg", "You really had to break your oath and put everyone at risk.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Was your own happiness not enough?", 5, gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day4/gov/notenought.ogg", "Was your own happiness not enough?", 5, gouv_color,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Did you really think you could buy yourself redemption?", 5, gouv_color, "gouv", 0)
+			play_radio_message("res://voice/day4/gov/buyredemption.ogg", "Did you really think you could buy yourself redemption?", 5, gouv_color, "gouv", 0)
+			BlueRadio.visible = false
+			Tools.new_info("Next : the kitchen")
 			animama.play("part2")
 			part2 = true
 			
 
 #belle
 	if part2 == true and part1 == true and part3 == false:
+		GreenRadio.visible = true
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Hi, this is Belle.", 5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day4/belle/Thisisbelle.ogg", "Hi, this is Belle.", 5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Rock Valley has never felt more unsafe. I’m getting reports that evacuation transports have been attacked—leading to deaths and disappearances.", 5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day4/belle/evactransportattack.ogg", "Rock Valley has never felt more unsafe. I’m getting reports that evacuation transports have been attacked—leading to deaths and disappearances.", 5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "It seems these were collateral damage from the ongoing conflict between former miners and surviving religious factions.", 5, belle_color,"belle", 6)
+			play_radio_message("res://voice/day4/belle/religiousfactions.ogg", "It seems these were collateral damage from the ongoing conflict between former miners and surviving religious factions.", 5, belle_color,"belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "And you know you're not innocent in all this.", 5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day4/belle/inallthis.ogg", "And you know you're not innocent in all this.", 5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Or maybe you just preferred to look away.", 5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day4/belle/lookaway.ogg", "Or maybe you just preferred to look away.", 5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You locked yourself in a cage, thinking it would protect you. Then you threw away the key, hoping no one would drag you out.", 5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day4/belle/dragyouout.ogg", "You locked yourself in a cage, thinking it would protect you. Then you threw away the key, hoping no one would drag you out.", 5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You didn’t even notice. You’re stuck now in a state of numbness, unable to face the truth or escape to another one.", 5, belle_color, "belle", 0)
+			play_radio_message("res://voice/day4/belle/escapetoanotherone.ogg", "You didn’t even notice. You’re stuck now in a state of numbness, unable to face the truth or escape to another one.", 5, belle_color, "belle", 0)
+			GreenRadio.visible = false
+			Tools.new_info("Then : the bathroom")
 			animama.play("part3")
 			part3 = true
 
 #galleries
-	if  part1 == false:
+	if  part1 == false && part2 == false:
+		RedRadio.visible = true
 		if radio_value > 66 and radio_value < 76 :
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "My friends,", 5, Fanatic_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/galleries/myfriends.ogg", "My friends,", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "The miners have informed me: the religious ones attacked an evacuation convoy. Innocents were caught in the crossfire.", 5, Fanatic_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/galleries/inthecrossfire.ogg", "The miners have informed me: the religious ones attacked an evacuation convoy. Innocents were caught in the crossfire.", 5, Fanatic_color, "fanatic", 6)
 			Tools.event_journal_ok(0,false)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "These are terrible times. But we will not betray you. Rock Valley will emerge stronger.", 5, Fanatic_color,"fanatic", 6)
+			play_radio_message("res://voice/day4/galleries/EmergeStronger.ogg", "These are terrible times. But we will not betray you. Rock Valley will emerge stronger.", 5, Fanatic_color,"fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "We fight for our independence. For our freedom.", 5, Fanatic_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/galleries/forourfreedom.ogg", "We fight for our independence. For our freedom.", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "So we don't become leashed dogs like you, “hero.”", 5, Fanatic_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/galleries/doghero.ogg", "So we don't become leashed dogs like you, “hero.”", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You betrayed your brothers for a title, for peace…", 5, Fanatic_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/galleries/forpeace.ogg", "You betrayed your brothers for a title, for peace…", 5, Fanatic_color, "fanatic", 6)
 			Tools.event_journal_ok(1,false)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "To impress whom? To prove what?", 5, Fanatic_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/galleries/toprovewhat.ogg", "To impress whom? To prove what?", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Now you’re trying to make up for it—But don’t think this one action redeems the fathers lost in the mines", 5, Fanatic_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/galleries/fatherlostinmines.ogg", "Now you’re trying to make up for it—But don’t think this one action redeems the fathers lost in the mines", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Nor the years your companions spent behind bars.", 5, Fanatic_color, "fanatic", 0)
+			RedRadio.visible = false
+			play_radio_message("res://voice/day4/galleries/spentbehindbars.ogg", "Nor the years your companions spent behind bars.", 5, Fanatic_color, "fanatic", 0)
 			animama.play("part1")
+			Tools.new_info("First : the secure room")
 			part1 = true
 
 #other
-	if part1 == true and part2 == true and part3 == true and otherpart == true:
+	if part1 == false and part2 == true and part3 == true and otherpart == true:
+		SpecialRadio.visible = true
 		if radio_value > 41 and radio_value < 43:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You did your best.,", 5, other_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/other/youdidyourbest.ogg", "You did your best.,", 5, other_color, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Was it enough?", 5, me_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/other/forgedforyourself.ogg", "Was it enough?", 5, me_color, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "That’s not what matters.", 5, other_color,"fanatic", 6)
+			play_radio_message("res://voice/day4/other/whatmatters.ogg", "That’s not what matters.", 5, other_color,"fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You stepped out of the cage you forged for yourself.", 5, other_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/other/forgedforyourself.ogg", "You stepped out of the cage you forged for yourself.", 5, other_color, "fanatic", 6)
 			Tools.event_journal_ok(3,true)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Look—you’re moving now.", 5, other_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/other/yourmobingnow.ogg", "Look—you’re moving now.", 5, other_color, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "I know. But you're still afraid to call me", 5, me_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/other/stillafraidtocallme.ogg", "I know. But you're still afraid to call me", 5, me_color, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
 			Tools.radio_text_glitch("And I’m still afraid to call you.", 4.0, me_color)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "But this isn’t the end. Tomorrow is another day.", 5, other_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/other/Tomorrowanotherday.ogg", "But this isn’t the end. Tomorrow is another day.", 5, other_color, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
 			Tools.radio_text_glitch("Maybe someday I’ll manage to do it.", 4.0, me_color)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
-			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "I hope so too.", 5, other_color, "fanatic", 6)
+			play_radio_message("res://voice/day4/other/ihopesotoo.ogg", "I hope so too.", 5, other_color, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
+			SpecialRadio.visible = false
 			Tools.event_journal_ok(5,true)
 			Tools.radio_text_glitch("Let’s get out of here.", 4.0, me_color)
 			Tools.eotd()
 			otherpart = false
 #event 
-	if part1 == true and part2 == true and part3 == true and radio_value > 37 and radio_value < 39 :
-		animama.play("endgame")
-		
+	if part1 == true and part2 == true and part3 == true : 
+		SpecialRadio.visible = true 
+		if radio_value > 37 and radio_value < 39 :
+			Tools.new_info("The apartment collapses")
+			animama.play("endgame")
+			SpecialRadio.visible = false
+			part1 = false
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "endgame":

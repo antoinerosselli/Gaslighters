@@ -6,6 +6,9 @@ var RadioBelle : int
 var RadioGalleries : int
 var journal_text: Array = []
 var daltone_mode: bool
+var doornumber:int 
+var clearspots:int
+var food:int
 
 func _ready():
 	level = 0
@@ -13,6 +16,9 @@ func _ready():
 	RadioBelle = 0
 	RadioGalleries = 0
 	daltone_mode = false
+	doornumber = 0
+	clearspots = 0
+	food = 0
 	load_data()
 	if daltone_mode == true:
 		print("ayo")
@@ -26,8 +32,28 @@ func save():
 		"RadioGalleries" : RadioGalleries,
 		"journal_text" : journal_text,
 		"daltone_mode" : daltone_mode,
+		"doornumber" : doornumber,
+		"clearspots" : clearspots,
+		"food": food,
 	}
 	return save_dict
+
+func set_food(nfood:int):
+	food = nfood
+	save_data()
+
+func get_food():
+	return food
+
+func add_spots():
+	clearspots += 1
+	if clearspots == 10:
+		SteamControl.unlock_achievement("ACH_SPOTS")
+
+func add_door():
+	doornumber += 1
+	if doornumber == 100:
+		SteamControl.unlock_achievement("ACH_DOOR")
 
 func set_daltone(status):
 	daltone_mode = status
@@ -84,4 +110,7 @@ func load_data():
 		RadioGov = node_data.get("RadioGov", 0)
 		RadioBelle = node_data.get("RadioBelle", 0)
 		RadioGalleries = node_data.get("RadioGalleries", 0)
-		journal_text = node_data.get("journal_text", []) 
+		journal_text = node_data.get("journal_text", [])
+		daltone_mode = node_data.get("daltone_mode", 0)
+		doornumber = node_data.get("doornumber", 0) 
+		food = node_data.get("food", 0) 
