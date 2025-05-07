@@ -4052,6 +4052,9 @@ shape = SubResource("BoxShape3D_uls34")
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_otx7e")]
 transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
 
+[node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
+visible = false
+
 [node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3"]
 offset_left = 0.0
 offset_top = 0.0
