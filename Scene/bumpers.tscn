@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b7ifffa1oq6ok"]
 
 [ext_resource type="Script" uid="uid://df2xo60do04m6" path="res://Scripts/bumpers.gd" id="1_hxbka"]
-[ext_resource type="VideoStream" path="res://video/bumpers.ogv" id="2_p6jj2"]
+[ext_resource type="VideoStream" uid="uid://dwwo6g11qd0u0" path="res://video/bumpers.ogv" id="2_p6jj2"]
 
 [node name="Bumpers" type="Control"]
 layout_mode = 3

@@ -21,9 +21,9 @@ var ones: bool = false
 func _process(delta):
 	if ones == false:
 		if Radio.getValue() > 54 and Radio.getValue() < 64 :
-		if Radio.getFrequency() == 1 :
-			Tools.start_the_day()
-			ones = true
+			if Radio.getFrequency() == 1 :
+				Tools.start_the_day()
+				ones = true
 
 func _on_timer_timeout():
 	time_elapsed += 1  # Incrémente le temps écoulé chaque seconde
