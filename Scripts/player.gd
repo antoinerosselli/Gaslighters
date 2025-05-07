@@ -142,10 +142,12 @@ func _input(event):
 		on_inventory = !on_inventory
 		if inventory.visible == false :
 			Tools.change_lesinputs("inventory")
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			inventory.visible = true
 			icon.visible = false
 		elif inventory.visible == true :
 			Tools.change_lesinputs("player")
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			inventory.visible = false
 			icon.visible = true
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED && $Camera3D.current == true:

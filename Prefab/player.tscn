@@ -352,7 +352,6 @@ autowrap_mode = 2
 wait_time = 3.0
 
 [node name="Inventory" type="Panel" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -439,7 +438,6 @@ offset_top = 144.0
 offset_right = 1128.0
 offset_bottom = 624.0
 theme_override_fonts/normal_font = ExtResource("6_v1iah")
-scroll_active = false
 scroll_following = true
 tab_size = 15
 

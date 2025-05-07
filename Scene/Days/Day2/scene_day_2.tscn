@@ -643,7 +643,8 @@ offset_left = -4.0
 offset_top = 40.0
 offset_right = 556.0
 offset_bottom = 120.0
-text = "> Is it a code ? : Rczij ocz gdvzo wgzzo, ocz dmdi ned vaapomn, ozij tp rdffvmdsj oz nvodmo ja ocz gziny wzgjr
+text = "> Is it a code ? : Bmjs ymj qnlmy gqjjix, ymj nwts xzny fuujfwx. Anxny ymj lzfwinfs tk ymj ijju.
+
 "
 
 [node name="Event2" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="1"]

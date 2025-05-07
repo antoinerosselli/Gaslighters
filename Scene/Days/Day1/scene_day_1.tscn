@@ -109,6 +109,10 @@ offset_bottom = -0.223999
 [node name="BlueRadio" parent="CharacterBody3D/CanvasLayer/Control/RadarRadio" index="0"]
 autoplay = "default"
 
+[node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
+visible = false
+mouse_filter = 2
+
 [node name="GOVFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="0"]
 visible = false
 
@@ -123,6 +127,9 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 219.0
 offset_bottom = 23.0
+
+[node name="history" parent="CharacterBody3D/CanvasLayer/Control/Inventory" index="4"]
+mouse_filter = 2
 
 [node name="input" parent="CharacterBody3D/CanvasLayer/Control" index="7"]
 offset_left = 3.0
