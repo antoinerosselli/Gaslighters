@@ -65,7 +65,6 @@ func _on_go_home_pressed():
 		player.sanity -= 30
 		var suit = get_tree().get_first_node_in_group(\"suitcase\")
 		suit.visible = true
-		Tools.door_letter()
 	get_tree().get_first_node_in_group(\"canvas\").visible = true
 	Tools.paused_game()
 	Tools.expe_status(false)

@@ -20,7 +20,6 @@ extends CharacterBody3D
 #inventory
 var on_inventory:bool = false
 @onready var label = $CanvasLayer/Control/Inventory/Label
-@onready var journal = $CanvasLayer/Control/Inventory/Panel
 
 var dialogues_id:int = 0
 var dialogues:Array = []
@@ -178,3 +177,8 @@ func _on_audio_stream_player_3d_finished():
 	detect_value.value = 0
 	ani.play("RESET")
 	
+func unstuck():
+	var sp_point = get_tree().get_first_node_in_group("player_spawn")
+	if sp_point == null : 
+		return
+	self.transform = sp_point.transform

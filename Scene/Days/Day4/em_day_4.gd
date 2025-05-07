@@ -24,6 +24,11 @@ var other_color = Color(0.580392, 0, 0.827451, 1)
 var played_messages = {}  # Dictionnaire pour stocker les messages déjà joués
 var ones: bool = false
 
+var BlueRadio: AnimatedSprite2D
+var RedRadio: AnimatedSprite2D
+var GreenRadio: AnimatedSprite2D
+var SpecialRadio: AnimatedSprite2D
+
 #part
 var part1: bool = false
 var part2: bool = false
@@ -36,12 +41,17 @@ var otherpart: bool = false
 var time_elapsed = 0
 
 func _ready():
+	BlueRadio = get_tree().get_first_node_in_group("blueradio")
+	RedRadio = get_tree().get_first_node_in_group("redradio")
+	GreenRadio = get_tree().get_first_node_in_group("greenradio")
+	SpecialRadio = get_tree().get_first_node_in_group("specialradio")
 	activate_depots()
 	depots = get_tree().get_nodes_in_group("depot")
 	activate_depots()
 
 func _process(_delta):
 	if  ones == false:
+		RedRadio.visible = true
 		if Radio.getValue() > 66 and Radio.getValue() < 76 :
 			Tools.start_the_day()
 			ones = true
@@ -99,6 +109,7 @@ func check_radio_conditions():
 
 #gov
 	if part1 == true and part2 == false:
+		BlueRadio.visible = true
 		if radio_value > 54 and radio_value < 64 :
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "This is an official government message.", 5, gouv_color, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
@@ -116,6 +127,7 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Was your own happiness not enough?", 5, gouv_color,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Did you really think you could buy yourself redemption?", 5, gouv_color, "gouv", 0)
+			BlueRadio.visible = false
 			Tools.new_info("Next : the kitchen")
 			animama.play("part2")
 			part2 = true
@@ -123,6 +135,7 @@ func check_radio_conditions():
 
 #belle
 	if part2 == true and part1 == true and part3 == false:
+		GreenRadio.visible = true
 		if radio_value > 22 and radio_value < 32 :
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Hi, this is Belle.", 5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
@@ -137,12 +150,14 @@ func check_radio_conditions():
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You locked yourself in a cage, thinking it would protect you. Then you threw away the key, hoping no one would drag you out.", 5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You didn’t even notice. You’re stuck now in a state of numbness, unable to face the truth or escape to another one.", 5, belle_color, "belle", 0)
+			GreenRadio.visible = false
 			Tools.new_info("Then : the bathroom")
 			animama.play("part3")
 			part3 = true
 
 #galleries
 	if  part1 == false && part2 == false:
+		RedRadio.visible = true
 		if radio_value > 66 and radio_value < 76 :
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "My friends,", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
@@ -162,13 +177,15 @@ func check_radio_conditions():
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Now you’re trying to make up for it—But don’t think this one action redeems the fathers lost in the mines", 5, Fanatic_color, "fanatic", 6)
 		if radio_value > 66 and radio_value < 76 and time_elapsed > Fanatic_time:
+			RedRadio.visible = false
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "Nor the years your companions spent behind bars.", 5, Fanatic_color, "fanatic", 0)
 			animama.play("part1")
 			Tools.new_info("First : the secure room")
 			part1 = true
 
 #other
-	if part1 == true and part2 == true and part3 == true and otherpart == true:
+	if part1 == false and part2 == true and part3 == true and otherpart == true:
+		SpecialRadio.visible = true
 		if radio_value > 41 and radio_value < 43:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "You did your best.,", 5, other_color, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
@@ -191,16 +208,19 @@ func check_radio_conditions():
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
 			play_radio_message("res://Voice/day1/gov/1. Official Government Message.wav", "I hope so too.", 5, other_color, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
+			SpecialRadio.visible = false
 			Tools.event_journal_ok(5,true)
 			Tools.radio_text_glitch("Let’s get out of here.", 4.0, me_color)
 			Tools.eotd()
 			otherpart = false
 #event 
-	if part1 == true and part2 == true and part3 == true and radio_value > 37 and radio_value < 39 :
-		Tools.new_info("The apartment collapses")
-		animama.play("endgame")
-		part1 = false
-		
+	if part1 == true and part2 == true and part3 == true : 
+		SpecialRadio.visible = true 
+		if radio_value > 37 and radio_value < 39 :
+			Tools.new_info("The apartment collapses")
+			animama.play("endgame")
+			SpecialRadio.visible = false
+			part1 = false
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "endgame":

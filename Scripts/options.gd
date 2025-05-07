@@ -41,3 +41,8 @@ func change_lum():
 		env.environment.set_adjustment_brightness(1.6)
 	elif Tools.lum == 4:
 		env.environment.set_adjustment_brightness(2.3)
+
+
+func _on_button_pressed():
+	var player = Tools.get_player()
+	player.unstuck()

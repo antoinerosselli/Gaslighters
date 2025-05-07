@@ -84,9 +84,9 @@ func unique(object_name):
 			var emds = get_tree().get_first_node_in_group("eventmanager")
 			emds.eat_a_pills()
 		"pen":
-			Data.set_level(1)
+			Data.set_level(2)
 			SteamControl.unlock_achievement("ACH_CONTRACT")
-			Tools.start_transition("DAY 2", load("res://Scene/demo/demo_end.tscn") as PackedScene)
+			Tools.start_transition("DAY 2", load("res://Scene/Days/Day2/scene_day_2.tscn") as PackedScene)
 		"phone":
 			Tools.start_transition("DAY 4", load("res://Scene/Days/Day4/scene_day_4.tscn") as PackedScene)
 		"screencamera":

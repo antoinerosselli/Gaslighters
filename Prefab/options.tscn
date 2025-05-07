@@ -224,7 +224,16 @@ offset_bottom = 32.0
 focus_mode = 0
 script = ExtResource("5_4ii6h")
 
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 152.0
+offset_right = 952.0
+offset_bottom = 200.0
+text = "I AM STUCK"
+
 [connection signal="pressed" from="Panel/close" to="." method="_on_close_pressed"]
 [connection signal="toggled" from="Panel/Fullscreen/CheckButton" to="Panel/Fullscreen/CheckButton" method="_on_toggled"]
 [connection signal="item_selected" from="Panel/Brightness/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="toggled" from="Panel/colorblind/colorblind_button" to="Panel/colorblind/colorblind_button" method="_on_toggled"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

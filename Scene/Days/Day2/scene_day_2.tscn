@@ -618,9 +618,6 @@ light_energy = 0.0
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_gfllc")]
 transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
 
-[node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
-visible = true
-
 [node name="GOVFM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="0"]
 visible = false
 
@@ -676,6 +673,8 @@ offset_top = 244.0
 offset_right = 441.0
 offset_bottom = 268.0
 text = "> Religious are back"
+
+[node name="ScreamerControl" parent="CharacterBody3D/CanvasLayer" index="4" groups=["screamer_control"]]
 
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_t23kc")
@@ -785,8 +784,13 @@ omni_range = 15.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." groups=["env"]]
 environment = ExtResource("17_sak5h")
 
+[node name="letterwait" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="managers" method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="letterwait" to="managers" method="_on_letterwait_timeout"]
 
 [editable path="appartement"]
 [editable path="appartement/Lamp1"]

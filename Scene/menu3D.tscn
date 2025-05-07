@@ -29,7 +29,7 @@
 [ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://model_House/table_corridor.res" id="20_uah1h"]
 [ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="27_62doh"]
 [ext_resource type="Script" uid="uid://b1ng32bdp0had" path="res://Scripts/speciallabelmenu3d.gd" id="27_gxa06"]
-[ext_resource type="Shader" uid="uid://cltycr033e17u" path="res://Shader/glass.gdshader" id="29_j6e2t"]
+[ext_resource type="Shader" uid="uid://cltycr033e17u" path="res://Scene/glass.gdshader" id="29_j6e2t"]
 [ext_resource type="AudioStream" uid="uid://8tsdxs2qmxce" path="res://Music&Sound/tuning-radio-7150.mp3" id="35_41xcc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vjl52"]
@@ -88,7 +88,7 @@ albedo_texture = ExtResource("3_cxm2i")
 [sub_resource type="PlaneMesh" id="PlaneMesh_qspml"]
 material = SubResource("StandardMaterial3D_hlyes")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ufke"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxa06"]
 render_priority = 0
 shader = ExtResource("9_0qme6")
 shader_parameter/scale = 7.75
@@ -99,7 +99,7 @@ shader_parameter/color_1 = Vector4(1, 0, 0.4, 1)
 shader_parameter/color_2 = Vector4(1, 1, 1, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_1ji0d"]
-material = SubResource("ShaderMaterial_1ufke")
+material = SubResource("ShaderMaterial_gxa06")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6808"]
 albedo_texture = ExtResource("13_3b71p")

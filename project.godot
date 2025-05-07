@@ -44,6 +44,9 @@ blueradio=""
 redradio=""
 greenradio=""
 radarradio=""
+day=""
+specialradio=""
+player_spawn=""
 
 [input]
 

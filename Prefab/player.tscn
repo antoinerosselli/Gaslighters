@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=44 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" uid="uid://ckooh51x0xywe" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Script" uid="uid://8aqmy8q7388i" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
@@ -17,6 +17,7 @@
 [ext_resource type="SpriteFrames" uid="uid://cb18l2w6v5gi7" path="res://Sprite/redradio.tres" id="10_7dcbk"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="11_7q8gp"]
 [ext_resource type="SpriteFrames" uid="uid://bqhevke6xc63h" path="res://Sprite/greenradio.tres" id="11_ehjad"]
+[ext_resource type="SpriteFrames" uid="uid://dustsyroot604" path="res://Sprite/specialradio.tres" id="12_7dcbk"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="12_x4psa"]
 [ext_resource type="Texture2D" uid="uid://exwibfbl6gs2" path="res://Sprite/screamer.tres" id="13_ui8k8"]
 [ext_resource type="PackedScene" uid="uid://dpi8t3jrme5d" path="res://Extern/Rework Appart/spray/scene.gltf" id="13_wyp7x"]
@@ -263,6 +264,13 @@ visible = false
 position = Vector2(1104, 600)
 sprite_frames = ExtResource("11_ehjad")
 frame_progress = 0.853917
+
+[node name="SpecialRadio" type="AnimatedSprite2D" parent="CanvasLayer/Control/RadarRadio" groups=["specialradio"]]
+visible = false
+position = Vector2(1104, 600)
+sprite_frames = ExtResource("12_7dcbk")
+frame = 2
+frame_progress = 0.607052
 
 [node name="NeutralRadio" type="Sprite2D" parent="CanvasLayer/Control/RadarRadio"]
 position = Vector2(1104, 600)
@@ -594,6 +602,7 @@ autowrap_mode = 3
 [connection signal="visibility_changed" from="CanvasLayer/Control/RadarRadio/BlueRadio" to="CanvasLayer/Control/RadarRadio" method="_on_blue_radio_visibility_changed"]
 [connection signal="visibility_changed" from="CanvasLayer/Control/RadarRadio/RedRadio" to="CanvasLayer/Control/RadarRadio" method="_on_red_radio_visibility_changed"]
 [connection signal="visibility_changed" from="CanvasLayer/Control/RadarRadio/GreenRadio" to="CanvasLayer/Control/RadarRadio" method="_on_green_radio_visibility_changed"]
+[connection signal="visibility_changed" from="CanvasLayer/Control/RadarRadio/SpecialRadio" to="CanvasLayer/Control/RadarRadio" method="_on_special_radio_visibility_changed"]
 [connection signal="animation_finished" from="CanvasLayer/Control/NewMessage/AnimationPlayer" to="CanvasLayer/Control/NewMessage" method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]
 [connection signal="finished" from="CanvasLayer/ScreamerControl/AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]
