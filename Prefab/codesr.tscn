@@ -5,6 +5,9 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6vr3"]
 albedo_texture = ExtResource("2_0e4ld")
+emission_enabled = true
+emission = Color(0.51841, 0.384265, 0.204357, 1)
+emission_energy_multiplier = 0.1
 
 [sub_resource type="BoxMesh" id="BoxMesh_hakus"]
 material = SubResource("StandardMaterial3D_b6vr3")
