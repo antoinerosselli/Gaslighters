@@ -1,5 +1,6 @@
 extends Node3D
 @onready var animation_player = $AnimationPlayer
+@onready var button = $Camera3D/Control/Button
 
 func _ready():
 	get_tree().paused = false
@@ -7,4 +8,8 @@ func _ready():
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "Phase1":
-		Tools.start_transition("End", load("res://Scene/menu3D.tscn") as PackedScene)
+		button.visible = true
+
+
+func _on_button_pressed():
+	Tools.start_transition("End", load("res://Scene/menu3D.tscn") as PackedScene)

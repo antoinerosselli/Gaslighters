@@ -245,6 +245,7 @@ offset_bottom = 200.0
 text = "I AM STUCK"
 
 [node name="RebindKeys_panel" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 24.0
 offset_right = 1176.0

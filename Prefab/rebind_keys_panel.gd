@@ -28,7 +28,7 @@ func key_finder(action):
 func key_adder(text):
 	var key_string = text.strip_edges().to_upper()
 	if key_string.length() != 1 or not key_string.is_valid_identifier() or not key_string.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-		print("Touche invalide ou non prise en charge :", key_string)
+		print("Touche invalide ou non prise en chrge :", key_string)
 		return null
 
 	var keycode = OS.find_keycode_from_string(key_string)
@@ -80,42 +80,42 @@ func _on_apply_pressed():
 
 func _on_m_fedit_text_changed(new_text):
 	if new_text.length() > 0:
-		var char = new_text[0].to_upper()
-		if char.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-			MF.text = char  # Force une seule lettre majuscule
+		var chr = new_text[0].to_upper()
+		if chr.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+			MF.text = chr  # Force une seule lettre majuscule
 		else:
 			MF.text = "W"  # Invalide → on efface
 
 func _on_m_bedit_text_changed(new_text):
 	if new_text.length() > 0:
-		var char = new_text[0].to_upper()
-		if char.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-			MB.text = char  # Force une seule lettre majuscule
+		var chr = new_text[0].to_upper()
+		if chr.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+			MB.text = chr  # Force une seule lettre majuscule
 		else:
 			MB.text = "S"  # Invalide → on efface
 
 
 func _on_m_ledit_text_changed(new_text):
 	if new_text.length() > 0:
-		var char = new_text[0].to_upper()
-		if char.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-			ML.text = char  # Force une seule lettre majuscule
+		var chr = new_text[0].to_upper()
+		if chr.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+			ML.text = chr  # Force une seule lettre majuscule
 		else:
 			ML.text = "A"  # Invalide → on efface
 
 
 func _on_m_redit_text_changed(new_text):
 	if new_text.length() > 0:
-		var char = new_text[0].to_upper()
-		if char.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-			MR.text = char  # Force une seule lettre majuscule
+		var chr = new_text[0].to_upper()
+		if chr.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+			MR.text = chr  # Force une seule lettre majuscule
 		else:
 			MR.text = "D"  # Invalide → on efface
 
 func _on_a_iedit_text_changed(new_text):
 	if new_text.length() > 0:
-		var char = new_text[0].to_upper()
-		if char.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-			AI.text = char  # Force une seule lettre majuscule
+		var chr = new_text[0].to_upper()
+		if chr.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
+			AI.text = chr  # Force une seule lettre majuscule
 		else:
 			AI.text = "E"  # Invalide → on efface
