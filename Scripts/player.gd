@@ -45,6 +45,7 @@ var crouch:bool = false
 var item
 
 func _ready():
+	Tools.change_lesinputs("player")
 	if radioradar == false :
 		get_tree().get_first_node_in_group("radarradio").visible = false
 	if Data.get_radio("G") == 1:

@@ -134,6 +134,7 @@ mouse_filter = 2
 [node name="input" parent="CharacterBody3D/CanvasLayer/Control" index="7"]
 offset_left = 3.0
 offset_right = 335.0
+text = ""
 
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_fx68q")

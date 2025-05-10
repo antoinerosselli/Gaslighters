@@ -9,6 +9,7 @@ var daltone_mode: bool
 var doornumber:int 
 var clearspots:int
 var food:int
+var input_map_data: Dictionary = {}
 
 func _ready():
 	level = 0
@@ -19,9 +20,9 @@ func _ready():
 	doornumber = 0
 	clearspots = 0
 	food = 0
+	input_map_data = {}
 	load_data()
 	if daltone_mode == true:
-		print("ayo")
 		Tools.toggle_daltonian_mode()
 
 func save():
@@ -35,8 +36,41 @@ func save():
 		"doornumber" : doornumber,
 		"clearspots" : clearspots,
 		"food": food,
+		"inputs": input_map_data,
 	}
 	return save_dict
+
+func set_inputs(ninputs):
+	input_map_data = ninputs
+	InputMap.action_erase_events("up")
+	InputMap.action_add_event("up", key_adder(input_map_data["up"]))
+	
+	InputMap.action_erase_events("down")
+	InputMap.action_add_event("down", key_adder(input_map_data["down"]))
+	
+	InputMap.action_erase_events("left")
+	InputMap.action_add_event("left", key_adder(input_map_data["left"]))
+	
+	InputMap.action_erase_events("right")
+	InputMap.action_add_event("right", key_adder(input_map_data["right"]))
+	
+	InputMap.action_erase_events("interact")
+	InputMap.action_add_event("interact", key_adder(input_map_data["interact"]))
+	save_data()
+	
+func get_inputs():
+	load_data()
+	print(input_map_data)
+	
+	input_map_data = {
+		"up" : key_finder(InputMap.action_get_events("up")),
+		"down" : key_finder(InputMap.action_get_events("down")),
+		"left" : key_finder(InputMap.action_get_events("left")),
+		"right" : key_finder(InputMap.action_get_events("right")),
+		"interact" : key_finder(InputMap.action_get_events("interact")),
+	}
+	print(input_map_data)
+	return input_map_data
 
 func set_food(nfood:int):
 	food = nfood
@@ -89,6 +123,22 @@ func get_level():
 func get_journal():
 	return journal_text
 
+func key_finder(action):
+	var key_action = action[0]
+	var key_string = OS.get_keycode_string(key_action.keycode)
+	return str(key_string)
+
+func key_adder(text):
+	var key_string = text.strip_edges()
+	var keycode = OS.find_keycode_from_string(key_string)
+	if keycode != 0:
+		var event := InputEventKey.new()
+		event.keycode = keycode
+		event.pressed = true
+		return event
+	else:
+		print("Touche invalide :", key_string)
+
 func save_data():
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var node_data = save()
@@ -114,3 +164,5 @@ func load_data():
 		daltone_mode = node_data.get("daltone_mode", 0)
 		doornumber = node_data.get("doornumber", 0) 
 		food = node_data.get("food", 0) 
+		input_map_data = node_data.get("inputs", {})
+		set_inputs(input_map_data)
