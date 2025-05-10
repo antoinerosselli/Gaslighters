@@ -63,16 +63,7 @@ func unique(object_name):
 		"radio":
 			var radioObj = get_tree().get_first_node_in_group("radio")
 			var radio_camera = radioObj
-			var player = Tools.get_player()
-			Tools.change_lesinputs("radio")
-			var player_camera = player.get_node("Camera3D")
-			var player_icon = player.get_node("CanvasLayer/Control/Icon")
-			var player_use = player.get_node("CanvasLayer/Control/Label")
-			player_icon.visible = false
-			player_use.visible = false
-			player.use_radio = true
-			player_camera.current = false
-			radio_camera.current = true
+			_radio(radio_camera)
 		"conserve":
 			get_tree().get_first_node_in_group("foods").add_conserve()
 		"pills":
@@ -125,3 +116,32 @@ func unique(object_name):
 			Tools.start_transition("DAY 4", load("res://Scene/Days/Day4/scene_day_4.tscn") as PackedScene)
 		"doorexpe":
 			Tools.get_player().popup_sure.visible = true
+		"radioSpe1":
+			var radioObj = get_tree().get_root().find_child("Radiooo2-1", true, false)
+			var radio_camera = radioObj.find_child("CameraCurse1",true,false)
+			_radio(radio_camera)
+		"radioSpe3":
+			var radioObj = get_tree().get_root().find_child("Radiooo2-3", true, false)
+			var radio_camera = radioObj.find_child("CameraCurse3",true,false)
+			_radio(radio_camera)
+		"radioSpe4":
+			var radioObj = get_tree().get_root().find_child("Radiooo2-4", true, false)
+			var radio_camera = radioObj.find_child("CameraCurse4",true,false)
+			_radio(radio_camera)
+		"radioSpe5":
+			var radioObj = get_tree().get_root().find_child("Radiooo2-5", true, false)
+			var radio_camera = radioObj.find_child("CameraCurse5",true,false)
+			_radio(radio_camera)
+
+func _radio(to_use :Camera3D):
+	var radio_camera = to_use
+	var player = Tools.get_player()
+	Tools.change_lesinputs("radio")
+	var player_camera = player.get_node("Camera3D")
+	var player_icon = player.get_node("CanvasLayer/Control/Icon")
+	var player_use = player.get_node("CanvasLayer/Control/Label")
+	player_icon.visible = false
+	player_use.visible = false
+	player.use_radio = true
+	player_camera.current = false
+	radio_camera.current = true
