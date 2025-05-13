@@ -6163,12 +6163,6 @@ offset_top = -8.0
 offset_right = 26.0
 offset_bottom = 15.0
 
-[node name="managers" type="Node" parent="." groups=["event_manager"]]
-script = ExtResource("160_dnhxg")
-
-[node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
-autostart = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7h1jf")
 camera_attributes = SubResource("CameraAttributesPractical_n5y1d")
@@ -14406,9 +14400,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67018, -1.11412, -0.555256
 [node name="3Marker" type="Marker3D" parent="SpacialConnection/3to1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 60.3444, -30.9021, 126.893)
 
+[node name="managers" type="Node" parent="." groups=["event_manager"]]
+script = ExtResource("160_dnhxg")
+
+[node name="Timer" type="Timer" parent="managers" groups=["timerevent"]]
+autostart = true
+
 [connection signal="finished" from="appartement/RadioObj1/Radiooo2-1/AudioStreamPlayer3D" to="appartement/RadioObj1/Radiooo2-1" method="_on_audio_stream_player_3d_finished"]
 [connection signal="timeout" from="appartement/Alarme/Timer" to="appartement/Alarme" method="_on_timer_timeout"]
-[connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 [connection signal="finished" from="Appartement_curse2/RadioObj/Radiooo2/AudioStreamPlayer3D" to="Appartement_curse2/RadioObj/Radiooo2" method="_on_audio_stream_player_3d_finished"]
 [connection signal="timeout" from="Appartement_curse2/Alarme/Timer" to="Appartement_curse2/Alarme" method="_on_timer_timeout"]
 [connection signal="texture_changed" from="Appartement_curse2/New_Console/Sancheck/Sprite3D" to="Appartement_curse2/New_Console/Sancheck/Sprite3D" method="_on_texture_changed"]
@@ -14432,6 +14431,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 60.344
 [connection signal="body_entered" from="SpacialConnection/4toS2/Area3D" to="SpacialConnection/4toS2/Area3D/Teleporter" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="SpacialConnection/1to3/Area3D" to="SpacialConnection/1to3/Area3D/Teleporter" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="SpacialConnection/3to1/Sprite3D/Area3D" to="SpacialConnection/3to1/Sprite3D/Area3D/Teleporter" method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="managers/Timer" to="managers" method="_on_timer_timeout"]
 
 [editable path="appartement/Lamp1"]
 [editable path="appartement/frontdoor"]
