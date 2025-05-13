@@ -20,6 +20,8 @@ var BlueRadio: AnimatedSprite2D
 var RedRadio: AnimatedSprite2D
 var GreenRadio: AnimatedSprite2D
 
+var paused_timer: bool = false
+
 #TIMER
 var time_elapsed = 0
 
@@ -45,11 +47,14 @@ func activate_depots():
 		available_depots[i].activation = true
 
 func _on_timer_timeout():
-	time_elapsed += 1
+	if paused_timer == false:
+		time_elapsed += 1
 	check_event_conditions()
 	check_radio_conditions()
 
 func check_event_conditions():
+	if Tools.get_color_fd() == "blue" and paused_timer == true:
+		paused_timer = false
 	if time_elapsed == 20:
 		var alarm = get_tree().get_first_node_in_group("alarm")
 		alarm.stop()
@@ -126,6 +131,7 @@ func check_radio_conditions():
 	if time_elapsed >= 0 and time_elapsed <= 90:
 		BlueRadio.visible = true
 		if radio_value > 54 and radio_value < 64 :
+			paused_timer = true
 			play_radio_message("res://voice/day1/gov/ofgovmes.wav", "This is an official government message.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://voice/day1/gov/2. The mist.wav", "A mist has settled over Rock Valley. For your safety, please remain indoors.", 5, Tools.color_gov, "gouv", 6)

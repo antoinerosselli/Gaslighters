@@ -78,9 +78,9 @@ text = "Close"
 
 [node name="Rebind" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 416.0
+offset_left = 64.0
 offset_top = 544.0
-offset_right = 848.0
+offset_right = 496.0
 offset_bottom = 614.0
 text = "REBIND KEYS"
 
@@ -245,7 +245,6 @@ offset_bottom = 200.0
 text = "I AM STUCK"
 
 [node name="RebindKeys_panel" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 24.0
 offset_right = 1176.0
@@ -253,7 +252,6 @@ offset_bottom = 648.0
 script = ExtResource("6_i6xom")
 
 [node name="options_rebindkeys" type="Label" parent="RebindKeys_panel"]
-layout_mode = 0
 offset_left = 24.0
 offset_top = 16.0
 offset_right = 156.0
@@ -263,14 +261,14 @@ label_settings = SubResource("LabelSettings_x37ql")
 
 [node name="MoveForward" type="Label" parent="RebindKeys_panel"]
 layout_mode = 0
-offset_left = 136.0
+offset_left = 64.0
 offset_top = 116.0
-offset_right = 372.0
-offset_bottom = 144.0
+offset_right = 204.0
+offset_bottom = 133.0
 text = "Move Forward"
 label_settings = SubResource("LabelSettings_i6xom")
 
-[node name="MFedit" type="LineEdit" parent="RebindKeys_panel/MoveForward"]
+[node name="LineEdit" type="LineEdit" parent="RebindKeys_panel/MoveForward"]
 layout_mode = 0
 offset_left = 296.0
 offset_right = 364.563
@@ -281,16 +279,14 @@ emoji_menu_enabled = false
 caret_blink_interval = 4.26
 
 [node name="MoveBackward" type="Label" parent="RebindKeys_panel"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 240.0
-offset_right = 392.0
-offset_bottom = 268.0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 300.0
+offset_bottom = 220.0
 text = "Move Backward"
 label_settings = SubResource("LabelSettings_i6xom")
 
-[node name="MBedit" type="LineEdit" parent="RebindKeys_panel/MoveBackward"]
-layout_mode = 0
+[node name="LineEdit" type="LineEdit" parent="RebindKeys_panel/MoveBackward"]
 offset_left = 296.0
 offset_right = 364.563
 offset_bottom = 31.0
@@ -300,16 +296,14 @@ emoji_menu_enabled = false
 caret_blink_interval = 4.26
 
 [node name="MoveLeft" type="Label" parent="RebindKeys_panel"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 368.0
-offset_right = 392.0
-offset_bottom = 396.0
+offset_left = 64.0
+offset_top = 264.0
+offset_right = 320.0
+offset_bottom = 292.0
 text = "Move Left"
 label_settings = SubResource("LabelSettings_i6xom")
 
-[node name="MLedit" type="LineEdit" parent="RebindKeys_panel/MoveLeft"]
-layout_mode = 0
+[node name="LineEdit" type="LineEdit" parent="RebindKeys_panel/MoveLeft"]
 offset_left = 296.0
 offset_right = 364.563
 offset_bottom = 31.0
@@ -319,16 +313,14 @@ emoji_menu_enabled = false
 caret_blink_interval = 4.26
 
 [node name="MoveRight" type="Label" parent="RebindKeys_panel"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 480.0
-offset_right = 392.0
-offset_bottom = 508.0
+offset_left = 64.0
+offset_top = 340.0
+offset_right = 320.0
+offset_bottom = 368.0
 text = "Move Right"
 label_settings = SubResource("LabelSettings_i6xom")
 
-[node name="MRedit" type="LineEdit" parent="RebindKeys_panel/MoveRight"]
-layout_mode = 0
+[node name="LineEdit" type="LineEdit" parent="RebindKeys_panel/MoveRight"]
 offset_left = 296.0
 offset_right = 364.563
 offset_bottom = 31.0
@@ -338,18 +330,33 @@ emoji_menu_enabled = false
 caret_blink_interval = 4.26
 
 [node name="ActionInteract" type="Label" parent="RebindKeys_panel"]
-layout_mode = 0
-offset_left = 648.0
+offset_left = 584.0
 offset_top = 116.0
-offset_right = 943.0
+offset_right = 879.0
 offset_bottom = 144.0
 text = "Action Interact"
 label_settings = SubResource("LabelSettings_i6xom")
 
-[node name="AIedit" type="LineEdit" parent="RebindKeys_panel/ActionInteract"]
-layout_mode = 0
+[node name="LineEdit" type="LineEdit" parent="RebindKeys_panel/ActionInteract"]
 offset_left = 320.0
 offset_right = 388.563
+offset_bottom = 31.0
+alignment = 1
+max_length = 1
+emoji_menu_enabled = false
+caret_blink_interval = 4.26
+
+[node name="Crouch" type="Label" parent="RebindKeys_panel"]
+offset_left = 64.0
+offset_top = 416.0
+offset_right = 320.0
+offset_bottom = 444.0
+text = "Crouch"
+label_settings = SubResource("LabelSettings_i6xom")
+
+[node name="LineEdit" type="LineEdit" parent="RebindKeys_panel/Crouch"]
+offset_left = 296.0
+offset_right = 364.563
 offset_bottom = 31.0
 alignment = 1
 max_length = 1
@@ -372,16 +379,18 @@ offset_right = 1131.0
 offset_bottom = 604.0
 text = "Close"
 
+[node name="Reset" type="Button" parent="RebindKeys_panel"]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 544.0
+offset_right = 752.0
+offset_bottom = 600.0
+text = "Reset
+"
+
 [connection signal="pressed" from="Panel/close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panel/Rebind" to="." method="_on_rebind_pressed"]
 [connection signal="toggled" from="Panel/Fullscreen/CheckButton" to="Panel/Fullscreen/CheckButton" method="_on_toggled"]
 [connection signal="item_selected" from="Panel/Brightness/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="toggled" from="Panel/colorblind/colorblind_button" to="Panel/colorblind/colorblind_button" method="_on_toggled"]
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
-[connection signal="text_changed" from="RebindKeys_panel/MoveForward/MFedit" to="RebindKeys_panel" method="_on_m_fedit_text_changed"]
-[connection signal="text_changed" from="RebindKeys_panel/MoveBackward/MBedit" to="RebindKeys_panel" method="_on_m_bedit_text_changed"]
-[connection signal="text_changed" from="RebindKeys_panel/MoveLeft/MLedit" to="RebindKeys_panel" method="_on_m_ledit_text_changed"]
-[connection signal="text_changed" from="RebindKeys_panel/MoveRight/MRedit" to="RebindKeys_panel" method="_on_m_redit_text_changed"]
-[connection signal="text_changed" from="RebindKeys_panel/ActionInteract/AIedit" to="RebindKeys_panel" method="_on_a_iedit_text_changed"]
-[connection signal="pressed" from="RebindKeys_panel/Apply" to="RebindKeys_panel" method="_on_apply_pressed"]
-[connection signal="pressed" from="RebindKeys_panel/Close" to="RebindKeys_panel" method="_on_close_pressed"]

@@ -232,7 +232,7 @@ func change_lesinputs(what_lesinputs):
 	if what_lesinputs == "inventory":
 		text_input.text = "[ TAB ] Close"
 	if what_lesinputs == "player":
-		text_input.text = "[ E ] Interact
+		text_input.text = "[ "+ Data.get_inputs()["interact"]+ " ] Interact
 [ Tab ] Info
 [ Ctrl ] Crouch"
 	if what_lesinputs == "frontdoor" or what_lesinputs == "note":
