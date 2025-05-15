@@ -197,6 +197,9 @@ affect_by_gravity = false
 can_move = false
 radioradar = false
 
+[node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
+visible = false
+
 [node name="??FM" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Frequency" index="3"]
 offset_left = 0.0
 offset_top = 0.0

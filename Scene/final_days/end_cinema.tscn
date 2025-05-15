@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://b10w6ia7633ul"]
+[gd_scene load_steps=57 format=4 uid="uid://b10w6ia7633ul"]
 
 [ext_resource type="Texture2D" uid="uid://y4popkl7ub73" path="res://Extern/Abandoned_House/Textures/road.jpg" id="1_4jy83"]
 [ext_resource type="Script" uid="uid://skohf2u0pqnv" path="res://Scene/final_days/end_cinema.gd" id="1_uum13"]
@@ -14,6 +14,8 @@
 [ext_resource type="Shader" uid="uid://b801gs84w2k41" path="res://Shader/menu3D.gdshader" id="8_mlm7g"]
 [ext_resource type="Texture2D" uid="uid://cd458kpdgcthk" path="res://Extern/Rework Appart/Deds/textures/Wood_10_baseColor.jpeg" id="8_v580e"]
 [ext_resource type="Texture2D" uid="uid://chaipkbutk75o" path="res://Extern/Prop Textures/Carpet 3.png" id="9_pg6u1"]
+[ext_resource type="Texture2D" uid="uid://bx4dkfvsb1ycc" path="res://Sprite/newspapernosuit.png" id="9_ua5ip"]
+[ext_resource type="Script" uid="uid://dd3cjhcsfwj38" path="res://Scene/final_days/newspaper_end.gd" id="10_frcpr"]
 [ext_resource type="Texture2D" uid="uid://chwbx4kif6dbs" path="res://Extern/Abandoned_House/Abandoned_House_t (28).jpg" id="10_ua5ip"]
 [ext_resource type="Script" uid="uid://c8if38w4mykjo" path="res://Scripts/lightUmenu3D.gd" id="11_frcpr"]
 [ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="12_arjw4"]
@@ -886,6 +888,11 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, -1.76215e-12, 0, 0, 1, -0.0507879, -0.430061, 0.00911617)
 shape = SubResource("BoxShape3D_h3c8e")
 
+[node name="Sprite3D" type="Sprite3D" parent="NEWMENU"]
+transform = Transform3D(0.0641297, -0.0120716, 0.00174017, -0.00121854, 0.00113548, 0.0747363, -0.0157896, -0.0491164, 0.00130007, 3.51318, -0.621842, -8.79305)
+texture = ExtResource("9_ua5ip")
+script = ExtResource("10_frcpr")
+
 [node name="Sketchfab_Scene4" parent="." instance=ExtResource("13_yu2o4")]
 transform = Transform3D(-0.226815, 0.00637427, 0.0454361, 0.00408381, 0.321184, -0.00248801, -0.0521135, -0.00257379, -0.197948, 43.8265, 7.52637, -108.686)
 
@@ -932,7 +939,7 @@ mesh = SubResource("PrismMesh_crnbl")
 skeleton = NodePath("../Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.982872, -0.0461233, 0.178423, -0.0155087, 0.985441, 0.16931, -0.183634, 0.163643, -0.969278, 4.68039, 1.37833, -151.061)
+transform = Transform3D(-0.982871, -0.0461238, 0.178425, -0.0155087, 0.985441, 0.16931, -0.183637, 0.163643, -0.969277, 4.68039, 1.37833, -151.061)
 
 [node name="Control" type="Control" parent="Camera3D"]
 layout_mode = 3
@@ -8798,6 +8805,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vfiwt")
 surface_material_override/0 = SubResource("StandardMaterial3D_nr0g6")
 
 [connection signal="pressed" from="Camera3D/Control/Button" to="." method="_on_button_pressed"]
+[connection signal="visibility_changed" from="Camera3D/Control/Button" to="." method="_on_button_visibility_changed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Camera3D/Control/transition"]

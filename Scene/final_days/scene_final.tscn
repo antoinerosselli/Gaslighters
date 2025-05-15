@@ -1144,7 +1144,6 @@ offset_bottom = 407.0
 autowrap_mode = 3
 
 [node name="Souvenirs" type="Panel" parent="Camera3D/Control"]
-visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -1161,9 +1160,9 @@ text = "Close"
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera3D/Control/Souvenirs"]
 layout_mode = 0
 offset_left = 64.0
-offset_top = 32.0
+offset_top = 64.0
 offset_right = 1088.0
-offset_bottom = 576.0
+offset_bottom = 552.0
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("3_dgy1d")]
 transform = Transform3D(-0.0334399, -0.0146691, -0.215633, 1.59231e-05, -0.330956, 0.00973293, -0.24556, 0.00197617, 0.0293652, 1.06181, -1.09011, 7.13478)

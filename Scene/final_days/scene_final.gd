@@ -9,9 +9,11 @@ func _ready():
 	SteamControl.unlock_achievement("ACH_END_GAME")
 
 func _on_take_suit_pressed():
+	Tools.TES = true
 	panel.visible = true
 
 func _on_let_the_suit_pressed():
+	Tools.TES = false
 	panel.visible = true
 
 func _on_no_pressed():

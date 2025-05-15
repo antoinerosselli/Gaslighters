@@ -15,10 +15,6 @@ script_trait = true
 [node name="Audio1" parent="Radiooo/AudioStreamPlayer3D" index="0"]
 unit_size = 1.0
 
-[node name="Radio_bady" parent="Radiooo/RadioBody" index="0"]
-surface_material_override/0 = null
-surface_material_override/1 = null
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_1wkgl")
 

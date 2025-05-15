@@ -184,4 +184,4 @@ func unstuck():
 	var sp_point = get_tree().get_first_node_in_group("player_spawn")
 	if sp_point == null : 
 		return
-	self.transform = sp_point.transform
+	self.position = sp_point.position

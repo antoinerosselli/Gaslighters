@@ -7,7 +7,8 @@ func _on_button_pressed():
 	souvenirs.visible = false
 
 func show_journal_texts(journal_texts: Array):
-	rich_text_label.clear()
+	if rich_text_label != null:
+		rich_text_label.clear()
 	for text in journal_texts:
 		rich_text_label.append_text(text + "\n\n")
 
