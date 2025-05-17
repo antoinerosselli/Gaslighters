@@ -1079,12 +1079,12 @@ text = "TAKE SUITCASE"
 
 [node name="LET THE SUIT" type="Button" parent="Camera3D/Control"]
 layout_mode = 0
-offset_left = 704.0
+offset_left = 648.0
 offset_top = 576.0
-offset_right = 1088.0
+offset_right = 1124.0
 offset_bottom = 613.0
 focus_mode = 0
-text = "LET THE ???"
+text = "LET THE SUITCASE"
 
 [node name="Logevent" type="Button" parent="Camera3D/Control"]
 layout_mode = 0
@@ -1144,6 +1144,7 @@ offset_bottom = 407.0
 autowrap_mode = 3
 
 [node name="Souvenirs" type="Panel" parent="Camera3D/Control"]
+visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0

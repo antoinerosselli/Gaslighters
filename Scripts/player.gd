@@ -126,6 +126,15 @@ func camera_joystick():
 
 
 func _input(event):
+	if Input.is_action_just_pressed("next_level"):
+		if Data.get_level() == 1:
+			Tools.start_transition("DAY 2", load("res://Scene/Days/Day2/scene_day_2.tscn") as PackedScene)
+		if Data.get_level() == 2:
+			Tools.start_transition("DAY 3", load("res://Scene/Days/Day3/scene_day_3.tscn") as PackedScene)
+		if Data.get_level() == 3:
+			Tools.start_transition("DAY 4", load("res://Scene/Days/Day4/scene_day_4.tscn") as PackedScene)
+		if Data.get_level() == 4:
+			Tools.start_transition("", load("res://Scene/final_days/scene_final.tscn") as PackedScene)
 	if Input.is_action_just_pressed("no_ui"):
 		control.visible = !control.visible
 	if Input.is_action_just_pressed("pause") && inventory.visible == false && get_tree().get_first_node_in_group("notenote") == null :

@@ -42,6 +42,17 @@ func save():
 
 func set_inputs(ninputs):
 	input_map_data = ninputs
+	
+	if ninputs.is_empty():
+		print("ninputs est vide, chargement des touches par défaut.")
+		input_map_data = {
+			"up": "W",
+			"down": "S",
+			"left": "A",
+			"right": "D",
+			"interact": "E",
+		}
+	
 	InputMap.action_erase_events("up")
 	InputMap.action_add_event("up", key_adder(input_map_data["up"]))
 	
@@ -57,6 +68,8 @@ func set_inputs(ninputs):
 	InputMap.action_erase_events("interact")
 	InputMap.action_add_event("interact", key_adder(input_map_data["interact"]))
 	save_data()
+
+
 	
 func get_inputs():
 	load_data()

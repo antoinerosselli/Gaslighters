@@ -208,7 +208,7 @@ func check_radio_conditions():
 			SpecialRadio.visible = false
 			Tools.event_journal_ok(5,true)
 			Tools.radio_text_glitch("Let’s get out of here.", 4.0, Tools.color_me)
-			Tools.new_info("Pick up the suitcase")
+			Tools.new_info("Pick up the suitcases")
 			Tools.eotd()
 			otherpart = false
 #event 

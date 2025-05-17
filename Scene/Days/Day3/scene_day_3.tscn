@@ -4052,6 +4052,9 @@ material = SubResource("FogMaterial_8xnu0")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_otx7e")]
 transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
+affect_by_gravity = true
+can_move = true
+radioradar = true
 
 [node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
 visible = false
