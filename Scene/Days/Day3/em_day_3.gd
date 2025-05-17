@@ -17,7 +17,6 @@ var belle_time = 0
 #Fanatic
 var Fanatic_color = Color(0.545098, 0, 0, 1)
 var Fanatic_time = 0
-var played_messages = {}  # Dictionnaire pour stocker les messages déjà joués
 var ones: bool = false
 
 #TIMER
@@ -26,6 +25,7 @@ var time_elapsed = 0
 #DAY03 ELEMENTS
 var is_in_fog :bool = false
 var is_escaping :bool = false
+static var msg_status :int= 0
 @export var Ceilling_Fan :MeshInstance3D
 @export var Start_Node :Node3D
 @export var Fog_Door :FogVolume
@@ -35,6 +35,7 @@ var is_escaping :bool = false
 func _process(_delta):
 	if ones == false:
 		if Radio.getFrequency() == 4:
+			Tools.event_journal_ok(0, false)
 			ones = true
 	
 	if ones == true and Radio.getFrequency() == 4:
@@ -71,6 +72,7 @@ func check_event_conditions():
 	if is_escaping == true and Door_expe.disabled == true:
 		Door_expe.disabled = false
 	
+	check_radio_conditions()
 
 func find_and_remove(current: Node, depth: int):
 	for child in current.get_children():
@@ -97,4 +99,35 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		if is_in_fog != false:
 			is_in_fog = false
 		print(is_in_fog)
-		
+	
+
+func exe_radio_msg(fp, text, duration, color, sender, cooldown):
+	Tools.set_radio_sound(1,load(fp) as AudioStream)
+	if cooldown == 0:
+		Tools.radio_text(text,duration,color)
+	elif cooldown != 0:
+		Tools.radio_text(text, cooldown - 1, color)
+	Tools.add_journal("Escape?", color)
+	if cooldown != 0:
+		gouv_time = time_elapsed + cooldown
+
+func check_radio_conditions():
+	var _fm = Radio.getFrequency()
+	
+	if ones == true and _fm > 0 and _fm < 4:
+		if time_elapsed > gouv_time and msg_status == 0:
+			exe_radio_msg(".","This is an official government message.",5,Tools.color_gov,"gouv",6)
+			msg_status += 1
+			Tools.event_journal_ok(1, false)
+		if time_elapsed > gouv_time and msg_status == 1:
+			exe_radio_msg(".","The districts’ evacuation is still ongoing.",5,Tools.color_gov,"gouv",6)
+			msg_status += 1
+			Tools.event_journal_ok(2, false)
+		if time_elapsed > gouv_time and msg_status == 2:
+			exe_radio_msg(".","Road Quarter will be cleared next. Local inhabitants, please ready yourself for our arrival.",9,Tools.color_gov,"gouv",10)
+			msg_status += 1
+			Tools.event_journal_ok(3, false)
+		if time_elapsed > gouv_time and msg_status <= 3:
+			exe_radio_msg(".","We thank you for your cooperation.",5,Tools.color_gov,"gouv",6)
+			msg_status = 0
+			Tools.event_journal_ok(4, false)

@@ -11,6 +11,7 @@ var color_galleries = Color(0.545098, 0, 0, 1)
 var color_belle = Color(0.0, 0.8, 0.2, 1)
 var color_enigm = Color(0.686275, 0.933333, 0.933333, 1)
 var color_ami = Color(0.580392, 0, 0.827451, 1)
+var color_chaos = Color(0.67, 0.19, 0.54, 1)
 var daltonian_mode = false
 
 var TES : bool = false

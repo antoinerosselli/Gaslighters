@@ -16,11 +16,11 @@ var display2 :String = str("FM")
 func cmpFrequency():
 	if (value > 54 && value < 64):
 		frequency = Frequency.Gov
-	if (value > 22 && value < 32):
+	elif (value > 22 && value < 32):
 		frequency = Frequency.Belle
-	if (value > 76 && value < 86):
+	elif (value > 76 && value < 86):
 		frequency = Frequency.Indy
-	if (value > 5 && value < 20):
+	elif (value > 5 && value < 20):
 		frequency = Frequency.Song
 	else:
 		frequency = Frequency.Static
