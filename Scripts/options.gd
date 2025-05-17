@@ -45,6 +45,8 @@ func change_lum():
 
 func _on_button_pressed():
 	var player = Tools.get_player()
+	if player == null :
+		return	
 	player.unstuck()
 
 func _on_rebind_pressed():

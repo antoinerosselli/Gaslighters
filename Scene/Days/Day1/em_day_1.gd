@@ -21,6 +21,7 @@ var RedRadio: AnimatedSprite2D
 var GreenRadio: AnimatedSprite2D
 
 var paused_timer: bool = false
+var la_suite : bool = false
 
 #TIMER
 var time_elapsed = 0
@@ -49,12 +50,13 @@ func activate_depots():
 func _on_timer_timeout():
 	if paused_timer == false:
 		time_elapsed += 1
+		check_radio_conditions()
 	check_event_conditions()
-	check_radio_conditions()
 
 func check_event_conditions():
 	if Tools.get_color_fd() == "blue" and paused_timer == true:
 		paused_timer = false
+		la_suite = true
 	if time_elapsed == 20:
 		var alarm = get_tree().get_first_node_in_group("alarm")
 		alarm.stop()
@@ -131,7 +133,6 @@ func check_radio_conditions():
 	if time_elapsed >= 0 and time_elapsed <= 90:
 		BlueRadio.visible = true
 		if radio_value > 54 and radio_value < 64 :
-			paused_timer = true
 			play_radio_message("res://voice/day1/gov/ofgovmes.wav", "This is an official government message.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://voice/day1/gov/2. The mist.wav", "A mist has settled over Rock Valley. For your safety, please remain indoors.", 5, Tools.color_gov, "gouv", 6)
@@ -148,6 +149,7 @@ func check_radio_conditions():
 			play_radio_message("res://voice/day1/gov/7. The protective suit.wav", "After the rationing truck passes, your protective suit will be available for collection of your provisions.", 5, Tools.color_gov, "gouv", 8)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://voice/day1/gov/8. We will keep you informed.wav", "We will keep you informed as the situation evolves.", 5, Tools.color_gov,"gouv", 0)
+			paused_timer = true
 			BlueRadio.visible = false
 	if time_elapsed >= 100 and time_elapsed <= 130:
 		BlueRadio.visible = true
@@ -185,7 +187,7 @@ func check_radio_conditions():
 			Tools.event_journal_ok(2, false)
 			BlueRadio.visible = false
 	#belle radio ==>
-	if time_elapsed >= 50 and time_elapsed <= 110:
+	if time_elapsed >= 50 and time_elapsed <= 110 and la_suite == true:
 		GreenRadio.visible = true
 		if radio_value > 22 and radio_value < 32 :
 			play_radio_message("res://voice/day1/belle/goodevening.mp3", "Good evening everyone and welcome to this special edition of Belle Radio.",5, Tools.color_belle, "belle", 6)
@@ -240,7 +242,7 @@ func check_radio_conditions():
 			GreenRadio.visible = false
 
 	#Fanatic Radio ==>
-	if  time_elapsed >= 50 and time_elapsed <= 100:
+	if  time_elapsed >= 50 and time_elapsed <= 100 and la_suite == true:
 		RedRadio.visible = true
 		if radio_value > 66 and radio_value < 76 :
 			play_radio_message("res://voice/day1/complot/myfriend.mp3","My friends,",5, Tools.color_galleries, "fanatic", 4)

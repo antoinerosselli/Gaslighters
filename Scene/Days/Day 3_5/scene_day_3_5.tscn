@@ -407,6 +407,9 @@ affect_by_gravity = false
 can_move = false
 radioradar = false
 
+[node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
+visible = false
+
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_1y1h7")
 

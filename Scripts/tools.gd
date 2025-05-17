@@ -8,27 +8,29 @@ var lum: int = 2
 var color_me = Color(1, 0.54902, 0, 1)
 var color_gov = Color(0.117647, 0.564706, 1, 1)
 var color_galleries = Color(0.545098, 0, 0, 1)
-var color_belle = Color(1, 0.0784314, 0.576471, 1)
+var color_belle = Color(0.0, 0.8, 0.2, 1)
 var color_enigm = Color(0.686275, 0.933333, 0.933333, 1)
 var color_ami = Color(0.580392, 0, 0.827451, 1)
 var color_chaos = Color(0.67, 0.19, 0.54, 1)
 var daltonian_mode = false
 
+var TES : bool = false
+
 func toggle_daltonian_mode():
 	daltonian_mode = !daltonian_mode
 
 	if daltonian_mode:
-		color_me = Color(1, 1, 0.4, 1)
-		color_gov = Color(0.4, 1, 0.6, 1)
-		color_galleries = Color(0.8, 0.4, 0, 1)
-		color_belle = Color(1, 0.5, 0.7, 1)
-		color_enigm = Color(0.4, 0.8, 1, 1)
-		color_ami = Color(0.6, 0.6, 1, 1)
+		color_me = Color(0.8, 0.6, 0.0, 1)     
+		color_gov = Color(0.2, 0.6, 0.8, 1)        
+		color_galleries = Color(0.6, 0.3, 0.0, 1)   
+		color_belle = Color(0.0, 0.5, 0.5, 1)      
+		color_enigm = Color(0.5, 0.5, 0.7, 1)      
+		color_ami = Color(0.7, 0.5, 0.7, 1)         
 	else:
 		color_me = Color(1, 0.54902, 0, 1)
 		color_gov = Color(0.117647, 0.564706, 1, 1)
 		color_galleries = Color(0.545098, 0, 0, 1)
-		color_belle = Color(1, 0.0784314, 0.576471, 1)
+		color_belle = Color(0.0, 0.8, 0.2, 1)
 		color_enigm = Color(0.686275, 0.933333, 0.933333, 1)
 		color_ami = Color(0.580392, 0, 0.827451, 1)
 
@@ -229,6 +231,8 @@ func note_close(note, player):
 	
 func change_lesinputs(what_lesinputs):
 	var text_input = get_tree().get_first_node_in_group("lesinputs")
+	if text_input == null:
+		return
 	if what_lesinputs == "inventory":
 		text_input.text = "[ TAB ] Close"
 	if what_lesinputs == "player":

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://csapexuuln7nx"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://csapexuuln7nx"]
 
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="1_s4nag"]
 [ext_resource type="Texture2D" uid="uid://0qcfb5k6atwy" path="res://Sprite/checkon.png" id="2_28wia"]
@@ -12,6 +12,9 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5beo"]
 bg_color = Color(0.0718743, 0.0552195, 0.00920546, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5m4oq"]
+bg_color = Color(0.0705882, 0.054902, 0.00784314, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_veyya"]
 bg_color = Color(0.215686, 0.247059, 0.266667, 1)
@@ -47,6 +50,8 @@ CheckButton/styles/normal = null
 CheckButton/styles/pressed = null
 Label/fonts/font = ExtResource("1_s4nag")
 Panel/styles/panel = SubResource("StyleBoxFlat_g5beo")
+PopupMenu/colors/font_color = Color(0.882353, 0.478431, 0.145098, 1)
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_5m4oq")
 RichTextLabel/fonts/normal_font = ExtResource("1_s4nag")
 RichTextLabel/styles/background = SubResource("StyleBoxFlat_veyya")
 RichTextLabel/styles/fill = SubResource("StyleBoxFlat_veyya")
