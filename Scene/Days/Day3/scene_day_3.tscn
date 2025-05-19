@@ -4052,9 +4052,6 @@ material = SubResource("FogMaterial_8xnu0")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_otx7e")]
 transform = Transform3D(1, 0, 0, 0, 1.34781, 0, 0, 0, 1, -1.45214, -0.152284, 4.59948)
-affect_by_gravity = true
-can_move = true
-radioradar = true
 
 [node name="Inventory" parent="CharacterBody3D/CanvasLayer/Control" index="5"]
 visible = false
@@ -4066,19 +4063,19 @@ offset_right = 219.0
 offset_bottom = 23.0
 
 [node name="Event" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="0"]
-text = "> XAVTW"
+text = "> I must get out of here?"
 
 [node name="Event2" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="1"]
-text = "> HALSZUVF"
+text = "> I must get out of here"
 
 [node name="Event3" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="2"]
-text = "> LIXEG"
+text = "> I must"
 
 [node name="Event4" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="3"]
-text = "> ZHACBKLG"
+text = "> Get out"
 
 [node name="Event5" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="4"]
-text = "> ?erenegiV"
+text = "> getoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetoutgetout"
 
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_m7t7v")

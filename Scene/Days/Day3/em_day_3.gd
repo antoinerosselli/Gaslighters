@@ -114,6 +114,8 @@ func exe_radio_msg(fp, text, duration, color, sender, cooldown):
 func check_radio_conditions():
 	var _fm = Radio.getFrequency()
 	
+	var eventjournal = get_tree().get_first_node_in_group("eventjournal")
+	
 	if ones == true and _fm > 0 and _fm < 4:
 		if time_elapsed > gouv_time and msg_status == 0:
 			exe_radio_msg(".","This is an official government message.",5,Tools.color_gov,"gouv",6)
@@ -126,7 +128,7 @@ func check_radio_conditions():
 		if time_elapsed > gouv_time and msg_status == 2:
 			exe_radio_msg(".","Road Quarter will be cleared next. Local inhabitants, please ready yourself for our arrival.",9,Tools.color_gov,"gouv",10)
 			msg_status += 1
-			Tools.event_journal_ok(3, false)
+			Tools.event_journal_ok(3, !eventjournal.get_child(3).visible)
 		if time_elapsed > gouv_time and msg_status <= 3:
 			exe_radio_msg(".","We thank you for your cooperation.",5,Tools.color_gov,"gouv",6)
 			msg_status = 0

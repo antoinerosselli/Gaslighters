@@ -29,10 +29,15 @@ static var radio_1_loop_miners :int= 0
 static var radio_3_loop_gov :int= 0
 static var radio_3_loop_belle :int= 0
 static var radio_3_loop_miners :int= 0 # Faire un truc si divers était une erreur
+var postercypher = get_tree().get_nodes_in_group("vigenereposter")
+static var actualPoster = 3 #Full blur = 3, medium blur = 2, light blur = 1, full image = 0
+var posterTexture2 = load("res://Extern/FONT/FMFMbluir2.png")
+var posterTexture1 = load("res://Extern/FONT/FMFMbluir3.png")
+var posterTexture = load("res://Extern/FONT/FMFMbluir.png")
+var radioTrigger :bool= false
 
 func _process(delta: float) -> void:
 	if ones == false:
-		print("FALSE")
 		if get_tree().get_first_node_in_group("player").is_processing():
 			ones = true
 
@@ -73,6 +78,18 @@ func apply_specific_radio_sound(radio :Node3D, sound :AudioStream, loop :bool):
 	audio_channel.set_loop(loop)
 	audio_channel.play()
 
+func setPosterTexture(nb :int):
+	if nb > 2 or nb < 0 or actualPoster <= nb:
+		return
+	
+	actualPoster = nb 
+	
+	for poster in postercypher:
+		match nb:
+			2: poster.set_texture("posterTexture2")
+			1: poster.set_texture("posterTexture1")
+			0: poster.set_texture("posterTexture")
+
 func check_radio_conditions() -> void:
 	var _fm = Radio.getFrequency()
 	
@@ -82,6 +99,9 @@ func check_radio_conditions() -> void:
 	var radioDos = get_tree().get_root().find_child("Radiooo2-3", true, false)
 	var radioTres = get_tree().get_root().find_child("Radiooo2-4", true, false)
 	var radioQuatro = get_tree().get_root().find_child("Radiooo2-5", true, false)
+	
+	if Radio.getValue() == 50.13:
+		pass
 	
 	if _fm == 1:
 		# Radio 1
@@ -102,6 +122,8 @@ func check_radio_conditions() -> void:
 		# Radio 3
 		exe_radio_msg(radioDos, ".", "Do not believe the lies.", 5, Tools.color_gov, "gouv", 6,false)
 		Tools.event_journal_ok(1, false)
+		setPosterTexture(2)
+		
 	
 		# Radio 4
 		if time_elapsed > gouv_time_3 and radio_3_loop_gov == 0:
@@ -199,6 +221,7 @@ func check_radio_conditions() -> void:
 		if time_elapsed > miners_time_3 and radio_3_loop_miners <= 3:
 			exe_radio_msg(radioTres, ".", "Wake up.", 5, Tools.color_galleries, "miners3", 6,false)
 			Tools.event_journal_ok(3, false)
+			setPosterTexture(1)
 			radio_3_loop_miners=0
 		
 		# Radio 5
@@ -210,5 +233,6 @@ func check_radio_conditions() -> void:
 		apply_specific_radio_sound(radioTres, load("res://Music&Sound/Echexe2.mp3") as AudioStream, true)
 		apply_specific_radio_sound(radioQuatro, load("res://Music&Sound/Echexe2.mp3") as AudioStream, true)
 		Tools.event_journal_ok(4, false)
+		setPosterTexture(0)
 		
 		

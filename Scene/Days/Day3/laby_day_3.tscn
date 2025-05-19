@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://do4vqec45hk5" path="res://Prefab/courant.tscn" id="16_cb2hl"]
 [ext_resource type="Script" uid="uid://kp4yojuq0hqv" path="res://Scripts/front_door_camera.gd" id="16_oea12"]
 [ext_resource type="Script" uid="uid://5jxmubd5wyct" path="res://Scripts/radiooo.gd" id="19_iucim"]
-[ext_resource type="Texture2D" uid="uid://cjqwwk8cqcsjh" path="res://Extern/FONT/FMFM.png" id="19_o6nip"]
 [ext_resource type="Texture2D" uid="uid://chncdhii6c5mg" path="res://Extern/Home kit 2/Textures/Table/Table_256.png" id="20_a7hrb"]
 [ext_resource type="AudioStream" uid="uid://bphh5sgkcrb6k" path="res://Music&Sound/NewStatic.wav" id="20_gn725"]
 [ext_resource type="Texture2D" uid="uid://d4cvdnvicq4d7" path="res://Extern/Abandoned_House/Abandoned_House_Piso_cocina.jpg" id="21_ppo0k"]
@@ -50,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://bvrwgldyx3bqv" path="res://Extern/Abandoned_House/Textures/Alfombra1.png" id="32_1yeo1"]
 [ext_resource type="FontFile" uid="uid://c4slo7siafa6k" path="res://Prefab/Alarme/alarm clock.ttf" id="32_qr2dp"]
 [ext_resource type="Script" uid="uid://beeatpebd062u" path="res://Scripts/label_3d.gd" id="33_2o26q"]
+[ext_resource type="Texture2D" uid="uid://b7dp3tf6ajxlg" path="res://Extern/FONT/FMFMbluir.png" id="33_dnhxg"]
 [ext_resource type="Texture2D" uid="uid://dr7lti7324giv" path="res://Extern/Abandoned_House/Textures/Alfombra2.png" id="33_okyb0"]
 [ext_resource type="Texture2D" uid="uid://dcwuxy4f6p0di" path="res://Extern/textures/WallLong.png" id="34_l2nki"]
 [ext_resource type="Texture2D" uid="uid://d0dyn2atwdw83" path="res://Extern/Rework Appart/Balkan/Prop Textures/Painting 1.png" id="35_xl6xg"]
@@ -4647,10 +4647,10 @@ transform = Transform3D(1.0205, 0, 0.0412816, 0, 0.863311, 0, -0.0293248, 0, 1.4
 modulate = Color(0.572988, 0.572988, 0.572988, 1)
 texture = SubResource("ViewportTexture_ixtd2")
 
-[node name="Sprite3D2" type="Sprite3D" parent="appartement"]
+[node name="Sprite3D2" type="Sprite3D" parent="appartement" groups=["vigenereposter"]]
 transform = Transform3D(-0.000821644, 0, -1.01001, 0, 0.178834, 0, 0.118579, 0, -0.00699843, 15.7876, 0.348872, -1.54929)
 modulate = Color(0.462745, 0.4, 0.352941, 1)
-texture = ExtResource("19_o6nip")
+texture = ExtResource("33_dnhxg")
 
 [node name="TableCorridor2" type="MeshInstance3D" parent="appartement"]
 transform = Transform3D(0.158193, 0, 0, 0, 0.3, 0, 0, 0, 0.198785, -4.86071, -1.83448, 6.62458)
@@ -6125,36 +6125,35 @@ offset_left = -4.0
 offset_top = 40.0
 offset_right = 556.0
 offset_bottom = 88.0
-text = "> Is it a code ? : Rczij ocz gdvzo wgzzo, ocz dmdi ned vaapomn, ozij tp rdffvmdsj oz nvodmo ja ocz gziny wzgjr
-"
+text = "> XAVTW"
 
 [node name="Event2" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="1"]
 offset_left = -4.0
 offset_top = 96.0
 offset_right = 527.0
 offset_bottom = 120.0
-text = "> Ration trucks have problems"
+text = "> HALSZUVF"
 
 [node name="Event3" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="2"]
 offset_left = -4.0
 offset_top = 136.0
 offset_right = 564.0
 offset_bottom = 160.0
-text = "> Dangerous individuals still roaming the valley"
+text = "> LIXEG"
 
 [node name="Event4" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="3"]
 offset_left = -4.0
 offset_top = 176.0
 offset_right = 564.0
 offset_bottom = 224.0
-text = "> Religion and minors have been in conflict for a long time"
+text = "> ZHACBKLG"
 
 [node name="Event5" parent="CharacterBody3D/CanvasLayer/Control/Inventory/Event" index="4"]
 offset_left = -4.0
 offset_top = 232.0
 offset_right = 441.0
 offset_bottom = 256.0
-text = "> Religious are back"
+text = "> ?erenegiV"
 
 [node name="ColorRect" parent="CharacterBody3D/transition" index="0"]
 material = SubResource("ShaderMaterial_n5y1d")
@@ -8334,10 +8333,10 @@ transform = Transform3D(1.0205, 0, 0.0412816, 0, 0.863311, 0, -0.0293248, 0, 1.4
 modulate = Color(0.572988, 0.572988, 0.572988, 1)
 texture = SubResource("ViewportTexture_dlbdc")
 
-[node name="Sprite3D2" type="Sprite3D" parent="Appartement_curse3"]
+[node name="Sprite3D2" type="Sprite3D" parent="Appartement_curse3" groups=["vigenereposter"]]
 transform = Transform3D(-0.000821644, 0, -1.01001, 0, 0.178834, 0, 0.118579, 0, -0.00699843, 15.7876, 0.348872, -1.54929)
 modulate = Color(0.462745, 0.4, 0.352941, 1)
-texture = ExtResource("19_o6nip")
+texture = ExtResource("33_dnhxg")
 
 [node name="TableCorridor2" type="MeshInstance3D" parent="Appartement_curse3"]
 transform = Transform3D(0.158193, 0, 0, 0, 0.3, 0, 0, 0, 0.198785, -4.86071, -1.83448, 6.62458)
@@ -10172,10 +10171,10 @@ transform = Transform3D(1.0205, 0, 0.0412816, 0, 0.863311, 0, -0.0293248, 0, 1.4
 modulate = Color(0.572988, 0.572988, 0.572988, 1)
 texture = SubResource("ViewportTexture_dlbdc")
 
-[node name="Sprite3D2" type="Sprite3D" parent="Appartement_curse4"]
+[node name="Sprite3D2" type="Sprite3D" parent="Appartement_curse4" groups=["vigenereposter"]]
 transform = Transform3D(-0.000821644, 0, -1.01001, 0, 0.178834, 0, 0.118579, 0, -0.00699843, 15.7876, 0.348872, -1.54929)
 modulate = Color(0.462745, 0.4, 0.352941, 1)
-texture = ExtResource("19_o6nip")
+texture = ExtResource("33_dnhxg")
 
 [node name="TableCorridor2" type="MeshInstance3D" parent="Appartement_curse4"]
 transform = Transform3D(0.158193, 0, 0, 0, 0.3, 0, 0, 0, 0.198785, -4.86071, -1.83448, 6.62458)
@@ -12260,10 +12259,11 @@ transform = Transform3D(1.0205, 0, 0.0412816, 0, 0.863311, 0, -0.0293248, 0, 1.4
 modulate = Color(0.572988, 0.572988, 0.572988, 1)
 texture = SubResource("ViewportTexture_dlbdc")
 
-[node name="Sprite3D2" type="Sprite3D" parent="Appartement_curse5"]
+[node name="Sprite3D2" type="Sprite3D" parent="Appartement_curse5" groups=["vigenereposter"]]
 transform = Transform3D(-0.000821644, 0, -1.01001, 0, 0.178834, 0, 0.118579, 0, -0.00699843, 15.7876, 0.348872, -1.54929)
 modulate = Color(0.462745, 0.4, 0.352941, 1)
-texture = ExtResource("19_o6nip")
+texture_filter = 1
+texture = ExtResource("33_dnhxg")
 
 [node name="TableCorridor2" type="MeshInstance3D" parent="Appartement_curse5"]
 transform = Transform3D(0.158193, 0, 0, 0, 0.3, 0, 0, 0, 0.198785, -4.86071, -1.83448, 6.62458)

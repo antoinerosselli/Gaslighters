@@ -11,6 +11,10 @@ func _ready():
 	player.set_physics_process(false)
 	Radio.setDisplay(2, "FM")
 	Radio.setDisplay(1, "0.00")
+	var postercypher = get_tree().get_nodes_in_group("vigenereposter")
+	var texture3 = load("res://Extern/FONT/FMFMbluir1.png")
+	for poster in postercypher:
+		poster.set_texture(texture3)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and is_awake == false:
