@@ -1,6 +1,7 @@
 extends Node3D
 
 var is_awake :bool= false
+@onready var audio_stream_player = $AudioStreamPlayer
 
 func _ready():
 	get_tree().paused = false
@@ -26,3 +27,7 @@ func _process(_delta):
 		player.set_process(true)
 		player.set_physics_process(true)
 		set_process(false)
+
+
+func _on_audio_stream_player_finished():
+	audio_stream_player.play()

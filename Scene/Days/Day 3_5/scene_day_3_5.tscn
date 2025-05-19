@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dqweg357g3y3f"]
+[gd_scene load_steps=25 format=3 uid="uid://dqweg357g3y3f"]
 
 [ext_resource type="Script" uid="uid://ciaot05myvu11" path="res://Scene/Days/Day 3_5/scene_day_3_5.gd" id="1_fy7iv"]
 [ext_resource type="Texture2D" uid="uid://cdcr1dvyfigu" path="res://Extern/Abandoned_House/Abandoned_House_road.jpg" id="1_vk00q"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://qorymwsmxpnp" path="res://Scene/Days/Day 3_5/em_day_3_5.gd" id="8_j0j8q"]
 [ext_resource type="PackedScene" uid="uid://chku0ld212eo0" path="res://Extern/NEWMENU/scene.gltf" id="10_geovp"]
 [ext_resource type="Script" uid="uid://ne7hn2xxa0u1" path="res://Scripts/object.gd" id="11_5vafd"]
+[ext_resource type="AudioStream" uid="uid://u50ku75lasxa" path="res://Music&Sound/catchy.wav" id="13_1y1h7"]
+[ext_resource type="Script" uid="uid://0j6dqea1va6i" path="res://Scene/Days/Day 3_5/audio_stream_player.gd" id="14_xgyj4"]
 
 [sub_resource type="Environment" id="Environment_y7510"]
 background_energy_multiplier = 0.0
@@ -675,7 +677,15 @@ script_trait = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_Scene/StaticBody3D"]
 shape = SubResource("BoxShape3D_f5v1x")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_1y1h7")
+volume_db = -13.928
+autoplay = true
+bus = &"Music"
+script = ExtResource("14_xgyj4")
+
 [connection signal="timeout" from="manager/Timer" to="manager" method="_on_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [editable path="CharacterBody3D"]
 [editable path="CharacterBody3D/transition"]

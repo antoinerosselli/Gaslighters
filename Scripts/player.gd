@@ -14,6 +14,7 @@ extends CharacterBody3D
 @onready var detect_value = $CanvasLayer/eyecontrol/TextureProgressBar
 @onready var screamer_control = $CanvasLayer/ScreamerControl
 @onready var screamer_sound = $CanvasLayer/ScreamerControl/AudioStreamPlayer3D
+@onready var scream = false
 @onready var control = $CanvasLayer/Control
 @onready var color_rect = $CanvasLayer/ColorRect
 
@@ -177,8 +178,10 @@ func _on_timer_timeout():
 
 func detect():
 	detect_value.value += 34
-	if detect_value.value >= 100:
+	if detect_value.value >= 100 && scream == false:
+		detect_value = 0
 		screamer_control.visible = true
+		scream = true
 		screamer_sound.play()
 		
 func _on_audio_stream_player_3d_finished():
@@ -187,6 +190,7 @@ func _on_audio_stream_player_3d_finished():
 	var ani =  get_tree().get_first_node_in_group("animamanager")
 	evman.time_elapsed = 223
 	detect_value.value = 0
+	scream = false
 	ani.play("RESET")
 	
 func unstuck():

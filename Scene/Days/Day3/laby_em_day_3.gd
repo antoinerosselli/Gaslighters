@@ -37,7 +37,7 @@ var posterTexture = load("res://Extern/FONT/FMFMbluir.png")
 var radioTrigger :bool= false
 
 func _ready():
-	var postercypher = get_tree().get_nodes_in_group("vigenereposter")
+	postercypher = get_tree().get_nodes_in_group("vigenereposter")
 
 
 func _process(delta: float) -> void:
@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	time_elapsed += 1
-	print(time_elapsed)
+	(time_elapsed)
 	check_radio_conditions()
 	
 
@@ -79,7 +79,7 @@ func apply_specific_radio_sound(radio :Node3D, sound :AudioStream, loop :bool):
 	var radio_sound = radio.find_child("AudioStreamPlayer3D", true, false)
 	var audio_channel = radio_sound.get_child(0)
 	audio_channel.set_stream(sound)
-	audio_channel.set_loop(loop)
+	##audio_channel.set_loop(loop)
 	audio_channel.play()
 
 func setPosterTexture(nb :int):
@@ -90,9 +90,9 @@ func setPosterTexture(nb :int):
 	
 	for poster in postercypher:
 		match nb:
-			2: poster.set_texture("posterTexture2")
-			1: poster.set_texture("posterTexture1")
-			0: poster.set_texture("posterTexture")
+			2: poster.set_texture(posterTexture2)
+			1: poster.set_texture(posterTexture1)
+			0: poster.set_texture(posterTexture)
 
 func check_radio_conditions() -> void:
 	var _fm = Radio.getFrequency()

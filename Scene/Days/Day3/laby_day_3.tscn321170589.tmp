@@ -1,4 +1,4 @@
-[gd_scene load_steps=688 format=4 uid="uid://bo3d371qyuk7i"]
+[gd_scene load_steps=687 format=4 uid="uid://bo3d371qyuk7i"]
 
 [ext_resource type="Script" uid="uid://dayyw5emtu2wj" path="res://Scene/Days/Day3/laby_day_3.gd" id="1_n5y1d"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_7h1jf"]
@@ -162,7 +162,6 @@
 [ext_resource type="Texture2D" uid="uid://b2xc7610l05si" path="res://Sprite/3.png" id="159_dnhxg"]
 [ext_resource type="Script" uid="uid://dnteu55cbfu7b" path="res://Scene/Days/Day3/laby_em_day_3.gd" id="160_dnhxg"]
 [ext_resource type="AudioStream" uid="uid://bt4l2718iwuku" path="res://Music&Sound/mien (1).wav" id="161_6j67n"]
-[ext_resource type="Script" uid="uid://exy78lb2folq" path="res://Scene/Days/Day3/audio_stream_player.gd" id="163_ojnkb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unvvy"]
 albedo_color = Color(1, 0.619608, 0.113725, 1)
@@ -14417,7 +14416,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 60.344
 stream = ExtResource("161_6j67n")
 volume_db = -6.5
 autoplay = true
-script = ExtResource("163_ojnkb")
 
 [connection signal="finished" from="appartement/RadioObj1/Radiooo2-1/AudioStreamPlayer3D" to="appartement/RadioObj1/Radiooo2-1" method="_on_audio_stream_player_3d_finished"]
 [connection signal="timeout" from="appartement/Alarme/Timer" to="appartement/Alarme" method="_on_timer_timeout"]
@@ -14445,7 +14443,6 @@ script = ExtResource("163_ojnkb")
 [connection signal="body_entered" from="SpacialConnection/4toS2/Area3D" to="SpacialConnection/4toS2/Area3D/Teleporter" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="SpacialConnection/1to3/Area3D" to="SpacialConnection/1to3/Area3D/Teleporter" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="SpacialConnection/3to1/Sprite3D/Area3D" to="SpacialConnection/3to1/Sprite3D/Area3D/Teleporter" method="_on_area_3d_body_entered"]
-[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [editable path="appartement/Lamp1"]
 [editable path="appartement/frontdoor"]

@@ -4,7 +4,7 @@ extends Control
 @onready var rebind_keys_panel = $RebindKeys_panel
 
 func _ready():
-	print("OPTION READY")
+	("OPTION READY")
 	option_button.selected = Tools.lum
 	change_lum()
 	

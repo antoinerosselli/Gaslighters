@@ -23,7 +23,7 @@ func _ready():
 			level = content[0].to_int() 
 		savefile.close()  
 	else:
-		print("Failed to open file:", savefile_path)
+		("Failed to open file:", savefile_path)
 	
 func save_level(nlevel):
 	var savefile = FileAccess.open(savefile_path, FileAccess.WRITE)
@@ -31,7 +31,7 @@ func save_level(nlevel):
 		savefile.store_string(str(nlevel))
 		savefile.close()
 	else:
-		print("Failed to open file for writing:", savefile_path)
+		("Failed to open file for writing:", savefile_path)
 
 func save_radio():
 	var savefile = FileAccess.open(radiofile_path, FileAccess.WRITE)
@@ -39,7 +39,7 @@ func save_radio():
 		savefile.store_string("G" + str(RadioGov) + "B" + str(RadioBelle) + "M" + str(RadioGalleries))
 		savefile.close()
 	else:
-		print("Failed to open file for writing:", savefile_path)
+		("Failed to open file for writing:", savefile_path)
 
 func actual_level() -> int:
 	return level
