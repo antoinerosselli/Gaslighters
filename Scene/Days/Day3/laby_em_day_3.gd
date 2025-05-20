@@ -21,6 +21,7 @@ var ones: bool = false
 
 #TIMER
 var time_elapsed = 0
+var timeLogic :int= 0
 
 #Laby ress
 static var radio_1_loop_gov :int= 0
@@ -28,7 +29,7 @@ static var radio_1_loop_belle :int= 0
 static var radio_1_loop_miners :int= 0
 static var radio_3_loop_gov :int= 0
 static var radio_3_loop_belle :int= 0
-static var radio_3_loop_miners :int= 0 # Faire un truc si divers était une erreur
+static var radio_3_loop_miners :int= 0
 var postercypher = get_tree().get_nodes_in_group("vigenereposter")
 static var actualPoster = 3 #Full blur = 3, medium blur = 2, light blur = 1, full image = 0
 var posterTexture2 = load("res://Extern/FONT/FMFMbluir2.png")
@@ -101,7 +102,11 @@ func check_radio_conditions() -> void:
 	var radioQuatro = get_tree().get_root().find_child("Radiooo2-5", true, false)
 	
 	if Radio.getValue() == 50.13:
-		pass
+		timeLogic += 1
+		if timeLogic >= 5:
+			secrets_unfolded(radioDos)
+	elif timeLogic < 100:
+		timeLogic = 0
 	
 	if _fm == 1:
 		# Radio 1
@@ -235,4 +240,8 @@ func check_radio_conditions() -> void:
 		Tools.event_journal_ok(4, false)
 		setPosterTexture(0)
 		
-		
+
+func secrets_unfolded(radio :Node3D):
+	SteamControl.unlock_achievement("ACH_MYSTERY_LABY3")
+	timeLogic = 100
+	exe_radio_msg(radio, ".", "We are not checkmated.",0,Tools.color_me, "Devs", 0, false)

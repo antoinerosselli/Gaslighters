@@ -42,9 +42,9 @@ func _process(_delta):
 		is_on = false
 
 func interact():
+	var player = Tools.get_player()
 	if activate == true:
 		if is_text == true:
-			var player = Tools.get_player()
 			player.dialogues = texts
 		if depot == true and Tools.get_player().ptich.visible == true:
 			Data.add_spots()
@@ -69,7 +69,6 @@ func interact():
 			Tools.sound_now(self, load("res://Music&Sound/sound/paperopen.mp3") as AudioStreamMP3)
 			Tools.notespawn(note)
 		if food == true:
-			var player = Tools.get_player()
 			if player.sanity == 100:
 				return
 			player.sanity += 10
@@ -80,3 +79,4 @@ func interact():
 			UniqueTrait.unique(item_name)
 		if pickable == true:
 			self.queue_free()
+		

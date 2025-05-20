@@ -43,6 +43,8 @@ var can_interact:bool = false
 var crouch:bool = false
 
 var item
+var storeItemUsed :StaticBody3D
+var isInteracting :bool= false
 
 func _ready():
 	Tools.change_lesinputs("player")
@@ -111,8 +113,23 @@ func _physics_process(delta):
 			
 		if Input.is_action_just_pressed("interact") and can_interact == true:
 			item.interact()
+			storeItemUsed = item
 			item = null
 			can_interact = false
+
+func is_interacting_with() -> String:
+	if storeItemUsed:
+		return storeItemUsed.name
+	else:
+		return "NoItem"
+
+func is_interacting() -> bool:
+	return isInteracting
+
+func set_interaction(status :bool, item: StaticBody3D = null):
+	isInteracting = status
+	storeItemUsed = item
+	print("Interaction status : "+str(status)+" using item "+item.name)
 
 func camera_joystick():
 	var input_dir:Vector2 = Vector2(

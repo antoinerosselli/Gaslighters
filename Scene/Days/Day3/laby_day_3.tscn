@@ -158,7 +158,7 @@
 [ext_resource type="Shader" uid="uid://b801gs84w2k41" path="res://Shader/menu3D.gdshader" id="156_dnhxg"]
 [ext_resource type="AudioStream" uid="uid://bw85gi8u22fka" path="res://Music&Sound/sound/space-chords-loop-310493.mp3" id="157_6j67n"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="158_ir87s"]
-[ext_resource type="Texture2D" uid="uid://b2xc7610l05si" path="res://Sprite/3.png" id="159_dnhxg"]
+[ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="159_dnhxg"]
 [ext_resource type="Script" uid="uid://dnteu55cbfu7b" path="res://Scene/Days/Day3/laby_em_day_3.gd" id="160_dnhxg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_unvvy"]

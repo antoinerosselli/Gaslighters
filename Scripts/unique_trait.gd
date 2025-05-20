@@ -136,6 +136,7 @@ func unique(object_name):
 func _radio(to_use :Camera3D):
 	var radio_camera = to_use
 	var player = Tools.get_player()
+	player.set_interaction(true, to_use.get_parent().get_parent())
 	Tools.change_lesinputs("radio")
 	var player_camera = player.get_node("Camera3D")
 	var player_icon = player.get_node("CanvasLayer/Control/Icon")
