@@ -27,6 +27,7 @@ func radio_usage():
 		var player_camera = player.get_node("Camera3D")
 		var player_icon = player.get_node("CanvasLayer/Control/Icon")
 		var player_use = player.get_node("CanvasLayer/Control/Label")
+		player.set_interaction(false, null)
 		Tools.change_lesinputs("player")
 		player_icon.visible = true
 		player_use.visible = true
