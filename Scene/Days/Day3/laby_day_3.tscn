@@ -3232,9 +3232,6 @@ albedo_texture = ExtResource("134_a0d0g")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mtms"]
 albedo_texture = ExtResource("134_a0d0g")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kue6p"]
-size = Vector3(0.270615, 0.558823, 0.282654)
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_6j67n"]
 viewport_path = NodePath("Appartement_curse2/SubViewport")
 
@@ -4290,6 +4287,9 @@ shadow_mesh = SubResource("ArrayMesh_jnh22")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7shbu"]
 albedo_texture = ExtResource("31_a117t")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kue6p"]
+size = Vector3(0.270615, 0.558823, 0.282654)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_e648t"]
 viewport_path = NodePath("SpacialConnection/1to2")
@@ -8101,10 +8101,6 @@ script_trait = true
 [node name="Sketchfab_Scene" parent="Appartement_curse2/lavedepot/ptichptich" groups=["ptichptich_depose"] instance=ExtResource("135_8tdcn")]
 transform = Transform3D(-0.0183229, 0, 0.196896, 0, 0.171401, 0, -0.178833, 0, -0.0201736, -0.00468999, -0.329772, 0.0214319)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse2/lavedepot/ptichptich"]
-transform = Transform3D(1.1892, 0, 0, 0, 1.1892, 0, 0, 0, 1.1892, 0.00131371, -0.0430367, 0.0232706)
-shape = SubResource("BoxShape3D_kue6p")
-
 [node name="TruckSpawner" parent="Appartement_curse2" instance=ExtResource("106_3xuwn")]
 transform = Transform3D(-0.0194591, 0, 0.999811, 0, 1, 0, -0.999811, 0, -0.0194591, -41.9776, -7.77782, 39.6249)
 truck = ExtResource("107_0kv6t")
@@ -9885,10 +9881,6 @@ skeleton = NodePath("")
 [node name="Spray Bottle_03 - Default_0" type="MeshInstance3D" parent="Appartement_curse3/lavedepot/ptichptich/Sketchfab_Scene/Sketchfab_model/1e98a55fd8d443d4b2580473322ae862_fbx/RootNode/Spray Bottle"]
 mesh = SubResource("ArrayMesh_wa8pn")
 skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Appartement_curse3/lavedepot/ptichptich"]
-transform = Transform3D(1.1892, 0, 0, 0, 1.1892, 0, 0, 0, 1.1892, 0.00131371, -0.0430367, 0.0232706)
-shape = SubResource("BoxShape3D_kue6p")
 
 [node name="TruckSpawner" parent="Appartement_curse3" instance=ExtResource("106_3xuwn")]
 transform = Transform3D(-0.0194591, 0, 0.999811, 0, 1, 0, -0.999811, 0, -0.0194591, -41.9776, -7.77782, 39.6249)

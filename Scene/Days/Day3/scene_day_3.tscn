@@ -1,4 +1,4 @@
-[gd_scene load_steps=384 format=4 uid="uid://c6wf03uyto0an"]
+[gd_scene load_steps=383 format=4 uid="uid://c6wf03uyto0an"]
 
 [ext_resource type="Texture2D" uid="uid://cbks0hwngu87l" path="res://Extern/Home Furniture Kit 1/Textures/Kitchen Aspirator.png" id="1_bv575"]
 [ext_resource type="Script" uid="uid://bqd5lnv7nmd1l" path="res://Scene/Days/Day3/scene_day_3.gd" id="1_vv8y6"]
@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://do4vqec45hk5" path="res://Prefab/courant.tscn" id="17_2r2b7"]
 [ext_resource type="Script" uid="uid://5jxmubd5wyct" path="res://Scripts/radiooo.gd" id="18_3tp13"]
 [ext_resource type="Texture2D" uid="uid://d4cvdnvicq4d7" path="res://Extern/Abandoned_House/Abandoned_House_Piso_cocina.jpg" id="19_c2yy3"]
-[ext_resource type="AudioStream" uid="uid://bphh5sgkcrb6k" path="res://Music&Sound/NewStatic.wav" id="19_vv8y6"]
 [ext_resource type="Texture2D" uid="uid://dl341y0w6e2df" path="res://Extern/model-assignmentradio/source/v5/未命名.png" id="20_u8g08"]
 [ext_resource type="Texture2D" uid="uid://qunejf5xui6j" path="res://Extern/model-assignmentradio/source/v5/bady-2.png" id="21_ch4nb"]
 [ext_resource type="Script" uid="uid://cm7p8lskx81hx" path="res://Scripts/node_of_knob.gd" id="22_uhn27"]
@@ -2258,7 +2257,6 @@ fov = 69.6711
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="appartement/RadioObj/Radiooo" groups=["radio_sound"]]
 transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, 0, 0, 1, -0.0273314, 0.165519, -0.0482235)
-stream = ExtResource("19_vv8y6")
 volume_db = -13.856
 unit_size = 1.0
 autoplay = true

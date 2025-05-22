@@ -105,7 +105,8 @@ func check_radio_conditions() -> void:
 	
 	if Tools.get_player().is_interacting_with():
 		currRadio = Tools.get_player().is_interacting_with().get_child(0)
-	
+	if currRadio:
+		print("CurrRadio = "+currRadio.name)
 	if Radio.getValue() == 50.13:
 		timeLogic += 1
 		if timeLogic >= 5:
