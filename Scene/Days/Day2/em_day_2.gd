@@ -80,13 +80,11 @@ func check_event_conditions():
 		Tools.expe_status(true)
 		Tools.timer_event_action(false)
 		expe_dispo = false
-	if time_elapsed >= 223 and UniqueTrait.elec == false and letterletter == true and animation_player.get_current_animation() != "REDEVENT":
+	if time_elapsed >= 180 and UniqueTrait.elec == false and letterletter == true and animation_player.get_current_animation() != "REDEVENT":
 		activate_depots()
 		Tools.new_info("they are coming")
 		SteamControl.unlock_achievement("ACH_SUIT")
 		animation_player.play("REDEVENT")
-	if time_elapsed == 500:
-		Tools.eotd()
 
 #RADIO
 func play_radio_message(file_path, text, duration, color, sender, what_cd):
@@ -144,109 +142,109 @@ func check_radio_conditions():
 	if time_elapsed >= 10 and time_elapsed <= 60:
 		BlueRadio.visible = true
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://voice/day2/gov/OffGovMessTrue.ogg", "This is an official government message.", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day2/gov/OffGovMessTrue.ogg", "This is an official government message.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day2/gov/mistovernight.ogg", "The mist has intensified overnight.", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day2/gov/mistovernight.ogg", "The mist has intensified overnight.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day2/gov/avoidopenwindowsordoor.ogg", "For your safety, avoid opening any windows or doors.", 5, Tools.gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day2/gov/avoidopenwindowsordoor.ogg", "For your safety, avoid opening any windows or doors.", 5, Tools.color_gov,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			BlueRadio.visible = false
-			play_radio_message("res://voice/day2/gov/Curfeweffect.ogg", "A curfew is now in effect. Movement is strictly prohibited without prior authorization", 5, Tools.gouv_color, "gouv", 0)
+			play_radio_message("res://voice/day2/gov/Curfeweffect.ogg", "A curfew is now in effect. Movement is strictly prohibited without prior authorization", 5, Tools.color_gov, "gouv", 0)
 	if time_elapsed >= 80 and time_elapsed <= 125:
 		BlueRadio.visible = true
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://voice/day2/gov/OffGovMessTrue.ogg", "This is an official government message !", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day2/gov/OffGovMessTrue.ogg", "This is an official government message !", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day2/gov/evacuationteam.ogg", "Evacuation teams are continuing their mission.", 5, Tools.gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day2/gov/evacuationteam.ogg", "Evacuation teams are continuing their mission.", 5, Tools.color_gov,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/gov/OldminersSecureToday.ogg", "Residents of the Old Miners’ Quarter will be secured today.", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day2/gov/OldminersSecureToday.ogg", "Residents of the Old Miners’ Quarter will be secured today.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			BlueRadio.visible = false
-			play_radio_message("res://voice/day2/gov/PrepareandRadio.ogg", "Prepare your personal belongings and remain close to your radio.", 5, Tools.gouv_color,"gouv", 0)
+			play_radio_message("res://voice/day2/gov/PrepareandRadio.ogg", "Prepare your personal belongings and remain close to your radio.", 5, Tools.color_gov,"gouv", 0)
 	if time_elapsed >= 145 and time_elapsed <= 190:
 		BlueRadio.visible = true
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://voice/day2/gov/OffGovMessTrue.ogg", "This is an official government message ,", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day2/gov/OffGovMessTrue.ogg", "This is an official government message ,", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day2/gov/GroupOldMines.ogg", "A group of individuals was intercepted in the tunnels of the old mines.", 5, Tools.gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day2/gov/GroupOldMines.ogg", "A group of individuals was intercepted in the tunnels of the old mines.", 5, Tools.color_gov,"gouv", 6)
 			Tools.event_journal_ok(2,false)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day2/gov/SomeEscape.ogg", "Some of them may have escaped.", 5, Tools.gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day2/gov/SomeEscape.ogg", "Some of them may have escaped.", 5, Tools.color_gov,"gouv", 6)
 			Tools.event_journal_ok(2,false)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > belle_time:
 			BlueRadio.visible = false
-			play_radio_message("res://voice/day2/gov/PleaseContactAuth.ogg", " If you have any information regarding their possible whereabouts, please contact the appropriate authorities.", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day2/gov/PleaseContactAuth.ogg", " If you have any information regarding their possible whereabouts, please contact the appropriate authorities.", 5, Tools.color_gov, "gouv", 6)
 	if time_elapsed >= 210 and time_elapsed <= 255:
 		BlueRadio.visible = true
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://voice/day2/gov/OffGovMessTrue.ogg", "This is an official government message !", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day2/gov/OffGovMessTrue.ogg", "This is an official government message !", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day2/gov/TrucksIssues.ogg", "Our rationing truck has encountered a technical issue.", 5, Tools.gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day2/gov/TrucksIssues.ogg", "Our rationing truck has encountered a technical issue.", 5, Tools.color_gov,"gouv", 6)
 			Tools.event_journal_ok(1,false)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/gov/DeliverySuspend.ogg", "Deliveries will be suspended in certain districts over the coming days.", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day2/gov/DeliverySuspend.ogg", "Deliveries will be suspended in certain districts over the coming days.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			BlueRadio.visible = false
-			play_radio_message("res://voice/day2/gov/WaterProblem.ogg", "Rest assured that the water services teams are working daily to ensure no one is left without access to water.", 5, Tools.gouv_color,"gouv", 0)
+			play_radio_message("res://voice/day2/gov/WaterProblem.ogg", "Rest assured that the water services teams are working daily to ensure no one is left without access to water.", 5, Tools.color_gov,"gouv", 0)
 
 	#belle radio ==>
 	if time_elapsed >= 25 and time_elapsed <= 75:
 		GreenRadio.visible = true
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://voice/day2/belle/goodeveningbelle.ogg", "Good evening everyone, this is Belle.", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day2/belle/goodeveningbelle.ogg", "Good evening everyone, this is Belle.", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/miststillhere.ogg", "The mist is still here.", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day2/belle/miststillhere.ogg", "The mist is still here.", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/mistheavier.ogg", "It’s getting thicker… It feels heavier today. Maybe you feel it too, wherever you are.", 5, Tools.belle_color,"belle", 6)
+			play_radio_message("res://voice/day2/belle/mistheavier.ogg", "It’s getting thicker… It feels heavier today. Maybe you feel it too, wherever you are.", 5, Tools.color_belle,"belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/curfew.ogg", "The government has announced a full curfew.", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day2/belle/curfew.ogg", "The government has announced a full curfew.", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
 			GreenRadio.visible = false
-			play_radio_message("res://voice/day2/belle/speakingfromstudio.ogg", " I’m speaking to you from my studio, with the doors shut, just like you, I imagine.", 5, Tools.belle_color, "belle", 0)
+			play_radio_message("res://voice/day2/belle/speakingfromstudio.ogg", " I’m speaking to you from my studio, with the doors shut, just like you, I imagine.", 5, Tools.color_belle, "belle", 0)
 	if time_elapsed >= 115 and time_elapsed <= 170:
 		GreenRadio.visible = true
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://voice/day2/belle/thisisbelle.ogg", "This is Belle ,", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day2/belle/thisisbelle.ogg", "This is Belle ,", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/missrationtruckquarter.ogg", "One thing is certain: the ration trucks haven’t reached several districts.", 5, Tools.belle_color,"belle", 6)
+			play_radio_message("res://voice/day2/belle/missrationtruckquarter.ogg", "One thing is certain: the ration trucks haven’t reached several districts.", 5, Tools.color_belle,"belle", 6)
 			Tools.event_journal_ok(1,false)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/letmeknow.ogg", "I’m still waiting too. If you’re in the same situation, let me know.", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day2/belle/letmeknow.ogg", "I’m still waiting too. If you’re in the same situation, let me know.", 5, Tools.color_belle, "belle", 6)
 			Tools.event_journal_ok(1,false)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/stayintouch.ogg", "We have to stay in touch.", 5, Tools.belle_color,"belle", 6)
+			play_radio_message("res://voice/day2/belle/stayintouch.ogg", "We have to stay in touch.", 5, Tools.color_belle,"belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
 			GreenRadio.visible = false
-			play_radio_message("res://voice/day2/belle/holdon.ogg", "Hold on. I’m staying with you.", 5, Tools.belle_color,"belle", 0)
+			play_radio_message("res://voice/day2/belle/holdon.ogg", "Hold on. I’m staying with you.", 5, Tools.color_belle,"belle", 0)
 	if time_elapsed >= 180 and time_elapsed <= 210:
 		GreenRadio.visible = true
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://voice/day2/belle/thisisbelle.ogg", "This is Belle,", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day2/belle/thisisbelle.ogg", "This is Belle,", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/evacteams.ogg", "Some of you have written to tell me they still haven’t seen the evacuation teams.", 5, Tools.belle_color,"belle", 6)
+			play_radio_message("res://voice/day2/belle/evacteams.ogg", "Some of you have written to tell me they still haven’t seen the evacuation teams.", 5, Tools.color_belle,"belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/streetremainssilent.ogg", "A listener from the Old Miners’ Quarter told me her street remains silent.", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day2/belle/streetremainssilent.ogg", "A listener from the Old Miners’ Quarter told me her street remains silent.", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
 			GreenRadio.visible = false
-			play_radio_message("res://voice/day2/belle/Butnothing.ogg", "She’s waiting, her bags are packed… but nothing.", 5, Tools.belle_color, "belle", 0)
+			play_radio_message("res://voice/day2/belle/Butnothing.ogg", "She’s waiting, her bags are packed… but nothing.", 5, Tools.color_belle, "belle", 0)
 	if time_elapsed >= 220 and time_elapsed <= 270:
 		GreenRadio.visible = true
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://voice/day2/belle/thisisbelle.ogg", "This is Belle .", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day2/belle/thisisbelle.ogg", "This is Belle .", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/pasttheauthirities.ogg", "They say some of the suspicious individuals have slipped past the authorities.", 5, Tools.belle_color,"belle", 6)
+			play_radio_message("res://voice/day2/belle/pasttheauthirities.ogg", "They say some of the suspicious individuals have slipped past the authorities.", 5, Tools.color_belle,"belle", 6)
 			Tools.event_journal_ok(2,false)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/underground.ogg", "But who are they ? And what were they doing underground ?", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day2/belle/underground.ogg", "But who are they ? And what were they doing underground ?", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/foundingalleries.ogg", "First the church, and now they’re found in the galleries…", 5, Tools.belle_color,"belle", 6)
+			play_radio_message("res://voice/day2/belle/foundingalleries.ogg", "First the church, and now they’re found in the galleries…", 5, Tools.color_belle,"belle", 6)
 			Tools.event_journal_ok(4,false)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day2/belle/regaintheirground.ogg", "Have the religious been waiting for this moment to regain their ground ?", 5, Tools.belle_color,"belle", 6)
+			play_radio_message("res://voice/day2/belle/regaintheirground.ogg", "Have the religious been waiting for this moment to regain their ground ?", 5, Tools.color_belle,"belle", 6)
 			Tools.event_journal_ok(4,false)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
 			GreenRadio.visible = false
-			play_radio_message("res://voice/day2/belle/silenceandoppression.ogg", "Why choose now to return, after decades of silence and oppression ?", 5, Tools.belle_color,"belle", 0)
+			play_radio_message("res://voice/day2/belle/silenceandoppression.ogg", "Why choose now to return, after decades of silence and oppression ?", 5, Tools.color_belle,"belle", 0)
 
 	#Galleries radio ==>
 	if time_elapsed >= 50 and time_elapsed <= 100:
@@ -311,3 +309,4 @@ func _on_letterwait_timeout():
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "REDEVENT":
 		Tools.new_info("They are gone")
+		Tools.eotd()

@@ -28,7 +28,6 @@ func key_finder(action):
 func key_adder(text):
 	var key_string = text.strip_edges().to_upper()
 	if key_string.length() != 1 or not key_string.is_valid_identifier() or not key_string.is_subsequence_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ"):
-		print("Touche invalide ou non prise en chrge :", key_string)
 		return null
 
 	var keycode = OS.find_keycode_from_string(key_string)
@@ -38,7 +37,6 @@ func key_adder(text):
 		event.pressed = true
 		return event
 	else:
-		print("Touche invalide :", key_string)
 		return null
 
 

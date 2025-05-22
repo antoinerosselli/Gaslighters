@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://whujpl7tobqn"
+path="res://.godot/imported/ElevenLabs_2025-05-19T13_44_22_Gov Agent and Radio_ivc_sp100_s50_sb75_se0_b_m2.mp3-c20d2582b10bcf1e145d8fef22a0f7dc.mp3str"
+
+[deps]
+
+source_file="res://voice/day2_5/day (done)/long (done)/ElevenLabs_2025-05-19T13_44_22_Gov Agent and Radio_ivc_sp100_s50_sb75_se0_b_m2.mp3"
+dest_files=["res://.godot/imported/ElevenLabs_2025-05-19T13_44_22_Gov Agent and Radio_ivc_sp100_s50_sb75_se0_b_m2.mp3-c20d2582b10bcf1e145d8fef22a0f7dc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

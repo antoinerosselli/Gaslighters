@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cv1hamp7lhp4m"
+path="res://.godot/imported/wethanksyou.ogg-9200135ef3a83d6270b7a75f42de3439.oggvorbisstr"
+
+[deps]
+
+source_file="res://voice/day2_5/day (done)/short (done)/wethanksyou.ogg"
+dest_files=["res://.godot/imported/wethanksyou.ogg-9200135ef3a83d6270b7a75f42de3439.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

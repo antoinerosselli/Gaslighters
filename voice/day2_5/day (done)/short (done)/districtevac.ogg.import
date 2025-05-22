@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8b52tcwe6bcl"
+path="res://.godot/imported/districtevac.ogg-c39f3511c61a25973da41790a3333bbc.oggvorbisstr"
+
+[deps]
+
+source_file="res://voice/day2_5/day (done)/short (done)/districtevac.ogg"
+dest_files=["res://.godot/imported/districtevac.ogg-c39f3511c61a25973da41790a3333bbc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

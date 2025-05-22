@@ -29,13 +29,17 @@ static var radio_1_loop_belle :int= 0
 static var radio_1_loop_miners :int= 0
 static var radio_3_loop_gov :int= 0
 static var radio_3_loop_belle :int= 0
-static var radio_3_loop_miners :int= 0
-var postercypher = null#get_tree().get_nodes_in_group("vigenereposter")
+static var radio_3_loop_miners :int= 0 # Faire un truc si divers était une erreur
+var postercypher
 static var actualPoster = 3 #Full blur = 3, medium blur = 2, light blur = 1, full image = 0
 var posterTexture2 = load("res://Extern/FONT/FMFMbluir2.png")
 var posterTexture1 = load("res://Extern/FONT/FMFMbluir3.png")
 var posterTexture = load("res://Extern/FONT/FMFMbluir.png")
 var radioTrigger :bool= false
+
+func _ready():
+	postercypher = get_tree().get_nodes_in_group("vigenereposter")
+
 
 func _process(delta: float) -> void:
 	if ones == false:
@@ -44,7 +48,7 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	time_elapsed += 1
-	print(time_elapsed)
+	(time_elapsed)
 	check_radio_conditions()
 	
 
@@ -78,6 +82,7 @@ func apply_specific_radio_sound(radio :Node3D, sound :AudioStream, loop :bool):
 	var audio_channel = radio_sound.get_child(0)
 	audio_channel.set_stream(sound)
 	#audio_channel.set_loop(loop)
+
 	audio_channel.play()
 
 func setPosterTexture(nb :int):
@@ -86,11 +91,13 @@ func setPosterTexture(nb :int):
 	
 	actualPoster = nb 
 	
-	#for poster in postercypher:
-		#match nb:
-			#2: poster.set_texture("posterTexture2")
-			#1: poster.set_texture("posterTexture1")
-			#0: poster.set_texture("posterTexture")
+
+	for poster in postercypher:
+		match nb:
+			2: poster.set_texture(posterTexture2)
+			1: poster.set_texture(posterTexture1)
+			0: poster.set_texture(posterTexture)
+
 
 func check_radio_conditions() -> void:
 	var _fm = Radio.getFrequency()

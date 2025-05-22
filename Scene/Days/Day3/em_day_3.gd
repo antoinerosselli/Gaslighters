@@ -59,7 +59,7 @@ func _process(_delta):
 
 func _on_timer_timeout():
 	time_elapsed += 1
-	print(time_elapsed)
+	(time_elapsed)
 	check_event_conditions()
 
 func check_event_conditions():
@@ -85,7 +85,7 @@ func find_and_remove(current: Node, depth: int):
 			var is_deleted := randi_range(1,5)
 			if is_deleted == 1 and child.visible == true:
 				child.visible = false
-				print("Just deleted "+child.name+" !!!!!!!!!")
+				("Just deleted "+child.name+" !!!!!!!!!")
 				return
 		
 		if child.get_child_count() > 0 and next_depth <= 2: #Creuse max depth 2
@@ -95,13 +95,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.name == "CharacterBody3D":
 		if is_in_fog != true:
 			is_in_fog = true
-		print(is_in_fog)
+		(is_in_fog)
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.name == "CharacterBody3D":
 		if is_in_fog != false:
 			is_in_fog = false
-		print(is_in_fog)
+		(is_in_fog)
 	
 
 func exe_radio_msg(fp, text, duration, color, sender, cooldown):
