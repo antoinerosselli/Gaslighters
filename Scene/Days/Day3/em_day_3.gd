@@ -33,6 +33,9 @@ static var msg_status :int= 0
 @export var Lampadaires :Node3D
 
 func _process(_delta):
+	var player = get_tree().get_first_node_in_group("player")
+	#if (player.is_interacting_with() == "RadioObj"):
+		#print("OAOAOAOAOAOAO")
 	if ones == false:
 		if Radio.getFrequency() == 4:
 			Tools.event_journal_ok(0, false)
