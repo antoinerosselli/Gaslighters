@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://5q6mqfsmfqtr"
-path="res://.godot/imported/canap.fbx-2a11ae0f6f9a2c82182e662684b09a28.scn"
+valid=false
 
 [deps]
 
 source_file="res://model_House/canap.fbx"
-dest_files=["res://.godot/imported/canap.fbx-2a11ae0f6f9a2c82182e662684b09a28.scn"]
 
 [params]
 
