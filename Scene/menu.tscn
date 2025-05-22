@@ -272,7 +272,7 @@ offset_left = 8.0
 offset_top = 624.0
 offset_right = 253.0
 offset_bottom = 641.0
-text = "version : INFERNAL"
+text = "version : 1.0.0"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
