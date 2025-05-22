@@ -1,4 +1,6 @@
 extends Node3D
+var asp:bool = false
+@onready var audio_stream_player = $AudioStreamPlayer
 
 func _ready():
 	get_tree().paused = false
@@ -12,3 +14,9 @@ func _ready():
 
 func _on_special_radio_visibility_changed():
 	pass # Replace with function body.
+
+
+func _on_audio_stream_player_finished():
+	if asp == false:
+		audio_stream_player.play()
+		asp = true

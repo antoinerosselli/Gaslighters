@@ -7,7 +7,7 @@ func _ready():
 
 func _on_timer_timeout():
 	time_elapsed += 1
-	print(time_elapsed)
+	(time_elapsed)
 	check_event_conditions()
 
 func talk_audio(odio, text_color):

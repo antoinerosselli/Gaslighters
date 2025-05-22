@@ -1,14 +1,14 @@
 extends Node
 
-var level : int
-var RadioGov : int
-var RadioBelle : int
-var RadioGalleries : int
+var level : int = 0
+var RadioGov : int = 0
+var RadioBelle : int = 0
+var RadioGalleries : int = 0
 var journal_text: Array = []
-var daltone_mode: bool
-var doornumber:int 
-var clearspots:int
-var food:int
+var daltone_mode: bool = false
+var doornumber:int = 0
+var clearspots:int = 0
+var food:int = 0
 var input_map_data: Dictionary = {}
 
 func _ready():
@@ -44,7 +44,7 @@ func set_inputs(ninputs):
 	input_map_data = ninputs
 	
 	if ninputs.is_empty():
-		print("ninputs est vide, chargement des touches par défaut.")
+		("ninputs est vide, chargement des touches par défaut.")
 		input_map_data = {
 			"up": "W",
 			"down": "S",
@@ -73,7 +73,7 @@ func set_inputs(ninputs):
 	
 func get_inputs():
 	load_data()
-	print(input_map_data)
+	(input_map_data)
 	
 	input_map_data = {
 		"up" : key_finder(InputMap.action_get_events("up")),
@@ -82,7 +82,7 @@ func get_inputs():
 		"right" : key_finder(InputMap.action_get_events("right")),
 		"interact" : key_finder(InputMap.action_get_events("interact")),
 	}
-	print(input_map_data)
+	(input_map_data)
 	return input_map_data
 
 func set_food(nfood:int):
@@ -160,6 +160,7 @@ func save_data():
 
 func load_data():
 	if not FileAccess.file_exists("user://savegame.save"):
+		print("no save")
 		save_data()
 		return
 	
@@ -169,13 +170,17 @@ func load_data():
 		var json = JSON.new()
 		var _parse_result = json.parse(json_string)
 		var node_data = json.get_data()
-		level = node_data.get("level", 0)
-		RadioGov = node_data.get("RadioGov", 0)
-		RadioBelle = node_data.get("RadioBelle", 0)
-		RadioGalleries = node_data.get("RadioGalleries", 0)
-		journal_text = node_data.get("journal_text", [])
-		daltone_mode = node_data.get("daltone_mode", 0)
-		doornumber = node_data.get("doornumber", 0) 
-		food = node_data.get("food", 0) 
-		input_map_data = node_data.get("inputs", {})
-		set_inputs(input_map_data)
+		if node_data == null:
+			print("⚠️ node_data est NULL")
+			pass
+		else : 
+			level = int(node_data.get("level", 0))
+			RadioGov = int(node_data.get("RadioGov", 0))
+			RadioBelle = int(node_data.get("RadioBelle", 0))
+			RadioGalleries = int(node_data.get("RadioGalleries", 0))
+			journal_text = node_data.get("journal_text", [])
+			daltone_mode = int(node_data.get("daltone_mode", 0))
+			doornumber = int(node_data.get("doornumber", 0))
+			food = int(node_data.get("food", 0))
+			input_map_data = node_data.get("inputs", {})
+			set_inputs(input_map_data)

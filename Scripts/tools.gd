@@ -40,7 +40,7 @@ func get_icon(item_name):
 		"test":
 			return ICON as Texture2D
 		_:
-			print("param3 is not 3!")
+			("param3 is not 3!")
 
 
 func get_player():
@@ -138,7 +138,7 @@ func add_journal(text, ncolor):
 		var formatted_text = "[color=#" + color_string + "]" + str(text) + "[/color]\n"
 		journal_inside.text += formatted_text
 	else:
-		print("Le nœud 'journal_inside' est introuvable ou n'est pas un RichTextLabel.")
+		("Le nœud 'journal_inside' est introuvable ou n'est pas un RichTextLabel.")
 		
 func start_sound(path):
 	var event_sound = get_tree().get_first_node_in_group("event_sound")
@@ -186,7 +186,7 @@ func San_modif(santexture):
 
 func sound_now(here: Node3D, what_sound: AudioStream):
 	if not here or not what_sound:
-		print("Erreur: Paramètres invalides (here ou what_sound manquant)")
+		("Erreur: Paramètres invalides (here ou what_sound manquant)")
 		return
 		
 	var audio_player = AudioStreamPlayer3D.new()

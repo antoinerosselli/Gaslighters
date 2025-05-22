@@ -108,22 +108,22 @@ func check_radio_conditions():
 	if part1 == true and part2 == false:
 		BlueRadio.visible = true
 		if radio_value > 54 and radio_value < 64 :
-			play_radio_message("res://voice/day4/gov/offgovmess.ogg", "This is an official government message.", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day4/gov/offgovmess.ogg", "This is an official government message.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day4/gov/nowsafe.ogg", "The Road Quarter is currently being secured. Over 70% of Rock Valley’s residents are now safe.", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day4/gov/nowsafe.ogg", "The Road Quarter is currently being secured. Over 70% of Rock Valley’s residents are now safe.", 5, Tools.color_gov, "gouv", 6)
 			Tools.event_journal_ok(2,true)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day4/gov/evacuationtransport.ogg", "Further clashes have occurred in the city, resulting in the disappearance of certain individuals during evacuation transports.", 5, Tools.gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day4/gov/evacuationtransport.ogg", "Further clashes have occurred in the city, resulting in the disappearance of certain individuals during evacuation transports.", 5, Tools.color_gov,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day4/gov/handlingsituation.ogg", "Some people are still missing. A special search team is currently handling the situation.", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day4/gov/handlingsituation.ogg", "Some people are still missing. A special search team is currently handling the situation.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day4/gov/becauseofyou.ogg", "…All of this—because of you.", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day4/gov/becauseofyou.ogg", "…All of this—because of you.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day4/gov/everyoneatrisl.ogg", "You really had to break your oath and put everyone at risk.", 5, Tools.gouv_color, "gouv", 6)
+			play_radio_message("res://voice/day4/gov/everyoneatrisl.ogg", "You really had to break your oath and put everyone at risk.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day4/gov/notenought.ogg", "Was your own happiness not enough?", 5, Tools.gouv_color,"gouv", 6)
+			play_radio_message("res://voice/day4/gov/notenought.ogg", "Was your own happiness not enough?", 5, Tools.color_gov,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
-			play_radio_message("res://voice/day4/gov/buyredemption.ogg", "Did you really think you could buy yourself redemption?", 5, Tools.gouv_color, "gouv", 0)
+			play_radio_message("res://voice/day4/gov/buyredemption.ogg", "Did you really think you could buy yourself redemption?", 5, Tools.color_gov, "gouv", 0)
 			BlueRadio.visible = false
 			Tools.new_info("Next : the kitchen")
 			animama.play("part2")
@@ -134,19 +134,19 @@ func check_radio_conditions():
 	if part2 == true and part1 == true and part3 == false:
 		GreenRadio.visible = true
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://voice/day4/belle/Thisisbelle.ogg", "Hi, this is Belle.", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day4/belle/Thisisbelle.ogg", "Hi, this is Belle.", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day4/belle/evactransportattack.ogg", "Rock Valley has never felt more unsafe. I’m getting reports that evacuation transports have been attacked—leading to deaths and disappearances.", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day4/belle/evactransportattack.ogg", "Rock Valley has never felt more unsafe. I’m getting reports that evacuation transports have been attacked—leading to deaths and disappearances.", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day4/belle/religiousfactions.ogg", "It seems these were collateral damage from the ongoing conflict between former miners and surviving religious factions.", 5, Tools.belle_color,"belle", 6)
+			play_radio_message("res://voice/day4/belle/religiousfactions.ogg", "It seems these were collateral damage from the ongoing conflict between former miners and surviving religious factions.", 5, Tools.color_belle,"belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day4/belle/inallthis.ogg", "And you know you're not innocent in all this.", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day4/belle/inallthis.ogg", "And you know you're not innocent in all this.", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day4/belle/lookaway.ogg", "Or maybe you just preferred to look away.", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day4/belle/lookaway.ogg", "Or maybe you just preferred to look away.", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day4/belle/dragyouout.ogg", "You locked yourself in a cage, thinking it would protect you. Then you threw away the key, hoping no one would drag you out.", 5, Tools.belle_color, "belle", 6)
+			play_radio_message("res://voice/day4/belle/dragyouout.ogg", "You locked yourself in a cage, thinking it would protect you. Then you threw away the key, hoping no one would drag you out.", 5, Tools.color_belle, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day4/belle/escapetoanotherone.ogg", "You didn’t even notice. You’re stuck now in a state of numbness, unable to face the truth or escape to another one.", 5, Tools.belle_color, "belle", 0)
+			play_radio_message("res://voice/day4/belle/escapetoanotherone.ogg", "You didn’t even notice. You’re stuck now in a state of numbness, unable to face the truth or escape to another one.", 5, Tools.color_belle, "belle", 0)
 			GreenRadio.visible = false
 			Tools.new_info("Then : the bathroom")
 			animama.play("part3")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://doa4n110ydkxv"]
+[gd_scene load_steps=21 format=3 uid="uid://doa4n110ydkxv"]
 
 [ext_resource type="Script" uid="uid://dpwyjgbc1ljts" path="res://Scene/Days/Day 2.5/scene_day_2_5.gd" id="1_6bcb3"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_pkwid"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dqughkfdtof0r" path="res://Prefab/phone.tscn" id="6_wr4cq"]
 [ext_resource type="Script" uid="uid://d317uxaflf5xq" path="res://Scene/Days/Day 2.5/em_day2_5.gd" id="8_mmv5e"]
 [ext_resource type="PackedScene" uid="uid://c0gjlcrjiigw3" path="res://Characters/guys/guy_cagoule.tscn" id="10_ppxuf"]
+[ext_resource type="AudioStream" uid="uid://b3t43hni372ef" path="res://Music&Sound/pluvio (1).wav" id="11_131as"]
 
 [sub_resource type="Environment" id="Environment_asixl"]
 background_energy_multiplier = 0.0
@@ -275,6 +276,11 @@ light_energy = 2.63
 
 [node name="SpotLight3D2" parent="guy_cagoule/face" index="2"]
 light_energy = 2.63
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_131as")
+volume_db = -1.549
+autoplay = true
 
 [connection signal="timeout" from="manager/Timer" to="manager" method="_on_timer_timeout"]
 
