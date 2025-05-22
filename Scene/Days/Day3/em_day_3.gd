@@ -121,18 +121,18 @@ func check_radio_conditions():
 	
 	if ones == true and _fm > 0 and _fm < 4:
 		if time_elapsed > gouv_time and msg_status == 0:
-			exe_radio_msg(".","This is an official government message.",5,Tools.color_gov,"gouv",6)
+			exe_radio_msg("res://voice/day3/day/gov/offgovmess.ogg","This is an official government message.",5,Tools.color_gov,"gouv",6)
 			msg_status += 1
 			Tools.event_journal_ok(1, false)
 		if time_elapsed > gouv_time and msg_status == 1:
-			exe_radio_msg(".","The districts’ evacuation is still ongoing.",5,Tools.color_gov,"gouv",6)
+			exe_radio_msg("res://voice/day3/day/gov/districtevac.ogg","The districts’ evacuation is still ongoing.",5,Tools.color_gov,"gouv",6)
 			msg_status += 1
 			Tools.event_journal_ok(2, false)
 		if time_elapsed > gouv_time and msg_status == 2:
-			exe_radio_msg(".","Road Quarter will be cleared next. Local inhabitants, please ready yourself for our arrival.",9,Tools.color_gov,"gouv",10)
+			exe_radio_msg("res://voice/day3/day/gov/roadquarterclear.ogg","Road Quarter will be cleared next. Local inhabitants, please ready yourself for our arrival.",9,Tools.color_gov,"gouv",10)
 			msg_status += 1
 			Tools.event_journal_ok(3, !eventjournal.get_child(3).visible)
 		if time_elapsed > gouv_time and msg_status <= 3:
-			exe_radio_msg(".","We thank you for your cooperation.",5,Tools.color_gov,"gouv",6)
+			exe_radio_msg("res://voice/day3/day/gov/wethanksyou.ogg","We thank you for your cooperation.",5,Tools.color_gov,"gouv",6)
 			msg_status = 0
 			Tools.event_journal_ok(4, false)

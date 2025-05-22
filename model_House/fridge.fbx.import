@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c6vsjxcoa3jlp"
-valid=false
+path="res://.godot/imported/fridge.fbx-c3f6e893792f064e5371a489b0827129.scn"
 
 [deps]
 
 source_file="res://model_House/fridge.fbx"
+dest_files=["res://.godot/imported/fridge.fbx-c3f6e893792f064e5371a489b0827129.scn"]
 
 [params]
 
