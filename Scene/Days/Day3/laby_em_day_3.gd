@@ -65,7 +65,7 @@ func exe_radio_msg(radio, fp, text, duration, color, sender, cooldown, loop_audi
 		match sender:
 			"gouv1":
 				gouv_time_1 = time_elapsed + cooldown
-			"gouv2":
+			"gouv3":
 				gouv_time_3 = time_elapsed + cooldown
 			"belle1":
 				belle_time_1 = time_elapsed + cooldown
@@ -132,7 +132,7 @@ func check_radio_conditions() -> void:
 		if time_elapsed > gouv_time_1 and radio_1_loop_gov == 2 and currRadio == radioUno:
 			exe_radio_msg(radioUno, "res://voice/day3/laby/gov/gov1/roadquarterclear.ogg", "Road Quarter will be cleared next. Local inhabitants, please ready yourself for our arrival.", 9, Tools.color_gov, "gouv1", 10,false)
 			radio_1_loop_gov+=1
-		if time_elapsed > gouv_time_1 and radio_1_loop_gov == 3 and currRadio == radioUno:
+		if time_elapsed > gouv_time_1 and radio_1_loop_gov >= 3 and currRadio == radioUno:
 			exe_radio_msg(radioUno, "res://voice/day3/laby/gov/gov1/wethanksyou.ogg", "We thank you for your cooperation.", 5, Tools.color_gov, "gouv1", 6,false)
 			Tools.event_journal_ok(0, false)
 			radio_1_loop_gov=0
@@ -158,18 +158,18 @@ func check_radio_conditions() -> void:
 			exe_radio_msg(radioTres, "res://voice/day3/laby/gov/gov4/quartercurrently.ogg", "The quarter currently being evacuated is:", 5, Tools.color_gov, "gouv3", 6,false)
 			radio_3_loop_gov+=1
 		if time_elapsed > gouv_time_3 and radio_3_loop_gov == 4 and currRadio == radioTres:
-			exe_radio_msg(radioTres, ".", "???", 5, Tools.color_gov, "gouv", 6,false) # Quartier random?
+			#exe_radio_msg(radioTres, ".", "???", 5, Tools.color_gov, "gouv", 6,false) # Quartier random?
 			radio_3_loop_gov+=1
 		if time_elapsed > gouv_time_3 and radio_3_loop_gov == 5 and currRadio == radioTres:
 			exe_radio_msg(radioTres, "res://voice/day3/laby/gov/gov4/wearehere.ogg", "We are here, citizens. Be ready.", 5, Tools.color_gov, "gouv", 6,false)
 			radio_3_loop_gov+=1
-		if time_elapsed > gouv_time_3 and radio_3_loop_gov <= 6 and currRadio == radioTres:
+		if time_elapsed > gouv_time_3 and radio_3_loop_gov >= 6 and currRadio == radioTres:
 			exe_radio_msg(radioTres, "res://voice/day3/laby/gov/gov4/wakeup.ogg", "Wake up.", 5, Tools.color_gov, "gouv", 6,false)
 			radio_3_loop_gov=0
 		
 		# Radio 5
 		if currRadio == radioQuatro:
-			exe_radio_msg(radioQuatro, "res://voice/day3/laby/gov/gov4/wakeup.ogg", "Wake up.", 3, Tools.color_chaos, "???", 3,false)
+			exe_radio_msg(radioQuatro, "res://voice/day3/laby/gov/gov5/wakeup.ogg", "Wake up.", 3, Tools.color_chaos, "???", 3,false)
 	
 	if _fm == 2:
 		# Radio 1
@@ -182,7 +182,7 @@ func check_radio_conditions() -> void:
 		if time_elapsed > belle_time_1 and radio_1_loop_belle == 2 and currRadio == radioUno:
 			exe_radio_msg(radioUno, "res://voice/day3/laby/belle/belle1/whokeepsbrawling.ogg", "Who keeps brawling at such a time? We should be helping each other out.", 5, Tools.color_belle, "belle1", 6,false)
 			radio_1_loop_belle+=1
-		if time_elapsed > belle_time_1 and radio_1_loop_belle <= 3 and currRadio == radioUno:
+		if time_elapsed > belle_time_1 and radio_1_loop_belle >= 3 and currRadio == radioUno:
 			exe_radio_msg(radioUno, "res://voice/day3/laby/belle/belle1/iurgemyaudience.ogg", "I urge my audience to stay discreet and safe.", 5, Tools.color_belle, "belle1", 6,false)
 			radio_1_loop_belle=0
 		
@@ -204,7 +204,7 @@ func check_radio_conditions() -> void:
 		if time_elapsed > belle_time_3 and radio_3_loop_belle == 3 and currRadio == radioTres:
 			exe_radio_msg(radioTres, "res://voice/day3/laby/belle/belle4/Mydearlisteners.ogg", "My dear listeners. Keep hoping. Stay safe.", 5, Tools.color_belle, "belle3", 6,false)
 			radio_3_loop_belle+=1
-		if time_elapsed > belle_time_3 and radio_3_loop_belle <= 4 and currRadio == radioTres:
+		if time_elapsed > belle_time_3 and radio_3_loop_belle >= 4 and currRadio == radioTres:
 			exe_radio_msg(radioTres, "res://voice/day3/laby/belle/belle4/wakeup.ogg", "Wake up.", 5, Tools.color_belle, "belle", 6,false)
 			radio_3_loop_belle=0
 		
@@ -223,7 +223,7 @@ func check_radio_conditions() -> void:
 		if time_elapsed > miners_time_1 and radio_1_loop_miners == 2 and currRadio == radioUno:
 			exe_radio_msg(radioUno, "res://voice/day3/laby/galleries/galleries1/wecansaverockvalley.ogg", "It is our time to step into the light. We can save Rock valley.", 5, Tools.color_galleries, "miners1", 6,false)
 			radio_1_loop_miners+=1
-		if time_elapsed > miners_time_1 and radio_1_loop_miners <= 3 and currRadio == radioUno:
+		if time_elapsed > miners_time_1 and radio_1_loop_miners >= 3 and currRadio == radioUno:
 			exe_radio_msg(radioUno, "res://voice/day3/laby/galleries/galleries1/byourselves.ogg", "By ourselves, not with words, but with acts.", 5, Tools.color_galleries, "miners1", 6,false)
 			radio_1_loop_miners=0
 		
@@ -241,7 +241,7 @@ func check_radio_conditions() -> void:
 		if time_elapsed > miners_time_3 and radio_3_loop_miners == 2 and currRadio == radioTres:
 			exe_radio_msg(radioTres, "res://voice/day3/laby/galleries/galleries4/wewillnotbeblind.ogg", "We will not be blind to our people’s needs. It is time to put your faith in us.", 5, Tools.color_galleries, "miners3", 6,false)
 			radio_3_loop_miners+=1
-		if time_elapsed > miners_time_3 and radio_3_loop_miners <= 3 and currRadio == radioTres:
+		if time_elapsed > miners_time_3 and radio_3_loop_miners >= 3 and currRadio == radioTres:
 			exe_radio_msg(radioTres, "res://voice/day3/laby/galleries/galleries4/wakeup.ogg", "Wake up.", 5, Tools.color_galleries, "miners3", 6,false)
 			Tools.event_journal_ok(3, false)
 			setPosterTexture(1)
@@ -267,4 +267,4 @@ func check_radio_conditions() -> void:
 func secrets_unfolded(radio :Node3D):
 	SteamControl.unlock_achievement("ACH_MYSTERY_LABY3")
 	timeLogic = 100
-	exe_radio_msg(radio, , "We are not checkmated.",0,Tools.color_me, "Devs", 0, false)
+	exe_radio_msg(radio, ".", "We are not checkmated.",0,Tools.color_me, "Devs", 0, false)
