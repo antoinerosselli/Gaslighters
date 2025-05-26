@@ -4,6 +4,7 @@ extends Control
 @onready var continue_button = $continue_button
 
 func _ready():
+	Data.set_level(1)
 	Data.load_data()
 	Radio.setValue(0.0)
 	if Data.get_level() > 0:

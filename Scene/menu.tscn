@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://saktvxup8cjo"]
+[gd_scene load_steps=11 format=3 uid="uid://saktvxup8cjo"]
 
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_sb1jo"]
 [ext_resource type="Script" uid="uid://dp6l7ry888ujw" path="res://Scripts/Menu.gd" id="3_2v8d6"]
@@ -27,6 +27,9 @@ shader_parameter/edgeThickness = 0.025
 shader_parameter/edgeGlowIntensity = 1.466
 shader_parameter/enable_dissolve_animation = false
 shader_parameter/animation_speed = 0.6
+
+[sub_resource type="LabelSettings" id="LabelSettings_ffxp3"]
+font_size = 41
 
 [node name="Menu" type="Control" groups=["menu2d"]]
 layout_mode = 3
@@ -272,7 +275,7 @@ offset_left = 8.0
 offset_top = 624.0
 offset_right = 253.0
 offset_bottom = 641.0
-text = "version : 0.9.8"
+text = "version : demo3"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
@@ -287,6 +290,15 @@ offset_right = 1048.0
 offset_bottom = 272.0
 focus_mode = 0
 flat = true
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 144.0
+offset_right = 185.0
+offset_bottom = 186.0
+text = "demo"
+label_settings = SubResource("LabelSettings_ffxp3")
 
 [connection signal="pressed" from="continue_button" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
