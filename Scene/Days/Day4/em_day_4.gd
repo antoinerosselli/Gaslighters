@@ -111,7 +111,7 @@ func check_radio_conditions():
 			play_radio_message("res://voice/day4/gov/offgovmess.ogg", "This is an official government message.", 5, Tools.color_gov, "gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://voice/day4/gov/nowsafe.ogg", "The Road Quarter is currently being secured. Over 70% of Rock Valley’s residents are now safe.", 5, Tools.color_gov, "gouv", 6)
-			Tools.event_journal_ok(2,true)
+			Tools.event_journal_ok(2,false)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
 			play_radio_message("res://voice/day4/gov/evacuationtransport.ogg", "Further clashes have occurred in the city, resulting in the disappearance of certain individuals during evacuation transports.", 5, Tools.color_gov,"gouv", 6)
 		if radio_value > 54 and radio_value < 64 and time_elapsed > gouv_time:
@@ -191,7 +191,7 @@ func check_radio_conditions():
 			play_radio_message("res://voice/day4/other/whatmatters.ogg", "That’s not what matters.", 5, Tools.color_ami,"fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
 			play_radio_message("res://voice/day4/other/forgedforyourself.ogg", "You stepped out of the cage you forged for yourself.", 5, Tools.color_ami, "fanatic", 6)
-			Tools.event_journal_ok(3,true)
+			Tools.event_journal_ok(3,false)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
 			play_radio_message("res://voice/day4/other/yourmobingnow.ogg", "Look—you’re moving now.", 5, Tools.color_ami, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
@@ -206,7 +206,7 @@ func check_radio_conditions():
 			play_radio_message("res://voice/day4/other/ihopesotoo.ogg", "I hope so too.", 5, Tools.color_ami, "fanatic", 6)
 		if radio_value > 41 and radio_value < 43 and time_elapsed > Fanatic_time:
 			SpecialRadio.visible = false
-			Tools.event_journal_ok(5,true)
+			Tools.event_journal_ok(5,false)
 			Tools.radio_text_glitch("Let’s get out of here.", 4.0, Tools.color_me)
 			Tools.new_info("Pick up the suitcases")
 			Tools.eotd()

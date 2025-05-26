@@ -19,6 +19,8 @@ var Fanatic_color = Color(0.545098, 0, 0, 1)
 var Fanatic_time = 0
 var ones: bool = false
 
+var BlueRadio: AnimatedSprite2D
+
 #TIMER
 var time_elapsed = 0
 
@@ -31,6 +33,9 @@ static var msg_status :int= 0
 @export var Fog_Door :FogVolume
 @export var Door_expe :CollisionShape3D
 @export var Lampadaires :Node3D
+
+func _ready():
+	BlueRadio = get_tree().get_first_node_in_group("blueradio")
 
 func _process(_delta):
 	var player = get_tree().get_first_node_in_group("player")
@@ -120,6 +125,7 @@ func check_radio_conditions():
 	var eventjournal = get_tree().get_first_node_in_group("eventjournal")
 	
 	if ones == true and _fm > 0 and _fm < 4:
+		BlueRadio.visible = true
 		if time_elapsed > gouv_time and msg_status == 0:
 			exe_radio_msg("res://voice/day3/day/gov/offgovmess.ogg","This is an official government message.",5,Tools.color_gov,"gouv",6)
 			msg_status += 1
@@ -136,3 +142,4 @@ func check_radio_conditions():
 			exe_radio_msg("res://voice/day3/day/gov/wethanksyou.ogg","We thank you for your cooperation.",5,Tools.color_gov,"gouv",6)
 			msg_status = 0
 			Tools.event_journal_ok(4, false)
+			BlueRadio.visible = false

@@ -4672,7 +4672,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.41122, 11.3722, -0.0243607)
 [node name="Alarme" type="Node3D" parent="appartement" groups=["alarmepills"]]
 transform = Transform3D(0.286047, -0.0178842, -0.668332, 0.00916071, 1.01685, -0.0029975, 0.300285, -0.0139847, 0.636735, -10.9508, -0.647424, -5.58089)
 script = ExtResource("149_iucim")
-auto_start = true
+wakeup = true
 minute = 30
 hour = 1
 

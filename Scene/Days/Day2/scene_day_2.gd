@@ -11,10 +11,8 @@ func _ready():
 	codesr.activate = false
 	Radio.setValue(0)
 
-
 func _on_special_radio_visibility_changed():
-	pass # Replace with function body.
-
+	pass 
 
 func _on_audio_stream_player_finished():
 	if asp == false:

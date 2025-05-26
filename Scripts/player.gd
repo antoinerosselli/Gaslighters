@@ -211,7 +211,7 @@ func _on_audio_stream_player_3d_finished():
 	var evman = get_tree().get_first_node_in_group("event_manager")
 	var ani =  get_tree().get_first_node_in_group("animamanager")
 	evman.time_elapsed = 223
-	detect_value.value = 0
+	detect_value = 0
 	scream = false
 	ani.play("RESET")
 	

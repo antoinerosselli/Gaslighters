@@ -208,6 +208,7 @@ func eotd():
 		valise.activate = true
 		horn.play()
 	else:
+		Tools.new_info("Take your pills")
 		var alarm =  get_tree().get_first_node_in_group("alarmepills")
 		var pills = get_tree().get_first_node_in_group("pills")
 		alarm.go_bip()

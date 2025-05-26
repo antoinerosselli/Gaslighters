@@ -3,12 +3,8 @@ extends Node
 @export_category("Depots Manager")
 @export var DANGER_LEVEL: int
 @onready var depots = []
-@onready var animation_player = $"../AnimationPlayer"
+@onready var animation_player = $"../animscened2"
 
-@export_category("Events Manager")
-
-@export_category("Radio Manager")
-#gouv
 var gouv_color = Color(0.117647, 0.564706, 1, 1)
 var gouv_time = 0
 #belle
@@ -22,6 +18,7 @@ var ones: bool = false
 var first_message: bool = false
 var expe_dispo: bool = true
 var letterletter: bool = false
+var red_pass: bool = false
 
 @onready var letterwait = $"../letterwait"
 
@@ -46,8 +43,8 @@ func _process(_delta):
 		letterwait.start()
 		letterletter = true
 	if animation_player.is_playing():
-		if UniqueTrait.elec == true and animation_player.get_current_animation() == "REDEVENT" and get_tree().get_first_node_in_group("screamer_control").visible == true:
-			Tools.get_player().detect()
+		if animation_player.get_current_animation() == "REDEVENT" :
+			UniqueTrait.elec = false
 	if ones == false and first_message == false:
 		if Radio.getValue() > 88 and Radio.getValue() < 98 :
 			play_radio_message("res://voice/day2/special_voice/voice_changer.mp3", "Bmjs ymj qnlmy gqjjix, ymj nwts xzny fuujfwx. Anxny ymj lzfwinfs tk ymj ijju.", 5, Tools.color_galleries, "enigm", 10)
@@ -80,11 +77,12 @@ func check_event_conditions():
 		Tools.expe_status(true)
 		Tools.timer_event_action(false)
 		expe_dispo = false
-	if time_elapsed >= 180 and UniqueTrait.elec == false and letterletter == true and animation_player.get_current_animation() != "REDEVENT":
+	if time_elapsed >= 180 and UniqueTrait.elec == false and letterletter == true and animation_player.get_current_animation() != "REDEVENT" and red_pass == false:
 		activate_depots()
 		Tools.new_info("they are coming")
 		SteamControl.unlock_achievement("ACH_SUIT")
 		animation_player.play("REDEVENT")
+		red_pass = true
 
 #RADIO
 func play_radio_message(file_path, text, duration, color, sender, what_cd):

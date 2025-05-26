@@ -1087,6 +1087,7 @@ focus_mode = 0
 text = "LET THE SUITCASE"
 
 [node name="Logevent" type="Button" parent="Camera3D/Control"]
+visible = false
 layout_mode = 0
 offset_left = 432.0
 offset_top = 16.0

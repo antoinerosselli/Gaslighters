@@ -1,10 +1,15 @@
 extends Node3D
 
+@export var wakeup :bool = false
 @onready var label :Label3D= $Time
 @export var auto_start: bool
 @export var minute:int
 @export var hour:int
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
+
+func _ready():
+	if wakeup == true : 
+		label.text = "WAKE UP"
 
 func _on_timer_timeout():
 	if auto_start == true:
