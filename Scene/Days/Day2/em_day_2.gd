@@ -22,6 +22,7 @@ var ones: bool = false
 var first_message: bool = false
 var expe_dispo: bool = true
 var letterletter: bool = false
+var redone: bool = false
 
 @onready var letterwait = $"../letterwait"
 
@@ -80,7 +81,7 @@ func check_event_conditions():
 		Tools.expe_status(true)
 		Tools.timer_event_action(false)
 		expe_dispo = false
-	if time_elapsed >= 180 and UniqueTrait.elec == false and letterletter == true and animation_player.get_current_animation() != "REDEVENT":
+	if time_elapsed >= 180 and UniqueTrait.elec == false and letterletter == true and animation_player.get_current_animation() != "REDEVENT" && redone == false:
 		activate_depots()
 		Tools.new_info("they are coming")
 		SteamControl.unlock_achievement("ACH_SUIT")
@@ -305,8 +306,8 @@ func _on_letterwait_timeout():
 	Tools.door_letter()
 	Tools.new_info("a new letter has appeared")
 
-
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "REDEVENT":
+		redone = true
 		Tools.new_info("They are gone")
 		Tools.eotd()

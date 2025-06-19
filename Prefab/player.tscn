@@ -19,9 +19,9 @@
 [ext_resource type="SpriteFrames" uid="uid://bqhevke6xc63h" path="res://Sprite/greenradio.tres" id="11_ehjad"]
 [ext_resource type="SpriteFrames" uid="uid://dustsyroot604" path="res://Sprite/specialradio.tres" id="12_7dcbk"]
 [ext_resource type="Shader" uid="uid://bqmhueq26gysj" path="res://Shader/tr.gdshader" id="12_x4psa"]
-[ext_resource type="Texture2D" uid="uid://exwibfbl6gs2" path="res://Sprite/screamer.tres" id="13_ui8k8"]
 [ext_resource type="PackedScene" uid="uid://dpi8t3jrme5d" path="res://Extern/Rework Appart/spray/scene.gltf" id="13_wyp7x"]
 [ext_resource type="AudioStream" uid="uid://dnia72tkl7a4k" path="res://Music&Sound/sound/screamer.mp3" id="14_ui8k8"]
+[ext_resource type="Texture2D" uid="uid://mghyet6rdru7" path="res://Sprite/Capture d'écran 2025-04-11 114300.png" id="20_7dcbk"]
 [ext_resource type="Texture2D" uid="uid://ckqpj1xn54yqv" path="res://Sprite/neutralradio.png" id="25_wnl8h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
@@ -573,11 +573,12 @@ offset_bottom = 40.0
 [node name="screamer" type="Sprite2D" parent="CanvasLayer/ScreamerControl"]
 position = Vector2(582, 313)
 scale = Vector2(0.984, 0.864)
-texture = ExtResource("13_ui8k8")
+texture = ExtResource("20_7dcbk")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CanvasLayer/ScreamerControl"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 stream = ExtResource("14_ui8k8")
+bus = &"Sfx"
 
 [node name="transition" parent="." instance=ExtResource("11_7q8gp")]
 process_mode = 3

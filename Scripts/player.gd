@@ -201,7 +201,7 @@ func _on_timer_timeout():
 func detect():
 	detect_value.value += 34
 	if detect_value.value >= 100 && scream == false:
-		detect_value = 0
+		detect_value.value = 0
 		screamer_control.visible = true
 		scream = true
 		screamer_sound.play()

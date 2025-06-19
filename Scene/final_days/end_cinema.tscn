@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cd458kpdgcthk" path="res://Extern/Rework Appart/Deds/textures/Wood_10_baseColor.jpeg" id="8_v580e"]
 [ext_resource type="Texture2D" uid="uid://chaipkbutk75o" path="res://Extern/Prop Textures/Carpet 3.png" id="9_pg6u1"]
 [ext_resource type="Texture2D" uid="uid://bx4dkfvsb1ycc" path="res://Sprite/newspapernosuit.png" id="9_ua5ip"]
-[ext_resource type="Script" uid="uid://dd3cjhcsfwj38" path="res://Scene/final_days/newspaper_end.gd" id="10_frcpr"]
+[ext_resource type="Script" uid="uid://brqd2n4t10krj" path="res://Scene/final_days/newspaper_end.gd" id="10_frcpr"]
 [ext_resource type="Texture2D" uid="uid://chwbx4kif6dbs" path="res://Extern/Abandoned_House/Abandoned_House_t (28).jpg" id="10_ua5ip"]
 [ext_resource type="Script" uid="uid://c8if38w4mykjo" path="res://Scripts/lightUmenu3D.gd" id="11_frcpr"]
 [ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="12_arjw4"]
@@ -836,7 +836,7 @@ transform = Transform3D(-0.974456, 0.0198417, 0.223701, 0.0175451, 0.999772, -0.
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="NEWMENU"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NEWMENU/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.19632, 0.112983, -9.37555)
+transform = Transform3D(1, 4.65661e-09, -1.19209e-07, -1.57161e-08, 1, -5.12227e-09, 1.04308e-07, -4.65661e-10, 1, 3.19632, 0.112983, -9.37556)
 size = Vector3(7.39264, 3.47351, 0.276855)
 material = SubResource("StandardMaterial3D_bri53")
 
