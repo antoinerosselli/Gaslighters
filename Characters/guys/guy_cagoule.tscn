@@ -18,8 +18,8 @@ albedo_color = Color(0.222195, 0.196703, 0.277397, 1)
 material = SubResource("ORMMaterial3D_pw75g")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_evabc"]
-height = 14.2134
-radius = 2.90576
+height = 6.31575
+radius = 1.78369
 
 [node name="guy_cagoule" type="StaticBody3D"]
 script = ExtResource("1_evabc")
@@ -67,7 +67,7 @@ mesh = SubResource("CapsuleMesh_te5cv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.68403)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -0.00139622, 0.999999, 0, -0.999999, -0.00139622, 0, -0.858383, 0.605963)
+transform = Transform3D(1, 0, 0, 0, -0.00139622, 0.999999, 0, -0.999999, -0.00139622, 0, -0.854435, 3.4335)
 shape = SubResource("CylinderShape3D_evabc")
 debug_color = Color(0.894118, 0.270588, 0.431373, 0.733333)
 

@@ -272,7 +272,7 @@ offset_left = 8.0
 offset_top = 624.0
 offset_right = 253.0
 offset_bottom = 641.0
-text = "version : 1.0.2"
+text = "version : 1.1.0"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
@@ -281,10 +281,10 @@ offset_bottom = 17.0
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 832.0
-offset_top = 128.0
-offset_right = 1048.0
-offset_bottom = 272.0
+offset_left = 828.0
+offset_top = 169.0
+offset_right = 1044.0
+offset_bottom = 313.0
 focus_mode = 0
 flat = true
 

@@ -637,7 +637,7 @@ _data = {
 process_mode = 3
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.998975, -0.0219976, 0.0395522, 0.017813, 0.994501, 0.103202, -0.0416049, -0.102392, 0.993874, 3.24799, 0.0945256, -6.5189)
+transform = Transform3D(0.998975, -0.0219976, 0.0395522, 0.0229313, 0.999465, -0.0233102, -0.0390183, 0.0241933, 0.998946, 3.37914, 0.0902702, -6.69398)
 fov = 62.0899
 script = ExtResource("1_8obb3")
 amplitude = 0.0
@@ -843,7 +843,7 @@ transform = Transform3D(2, 0, 2.13163e-14, 0, 2, 0, -2.13163e-14, 0, 2, 0.075512
 pixel_size = 0.001
 texture_filter = 5
 modulate = Color(0.690196, 1, 0.47451, 1)
-text = "00.00"
+text = "+400"
 font = ExtResource("18_dvyfk")
 font_size = 46
 outline_size = 3
@@ -855,7 +855,7 @@ pixel_size = 0.001
 double_sided = false
 texture_filter = 5
 modulate = Color(0.690196, 1, 0.47451, 1)
-text = "FM"
+text = "WL"
 font = ExtResource("18_dvyfk")
 font_size = 50
 outline_size = 3

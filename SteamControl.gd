@@ -17,7 +17,10 @@ func _ready():
 	var id = Steam.getSteamID()
 	steam_name = Steam.getFriendPersonaName(id)
 	print(steam_name)
-	
+
+func _process(delta):
+	Steam.run_callbacks()
+
 func unlock_achievement(ach):
 	var status = Steam.getAchievement(ach)
 	if status.has("achieved") and status["achieved"]:
