@@ -36,8 +36,16 @@ var posterTexture2 = load("res://Extern/FONT/FMFMbluir2.png")
 var posterTexture1 = load("res://Extern/FONT/FMFMbluir3.png")
 var posterTexture = load("res://Extern/FONT/FMFMbluir.png")
 var radioTrigger :bool= false
+var quarterNames = [
+	"res://voice/day1/gov/downtown.mp3",
+	"res://voice/day1/gov/historicquarter.mp3",
+	"res://voice/day1/gov/oldminersquarter.mp3",
+	"res://voice/day1/gov/roadquarter.mp3",
+	"res://voice/day1/gov/newminersquarter.mp3"
+]
 
 func _ready():
+	randomize()
 	postercypher = get_tree().get_nodes_in_group("vigenereposter")
 
 
@@ -91,7 +99,6 @@ func setPosterTexture(nb :int):
 	
 	actualPoster = nb 
 	
-
 	for poster in postercypher:
 		match nb:
 			2: poster.set_texture(posterTexture2)
@@ -141,7 +148,7 @@ func check_radio_conditions() -> void:
 		if currRadio == radioDos:
 			exe_radio_msg(radioDos, "res://voice/day3/laby/gov/gov3/dontbelievelie.ogg", "Do not believe the lies.", 5, Tools.color_gov, "gouv", 6,false)
 			Tools.event_journal_ok(1, false)
-			setPosterTexture(2)
+			setPosterTexture(1)
 		
 	
 		# Radio 4
@@ -158,13 +165,13 @@ func check_radio_conditions() -> void:
 			exe_radio_msg(radioTres, "res://voice/day3/laby/gov/gov4/quartercurrently.ogg", "The quarter currently being evacuated is:", 5, Tools.color_gov, "gouv3", 6,false)
 			radio_3_loop_gov+=1
 		if time_elapsed > gouv_time_3 and radio_3_loop_gov == 4 and currRadio == radioTres:
-			#exe_radio_msg(radioTres, ".", "???", 5, Tools.color_gov, "gouv", 6,false) # Quartier random?
+			exe_radio_msg(radioTres, quarterNames[randi_range(0,4)], "???", 4, Tools.color_gov, "gouv3", 5,false) # Quartier random?
 			radio_3_loop_gov+=1
 		if time_elapsed > gouv_time_3 and radio_3_loop_gov == 5 and currRadio == radioTres:
-			exe_radio_msg(radioTres, "res://voice/day3/laby/gov/gov4/wearehere.ogg", "We are here, citizens. Be ready.", 5, Tools.color_gov, "gouv", 6,false)
+			exe_radio_msg(radioTres, "res://voice/day3/laby/gov/gov4/wearehere.ogg", "We are here, citizens. Be ready.", 5, Tools.color_gov, "gouv3", 6,false)
 			radio_3_loop_gov+=1
 		if time_elapsed > gouv_time_3 and radio_3_loop_gov >= 6 and currRadio == radioTres:
-			exe_radio_msg(radioTres, "res://voice/day3/laby/gov/gov4/wakeup.ogg", "Wake up.", 5, Tools.color_gov, "gouv", 6,false)
+			exe_radio_msg(radioTres, "res://voice/day3/laby/gov/gov4/wakeup.ogg", "Wake up.", 5, Tools.color_gov, "gouv3", 6,false)
 			radio_3_loop_gov=0
 		
 		# Radio 5
@@ -244,7 +251,7 @@ func check_radio_conditions() -> void:
 		if time_elapsed > miners_time_3 and radio_3_loop_miners >= 3 and currRadio == radioTres:
 			exe_radio_msg(radioTres, "res://voice/day3/laby/galleries/galleries4/wakeup.ogg", "Wake up.", 5, Tools.color_galleries, "miners3", 6,false)
 			Tools.event_journal_ok(3, false)
-			setPosterTexture(1)
+			setPosterTexture(0)
 			radio_3_loop_miners=0
 		
 		# Radio 5
@@ -261,7 +268,7 @@ func check_radio_conditions() -> void:
 		if currRadio == radioQuatro:
 			apply_specific_radio_sound(radioQuatro, load("res://Music&Sound/Echexe2.mp3") as AudioStream, true)
 		Tools.event_journal_ok(4, false)
-		setPosterTexture(0)
+		setPosterTexture(2)
 		
 
 func secrets_unfolded(radio :Node3D):
